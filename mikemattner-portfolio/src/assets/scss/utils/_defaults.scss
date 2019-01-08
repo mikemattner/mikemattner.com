@@ -1,25 +1,60 @@
 html {
   font-size: calc(14px + 0.5vw);
-  line-height: calc(1.1em + 0.5vw);
+  line-height: 1.5;
   letter-spacing: 0.0125rem;
   @media (min-width: 1200px) {
         font-size: 20px;
   }
 }
 body {
-  font-family: $sans-serif-font;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2 {
-    font-family: $serif-font;
-    font-weight: 700;
-    letter-spacing: 0;
+    background-color: $darkBlue;
+    color: $darkBlue-6;
+    font-family: $sans-serif-font;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 3rem;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;  
+    position:relative;
+    padding-bottom: 2rem;
+    letter-spacing: 0.0675rem;
+    
+    @include min-media(760px) { 
+        font-size: 4rem;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 3rem;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        background-color: $orange;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $serif-font;
+    line-height: 1.2;
+    color: $white;
+    font-weight: 900;
+}
+a {
+    text-decoration: none;
+    color: $white;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        color: $orange;
+    }
 }

@@ -1,23 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <AppHeader />
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
+<script>
+import AppHeader from '@/components/AppHeader.vue';
+
+export default {
+  name: 'Portfolio',
+  components: {
+    AppHeader,
+  },
+};
+</script>
+
 <style lang="scss">
 @import '@/assets/scss/app.scss';
-#nav {
-  padding: 30px;
-  a {
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-      font-weight: bold;
-    }
-  }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.25s;
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+  transform: translate(0, -2em);
 }
 </style>

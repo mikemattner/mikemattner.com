@@ -1,23 +1,25 @@
 // ----------------------------------------------------------------------------------------------------------------
 // Colors
 // ----------------------------------------------------------------------------------------------------------------
-$darkBlue: rgba(39,47,52,1.0);
+$darkBlue: rgba(39,47,52,1.0); //#092554
+$darkBlue-1: tint($darkBlue, 10%);
+$darkBlue-2: tint($darkBlue, 20%);
+$darkBlue-3: tint($darkBlue, 30%);
+$darkBlue-4: tint($darkBlue, 40%);
+$darkBlue-5: tint($darkBlue, 50%);
+$darkBlue-6: tint($darkBlue, 60%);
+$darkGray: shade($darkBlue, 50%);
 $orange: rgba(255,88,1,1.0);
-$lightGray: tint($darkBlue, 80%);
-$darkGray: tint($darkBlue, 50%);
 $white: rgba(255,255,255,1.0);
 $black: rgba(0,0,0,1.0);
-$borderColor: tint($darkBlue, 95%);
-$darkBorder: tint($darkBlue, 65%);
-$metaGray: tint($darkBlue, 50%);
+
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography
 // ----------------------------------------------------------------------------------------------------------------
 $sans-serif-font: "Geomanist", Helvetica, sans-serif;
-$serif-font: 'Playfair Display', serif;
-// $serif-font: 'Roboto Slab', serif;
-// $source-code-font: Menlo, Monaco, monospace;
+$serif-font: 'Merriweather', serif; //'Playfair Display', serif
+$source-code-font: Menlo, Monaco, monospace;
 $textColor: rgba(103,113,113,1.0);
 $headingColor: $darkBlue;
 $defaultFontSize: 18px;
