@@ -43,7 +43,7 @@ header {
 
   a {
     display: block;
-    margin: 0 0.7rem;
+    margin: 0  0 0 1.25rem;
     &.router-link-exact-active {
       color: rgba(255,88,1,1.0);
     }

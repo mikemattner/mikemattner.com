@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <AppHeader />
-    <transition name="fade" mode="out-in">
-      <router-view/>
-    </transition>
+    <main>
+      <transition name="fade" mode="out-in">
+          <router-view/>
+      </transition>
+    </main>
   </div>
 </template>
 
@@ -20,6 +22,10 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/app.scss';
+
+main {
+  padding: 0 5%;
+}
 
 .fade-enter-active,
 .fade-leave-active {
