@@ -1,0 +1,25 @@
+html {
+  font-size: calc(14px + 0.5vw);
+  line-height: calc(1.1em + 0.5vw);
+  letter-spacing: 0.0125rem;
+  @media (min-width: 1200px) {
+        font-size: 20px;
+  }
+}
+body {
+  font-family: $sans-serif-font;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2 {
+    font-family: $serif-font;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
