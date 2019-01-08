@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TypeSheet msg="Typographic Styles"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import TypeSheet from '@/components/TypeSheet.vue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    TypeSheet,
   },
 };
 </script>
