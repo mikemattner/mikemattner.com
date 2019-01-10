@@ -8,7 +8,7 @@ html {
 }
 body {
     background-color: $darkBlue;
-    color: $darkBlue-6;
+    color: $darkBlue-12;
     font-family: $sans-serif-font;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -16,15 +16,19 @@ body {
     padding-top: 3rem;
 }
 
-h1 {
+h1,
+.hero--header {
     font-size: 3rem;  
-    position:relative;
-    padding-bottom: 2rem;
     letter-spacing: 0.0675rem;
     
     @include min-media(760px) { 
         font-size: 4rem;
     }
+}
+
+.header--decorator {
+    padding-bottom: 2rem;
+    position:relative;
 
     &:after {
         content: "";
@@ -44,11 +48,23 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $serif-font;
     line-height: 1.2;
     color: $white;
+}
+
+h1,
+h2 {
+    font-family: $serif-font;
     font-weight: 900;
 }
+
+h3,
+h4,
+h5,
+h6 {
+    font-weight:400;
+}
+
 a {
     text-decoration: none;
     color: $white;
@@ -60,6 +76,24 @@ a {
 }
 
 hr {
-    color: $darkBlue-1;
+    color: $darkBlue-7;
     height: 1px;
+}
+
+header,
+.container {
+    max-width: 45rem;
+    margin: 0 auto;
+    padding: 0 5%;
+
+    @include min-media(768px) {
+        padding: 0 2%;
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
 }

@@ -23,10 +23,6 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/app.scss';
 
-main {
-  padding: 0 5%;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.25s;

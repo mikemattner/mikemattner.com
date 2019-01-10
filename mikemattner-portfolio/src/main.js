@@ -11,7 +11,11 @@ router.beforeEach((to, from, next) => {
   const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
   const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
 
-  if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
+  if (nearestWithTitle) {
+    let docTitle = nearestWithTitle.meta.title;
+    let currentTitle = ' | Mike Mattner';
+    document.title = docTitle + currentTitle;
+  } 
 
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
 

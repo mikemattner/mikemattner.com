@@ -7,3 +7,10 @@
 @import "utils/mixins";
 @import "utils/variables";
 @import "utils/defaults";
+
+//Components
+@import "components/navbar";
+@import "components/header";
+
+//Views
+@import "views/styleguide";
