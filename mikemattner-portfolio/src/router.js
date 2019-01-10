@@ -21,7 +21,7 @@ export default new Router({
       path: '/styles',
       name: 'styles',
       component: () => import(/* webpackChunkName: "type" */ './views/Styles.vue'),
-      meta: { title: 'Style Guid' },
+      meta: { title: 'Style Guide' },
     },
   ],
 });

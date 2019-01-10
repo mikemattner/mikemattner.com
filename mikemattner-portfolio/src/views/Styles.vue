@@ -56,7 +56,9 @@
                 <li class="orange-12">&nbsp;</li>
             </ul>
             <h2>Images</h2>
+            <h3>Contained</h3>
             <img src="https://picsum.photos/1000/500/?image=1047" width="1000" height="500" alt="" />
+            <h3>Full width</h3>
         </div>
             <img src="https://picsum.photos/1000/300/?image=200" width="1000" height="200" alt="" />
         <div class="container">
