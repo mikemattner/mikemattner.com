@@ -1,9 +1,10 @@
 <template>
     <div class="work">
-        <header>
-            <h1 class="header--decorator">Work</h1>
-            <p>This is a work related page.</p>
+        <header class="hero hero--full">
+            <div class="hero-copy">
+                <h1 class="header--decorator">Work</h1>
+                <p>Portfolio and case studies will be arriving shortly.</p>
+            </div>
         </header>
-        &nbsp;
     </div>
 </template>

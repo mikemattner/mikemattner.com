@@ -26,9 +26,13 @@
     a {
       display: block;
       margin: 0  0 0 1.5rem;
+      text-decoration: none;
       &.router-link-exact-active {
         color: rgba(255,88,1,1.0);
       }
+      // &:hover {
+      //   text-decoration: underline;
+      // }
     }
   }
 }

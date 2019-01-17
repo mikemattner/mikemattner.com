@@ -2,8 +2,12 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import './components/_globals';
 
 Vue.config.productionTip = false;
+
+let something = Vue.options.components;
+console.log(something);
 
 // This callback runs before every route change, including on page load.
 router.beforeEach((to, from, next) => {
@@ -15,7 +19,7 @@ router.beforeEach((to, from, next) => {
     let docTitle = nearestWithTitle.meta.title;
     let currentTitle = ' | Mike Mattner';
     document.title = docTitle + currentTitle;
-  } 
+  }
 
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
 

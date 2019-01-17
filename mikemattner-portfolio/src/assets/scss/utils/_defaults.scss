@@ -13,7 +13,7 @@ body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-top: 3rem;
+    // padding-top: 3rem;
 }
 
 h1,
@@ -23,6 +23,16 @@ h1,
     
     @include min-media(760px) { 
         font-size: 4rem;
+    }
+
+    small {
+        display: block;
+        font-family: $sans-serif-font;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: $darkBlue-9;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -66,7 +76,6 @@ h6 {
 }
 
 a {
-    text-decoration: none;
     color: $white;
     transition: all 0.25s ease-in-out;
 
@@ -76,13 +85,14 @@ a {
 }
 
 hr {
-    color: $darkBlue-7;
+    background-color: $darkBlue-7;
+    border: 0;
     height: 1px;
 }
 
-header,
-.container {
-    max-width: 45rem;
+.container,
+.hero {
+    max-width: 60rem;
     margin: 0 auto;
     padding: 0 5%;
 

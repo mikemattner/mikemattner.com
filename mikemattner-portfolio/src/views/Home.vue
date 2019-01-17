@@ -1,9 +1,9 @@
 <template>
     <div class="home">
-        <header>
-            <h1 class="header--decorator">Home</h1>
-            <p>This is a home page.</p>
-        </header>
-        &nbsp;
+        <BaseHero
+            full
+            lead="My name is Mike Mattner"
+            header="I&rsquo;m a native Michigander who works as a UX developer."
+         />
     </div>
 </template>

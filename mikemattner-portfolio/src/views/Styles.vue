@@ -1,9 +1,10 @@
 <template>
     <div class="styles">
-        <header class="hero">
-            <h1 class="header--decorator">Style Guide</h1>
-            <p>A rough style guide exploration for this future portfolio project.</p>
-        </header>
+        <BaseHero
+            header="Style Guide"
+            subhead="A rough style guide exploration for this future portfolio project."
+            decorator
+         />
         <hr>
         <div class="container">
             <h2>H2 sample</h2>
@@ -11,14 +12,14 @@
             <h4>H4 sample</h4>
             <h5>H5 sample</h5>
             <h6>H6 sample</h6>
-            <p>Brunch vinyl post-ironic before they sold out, organic meggings mlkshk Shoreditch lomo ennui flannel cliche Neutra.
-                Tonx fap forage Pinterest bitters YOLO, dreamcatcher Austin letterpress High Life chambray mumblecore street art chillwave.</p>
+            <p>Brunch vinyl post-ironic before they sold out, <a href="#">organic meggings mlkshk</a> Shoreditch lomo ennui flannel cliche Neutra.
+                Tonx fap forage <a href="#">Pinterest bitters YOLO</a>, dreamcatcher Austin letterpress High Life chambray mumblecore street art chillwave.</p>
             <p>Narwhal ugh seitan Pitchfork, put a bird on it irony sartorial Bushwick Marfa viral. Carles plaid tattooed dreamcatcher
                 jean shorts tofu, butcher flannel try-hard.</p>
             <h2>Example Headline</h2>
             <p>Brunch vinyl post-ironic before they sold out, organic meggings mlkshk Shoreditch lomo ennui flannel cliche Neutra.
                 Tonx fap forage Pinterest bitters YOLO, dreamcatcher Austin letterpress High Life chambray mumblecore street art chillwave.</p>
-            <p>Narwhal ugh seitan Pitchfork, put a bird on it irony sartorial Bushwick Marfa viral. Carles plaid tattooed dreamcatcher
+                <p>Narwhal ugh seitan Pitchfork, <a href="#">put a bird</a> on it irony sartorial Bushwick Marfa viral. Carles plaid tattooed dreamcatcher
                 jean shorts tofu, butcher flannel try-hard.</p>
 
             <h2>Colors</h2>
@@ -60,7 +61,7 @@
             <img src="https://picsum.photos/1000/500/?image=1047" width="1000" height="500" alt="" />
             <h3>Full width</h3>
         </div>
-            <img src="https://picsum.photos/1000/300/?image=200" width="1000" height="200" alt="" />
+            <img src="https://picsum.photos/1000/300/?image=200" width="1000" height="400" alt="" />
         <div class="container">
             <h2 class="header--decorator">Example Headline</h2>
             <p>Brunch vinyl post-ironic before they sold out, organic meggings mlkshk Shoreditch lomo ennui flannel cliche Neutra.
