@@ -1,0 +1,99 @@
+.styles {
+    .colors {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+        height: 4rem;
+
+        li {
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .blue {
+            background-color: $darkBlue;
+
+            &-1 {
+                background-color: $darkBlue-1;
+            }
+            &-2 {
+                background-color: $darkBlue-2;
+            }
+            &-3 {
+                background-color: $darkBlue-3;
+            }
+            &-4 {
+                background-color: $darkBlue-4;
+            }
+            &-5 {
+                background-color: $darkBlue-5;
+            }
+            &-6 {
+                background-color: $darkBlue-6;
+            }
+            &-7 {
+                background-color: $darkBlue-7;
+            }
+            &-8 {
+                background-color: $darkBlue-8;
+            }
+            &-9 {
+                background-color: $darkBlue-9;
+            }
+            &-10 {
+                background-color: $darkBlue-10;
+            }
+            &-11 {
+                background-color: $darkBlue-11;
+            }
+            &-12 {
+                background-color: $darkBlue-12;
+            }
+        }
+
+        .orange {
+            background-color: $orange;
+
+            &-1 {
+                background-color: $orange-1;
+            }
+            &-2 {
+                background-color: $orange-2;
+            }
+            &-3 {
+                background-color: $orange-3;
+            }
+            &-4 {
+                background-color: $orange-4;
+            }
+            &-5 {
+                background-color: $orange-5;
+            }
+            &-6 {
+                background-color: $orange-6;
+            }
+            &-7 {
+                background-color: $orange-7;
+            }
+            &-8 {
+                background-color: $orange-8;
+            }
+            &-9 {
+                background-color: $orange-9;
+            }
+            &-10 {
+                background-color: $orange-10;
+            }
+            &-11 {
+                background-color: $orange-11;
+            }
+            &-12 {
+                background-color: $orange-12;
+            }
+        }
+    }
+}
