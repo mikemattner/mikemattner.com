@@ -23,7 +23,7 @@
                 <p>Narwhal ugh seitan Pitchfork, <a href="#">put a bird</a> on it irony sartorial Bushwick Marfa viral. Carles plaid tattooed dreamcatcher
                 jean shorts tofu, butcher flannel try-hard.</p>
             <h2>Images</h2>
-            <h3>Full width</h3>
+            <h3>Full width image</h3>
         </div>
             <img src="https://picsum.photos/1000/300/?image=200" width="1000" height="400" alt="" />
         <div class="container">
