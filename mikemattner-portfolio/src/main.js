@@ -6,9 +6,6 @@ import './components/_globals';
 
 Vue.config.productionTip = false;
 
-let something = Vue.options.components;
-console.log(something);
-
 // This callback runs before every route change, including on page load.
 router.beforeEach((to, from, next) => {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
@@ -16,7 +13,7 @@ router.beforeEach((to, from, next) => {
   const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
 
   if (nearestWithTitle) {
-    let docTitle = nearestWithTitle.meta.title;
+    const docTitle = nearestWithTitle.meta.title;
     let currentTitle = ' | Mike Mattner';
     document.title = docTitle + currentTitle;
   }
@@ -26,17 +23,17 @@ router.beforeEach((to, from, next) => {
   if (!nearestWithMeta) return next();
 
   nearestWithMeta.meta.metaTags.map(tagDef => {
-      const tag = document.createElement('meta');
+    const tag = document.createElement('meta');
 
-      Object.keys(tagDef).forEach(key => {
+    Object.keys(tagDef).forEach(key => {
         tag.setAttribute(key, tagDef[key]);
-      });
+    });
 
-      tag.setAttribute('data-vue-router-controlled', '');
+    tag.setAttribute('data-vue-router-controlled', '');
 
-      return tag;
-    })
-    .forEach(tag => document.head.appendChild(tag));
+    return tag;
+  })
+  .forEach(tag => document.head.appendChild(tag));
 
   next();
 });

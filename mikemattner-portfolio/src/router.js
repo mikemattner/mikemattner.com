@@ -18,10 +18,10 @@ export default new Router({
       meta: { title: 'My Work' },
     },
     {
-      path: '/styles',
-      name: 'styles',
-      component: () => import(/* webpackChunkName: "type" */ './views/Styles.vue'),
-      meta: { title: 'Style Guide' },
+      path: '/contact',
+      name: 'contact',
+      component: () => import(/* webpackChunkName: "type" */ './views/Contact.vue'),
+      meta: { title: 'Contact' },
     },
   ],
 });

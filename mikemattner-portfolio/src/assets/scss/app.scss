@@ -1,5 +1,4 @@
 // Mixins,variables,resets,basics,typography
-// @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
 @import url('https://fonts.googleapis.com/css?family=Merriweather:900');
 @import "utils/fonts";
 @import "utils/normalize";
@@ -9,8 +8,8 @@
 @import "utils/defaults";
 
 //Components
-@import "components/navbar";
-@import "components/header";
+// @import "components/navbar";
+// @import "components/header";
 
 //Views
 @import "views/styleguide";

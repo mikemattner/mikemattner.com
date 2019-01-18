@@ -3,7 +3,7 @@
         <BaseHero
             full
             lead="My name is Mike Mattner"
-            header="I&rsquo;m a native Michigander who works as a UX developer."
+            header="I'm a native Michigander who works as a UX designer and developer."
          />
     </div>
 </template>
