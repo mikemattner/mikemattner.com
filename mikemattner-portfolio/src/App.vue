@@ -25,7 +25,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.25s;
+  transition-duration: 0.375s;
   transition-property: opacity, transform;
   transition-timing-function: ease;
 }

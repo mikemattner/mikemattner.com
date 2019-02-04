@@ -4,20 +4,28 @@
         <router-link to="/"><BrandLogo /></router-link>
       </div>
       <div class="navbar__nav" id="nav">
-        <router-link to="/">About</router-link>
-        <router-link to="/work">Work</router-link>
-        <router-link to="/contact">Contact</router-link>
+        <ul>
+          <li v-for="item in routes">
+            <router-link :to="item.path">{{ item.name }}</router-link>
+          </li>
+        </ul>
       </div>
     </div>
 </template>
 
 <script>
+import routes from '@/router/routes';
 import BrandLogo from '@/components/BrandLogo.vue';
 
 export default {
   name: 'AppHeader',
   components: {
     BrandLogo,
+  },
+  data() {
+    return {
+      routes,
+    };
   },
 };
 </script>
@@ -40,12 +48,22 @@ export default {
   }
 
   &__nav {
-    display: flex;
-    align-items: center;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.125rem;
     text-transform: uppercase;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0;
+        padding: 0;
+      }
+    }
 
     a {
       display: block;
