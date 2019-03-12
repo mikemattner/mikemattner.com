@@ -18,7 +18,7 @@ body {
 
 h1,
 .hero--header {
-    font-size: 3rem;  
+    font-size: 2rem;  
     letter-spacing: 0.0675rem;
     
     @include min-media(760px) { 
@@ -64,7 +64,7 @@ h6 {
 
 h1,
 h2 {
-    font-family: $serif-font;
+    font-family: $sans-serif-font;
     font-weight: 900;
 }
 
@@ -94,10 +94,10 @@ hr {
 .hero {
     max-width: 60rem;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 4rem;
 
     @include min-media(768px) {
-        padding: 0 2%;
+        padding: 0 3%;
     }
 }
 

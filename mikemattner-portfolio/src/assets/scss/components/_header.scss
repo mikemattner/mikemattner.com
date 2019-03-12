@@ -1,0 +1,13 @@
+.hero {
+    .bounce-arrow {
+        position: absolute;
+        bottom: 3rem;
+        animation: bounce 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+
+        &:before {
+            @include arrow-down($white);
+        }
+    }
+}

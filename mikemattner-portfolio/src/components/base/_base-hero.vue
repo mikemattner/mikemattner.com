@@ -1,12 +1,13 @@
 <template>
     <header :class="['hero', (full == true) ? 'hero--full' : '']">
-      <div class="hero-copy">
+        <div class="hero-copy">
             <h1 :class="[(decorator == true) ? 'header--decorator' : '']">
               <small v-if="lead">{{lead}}</small>
               {{header}}
             </h1>
             <p v-if="subhead">{{subhead}}</p>
         </div>
+        <div v-if="arrow" class="bounce-arrow"></div>
     </header>
 </template>
 
@@ -17,6 +18,7 @@ export default {
     header: String,
     subhead: String,
     full: Boolean,
+    arrow: Boolean,
     decorator: Boolean,
   },
 };
@@ -30,7 +32,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-
+    position: relative;
 
     &--full {
         min-height: 100vh;
