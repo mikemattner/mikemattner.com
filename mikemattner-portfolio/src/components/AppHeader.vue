@@ -5,8 +5,14 @@
       </div>
       <div class="navbar__nav" id="nav">
         <ul>
-          <li v-for="item in routes">
+          <!-- <li v-for="item in routes">
             <router-link :to="item.path">{{ item.name }}</router-link>
+          </li> -->
+          <li>
+            <router-link to="/">About</router-link>
+          </li>
+          <li>
+            <router-link to="/contact">Contact</router-link>
           </li>
         </ul>
       </div>

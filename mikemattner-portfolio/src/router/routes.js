@@ -1,22 +1,26 @@
+import Home from '@/views/Home.vue';
+import Work from '@/views/Work.vue';
+import Contact from '@/views/Contact.vue';
+
 const routes = [
     {
       path: '/',
       name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+      component: Home,
       meta: { title: 'About' },
     },
     {
       path: '/work',
       name: 'work',
-      component: () => import(/* webpackChunkName: "type" */ '@/views/Work.vue'),
+      component: Work,
       meta: { title: 'My Work' },
     },
     {
       path: '/contact',
       name: 'contact',
-      component: () => import(/* webpackChunkName: "type" */ '@/views/Contact.vue'),
+      component: Contact,
       meta: { title: 'Contact' },
     },
 ];
 
-export default routes
+export default routes;
