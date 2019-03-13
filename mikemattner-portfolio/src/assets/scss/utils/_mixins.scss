@@ -30,6 +30,20 @@
   pointer-events: none;
 }
 
+@mixin arrow-right($color: transparent) {
+  content: " ";
+  display: block;
+  height: 0.625rem;
+  width: 0.625rem;
+  border: 3px solid $color;
+  border-radius: 2px;
+  border-right: 0;
+  border-top: 0;
+  transform: rotate(-135deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
 // Responsiveness
 
 @mixin from($device) {

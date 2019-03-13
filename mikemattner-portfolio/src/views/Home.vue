@@ -2,10 +2,13 @@
     <div class="home">
         <BaseHero
             full
-            lead="My name is Mike Mattner"
-            header="I'm a native Michigander who works as a UX designer and developer."
-         />
-         <!-- <div class="container">
+            arrow>
+            <h1>
+                <small>Hi, I'm Mike.</small>
+                I'm a native Michigander who works as a UX designer and developer.
+            </h1>
+        </BaseHero>
+        <!-- <div class="container">
             <h2>Clients I've Worked With</h2>
             <div class="columns">
                 <div class="column is-half">

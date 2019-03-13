@@ -1,10 +1,12 @@
 <template>
     <div class="contact">
-        <BaseHero
-            header="Something you want to discuss?"
-            subhead="Reach out to me at hello@mikemattner.com"
-            decorator
+         <BaseHero
             full
-         />
+            decorator>
+            <h1>
+                Something you want to discuss?
+            </h1>
+            <p>Reach out to me at hello@mikemattner.com</p>
+        </BaseHero>
     </div>
 </template>

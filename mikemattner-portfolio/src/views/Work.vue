@@ -1,10 +1,12 @@
 <template>
     <div class="work">
         <BaseHero
-            header="Work"
-            subhead="Portfolio and case studies will be arriving shortly."
-            decorator
             full
-         />
+            decorator>
+            <h1>
+                Work
+            </h1>
+            <p>Portfolio and case studies will be arriving shortly.</p>
+        </BaseHero>
     </div>
 </template>

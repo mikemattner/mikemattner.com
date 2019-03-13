@@ -1,11 +1,9 @@
 <template>
     <header :class="['hero', (full == true) ? 'hero--full' : '']">
         <div class="hero-copy">
-            <h1 :class="[(decorator == true) ? 'header--decorator' : '']">
-              <small v-if="lead">{{lead}}</small>
-              {{header}}
-            </h1>
-            <p v-if="subhead">{{subhead}}</p>
+            <div :class="['hero--header', (decorator == true) ? 'header--decorator' : '']">
+                <slot></slot>
+            </div>
         </div>
         <div v-if="arrow" class="bounce-arrow"></div>
     </header>
@@ -14,9 +12,6 @@
 <script>
 export default {
   props: {
-    lead: String,
-    header: String,
-    subhead: String,
     full: Boolean,
     arrow: Boolean,
     decorator: Boolean,
@@ -24,7 +19,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+@import '@/assets/scss/utils/_variables.scss';
+@import '@/assets/scss/utils/_mixins.scss';
 .hero {
     font-size: 1.25rem;
     min-height: 65vh;
@@ -33,9 +30,54 @@ export default {
     justify-content: center;
     align-items: stretch;
     position: relative;
-
     &--full {
         min-height: 100vh;
+    }
+    .hero--header {
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 0.0675rem;
+            small {
+                display: block;
+                font-family: $sans-serif-font;
+                font-size: 1.25rem;
+                font-weight: 400;
+                color: $darkBlue-9;
+                text-transform: uppercase;
+                margin-bottom: 1.25rem;
+            }
+            @media (min-width: 760px) {
+                font-size: 3rem;
+            }
+        }
+        &.header--decorator {
+            h1 {
+                padding-bottom: 2rem;
+                position:relative;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 3rem;
+                    height: 1px;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+    .bounce-arrow {
+        position: absolute;
+        bottom: 3rem;
+        animation: bounce 1.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+
+        &:before {
+            @include arrow-down($white);
+        }
     }
 }
 </style>
