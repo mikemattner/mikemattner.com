@@ -3,10 +3,14 @@
         <BaseHero
             full
             arrow>
-            <h1>
-                <small>Hi, I'm Mike.</small>
-                I'm a native Michigander who works as a UX designer and developer.
-            </h1>
+            <template v-slot:default>
+                <h1>
+                    Hello there.
+                </h1>
+                <h2>
+                    I'm Mike. I'm a native Michigander who works as a UX designer and developer.
+                </h2>
+            </template>
         </BaseHero>
         <!-- <div class="container">
             <h2>Clients I've Worked With</h2>

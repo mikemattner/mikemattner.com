@@ -35,8 +35,9 @@ export default {
     }
     .hero--header {
         h1 {
-            font-size: 2rem;
-            letter-spacing: 0.0675rem;
+            font-size: 4rem;
+            letter-spacing: 0.09rem;
+            line-height: 1;
             small {
                 display: block;
                 font-family: $sans-serif-font;
@@ -47,8 +48,12 @@ export default {
                 margin-bottom: 1.25rem;
             }
             @media (min-width: 760px) {
-                font-size: 3rem;
+                font-size: 5rem;
             }
+        }
+        h2 {
+            color: rgba($white, 0.5);
+            font-weight: 400;
         }
         &.header--decorator {
             h1 {
@@ -71,12 +76,14 @@ export default {
     .bounce-arrow {
         position: absolute;
         bottom: 3rem;
-        animation: bounce 1.5s;
+        // animation: bounce 1.5s;
+        animation: bounceRight 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
 
         &:before {
-            @include arrow-down($white);
+            // @include arrow-down($white);
+            @include arrow-right($white);
         }
     }
 }
