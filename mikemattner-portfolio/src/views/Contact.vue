@@ -3,10 +3,14 @@
          <BaseHero
             full>
             <template v-slot:default>
-                <h1>
-                    Contact Me
-                </h1>
-                <p>Something you want to discuss? Reach out to me at hello@mikemattner.com</p>
+                <div class="columns">
+                    <div class="column is-two-thirds is-offset-one-third">
+                        <h1>
+                            Contact Me
+                        </h1>
+                        <p>Something you want to discuss? Reach out to me at hello@mikemattner.com</p>
+                    </div>
+                </div>
             </template>
         </BaseHero>
     </div>

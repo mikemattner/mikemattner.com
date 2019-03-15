@@ -58,10 +58,10 @@ hr {
 .hero {
     max-width: 60rem;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 5%;
 
     @include min-media(768px) {
-        padding: 0 3%;
+        padding: 0 2%;
     }
 }
 

@@ -76,14 +76,14 @@ export default {
     .bounce-arrow {
         position: absolute;
         bottom: 3rem;
-        // animation: bounce 1.5s;
-        animation: bounceRight 1.5s;
+        animation: bounce 1.5s;
+        // animation: bounceRight 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
 
         &:before {
-            // @include arrow-down($white);
-            @include arrow-right($white);
+            @include arrow-down($white);
+            // @include arrow-right($white);
         }
     }
 }

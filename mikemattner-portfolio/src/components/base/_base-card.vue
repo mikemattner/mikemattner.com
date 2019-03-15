@@ -33,10 +33,13 @@ export default {
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     text-align: center;
     background-color: $white;
+    color: $darkBlue-4;
     h1,
-    h2 {
+    h2, 
+    h3 {
         margin-top: 0;
         margin-bottom: 0;
+        font-weight: 700;
     }
     h4 {
         margin-bottom: 0;
@@ -44,6 +47,12 @@ export default {
         letter-spacing: 0.0675rem;
         text-transform: uppercase;
         font-weight: 700;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #000;
     }
     // &--blue {
     //     background-color: $midGreen;
