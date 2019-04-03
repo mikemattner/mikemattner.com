@@ -7,7 +7,7 @@
                 <div class="columns">
                     <div class="column is-two-thirds">
                         <h1>
-                            Contact &amp; Discuss
+                            Contact<br /> &amp; Discuss
                         </h1>
                         <p>Do you have something you want to discuss? Reach out to me at <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>
                     </div>
