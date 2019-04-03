@@ -12,7 +12,7 @@
                             Hello there.
                         </h1>
                         <p>
-                            I'm Mike Mattner, a native Michigander working as a UX designer 
+                            I&rsquo;m Mike Mattner, a native Michigander working as a UX designer 
                             &amp; developer at Aisle Rocket Studios.
                         </p>
                         <p>
@@ -26,6 +26,26 @@
                 </div>
             </template>
         </BaseHero>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-two-thirds copy">
+                        <p>
+                            <strong>I&rsquo;ve worked 13-years</strong> as a designer and developer on the
+                            web, and at every stop I&rsquo;ve been a hybrid in a creative or production
+                            based role and have a broad knowledge base because of it.
+                        </p>
+                        <p>
+                            I'm always open to interesting freelance opportunities,
+                            so if I seem like a fit, please reach out.
+                        </p>
+                    </div>
+                    <div class="column is-one-third header">
+                        <h2>Design &amp; Development</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section section--dark">
             <div class="container">
                 <div class="columns">
@@ -179,6 +199,23 @@ export default {
 
             &--dark {
                 background-color: rgba(0,0,0,0.25);
+            }
+
+            @media (max-width: $tablet) {
+                .columns {
+                    display:flex;
+                    flex-direction: column;
+                    .column {
+                        &.copy {
+                            order: 2;
+                            padding-top: 0;
+                        }
+                        &.header {
+                            order: 1;
+                            padding-bottom: 0;
+                        }
+                    }
+                }
             }
         }
     }

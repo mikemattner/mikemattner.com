@@ -25,6 +25,7 @@ export default {
 .hero {
     font-size: 1.25rem;
     min-height: 65vh;
+    padding-top: 4rem;
     padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
