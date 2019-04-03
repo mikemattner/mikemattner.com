@@ -4,7 +4,7 @@
             full>
             <template v-slot:default>
                 <div class="columns">
-                    <div class="column is-two-thirds is-offset-one-third">
+                    <div class="column is-two-thirds">
                         <h1>
                             Contact Me
                         </h1>

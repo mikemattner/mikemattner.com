@@ -54,7 +54,7 @@ export default {
   }
 
   &__nav {
-    font-size: 0.75rem;
+    font-size: 0.675rem;
     font-weight: 700;
     letter-spacing: 0.125rem;
     text-transform: uppercase;
