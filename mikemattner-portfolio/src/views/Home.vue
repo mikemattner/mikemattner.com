@@ -142,11 +142,7 @@ export default {
                 position: relative;
             }
             .self-portrait {
-                position: absolute;
-                width: 250px;
-                top: -5rem;
-                left: -5rem;
-                z-index: -1;
+                margin-top: 4rem;
                 border-radius: 40px 4px 40px 4px;
                 box-shadow: 0 2px 20px rgba(0, 0, 0, .33);
                 transition: all 0.25s ease-in-out;
@@ -156,6 +152,9 @@ export default {
                     }
                 }
                 @media (min-width: $tablet) {
+                    position: absolute;
+                    width: 250px;
+                    z-index: -1;
                     top: -5rem;
                     left: -13rem;
                     width: 400px;
