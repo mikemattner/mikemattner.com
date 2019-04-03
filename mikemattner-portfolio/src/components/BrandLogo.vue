@@ -58,12 +58,12 @@ export default {
         }
 
         &:hover {
-            transform: scale(1.1);
             .brand-logo__image {
                 .circle-shape {
-                    fill: rgba(255,88,1,1.0);
+                    fill: rgba(255,255,255,0);
                 }
                 .logo-shape {
+                    // fill: rgba(255,88,1,1.0);
                     fill: #fff;
                 }
             }

@@ -52,7 +52,12 @@ export default {
   @media (min-width: 768px) {
     padding: 0 2%;
   }
-
+  
+  &__logo {
+    a {
+      text-decoration: none;
+    }
+  }
   &__nav {
     font-size: 0.675rem;
     font-weight: 700;

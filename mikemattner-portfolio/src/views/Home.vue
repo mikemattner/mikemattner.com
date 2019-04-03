@@ -12,8 +12,8 @@
                             Hello there.
                         </h1>
                         <p>
-                            I'm Mike Mattner, a native Michigander 
-                            working as a UX designer and developer at Aisle Rocket Studios.
+                            I'm Mike Mattner, a native Michigander working as a UX designer 
+                            &amp; developer at Aisle Rocket Studios.
                         </p>
                         <p>
                             I'm @mikemattner on
@@ -117,6 +117,9 @@ export default {
                 'Stryder',
                 'RCBS']
     };
+  },
+  beforeCreate() {
+    window.scrollTo(0, 0);
   },
 };
 </script>

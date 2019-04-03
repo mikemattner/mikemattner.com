@@ -7,12 +7,21 @@
                 <div class="columns">
                     <div class="column is-two-thirds">
                         <h1>
-                            Contact Me
+                            Contact &amp; Discuss
                         </h1>
-                        <p>Do you have something you want to discuss? Reach out to me at hello@mikemattner.com</p>
+                        <p>Do you have something you want to discuss? Reach out to me at <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>
                     </div>
                 </div>
             </template>
         </BaseHero>
     </div>
 </template>
+
+<script>
+export default {
+  name: 'Contact',
+  beforeCreate() {
+    window.scrollTo(0, 0);
+  },
+};
+</script>
