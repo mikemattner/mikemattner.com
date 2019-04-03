@@ -1,7 +1,7 @@
 <template>
     <div class="navbar" role="banner">
       <div class="navbar__logo">
-        <router-link to="/"><BrandLogo /></router-link>
+        <router-link to="/"><BrandLogo label /></router-link>
       </div>
       <div class="navbar__nav" id="nav">
         <ul>
@@ -75,6 +75,26 @@ export default {
       display: block;
       margin: 0  0 0 1.5rem;
       text-decoration: none;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 100%;
+        bottom: -5px;
+        height: 2px;
+        background-color: rgba(255,88,1,1.0);
+        opacity: 0;
+        transition: all 0.125s ease-in-out;
+      }
+
+      &:hover {
+        &:after {
+          right: 0;
+          opacity: 1;
+        }
+      }
 
       &.router-link-exact-active {
         color: rgba(255,88,1,1.0);

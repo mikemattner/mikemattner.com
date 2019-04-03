@@ -82,7 +82,7 @@ export default {
         animation-iteration-count: infinite;
 
         &:before {
-            @include arrow-down($white);
+            @include arrow-down(rgba($white,0.25));
             // @include arrow-right($white);
         }
     }

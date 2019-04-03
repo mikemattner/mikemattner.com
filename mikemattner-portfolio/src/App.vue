@@ -6,16 +6,19 @@
           <router-view/>
       </transition>
     </main>
+    <AppFooter />
   </div>
 </template>
 
 <script>
 import AppHeader from '@/components/AppHeader.vue';
+import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   name: 'Portfolio',
   components: {
     AppHeader,
+    AppFooter,
   },
 };
 </script>

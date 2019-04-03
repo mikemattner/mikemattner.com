@@ -28,6 +28,8 @@ export default {
         align-items: center;
         justify-content: flex-start;
         overflow: hidden;
+        transition: all 0.25s ease-in-out;
+        color: #fff;
 
         &__image {
             height: 2rem;
@@ -52,9 +54,11 @@ export default {
             transform: translateX(-100px);
             color: #fff;
             z-index: 9;
+            text-decoration: none;
         }
 
         &:hover {
+            transform: scale(1.1);
             .brand-logo__image {
                 .circle-shape {
                     fill: rgba(255,88,1,1.0);
