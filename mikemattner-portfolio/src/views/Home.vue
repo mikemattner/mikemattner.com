@@ -152,6 +152,7 @@ export default {
                     }
                 }
                 @media (min-width: $tablet) {
+                    margin-top: 0;
                     position: absolute;
                     width: 250px;
                     z-index: -1;
