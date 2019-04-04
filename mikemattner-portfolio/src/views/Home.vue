@@ -7,7 +7,11 @@
             <template v-slot:default>
                 <div class="columns">
                     <div class="column is-offset-one-quarter is-two-thirds">
-                        <img src="@/assets/img/me.jpg" alt="A Picture of me." width="1275" height="1152" class="self-portrait" />
+                        <img src="@/assets/img/me.jpg" 
+                             alt="A Picture of me." 
+                             width="1275" 
+                             height="1152" 
+                             class="self-portrait" />
                         <h1>
                             Hello there.
                         </h1>
@@ -26,21 +30,23 @@
                 </div>
             </template>
         </BaseHero>
+        <hr />
         <section class="section">
             <div class="container">
                 <div class="columns">
-                    <div class="column is-two-thirds copy">
+                    <div class="column is-7 copy">
                         <p>
-                            <strong>I&rsquo;ve worked 13-years</strong> as a designer and developer on the
-                            web, and at every stop I&rsquo;ve been a hybrid in a creative or production
+                            <strong>I&rsquo;ve worked for over 13-years</strong> as a designer and developer 
+                            on the web. At every stop I&rsquo;ve been a hybrid in a creative or production
                             based role and have a broad knowledge base because of it.
                         </p>
                         <p>
-                            I'm always open to interesting freelance opportunities,
-                            so if I seem like a fit, please reach out.
+                            I'm passionate about building things for the web, and I'd love to help.
+                            I'm open to interesting freelance opportunities, so if I seem like a fit, 
+                            please reach out.
                         </p>
                     </div>
-                    <div class="column is-one-third header">
+                    <div class="column header">
                         <h2>Design &amp; Development</h2>
                     </div>
                 </div>
@@ -162,7 +168,12 @@ export default {
                 position: relative;
             }
             .self-portrait {
-                margin-top: 4rem;
+                margin-top: 2rem;
+                position: absolute;
+                width: 250px;
+                top: -3rem;
+                left: 7rem;
+                z-index: -1;
                 border-radius: 40px 4px 40px 4px;
                 box-shadow: 0 2px 20px rgba(0, 0, 0, .33);
                 transition: all 0.25s ease-in-out;
@@ -174,8 +185,6 @@ export default {
                 @media (min-width: $tablet) {
                     margin-top: 0;
                     position: absolute;
-                    width: 250px;
-                    z-index: -1;
                     top: -5rem;
                     left: -13rem;
                     width: 400px;
