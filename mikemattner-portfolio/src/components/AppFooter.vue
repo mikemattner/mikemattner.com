@@ -34,6 +34,5 @@ export default {
   font-size: 0.675rem;
   background-color: rgba(0,0,0,0.25);
   color: rgba(255,255,255,0.25);
-  margin-top: 4rem;
 }
 </style>
