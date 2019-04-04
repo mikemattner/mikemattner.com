@@ -215,6 +215,8 @@ export default {
                     display:flex;
                     flex-direction: column;
                     .column {
+                        padding-top: 0;
+                        padding-bottom: 0;
                         &.copy {
                             order: 2;
                             padding-top: 0;
