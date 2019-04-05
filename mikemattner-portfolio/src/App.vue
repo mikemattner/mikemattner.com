@@ -36,7 +36,7 @@ export default {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-  // transform: translate(0, -2em);
-  transform: scale(0.5);
+  transform: translate(0, -2em);
+  // transform: scale(0.5);
 }
 </style>
