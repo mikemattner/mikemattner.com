@@ -23,7 +23,7 @@ export default {
   transition: 'fade',
   head() {
     return {
-      titleTemplate: `%s – Contact`,
+      titleTemplate: `Contact – %s`,
     };
   },
 };

@@ -146,7 +146,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `%s – About`,
+      titleTemplate: `About – %s`,
     };
   },
 };
