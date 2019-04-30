@@ -1,5 +1,5 @@
 <template>
-  <header :class="['hero', full == true ? 'hero--full' : '']" id="hero">
+  <header :class="['hero', full == true ? 'hero--full' : '']">
     <div class="hero-copy">
       <div
         :class="['hero--header', decorator == true ? 'header--decorator' : '']"
@@ -17,7 +17,7 @@ export default {
     full: Boolean,
     arrow: Boolean,
     decorator: Boolean
-  },
+  }
 }
 </script>
 

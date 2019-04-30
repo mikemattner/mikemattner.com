@@ -16,7 +16,7 @@
         </div>
       </template>
     </BaseHero>
-    <section class="section wavy top-fade" ref="next">
+    <section class="section wavy top-fade">
       <div class="container">
         <div class="columns">
           <div class="column is-7 copy">
@@ -39,19 +39,23 @@
           <div class="column is-one-quarter">
             <h3>Knowledge</h3>
             <ul class="list--blank">
-              <li v-for="tech in technical" v-html="tech"></li>
+              <li v-for="tech in technical" :key="tech" v-html="tech"></li>
             </ul>
           </div>
           <div class="column is-one-quarter">
             <h3>Software</h3>
             <ul class="list--blank">
-              <li v-for="software in softwares" v-html="software"></li>
+              <li
+                v-for="software in softwares"
+                :key="software"
+                v-html="software"
+              ></li>
             </ul>
           </div>
           <div class="column is-one-quarter">
             <h3>Skills</h3>
             <ul class="list--blank">
-              <li v-for="skill in skills" v-html="skill"></li>
+              <li v-for="skill in skills" :key="skill" v-html="skill"></li>
             </ul>
           </div>
         </div>
@@ -65,7 +69,7 @@
           </div>
           <div class="column is-three-quarters">
             <ul class="list--flat">
-              <li v-for="brand in brands">
+              <li v-for="brand in brands" :key="brand">
                 <BaseImage
                   :src="`brand/${brand.image}`"
                   :alt="brand.name"

@@ -3,7 +3,7 @@
     <div class="navbar__logo">
       <nuxt-link to="/"><BrandLogo label/></nuxt-link>
     </div>
-    <div class="navbar__nav" id="nav">
+    <div id="nav" class="navbar__nav">
       <ul>
         <li>
           <nuxt-link to="/">About</nuxt-link>

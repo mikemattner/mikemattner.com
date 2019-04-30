@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import { VLazyImagePlugin } from 'v-lazy-image';
+import Vue from 'vue'
+import { VLazyImagePlugin } from 'v-lazy-image'
 
-Vue.use(VLazyImagePlugin);
+Vue.use(VLazyImagePlugin)
 
 Vue.prototype.$intersectionOptions = {
-  rootMargin: '50%',
-};
+  rootMargin: '50%'
+}
