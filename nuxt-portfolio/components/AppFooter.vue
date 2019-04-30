@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-      <p>&copy; {{theYear}} Mike Mattner. Made with love in Michigan.</p>
+      <p>&copy; {{theYear}} Mike Mattner. Made in Michigan.</p>
     </footer>
 </template>
 

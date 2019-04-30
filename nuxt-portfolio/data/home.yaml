@@ -1,0 +1,50 @@
+intro:
+  title: Hello there.
+  body: I&rsquo;m Mike Mattner, a native Michigander working as a UX designer &amp; developer at Aisle Rocket Studios.
+  social: I'm @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>, <a href="https://twitter.com/mikemattner">Twitter</a>, <a href="https://codepen.io/mikemattner/#">Codepen</a>, &amp; <a href="https://github.com/mikemattner">GitHub</a>.
+  image: /img/me.jpg
+  imgAlt: A Picture of me.
+
+statement:
+  title: Design &amp; Development
+  body: <strong>I&rsquo;ve worked for over 13-years</strong> as a designer and developer on the web. At every stop I&rsquo;ve been a hybrid in a creative or production based role and have a broad knowledge base because of it. I'm passionate about building things for the web, and I'd love to help. I'm open to interesting freelance opportunities, so if I seem like a fit, please reach out.
+
+skills:
+  - Front End Development
+  - Creative Direction
+  - UX/UI Design
+  - Creative Strategy
+  - CI/CD with Git
+
+softwares:
+  - Figma
+  - Sketch
+  - Sublime Text
+  - VS Code
+  - iTerm
+  - Photoshop
+  - InDesign
+  - After Effects
+
+technical:
+  - HTML/CSS
+  - JavaScropt
+  - Sass/SCSS
+  - php
+  - VueJS
+  - jQuery
+  - Gulp
+  - npm/yarn
+
+brands:
+  - JennAir<sup>&reg;</sup>
+  - Whirlpool<sup>&reg;</sup>
+  - Maytag<sup>&reg;</sup>
+  - KitchenAid<sup>&reg;</sup>
+  - Amana<sup>&reg;</sup>
+  - Gladiator<sup>&reg;</sup>
+  - Craftsman<sup>&reg;</sup>
+  - Kenmore<sup>&reg;</sup>
+  - UFCU
+  - Stryder
+  - RCBS

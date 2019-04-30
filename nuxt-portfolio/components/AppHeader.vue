@@ -28,7 +28,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  padding: 0 5%;
+  padding: 0 2rem;
   height: 3rem;
   top: 0;
   width: 100%;
@@ -36,7 +36,7 @@ export default {
   box-sizing: border-box;
 
   @media (min-width: 768px) {
-    padding: 0 2%;
+    // padding: 0 2%;
   }
   
   &__logo {

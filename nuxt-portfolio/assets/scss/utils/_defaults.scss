@@ -25,6 +25,12 @@ h6 {
     line-height: 1.2;
     color: $white;
 
+    small {
+        font-family: $sans-serif-font;
+        font-size: 0.375em;
+        text-transform: uppercase;
+    }
+
     &.decorator {
         padding-bottom: 2rem;
         position:relative;
@@ -67,6 +73,17 @@ ol {
     &--blank {
         list-style: none;
     }
+    &--flat {
+        list-style: none;
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        li {
+            margin-right: 1rem;
+        }
+    }
   }
 }
 
@@ -91,10 +108,10 @@ hr {
 .hero {
     max-width: 60rem;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 2rem;
 
     @include min-media(768px) {
-        padding: 0 2%;
+        // padding: 0 2%;
     }
 }
 

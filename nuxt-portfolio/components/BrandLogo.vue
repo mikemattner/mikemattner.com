@@ -32,8 +32,8 @@ export default {
         color: #fff;
 
         &__image {
-            height: 2rem;
-            width: 2rem;
+            height: 1.75rem;
+            width: 1.75rem;
             z-index: 10;
 
             .circle-shape {
@@ -47,7 +47,7 @@ export default {
         }
 
         &__type {
-            font-size: 1rem;
+            font-size: 0.75rem;
             margin-left: 0.5rem;
             opacity: 0;
             transition: all 0.125s ease-in-out;

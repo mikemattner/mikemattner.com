@@ -6,10 +6,8 @@
             <template v-slot:default>
                 <div class="columns">
                     <div class="column is-two-thirds">
-                        <h1>
-                            Contact<br /> &amp; Discuss
-                        </h1>
-                        <p>Do you have something you want to discuss? Reach out to me at <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>
+                        <h1 v-html="intro.title"></h1>
+                        <p v-html="intro.body"></p>
                     </div>
                 </div>
             </template>
@@ -18,9 +16,16 @@
 </template>
 
 <script>
+import {intro} from '~/data/contact.yaml';
+
 export default {
   name: 'Contact',
   transition: 'fade',
+  data() {
+    return {
+      intro,
+    }
+  },
   head() {
     return {
       titleTemplate: `Contact – %s`,

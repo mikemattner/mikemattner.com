@@ -7,25 +7,14 @@
             <template v-slot:default>
                 <div class="columns">
                     <div class="column is-offset-one-quarter is-two-thirds">
-                        <img src="@/assets/img/me.jpg" 
-                             alt="A Picture of me." 
+                        <img :src="intro.image" 
+                             :alt="intro.imgAlt" 
                              width="1275" 
                              height="1152" 
                              class="self-portrait" />
-                        <h1>
-                            Hello there.
-                        </h1>
-                        <p>
-                            I&rsquo;m Mike Mattner, a native Michigander working as a UX designer 
-                            &amp; developer at Aisle Rocket Studios.
-                        </p>
-                        <p>
-                            I'm @mikemattner on
-                            <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
-                            <a href="https://twitter.com/mikemattner">Twitter</a>,
-                            <a href="https://codepen.io/mikemattner/#">Codepen</a>,
-                            &amp; <a href="https://github.com/mikemattner">GitHub</a>.
-                        </p>
+                        <h1 v-html="intro.title"></h1>
+                        <p v-html="intro.body"></p>
+                        <p v-html="intro.social"></p>
                     </div>
                 </div>
             </template>
@@ -34,19 +23,10 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-7 copy">
-                        <p>
-                            <strong>I&rsquo;ve worked for over 13-years</strong> as a designer and developer 
-                            on the web. At every stop I&rsquo;ve been a hybrid in a creative or production
-                            based role and have a broad knowledge base because of it.
-                        </p>
-                        <p>
-                            I'm passionate about building things for the web, and I'd love to help.
-                            I'm open to interesting freelance opportunities, so if I seem like a fit, 
-                            please reach out.
-                        </p>
+                        <p v-html="statement.body"></p>
                     </div>
                     <div class="column header">
-                        <h2>Design &amp; Development</h2>
+                        <h2 v-html="statement.title"></h2>
                     </div>
                 </div>
             </div>
@@ -55,24 +35,26 @@
             <div class="container">
                 <div class="columns">
                     <div class="column is-one-quarter">
-                        <h2 class="decorator">Summary</h2>
+                        <h2 class="decorator">
+                            Summary
+                        </h2>
                     </div>
                     <div class="column is-one-quarter">
                         <h3>Knowledge</h3>
                         <ul class="list--blank">
-                            <li v-for="tech in technical">{{tech}}</li>
+                            <li v-for="tech in technical" v-html="tech"></li>
                         </ul>
                     </div>
                     <div class="column is-one-quarter">
                         <h3>Software</h3>
                         <ul class="list--blank">
-                            <li v-for="software in softwares">{{software}}</li>
+                            <li v-for="software in softwares" v-html="software"></li>
                         </ul>
                     </div>
                     <div class="column is-one-quarter">
                         <h3>Skills</h3>
                         <ul class="list--blank">
-                            <li v-for="skill in skills">{{skill}}</li>
+                            <li v-for="skill in skills" v-html="skill"></li>
                         </ul>
                     </div>
                 </div>
@@ -86,18 +68,9 @@
                     </div>
                     <div class="column is-three-quarters">
                         <h3>Agency</h3>
-                        <div class="columns">
-                            <div class="column is-one-quarter">
-                                <ul class="list--blank">
-                                    <li v-for="brand in wpcorp" v-html="brand"></li>
-                                </ul>
-                            </div>
-                            <div class="column is-one-quarter">
-                                <ul class="list--blank">
-                                    <li v-for="brand in other" v-html="brand"></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <ul class="list--blank list--flat">
+                            <li v-for="brand in brands" v-html="brand"></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -106,42 +79,24 @@
 </template>
 
 <script>
+import {intro,
+        statement,
+        skills,
+        softwares,
+        technical,
+        brands } from '~/data/home.yaml'
+
 export default {
   name: 'Home',
   transition: 'fade',
   data() {
     return {
-        skills: ['Front End Development',
-                 'Creative Direction',
-                 'UX/UI Design',
-                 'Creative Strategy',
-                 'CI/CD with Git'],
-        softwares: ['Figma',
-                   'Sublime Text',
-                   'VS Code',
-                   'iTerm',
-                   'Photoshop',
-                   'InDesign',
-                   'After Effects'],
-        technical: ['HTML/CSS',
-                    'JavaScropt',
-                    'Sass/SCSS',
-                    'php',
-                    'VueJS',
-                    'jQuery',
-                    'Gulp',
-                    'npm/yarn'],
-        wpcorp: ['JennAir<sup>&reg;</sup>',
-                 'Whirlpool<sup>&reg;</sup>',
-                 'Maytag<sup>&reg;</sup>',
-                 'KitchenAid<sup>&reg;</sup>',
-                 'Amana<sup>&reg;</sup>',
-                 'Gladiator<sup>&reg;</sup>'],
-        other: ['Craftsman<sup>&reg;</sup>',
-                'Kenmore<sup>&reg;</sup>',
-                'UFCU',
-                'Stryder',
-                'RCBS']
+        intro,
+        statement,
+        skills,
+        softwares,
+        technical,
+        brands,
     };
   },
   head() {
