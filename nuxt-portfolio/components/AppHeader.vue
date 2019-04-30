@@ -1,25 +1,25 @@
 <template>
-    <div class="navbar" role="banner">
-      <div class="navbar__logo">
-        <nuxt-link to="/"><BrandLogo label /></nuxt-link>
-      </div>
-      <div class="navbar__nav" id="nav">
-        <ul>
-          <li>
-            <nuxt-link to="/">About</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/contact">Contact</nuxt-link>
-          </li>
-        </ul>
-      </div>
+  <div class="navbar" role="banner">
+    <div class="navbar__logo">
+      <nuxt-link to="/"><BrandLogo label/></nuxt-link>
     </div>
+    <div class="navbar__nav" id="nav">
+      <ul>
+        <li>
+          <nuxt-link to="/">About</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact">Contact</nuxt-link>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'AppHeader',
-};
+  name: 'AppHeader'
+}
 </script>
 
 <style lang="scss">
@@ -38,7 +38,7 @@ export default {
   @media (min-width: 768px) {
     // padding: 0 2%;
   }
-  
+
   &__logo {
     a {
       text-decoration: none;
@@ -64,18 +64,18 @@ export default {
 
     a {
       display: block;
-      margin: 0  0 0 1.5rem;
+      margin: 0 0 0 1.5rem;
       text-decoration: none;
       position: relative;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         right: 100%;
         bottom: -5px;
         height: 2px;
-        background-color: rgba(255,88,1,1.0);
+        background-color: rgba(255, 88, 1, 1);
         opacity: 0;
         transition: all 0.125s ease-in-out;
       }
@@ -88,7 +88,7 @@ export default {
       }
 
       &.router-link-exact-active {
-        color: rgba(255,88,1,1.0);
+        color: rgba(255, 88, 1, 1);
       }
     }
   }
