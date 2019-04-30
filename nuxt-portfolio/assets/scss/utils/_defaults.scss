@@ -68,23 +68,6 @@ ul,
 ol {
   margin-left: 0;
   padding-left: 0;
-
-  &.list {
-    &--blank {
-        list-style: none;
-    }
-    &--flat {
-        list-style: none;
-        display: flex;
-        align-items: baseline;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-
-        li {
-            margin-right: 1rem;
-        }
-    }
-  }
 }
 
 a {

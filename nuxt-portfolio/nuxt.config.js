@@ -32,7 +32,9 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/ComponentRegister.js'
+    '~/plugins/ComponentRegister.js',
+    '~/plugins/lazyimage.js',
+    '~/plugins/imageContext.js'
   ],
 
   /*

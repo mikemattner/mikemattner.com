@@ -2,7 +2,7 @@ intro:
   title: Hello there.
   body: I&rsquo;m Mike Mattner, a native Michigander working as a UX designer &amp; developer at Aisle Rocket Studios.
   social: I'm @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>, <a href="https://twitter.com/mikemattner">Twitter</a>, <a href="https://codepen.io/mikemattner/#">Codepen</a>, &amp; <a href="https://github.com/mikemattner">GitHub</a>.
-  image: /img/me.jpg
+  image: me.jpg
   imgAlt: A Picture of me.
 
 statement:
@@ -37,14 +37,21 @@ technical:
   - npm/yarn
 
 brands:
-  - JennAir<sup>&reg;</sup>
-  - Whirlpool<sup>&reg;</sup>
-  - Maytag<sup>&reg;</sup>
-  - KitchenAid<sup>&reg;</sup>
-  - Amana<sup>&reg;</sup>
-  - Gladiator<sup>&reg;</sup>
-  - Craftsman<sup>&reg;</sup>
-  - Kenmore<sup>&reg;</sup>
-  - UFCU
-  - Stryder
-  - RCBS
+  - name: JennAir<sup>&reg;</sup>
+    image: jennair.svg
+  - name: Maytag<sup>&reg;</sup>
+    image: maytag.svg
+  - name: Whirlpool<sup>&reg;</sup>
+    image: whirlpool.svg
+  - name: Craftsman<sup>&reg;</sup>
+    image: craftsman.svg
+  - name: Bushnell
+    image: bushnell.svg
+  - name: KitchenAid<sup>&reg;</sup>
+    image: kitchenaid.svg
+  - name: Amana<sup>&reg;</sup>
+    image: amana.svg
+  - name: Gladiator<sup>&reg;</sup>
+    image: gladiator.svg
+  - name: Kenmore<sup>&reg;</sup>
+    image: kenmore.svg

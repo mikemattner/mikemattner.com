@@ -4,11 +4,9 @@
       <template v-slot:default>
         <div class="columns">
           <div class="column is-offset-one-quarter is-two-thirds">
-            <img
-              :src="intro.image"
-              :alt="intro.imgAlt"
-              width="1275"
-              height="1152"
+            <BaseImage
+              :src="`${intro.image}`"
+              :alt="intro.imageAlt"
               class="self-portrait"
             />
             <h1 v-html="intro.title"></h1>
@@ -66,9 +64,14 @@
             <h2 class="decorator">Brands</h2>
           </div>
           <div class="column is-three-quarters">
-            <h3>Agency</h3>
-            <ul class="list--blank list--flat">
-              <li v-for="brand in brands" v-html="brand"></li>
+            <ul class="list--flat">
+              <li v-for="brand in brands">
+                <BaseImage
+                  :src="`brand/${brand.image}`"
+                  :alt="brand.name"
+                  class="self-portrait"
+                />
+              </li>
             </ul>
           </div>
         </div>
@@ -115,6 +118,37 @@ export default {
     display: block;
     width: 100%;
     height: auto;
+  }
+  ul,
+  ol {
+    margin-left: 0;
+    padding-left: 0;
+
+    &.list--blank {
+      list-style: none;
+    }
+
+    &.list--flat {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      li {
+        margin-right: 2rem;
+        img {
+          display: block;
+          width: 100px;
+          height: auto;
+          opacity: 0.5;
+          transition: all 0.25s ease-in-out;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
   .hero {
     @media (min-width: $tablet) {
