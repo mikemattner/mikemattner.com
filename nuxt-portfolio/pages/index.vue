@@ -32,6 +32,26 @@
       <div class="container">
         <div class="columns">
           <div class="column is-one-quarter">
+            <h2 class="decorator">Brands</h2>
+          </div>
+          <div class="column is-three-quarters">
+            <ul class="list--flat">
+              <li v-for="brand in brands" :key="brand">
+                <BaseImage
+                  :src="`brand/${brand.image}`"
+                  :alt="brand.name"
+                  class="self-portrait"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-quarter">
             <h2 class="decorator">
               Summary
             </h2>
@@ -56,26 +76,6 @@
             <h3>Skills</h3>
             <ul class="list--blank">
               <li v-for="skill in skills" :key="skill" v-html="skill"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-one-quarter">
-            <h2 class="decorator">Brands</h2>
-          </div>
-          <div class="column is-three-quarters">
-            <ul class="list--flat">
-              <li v-for="brand in brands" :key="brand">
-                <BaseImage
-                  :src="`brand/${brand.image}`"
-                  :alt="brand.name"
-                  class="self-portrait"
-                />
-              </li>
             </ul>
           </div>
         </div>
