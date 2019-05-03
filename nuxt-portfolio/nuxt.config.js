@@ -43,10 +43,24 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-svg-loader',
+    '@nuxtjs/pwa',
     ['@nuxtjs/google-analytics', {
       id: 'UA-2423210-1'
-    }]
+    }],
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    gzip: true,
+    routes: []
+  },
+  svgLoader: {
+    svgoConfig: {
+      plugins: [
+        { prefixIds: false } // Disables prefixing for SVG IDs
+      ]
+    }
+  },
   /*
    ** Axios module configuration
    */

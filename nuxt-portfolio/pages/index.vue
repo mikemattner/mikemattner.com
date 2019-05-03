@@ -36,9 +36,9 @@
           </div>
           <div class="column is-three-quarters">
             <ul class="list--flat">
-              <li v-for="brand in brands" :key="brand">
-                <BaseImage
-                  :src="`brand/${brand.image}`"
+              <li v-for="(brand, index) in brands" :key="index">
+                <StaticImage
+                  :src="`img/brand/${brand.image}`"
                   :alt="brand.name"
                   class="self-portrait"
                 />
@@ -59,15 +59,19 @@
           <div class="column is-one-quarter">
             <h3>Knowledge</h3>
             <ul class="list--blank">
-              <li v-for="tech in technical" :key="tech" v-html="tech"></li>
+              <li
+                v-for="(tech, index) in technical"
+                :key="index"
+                v-html="tech"
+              ></li>
             </ul>
           </div>
           <div class="column is-one-quarter">
             <h3>Software</h3>
             <ul class="list--blank">
               <li
-                v-for="software in softwares"
-                :key="software"
+                v-for="(software, index) in softwares"
+                :key="index"
                 v-html="software"
               ></li>
             </ul>
@@ -75,7 +79,11 @@
           <div class="column is-one-quarter">
             <h3>Skills</h3>
             <ul class="list--blank">
-              <li v-for="skill in skills" :key="skill" v-html="skill"></li>
+              <li
+                v-for="(skill, index) in skills"
+                :key="index"
+                v-html="skill"
+              ></li>
             </ul>
           </div>
         </div>
@@ -143,7 +151,7 @@ export default {
         margin-right: 2rem;
         img {
           display: block;
-          width: 100px;
+          width: 120px;
           height: auto;
           opacity: 0.5;
           transition: all 0.25s ease-in-out;
