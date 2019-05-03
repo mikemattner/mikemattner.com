@@ -27,8 +27,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/utils/_variables.scss';
-
 .card {
   padding: 1.75rem;
   border-radius: 4px;

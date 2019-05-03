@@ -45,7 +45,8 @@ export default {
   }
 
   &__type {
-    font-size: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
     margin-left: 0.5rem;
     opacity: 0;
     transition: all 0.125s ease-in-out;

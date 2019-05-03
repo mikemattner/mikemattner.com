@@ -16,18 +16,20 @@
         </div>
       </template>
     </BaseHero>
-    <section class="section wavy top-fade">
+    <WavyLines class="wavy--lines" />
+    <section class="section">
       <div class="container">
-        <div class="columns">
+        <div class="columns is-vcentered">
           <div class="column is-7 copy">
             <p v-html="statement.body"></p>
           </div>
-          <div class="column header">
+          <div class="column">
             <h2 v-html="statement.title"></h2>
           </div>
         </div>
       </div>
     </section>
+    <Wavy class="wavy" />
     <section class="section section--dark">
       <div class="container">
         <div class="columns">
@@ -48,6 +50,7 @@
         </div>
       </div>
     </section>
+    <Wavy class="wavy--flip" />
     <section class="section">
       <div class="container">
         <div class="columns">
@@ -101,10 +104,16 @@ import {
   technical,
   brands
 } from '~/data/home.yaml'
+import Wavy from '@/assets/img/wavy.svg'
+import WavyLines from '@/assets/img/wavy-lines.svg'
 
 export default {
   name: 'Home',
   transition: 'fade',
+  components: {
+    Wavy,
+    WavyLines
+  },
   data() {
     return {
       intro,
@@ -124,7 +133,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/utils/_variables.scss';
 .home {
   img {
     display: block;
@@ -178,7 +186,7 @@ export default {
       top: -3rem;
       left: 7rem;
       z-index: -1;
-      border-radius: 40px 4px 40px 4px;
+      border-radius: 40px 10px 120px 20px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
       transition: all 0.25s ease-in-out;
       &:hover {
@@ -193,6 +201,25 @@ export default {
         left: -13rem;
         width: 400px;
       }
+    }
+  }
+  .wavy {
+    fill: $darkBlue-3;
+    margin-bottom: -1rem;
+    @media (min-width: $tablet) {
+      margin-bottom: -2rem;
+    }
+    &--flip {
+      fill: $darkBlue-3;
+      margin-top: -1rem;
+      transform: rotate(180deg);
+      @media (min-width: $tablet) {
+        margin-top: -2rem;
+      }
+    }
+    &--lines {
+      stroke: $darkBlue-8;
+      fill: transparent;
     }
   }
   h2 {
@@ -247,7 +274,7 @@ export default {
     }
 
     &--dark {
-      background-color: rgba(0, 0, 0, 0.25);
+      background-color: $darkBlue-3;
     }
 
     @media (max-width: $tablet) {

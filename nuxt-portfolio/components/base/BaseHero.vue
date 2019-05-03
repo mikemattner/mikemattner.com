@@ -22,8 +22,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/utils/_variables.scss';
-@import '@/assets/scss/utils/_mixins.scss';
 .hero {
   font-size: 1.25rem;
   min-height: 65vh;

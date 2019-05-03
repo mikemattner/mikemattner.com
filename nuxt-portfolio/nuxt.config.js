@@ -45,6 +45,7 @@ export default {
     '@nuxtjs/axios',
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
     ['@nuxtjs/google-analytics', {
       id: 'UA-2423210-1'
     }],
@@ -53,6 +54,13 @@ export default {
   sitemap: {
     gzip: true,
     routes: []
+  },
+  styleResources: {
+    scss: [
+      '~/assets/scss/utils/_functions.scss',
+      '~/assets/scss/utils/_variables.scss',
+      '~/assets/scss/utils/_mixins.scss'
+    ]
   },
   svgLoader: {
     svgoConfig: {

@@ -1,12 +1,20 @@
 <template>
   <footer class="footer">
-    <p>&copy; {{ theYear }} Mike Mattner. Made in Michigan.</p>
+    <Wavy class="wavy" />
+    <div class="darker">
+      <p>&copy; {{ theYear }} Mike Mattner. Made in Michigan.</p>
+    </div>
   </footer>
 </template>
 
 <script>
+import Wavy from '@/assets/img/wavy.svg'
+
 export default {
   name: 'AppHeader',
+  components: {
+    Wavy
+  },
   data() {
     return {
       theDate: new Date()
@@ -22,14 +30,35 @@ export default {
 
 <style lang="scss">
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5%;
-  height: 3rem;
-  box-sizing: border-box;
-  font-size: 0.675rem;
-  background-color: rgba(0, 0, 0, 0.25);
-  color: rgba(255, 255, 255, 0.25);
+  .wavy {
+    fill: $darkBlue-3;
+    margin-bottom: -1rem;
+    @media (min-width: $tablet) {
+      margin-bottom: -2rem;
+    }
+    &--flip {
+      fill: $darkBlue-3;
+      margin-top: -1rem;
+      transform: rotate(180deg);
+      @media (min-width: $tablet) {
+        margin-top: -2rem;
+      }
+    }
+    &--lines {
+      stroke: $darkBlue-8;
+      fill: transparent;
+    }
+  }
+  .darker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    height: 3rem;
+    box-sizing: border-box;
+    font-size: 0.675rem;
+    background-color: $darkBlue-3;
+    color: rgba(255, 255, 255, 0.25);
+  }
 }
 </style>
