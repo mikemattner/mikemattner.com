@@ -77,7 +77,7 @@ export default {
         height: 2px;
         background-color: rgba(255, 88, 1, 1);
         opacity: 0;
-        transition: all 0.125s ease-in-out;
+        transition: all 0.25s ease-in-out;
       }
 
       &:hover {

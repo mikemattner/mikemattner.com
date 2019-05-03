@@ -239,7 +239,7 @@ export default {
 
     @media (min-width: $tablet) {
       .container {
-        min-height: 60vh;
+        min-height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
