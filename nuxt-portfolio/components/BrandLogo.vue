@@ -35,11 +35,11 @@ export default {
     z-index: 10;
 
     .circle-shape {
-      fill: #fff;
+      fill: $white;
       transition: all 0.25s ease-in-out;
     }
     .logo-shape {
-      fill: rgba(39, 47, 52, 1);
+      fill: $darkBlue;
       transition: all 0.25s ease-in-out;
     }
   }
@@ -59,11 +59,10 @@ export default {
   &:hover {
     .brand-logo__image {
       .circle-shape {
-        fill: rgba(255, 255, 255, 0);
+        fill: rgba($white, 0);
       }
       .logo-shape {
-        // fill: rgba(255,88,1,1.0);
-        fill: #fff;
+        fill: $white;
       }
     }
     .brand-logo__type {

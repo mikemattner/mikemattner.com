@@ -1,4 +1,5 @@
 import pkg from './package'
+const articles = require('./static/articleList.json')
 
 export default {
   mode: 'universal',
@@ -11,7 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: 'UX designer & developer in Michigan' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -25,6 +26,7 @@ export default {
    ** Global CSS
    */
   css: [
+    '@/node_modules/highlight.js/styles/atom-one-dark.css',
     '@/assets/scss/app.scss'
   ],
 
@@ -48,9 +50,13 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-2423210-1'
-    }],
+    ['@nuxtjs/markdownit', { linkify: true }],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-2423210-1'
+      }
+    ],
     '@nuxtjs/sitemap'
   ],
   sitemap: {
@@ -78,6 +84,21 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
+  markdownit: {
+    injected: true,
+    use: ['markdown-it-highlightjs']
+  },
+
+  /**
+   * Dynamic route generation
+   */
+  generate: {
+    routes: () => {
+      const routes = articles.map(article => article.path)
+      return routes
+    }
+  },
+
   /*
    ** Build configuration
    */
@@ -97,8 +118,8 @@ export default {
       }
       config.module.rules.push({
         test: /\.yaml$/,
-        loader: 'js-yaml-loader',
-      });
+        loader: 'js-yaml-loader'
+      })
     }
   }
 }

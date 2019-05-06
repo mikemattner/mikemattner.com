@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Built With Nuxt",
+    "description": "My journey towards a more modern development experience.",
+    "topic": "Development",
+    "date": "May 6, 2019",
+    "path": "built-with-nuxt"
+  },
+  {
+    "title": "Hello World",
+    "description": "Launching something new.",
+    "topic": "Development",
+    "date": "May 6, 2019",
+    "path": "hello-world"
+  }
+]

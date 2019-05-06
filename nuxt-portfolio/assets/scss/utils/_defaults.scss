@@ -32,7 +32,7 @@ h6 {
     }
 
     &.decorator {
-        padding-bottom: 2rem;
+        padding-bottom: 1.5rem;
         position:relative;
 
         &:after {
@@ -73,9 +73,15 @@ ol {
 a {
     color: $white;
     transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    background-image: linear-gradient($orange, $orange);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
 
     &:hover {
         color: $orange;
+        background-size: 100% 2px;
     }
 }
 

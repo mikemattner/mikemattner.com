@@ -7,6 +7,7 @@ import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 import Wavy from '../components/base/Wavy.vue'
 import WavyLines from '../components/base/WavyLines.vue'
+import ArticleLink from '../components/ArticleLink.vue'
 
 Vue.component('BaseHero', BaseHero)
 Vue.component('BrandLogo', BrandLogo)
@@ -16,3 +17,4 @@ Vue.component('AppHeader', AppHeader)
 Vue.component('AppFooter', AppFooter)
 Vue.component('Wavy', Wavy)
 Vue.component('WavyLines', WavyLines)
+Vue.component('ArticleLink', ArticleLink)

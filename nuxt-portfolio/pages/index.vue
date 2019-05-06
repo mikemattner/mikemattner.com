@@ -33,6 +33,28 @@
     <section class="section section--dark">
       <div class="container" v-scroll-reveal.reset>
         <div class="columns">
+          <div class="column">
+            <h2 class="decorator">Recent Writing</h2>
+          </div>
+          <div class="column is-8 copy">
+            <ul class="article-list">
+              <li
+                v-for="article in articles.slice(0, 5)"
+                :key="article.title"
+                class="article"
+              >
+                <ArticleLink :article="article" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Wavy flip />
+    <!-- <Wavy />
+    <section class="section section--dark">
+      <div class="container" v-scroll-reveal.reset>
+        <div class="columns">
           <div class="column is-one-quarter">
             <h2 class="decorator">Brands</h2>
           </div>
@@ -53,14 +75,15 @@
         </div>
       </div>
     </section>
-    <Wavy flip />
+    <Wavy flip /> -->
     <section class="section">
       <div class="container" v-scroll-reveal.reset>
         <div class="columns">
-          <div class="column is-one-quarter">
+          <div class="column is-one-quarter is-summary">
             <h2 class="decorator">
               Summary
             </h2>
+            <p>Skills and knowledge I&rsquo;ve acquired since 2003.</p>
           </div>
           <div
             class="column is-one-quarter"
@@ -116,6 +139,7 @@ import {
   technical,
   brands
 } from '~/data/home.yaml'
+import articles from '@/static/articleList.json'
 
 export default {
   name: 'Home',
@@ -127,12 +151,13 @@ export default {
       skills,
       softwares,
       technical,
-      brands
+      brands,
+      articles
     }
   },
   head() {
     return {
-      titleTemplate: `About – %s`
+      titleTemplate: `UX Designer & Developer – %s`
     }
   }
 }
@@ -209,6 +234,20 @@ export default {
       }
     }
   }
+  .article-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 1rem 0;
+      border-bottom: 1px solid rgba($white, 0.1);
+
+      &:first-child {
+        border-top: 1px solid rgba($white, 0.1);
+      }
+    }
+  }
   h2 {
     margin-top: 0.25rem;
   }
@@ -262,6 +301,12 @@ export default {
 
     &--dark {
       background-color: $darkBlue-3;
+    }
+
+    .is-summary {
+      p {
+        font-size: 0.75rem;
+      }
     }
 
     @media (max-width: $tablet) {

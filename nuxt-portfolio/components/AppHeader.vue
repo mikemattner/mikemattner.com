@@ -7,7 +7,7 @@
       <div id="nav" class="navbar__nav">
         <ul>
           <li>
-            <nuxt-link to="/">About</nuxt-link>
+            <nuxt-link to="/">Home</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/contact">Contact</nuxt-link>
@@ -75,28 +75,15 @@ export default {
         margin: 0 0 0 1.5rem;
         text-decoration: none;
         position: relative;
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 100%;
-          bottom: -5px;
-          height: 2px;
-          background-image: linear-gradient(90deg, $orange 0%, $orange-1 100%);
-          opacity: 0;
-          transition: all 0.25s ease-in-out;
-        }
+        background-size: 100% 0px;
 
         &:hover {
-          &:after {
-            right: 0;
-            opacity: 1;
-          }
+          background-size: 100% 2px;
         }
 
         &.nuxt-link-exact-active {
           color: $orange;
+          background-size: 100% 2px;
         }
       }
     }

@@ -38,6 +38,11 @@ export default {
     font-size: 0.675rem;
     background-color: $darkBlue-3;
     color: rgba(255, 255, 255, 0.25);
+
+    svg {
+      fill: $orange;
+      color: $orange;
+    }
   }
 }
 </style>
