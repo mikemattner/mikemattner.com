@@ -16,7 +16,7 @@
         </div>
       </template>
     </BaseHero>
-    <WavyLines class="wavy--lines" />
+    <WavyLines />
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </section>
-    <Wavy class="wavy" />
+    <Wavy />
     <section class="section section--dark">
       <div class="container">
         <div class="columns">
@@ -50,7 +50,7 @@
         </div>
       </div>
     </section>
-    <Wavy class="wavy--flip" />
+    <Wavy flip />
     <section class="section">
       <div class="container">
         <div class="columns">
@@ -104,16 +104,10 @@ import {
   technical,
   brands
 } from '~/data/home.yaml'
-import Wavy from '@/assets/img/wavy.svg'
-import WavyLines from '@/assets/img/wavy-lines.svg'
 
 export default {
   name: 'Home',
   transition: 'fade',
-  components: {
-    Wavy,
-    WavyLines
-  },
   data() {
     return {
       intro,
@@ -201,25 +195,6 @@ export default {
         left: -13rem;
         width: 400px;
       }
-    }
-  }
-  .wavy {
-    fill: $darkBlue-3;
-    margin-bottom: -1rem;
-    @media (min-width: $tablet) {
-      margin-bottom: -2rem;
-    }
-    &--flip {
-      fill: $darkBlue-3;
-      margin-top: -1rem;
-      transform: rotate(180deg);
-      @media (min-width: $tablet) {
-        margin-top: -2rem;
-      }
-    }
-    &--lines {
-      stroke: $darkBlue-8;
-      fill: transparent;
     }
   }
   h2 {

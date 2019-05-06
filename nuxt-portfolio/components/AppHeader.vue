@@ -83,7 +83,7 @@ export default {
           right: 100%;
           bottom: -5px;
           height: 2px;
-          background-color: rgba(255, 88, 1, 1);
+          background-image: linear-gradient(90deg, $orange 0%, $orange-1 100%);
           opacity: 0;
           transition: all 0.25s ease-in-out;
         }
@@ -95,8 +95,8 @@ export default {
           }
         }
 
-        &.router-link-exact-active {
-          color: rgba(255, 88, 1, 1);
+        &.nuxt-link-exact-active {
+          color: $orange;
         }
       }
     }
