@@ -34,7 +34,9 @@ export default {
   plugins: [
     '~/plugins/ComponentRegister.js',
     '~/plugins/lazyimage.js',
-    '~/plugins/imageContext.js'
+    '~/plugins/imageContext.js',
+    '~/plugins/VueFontAwesome.js',
+    { src: '~/plugins/VueScrollReveal.js', ssr: false }
   ],
 
   /*

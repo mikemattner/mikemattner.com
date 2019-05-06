@@ -2,7 +2,10 @@
   <footer class="footer">
     <Wavy />
     <div class="darker">
-      <p>&copy; {{ theYear }} Mike Mattner. Made in Michigan.</p>
+      <p>
+        &copy; {{ theYear }} Mike Mattner. Made in Michigan.
+        <fa-icon icon="heart" size="sm"></fa-icon>
+      </p>
     </div>
   </footer>
 </template>

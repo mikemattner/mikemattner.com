@@ -17,7 +17,7 @@
       </template>
     </BaseHero>
     <WavyLines />
-    <section class="section">
+    <section class="section" v-scroll-reveal.reset>
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-7 copy">
@@ -31,7 +31,7 @@
     </section>
     <Wavy />
     <section class="section section--dark">
-      <div class="container">
+      <div class="container" v-scroll-reveal.reset>
         <div class="columns">
           <div class="column is-one-quarter">
             <h2 class="decorator">Brands</h2>
@@ -52,7 +52,7 @@
     </section>
     <Wavy flip />
     <section class="section">
-      <div class="container">
+      <div class="container" v-scroll-reveal.reset>
         <div class="columns">
           <div class="column is-one-quarter">
             <h2 class="decorator">
