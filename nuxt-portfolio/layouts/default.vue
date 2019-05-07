@@ -7,8 +7,6 @@
 </template>
 
 <style lang="scss">
-// @import '~/assets/scss/app.scss';
-
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.375s;
@@ -20,6 +18,5 @@
 .fade-leave-active {
   opacity: 0;
   transform: translate(0, -2em);
-  // transform: scale(0.5);
 }
 </style>

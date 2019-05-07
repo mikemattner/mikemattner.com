@@ -1,15 +1,20 @@
 <template>
   <div class="single-link">
     <nuxt-link :to="article.path">
-      <h3 class="article-title">
-        {{ article.title }}
-      </h3>
-      <div class="article-meta">
-        {{ article.topic }} &bull; {{ article.date }}
+      <div>
+        <h3 class="article-title">
+          {{ article.title }}
+        </h3>
+        <div class="article-meta">
+          {{ article.topic }} &bull; {{ article.date }}
+        </div>
+        <p class="article-description">
+          {{ article.description }}
+        </p>
       </div>
-      <p class="article-description">
-        {{ article.description }}
-      </p>
+      <div class="icon">
+        <fa-icon icon="chevron-right" size="lg"></fa-icon>
+      </div>
     </nuxt-link>
   </div>
 </template>
@@ -28,7 +33,9 @@ export default {
 <style lang="scss">
 .single-link {
   a {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 2rem 1rem;
     background-image: none;
     // background-image: linear-gradient(
@@ -39,7 +46,19 @@ export default {
     // background-position: 0% 100%;
     // background-repeat: no-repeat;
     // background-size: 0 100%;
-
+    .icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: rgba($black, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      opacity: 0.25;
+      transition: all 0.25s ease-in-out;
+    }
     h3 {
       transition: all 0.25s ease-in-out;
       background-image: linear-gradient($orange, $orange);
@@ -59,6 +78,11 @@ export default {
         background-size: 100% 2px;
       }
       p {
+        color: $white;
+      }
+      svg {
+        opacity: 1;
+        fill: $white;
         color: $white;
       }
     }
