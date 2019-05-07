@@ -12,8 +12,10 @@
           {{ article.description }}
         </p>
       </div>
-      <div class="icon">
-        <fa-icon icon="chevron-right" size="lg"></fa-icon>
+      <div>
+        <div class="icon">
+          <fa-icon icon="chevron-right" size="lg"></fa-icon>
+        </div>
       </div>
     </nuxt-link>
   </div>
@@ -47,6 +49,7 @@ export default {
     // background-repeat: no-repeat;
     // background-size: 0 100%;
     .icon {
+      flex-basis: 3rem;
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
