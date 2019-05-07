@@ -6,12 +6,10 @@
       dark == true ? 'hero--dark' : ''
     ]"
   >
-    <div class="hero-copy">
-      <div
-        :class="['hero--header', decorator == true ? 'header--decorator' : '']"
-      >
-        <slot></slot>
-      </div>
+    <div
+      :class="['hero--header', decorator == true ? 'header--decorator' : '']"
+    >
+      <slot></slot>
     </div>
     <div v-if="arrow" class="bounce-arrow"></div>
   </header>

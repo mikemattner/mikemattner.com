@@ -92,10 +92,12 @@ hr {
     border: 0;
     margin: 0;
 }
-
+.container {
+    max-width: 60rem;
+}
 .container,
 .hero {
-    max-width: 60rem;
+    // max-width: 60rem;
     margin: 0 auto;
     padding: 0 2rem;
 

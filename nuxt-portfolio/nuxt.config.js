@@ -29,7 +29,7 @@ export default {
    ** Global CSS
    */
   css: [
-    '@/node_modules/highlight.js/styles/atom-one-dark.css',
+    '@/node_modules/highlight.js/styles/nord.css',
     '@/assets/scss/app.scss'
   ],
 
