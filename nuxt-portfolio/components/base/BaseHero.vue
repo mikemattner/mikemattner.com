@@ -1,5 +1,11 @@
 <template>
-  <header :class="['hero', full == true ? 'hero--full' : '']">
+  <header
+    :class="[
+      'hero',
+      full == true ? 'hero--full' : '',
+      dark == true ? 'hero--dark' : ''
+    ]"
+  >
     <div class="hero-copy">
       <div
         :class="['hero--header', decorator == true ? 'header--decorator' : '']"
@@ -15,6 +21,7 @@
 export default {
   props: {
     full: Boolean,
+    dark: Boolean,
     arrow: Boolean,
     decorator: Boolean
   }
@@ -34,6 +41,9 @@ export default {
   position: relative;
   &--full {
     min-height: 100vh;
+  }
+  &--dark {
+    background-color: $darkBlue-3;
   }
   .hero--header {
     h1 {

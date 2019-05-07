@@ -1,5 +1,5 @@
 <template>
-  <headroom>
+  <headroom class="headroom--surround">
     <div class="navbar" role="banner">
       <div class="navbar__logo">
         <nuxt-link to="/"><BrandLogo label/></nuxt-link>
@@ -31,17 +31,21 @@ export default {
 
 <style lang="scss">
 .headroom {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &--surround {
     position: fixed;
-    padding: 0 2rem;
     height: 3rem;
     top: 0;
     width: 100%;
     z-index: 1000;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 3rem;
     box-sizing: border-box;
+    transition: all 0.25s ease-in-out;
 
     @media (min-width: 768px) {
       // padding: 0 2%;
@@ -92,6 +96,7 @@ export default {
     .navbar {
       background-color: $darkBlue;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      height: 2.5rem;
     }
   }
 }

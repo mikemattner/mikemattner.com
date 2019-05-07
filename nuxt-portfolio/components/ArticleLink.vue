@@ -5,7 +5,9 @@
         {{ article.title }}
       </h3>
       <div class="article-meta">
-        <time class="article-date">{{ article.date }}</time>
+        <time class="article-date"
+          >{{ article.topic }} &bull; {{ article.date }}</time
+        >
       </div>
       <p class="article-description">
         {{ article.description }}

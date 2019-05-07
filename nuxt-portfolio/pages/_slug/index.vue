@@ -1,25 +1,38 @@
 <template>
   <section class="section section--article">
-    <div :key="$route.params.slug" class="container">
-      <div class="columns is-centered">
-        <div class="column is-two-thirds">
-          <h1>{{ articleTitle }}</h1>
-          <div class="meta">{{ articleDate }}</div>
-          <div v-html="articleContent"></div>
-          <div class="links">
-            <nuxt-link
-              v-if="prevArticle"
-              :to="'/' + prevArticle.path"
-              class="prev-link"
-              >← {{ prevArticle.title }}</nuxt-link
-            >
-            <nuxt-link to="/" class="home-link">Home</nuxt-link>
-            <nuxt-link
-              v-if="nextArticle"
-              :to="'/' + nextArticle.path"
-              class="next-link"
-              >{{ nextArticle.title }} →</nuxt-link
-            >
+    <div :key="$route.params.slug">
+      <BaseHero dark>
+        <template v-slot:default>
+          <div class="columns is-centered">
+            <div class="column is-two-thirds">
+              <h1 v-html="articleTitle"></h1>
+              <div class="meta">
+                {{ articleTopic }} &bull; {{ articleDate }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </BaseHero>
+      <Wavy flip />
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
+            <div v-html="articleContent"></div>
+            <div class="links">
+              <nuxt-link
+                v-if="prevArticle"
+                :to="'/' + prevArticle.path"
+                class="prev-link"
+                >← {{ prevArticle.title }}</nuxt-link
+              >
+              <nuxt-link to="/" class="home-link">Home</nuxt-link>
+              <nuxt-link
+                v-if="nextArticle"
+                :to="'/' + nextArticle.path"
+                class="next-link"
+                >{{ nextArticle.title }} →</nuxt-link
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -37,6 +50,7 @@ export default {
       articleTitle: null,
       articleDate: null,
       articleDescription: null,
+      articleTopic: null,
       prevArticle: null,
       nextArticle: null,
       articleContent: null
@@ -67,6 +81,7 @@ export default {
       }.md`).default
       this.articleTitle = this.article.title
       this.articleDate = this.article.date
+      this.articleTopic = this.article.topic
       this.articleDescription = this.article.description
     }
   },
