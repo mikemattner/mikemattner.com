@@ -1,21 +1,19 @@
 <template>
   <div class="single-link">
     <nuxt-link :to="article.path">
-      <div>
-        <h3 class="article-title">
-          {{ article.title }}
-        </h3>
-        <div class="article-meta">
-          {{ article.topic }} &bull; {{ article.date }}
-        </div>
-        <p class="article-description">
-          {{ article.description }}
-        </p>
+      <h3 class="article-title">
+        {{ article.title }}
+      </h3>
+      <div class="article-meta">
+        <span class="tag">{{ article.topic }}</span>
+        <span class="bull">&bull;</span>
+        <time>{{ article.date }}</time>
       </div>
-      <div>
-        <div class="icon">
-          <fa-icon icon="chevron-right" size="lg"></fa-icon>
-        </div>
+      <p class="article-description">
+        {{ article.description }}
+      </p>
+      <div class="icon">
+        <fa-icon icon="chevron-right" size="lg"></fa-icon>
       </div>
     </nuxt-link>
   </div>
@@ -35,28 +33,22 @@ export default {
 <style lang="scss">
 .single-link {
   a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     padding: 2rem 1rem;
     background-image: none;
-    // background-image: linear-gradient(
-    //   to right,
-    //   $darkBlue 0,
-    //   rgba($darkBlue, 0) 100%
-    // );
-    // background-position: 0% 100%;
-    // background-repeat: no-repeat;
-    // background-size: 0 100%;
+    position: relative;
     .icon {
-      flex-basis: 3rem;
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
       border-radius: 50%;
       background-color: rgba($black, 0.1);
       display: flex;
       justify-content: center;
       align-items: center;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     svg {
       opacity: 0.25;
@@ -101,9 +93,17 @@ export default {
     font-size: 0.875rem;
   }
   .article-meta {
-    font-size: 0.75rem;
+    font-size: 0.675rem;
     margin: 0;
     color: rgba($white, 0.25);
+    .bull {
+      margin: 0 0.25rem;
+    }
+    .tag {
+      font-size: 0.575rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
   }
 }
 </style>

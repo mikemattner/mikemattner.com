@@ -46,7 +46,8 @@ export default {
 
   &__type {
     font-size: 1rem;
-    font-weight: 700;
+    letter-spacing: 0.125rem;
+    font-weight: 400;
     margin-left: 0.5rem;
     opacity: 0;
     transition: all 0.125s ease-in-out;

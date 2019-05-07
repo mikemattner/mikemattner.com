@@ -94,7 +94,7 @@ export default {
   }
   &--not-top {
     .navbar {
-      background-color: $darkBlue;
+      background-color: $darkBlue-3;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       height: 2.5rem;
     }

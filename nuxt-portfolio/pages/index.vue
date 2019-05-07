@@ -156,7 +156,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `UX Designer & Developer – %s`
+      titleTemplate: `UX Designer & Developer in Michigan – %s`
     }
   }
 }

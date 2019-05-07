@@ -7,7 +7,9 @@
             <div class="column is-two-thirds">
               <h1 v-html="articleTitle"></h1>
               <div class="meta">
-                {{ articleTopic }} &bull; {{ articleDate }}
+                <span class="tag">{{ articleTopic }}</span>
+                <span class="bull">&bull;</span>
+                <time>{{ articleDate }}</time>
               </div>
             </div>
           </div>
@@ -112,9 +114,17 @@ export default {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
   }
   .meta {
-    font-size: 0.75rem;
-    text-transform: uppercase;
+    font-size: 0.675rem;
+    margin: 0;
     color: rgba($white, 0.25);
+    .bull {
+      margin: 0 0.25rem;
+    }
+    .tag {
+      font-size: 0.575rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
   }
   .links {
     margin-top: 2rem;
