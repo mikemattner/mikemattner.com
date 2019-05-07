@@ -1,8 +1,8 @@
-I've spent far too many years working with WordPress as my personal writing platform – to the point of including years and years of old, stale code as I rebuilt or redesigned.
+I've spent far too many years working with WordPress as my personal writing platform – to the point of including years and years of old, stale code as I rebuilt or redesigned my old personal blog.
 
-Last year, I embarked on a journey to learn <a href="https://vuejs.org/">Vue</a>, and with it <a href="https://nuxtjs.org/">Nuxt</a>. And what better way to learn even more about it than to use Nuxt as a static generator for my personal site. 
+And so last year I decided to learn <a href="https://vuejs.org/">VueJS</a>–and with it <a href="https://nuxtjs.org/">Nuxt</a>–and based on what I learned I'm using Nuxt as a static site generator for this very website. 
 
-I started by building just a few simple pages that would act as a brochure style experience and I have continued by adding what you see here. A simple blogging platform using markdown files.
+I started by building just a few simple pages that acted as a brochure style experience and have started to build out some additional features. The first is a simple blogging platform using markdown files.
 
 ### Loading Content
 
@@ -20,7 +20,7 @@ import {
 import articles from '@/static/articleList.json'
 ```
 
-The `articleList.json` file is the simplest way to link to the specific markdown file with a slug, give it a tile, and give it a description. Eventually I could add quite a bit more detail, but today, it's functional. Unfortunately, I think that this approach is unlikely to remain sustainable.
+The `articleList.json` file is the simplest way to link to the specific markdown file with a slug, give it a title, and give it a description. Eventually I could add quite a bit more detail, but today, it's functional. Unfortunately, I think that this approach is unlikely to remain sustainable.
 
 ```json
 [
@@ -34,6 +34,8 @@ The `articleList.json` file is the simplest way to link to the specific markdown
 ]
 ```
 
-You could see how adding articles to this file might get tedious at some future date. A headless CMS might be the path I take, but as a development experience, this feels fairly solid.
+You could see how adding articles to this file might get tedious at some future date. A headless CMS might be the path I take, but as a development experience, this feels fairly solid. 
+
+Optionally, perhaps I'll build this in such a way as to dynamically generate the information I need by scanning the markdown files, checking front matter, and then listing it all out without much intervention on my part.
 
 I will go into more detail at a later date, but for now I'm going to launch an MVP of this feature, and then ready myself for adding a portfolio feature as well.

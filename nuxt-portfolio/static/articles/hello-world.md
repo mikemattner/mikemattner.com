@@ -1,5 +1,5 @@
-As I embark on something new in my development journey, I figure I ought to reintroduce this space.
+It's time to soft launch my new personal website–built with <a href="https://nuxtjs.org/">Nuxt</a>.
 
-I was tired of writing and building with WordPress for personal projects. Not to mention the fact that my installation was continually getting hacked/attacked. I need something that required less maintenance and was a bit more fun.
+I was tired of writing and building with WordPress for personal projects. Not to mention the fact that my installation was constantly being hacked. Handling the security of WordPress was becoming a chore, and I needed something that would be substantially easier to maintain.
 
-I think I've achieved that, as I'm primarily using this website as a place to write as well as a place to showcase my work. I have yet to build out that feature, but I'm guessing it'll be a more static experience.
+I think I've achieved that with a more modern stack, and it's one that's quite a bit of fun to work on. I'm looking forward to working on this.
