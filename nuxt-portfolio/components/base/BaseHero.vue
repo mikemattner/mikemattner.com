@@ -3,12 +3,11 @@
     :class="[
       'hero',
       full == true ? 'hero--full' : '',
-      dark == true ? 'hero--dark' : ''
+      dark == true ? 'hero--dark' : '',
+      decorator == true ? 'header--decorator' : ''
     ]"
   >
-    <div
-      :class="['hero--header', decorator == true ? 'header--decorator' : '']"
-    >
+    <div class="container">
       <slot></slot>
     </div>
     <div v-if="arrow" class="bounce-arrow"></div>
@@ -26,7 +25,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .hero {
   font-size: 1.25rem;
   min-height: 65vh;
@@ -43,43 +42,41 @@ export default {
   &--dark {
     background-color: $darkBlue-3;
   }
-  .hero--header {
-    h1 {
-      font-size: 4rem;
-      letter-spacing: 0.09rem;
-      line-height: 1;
-      small {
-        display: block;
-        font-family: $sans-serif-font;
-        font-size: 1.25rem;
-        font-weight: 400;
-        color: $darkBlue-9;
-        text-transform: uppercase;
-        margin-bottom: 1.25rem;
-      }
-      @media (min-width: 760px) {
-        font-size: 5rem;
-      }
-    }
-    h2 {
-      color: rgba($white, 0.5);
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 0.09rem;
+    line-height: 1;
+    small {
+      display: block;
+      font-family: $sans-serif-font;
+      font-size: 1.25rem;
       font-weight: 400;
+      color: $darkBlue-9;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
     }
-    &.header--decorator {
-      h1 {
-        padding-bottom: 2rem;
-        position: relative;
+    @media (min-width: 760px) {
+      font-size: 5rem;
+    }
+  }
+  h2 {
+    color: rgba($white, 0.5);
+    font-weight: 400;
+  }
+  &.header--decorator {
+    h1 {
+      padding-bottom: 2rem;
+      position: relative;
 
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          width: 3rem;
-          height: 1px;
-          left: 0;
-          bottom: 0;
-          background-color: $orange;
-        }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 3rem;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        background-color: $orange;
       }
     }
   }

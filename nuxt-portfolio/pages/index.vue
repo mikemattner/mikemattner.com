@@ -83,7 +83,6 @@
             <h2 class="decorator">
               Summary
             </h2>
-            <p>Skills and knowledge I&rsquo;ve acquired since 2003.</p>
           </div>
           <div
             class="column is-one-quarter"
@@ -174,6 +173,7 @@ export default {
   ol {
     margin-left: 0;
     padding-left: 0;
+    font-size: 0.875rem;
 
     &.list--blank {
       list-style: none;
@@ -240,11 +240,11 @@ export default {
     padding: 0;
 
     li {
-      margin: 1rem 0;
-      border-bottom: 1px solid rgba($white, 0.1);
+      margin: 0;
+      border-bottom: 1px solid $darkBlue-5;
 
       &:first-child {
-        border-top: 1px solid rgba($white, 0.1);
+        border-top: 1px solid $darkBlue-5;
       }
     }
   }

@@ -104,12 +104,6 @@ export default {
 <style lang="scss">
 .section--article {
   min-height: 90vh;
-  h1 {
-    font-size: 3rem;
-    letter-spacing: 0.09rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
   pre {
     background-color: $darkBlue-2;
     font-size: 0.75rem;
@@ -120,6 +114,7 @@ export default {
   .meta {
     font-size: 0.75rem;
     text-transform: uppercase;
+    color: rgba($white, 0.25);
   }
   .links {
     margin-top: 2rem;

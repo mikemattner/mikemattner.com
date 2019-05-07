@@ -49,6 +49,10 @@ export default {
       display: inline-block;
     }
     &:hover {
+      background-color: $darkBlue-5;
+      border-radius: 2px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+      transform: scale(1.01);
       // background-size: 100% 100%;
       h3 {
         color: $orange;
@@ -65,11 +69,12 @@ export default {
   .article-description {
     color: $white;
     margin-bottom: 0;
+    font-size: 0.875rem;
   }
   .article-meta {
     font-size: 0.75rem;
     margin: 0;
-    color: $white;
+    color: rgba($white, 0.25);
   }
 }
 </style>
