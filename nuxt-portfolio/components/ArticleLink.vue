@@ -58,6 +58,8 @@ export default {
     svg {
       opacity: 0.25;
       transition: all 0.25s ease-in-out;
+      fill: $white;
+      color: $white;
     }
     h3 {
       transition: all 0.25s ease-in-out;
