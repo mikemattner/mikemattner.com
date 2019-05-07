@@ -30,7 +30,7 @@
       </div>
     </section>
     <Wavy />
-    <section class="section section--dark">
+    <section class="section section--writing section--dark">
       <div class="container" v-scroll-reveal.reset>
         <div class="columns">
           <div class="column">
@@ -217,7 +217,7 @@ export default {
       top: -3rem;
       left: 7rem;
       z-index: -1;
-      border-radius: 40px 10px 120px 20px;
+      border-radius: 2px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
       transition: all 0.25s ease-in-out;
       &:hover {
@@ -301,6 +301,12 @@ export default {
 
     &--dark {
       background-color: $darkBlue-3;
+    }
+
+    &--writing {
+      h2 {
+        margin-top: 2rem;
+      }
     }
 
     .is-summary {
