@@ -117,7 +117,7 @@ export default {
       width: 100%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.25s ease-in-out;
+      transition: all 0.25s 0.25s ease-in-out;
       transform: scale(0.9);
       z-index: 10100;
       background-color: rgba($darkBlue-3, 0.95);
@@ -129,6 +129,7 @@ export default {
         opacity: 1;
         visibility: visible;
         transform: scale(1);
+        transition: all 0.25s ease-in-out;
 
         ul {
           li {
@@ -184,6 +185,7 @@ export default {
           padding: 0;
           opacity: 0;
           transform: translateY(20px);
+          transition: all 0.25s 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }
 

@@ -13,7 +13,9 @@
   transition-property: opacity, transform;
   transition-timing-function: ease;
 }
-
+.fade-enter {
+  transition-delay: 0.25s;
+}
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
