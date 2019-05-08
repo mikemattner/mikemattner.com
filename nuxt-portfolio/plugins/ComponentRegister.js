@@ -8,6 +8,7 @@ import AppFooter from '../components/AppFooter.vue'
 import Wavy from '../components/base/Wavy.vue'
 import WavyLines from '../components/base/WavyLines.vue'
 import ArticleLink from '../components/ArticleLink.vue'
+import Loading from '../components/base/Loading.vue'
 
 Vue.component('BaseHero', BaseHero)
 Vue.component('BrandLogo', BrandLogo)
@@ -18,3 +19,4 @@ Vue.component('AppFooter', AppFooter)
 Vue.component('Wavy', Wavy)
 Vue.component('WavyLines', WavyLines)
 Vue.component('ArticleLink', ArticleLink)
+Vue.component('Loading', Loading)

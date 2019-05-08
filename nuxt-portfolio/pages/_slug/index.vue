@@ -19,7 +19,7 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
-            <div v-html="articleContent"></div>
+            <div v-html="articleContent" v-scroll-reveal></div>
             <div class="links">
               <nuxt-link
                 v-if="prevArticle"
