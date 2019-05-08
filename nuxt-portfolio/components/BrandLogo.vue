@@ -56,20 +56,21 @@ export default {
     z-index: 9;
     text-decoration: none;
   }
-
-  &:hover {
-    .brand-logo__image {
-      .circle-shape {
-        fill: rgba($white, 0);
+  @media (min-width: 768px) {
+    &:hover {
+      .brand-logo__image {
+        .circle-shape {
+          fill: rgba($white, 0);
+        }
+        .logo-shape {
+          fill: $white;
+        }
       }
-      .logo-shape {
-        fill: $white;
+      .brand-logo__type {
+        opacity: 1;
+        transform: translateX(0);
+        color: #fff;
       }
-    }
-    .brand-logo__type {
-      opacity: 1;
-      transform: translateX(0);
-      color: #fff;
     }
   }
 }
