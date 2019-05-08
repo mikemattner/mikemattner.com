@@ -4,27 +4,49 @@
       <div class="navbar__logo">
         <nuxt-link to="/"><BrandLogo label/></nuxt-link>
       </div>
-      <div id="nav" class="navbar__nav">
-        <ul>
-          <li>
-            <nuxt-link to="/">Home</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/contact">Contact</nuxt-link>
-          </li>
-        </ul>
+      <div class="navbar__menu">
+        <div class="navbar__menu-button" aria-role="button" @click="toggle()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
+    </div>
+    <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
+      <CloseButton class="close" @click="toggle()" />
+      <ul v-scroll-reveal>
+        <li>
+          <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact"
+            ><span @click="toggle()">Contact</span></nuxt-link
+          >
+        </li>
+      </ul>
     </div>
   </headroom>
 </template>
 
 <script>
+import CloseButton from '@/assets/img/close.svg'
 import { headroom } from 'vue-headroom'
 headroom.computed.style = () => ''
 export default {
   name: 'AppHeader',
   components: {
-    headroom
+    headroom,
+    CloseButton
+  },
+  data() {
+    return {
+      navOpen: false
+    }
+  },
+  methods: {
+    toggle: function() {
+      this.navOpen = !this.navOpen
+    }
   }
 }
 </script>
@@ -56,31 +78,112 @@ export default {
         text-decoration: none;
       }
     }
+    &__menu-button {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      width: 32px;
+      height: 20px;
+      cursor: pointer;
+      span {
+        height: 2px;
+        background-color: $white;
+        transition: all 0.25s ease-in-out;
+        border-radius: 2px;
+      }
+      &:hover {
+        span {
+          background-color: $orange;
+        }
+      }
+    }
     &__nav {
-      font-size: 0.75rem;
+      font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 0.125rem;
       text-transform: uppercase;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease-in-out;
+      transform: scale(0.9);
+      z-index: 10100;
+      background-color: rgba($darkBlue-3, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+
+        ul {
+          li {
+            transform: translateX(0);
+            opacity: 1;
+            transform: translateY(0);
+
+            &:nth-child(1) {
+              transition: all 0.25s 0.125s
+                cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(2) {
+              transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(3) {
+              transition: all 0.25s 0.375s
+                cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(4) {
+              transition: all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+          }
+        }
+      }
 
       @media (min-width: 768px) {
-        font-size: 0.675rem;
+        font-size: 1.5rem;
+      }
+
+      .close {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: all 0.25s ease-in-out;
+        stroke: $white;
+        cursor: pointer;
+
+        &:hover {
+          stroke: $orange;
+        }
       }
 
       ul {
         display: flex;
+        flex-direction: column;
         align-items: center;
         list-style: none;
         margin: 0;
         padding: 0;
         li {
-          margin: 0;
+          margin: 0.5rem 0;
           padding: 0;
+          opacity: 0;
+          transform: translateY(20px);
         }
       }
 
       a {
         display: block;
-        margin: 0 0 0 1.5rem;
         text-decoration: none;
         position: relative;
         background-size: 100% 0px;
