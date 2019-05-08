@@ -112,6 +112,10 @@ export default {
     padding: 2rem;
     border-radius: 2px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+    @media (min-width: $tablet) {
+      margin-left: -4rem;
+      margin-right: -4rem;
+    }
   }
   .meta {
     font-size: 0.675rem;
