@@ -14,7 +14,7 @@
     </div>
     <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
       <CloseButton class="close" @click="toggle()" />
-      <ul v-scroll-reveal>
+      <ul>
         <li>
           <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
         </li>
