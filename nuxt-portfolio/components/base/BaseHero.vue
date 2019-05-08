@@ -9,8 +9,8 @@
   >
     <div class="container">
       <slot></slot>
+      <div v-if="arrow" class="bounce-arrow"></div>
     </div>
-    <div v-if="arrow" class="bounce-arrow"></div>
   </header>
 </template>
 
@@ -80,10 +80,13 @@ export default {
       }
     }
   }
+  .container {
+    position: relative;
+  }
   .bounce-arrow {
     display: block;
     position: absolute;
-    bottom: 3rem;
+    bottom: -6rem;
     height: 3rem;
     // cursor: pointer;
 

@@ -34,9 +34,12 @@ export default {
 .single-link {
   a {
     display: block;
-    padding: 2rem 1rem;
+    padding: 2rem 3rem 2rem 0;
     background-image: none;
     position: relative;
+    @media (min-width: $tablet) {
+      padding: 2rem 1rem;
+    }
     .icon {
       width: 2rem;
       height: 2rem;
@@ -55,6 +58,7 @@ export default {
       transition: all 0.25s ease-in-out;
       fill: $white;
       color: $white;
+      transform: translateX(2px);
     }
     h3 {
       transition: all 0.25s ease-in-out;
