@@ -117,8 +117,8 @@ export default {
       width: 100%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.125s 0.125s ease-in-out;
-      transform: scale(1) translateY(-50vh);
+      transition: all 0.125s 0.25s ease-in-out;
+      transform: scale(0.7) translateY(-50vh);
       z-index: 10100;
       background-color: rgba($darkBlue-3, 1);
       display: flex;
@@ -134,7 +134,7 @@ export default {
         font-size: 0.875rem;
         margin-top: 0;
         opacity: 0;
-        transition: all 0.125s ease-in-out;
+        transition: all 0.25s ease-in-out;
       }
 
       .close {
