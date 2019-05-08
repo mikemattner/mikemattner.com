@@ -46,6 +46,7 @@
                 <ArticleLink :article="article" />
               </li>
             </ul>
+            <!-- <nuxt-link to="/contact" class="button">Archives</nuxt-link> -->
           </div>
         </div>
       </div>

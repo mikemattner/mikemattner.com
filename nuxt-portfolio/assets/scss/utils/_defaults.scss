@@ -117,3 +117,17 @@ img {
 code {
     font-family: $source-code-font;
 }
+::selection {
+    background: rgba($orange,1.0);
+    color: $white;
+}
+::-moz-selection {
+    background: rgba($orange,1.0);
+    color: $white;
+}
+img::selection {
+    background: transparent
+}
+img::-moz-selection {
+    background: transparent
+}

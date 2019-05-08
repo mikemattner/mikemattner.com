@@ -91,10 +91,16 @@ export default {
         background-color: $white;
         transition: all 0.25s ease-in-out;
         border-radius: 2px;
+        &:nth-child(2) {
+          width: 80%;
+        }
       }
       &:hover {
         span {
           background-color: $orange;
+          &:nth-child(2) {
+            width: 100%;
+          }
         }
       }
     }
@@ -126,7 +132,6 @@ export default {
 
         ul {
           li {
-            transform: translateX(0);
             opacity: 1;
             transform: translateY(0);
 
