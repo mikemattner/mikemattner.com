@@ -114,7 +114,9 @@ export default {
     .navbar {
       background-color: $darkBlue-3;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-      height: 2.5rem;
+      @media (min-width: 768px) {
+        height: 2.5rem;
+      }
     }
   }
 }
