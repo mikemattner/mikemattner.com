@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Lines class="wavy--lines" />
+    <Lines :class="['wavy--lines', flip == true ? 'wavy--flip' : '']" />
   </div>
 </template>
 
@@ -11,6 +11,9 @@ export default {
   name: 'WavyLines',
   components: {
     Lines
+  },
+  props: {
+    flip: Boolean
   }
 }
 </script>
@@ -20,6 +23,9 @@ export default {
   &--lines {
     stroke: $darkBlue-8;
     fill: transparent;
+  }
+  &--flip {
+    transform: rotate(180deg);
   }
 }
 </style>

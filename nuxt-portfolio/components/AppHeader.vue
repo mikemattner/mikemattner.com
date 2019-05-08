@@ -14,6 +14,7 @@
     </div>
     <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
       <CloseButton class="close" @click="toggle()" />
+      <h2 class="decorator decorator--center">Navigation</h2>
       <ul>
         <li>
           <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
@@ -106,9 +107,8 @@ export default {
     }
     &__nav {
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: 0.125rem;
-      text-transform: uppercase;
       position: fixed;
       top: 0;
       bottom: 0;
@@ -117,45 +117,24 @@ export default {
       width: 100%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.25s 0.25s ease-in-out;
-      transform: scale(0.9);
+      transition: all 0.125s 0.25s ease-in-out;
+      transform: scale(0.9) translateY(-50vh);
       z-index: 10100;
-      background-color: rgba($darkBlue-3, 0.95);
+      background-color: rgba($darkBlue-3, 1);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
 
-      &.active {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
-        transition: all 0.25s ease-in-out;
-
-        ul {
-          li {
-            opacity: 1;
-            transform: translateY(0);
-
-            &:nth-child(1) {
-              transition: all 0.25s 0.125s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(2) {
-              transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(3) {
-              transition: all 0.25s 0.375s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(4) {
-              transition: all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-          }
-        }
+      @media (min-width: 768px) {
+        font-size: 2srem;
       }
 
-      @media (min-width: 768px) {
-        font-size: 1.5rem;
+      h2 {
+        font-size: 0.875rem;
+        margin-top: 0;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
       }
 
       .close {
@@ -185,7 +164,7 @@ export default {
           padding: 0;
           opacity: 0;
           transform: translateY(20px);
-          transition: all 0.25s 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.125s 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }
 
@@ -196,12 +175,43 @@ export default {
         background-size: 100% 0px;
 
         &:hover {
-          background-size: 100% 2px;
+          background-size: 100% 3px;
         }
 
         &.nuxt-link-exact-active {
           color: $orange;
-          background-size: 100% 2px;
+          background-size: 100% 0;
+        }
+      }
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0);
+        transition: all 0.25s ease-in-out;
+        h2 {
+          opacity: 1;
+          transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        ul {
+          li {
+            opacity: 1;
+            transform: translateY(0);
+
+            &:nth-child(1) {
+              transition: all 0.25s 0.375s
+                cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(2) {
+              transition: all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(3) {
+              transition: all 0.25s 0.625s
+                cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(4) {
+              transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+          }
         }
       }
     }

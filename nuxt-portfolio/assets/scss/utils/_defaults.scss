@@ -45,6 +45,13 @@ h6 {
             bottom: 0;
             background-color: $orange;
         }
+
+        &--center {
+            &:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
 }
 
