@@ -31,6 +31,7 @@
     </section>
     <Wavy />
     <section class="section section--writing section--dark">
+      <WavyLines class="wavy--fixed" />
       <div class="container" v-scroll-reveal.reset>
         <div class="columns">
           <div class="column">
@@ -251,6 +252,14 @@ export default {
   }
   h2 {
     margin-top: 0.25rem;
+  }
+  .wavy--fixed {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
   }
   .section {
     padding: 4rem 0;
