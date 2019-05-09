@@ -1,0 +1,3 @@
+<h3><a href="https://www.nngroup.com/articles/flat-ui-less-attention-cause-uncertainty/" target="_blank">Flat UI Elements Attract Less Attention and Cause Uncertainty</a></h3>
+<blockquote>Summary: Flat interfaces often use weak signifiers. In an eyetracking experiment comparing different kinds of clickability clues, UIs with weak signifiers required more user effort than strong ones.</blockquote>
+Sure, and that absolutely makes sense, but these flat UI elements were surrounded by designs that didn't create a particularly great UX either. Still, a very important result.
