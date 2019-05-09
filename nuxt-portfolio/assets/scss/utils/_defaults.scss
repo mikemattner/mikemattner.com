@@ -138,3 +138,8 @@ img::selection {
 img::-moz-selection {
     background: transparent
 }
+blockquote {
+    padding-left: 30px;
+    position: relative;
+    border-left: 3px solid $darkBlue-8;
+}

@@ -1,7 +1,7 @@
 <template>
   <section class="section section--article">
     <div :key="$route.params.slug">
-      <BaseHero dark>
+      <BaseHero arrow dark>
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-two-thirds">
@@ -16,7 +16,7 @@
         </template>
       </BaseHero>
       <Wavy flip />
-      <div class="container">
+      <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
             <div v-html="articleContent" v-scroll-reveal></div>

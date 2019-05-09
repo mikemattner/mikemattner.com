@@ -9,7 +9,9 @@
   >
     <div class="container">
       <slot></slot>
-      <div v-if="arrow" class="bounce-arrow"></div>
+      <ScrollLink class="anchor" href="#content">
+        <div v-if="arrow" class="bounce-arrow"></div>
+      </ScrollLink>
     </div>
   </header>
 </template>
@@ -36,6 +38,7 @@ export default {
   justify-content: center;
   align-items: stretch;
   position: relative;
+  z-index: 100;
   &--full {
     min-height: 100vh;
   }
@@ -83,20 +86,27 @@ export default {
   .container {
     position: relative;
   }
-  .bounce-arrow {
-    display: block;
+  .anchor {
+    display: flex;
     position: absolute;
-    bottom: -6rem;
+    bottom: -5rem;
     height: 3rem;
-    // cursor: pointer;
-
-    &:before {
-      @include arrow-down(rgba($white, 0.25));
-      // @include arrow-right($white);
-      animation: bounce 1.5s;
-      // animation: bounceRight 1.5s;
-      animation-direction: alternate;
-      animation-iteration-count: infinite;
+    width: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: none;
+    .bounce-arrow {
+      display: block;
+      height: 3rem;
+      margin: 0 auto;
+      &:before {
+        @include arrow-down(rgba($white, 0.25));
+        // @include arrow-right($white);
+        animation: bounce 1.5s;
+        // animation: bounceRight 1.5s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
     }
   }
 }

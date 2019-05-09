@@ -17,7 +17,7 @@
       </template>
     </BaseHero>
     <WavyLines />
-    <section class="section" v-scroll-reveal.reset>
+    <section id="content" class="section" v-scroll-reveal.reset>
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-7 copy">

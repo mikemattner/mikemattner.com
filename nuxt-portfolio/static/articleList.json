@@ -1,16 +1,37 @@
 [
   {
+    "title": "Adventures in Dotfiles",
+    "description": "Laziness leads to productivity later.",
+    "topic": "Development",
+    "date": "May 9, 2019",
+    "path": "adventures-in-dotfiles"
+  },
+  {
+    "title": "Baloney Detection Toolkit",
+    "description": "Carl Sagan’s “Baloney Detection Kit”: A Toolkit That Can Help You Scientifically Separate Sense from Nonsense",
+    "topic": "Philosophy",
+    "date": "May 4, 2019",
+    "path": "baloney-detection-toolkit"
+  },
+  {
+    "title": "On Flat UI",
+    "description": "On flat UI elements and their problematic nature.",
+    "topic": "Design",
+    "date": "May 4, 2019",
+    "path": "on-flat-ui"
+  },
+    {
     "title": "Built With Nuxt",
     "description": "Building with a more modern development experience.",
     "topic": "Development",
-    "date": "May 6, 2019",
+    "date": "May 2, 2019",
     "path": "built-with-nuxt"
   },
   {
     "title": "Hello World",
     "description": "Launching something new, but old.",
     "topic": "Development",
-    "date": "May 6, 2019",
+    "date": "May 1, 2019",
     "path": "hello-world"
   }
 ]

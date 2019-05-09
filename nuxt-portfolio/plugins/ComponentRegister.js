@@ -10,6 +10,7 @@ import WavyLines from '../components/base/WavyLines.vue'
 import ArticleLink from '../components/ArticleLink.vue'
 import Loading from '../components/base/Loading.vue'
 import Button from '../components/base/Button.vue'
+import ScrollLink from '../components/base/ScrollLink.vue'
 
 Vue.component('BaseHero', BaseHero)
 Vue.component('BrandLogo', BrandLogo)
@@ -22,3 +23,4 @@ Vue.component('WavyLines', WavyLines)
 Vue.component('ArticleLink', ArticleLink)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)
+Vue.component('ScrollLink', ScrollLink)

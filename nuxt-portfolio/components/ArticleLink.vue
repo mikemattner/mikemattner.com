@@ -38,7 +38,7 @@ export default {
     background-image: none;
     position: relative;
     @media (min-width: $tablet) {
-      padding: 2rem 1rem;
+      padding: 2rem 3.5rem 2rem 1rem;
     }
     .icon {
       width: 2rem;
