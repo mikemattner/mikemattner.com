@@ -89,8 +89,8 @@ a {
     background-size: 100% 1px;
 
     &:hover {
-        color: $orange;
-        background-size: 100% 2px;
+        color: $white;
+        background-size: 100% 6px;
     }
 }
 
@@ -123,6 +123,9 @@ img {
 }
 code {
     font-family: $source-code-font;
+    font-size: 0.9rem;
+    color: $darkBlue-11;
+    background-color: $darkBlue-3;
 }
 ::selection {
     background: rgba($orange,1.0);

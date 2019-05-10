@@ -105,9 +105,7 @@ export default {
       margin: 0 auto;
       &:before {
         @include arrow-down(rgba($white, 0.25));
-        // @include arrow-right($white);
         animation: bounce 1.5s;
-        // animation: bounceRight 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
       }

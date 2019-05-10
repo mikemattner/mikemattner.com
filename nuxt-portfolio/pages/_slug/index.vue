@@ -116,6 +116,9 @@ export default {
       margin-left: -4rem;
       margin-right: -4rem;
     }
+    code {
+      background-color: transparent;
+    }
   }
   .meta {
     font-size: 0.675rem;

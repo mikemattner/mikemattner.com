@@ -94,19 +94,19 @@ export default {
       height: 20px;
       cursor: pointer;
       span {
-        height: 2px;
+        height: 3px;
         background-color: $white;
         transition: all 0.25s ease-in-out;
         border-radius: 2px;
         &:nth-child(2) {
-          width: 80%;
+          margin-left: 20%;
         }
       }
       &:hover {
         span {
           background-color: $orange;
           &:nth-child(2) {
-            width: 100%;
+            margin-left: 0;
           }
         }
       }
@@ -124,7 +124,7 @@ export default {
       opacity: 0;
       visibility: hidden;
       transition: all 0.125s 0.25s ease-in-out;
-      transform: scale(0.7) translateY(-50vh);
+      transform: scale(0.5) translateY(-50vh);
       z-index: 10100;
       background-color: rgba($darkBlue-3, 1);
       display: flex;
@@ -181,7 +181,7 @@ export default {
         background-size: 100% 0px;
 
         &:hover {
-          background-size: 100% 3px;
+          background-size: 100% 6px;
         }
 
         &.nuxt-link-exact-active {

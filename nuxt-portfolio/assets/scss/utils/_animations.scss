@@ -7,3 +7,8 @@
     from { transform: translate3d(-10px, 0, 0);}
     to   { transform: translate3d(10px, 0, 0); }
 }
+
+@keyframes animateOpen {
+  from { width: 0; opacity: 0; }
+  to   { width: 100%; opacity: 1; }
+}
