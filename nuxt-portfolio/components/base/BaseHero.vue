@@ -9,7 +9,11 @@
   >
     <div class="container">
       <slot></slot>
-      <ScrollLink class="anchor" href="#content" name="scroll anchor">
+      <ScrollLink
+        class="anchor"
+        href="#content"
+        aria-label="Scroll to the primary content."
+      >
         <div v-if="arrow" class="bounce-arrow"></div>
       </ScrollLink>
     </div>

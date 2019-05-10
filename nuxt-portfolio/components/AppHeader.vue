@@ -9,6 +9,7 @@
           class="navbar__menu-button"
           tabindex="0"
           role="button"
+          aria-label="Open navigation"
           @click="toggle()"
         >
           <span></span>
