@@ -64,7 +64,10 @@ export default {
   ],
   sitemap: {
     gzip: true,
-    routes: []
+    routes: () => {
+      const routes = articles.map(article => article.path)
+      return routes
+    }
   },
   styleResources: {
     scss: [
