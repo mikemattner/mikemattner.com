@@ -50,7 +50,7 @@ export default {
     background-color: $darkBlue-3;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 0.09rem;
     line-height: 1;
     small {
