@@ -5,7 +5,12 @@
         <nuxt-link to="/"><BrandLogo label/></nuxt-link>
       </div>
       <div class="navbar__menu">
-        <div class="navbar__menu-button" aria-role="button" @click="toggle()">
+        <div
+          class="navbar__menu-button"
+          tabindex="0"
+          role="button"
+          @click="toggle()"
+        >
           <span></span>
           <span></span>
           <span></span>

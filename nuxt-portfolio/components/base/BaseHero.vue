@@ -9,7 +9,7 @@
   >
     <div class="container">
       <slot></slot>
-      <ScrollLink class="anchor" href="#content">
+      <ScrollLink class="anchor" href="#content" name="scroll anchor">
         <div v-if="arrow" class="bounce-arrow"></div>
       </ScrollLink>
     </div>
