@@ -12,11 +12,18 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'UX designer & developer in Michigan' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'UX designer & developer in Michigan'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900' }
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Playfair+Display:400,900'
+      }
     ]
   },
 
@@ -94,7 +101,22 @@ export default {
     injected: true,
     use: ['markdown-it-highlightjs']
   },
-
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fonts.googleapis.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        urlPattern: 'https://fonts.gstatic.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      }
+    ]
+  },
   /**
    * Dynamic route generation
    */
