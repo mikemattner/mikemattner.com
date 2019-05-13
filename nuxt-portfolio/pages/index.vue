@@ -47,7 +47,7 @@
                 <ArticleLink :article="article" />
               </li>
             </ul>
-            <!-- <nuxt-link to="/contact" class="button">Archives</nuxt-link> -->
+            <nuxt-link to="/archive" class="button">Read More</nuxt-link>
           </div>
         </div>
       </div>
@@ -213,7 +213,6 @@ export default {
       position: relative;
     }
     .self-portrait {
-      margin-top: 2rem;
       position: absolute;
       width: 250px;
       top: -3rem;

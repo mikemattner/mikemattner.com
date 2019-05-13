@@ -2,12 +2,15 @@
   border: 1px solid $darkBlue-7;
   padding: 0.5rem 1rem;
   display: block;
-  max-width: 200px;
   text-align: center;
   background-image: none;
   margin: 2rem 0;
   transition: all 0.25s ease-in-out;
   font-size: 0.75rem;
+  
+  @media (min-width: $tablet) {
+    max-width: 200px;
+  }
 
   &:focus {
     outline: 0;
