@@ -1,5 +1,12 @@
 [
   {
+    "title": "Advice to My Younger Self",
+    "description": "On decisions and their overall impact.",
+    "topic": "Development",
+    "date": "May 9, 2019",
+    "path": "advice-to-younger-self"
+  },
+  {
     "title": "Adventures in Dotfiles",
     "description": "Laziness leads to productivity later.",
     "topic": "Development",
@@ -8,7 +15,7 @@
   },
   {
     "title": "Baloney Detection Toolkit",
-    "description": "Carl Sagan’s “Baloney Detection Kit”: A Toolkit That Can Help You Scientifically Separate Sense from Nonsense",
+    "description": "Carl Sagan’s “Baloney Detection Kit”: A Toolkit That Can Help You Scientifically Separate Sense from Nonsense.",
     "topic": "Philosophy",
     "date": "May 4, 2019",
     "path": "baloney-detection-toolkit"

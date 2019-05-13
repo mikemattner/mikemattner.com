@@ -1,0 +1,4 @@
+<blockquote>When I was younger, I worried that every decision I made would send me down that path for LIFE. Every time I faced a choice of whether to accept a new job, move to a different city or stay in a relationship, I built it up as a definitive, forever-life-altering moment. And while that was true on some level — all the little choices do, in fact, add up to the life that you end up living — I wish I could go back in time and whisper in my own ear, ‘Let this decision just be this decision, not a loaded choice about the rest of your days on earth. You can always reroute.’
+— Ann Friedman</blockquote>
+
+Via <a href="https://www.swiss-miss.com/2019/05/advice-for-my-younger-self.html" target="_blank">Swiss Miss</a>.
