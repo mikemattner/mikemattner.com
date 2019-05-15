@@ -20,6 +20,7 @@
     </div>
     <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
       <CloseButton class="close" @click="toggle()" />
+      <MyLogo />
       <h2 class="decorator decorator--center">Navigation</h2>
       <ul>
         <li>
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+import MyLogo from '@/assets/img/logo.svg'
 import CloseButton from '@/assets/img/close.svg'
 import { headroom } from 'vue-headroom'
 headroom.computed.style = () => ''
@@ -48,7 +50,8 @@ export default {
   name: 'AppHeader',
   components: {
     headroom,
-    CloseButton
+    CloseButton,
+    MyLogo
   },
   data() {
     return {
@@ -160,6 +163,23 @@ export default {
 
         &:hover {
           stroke: $orange;
+        }
+      }
+      .brand-logo {
+        &__image {
+          height: 2rem;
+          width: 2rem;
+          z-index: 10;
+          margin-bottom: 2rem;
+
+          .circle-shape {
+            fill: transparent;
+            transition: all 0.25s ease-in-out;
+          }
+          .logo-shape {
+            fill: $darkBlue;
+            transition: all 0.25s ease-in-out;
+          }
         }
       }
 

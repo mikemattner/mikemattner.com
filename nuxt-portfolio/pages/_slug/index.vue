@@ -27,7 +27,6 @@
                 class="prev-link"
                 >← {{ prevArticle.title }}</nuxt-link
               >
-              <nuxt-link to="/" class="home-link">Home</nuxt-link>
               <nuxt-link
                 v-if="nextArticle"
                 :to="'/' + nextArticle.path"
