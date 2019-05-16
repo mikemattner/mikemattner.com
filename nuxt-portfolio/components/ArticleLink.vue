@@ -37,6 +37,7 @@ export default {
     padding: 2rem 3rem 2rem 0;
     background-image: none;
     position: relative;
+    overflow: hidden;
     @media (min-width: $tablet) {
       padding: 2rem 3.5rem 2rem 1rem;
     }
@@ -86,6 +87,21 @@ export default {
         fill: $white;
         color: $white;
       }
+    }
+    .button__bubble {
+      transition: all 0.125s ease-in-out;
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      background-color: $darkBlue-5;
+      will-change: transform;
+      transform: translate(-50%, -50%) scale(0);
+      transition-property: transform;
+    }
+    &:hover .button__bubble,
+    &:focus .button__bubble {
+      transform: translate(-50%, -50%) scale(1.5);
+      transition: all 0.5s ease-in-out;
     }
   }
   .article-title {

@@ -55,7 +55,7 @@ export default {
     border-radius: 2px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     background-image: none;
-    transform: scale(1.02);
+    // transform: scale(1.02);
   }
 
   &__bubble {
