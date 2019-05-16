@@ -3,7 +3,7 @@
     <Wavy />
     <div class="darker">
       <p>
-        &copy; {{ theYear }} Mike Mattner. Made in Michigan.
+        &copy; {{ theYear }} Mike Mattner. Made in Michigan. Built with Nuxt.
         <fa-icon icon="heart" size="sm"></fa-icon>
       </p>
     </div>
