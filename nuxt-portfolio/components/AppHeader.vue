@@ -173,11 +173,11 @@ export default {
           margin-bottom: 2rem;
 
           .circle-shape {
-            fill: transparent;
+            fill: $darkBlue;
             transition: all 0.25s ease-in-out;
           }
           .logo-shape {
-            fill: $darkBlue;
+            fill: $darkBlue-3;
             transition: all 0.25s ease-in-out;
           }
         }
