@@ -21,17 +21,17 @@
           <div class="column is-two-thirds">
             <div v-html="articleContent" v-scroll-reveal></div>
             <div class="links">
-              <nuxt-link
+              <Button
                 v-if="prevArticle"
                 :to="'/' + prevArticle.path"
-                class="prev-link"
-                >← {{ prevArticle.title }}</nuxt-link
+                class="button"
+                >Previous Article</Button
               >
-              <nuxt-link
+              <Button
                 v-if="nextArticle"
                 :to="'/' + nextArticle.path"
-                class="next-link"
-                >{{ nextArticle.title }} →</nuxt-link
+                class="button"
+                >Next Article</Button
               >
             </div>
           </div>
@@ -67,8 +67,8 @@ export default {
     getArticleData() {
       this.article = articleList.filter((a, index) => {
         if (a.path === this.$route.params.slug) {
-          this.prevArticle = articleList[index - 1]
-          this.nextArticle = articleList[index + 1]
+          this.prevArticle = articleList[index + 1]
+          this.nextArticle = articleList[index - 1]
           return a
         }
       })[0]

@@ -47,7 +47,7 @@
                 <ArticleLink :article="article" />
               </li>
             </ul>
-            <nuxt-link to="/archive" class="button">Read More</nuxt-link>
+            <Button to="/archive" class="button">Read More</Button>
           </div>
         </div>
       </div>
