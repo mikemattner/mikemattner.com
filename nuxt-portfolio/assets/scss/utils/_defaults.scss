@@ -3,17 +3,17 @@ html {
   line-height: 1.5;
   letter-spacing: 0.0125rem;
   @media (min-width: 1200px) {
-        font-size: 20px;
+    font-size: 20px;
   }
 }
 body {
-    background-color: $darkBlue;
-    color: $darkBlue-13;
-    font-family: $sans-serif-font;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-top: 0;
+  background-color: $darkBlue;
+  color: $darkBlue-13;
+  font-family: $sans-serif-font;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 0;
 }
 
 h1,
@@ -22,54 +22,54 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1.2;
-    color: $white;
+  line-height: 1.2;
+  color: $white;
 
-    small {
-        font-family: $sans-serif-font;
-        font-size: 0.375em;
-        text-transform: uppercase;
+  small {
+    font-family: $sans-serif-font;
+    font-size: 0.375em;
+    text-transform: uppercase;
+  }
+
+  &.decorator {
+    padding-bottom: 1.5rem;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 3rem;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: $orange;
     }
 
-    &.decorator {
-        padding-bottom: 1.5rem;
-        position:relative;
-
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 3rem;
-            height: 1px;
-            left: 0;
-            bottom: 0;
-            background-color: $orange;
-        }
-
-        &--center {
-            &:after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
+    &--center {
+      &:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
+  }
 }
 
 h1,
 h2 {
-    font-family: $serif-font;
-    font-weight: 900;
+  font-family: $serif-font;
+  font-weight: 900;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    font-weight:700;
+  font-weight: 700;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 ul,
 ol {
@@ -77,73 +77,84 @@ ol {
   padding-left: 0;
 }
 ul {
-    padding-left: 1.125em;
+  padding-left: 1.125em;
 }
 a {
-    color: $white;
-    transition: all 0.25s ease-in-out;
-    text-decoration: none;
-    background-image: linear-gradient($orange, $orange);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
+  color: $white;
+  transition: all 0.25s ease-in-out;
+  text-decoration: none;
+  background-image: linear-gradient($orange, $orange);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
 
-    &:hover {
-        color: $white;
-        background-size: 100% 6px;
-    }
+  &:hover {
+    color: $white;
+    background-size: 100% 6px;
+  }
 }
 
 hr {
-    background-color: $darkBlue-7;
-    width: 100%;
-    height: 1px;
-    border: 0;
-    margin: 0;
+  background-color: $darkBlue-7;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  margin: 0;
 }
 // .container {
 //     max-width: 60rem;
 // }
 .container {
-    width: 100%;
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 2rem;
 
-    @include min-media(768px) {
-        // padding: 0 2%;
-    }
+  @include min-media(768px) {
+    // padding: 0 2%;
+  }
 }
 
 img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 1.5rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 code {
-    font-family: $source-code-font;
-    font-size: 0.9rem;
-    color: $darkBlue-11;
-    background-color: $darkBlue-3;
+  font-family: $source-code-font;
+  font-size: 0.9rem;
+  color: $darkBlue-11;
+  background-color: $darkBlue-3;
 }
 ::selection {
-    background: rgba($orange,1.0);
-    color: $white;
+  background: rgba($orange, 1);
+  color: $white;
 }
 ::-moz-selection {
-    background: rgba($orange,1.0);
-    color: $white;
+  background: rgba($orange, 1);
+  color: $white;
 }
 img::selection {
-    background: transparent
+  background: transparent;
 }
 img::-moz-selection {
-    background: transparent
+  background: transparent;
 }
 blockquote {
-    padding-left: 30px;
-    position: relative;
-    border-left: 3px solid $darkBlue-8;
-    margin: 1rem 0;
+  padding-left: 30px;
+  position: relative;
+  border-left: 3px solid $darkBlue-8;
+  margin: 1rem 0;
+}
+
+@media (max-width: $tablet) {
+  .columns {
+    display: flex;
+    flex-direction: column;
+    .column {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
 }

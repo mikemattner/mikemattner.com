@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .is--work {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -60,12 +60,23 @@
     .sample {
       border-radius: 2px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-      &.left {
-        margin-left: -2rem;
+      @media (min-width: $tablet) {
+        &.left {
+          margin-left: -2rem;
+        }
+        &.right {
+          margin-left: 4rem;
+          margin-top: -20rem;
+        }
       }
-      &.right {
-        margin-left: 4rem;
-        margin-top: -20rem;
+      @media (max-width: $tablet) {
+        &.left {
+          margin-left: -2rem;
+        }
+        &.right {
+          margin-left: 2rem;
+          margin-top: -10rem;
+        }
       }
     }
   }

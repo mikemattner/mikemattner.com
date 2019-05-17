@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--article">
+  <section class="section--work">
     <div :key="$route.params.slug">
       <BaseHero arrow decorator dark>
         <template v-slot:default>
@@ -12,10 +12,12 @@
         </template>
       </BaseHero>
       <Wavy flip />
-      <div id="content" class="container">
-        <JennAir />
-        <Whirlpool />
-      </div>
+      <section class="section">
+        <div class="container" v-scroll-reveal>
+          <JennAir />
+          <Whirlpool />
+        </div>
+      </section>
     </div>
   </section>
 </template>
@@ -39,58 +41,11 @@ export default {
 </script>
 
 <style lang="scss">
-.section--article {
-  min-height: 90vh;
-  .article-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      margin: 0;
-      border-bottom: 1px solid $darkBlue-6;
-
-      &:first-child {
-        border-top: 1px solid $darkBlue-6;
-      }
-    }
-  }
-  pre {
-    background-color: $darkBlue-2;
-    font-size: 0.75rem;
-    padding: 2rem;
-    border-radius: 2px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-    @media (min-width: $tablet) {
-      margin-left: -4rem;
-      margin-right: -4rem;
-    }
-    code {
-      background-color: transparent;
-    }
-  }
-  .meta {
-    font-size: 0.675rem;
-    margin: 0;
-    color: rgba($white, 0.25);
-    .bull {
-      margin: 0 0.25rem;
-    }
-    .tag {
-      font-size: 0.575rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-  }
-  .links {
-    margin-top: 2rem;
-    padding: 1rem 0;
-    border-top: 1px solid rgba($white, 0.1);
-    text-align: center;
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.section--work {
+  .section {
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
   }
 }
 </style>
