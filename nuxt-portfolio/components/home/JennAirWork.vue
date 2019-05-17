@@ -16,7 +16,7 @@
     </div>
     <div class="column is-5 work-description right">
       <h6>Development / Design / CMS</h6>
-      <h2>Influencer Hub</h2>
+      <h2 class="decorator">Influencer Hub</h2>
       <p>
         The influencer hub is a premium destination for brand and product
         knowledge. When JennAir rebranded, I was a key team member for the
@@ -30,6 +30,16 @@
 .is--work {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  h6 {
+    margin: 0;
+    text-transform: uppercase;
+    // color: $darkBlue-10;
+    letter-spacing: 0.0675rem;
+    font-weight: 400;
+  }
+  h2 {
+    margin-top: 0.25rem;
+  }
   .work-description {
     z-index: 12;
     @media (min-width: $tablet) {

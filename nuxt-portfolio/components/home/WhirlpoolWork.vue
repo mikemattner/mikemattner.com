@@ -2,7 +2,7 @@
   <div class="columns is-vcentered is--work">
     <div class="column is-5 work-description">
       <h6>Development / AEM</h6>
-      <h2>Experiential Design</h2>
+      <h2 class="decorator">Experiential Design</h2>
       <p>
         Working with a world class UX team, I implemented the design and
         experience of the interactive touch control piece that featured video,
@@ -40,6 +40,16 @@
 .is--work {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  h6 {
+    margin: 0;
+    text-transform: uppercase;
+    // color: $darkBlue-10;
+    letter-spacing: 0.0675rem;
+    font-weight: 400;
+  }
+  h2 {
+    margin-top: 0.25rem;
+  }
   .work-description {
     z-index: 12;
     @media (min-width: $tablet) {
