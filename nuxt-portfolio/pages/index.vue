@@ -17,14 +17,14 @@
       </template>
     </BaseHero>
     <WavyLines />
-    <section id="content" class="section" v-scroll-reveal.reset>
+    <section id="content" class="section" v-scroll-reveal>
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-7 copy">
             <p v-html="statement.body"></p>
           </div>
           <div class="column">
-            <h6>I Focus On</h6>
+            <h6 v-html="statement.meta"></h6>
             <h2 class="decorator" v-html="statement.title"></h2>
           </div>
         </div>
@@ -32,7 +32,7 @@
     </section>
     <Wavy />
     <section class="section section--writing section--dark">
-      <div class="container" v-scroll-reveal.reset>
+      <div class="container" v-scroll-reveal>
         <div class="columns">
           <div class="column">
             <h6>Some of My</h6>
@@ -55,67 +55,9 @@
     </section>
     <Wavy flip />
     <section class="section">
-      <div class="container" v-scroll-reveal.reset>
-        <div class="columns is-vcentered is--work">
-          <div class="column is-7">
-            <div class="work-sample">
-              <StaticImage
-                :src="`img/jennair/home.jpg`"
-                :alt="'JennAir Influencer Hub'"
-                class="sample left"
-              />
-              <StaticImage
-                :src="`img/jennair/columns.jpg`"
-                :alt="'JennAir Influencer Hub'"
-                class="sample right"
-              />
-            </div>
-          </div>
-          <div class="column is-5 work-description right">
-            <h6>Development / Design / CMS</h6>
-            <h2>Influencer Hub</h2>
-            <p>
-              The influencer hub is a premium destination for brand and product
-              knowledge. When JennAir rebranded, I was a key team member for the
-              development and design of the overhauled experience.
-            </p>
-          </div>
-        </div>
-        <div class="columns is-vcentered is--work">
-          <div class="column is-5 work-description">
-            <h6>Development / AEM</h6>
-            <h2>Experiential Design</h2>
-            <p>
-              Working with a world class UX team, I implemented the design and
-              experience of the interactive touch control piece that featured
-              video, complex animations, and user lead interactions. All as a
-              custom piece in AEM.
-            </p>
-            <p>
-              <a
-                href="https://www.whirlpool.com/laundry/cabrio-top-load-washer-set.html"
-                class="button"
-                rel="nofollow"
-                target="_blank"
-                >View Work</a
-              >
-            </p>
-          </div>
-          <div class="column is-7">
-            <div class="work-sample">
-              <StaticImage
-                :src="`img/whirlpool/secondary.jpg`"
-                :alt="'Whirlpool Top Load'"
-                class="sample left"
-              />
-              <StaticImage
-                :src="`img/whirlpool/primary.jpg`"
-                :alt="'Whirlpool Top Load'"
-                class="sample right"
-              />
-            </div>
-          </div>
-        </div>
+      <div class="container" v-scroll-reveal>
+        <JennAir />
+        <Whirlpool />
       </div>
     </section>
   </div>
@@ -131,10 +73,16 @@ import {
   brands
 } from '~/data/home.yaml'
 import articles from '@/static/articleList.json'
+import Whirlpool from '@/components/home/WhirlpoolWork.vue'
+import JennAir from '@/components/home/JennAirWork.vue'
 
 export default {
   name: 'Home',
   transition: 'fade',
+  components: {
+    Whirlpool,
+    JennAir
+  },
   data() {
     return {
       intro,
@@ -299,43 +247,6 @@ export default {
     .is-summary {
       p {
         font-size: 0.75rem;
-      }
-    }
-
-    .is--work {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      .work-description {
-        z-index: 12;
-        @media (min-width: $tablet) {
-          &.right {
-            margin-left: -3rem;
-          }
-          &.left {
-            margin-right: -3rem;
-          }
-        }
-        @media (max-width: $tablet) {
-          order: 2;
-        }
-      }
-      .work-sample {
-        position: relative;
-        z-index: 10;
-        .sample {
-          border-radius: 2px;
-          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-          &.left {
-            margin-left: -2rem;
-          }
-          &.right {
-            margin-left: 4rem;
-            margin-top: -20rem;
-          }
-        }
-      }
-      .brand {
-        width: 100px;
       }
     }
 
