@@ -24,23 +24,24 @@
             <p v-html="statement.body"></p>
           </div>
           <div class="column">
-            <h2 v-html="statement.title"></h2>
+            <h6>I Focus On</h6>
+            <h2 class="decorator" v-html="statement.title"></h2>
           </div>
         </div>
       </div>
     </section>
     <Wavy />
     <section class="section section--writing section--dark">
-      <WavyLines class="wavy--fixed" />
       <div class="container" v-scroll-reveal.reset>
         <div class="columns">
           <div class="column">
+            <h6>Some of My</h6>
             <h2 class="decorator">Recent Writing</h2>
           </div>
           <div class="column is-8 copy">
             <ul class="article-list">
               <li
-                v-for="article in articles.slice(0, 5)"
+                v-for="article in articles.slice(0, 3)"
                 :key="article.title"
                 class="article"
               >
@@ -53,77 +54,65 @@
       </div>
     </section>
     <Wavy flip />
-    <!-- <Wavy />
-    <section class="section section--dark">
-      <div class="container" v-scroll-reveal.reset>
-        <div class="columns">
-          <div class="column is-one-quarter">
-            <h2 class="decorator">Brands</h2>
-          </div>
-          <div
-            class="column is-three-quarters"
-            v-scroll-reveal.reset="{ delay: 500, distance: '50px' }"
-          >
-            <ul class="list--flat">
-              <li v-for="(brand, index) in brands" :key="index">
-                <StaticImage
-                  :src="`img/brand/${brand.image}`"
-                  :alt="brand.name"
-                  class="self-portrait"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <Wavy flip /> -->
     <section class="section">
       <div class="container" v-scroll-reveal.reset>
-        <div class="columns">
-          <div class="column is-one-quarter is-summary">
-            <h2 class="decorator">
-              Summary
-            </h2>
+        <div class="columns is-vcentered is--work">
+          <div class="column is-7">
+            <div class="work-sample">
+              <StaticImage
+                :src="`img/jennair/home.jpg`"
+                :alt="'JennAir Influencer Hub'"
+                class="sample left"
+              />
+              <StaticImage
+                :src="`img/jennair/columns.jpg`"
+                :alt="'JennAir Influencer Hub'"
+                class="sample right"
+              />
+            </div>
           </div>
-          <div
-            class="column is-one-quarter"
-            v-scroll-reveal.reset="{ delay: 400, distance: '50px' }"
-          >
-            <h3>Knowledge</h3>
-            <ul class="list--blank">
-              <li
-                v-for="(tech, index) in technical"
-                :key="index"
-                v-html="tech"
-              ></li>
-            </ul>
+          <div class="column is-5 work-description right">
+            <h6>Development / Design / CMS</h6>
+            <h2>Influencer Hub</h2>
+            <p>
+              The influencer hub is a premium destination for brand and product
+              knowledge. When JennAir rebranded, I was a key team member for the
+              development and design of the overhauled experience.
+            </p>
           </div>
-          <div
-            class="column is-one-quarter"
-            v-scroll-reveal.reset="{ delay: 600, distance: '50px' }"
-          >
-            <h3>Software</h3>
-            <ul class="list--blank">
-              <li
-                v-for="(software, index) in softwares"
-                :key="index"
-                v-html="software"
-              ></li>
-            </ul>
+        </div>
+        <div class="columns is-vcentered is--work">
+          <div class="column is-5 work-description">
+            <h6>Development / AEM</h6>
+            <h2>Experiential Design</h2>
+            <p>
+              Working with a world class UX team, I implemented the design and
+              experience of the interactive touch control piece that featured
+              video, complex animations, and user lead interactions. All as a
+              custom piece in AEM.
+            </p>
+            <p>
+              <a
+                href="https://www.whirlpool.com/laundry/cabrio-top-load-washer-set.html"
+                class="button"
+                target="_blank"
+                >View Work</a
+              >
+            </p>
           </div>
-          <div
-            class="column is-one-quarter"
-            v-scroll-reveal.reset="{ delay: 800, distance: '50px' }"
-          >
-            <h3>Skills</h3>
-            <ul class="list--blank">
-              <li
-                v-for="(skill, index) in skills"
-                :key="index"
-                v-html="skill"
-              ></li>
-            </ul>
+          <div class="column is-7">
+            <div class="work-sample">
+              <StaticImage
+                :src="`img/whirlpool/secondary.jpg`"
+                :alt="'Whirlpool Top Load'"
+                class="sample left"
+              />
+              <StaticImage
+                :src="`img/whirlpool/primary.jpg`"
+                :alt="'Whirlpool Top Load'"
+                class="sample right"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -252,19 +241,12 @@ export default {
   h2 {
     margin-top: 0.25rem;
   }
-  .wavy--fixed {
-    position: absolute;
-    top: 50%;
-    left: -2rem;
-    right: 0;
-    width: 120%;
-    transform: rotate(15deg);
-    opacity: 0.25;
-    z-index: 1;
-    @media (max-width: $tablet) {
-      visibility: hidden;
-      opacity: 0;
-    }
+  h6 {
+    margin: 0;
+    text-transform: uppercase;
+    // color: $darkBlue-10;
+    letter-spacing: 0.0675rem;
+    font-weight: 400;
   }
   .section {
     padding: 4rem 0;
@@ -309,13 +291,50 @@ export default {
 
     &--writing {
       h2 {
-        margin-top: 2rem;
+        // margin-top: 2rem;
       }
     }
 
     .is-summary {
       p {
         font-size: 0.75rem;
+      }
+    }
+
+    .is--work {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      .work-description {
+        z-index: 12;
+        @media (min-width: $tablet) {
+          &.right {
+            margin-left: -3rem;
+          }
+          &.left {
+            margin-right: -3rem;
+          }
+        }
+        @media (max-width: $tablet) {
+          order: 2;
+        }
+      }
+      .work-sample {
+        position: relative;
+        z-index: 10;
+        .sample {
+          border-radius: 2px;
+          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+          &.left {
+            margin-left: -2rem;
+          }
+          &.right {
+            margin-left: 4rem;
+            margin-top: -20rem;
+          }
+        }
+      }
+      .brand {
+        width: 100px;
       }
     }
 

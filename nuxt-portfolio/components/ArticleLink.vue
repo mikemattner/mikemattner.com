@@ -13,7 +13,7 @@
         {{ article.description }}
       </p>
       <div class="icon">
-        <fa-icon icon="chevron-right" size="lg"></fa-icon>
+        <!-- <fa-icon icon="chevron-right" size="lg"></fa-icon> -->
       </div>
     </nuxt-link>
   </div>
@@ -43,17 +43,21 @@ export default {
       padding: 2rem 3.5rem 2rem 1rem;
     }
     .icon {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: rgba($black, 0.1);
+      // width: 2rem;
+      // height: 2rem;
+      // border-radius: 50%;
+      // background-color: rgba($black, 0.1);
       display: flex;
       justify-content: center;
       align-items: center;
       position: absolute;
-      right: 1rem;
+      right: 2rem;
       top: 50%;
       transform: translateY(-50%);
+      transition: all 0.25s ease-in-out;
+      &:before {
+        @include arrow-right(rgba($white, 0.25));
+      }
     }
     svg {
       opacity: 0.25;
@@ -74,7 +78,7 @@ export default {
       background-color: $darkBlue-5;
       border-radius: 2px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-      transform: scale(1.01);
+      // transform: scale(1.01);
       // background-size: 100% 100%;
       h3 {
         color: $orange;
@@ -87,6 +91,9 @@ export default {
         opacity: 1;
         fill: $white;
         color: $white;
+      }
+      .icon {
+        transform: translateY(-50%) translateX(0.5rem);
       }
     }
     .button__bubble {
