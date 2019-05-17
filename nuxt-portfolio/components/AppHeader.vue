@@ -21,7 +21,6 @@
     <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
       <CloseButton class="close" @click="toggle()" />
       <MyLogo />
-      <h2 class="decorator decorator--center">Navigation</h2>
       <ul>
         <li>
           <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>

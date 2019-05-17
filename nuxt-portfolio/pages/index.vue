@@ -95,6 +95,7 @@
               <a
                 href="https://www.whirlpool.com/laundry/cabrio-top-load-washer-set.html"
                 class="button"
+                rel="nofollow"
                 target="_blank"
                 >View Work</a
               >
