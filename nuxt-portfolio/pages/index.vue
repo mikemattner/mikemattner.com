@@ -58,6 +58,13 @@
       <div class="container" v-scroll-reveal>
         <JennAir />
         <Whirlpool />
+        <!-- <div class="more-work">
+          <div>
+            <h3>Want to see more of the work I do?</h3>
+            <p>See some of the work I've done over the years.</p>
+          </div>
+          <Button to="/work" class="button">See More</Button>
+        </div> -->
       </div>
     </section>
   </div>
@@ -247,6 +254,21 @@ export default {
     .is-summary {
       p {
         font-size: 0.75rem;
+      }
+    }
+
+    .more-work {
+      background-color: $darkBlue-3;
+      border-radius: 2px;
+      padding: 1rem 2rem;
+      h3,
+      p {
+        margin: 0;
+      }
+      @media (min-width: $mobile) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
 
