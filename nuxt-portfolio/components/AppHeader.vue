@@ -26,6 +26,9 @@
           <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
         </li>
         <li>
+          <nuxt-link to="/work"><span @click="toggle()">Work</span></nuxt-link>
+        </li>
+        <li>
           <nuxt-link to="/archive"
             ><span @click="toggle()">Archive</span></nuxt-link
           >

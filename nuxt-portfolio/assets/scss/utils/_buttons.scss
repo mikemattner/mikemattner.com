@@ -7,6 +7,11 @@
   margin: 2rem 0;
   transition: all 0.25s ease-in-out;
   font-size: 0.75rem;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   @media (min-width: $tablet) {
     max-width: 200px;
