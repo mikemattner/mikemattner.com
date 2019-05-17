@@ -5,11 +5,15 @@
         <StaticImage
           :src="`img/jennair/home.jpg`"
           :alt="'JennAir Influencer Hub'"
+          width="609"
+          height="457"
           class="sample left"
         />
         <StaticImage
           :src="`img/jennair/columns.jpg`"
           :alt="'JennAir Influencer Hub'"
+          width="609"
+          height="457"
           class="sample right"
         />
       </div>

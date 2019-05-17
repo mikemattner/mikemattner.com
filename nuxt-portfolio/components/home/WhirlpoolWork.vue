@@ -24,11 +24,15 @@
         <StaticImage
           :src="`img/whirlpool/secondary.jpg`"
           :alt="'Whirlpool Top Load'"
+          width="609"
+          height="457"
           class="sample left"
         />
         <StaticImage
           :src="`img/whirlpool/primary.jpg`"
           :alt="'Whirlpool Top Load'"
+          width="609"
+          height="457"
           class="sample right"
         />
       </div>
