@@ -1,5 +1,5 @@
 <template>
-  <div class="single-link">
+  <div :class="['single-link', archive == true ? 'article--link' : '']">
     <nuxt-link :to="article.path">
       <h3 class="article-title">
         {{ article.title }}
@@ -25,7 +25,8 @@ export default {
     article: {
       type: Object,
       required: true
-    }
+    },
+    archive: Boolean
   }
 }
 </script>
@@ -102,6 +103,13 @@ export default {
     &:focus .button__bubble {
       transform: translate(-50%, -50%) scale(1.5);
       transition: all 0.5s ease-in-out;
+    }
+  }
+  &.article--link {
+    a {
+      &:hover {
+        background-color: $darkBlue-6;
+      }
     }
   }
   .article-title {

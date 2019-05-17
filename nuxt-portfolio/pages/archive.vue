@@ -21,7 +21,7 @@
                 :key="article.title"
                 class="article"
               >
-                <ArticleLink :article="article" />
+                <ArticleLink :article="article" archive />
               </li>
             </ul>
           </div>
