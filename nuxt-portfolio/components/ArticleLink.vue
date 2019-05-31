@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import ButtonBubble from '@/assets/js/button.js'
+
 export default {
   props: {
     article: {
@@ -27,6 +29,16 @@ export default {
       required: true
     },
     archive: Boolean
+  },
+  mounted() {
+    this.initialize(ButtonBubble, '.single-link a')
+  },
+  methods: {
+    initialize: function(Script, selector, ...options) {
+      document
+        .querySelectorAll(selector)
+        .forEach(element => new Script(element, ...options))
+    }
   }
 }
 </script>
@@ -75,7 +87,7 @@ export default {
       display: inline-block;
     }
     &:hover {
-      background-color: $darkBlue-5;
+      // background-color: $darkBlue-5;
       border-radius: 2px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
       // transform: scale(1.01);
