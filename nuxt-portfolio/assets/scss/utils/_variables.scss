@@ -2,7 +2,7 @@
 // Colors
 // ----------------------------------------------------------------------------------------------------------------
 
-$darkBlue: rgba(39,47,52,1.0);
+$darkBlue: #1b2b34; //rgba(39,47,52,1.0);
 $darkBlue-1: shade($darkBlue, 60%);
 $darkBlue-2: shade($darkBlue, 50%);
 $darkBlue-3: shade($darkBlue, 40%);
@@ -31,6 +31,8 @@ $orange-9: tint($orange, 30%);
 $orange-10: tint($orange, 40%);
 $orange-11: tint($orange, 50%);
 $orange-12: tint($orange, 60%);
+
+$green: #A3BE8C;
 
 $darkGray: shade($darkBlue, 50%);
 

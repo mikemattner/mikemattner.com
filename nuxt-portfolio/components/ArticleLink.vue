@@ -115,7 +115,8 @@ export default {
   &.article--link {
     a {
       &:hover {
-        background-color: $darkBlue-6;
+        background-color: rgba($darkBlue-6, 0);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
       }
     }
   }
