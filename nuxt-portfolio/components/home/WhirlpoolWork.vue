@@ -122,7 +122,7 @@ export default {
             margin-left: -2rem;
           }
           &.right {
-            margin-left: 3rem;
+            margin-left: 2rem;
             margin-top: -20rem;
           }
         }
