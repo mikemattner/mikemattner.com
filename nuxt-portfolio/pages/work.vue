@@ -14,9 +14,9 @@
       <Wavy flip />
       <section class="section">
         <div class="container" v-scroll-reveal>
-          <WorkBook />
-          <JennAir />
-          <Whirlpool />
+          <WorkBook left pullLeft />
+          <JennAir right />
+          <Whirlpool left />
         </div>
       </section>
     </div>

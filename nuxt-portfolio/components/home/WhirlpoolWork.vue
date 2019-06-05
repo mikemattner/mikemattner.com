@@ -1,6 +1,36 @@
 <template>
-  <div class="columns is-vcentered is--work">
-    <div class="column is-5 work-description">
+  <div
+    :class="[
+      'columns is-vcentered is--work',
+      right == true ? 'right' : '',
+      left == true ? 'left' : ''
+    ]"
+  >
+    <div class="column is-7 work-imagery">
+      <div class="work-sample">
+        <StaticImage
+          :src="`img/whirlpool/secondary.jpg`"
+          :alt="'Whirlpool Top Load'"
+          width="609"
+          height="457"
+          class="sample left"
+        />
+        <StaticImage
+          :src="`img/whirlpool/primary.jpg`"
+          :alt="'Whirlpool Top Load'"
+          width="609"
+          height="457"
+          class="sample right"
+        />
+      </div>
+    </div>
+    <div
+      :class="[
+        'column is-5 work-description',
+        pullRight == true ? 'right' : '',
+        pullLeft == true ? 'left' : ''
+      ]"
+    >
       <h6>2016 / Development / AEM</h6>
       <h2 class="decorator">Experiential Design</h2>
       <p>
@@ -19,26 +49,19 @@
         >
       </p>
     </div>
-    <div class="column is-7">
-      <div class="work-sample">
-        <StaticImage
-          :src="`img/whirlpool/secondary.jpg`"
-          :alt="'Whirlpool Top Load'"
-          width="609"
-          height="457"
-          class="sample left"
-        />
-        <StaticImage
-          :src="`img/whirlpool/primary.jpg`"
-          :alt="'Whirlpool Top Load'"
-          width="609"
-          height="457"
-          class="sample right"
-        />
-      </div>
-    </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    right: Boolean,
+    left: Boolean,
+    pullLeft: Boolean,
+    pullRight: Boolean
+  }
+}
+</script>
 
 <style scoped lang="scss">
 .is--work {
@@ -54,42 +77,63 @@
   h2 {
     margin-top: 0.25rem;
   }
+  &.left {
+    .work-description {
+      order: 2;
+    }
+    .work-imagery {
+      order: 1;
+    }
+  }
+  &.right {
+    .work-description {
+      order: 1;
+      @media (max-width: $tablet) {
+        order: 2;
+      }
+    }
+    .work-imagery {
+      order: 2;
+      @media (max-width: $tablet) {
+        order: 1;
+      }
+    }
+  }
   .work-description {
     z-index: 12;
     @media (min-width: $tablet) {
-      &.right {
+      &.left {
         margin-left: -3rem;
       }
-      &.left {
+      &.right {
         margin-right: -3rem;
       }
     }
-    @media (max-width: $tablet) {
-      order: 2;
-    }
   }
-  .work-sample {
-    position: relative;
-    z-index: 10;
-    .sample {
-      border-radius: 2px;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-      @media (min-width: $tablet) {
-        &.left {
-          margin-left: -2rem;
+  .work-imagery {
+    .work-sample {
+      position: relative;
+      z-index: 10;
+      .sample {
+        border-radius: 2px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+        @media (min-width: $tablet) {
+          &.left {
+            margin-left: -2rem;
+          }
+          &.right {
+            margin-left: 3rem;
+            margin-top: -20rem;
+          }
         }
-        &.right {
-          margin-left: 4rem;
-          margin-top: -20rem;
-        }
-      }
-      @media (max-width: $tablet) {
-        &.left {
-          margin-left: -2rem;
-        }
-        &.right {
-          margin-left: 2rem;
-          margin-top: -10rem;
+        @media (max-width: $tablet) {
+          &.left {
+            margin-left: -2rem;
+          }
+          &.right {
+            margin-left: 2rem;
+            margin-top: -10rem;
+          }
         }
       }
     }
