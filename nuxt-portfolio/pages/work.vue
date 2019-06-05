@@ -14,6 +14,7 @@
       <Wavy flip />
       <section class="section">
         <div class="container" v-scroll-reveal>
+          <WorkBook />
           <JennAir />
           <Whirlpool />
         </div>
@@ -25,12 +26,14 @@
 <script>
 import Whirlpool from '@/components/home/WhirlpoolWork.vue'
 import JennAir from '@/components/home/JennAirWork.vue'
+import WorkBook from '@/components/home/JennAirWorkBook.vue'
 
 export default {
   transition: 'fade',
   components: {
     Whirlpool,
-    JennAir
+    JennAir,
+    WorkBook
   },
   head() {
     return {

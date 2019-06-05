@@ -37,6 +37,7 @@
           <div class="column">
             <h6>Some of My</h6>
             <h2 class="decorator">Recent Writing</h2>
+            <MyGlass />
           </div>
           <div class="column is-8 copy">
             <ul class="article-list">
@@ -56,6 +57,7 @@
     <Wavy flip />
     <section class="section">
       <div class="container" v-scroll-reveal>
+        <WorkBook />
         <JennAir />
         <Whirlpool />
         <!-- <div class="more-work">
@@ -82,13 +84,17 @@ import {
 import articles from '@/static/articleList.json'
 import Whirlpool from '@/components/home/WhirlpoolWork.vue'
 import JennAir from '@/components/home/JennAirWork.vue'
+import WorkBook from '@/components/home/JennAirWorkBook.vue'
+import MyGlass from '@/assets/img/glass.svg'
 
 export default {
   name: 'Home',
   transition: 'fade',
   components: {
     Whirlpool,
-    JennAir
+    JennAir,
+    WorkBook,
+    MyGlass
   },
   data() {
     return {
@@ -248,6 +254,13 @@ export default {
     &--writing {
       h2 {
         // margin-top: 2rem;
+      }
+      .my-glass {
+        fill: rgba(255, 255, 255, 0.125);
+        width: 70%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
     }
 

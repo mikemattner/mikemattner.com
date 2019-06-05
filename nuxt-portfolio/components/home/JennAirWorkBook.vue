@@ -1,31 +1,33 @@
 <template>
   <div class="columns is-vcentered is--work">
+    <div class="column is-5 work-description">
+      <h6>2019 / Vue / PWA / Firebase</h6>
+      <h2 class="decorator">Immersive Training</h2>
+      <p>
+        With a team of dedicated developers, designers, writers, and content
+        creators, we produced a fully immersive JennAir product training
+        experience using a modern stack. Users access the training on an 11"
+        tablet, can write freeform notes, and retrieve those notes on any device
+        post training.
+      </p>
+    </div>
     <div class="column is-7">
       <div class="work-sample">
         <StaticImage
-          :src="`img/jennair/home.jpg`"
-          :alt="'JennAir Influencer Hub'"
+          :src="`img/workbook/wow-curriculum-internal.jpg`"
+          :alt="'JennAir Workbook'"
           width="609"
           height="457"
           class="sample left"
         />
         <StaticImage
-          :src="`img/jennair/columns.jpg`"
-          :alt="'JennAir Influencer Hub'"
+          :src="`img/workbook/wow-curriculum-home.jpg`"
+          :alt="'JennAir Workbook'"
           width="609"
           height="457"
           class="sample right"
         />
       </div>
-    </div>
-    <div class="column is-5 work-description right">
-      <h6>2018 / Development / Design / CMS</h6>
-      <h2 class="decorator">Influencer Hub</h2>
-      <p>
-        The influencer hub is a premium destination for brand and product
-        knowledge. When JennAir rebranded, I was a key team member for the
-        development and design of the overhauled experience.
-      </p>
     </div>
   </div>
 </template>
@@ -70,7 +72,7 @@
         }
         &.right {
           margin-left: 4rem;
-          margin-top: -20rem;
+          margin-top: -15rem;
         }
       }
       @media (max-width: $tablet) {

@@ -1,7 +1,7 @@
 <template>
   <div class="columns is-vcentered is--work">
     <div class="column is-5 work-description">
-      <h6>Development / AEM</h6>
+      <h6>2016 / Development / AEM</h6>
       <h2 class="decorator">Experiential Design</h2>
       <p>
         Working with a world class UX team, I implemented the design and
