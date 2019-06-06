@@ -6,7 +6,10 @@
           <div class="columns">
             <div class="column is-two-thirds">
               <h1>Work</h1>
-              <p>A selection of things I&rsquo;ve worked on.</p>
+              <p>
+                A selection of projects I&rsquo;ve worked on as a designer and
+                developer.
+              </p>
             </div>
           </div>
         </template>
@@ -14,9 +17,10 @@
       <Wavy flip />
       <section class="section">
         <div class="container" v-scroll-reveal>
-          <WorkBook left pullLeft />
-          <JennAir right />
-          <Whirlpool left />
+          <Work left pullLeft :info="JennAirWorkbook" />
+          <Work right :info="JennAirHub" />
+          <Work left :info="WhirlpoolTopLoad" />
+          <Work right :info="Craftsman" />
         </div>
       </section>
     </div>
@@ -24,16 +28,22 @@
 </template>
 
 <script>
-import Whirlpool from '@/components/home/WhirlpoolWork.vue'
-import JennAir from '@/components/home/JennAirWork.vue'
-import WorkBook from '@/components/home/JennAirWorkBook.vue'
+import {
+  JennAirWorkbook,
+  JennAirHub,
+  WhirlpoolTopLoad,
+  Craftsman
+} from '~/data/work.yaml'
 
 export default {
   transition: 'fade',
-  components: {
-    Whirlpool,
-    JennAir,
-    WorkBook
+  data() {
+    return {
+      JennAirWorkbook,
+      JennAirHub,
+      WhirlpoolTopLoad,
+      Craftsman
+    }
   },
   head() {
     return {

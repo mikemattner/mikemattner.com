@@ -57,16 +57,9 @@
     <Wavy flip />
     <section class="section">
       <div class="container" v-scroll-reveal>
-        <WorkBook left pullLeft />
-        <JennAir right />
-        <Whirlpool left />
-        <!-- <div class="more-work">
-          <div>
-            <h3>Want to see more of the work I do?</h3>
-            <p>See some of the work I've done over the years.</p>
-          </div>
-          <Button to="/work" class="button">See More</Button>
-        </div> -->
+        <Work left pullLeft :info="JennAirWorkbook" />
+        <Work right :info="JennAirHub" />
+        <Work left :info="WhirlpoolTopLoad" />
       </div>
     </section>
   </div>
@@ -81,19 +74,14 @@ import {
   technical,
   brands
 } from '~/data/home.yaml'
+import { JennAirWorkbook, JennAirHub, WhirlpoolTopLoad } from '~/data/work.yaml'
 import articles from '@/static/articleList.json'
-import Whirlpool from '@/components/home/WhirlpoolWork.vue'
-import JennAir from '@/components/home/JennAirWork.vue'
-import WorkBook from '@/components/home/JennAirWorkBook.vue'
 import MyGlass from '@/assets/img/glass.svg'
 
 export default {
   name: 'Home',
   transition: 'fade',
   components: {
-    Whirlpool,
-    JennAir,
-    WorkBook,
     MyGlass
   },
   data() {
@@ -104,7 +92,10 @@ export default {
       softwares,
       technical,
       brands,
-      articles
+      articles,
+      JennAirWorkbook,
+      JennAirHub,
+      WhirlpoolTopLoad
     }
   },
   head() {

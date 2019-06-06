@@ -106,7 +106,7 @@ export default {
       span {
         height: 3px;
         background-color: $white;
-        transition: all 0.25s ease-in-out;
+        transition: all 0.125s ease-in-out;
         border-radius: 2px;
         &:nth-child(2) {
           margin-left: 20%;

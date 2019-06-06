@@ -9,17 +9,13 @@
     <div class="column is-7 work-imagery">
       <div class="work-sample">
         <StaticImage
-          :src="`img/jennair/home.jpg`"
-          :alt="'JennAir Influencer Hub'"
-          width="609"
-          height="457"
+          :src="info.leftImage"
+          :alt="info.leftImageAlt"
           class="sample left"
         />
         <StaticImage
-          :src="`img/jennair/columns.jpg`"
-          :alt="'JennAir Influencer Hub'"
-          width="609"
-          height="457"
+          :src="info.rightImage"
+          :alt="info.rightImageAlt"
           class="sample right"
         />
       </div>
@@ -31,12 +27,15 @@
         pullLeft == true ? 'left' : ''
       ]"
     >
-      <h6>2018 / Development / Design / CMS</h6>
-      <h2 class="decorator">Influencer Hub</h2>
+      <h6>{{ info.meta }}</h6>
+      <h2 class="decorator">{{ info.title }}</h2>
       <p>
-        The influencer hub is a premium destination for brand and product
-        knowledge. When JennAir rebranded, I was a key team member for the
-        development and design of the overhauled experience.
+        {{ info.description }}
+      </p>
+      <p v-if="info.link">
+        <a :href="info.link" class="button" rel="nofollow" target="_blank"
+          >View Work</a
+        >
       </p>
     </div>
   </div>
@@ -48,7 +47,8 @@ export default {
     right: Boolean,
     left: Boolean,
     pullLeft: Boolean,
-    pullRight: Boolean
+    pullRight: Boolean,
+    info: {}
   }
 }
 </script>
@@ -112,7 +112,7 @@ export default {
             margin-left: -2rem;
           }
           &.right {
-            margin-left: 4rem;
+            margin-left: 2rem;
             margin-top: -20rem;
           }
         }
