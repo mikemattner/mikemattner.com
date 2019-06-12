@@ -110,7 +110,7 @@ export default {
       height: 20px;
       cursor: pointer;
       span {
-        height: 3px;
+        height: 2px;
         background-color: $white;
         transition: all 0.125s ease-in-out;
         border-radius: 2px;
@@ -205,8 +205,8 @@ export default {
       }
       .brand-logo {
         &__image {
-          height: 2rem;
-          width: 2rem;
+          height: 1.5rem;
+          width: 1.5rem;
           z-index: 10;
           margin-right: 1rem;
 
