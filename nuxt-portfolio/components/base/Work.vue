@@ -57,6 +57,7 @@ export default {
 .is--work {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  min-height: 75vh;
   h6 {
     margin: 0;
     text-transform: uppercase;

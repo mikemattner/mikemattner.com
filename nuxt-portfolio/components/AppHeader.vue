@@ -19,26 +19,32 @@
       </div>
     </div>
     <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
-      <CloseButton class="close" @click="toggle()" />
-      <MyLogo />
-      <ul>
-        <li>
-          <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/work"><span @click="toggle()">Work</span></nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/archive"
-            ><span @click="toggle()">Archive</span></nuxt-link
-          >
-        </li>
-        <li>
-          <nuxt-link to="/contact"
-            ><span @click="toggle()">Contact</span></nuxt-link
-          >
-        </li>
-      </ul>
+      <div class="branding__block">
+        <div class="branding__block-logo"><MyLogo /> Mike Mattner</div>
+      </div>
+      <div class="nav__block">
+        <CloseButton class="close" @click="toggle()" />
+        <ul>
+          <li>
+            <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/work"
+              ><span @click="toggle()">Work</span></nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link to="/archive"
+              ><span @click="toggle()">Archive</span></nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link to="/contact"
+              ><span @click="toggle()">Contact</span></nuxt-link
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </headroom>
 </template>
@@ -134,16 +140,18 @@ export default {
       opacity: 0;
       visibility: hidden;
       transition: all 0.125s 0.25s ease-in-out;
-      transform: scale(0.5) translateY(-50vh);
+      transform: translateX(50vh);
       z-index: 10100;
       background-color: rgba($darkBlue-3, 1);
       display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
 
       @media (min-width: 768px) {
-        font-size: 2srem;
+        font-size: 2rem;
+        flex-direction: row;
+        justify-content: center;
       }
 
       h2 {
@@ -167,19 +175,47 @@ export default {
           stroke: $orange;
         }
       }
+      .branding__block {
+        background-color: $darkBlue-2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 768px) {
+          height: 25vh;
+        }
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+        &-logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+        }
+      }
+      .nav__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: 768px) {
+          width: 50%;
+        }
+      }
       .brand-logo {
         &__image {
           height: 2rem;
           width: 2rem;
           z-index: 10;
-          margin-bottom: 2rem;
+          margin-right: 1rem;
 
           .circle-shape {
-            fill: $darkBlue;
+            fill: $white;
             transition: all 0.25s ease-in-out;
           }
           .logo-shape {
-            fill: $darkBlue-3;
+            fill: $darkBlue-2;
             transition: all 0.25s ease-in-out;
           }
         }
@@ -192,6 +228,9 @@ export default {
         list-style: none;
         margin: 0;
         padding: 0;
+        @media (max-width: 768px) {
+          margin-top: 4rem;
+        }
         li {
           margin: 0.5rem 0;
           padding: 0;

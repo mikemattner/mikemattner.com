@@ -156,7 +156,6 @@ export default {
     }
     .self-portrait {
       // position: absolute;
-      width: 250px;
       // top: -5rem;
       // left: 7rem;
       border-radius: 2px;
