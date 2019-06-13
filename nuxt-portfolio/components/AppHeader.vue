@@ -128,7 +128,7 @@ export default {
       }
     }
     &__nav {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 400;
       letter-spacing: 0.125rem;
       position: fixed;
@@ -176,16 +176,19 @@ export default {
         }
       }
       .branding__block {
-        background-color: $darkBlue-2;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2rem;
         @media (max-width: 768px) {
           height: 25vh;
         }
         @media (min-width: 768px) {
-          width: 50%;
+          background-color: $darkBlue-2;
+          width: 35%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         &-logo {
           display: flex;
@@ -200,7 +203,7 @@ export default {
         align-items: center;
         justify-content: center;
         @media (min-width: 768px) {
-          width: 50%;
+          width: 65%;
         }
       }
       .brand-logo {

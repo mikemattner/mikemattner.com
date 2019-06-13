@@ -131,11 +131,11 @@ code {
   padding-right: 2px;
 }
 ::selection {
-  background: rgba($orange, 1);
+  background: $orange;
   color: $white;
 }
 ::-moz-selection {
-  background: rgba($orange, 1);
+  background: $orange;
   color: $white;
 }
 img::selection {
