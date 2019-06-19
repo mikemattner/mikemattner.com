@@ -5,11 +5,8 @@
         <template v-slot:default>
           <div class="columns">
             <div class="column is-two-thirds">
-              <h1>Work</h1>
-              <p>
-                A selection of projects I&rsquo;ve worked on as a designer and
-                developer.
-              </p>
+              <h1 v-html="intro.title"></h1>
+              <p v-html="intro.body"></p>
             </div>
           </div>
         </template>
@@ -29,6 +26,7 @@
 
 <script>
 import {
+  intro,
   JennAirWorkbook,
   JennAirHub,
   WhirlpoolTopLoad,
@@ -39,6 +37,7 @@ export default {
   transition: 'fade',
   data() {
     return {
+      intro,
       JennAirWorkbook,
       JennAirHub,
       WhirlpoolTopLoad,

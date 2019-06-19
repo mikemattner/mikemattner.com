@@ -1,5 +1,5 @@
 <template>
-  <div :class="['single-link', archive == true ? 'article--link' : '']">
+  <article :class="['single-link', archive == true ? 'article--link' : '']">
     <nuxt-link :to="article.path">
       <h3 class="article-title">
         {{ article.title }}
@@ -16,7 +16,7 @@
         <!-- <fa-icon icon="chevron-right" size="lg"></fa-icon> -->
       </div>
     </nuxt-link>
-  </div>
+  </article>
 </template>
 
 <script>

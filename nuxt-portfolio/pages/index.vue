@@ -35,8 +35,8 @@
       <div class="container" v-scroll-reveal>
         <div class="columns">
           <div class="column">
-            <h6>Some of My</h6>
-            <h2 class="decorator">Recent Writing</h2>
+            <h6 v-html="writing.meta"></h6>
+            <h2 class="decorator" v-html="writing.title"></h2>
             <MyGlass />
           </div>
           <div class="column is-8 copy">
@@ -49,7 +49,9 @@
                 <ArticleLink :article="article" />
               </li>
             </ul>
-            <Button to="/archive" class="button">Read More</Button>
+            <Button :to="writing.link" class="button">{{
+              writing.buttonTitle
+            }}</Button>
           </div>
         </div>
       </div>
@@ -66,14 +68,7 @@
 </template>
 
 <script>
-import {
-  intro,
-  statement,
-  skills,
-  softwares,
-  technical,
-  brands
-} from '~/data/home.yaml'
+import { intro, statement, writing } from '~/data/home.yaml'
 import { JennAirWorkbook, JennAirHub, WhirlpoolTopLoad } from '~/data/work.yaml'
 import articles from '@/static/articleList.json'
 import MyGlass from '@/assets/img/glass.svg'
@@ -88,11 +83,8 @@ export default {
     return {
       intro,
       statement,
-      skills,
-      softwares,
-      technical,
-      brands,
       articles,
+      writing,
       JennAirWorkbook,
       JennAirHub,
       WhirlpoolTopLoad

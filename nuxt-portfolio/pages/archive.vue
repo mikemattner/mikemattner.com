@@ -5,8 +5,8 @@
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-two-thirds">
-              <h1>Archive</h1>
-              <p>A small selection of things I write and think about.</p>
+              <h1 v-html="intro.title"></h1>
+              <p v-html="intro.body"></p>
             </div>
           </div>
         </template>
@@ -32,11 +32,13 @@
 </template>
 
 <script>
+import { intro } from '@/data/archive.yaml'
 import articles from '@/static/articleList.json'
 export default {
   transition: 'fade',
   data() {
     return {
+      intro,
       articles
     }
   },
