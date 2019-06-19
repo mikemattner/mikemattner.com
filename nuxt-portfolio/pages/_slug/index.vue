@@ -1,6 +1,6 @@
 <template>
   <section class="section section--article">
-    <div :key="$route.params.slug">
+    <article :key="$route.params.slug">
       <BaseHero arrow dark>
         <template v-slot:default>
           <div class="columns is-centered">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </article>
   </section>
 </template>
 
