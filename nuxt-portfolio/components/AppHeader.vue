@@ -22,7 +22,7 @@
       <div class="branding__block">
         <div class="branding__block-logo"><MyLogo /> Mike Mattner</div>
       </div>
-      <div class="nav__block">
+      <nav class="nav__block">
         <CloseButton class="close" @click="toggle()" />
         <ul>
           <li>
@@ -44,7 +44,7 @@
             >
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   </headroom>
 </template>
