@@ -3,8 +3,7 @@
     :class="[
       'hero',
       full == true ? 'hero--full' : '',
-      dark == true ? 'hero--dark' : '',
-      decorator == true ? 'header--decorator' : ''
+      dark == true ? 'hero--dark' : ''
     ]"
   >
     <div class="container">

@@ -1,6 +1,6 @@
 <template>
   <headroom class="headroom--surround">
-    <div class="navbar" role="banner">
+    <div class="navbar" :class="{ active: navOpen }" role="banner">
       <div class="navbar__logo">
         <nuxt-link to="/"><BrandLogo label/></nuxt-link>
       </div>
@@ -68,6 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
+$transparent-bg: rgba($darkBlue-3, 0.95);
 .headroom {
   &--surround {
     position: fixed;
@@ -75,6 +76,12 @@ export default {
     height: 3.5rem;
     width: 100%;
     z-index: 1000;
+
+    &.active {
+      @media (min-width: 768px) {
+        background-color: $transparent-bg;
+      }
+    }
   }
   .navbar {
     display: flex;
@@ -164,9 +171,7 @@ export default {
 
       @media (min-width: 768px) {
         font-size: 2rem;
-        flex-direction: row;
-        justify-content: flex-end;
-        background-color: rgba($darkBlue-3, 0.9);
+        background-color: $transparent-bg;
       }
 
       h2 {
@@ -202,12 +207,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        @media (min-width: 768px) {
-          width: 30%;
-          align-items: flex-start;
-          background-color: $darkBlue-3;
-          padding-left: 3rem;
-        }
+        margin-top: 4rem;
       }
       .brand-logo {
         &__image {
@@ -234,12 +234,6 @@ export default {
         list-style: none;
         margin: 0;
         padding: 0;
-        @media (max-width: 768px) {
-          margin-top: 4rem;
-        }
-        @media (min-width: 768px) {
-          align-items: flex-start;
-        }
         li {
           margin: 0.5rem 0;
           padding: 0;
@@ -317,6 +311,12 @@ export default {
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
       @media (min-width: 768px) {
         // height: 2.5rem;
+      }
+      &.active {
+        @media (min-width: 768px) {
+          box-shadow: none;
+          background-color: $transparent-bg;
+        }
       }
     }
   }
