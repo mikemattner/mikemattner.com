@@ -50,8 +50,7 @@
       </div>
     </section>
     <Wavy flip />
-
-    <section class="section">
+    <section id="content" class="section">
       <div v-scroll-reveal class="container">
         <div class="columns">
           <div class="column is-one-quarter is-summary">
@@ -160,6 +159,24 @@ export default {
     }
     &--dark {
       background-color: $darkBlue-3;
+    }
+    @media (max-width: $tablet) {
+      .columns {
+        display: flex;
+        flex-direction: column;
+        .column {
+          padding-top: 0;
+          padding-bottom: 0;
+          &.copy {
+            order: 2;
+            padding-top: 0;
+          }
+          &.header {
+            order: 1;
+            padding-bottom: 0;
+          }
+        }
+      }
     }
   }
   ul,

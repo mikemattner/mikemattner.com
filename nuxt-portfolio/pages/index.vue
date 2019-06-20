@@ -17,7 +17,7 @@
       </template>
     </BaseHero>
     <Wavy />
-    <section class="section section--writing section--dark">
+    <section id="content" class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
         <div class="columns">
           <div class="column">
