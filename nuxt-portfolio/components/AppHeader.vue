@@ -313,8 +313,9 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
         // height: 2.5rem;
       }
       &.active {
+        box-shadow: none;
+        background-color: $darkBlue-3;
         @media (min-width: 768px) {
-          box-shadow: none;
           background-color: $transparent-bg;
         }
       }

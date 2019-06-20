@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      placeholder: '~/assets/img/Rectangle.png'
+      placeholder: 'img/Rectangle.png'
     }
   }
 }
