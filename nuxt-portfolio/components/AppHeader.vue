@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($darkBlue-3, 0.95);
+$transparent-bg: rgba($darkBlue-3, 1);
 .headroom {
   &--surround {
     position: fixed;
@@ -131,7 +131,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       }
       &:hover {
         span {
-          background-color: $orange;
+          background-color: $white;
           &:nth-child(2) {
             width: 32px;
           }
