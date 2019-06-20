@@ -5,7 +5,7 @@
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-two-thirds">
-              <h1 v-html="articleTitle"></h1>
+              <Header tag="h1" v-html="articleTitle"></Header>
               <div class="meta">
                 <span class="tag">{{ articleTopic }}</span>
                 <span class="bull">&bull;</span>

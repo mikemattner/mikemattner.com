@@ -1,9 +1,7 @@
 <template>
   <article :class="['single-link', archive == true ? 'article--link' : '']">
     <nuxt-link :to="article.path">
-      <h3 class="article-title">
-        {{ article.title }}
-      </h3>
+      <Header tag="h3" class="article-title" v-html="article.title"></Header>
       <div class="article-meta">
         <span class="tag">{{ article.topic }}</span>
         <span class="bull">&bull;</span>
@@ -93,8 +91,8 @@ export default {
       // transform: scale(1.01);
       // background-size: 100% 100%;
       h3 {
-        color: $orange;
-        background-size: 100% 2px;
+        color: $white;
+        background-size: 100% 6px;
       }
       p {
         color: $white;
@@ -129,6 +127,9 @@ export default {
       &:hover {
         background-color: rgba($darkBlue-6, 0);
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
+      }
+      .button__bubble {
+        background-color: transparent;
       }
     }
   }

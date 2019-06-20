@@ -25,8 +25,7 @@ export default {
   props: {
     full: Boolean,
     dark: Boolean,
-    arrow: Boolean,
-    decorator: Boolean
+    arrow: Boolean
   }
 }
 </script>
@@ -69,23 +68,6 @@ export default {
   h2 {
     color: rgba($white, 0.5);
     font-weight: 400;
-  }
-  &.header--decorator {
-    h1 {
-      padding-bottom: 2rem;
-      position: relative;
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 3rem;
-        height: 1px;
-        left: 0;
-        bottom: 0;
-        background-color: $orange;
-      }
-    }
   }
   .container {
     position: relative;

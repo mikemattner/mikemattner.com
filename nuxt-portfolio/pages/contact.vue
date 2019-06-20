@@ -1,10 +1,10 @@
 <template>
   <div class="contact">
-    <BaseHero full decorator>
+    <BaseHero full>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-two-thirds">
-            <h1 v-html="intro.title"></h1>
+            <Header tag="h1" decorator v-html="intro.title"></Header>
             <p v-html="intro.body"></p>
           </div>
         </div>

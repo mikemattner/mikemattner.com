@@ -7,6 +7,7 @@
       <div class="navbar__menu">
         <div
           class="navbar__menu-button"
+          :class="{ active: navOpen }"
           tabindex="0"
           role="button"
           aria-label="Open navigation"
@@ -19,11 +20,7 @@
       </div>
     </div>
     <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
-      <div class="branding__block">
-        <div class="branding__block-logo"><MyLogo /> Mike Mattner</div>
-      </div>
       <nav class="nav__block">
-        <CloseButton class="close" @click="toggle()" />
         <ul>
           <li>
             <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
@@ -50,16 +47,12 @@
 </template>
 
 <script>
-import MyLogo from '@/assets/img/logo.svg'
-import CloseButton from '@/assets/img/close.svg'
 import { headroom } from 'vue-headroom'
 headroom.computed.style = () => ''
 export default {
   name: 'AppHeader',
   components: {
-    headroom,
-    CloseButton,
-    MyLogo
+    headroom
   },
   data() {
     return {
@@ -104,25 +97,46 @@ export default {
     &__menu-button {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: flex-end;
       justify-content: space-between;
       width: 32px;
       height: 20px;
       cursor: pointer;
+      outline: none;
       span {
         height: 2px;
         background-color: $white;
         transition: all 0.125s ease-in-out;
         border-radius: 2px;
+        width: 32px;
+        display: block;
         &:nth-child(2) {
-          margin-left: 20%;
+          width: 22px;
         }
       }
       &:hover {
         span {
           background-color: $orange;
           &:nth-child(2) {
-            margin-left: 0;
+            width: 32px;
+          }
+        }
+      }
+      &.active {
+        justify-content: center;
+        span {
+          height: 2px;
+          &:nth-child(1) {
+            transform: rotate(45deg) translateY(50%);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+            width: 32px;
+            transform: rotate(90deg);
+            display: none;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg) translateY(-50%);
           }
         }
       }
@@ -132,7 +146,7 @@ export default {
       font-weight: 400;
       letter-spacing: 0.125rem;
       position: fixed;
-      top: 0;
+      top: 3.5rem;
       bottom: 0;
       left: 0;
       right: 0;
@@ -151,7 +165,8 @@ export default {
       @media (min-width: 768px) {
         font-size: 2rem;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-end;
+        background-color: rgba($darkBlue-3, 0.9);
       }
 
       h2 {
@@ -159,21 +174,6 @@ export default {
         margin-top: 0;
         opacity: 0;
         transition: all 0.25s ease-in-out;
-      }
-
-      .close {
-        position: absolute;
-        right: 2rem;
-        top: 2rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        transition: all 0.25s ease-in-out;
-        stroke: $white;
-        cursor: pointer;
-
-        &:hover {
-          stroke: $orange;
-        }
       }
       .branding__block {
         display: flex;
@@ -203,7 +203,10 @@ export default {
         align-items: center;
         justify-content: center;
         @media (min-width: 768px) {
-          width: 65%;
+          width: 30%;
+          align-items: flex-start;
+          background-color: $darkBlue-3;
+          padding-left: 3rem;
         }
       }
       .brand-logo {
@@ -233,6 +236,9 @@ export default {
         padding: 0;
         @media (max-width: 768px) {
           margin-top: 4rem;
+        }
+        @media (min-width: 768px) {
+          align-items: flex-start;
         }
         li {
           margin: 0.5rem 0;
@@ -308,9 +314,9 @@ export default {
   &--not-top {
     .navbar {
       background-color: $darkBlue-3;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
       @media (min-width: 768px) {
-        height: 2.5rem;
+        // height: 2.5rem;
       }
     }
   }

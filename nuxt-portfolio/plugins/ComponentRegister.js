@@ -12,6 +12,7 @@ import Loading from '../components/base/Loading.vue'
 import Button from '../components/base/Button.vue'
 import ScrollLink from '../components/base/ScrollLink.vue'
 import Work from '../components/base/Work.vue'
+import Header from '../components/base/Header.vue'
 
 Vue.component('BaseHero', BaseHero)
 Vue.component('BrandLogo', BrandLogo)
@@ -26,3 +27,4 @@ Vue.component('Loading', Loading)
 Vue.component('Button', Button)
 Vue.component('ScrollLink', ScrollLink)
 Vue.component('Work', Work)
+Vue.component('Header', Header)

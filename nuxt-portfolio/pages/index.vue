@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <BaseHero full arrow decorator>
+    <BaseHero full arrow>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-offset-one-quarter is-two-thirds">
@@ -9,7 +9,7 @@
               :alt="intro.imageAlt"
               class="self-portrait"
             />
-            <h1 v-html="intro.title"></h1>
+            <Header tag="h1" decorator v-html="intro.title"></Header>
             <p v-html="intro.body"></p>
             <p v-html="intro.social"></p>
           </div>
@@ -24,8 +24,8 @@
             <p v-html="statement.body"></p>
           </div>
           <div class="column">
-            <h6 v-html="statement.meta"></h6>
-            <h2 class="decorator" v-html="statement.title"></h2>
+            <Header tag="h6" v-html="statement.meta"></Header>
+            <Header tag="h2" decorator v-html="statement.title"></Header>
           </div>
         </div>
       </div>
@@ -35,8 +35,8 @@
       <div class="container" v-scroll-reveal>
         <div class="columns">
           <div class="column">
-            <h6 v-html="writing.meta"></h6>
-            <h2 class="decorator" v-html="writing.title"></h2>
+            <Header tag="h6" v-html="writing.meta"></Header>
+            <Header tag="h2" decorator v-html="writing.title"></Header>
             <MyGlass />
           </div>
           <div class="column is-8 copy">
