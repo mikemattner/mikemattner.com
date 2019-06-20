@@ -92,6 +92,14 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
     box-sizing: border-box;
     transition: all 0.25s ease-in-out;
 
+    &.active {
+      box-shadow: none;
+      background-color: $darkBlue-3;
+      @media (min-width: 768px) {
+        background-color: $transparent-bg;
+      }
+    }
+
     @media (min-width: 768px) {
       // padding: 0 2%;
     }
