@@ -16,20 +16,6 @@
         </div>
       </template>
     </BaseHero>
-    <WavyLines />
-    <section id="content" v-scroll-reveal class="section">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column is-7 copy">
-            <p v-html="statement.body"></p>
-          </div>
-          <div class="column">
-            <Header tag="h6">{{ statement.meta }}</Header>
-            <Header tag="h2" decorator>{{ statement.title }}</Header>
-          </div>
-        </div>
-      </div>
-    </section>
     <Wavy />
     <section class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
@@ -37,7 +23,6 @@
           <div class="column">
             <Header tag="h6">{{ writing.meta }}</Header>
             <Header tag="h2" decorator>{{ writing.title }}</Header>
-            <MyGlass />
           </div>
           <div class="column is-8 copy">
             <ul class="article-list">
@@ -68,22 +53,17 @@
 </template>
 
 <script>
-import { intro, statement, writing } from '~/data/home.yaml'
+import { intro, writing } from '~/data/home.yaml'
 import { JennAirWorkbook, JennAirHub, WhirlpoolTopLoad } from '~/data/work.yaml'
 import articles from '@/static/articleList.json'
-import MyGlass from '@/assets/img/glass.svg'
 
 export default {
   name: 'Home',
   transition: 'fade',
   scrollToTop: true,
-  components: {
-    MyGlass
-  },
   data() {
     return {
       intro,
-      statement,
       articles,
       writing,
       JennAirWorkbook,
@@ -198,24 +178,6 @@ export default {
     position: relative;
     overflow: hidden;
 
-    &.top-fade {
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 50%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        z-index: 1;
-        background-image: linear-gradient(
-          0deg,
-          rgba($darkBlue, 0) 0%,
-          $darkBlue 100%
-        );
-      }
-    }
-
     .container {
       position: relative;
       z-index: 10;
@@ -237,13 +199,6 @@ export default {
     &--writing {
       h2 {
         // margin-top: 2rem;
-      }
-      .my-glass {
-        fill: rgba(255, 255, 255, 0.125);
-        width: 70%;
-        @media (max-width: $tablet) {
-          display: none;
-        }
       }
     }
 
