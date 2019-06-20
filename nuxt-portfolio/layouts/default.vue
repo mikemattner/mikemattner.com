@@ -16,6 +16,6 @@
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-  transform: translate(0, -2em);
+  // transform: translate(0, -2em);
 }
 </style>
