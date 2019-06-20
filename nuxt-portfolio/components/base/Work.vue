@@ -27,8 +27,8 @@
         pullLeft == true ? 'left' : ''
       ]"
     >
-      <Header tag="h6" v-html="info.meta"></Header>
-      <Header tag="h2" decorator v-html="info.title"></Header>
+      <Header tag="h6">{{ info.meta }}</Header>
+      <Header tag="h2" decorator>{{ info.title }}</Header>
       <p>
         {{ info.description }}
       </p>

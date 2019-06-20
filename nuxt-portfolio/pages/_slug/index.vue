@@ -5,7 +5,7 @@
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-two-thirds">
-              <Header tag="h1" v-html="articleTitle"></Header>
+              <Header tag="h1">{{ articleTitle }}</Header>
               <div class="meta">
                 <span class="tag">{{ articleTopic }}</span>
                 <span class="bull">&bull;</span>
@@ -45,6 +45,7 @@
 import articleList from '@/static/articleList.json'
 export default {
   transition: 'fade',
+  scrollToTop: true,
   data() {
     return {
       article: null,

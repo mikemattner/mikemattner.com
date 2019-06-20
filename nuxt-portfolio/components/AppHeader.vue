@@ -121,7 +121,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       span {
         height: 2px;
         background-color: $white;
-        transition: all 0.125s ease-in-out;
+        transition: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         border-radius: 2px;
         width: 32px;
         display: block;
@@ -132,6 +132,14 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       &:hover {
         span {
           background-color: $orange;
+          &:nth-child(2) {
+            width: 32px;
+          }
+        }
+      }
+      &:active {
+        span {
+          background-color: $white;
           &:nth-child(2) {
             width: 32px;
           }
@@ -169,7 +177,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       opacity: 0;
       visibility: hidden;
       transition: all 0.125s 0.25s ease-in-out;
-      transform: translateX(50vh);
+      transform: translateY(-50vh);
       z-index: 10100;
       background-color: rgba($darkBlue-3, 1);
       display: flex;

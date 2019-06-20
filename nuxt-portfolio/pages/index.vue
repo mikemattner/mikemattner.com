@@ -9,7 +9,7 @@
               :alt="intro.imageAlt"
               class="self-portrait"
             />
-            <Header tag="h1" decorator v-html="intro.title"></Header>
+            <Header tag="h1" decorator>{{ intro.title }}</Header>
             <p v-html="intro.body"></p>
             <p v-html="intro.social"></p>
           </div>
@@ -17,26 +17,26 @@
       </template>
     </BaseHero>
     <WavyLines />
-    <section id="content" class="section" v-scroll-reveal>
+    <section id="content" v-scroll-reveal class="section">
       <div class="container">
         <div class="columns is-vcentered">
           <div class="column is-7 copy">
             <p v-html="statement.body"></p>
           </div>
           <div class="column">
-            <Header tag="h6" v-html="statement.meta"></Header>
-            <Header tag="h2" decorator v-html="statement.title"></Header>
+            <Header tag="h6">{{ statement.meta }}</Header>
+            <Header tag="h2" decorator>{{ statement.title }}</Header>
           </div>
         </div>
       </div>
     </section>
     <Wavy />
     <section class="section section--writing section--dark">
-      <div class="container" v-scroll-reveal>
+      <div v-scroll-reveal class="container">
         <div class="columns">
           <div class="column">
-            <Header tag="h6" v-html="writing.meta"></Header>
-            <Header tag="h2" decorator v-html="writing.title"></Header>
+            <Header tag="h6">{{ writing.meta }}</Header>
+            <Header tag="h2" decorator>{{ writing.title }}</Header>
             <MyGlass />
           </div>
           <div class="column is-8 copy">
@@ -58,7 +58,7 @@
     </section>
     <Wavy flip />
     <section class="section">
-      <div class="container" v-scroll-reveal>
+      <div v-scroll-reveal class="container">
         <Work left pullLeft :info="JennAirWorkbook" />
         <Work right :info="JennAirHub" />
         <Work left :info="WhirlpoolTopLoad" />
@@ -76,6 +76,7 @@ import MyGlass from '@/assets/img/glass.svg'
 export default {
   name: 'Home',
   transition: 'fade',
+  scrollToTop: true,
   components: {
     MyGlass
   },

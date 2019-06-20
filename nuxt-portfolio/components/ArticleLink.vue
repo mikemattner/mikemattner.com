@@ -1,7 +1,7 @@
 <template>
   <article :class="['single-link', archive == true ? 'article--link' : '']">
     <nuxt-link :to="article.path">
-      <Header tag="h3" class="article-title" v-html="article.title"></Header>
+      <Header tag="h3" class="article-title">{{ article.title }}</Header>
       <div class="article-meta">
         <span class="tag">{{ article.topic }}</span>
         <span class="bull">&bull;</span>
@@ -13,13 +13,12 @@
       <div class="icon">
         <!-- <fa-icon icon="chevron-right" size="lg"></fa-icon> -->
       </div>
+      <span class="button__bubble"></span>
     </nuxt-link>
   </article>
 </template>
 
 <script>
-import ButtonBubble from '@/assets/js/button.js'
-
 export default {
   props: {
     article: {
@@ -27,16 +26,6 @@ export default {
       required: true
     },
     archive: Boolean
-  },
-  mounted() {
-    this.initialize(ButtonBubble, '.single-link a')
-  },
-  methods: {
-    initialize: function(Script, selector, ...options) {
-      document
-        .querySelectorAll(selector)
-        .forEach(element => new Script(element, ...options))
-    }
   }
 }
 </script>
@@ -113,12 +102,16 @@ export default {
       border-radius: 50%;
       background-color: $darkBlue-5;
       will-change: transform;
-      transform: translate(-50%, -50%) scale(0);
+      transform: scale(0) translateY(-50%);
       transition-property: transform;
+      width: 100vw;
+      height: 100vw;
+      left: 0;
+      top: 50%;
     }
     &:hover .button__bubble,
     &:focus .button__bubble {
-      transform: translate(-50%, -50%) scale(1.5);
+      transform: scale(1.5) translateY(-50%);
       transition: all 0.5s ease-in-out;
     }
   }
@@ -129,7 +122,7 @@ export default {
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
       }
       .button__bubble {
-        background-color: transparent;
+        background-color: $darkBlue-6;
       }
     }
   }
