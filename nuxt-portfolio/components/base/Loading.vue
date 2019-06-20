@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner-container" v-bind:class="{ active: loading }">
+  <div class="spinner-container" :class="{ active: loading }">
     <div class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>

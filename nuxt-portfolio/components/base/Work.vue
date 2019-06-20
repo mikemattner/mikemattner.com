@@ -48,7 +48,10 @@ export default {
     left: Boolean,
     pullLeft: Boolean,
     pullRight: Boolean,
-    info: {}
+    info: {
+      type: Object,
+      default: null
+    }
   }
 }
 </script>

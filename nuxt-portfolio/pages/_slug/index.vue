@@ -19,7 +19,7 @@
       <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
-            <div v-html="articleContent" v-scroll-reveal></div>
+            <div v-scroll-reveal v-html="articleContent"></div>
             <div class="links">
               <Button
                 v-if="prevArticle"

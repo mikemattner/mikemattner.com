@@ -12,9 +12,9 @@
         </template>
       </BaseHero>
       <Wavy flip />
-      <section class="section">
+      <section id="content" class="section">
         <div v-scroll-reveal class="container">
-          <Work left pullLeft :info="JennAirWorkbook" />
+          <Work left pull-left :info="JennAirWorkbook" />
           <Work right :info="JennAirHub" />
           <Work left :info="WhirlpoolTopLoad" />
           <Work right :info="Craftsman" />

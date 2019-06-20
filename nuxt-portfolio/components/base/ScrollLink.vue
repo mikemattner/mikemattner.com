@@ -7,7 +7,10 @@
 <script>
 export default {
   props: {
-    href: String
+    href: {
+      type: String,
+      default: '#content'
+    }
   },
   computed: {
     active() {
