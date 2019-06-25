@@ -98,7 +98,9 @@ export default {
       position: relative;
       z-index: 10;
       .sample {
-        margin-bottom: 0;
+        @media (min-width: $tablet) {
+          margin-bottom: 0;
+        }
       }
     }
   }
