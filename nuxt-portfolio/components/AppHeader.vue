@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($darkBlue-3, 1);
+$transparent-bg: rgba($darkBlue-3, 0.95);
 .headroom {
   &--surround {
     position: fixed;
@@ -254,7 +254,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
           margin: 0.5rem 0;
           padding: 0;
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateX(20px);
           transition: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }
@@ -323,18 +323,18 @@ $transparent-bg: rgba($darkBlue-3, 1);
   // }
   &--not-top {
     .navbar {
-      background-color: $darkBlue-3;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      // background-color: $darkBlue-3;
+      // box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
       @media (min-width: 768px) {
         // height: 2.5rem;
       }
-      &.active {
-        box-shadow: none;
-        background-color: $darkBlue-3;
-        @media (min-width: 768px) {
-          background-color: $transparent-bg;
-        }
-      }
+      // &.active {
+      //   box-shadow: none;
+      //   background-color: $darkBlue-3;
+      //   @media (min-width: 768px) {
+      //     background-color: $transparent-bg;
+      //   }
+      // }
     }
   }
 }

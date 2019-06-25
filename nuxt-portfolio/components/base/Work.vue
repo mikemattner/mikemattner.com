@@ -47,7 +47,10 @@ export default {
 .is--work {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  min-height: 75vh;
+  border-radius: 2px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+  background-color: $darkBlue-3;
+  overflow: hidden;
   h6 {
     margin: 0;
     text-transform: uppercase;
@@ -83,12 +86,17 @@ export default {
     z-index: 12;
   }
   .work-imagery {
+    @media (min-width: $tablet) {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
     .work-sample {
       position: relative;
       z-index: 10;
       .sample {
-        border-radius: 2px;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+        margin-bottom: 0;
       }
     }
   }
