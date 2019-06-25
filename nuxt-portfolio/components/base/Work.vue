@@ -49,8 +49,10 @@ export default {
   margin-bottom: 2rem;
   border-radius: 2px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-  background-color: $darkBlue-3;
   overflow: hidden;
+  @media (min-width: $tablet) {
+    background-color: $darkBlue-3;
+  }
   h6 {
     margin: 0;
     text-transform: uppercase;
