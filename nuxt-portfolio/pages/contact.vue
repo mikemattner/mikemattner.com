@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <BaseHero full arrow>
+    <BaseHero full>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-two-thirds">
@@ -10,7 +10,7 @@
         </div>
       </template>
     </BaseHero>
-    <WavyLines />
+    <!-- <WavyLines />
     <section id="content" v-scroll-reveal class="section">
       <div class="container">
         <div class="columns is-vcentered">
@@ -49,8 +49,8 @@
         </div>
       </div>
     </section>
-    <Wavy flip />
-    <section id="content" class="section">
+    <Wavy flip /> -->
+    <!-- <section id="content" class="section">
       <div v-scroll-reveal class="container">
         <div class="columns">
           <div class="column is-one-quarter is-summary">
@@ -91,7 +91,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

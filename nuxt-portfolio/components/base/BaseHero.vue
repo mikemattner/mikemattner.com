@@ -85,7 +85,7 @@ export default {
       height: 3rem;
       margin: 0 auto;
       &:before {
-        @include arrow-down(rgba($white, 0.25));
+        @include arrow-down(rgba($green, 1));
         animation: bounce 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
