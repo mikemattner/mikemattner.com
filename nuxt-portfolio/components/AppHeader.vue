@@ -75,13 +75,13 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
     top: 0;
     height: 3.5rem;
     width: 100%;
-    z-index: 1000;
+    z-index: 1001;
 
-    &.active {
-      @media (min-width: 768px) {
-        background-color: $transparent-bg;
-      }
-    }
+    // &.active {
+    //   @media (min-width: 768px) {
+    //     background-color: $transparent-bg;
+    //   }
+    // }
   }
   .navbar {
     display: flex;
@@ -91,13 +91,20 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
     height: 3.5rem;
     box-sizing: border-box;
     transition: all 0.25s ease-in-out;
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 
     &.active {
       box-shadow: none;
-      background-color: $darkBlue-3;
-      @media (min-width: 768px) {
-        background-color: $transparent-bg;
-      }
+      // background-color: $darkBlue-3;
+      // @media (min-width: 768px) {
+      //   background-color: $transparent-bg;
+      // }
     }
 
     @media (min-width: 768px) {
@@ -169,7 +176,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       font-weight: 400;
       letter-spacing: 0.125rem;
       position: fixed;
-      top: 3.5rem;
+      top: 0;
       bottom: 0;
       left: 0;
       right: 0;
@@ -177,7 +184,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       opacity: 0;
       visibility: hidden;
       transition: all 0.125s 0.25s ease-in-out;
-      transform: translateX(50vh);
+      transform: translateY(-50vh);
       z-index: 999;
       background-color: rgba($darkBlue-3, 1);
       display: flex;
@@ -248,13 +255,13 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
         flex-direction: column;
         align-items: center;
         list-style: none;
-        margin: 0;
+        margin: 2rem 0 0 0;
         padding: 0;
         li {
           margin: 0.5rem 0;
           padding: 0;
           opacity: 0;
-          transform: translateX(20px);
+          transform: translateY(-20px);
           transition: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }
