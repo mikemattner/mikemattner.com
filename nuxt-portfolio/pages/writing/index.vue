@@ -1,7 +1,7 @@
 <template>
   <section class="section section--article">
     <div :key="$route.params.slug">
-      <PageHero arrow dark>
+      <PageHero dark>
         <template v-slot:default>
           <div class="columns">
             <div class="column is-full">
