@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link :class="'button'" :to="to">
+  <a :href="href" :class="'button'" rel="nofollow" target="_blank">
     <slot />
-  </nuxt-link>
+  </a>
 </template>
 
 <script>
@@ -9,9 +9,9 @@ import ButtonBubble from '@/assets/js/button.js'
 
 export default {
   props: {
-    to: {
+    href: {
       type: String,
-      default: '/'
+      default: '#'
     }
   },
   mounted() {
@@ -35,7 +35,7 @@ export default {
   text-align: center;
   background-image: none;
   margin: 1rem 0;
-  transition: all 0.25s ease-in-out;
+  transition: $transition;
   font-size: 0.75rem;
   position: relative;
   overflow: hidden;
@@ -59,7 +59,7 @@ export default {
   }
 
   &__bubble {
-    transition: all 0.25s ease-in-out;
+    transition: $transition;
     position: absolute;
     z-index: -1;
     border-radius: 50%;

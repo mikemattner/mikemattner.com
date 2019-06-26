@@ -22,9 +22,9 @@
         {{ info.description }}
       </p>
       <p v-if="info.link">
-        <a :href="info.link" class="button" rel="nofollow" target="_blank"
-          >View Work</a
-        >
+        <ButtonLink :to="info.link" class="button">
+          View Work
+        </ButtonLink>
       </p>
     </div>
   </div>
@@ -49,10 +49,17 @@ export default {
   margin-bottom: 2rem;
   border-radius: 2px;
   overflow: hidden;
-  @media (min-width: $tablet) {
-    background-color: $darkBlue-3;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+  background-color: $darkBlue-3;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+  @media (max-width: $tablet) {
+    padding-top: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
+  // @media (min-width: $tablet) {
+  //   background-color: $darkBlue-3;
+  //   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+  // }
   h6 {
     margin: 0;
     text-transform: uppercase;
@@ -88,9 +95,13 @@ export default {
     z-index: 12;
   }
   .work-imagery {
+    padding-top: 0;
     @media (min-width: $tablet) {
-      padding-top: 0;
       padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @media (max-width: $tablet) {
       padding-left: 0;
       padding-right: 0;
     }

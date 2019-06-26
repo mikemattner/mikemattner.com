@@ -26,7 +26,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  transition: all 0.25s ease-in-out;
+  transition: $transition;
   color: #fff;
 
   &__image {
@@ -36,11 +36,11 @@ export default {
 
     .circle-shape {
       fill: $white;
-      transition: all 0.25s ease-in-out;
+      transition: $transition;
     }
     .logo-shape {
       fill: $darkBlue;
-      transition: all 0.25s ease-in-out;
+      transition: $transition;
     }
   }
 

@@ -81,7 +81,7 @@ ul {
 }
 a {
   color: $white;
-  transition: all 0.25s ease-in-out;
+  transition: $transition;
   text-decoration: none;
   background-image: linear-gradient($orange, $orange);
   background-position: 0% 100%;

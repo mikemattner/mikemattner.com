@@ -1,7 +1,7 @@
 <template>
   <section class="section section--article">
     <article :key="$route.params.slug">
-      <BaseHero arrow dark>
+      <PageHero arrow dark>
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-two-thirds">
@@ -14,7 +14,7 @@
             </div>
           </div>
         </template>
-      </BaseHero>
+      </PageHero>
       <Wavy flip />
       <div id="content" class="container">
         <div class="columns is-centered">

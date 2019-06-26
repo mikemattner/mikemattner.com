@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <BaseHero full arrow>
+    <PageHero full arrow>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-offset-one-quarter is-two-thirds">
@@ -15,7 +15,7 @@
           </div>
         </div>
       </template>
-    </BaseHero>
+    </PageHero>
     <Wavy />
     <section id="content" class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
@@ -110,7 +110,7 @@ export default {
           width: 120px;
           height: auto;
           opacity: 0.5;
-          transition: all 0.25s ease-in-out;
+          transition: $transition;
           &:hover {
             opacity: 1;
           }
@@ -133,7 +133,7 @@ export default {
       // left: 7rem;
       border-radius: 2px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-      transition: all 0.25s ease-in-out;
+      transition: $transition;
       &:hover {
         .self-portrait {
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);

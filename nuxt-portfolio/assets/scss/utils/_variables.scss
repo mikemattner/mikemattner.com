@@ -19,22 +19,8 @@ $darkBlue-13: tint($darkBlue, 70%);
 $darkBlue-14: tint($darkBlue, 80%);
 
 $orange: rgba(255,88,1,1.0);
-$orange-1: shade($orange, 60%);
-$orange-2: shade($orange, 50%);
-$orange-3: shade($orange, 40%);
-$orange-4: shade($orange, 30%);
-$orange-5: shade($orange, 20%);
-$orange-6: shade($orange, 10%);
-$orange-7: tint($orange, 10%);
-$orange-8: tint($orange, 20%);
-$orange-9: tint($orange, 30%);
-$orange-10: tint($orange, 40%);
-$orange-11: tint($orange, 50%);
-$orange-12: tint($orange, 60%);
 
 $green: #A3BE8C;
-
-$darkGray: shade($darkBlue, 50%);
 
 $white: rgba(255,255,255,1.0);
 $black: rgba(0,0,0,1.0);
@@ -55,7 +41,9 @@ $linkColorDark: darken($linkColor, 10%);
 $linkColorLight: lighten($linkColor, 10%);
 $hoverColor: $darkBlue;
 
+// ----------------------------------------------------------------------------------------------------------------
 // Responsiveness
+// ----------------------------------------------------------------------------------------------------------------
 
 // The container horizontal gap, which acts as the offset for breakpoints
 $gap: 64px !default;
@@ -77,7 +65,8 @@ $fullhd: 1344px + 2 * $gap !default;
 $fullhd-enabled: true !default;
 
 // Miscellaneous
-
+$transition: all 0.25s ease-in-out;
+$transition-cubic: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $easing: ease-out !default;
 $radius-small: 2px !default;
 $radius: 4px !default;

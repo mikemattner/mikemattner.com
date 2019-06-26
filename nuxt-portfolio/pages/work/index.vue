@@ -1,7 +1,7 @@
 <template>
   <section class="section--work">
     <div :key="$route.params.slug">
-      <BaseHero arrow dark>
+      <PageHero arrow dark>
         <template v-slot:default>
           <div class="columns">
             <div class="column is-two-thirds">
@@ -10,7 +10,7 @@
             </div>
           </div>
         </template>
-      </BaseHero>
+      </PageHero>
       <Wavy flip />
       <section id="content" class="section">
         <div v-scroll-reveal class="container">

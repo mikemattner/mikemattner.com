@@ -53,20 +53,20 @@ export default {
       right: 2rem;
       top: 50%;
       transform: translateY(-50%);
-      transition: all 0.25s ease-in-out;
+      transition: $transition;
       &:before {
         @include arrow-right(rgba($white, 0.25));
       }
     }
     svg {
       opacity: 0.25;
-      transition: all 0.25s ease-in-out;
+      transition: $transition;
       fill: $white;
       color: $white;
       transform: translateX(2px);
     }
     h3 {
-      transition: all 0.25s ease-in-out;
+      transition: $transition;
       background-image: linear-gradient($orange, $orange);
       background-position: 0% 100%;
       background-repeat: no-repeat;

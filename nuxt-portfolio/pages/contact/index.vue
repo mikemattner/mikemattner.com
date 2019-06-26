@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <BaseHero full>
+    <PageHero full>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-two-thirds">
@@ -9,7 +9,7 @@
           </div>
         </div>
       </template>
-    </BaseHero>
+    </PageHero>
     <!-- <WavyLines />
     <section id="content" v-scroll-reveal class="section">
       <div class="container">
@@ -203,7 +203,7 @@ export default {
           width: 120px;
           height: auto;
           opacity: 0.5;
-          transition: all 0.25s ease-in-out;
+          transition: $transition;
           &:hover {
             opacity: 1;
           }

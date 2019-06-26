@@ -76,12 +76,6 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
     height: 3.5rem;
     width: 100%;
     z-index: 1001;
-
-    // &.active {
-    //   @media (min-width: 768px) {
-    //     background-color: $transparent-bg;
-    //   }
-    // }
   }
   .navbar {
     display: flex;
@@ -90,7 +84,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
     padding: 0 2rem;
     height: 3.5rem;
     box-sizing: border-box;
-    transition: all 0.25s ease-in-out;
+    transition: $transition;
     z-index: 1001;
     position: fixed;
     top: 0;
@@ -98,18 +92,6 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
     left: 0;
     right: 0;
     width: 100%;
-
-    &.active {
-      box-shadow: none;
-      // background-color: $darkBlue-3;
-      // @media (min-width: 768px) {
-      //   background-color: $transparent-bg;
-      // }
-    }
-
-    @media (min-width: 768px) {
-      // padding: 0 2%;
-    }
 
     &__logo {
       a {
@@ -128,7 +110,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       span {
         height: 2px;
         background-color: $white;
-        transition: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: $transition-cubic;
         border-radius: 2px;
         width: 32px;
         display: block;
@@ -186,7 +168,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       transition: all 0.125s 0.25s ease-in-out;
       transform: translateY(-50vh);
       z-index: 999;
-      background-color: rgba($darkBlue-3, 1);
+      background-color: $transparent-bg;
       display: flex;
       align-items: stretch;
       justify-content: flex-start;
@@ -194,36 +176,13 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
 
       @media (min-width: 768px) {
         font-size: 2rem;
-        background-color: $transparent-bg;
       }
 
       h2 {
         font-size: 0.875rem;
         margin-top: 0;
         opacity: 0;
-        transition: all 0.25s ease-in-out;
-      }
-      .branding__block {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 2rem;
-        @media (max-width: 768px) {
-          height: 25vh;
-        }
-        @media (min-width: 768px) {
-          background-color: $darkBlue-2;
-          width: 35%;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
-        &-logo {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1rem;
-        }
+        transition: $transition;
       }
       .nav__block {
         display: flex;
@@ -241,11 +200,11 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
 
           .circle-shape {
             fill: $white;
-            transition: all 0.25s ease-in-out;
+            transition: $transition;
           }
           .logo-shape {
             fill: $darkBlue-2;
-            transition: all 0.25s ease-in-out;
+            transition: $transition;
           }
         }
       }
@@ -262,7 +221,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
           padding: 0;
           opacity: 0;
           transform: translateY(-20px);
-          transition: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: $transition-cubic;
         }
       }
 
@@ -285,7 +244,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
         opacity: 1;
         visibility: visible;
         transform: scale(1) translateY(0);
-        transition: all 0.25s ease-in-out;
+        transition: $transition;
         h2 {
           opacity: 1;
           transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);

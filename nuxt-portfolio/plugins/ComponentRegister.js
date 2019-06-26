@@ -1,20 +1,21 @@
 import Vue from 'vue'
-import BaseHero from '../components/base/BaseHero.vue'
-import BrandLogo from '../components/BrandLogo.vue'
-import BaseImage from '../components/base/BaseImage.vue'
-import StaticImage from '../components/base/StaticImage.vue'
 import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
-import Wavy from '../components/base/Wavy.vue'
-import WavyLines from '../components/base/WavyLines.vue'
+import BrandLogo from '../components/BrandLogo.vue'
 import ArticleLink from '../components/ArticleLink.vue'
-import Loading from '../components/base/Loading.vue'
-import Button from '../components/base/Button.vue'
-import ScrollLink from '../components/base/ScrollLink.vue'
-import Work from '../components/base/Work.vue'
-import Header from '../components/base/Header.vue'
+import Work from '../components/Work.vue'
+import PageHero from '../components/base/page/PageHero.vue'
+import BaseImage from '../components/base/media/BaseImage.vue'
+import StaticImage from '../components/base/media/StaticImage.vue'
+import Wavy from '../components/base/decorative/Wavy.vue'
+import WavyLines from '../components/base/decorative/WavyLines.vue'
+import Loading from '../components/base/UI/Loading.vue'
+import Button from '../components/base/UI/Button.vue'
+import ButtonLink from '../components/base/UI/ButtonLink.vue'
+import ScrollLink from '../components/base/UI/ScrollLink.vue'
+import Header from '../components/base/UI/Header.vue'
 
-Vue.component('BaseHero', BaseHero)
+Vue.component('PageHero', PageHero)
 Vue.component('BrandLogo', BrandLogo)
 Vue.component('BaseImage', BaseImage)
 Vue.component('StaticImage', StaticImage)
@@ -25,6 +26,7 @@ Vue.component('WavyLines', WavyLines)
 Vue.component('ArticleLink', ArticleLink)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)
+Vue.component('ButtonLink', ButtonLink)
 Vue.component('ScrollLink', ScrollLink)
 Vue.component('Work', Work)
 Vue.component('Header', Header)
