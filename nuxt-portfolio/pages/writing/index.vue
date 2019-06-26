@@ -45,7 +45,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `Archive – %s`
+      titleTemplate: `Writing – %s`
     }
   }
 }

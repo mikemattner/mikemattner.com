@@ -129,6 +129,11 @@ export default {
       .button__bubble {
         background-color: $darkBlue-6;
       }
+      @media (min-width: $tablet) {
+        .icon {
+          display: none;
+        }
+      }
     }
   }
   .article-title {
