@@ -50,11 +50,16 @@ export default {
   border-radius: 2px;
   overflow: hidden;
   background-color: $darkBlue-3;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+  box-shadow: -4px 4px 50px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s, box-shadow 1s;
   @media (max-width: $tablet) {
     padding-top: 0;
     margin-left: 0;
     margin-right: 0;
+  }
+  &:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   // @media (min-width: $tablet) {
   //   background-color: $darkBlue-3;
