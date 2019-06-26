@@ -22,7 +22,7 @@
         {{ info.description }}
       </p>
       <p v-if="info.link">
-        <ButtonLink :to="info.link" class="button">
+        <ButtonLink :href="info.link" class="button">
           View Work
         </ButtonLink>
       </p>
