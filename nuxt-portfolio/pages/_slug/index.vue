@@ -123,7 +123,7 @@ export default {
   .meta {
     font-size: 0.675rem;
     margin: 0;
-    color: rgba($white, 0.25);
+    color: rgba($white, 0.35);
     .bull {
       margin: 0 0.25rem;
     }
@@ -142,6 +142,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    a {
+      align-self: stretch;
+      flex-grow: 1;
+    }
   }
 }
 </style>

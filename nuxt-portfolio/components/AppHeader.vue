@@ -31,8 +31,8 @@
             >
           </li>
           <li>
-            <nuxt-link to="/archive"
-              ><span @click="toggle()">Archive</span></nuxt-link
+            <nuxt-link to="/writing"
+              ><span @click="toggle()">Writing</span></nuxt-link
             >
           </li>
           <li>

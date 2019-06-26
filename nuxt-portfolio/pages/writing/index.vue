@@ -3,8 +3,8 @@
     <div :key="$route.params.slug">
       <PageHero arrow dark>
         <template v-slot:default>
-          <div class="columns is-centered">
-            <div class="column is-two-thirds">
+          <div class="columns">
+            <div class="column is-full">
               <Header tag="h1" decorator>{{ intro.title }}</Header>
               <p v-html="intro.body"></p>
             </div>
@@ -13,8 +13,8 @@
       </PageHero>
       <Wavy flip />
       <div id="content" class="container">
-        <div class="columns is-centered">
-          <div class="column is-two-thirds">
+        <div class="columns">
+          <div class="column is-full">
             <ul class="article-list">
               <li
                 v-for="article in articles"
@@ -58,28 +58,28 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 10px;
+    }
 
     li {
       margin: 0;
-      border-bottom: 1px solid $darkBlue-6;
+      justify-self: stretch;
+      align-self: stretch;
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
 
-      &:first-child {
-        border-top: 1px solid $darkBlue-6;
+      @media (max-width: $tablet) {
+        border-bottom: 1px solid $darkBlue-6;
+
+        &:first-child {
+          border-top: 1px solid $darkBlue-6;
+        }
       }
-    }
-  }
-  pre {
-    background-color: $darkBlue-2;
-    font-size: 0.75rem;
-    padding: 2rem;
-    border-radius: 2px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-    @media (min-width: $tablet) {
-      margin-left: -4rem;
-      margin-right: -4rem;
-    }
-    code {
-      background-color: transparent;
     }
   }
   .meta {

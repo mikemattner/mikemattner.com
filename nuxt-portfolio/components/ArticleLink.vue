@@ -1,12 +1,12 @@
 <template>
   <article :class="['single-link', archive == true ? 'article--link' : '']">
     <nuxt-link :to="article.path">
-      <Header tag="h3" class="article-title">{{ article.title }}</Header>
       <div class="article-meta">
         <span class="tag">{{ article.topic }}</span>
         <span class="bull">&bull;</span>
         <time>{{ article.date }}</time>
       </div>
+      <Header tag="h3" class="article-title">{{ article.title }}</Header>
       <p class="article-description">
         {{ article.description }}
       </p>
@@ -116,7 +116,12 @@ export default {
     }
   }
   &.article--link {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
     a {
+      width: 100%;
       &:hover {
         background-color: rgba($darkBlue-6, 0);
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
@@ -127,7 +132,7 @@ export default {
     }
   }
   .article-title {
-    margin: 0;
+    margin: 0 0 0.25rem;
   }
   .article-description {
     color: $white;
@@ -137,8 +142,8 @@ export default {
   }
   .article-meta {
     font-size: 0.675rem;
-    margin: 0;
-    color: rgba($white, 0.25);
+    margin: 0 0 0.25rem;
+    color: rgba($white, 0.35);
     .bull {
       margin: 0 0.25rem;
     }
