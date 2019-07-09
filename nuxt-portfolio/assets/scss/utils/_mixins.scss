@@ -44,6 +44,41 @@
   pointer-events: none;
 }
 
+@mixin absolute-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+  // This mixin can be used to set the object-fit:
+  // @include object-fit(contain);
+  // or object-fit and object-position:
+  // @include object-fit(cover, top);
+
+@mixin object-fit($fit: fill, $position: null){
+  -o-object-fit: $fit;
+     object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+       object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+  }
+
+@mixin cover-background($position) {
+  @include absolute-center;
+  @include object-fit(cover, $position);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
 // Responsiveness
 
 @mixin from($device) {

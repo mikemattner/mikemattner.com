@@ -6,7 +6,7 @@
       left == true ? 'left' : ''
     ]"
   >
-    <div class="column is-7 work-imagery">
+    <div class="column is-7-desktop is-half-tablet work-imagery">
       <div class="work-sample">
         <StaticImage
           :src="info.rightImage"
@@ -15,7 +15,7 @@
         />
       </div>
     </div>
-    <div class="column is-5 work-description">
+    <div class="column is-5-desktop is-half-tablet work-description">
       <Header tag="h6">{{ info.meta }}</Header>
       <Header tag="h2" decorator>{{ info.title }}</Header>
       <p>
@@ -113,6 +113,13 @@ export default {
     .work-sample {
       position: relative;
       z-index: 10;
+      overflow: hidden;
+      img {
+        // transition: $transition;
+        // &:hover {
+        //   transform: scale(1.05);
+        // }
+      }
       .sample {
         @media (min-width: $tablet) {
           margin-bottom: 0;
