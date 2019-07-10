@@ -173,7 +173,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
       align-items: stretch;
       justify-content: flex-start;
       flex-direction: column;
-      clip-path: circle(25% at 50% 25%);
+      clip-path: circle(25% at 125% 0%);
 
       @media (min-width: 768px) {
         font-size: 2rem;
