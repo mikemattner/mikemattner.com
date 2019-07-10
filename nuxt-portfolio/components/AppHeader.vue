@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($darkBlue-3, 0.95);
+$transparent-bg: rgba($darkBlue-3, 1);
 .headroom {
   &--surround {
     position: fixed;
@@ -165,7 +165,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       width: 100%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.125s 0.25s ease-in-out;
+      transition: all 0.125s 0.25s ease-in-out, clip-path 0.5s;
       transform: translateY(-50vh);
       z-index: 999;
       background-color: $transparent-bg;
@@ -173,6 +173,7 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
       align-items: stretch;
       justify-content: flex-start;
       flex-direction: column;
+      clip-path: circle(25% at 50% 25%);
 
       @media (min-width: 768px) {
         font-size: 2rem;
@@ -244,7 +245,8 @@ $transparent-bg: rgba($darkBlue-3, 0.95);
         opacity: 1;
         visibility: visible;
         transform: scale(1) translateY(0);
-        transition: $transition;
+        transition: $transition, clip-path 1s;
+        clip-path: circle(100%);
         h2 {
           opacity: 1;
           transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
