@@ -173,7 +173,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
       align-items: stretch;
       justify-content: flex-start;
       flex-direction: column;
-      clip-path: circle(25% at 125% 0%);
+      clip-path: circle(25% at 150% -50%);
 
       @media (min-width: 768px) {
         font-size: 2rem;
@@ -245,7 +245,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         opacity: 1;
         visibility: visible;
         transform: scale(1) translateY(0);
-        transition: $transition, clip-path 1s;
+        transition: $transition, clip-path 0.75s;
         clip-path: circle(100%);
         h2 {
           opacity: 1;
