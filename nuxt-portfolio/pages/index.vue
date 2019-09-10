@@ -25,15 +25,7 @@
             <Header tag="h2" decorator>{{ writing.title }}</Header>
           </div>
           <div class="column is-8 copy">
-            <ul class="article-list">
-              <li
-                v-for="article in articles.slice(0, 3)"
-                :key="article.title"
-                class="article"
-              >
-                <ArticleLink :article="article" />
-              </li>
-            </ul>
+            <ArticleList :posts="posts" />
             <Button :to="writing.link" class="button">{{
               writing.buttonTitle
             }}</Button>
@@ -55,7 +47,6 @@
 <script>
 import { intro, writing } from '~/data/home.yaml'
 import { JennAirWorkbook, JennAirHub, WhirlpoolTopLoad } from '~/data/work.yaml'
-import articles from '@/static/articleList.json'
 
 export default {
   name: 'Home',
@@ -64,11 +55,21 @@ export default {
   data() {
     return {
       intro,
-      articles,
       writing,
       JennAirWorkbook,
       JennAirHub,
       WhirlpoolTopLoad
+    }
+  },
+  async asyncData() {
+    // create context via webpack to map over all blog posts
+    const allPosts = await require.context('~/articles/', true, /\.md$/)
+    const posts = allPosts.keys().map(key => {
+      // give back the value of each post context
+      return allPosts(key)
+    })
+    return {
+      posts
     }
   },
   head() {

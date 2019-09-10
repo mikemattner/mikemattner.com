@@ -5,11 +5,11 @@
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-two-thirds">
-              <Header tag="h1">{{ articleTitle }}</Header>
+              <Header tag="h1">{{ post.attributes.title }}</Header>
               <div class="meta">
-                <span class="tag">{{ articleTopic }}</span>
+                <span class="tag">{{ post.attributes.topic }}</span>
                 <span class="bull">&bull;</span>
-                <time>{{ articleDate }}</time>
+                <time>{{ formattedDate }}</time>
               </div>
             </div>
           </div>
@@ -19,18 +19,12 @@
       <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
-            <div v-scroll-reveal v-html="articleContent"></div>
+            <div v-scroll-reveal v-html="post.html"></div>
             <div class="links">
-              <Button
-                v-if="prevArticle"
-                :to="'/' + prevArticle.path"
-                class="button"
+              <Button v-if="nextPath" :to="`/${nextPath}`" class="button"
                 >Previous Article</Button
               >
-              <Button
-                v-if="nextArticle"
-                :to="'/' + nextArticle.path"
-                class="button"
+              <Button v-if="prevPath" :to="`/${prevPath}`" class="button"
                 >Next Article</Button
               >
             </div>
@@ -42,60 +36,94 @@
 </template>
 
 <script>
-import articleList from '@/static/articleList.json'
 export default {
   transition: 'fade',
   scrollToTop: true,
-  data() {
-    return {
-      article: null,
-      articleTitle: null,
-      articleDate: null,
-      articleDescription: null,
-      articleTopic: null,
-      prevArticle: null,
-      nextArticle: null,
-      articleContent: null
+  computed: {
+    formattedDate() {
+      return new Date(this.post.attributes.date).toDateString().slice(4)
+    },
+    nextPath() {
+      const firstBlogPath = this.sortedPaths[0]
+      // if there's no 'next' path, return the first path
+      const nextPath = isNull(
+        this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) + 1]
+      )
+        ? firstBlogPath
+        : this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) + 1]
+      function isNull(item) {
+        return item === null || item === undefined
+      }
+      return nextPath
+    },
+    prevPath() {
+      const firstBlogPath = this.sortedPaths[0]
+      // if there's no 'next' path, return the first path
+      const nextPath = isNull(
+        this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) - 1]
+      )
+        ? firstBlogPath
+        : this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) - 1]
+      function isNull(item) {
+        return item === null || item === undefined
+      }
+      return nextPath
     }
   },
-  created() {
-    this.getArticleData()
-  },
-  methods: {
-    /**
-     * Gets data and content of the current, next and previous articles in the article list
-     */
-    getArticleData() {
-      this.article = articleList.filter((a, index) => {
-        if (a.path === this.$route.params.slug) {
-          this.prevArticle = articleList[index + 1]
-          this.nextArticle = articleList[index - 1]
-          return a
+  async asyncData({ params }) {
+    try {
+      const currentPath = params.slug
+      // get current post data
+      const post = await import(`~/articles/${params.slug}.md`)
+      // get all post data for next route
+      const allPosts = await require.context('~/articles/', true, /\.md$/)
+      const posts = allPosts.keys().map(key => {
+        return allPosts(key)
+      })
+      const sortedPosts = posts.sort((a, b) => {
+        const dateA = new Date(a.attributes.date)
+        const dateB = new Date(b.attributes.date)
+        if (dateA < dateB) {
+          return 1
         }
-      })[0]
-      // Check if article exists
-      if (!this.article) {
-        this.$router.push('/')
-        return
+        if (dateA > dateB) {
+          return -1
+        }
+        return 0
+      })
+      const sortedPaths = []
+      /* eslint-disable */
+      console.log(sortedPosts)
+      /* eslin-enable */
+      const regex = / /gi
+      sortedPosts.map(post => {
+        let relPath = post.attributes.title
+          .toLowerCase()
+          .trim()
+          .replace(regex, '-')
+        sortedPaths.push(relPath)
+      })
+      return {
+        sortedPaths,
+        post,
+        currentPath
       }
-      this.articleContent = require(`~/static/articles/${
-        this.article.path
-      }.md`).default
-      this.articleTitle = this.article.title
-      this.articleDate = this.article.date
-      this.articleTopic = this.article.topic
-      this.articleDescription = this.article.description
+    } catch (err) {
+      /* eslint-disable */
+      console.debug('No Post:', err)
+      /* eslin-enable */
+      return false
     }
   },
   head() {
-    if (!this.article) return
+    if (!this.post) return
     return {
-      titleTemplate: `${this.article.title} – %s`,
+      titleTemplate: `${this.post.attributes.title} – %s`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.article.title
+          content: this.post.attributes.title
         }
       ]
     }

@@ -15,7 +15,8 @@
       <div id="content" class="container">
         <div class="columns">
           <div class="column is-full">
-            <ul class="article-list">
+            <AllArticles :posts="posts" />
+            <!-- <ul class="article-list">
               <li
                 v-for="article in articles"
                 :key="article.title"
@@ -23,7 +24,7 @@
               >
                 <ArticleLink :article="article" archive />
               </li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </div>
@@ -33,14 +34,23 @@
 
 <script>
 import { intro } from '@/data/archive.yaml'
-import articles from '@/static/articleList.json'
 export default {
   transition: 'fade',
   scrollToTop: true,
   data() {
     return {
-      intro,
-      articles
+      intro
+    }
+  },
+  async asyncData() {
+    // create context via webpack to map over all blog posts
+    const allPosts = await require.context('~/articles/', true, /\.md$/)
+    const posts = allPosts.keys().map(key => {
+      // give back the value of each post context
+      return allPosts(key)
+    })
+    return {
+      posts
     }
   },
   head() {
