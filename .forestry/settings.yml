@@ -7,7 +7,7 @@ sections:
 - type: directory
   path: nuxt-portfolio/articles
   label: Posts
-  create: all
+  create: documents
   match: "**/*"
 upload_dir: static
 public_path: "/static"
