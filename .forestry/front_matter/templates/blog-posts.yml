@@ -25,5 +25,9 @@ fields:
     schema:
       format: markdown
   label: Description
+- name: category
+  type: tag_list
+  default: []
+  label: Category
 pages:
 - nuxt-portfolio/articles/hello-world.md
