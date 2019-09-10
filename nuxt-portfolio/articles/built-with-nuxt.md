@@ -1,7 +1,7 @@
 ---
 topic: Development
 title: Built With Nuxt
-date: 2019-05-02T17:00:00Z
+date: 2019-05-02T17:00:00.000+00:00
 description: Building with a more modern development experience.
 
 ---
@@ -28,7 +28,6 @@ import {
 } from '@/data/home.yaml'
 
 import articles from '@/static/articleList.json'
-
 ```
 
 The `articleList.json` file is the simplest way to link to the specific markdown file with a slug, give it a title, and give it a description. Eventually I could add quite a bit more detail, but today, it's functional. Unfortunately, I think that this approach is unlikely to remain sustainable.
