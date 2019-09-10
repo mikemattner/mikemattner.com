@@ -3,6 +3,8 @@ import AppHeader from '../components/AppHeader.vue'
 import AppFooter from '../components/AppFooter.vue'
 import BrandLogo from '../components/BrandLogo.vue'
 import ArticleLink from '../components/ArticleLink.vue'
+import ArticleList from '../components/ArticleList.vue'
+import AllArticles from '../components/AllArticles.vue'
 import Work from '../components/Work.vue'
 import PageHero from '../components/base/page/PageHero.vue'
 import BaseImage from '../components/base/media/BaseImage.vue'
@@ -24,6 +26,8 @@ Vue.component('AppFooter', AppFooter)
 Vue.component('Wavy', Wavy)
 Vue.component('WavyLines', WavyLines)
 Vue.component('ArticleLink', ArticleLink)
+Vue.component('ArticleList', ArticleList)
+Vue.component('AllArticles', AllArticles)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)
 Vue.component('ButtonLink', ButtonLink)

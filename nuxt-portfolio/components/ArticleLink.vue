@@ -1,14 +1,16 @@
 <template>
   <article :class="['single-link', archive == true ? 'article--link' : '']">
-    <nuxt-link :to="article.path">
+    <nuxt-link :to="`/${formatSlug(article.attributes.title)}`">
       <div class="article-meta">
-        <span class="tag">{{ article.topic }}</span>
+        <span class="tag">{{ article.attributes.title }}</span>
         <span class="bull">&bull;</span>
-        <time>{{ article.date }}</time>
+        <time>{{ formatDate(article.attributes.date) }}</time>
       </div>
-      <Header tag="h3" class="article-title">{{ article.title }}</Header>
+      <Header tag="h3" class="article-title">{{
+        article.attributes.title
+      }}</Header>
       <p class="article-description">
-        {{ article.description }}
+        {{ article.attributes.description }}
       </p>
       <div class="icon">
         <!-- <fa-icon icon="chevron-right" size="lg"></fa-icon> -->
@@ -26,6 +28,21 @@ export default {
       required: true
     },
     archive: Boolean
+  },
+  methods: {
+    formatDate(date) {
+      return new Date(date).toDateString().slice(4)
+    },
+    formatExcerpt(body) {
+      return body.slice(0, 200).trimEnd()
+    },
+    formatSlug(title) {
+      const regex = / /gi
+      return title
+        .toLowerCase()
+        .trim()
+        .replace(regex, '-')
+    }
   }
 }
 </script>

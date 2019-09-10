@@ -1,6 +1,6 @@
 <template>
   <div class="error">
-    <BaseHero full decorator>
+    <PageHero full decorator>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-two-thirds">
@@ -10,7 +10,7 @@
           </div>
         </div>
       </template>
-    </BaseHero>
+    </PageHero>
   </div>
 </template>
 

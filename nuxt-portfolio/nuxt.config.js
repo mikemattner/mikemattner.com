@@ -1,5 +1,12 @@
-import pkg from './package'
-const articles = require('./static/articleList.json')
+// import pkg from './package'
+// const articles = require('./static/articleList.json')
+import path from 'path'
+/* eslint-disable */
+const glob = require('glob')
+/* eslin-enable */
+const dynamicRoutes = getDynamicPaths({
+  '/': 'articles/*.md'
+})
 
 export default {
   mode: 'universal',
@@ -54,7 +61,6 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    ['@nuxtjs/markdownit', { linkify: true }],
     [
       '@nuxtjs/google-analytics',
       {
@@ -65,10 +71,7 @@ export default {
   ],
   sitemap: {
     gzip: true,
-    routes: () => {
-      const routes = articles.map(article => article.path)
-      return routes
-    }
+    routes: dynamicRoutes
   },
   styleResources: {
     scss: [
@@ -111,16 +114,6 @@ export default {
       }
     ]
   },
-  /**
-   * Dynamic route generation
-   */
-  generate: {
-    routes: () => {
-      const routes = articles.map(article => article.path)
-      return routes
-    }
-  },
-
   /*
    ** Build configuration
    */
@@ -142,6 +135,31 @@ export default {
         test: /\.yaml$/,
         loader: 'js-yaml-loader'
       })
+      config.module.rules.push(
+      {
+          test: /\.md$/,
+          loader: "frontmatter-markdown-loader",
+          include: path.resolve(__dirname, "articles")
+      })
     }
-  }
+  },
+   /**
+   * Dynamic route generation
+   */
+  generate: {
+    routes: dynamicRoutes
+  },
+}
+
+/* referenced https://github.com/jake-101/bael-template */
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map(url => {
+      const filepathGlob = urlFilepathTable[url]
+      const routes = glob
+        .sync(filepathGlob)
+        .map(filepath => `${url}/${path.basename(filepath, '.md')}`)
+      return routes
+    })
+  )
 }
