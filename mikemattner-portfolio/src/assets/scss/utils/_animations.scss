@@ -1,9 +1,0 @@
-@keyframes bounce {
-    from { transform: translate3d(0, -10px, 0);}
-    to   { transform: translate3d(0, 10px, 0); }
-}
-
-@keyframes bounceRight {
-    from { transform: translate3d(-10px, 0, 0);}
-    to   { transform: translate3d(10px, 0, 0); }
-}
