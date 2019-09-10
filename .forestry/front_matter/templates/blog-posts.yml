@@ -16,5 +16,3 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
-pages:
-- nuxt-portfolio/articles/hello-world.md
