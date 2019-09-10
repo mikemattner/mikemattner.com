@@ -25,9 +25,22 @@ fields:
     schema:
       format: markdown
   label: Description
-- name: category
-  type: tag_list
+- name: topic
+  type: select
   default: []
-  label: Category
+  config:
+    required: false
+    options:
+    - Development
+    - Design
+    - Philosophy
+    - Science
+    - General
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Topic
 pages:
 - nuxt-portfolio/articles/hello-world.md
