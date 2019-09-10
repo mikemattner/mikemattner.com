@@ -7,3 +7,5 @@ fields:
   config:
     required: true
   label: Title
+pages:
+- nuxt-portfolio/articles/hello-world.md
