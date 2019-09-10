@@ -16,5 +16,14 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Description
 pages:
 - nuxt-portfolio/articles/hello-world.md
