@@ -2,6 +2,8 @@
 title: Hello World
 date: 2019-05-02T16:00:00Z
 description: Launching something new, but old.
+category:
+- Development
 
 ---
 It's time to soft launch my new personal website–built with [Nuxt](https://nuxtjs.org/ "Nuxt").
