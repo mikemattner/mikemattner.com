@@ -7,5 +7,19 @@ fields:
   config:
     required: true
   label: Title
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: slug
+  type: text
+  config:
+    required: true
+  label: Slug
 pages:
 - nuxt-portfolio/articles/hello-world.md
