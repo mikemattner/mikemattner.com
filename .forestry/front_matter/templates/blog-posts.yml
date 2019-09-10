@@ -43,4 +43,5 @@ fields:
       path: 
   label: Topic
 pages:
+- nuxt-portfolio/articles/built-with-nuxt.md
 - nuxt-portfolio/articles/hello-world.md
