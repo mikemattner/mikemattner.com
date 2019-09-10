@@ -5,7 +5,7 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: articles
+  path: nuxt-portfolio/articles
   label: Posts
   create: all
   match: "**/*"
