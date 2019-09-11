@@ -1,9 +1,20 @@
-// import pkg from './package'
-// const articles = require('./static/articleList.json')
 import path from 'path'
 /* eslint-disable */
 const glob = require('glob')
-/* eslin-enable */
+const md = require('markdown-it')({
+  html: true,
+  highlight: function(str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(lang, str).value
+      } catch (__) {}
+    }
+
+    return '' // use external default escaping
+  }
+})
+const hljs = require('highlight.js')
+/* eslint-enable */
 const dynamicRoutes = getDynamicPaths({
   '/': 'articles/*.md'
 })
@@ -94,10 +105,6 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  markdownit: {
-    injected: true,
-    use: ['markdown-it-highlightjs']
-  },
   workbox: {
     runtimeCaching: [
       {
@@ -135,20 +142,24 @@ export default {
         test: /\.yaml$/,
         loader: 'js-yaml-loader'
       })
-      config.module.rules.push(
-      {
-          test: /\.md$/,
-          loader: "frontmatter-markdown-loader",
-          include: path.resolve(__dirname, "articles")
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        include: path.resolve(__dirname, 'articles'),
+        options: {
+          markdown: body => {
+            return md.render(body)
+          }
+        }
       })
     }
   },
-   /**
+  /**
    * Dynamic route generation
    */
   generate: {
     routes: dynamicRoutes
-  },
+  }
 }
 
 /* referenced https://github.com/jake-101/bael-template */

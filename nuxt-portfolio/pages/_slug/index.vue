@@ -92,12 +92,10 @@ export default {
         return 0
       })
       const sortedPaths = []
-      /* eslint-disable */
-      console.log(sortedPosts)
-      /* eslin-enable */
       const regex = / /gi
+      let relPath = ''
       sortedPosts.map(post => {
-        let relPath = post.attributes.title
+        relPath = post.attributes.title
           .toLowerCase()
           .trim()
           .replace(regex, '-')
@@ -111,7 +109,7 @@ export default {
     } catch (err) {
       /* eslint-disable */
       console.debug('No Post:', err)
-      /* eslin-enable */
+      /* eslint-enable */
       return false
     }
   },
