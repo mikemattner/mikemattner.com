@@ -11,10 +11,10 @@ sections:
   match: "**/*"
   templates:
   - blog-posts
-upload_dir: static
-public_path: "/static"
+upload_dir: posts/media
+public_path: "/posts/media"
 front_matter_path: ''
-use_front_matter_path: false
+use_front_matter_path: 
 file_template: ":filename:"
 build:
   install_dependencies_command: npm install
