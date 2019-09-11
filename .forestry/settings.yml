@@ -19,9 +19,12 @@ sections:
   path: nuxt-portfolio/data/home.yaml
   label: Home
 - type: document
+  path: nuxt-portfolio/data/archive.yaml
+  label: Archive
+  match: "**/*"
+- type: document
   path: nuxt-portfolio/data/contact.yaml
   label: Contact
-  match: "**/*"
 upload_dir: ''
 public_path: https://res.cloudinary.com/mmattner/image/upload
 front_matter_path: ''
