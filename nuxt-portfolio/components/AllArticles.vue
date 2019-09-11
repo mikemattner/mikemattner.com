@@ -2,7 +2,7 @@
   <section>
     <ul class="article-list">
       <li
-        v-for="post in sortedPosts.slice(0, 3)"
+        v-for="post in sortedPosts"
         :key="post.attributes.title"
         class="article"
       >

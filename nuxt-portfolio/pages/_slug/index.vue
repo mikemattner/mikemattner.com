@@ -44,12 +44,12 @@ export default {
       return new Date(this.post.attributes.date).toDateString().slice(4)
     },
     nextPath() {
-      const firstBlogPath = this.sortedPaths[0]
+      // const firstBlogPath = this.sortedPaths[0]
       // if there's no 'next' path, return the first path
       const nextPath = isNull(
         this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) + 1]
       )
-        ? firstBlogPath
+        ? null
         : this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) + 1]
       function isNull(item) {
         return item === null || item === undefined
@@ -57,12 +57,12 @@ export default {
       return nextPath
     },
     prevPath() {
-      const firstBlogPath = this.sortedPaths[0]
+      // const firstBlogPath = this.sortedPaths[0]
       // if there's no 'next' path, return the first path
       const nextPath = isNull(
         this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) - 1]
       )
-        ? firstBlogPath
+        ? null
         : this.sortedPaths[this.sortedPaths.indexOf(this.currentPath) - 1]
       function isNull(item) {
         return item === null || item === undefined
