@@ -1,6 +1,7 @@
 import path from 'path'
 /* eslint-disable */
 const glob = require('glob')
+const hljs = require('highlight.js')
 const md = require('markdown-it')({
   html: true,
   highlight: function(str, lang) {
@@ -13,7 +14,6 @@ const md = require('markdown-it')({
     return '' // use external default escaping
   }
 })
-const hljs = require('highlight.js')
 /* eslint-enable */
 const dynamicRoutes = getDynamicPaths({
   '/': 'articles/*.md'
