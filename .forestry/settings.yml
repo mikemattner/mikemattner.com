@@ -7,7 +7,7 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: nuxt-portfolio/articles
+  path: articles
   label: Posts
   create: documents
   match: "**/*"
@@ -16,14 +16,14 @@ sections:
 - type: heading
   label: Pages
 - type: document
-  path: nuxt-portfolio/data/home.yaml
+  path: data/home.yaml
   label: Home
 - type: document
-  path: nuxt-portfolio/data/archive.yaml
+  path: data/archive.yaml
   label: Archive
   match: "**/*"
 - type: document
-  path: nuxt-portfolio/data/contact.yaml
+  path: data/contact.yaml
   label: Contact
 upload_dir: ''
 public_path: https://res.cloudinary.com/mmattner/image/upload
