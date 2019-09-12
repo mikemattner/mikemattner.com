@@ -19,6 +19,11 @@
       <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
+            <p
+              v-scroll-reveal
+              v-html="post.attributes.description"
+              class="description"
+            ></p>
             <div v-scroll-reveal v-html="post.html"></div>
             <div class="links">
               <Button v-if="nextPath" :to="`/${nextPath}`" class="button"
@@ -145,6 +150,11 @@ export default {
     code {
       background-color: transparent;
     }
+  }
+  .description {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba($white, 0.1);
   }
   .meta {
     font-size: 0.675rem;
