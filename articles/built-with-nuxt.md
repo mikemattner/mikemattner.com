@@ -5,7 +5,7 @@ date: 2019-05-02T17:00:00.000+00:00
 description: Building with a more modern development experience.
 
 ---
-**9/10/29** – This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files, but am now using Forestry as a CMS for markdown files.
+**9/10/29** – This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files, but am now using Forestry as a CMS for markdown files. It's super simple.
 
 ### Introduction
 
