@@ -1,6 +1,16 @@
-# nuxt-portfolio
+# MikeMattner.com Built with Nuxt Edition
 
-> My portfolio
+My second run at a javascript framwork based portfolio, blog, and general information site. I'm using `nuxt generate` to build a static website.
+
+## ToDos
+
+- [x] Dynamic generation of routes for .md files
+- [x] Use a CMS for content generation (Forestry!)
+- [ ] Generate, fill in some old content for the blog
+- [ ] Reusable blog list component
+- [ ] Blog pagination
+- [ ] Build out portfolio with CMS capabilities
+- [ ] Generate content for portfolio
 
 ## Build Setup
 
