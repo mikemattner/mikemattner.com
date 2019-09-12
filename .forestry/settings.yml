@@ -21,7 +21,6 @@ sections:
 - type: document
   path: data/archive.yaml
   label: Archive
-  match: "**/*"
 - type: document
   path: data/contact.yaml
   label: Contact

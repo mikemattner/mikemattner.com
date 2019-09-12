@@ -42,7 +42,3 @@ fields:
       file: 
       path: 
   label: Topic
-pages:
-- nuxt-portfolio/articles/the-forestry-experiment.md
-- nuxt-portfolio/articles/built-with-nuxt.md
-- nuxt-portfolio/articles/hello-world.md
