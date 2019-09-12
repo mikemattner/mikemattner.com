@@ -65,11 +65,17 @@ export default {
   //   background-color: $darkBlue-3;
   //   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
   // }
+  // h6 {
+  //   margin: 0;
+  //   text-transform: uppercase;
+  //   letter-spacing: 0.0675rem;
+  //   font-weight: 400;
+  // }
   h6 {
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.0675rem;
     font-weight: 400;
+    font-family: serif;
+    font-style: italic;
   }
   h2 {
     margin-top: 0.25rem;

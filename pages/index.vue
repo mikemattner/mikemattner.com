@@ -20,9 +20,11 @@
     <section id="content" class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
         <div class="columns">
-          <div class="column is-full">
+          <div class="column">
             <Header tag="h6">{{ writing.meta }}</Header>
             <Header tag="h2" decorator>{{ writing.title }}</Header>
+          </div>
+          <div class="column is-three-quarters">
             <ArticleList :posts="posts" />
             <Button :to="writing.link" class="button">{{
               writing.buttonTitle
@@ -153,10 +155,12 @@ export default {
   }
   h6 {
     margin: 0;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     // color: $darkBlue-10;
-    letter-spacing: 0.0675rem;
+    // letter-spacing: 0.0675rem;
     font-weight: 400;
+    font-family: serif;
+    font-style: italic;
   }
   .section {
     padding: 4rem 0;
@@ -183,7 +187,10 @@ export default {
 
     &--writing {
       h2 {
-        // margin-top: 2rem;
+        font-size: 3rem;
+      }
+      h6 {
+        margin-top: 2rem;
       }
     }
 
