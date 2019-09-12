@@ -15,9 +15,12 @@ const md = require('markdown-it')({
   }
 })
 /* eslint-enable */
-const dynamicRoutes = getDynamicPaths({
-  '/': 'articles/*.md'
-})
+let files = glob.sync( '**/*.md' , { cwd: 'articles' });
+
+function getSlugs(post, _) {
+  let slug = post.substr(0, post.lastIndexOf('.'));
+  return `/${slug}`;
+}
 
 export default {
   mode: 'universal',
@@ -82,7 +85,9 @@ export default {
   ],
   sitemap: {
     gzip: true,
-    routes: dynamicRoutes
+    routes: function() {
+      return files.map(getSlugs)
+    }
   },
   styleResources: {
     scss: [
@@ -158,19 +163,8 @@ export default {
    * Dynamic route generation
    */
   generate: {
-    routes: dynamicRoutes
+    routes: function() {
+      return files.map(getSlugs)
+    }
   }
-}
-
-/* referenced https://github.com/jake-101/bael-template */
-function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      const filepathGlob = urlFilepathTable[url]
-      const routes = glob
-        .sync(filepathGlob)
-        .map(filepath => `${url}/${path.basename(filepath, '.md')}`)
-      return routes
-    })
-  )
 }
