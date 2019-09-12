@@ -1,6 +1,7 @@
 # MikeMattner.com Built with Nuxt Edition
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c59c68ee-fcf6-4d6e-af5d-9263f36ac533/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-5270b3/deploys)
 
-My second run at a javascript framwork based portfolio, blog, and general information site. I'm using `nuxt generate` to build a static website.
+My second run at a javascript framwork based portfolio, blog, and general information site. I'm using `nuxt generate` to build a static website hosted by Netlify.
 
 ## ToDos
 
