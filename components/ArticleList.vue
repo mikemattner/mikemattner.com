@@ -2,11 +2,11 @@
   <section>
     <ul class="article-list">
       <li
-        v-for="post in sortedPosts.slice(0, 3)"
+        v-for="post in sortedPosts.slice(0, 6)"
         :key="post.attributes.title"
         class="article"
       >
-        <ArticleLink :article="post" />
+        <ArticleLink :article="post" archive />
       </li>
     </ul>
   </section>
@@ -44,13 +44,27 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+  }
 
   li {
     margin: 0;
-    border-bottom: 1px solid $darkBlue-5;
+    justify-self: stretch;
+    align-self: stretch;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
 
-    &:first-child {
-      border-top: 1px solid $darkBlue-5;
+    @media (max-width: $tablet) {
+      border-bottom: 1px solid $darkBlue-6;
+
+      &:first-child {
+        border-top: 1px solid $darkBlue-6;
+      }
     }
   }
 }

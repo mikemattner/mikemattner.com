@@ -20,11 +20,9 @@
     <section id="content" class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
         <div class="columns">
-          <div class="column">
+          <div class="column is-full">
             <Header tag="h6">{{ writing.meta }}</Header>
             <Header tag="h2" decorator>{{ writing.title }}</Header>
-          </div>
-          <div class="column is-8 copy">
             <ArticleList :posts="posts" />
             <Button :to="writing.link" class="button">{{
               writing.buttonTitle
@@ -147,20 +145,6 @@ export default {
         left: -13rem;
         width: 350px;
         z-index: -1;
-      }
-    }
-  }
-  .article-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      margin: 0;
-      border-bottom: 1px solid $darkBlue-5;
-
-      &:first-child {
-        border-top: 1px solid $darkBlue-5;
       }
     }
   }

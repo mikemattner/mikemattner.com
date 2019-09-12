@@ -75,6 +75,13 @@ export default {
       grid-row-gap: 10px;
     }
 
+    @media (min-width: $widescreen) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 10px;
+    }
+
     li {
       margin: 0;
       justify-self: stretch;
