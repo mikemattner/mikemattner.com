@@ -155,7 +155,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
     }
     &__nav {
       font-size: 2.25rem;
-      font-weight: 400;
+      font-weight: 900;
       letter-spacing: 0.125rem;
       position: fixed;
       top: 0;
