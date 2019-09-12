@@ -154,7 +154,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
       }
     }
     &__nav {
-      font-size: 1.75rem;
+      font-size: 2.25rem;
       font-weight: 400;
       letter-spacing: 0.125rem;
       position: fixed;
@@ -176,7 +176,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
       clip-path: circle(25% at 150% -50%);
 
       @media (min-width: 768px) {
-        font-size: 2rem;
+        font-size: 3rem;
       }
 
       h2 {
@@ -215,10 +215,10 @@ $transparent-bg: rgba($darkBlue-3, 1);
         flex-direction: column;
         align-items: center;
         list-style: none;
-        margin: 2rem 0 0 0;
+        margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0.5rem 0;
+          margin: 0.25rem 0;
           padding: 0;
           opacity: 0;
           transform: translateY(-20px);
@@ -231,6 +231,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         text-decoration: none;
         position: relative;
         background-size: 100% 0px;
+        line-height: 1.2;
 
         &:hover {
           background-size: 100% 6px;
