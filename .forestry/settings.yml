@@ -1,9 +1,11 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: ''
 webhook_url: 
 sections:
+- type: heading
+  label: Content
 - type: directory
   path: nuxt-portfolio/articles
   label: Posts
@@ -11,6 +13,18 @@ sections:
   match: "**/*"
   templates:
   - blog-posts
+- type: heading
+  label: Pages
+- type: document
+  path: nuxt-portfolio/data/home.yaml
+  label: Home
+- type: document
+  path: nuxt-portfolio/data/archive.yaml
+  label: Archive
+  match: "**/*"
+- type: document
+  path: nuxt-portfolio/data/contact.yaml
+  label: Contact
 upload_dir: ''
 public_path: https://res.cloudinary.com/mmattner/image/upload
 front_matter_path: ''

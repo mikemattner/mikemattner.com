@@ -5,11 +5,13 @@ date: 2019-05-02T17:00:00.000+00:00
 description: Building with a more modern development experience.
 
 ---
-This is now deprecated. 9/10/29
+**9/10/29** – This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files, but am now using Forestry as a CMS for markdown files.
+
+### Introduction
 
 I've spent far too many years working with WordPress as my personal writing platform – to the point of including years and years of old, stale code as I rebuilt or redesigned my old personal blog.
 
-And so last year I decided to learn [VueJS](https://vuejs.org/)–and with it [Nuxt](https://nuxtjs.org/)–and based on what I learned I'm using Nuxt as a static site generator for this very website. 
+And so last year I decided to learn [VueJS](https://vuejs.org/)–and with it [Nuxt](https://nuxtjs.org/)–and based on what I learned I'm using Nuxt as a static site generator for this very website.
 
 I started by building just a few simple pages that acted as a brochure style experience and have started to build out some additional features. The first is a simple blogging platform using markdown files.
 
@@ -44,7 +46,7 @@ The `articleList.json` file is the simplest way to link to the specific markdown
 ]
 ```
 
-You could see how adding articles to this file might get tedious at some future date. A headless CMS might be the path I take, but as a development experience, this feels fairly solid. 
+You could see how adding articles to this file might get tedious at some future date. A headless CMS might be the path I take, but as a development experience, this feels fairly solid.
 
 Optionally, perhaps I'll build this in such a way as to dynamically generate the information I need by scanning the markdown files, checking front matter, and then listing it all out without much intervention on my part.
 
