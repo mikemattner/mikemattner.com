@@ -40,10 +40,11 @@ h6 {
       display: block;
       position: absolute;
       width: 3rem;
-      height: 1px;
+      // height: 1px;
       left: 0;
       bottom: 0;
-      background-color: $orange;
+      // background-color: $orange;
+      border-bottom: 3px dotted #ff5801;
     }
 
     &--center {
