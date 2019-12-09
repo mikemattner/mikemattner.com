@@ -6,7 +6,7 @@
       left == true ? 'left' : ''
     ]"
   >
-    <div class="column is-7-desktop is-half-tablet work-imagery">
+    <div class="column is-6-desktop is-half-tablet work-imagery">
       <div class="work-sample">
         <StaticImage
           :src="info.rightImage"
@@ -15,7 +15,7 @@
         />
       </div>
     </div>
-    <div class="column is-5-desktop is-half-tablet work-description">
+    <div class="column is-6-desktop is-half-tablet work-description">
       <Header tag="h6">{{ info.meta }}</Header>
       <Header tag="h2" decorator>{{ info.title }}</Header>
       <p>
@@ -45,22 +45,22 @@ export default {
 
 <style scoped lang="scss">
 .is--work {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 2px;
-  overflow: hidden;
-  background-color: $darkBlue-3;
-  box-shadow: -4px 4px 50px rgba(0, 0, 0, 0.5);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  // border-radius: 2px;
+  // overflow: hidden;
+  // background-color: $darkBlue-3;
+  // box-shadow: -4px 4px 50px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s, box-shadow 1s;
   @media (max-width: $tablet) {
     padding-top: 0;
     margin-left: 0;
     margin-right: 0;
   }
-  &:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  }
+  // &:hover {
+  //   transform: translate(2px, 2px);
+  //   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  // }
   // @media (min-width: $tablet) {
   //   background-color: $darkBlue-3;
   //   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
@@ -84,6 +84,9 @@ export default {
   &.left {
     .work-description {
       order: 2;
+      @media (min-width: $widescreen) {
+        margin-left: -2rem;
+      }
     }
     .work-imagery {
       order: 1;
@@ -95,6 +98,9 @@ export default {
       @media (max-width: $tablet) {
         order: 2;
       }
+      @media (min-width: $widescreen) {
+        margin-right: -2rem;
+      }
     }
     .work-imagery {
       order: 2;
@@ -105,9 +111,17 @@ export default {
   }
   .work-description {
     z-index: 12;
+    @media (max-width: $tablet) {
+      padding: 0;
+    }
+    @media (min-width: $tablet) {
+      background-color: $darkBlue-3;
+      border-radius: 2px;
+    }
   }
   .work-imagery {
     padding-top: 0;
+    border-radius: 2px;
     @media (min-width: $tablet) {
       padding-bottom: 0;
       padding-left: 0;
