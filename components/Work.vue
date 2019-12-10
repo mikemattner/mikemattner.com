@@ -224,6 +224,7 @@ export default {
     padding: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 
     li {
       margin: 0 0.5rem 0 0;
