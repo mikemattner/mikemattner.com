@@ -2,7 +2,7 @@
   <article :class="['single-link', archive == true ? 'article--link' : '']">
     <nuxt-link :to="`/${formatSlug(article.attributes.title)}`">
       <div class="article-meta">
-        <span class="tag">{{ article.attributes.title }}</span>
+        <span class="tag">{{ article.attributes.topic }}</span>
         <span class="bull">&bull;</span>
         <time>{{ formatDate(article.attributes.date) }}</time>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero full arrow>
+    <PageHero arrow>
       <template v-slot:default>
         <div class="columns">
           <div class="column is-offset-one-quarter is-two-thirds">
@@ -16,7 +16,7 @@
         </div>
       </template>
     </PageHero>
-    <Wavy />
+    <WaveRight />
     <section id="content" class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
         <div class="columns">
@@ -33,9 +33,15 @@
         </div>
       </div>
     </section>
-    <Wavy flip />
-    <section class="section">
-      <div v-scroll-reveal class="container">
+    <WaveRight flip />
+    <section class="section section--work">
+      <div class="container">
+        <div class="columns is--work--header">
+          <div class="column">
+            <Header tag="h6">Some of My</Header>
+            <Header tag="h2" decorator>Most Recent Projects</Header>
+          </div>
+        </div>
         <Work left pull-left :info="JennAirWorkbook" />
         <Work right :info="JennAirHub" />
         <Work left :info="WhirlpoolTopLoad" />
@@ -143,7 +149,7 @@ export default {
       @media (min-width: $tablet) {
         margin-top: 0;
         position: absolute;
-        top: -2rem;
+        top: 2rem;
         left: -13rem;
         width: 350px;
         z-index: -1;
@@ -159,8 +165,8 @@ export default {
     // color: $darkBlue-10;
     // letter-spacing: 0.0675rem;
     font-weight: 400;
-    font-family: serif;
-    font-style: italic;
+    // font-family: serif;
+    // font-style: italic;
   }
   .section {
     padding: 4rem 0;
@@ -191,6 +197,12 @@ export default {
       }
       h6 {
         margin-top: 2rem;
+      }
+    }
+    &--work {
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 0;
       }
     }
 

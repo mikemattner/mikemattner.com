@@ -6,21 +6,29 @@
       left == true ? 'left' : ''
     ]"
   >
-    <div class="column is-6-desktop is-half-tablet work-imagery">
+    <div class="column is-7-desktop is-half-tablet work-imagery">
       <div class="work-sample">
         <StaticImage
-          :src="info.rightImage"
-          :alt="info.rightImageAlt"
+          :src="info.image.src"
+          :alt="info.image.alt"
           class="sample right"
         />
       </div>
+      <StaticImage
+        :src="`img/brand/${info.logo}`"
+        :alt="info.title"
+        class="brand-logo"
+      />
     </div>
-    <div class="column is-6-desktop is-half-tablet work-description">
-      <Header tag="h6">{{ info.meta }}</Header>
-      <Header tag="h2" decorator>{{ info.title }}</Header>
-      <p>
-        {{ info.description }}
-      </p>
+    <div class="column is-5-desktop is-half-tablet work-description">
+      <Header tag="h6">{{ info.year }}</Header>
+      <Header tag="h3" decorator>{{ info.title }}</Header>
+      <p v-html="info.description"></p>
+      <ul class="list--tags">
+        <li v-for="(tag, index) in info.tags" :key="index">
+          {{ tag }}
+        </li>
+      </ul>
       <p v-if="info.link">
         <ButtonLink :href="info.link" class="button">
           View Work
@@ -45,26 +53,66 @@ export default {
 
 <style scoped lang="scss">
 .is--work {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  // border-radius: 2px;
-  // overflow: hidden;
-  // background-color: $darkBlue-3;
-  // box-shadow: -4px 4px 50px rgba(0, 0, 0, 0.5);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   transition: transform 0.5s, box-shadow 1s;
   @media (max-width: $tablet) {
     padding-top: 0;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: $darkBlue-1;
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
+      -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);
   }
-  // &:hover {
-  //   transform: translate(2px, 2px);
-  //   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  // }
-  // @media (min-width: $tablet) {
-  //   background-color: $darkBlue-3;
-  //   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-  // }
+  @media (min-width: $tablet) {
+    .work-imagery {
+      position: relative;
+      overflow: hidden;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: $darkBlue-1;
+        opacity: 0.75;
+        z-index: 10;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    &:hover {
+      .work-imagery {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+    // &.right {
+    //   &:hover {
+    //     .work-description {
+    //       transform: translateX(2rem);
+    //     }
+    //     .work-imagery {
+    //       transform: translateX(-2rem);
+    //     }
+    //   }
+    // }
+    // &.left {
+    //   &:hover {
+    //     .work-description {
+    //       transform: translateX(-2rem);
+    //     }
+    //     .work-imagery {
+    //       transform: translateX(2rem);
+    //     }
+    //   }
+    // }
+  }
   h6 {
     margin: 0;
     text-transform: uppercase;
@@ -72,24 +120,22 @@ export default {
     font-weight: 400;
     color: rgba($white, 0.35);
   }
-  // h6 {
-  //   margin: 0;
-  //   font-weight: 400;
-  //   font-family: serif;
-  //   font-style: italic;
-  // }
-  h2 {
+  h3 {
     margin-top: 0.25rem;
+    font-size: 2rem;
   }
   &.left {
     .work-description {
       order: 2;
       @media (min-width: $widescreen) {
-        margin-left: -2rem;
+        margin-left: -4rem;
       }
     }
     .work-imagery {
       order: 1;
+      @media (min-width: $widescreen) {
+        margin-left: 2rem;
+      }
     }
   }
   &.right {
@@ -99,7 +145,7 @@ export default {
         order: 2;
       }
       @media (min-width: $widescreen) {
-        margin-right: -2rem;
+        margin-left: 2rem;
       }
     }
     .work-imagery {
@@ -107,29 +153,54 @@ export default {
       @media (max-width: $tablet) {
         order: 1;
       }
+      @media (min-width: $widescreen) {
+        margin-left: -4rem;
+        background-color: $darkBlue-1;
+      }
     }
   }
   .work-description {
     z-index: 12;
+    transition: all 0.5s ease-in-out;
     @media (max-width: $tablet) {
-      padding: 0;
+      // padding: 0;
     }
     @media (min-width: $tablet) {
-      background-color: $darkBlue-3;
+      background-color: $darkBlue-1;
+      padding: 1.5rem 3rem;
       border-radius: 2px;
+      box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
+        -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);
     }
   }
   .work-imagery {
     padding-top: 0;
-    border-radius: 2px;
+    transition: all 0.5s ease-in-out;
+    // background-color: $darkBlue-1;
     @media (min-width: $tablet) {
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
+      // padding-bottom: 0;
+      // padding-left: 0;
+      // padding-right: 0;
+      padding: 0;
+      border-radius: 2px;
+      box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
+        -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);
     }
     @media (max-width: $tablet) {
       padding-left: 0;
       padding-right: 0;
+    }
+    .brand-logo {
+      display: none;
+      @media (min-width: $tablet) {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        z-index: 100;
+        transform: translate3d(-50%, -50%, 0);
+      }
     }
     .work-sample {
       position: relative;
@@ -146,6 +217,22 @@ export default {
           margin-bottom: 0;
         }
       }
+    }
+  }
+  .list--tags {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    li {
+      margin: 0 0.5rem 0 0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.675rem;
+      text-transform: uppercase;
+      background-color: $darkBlue-3;
+      color: rgba($white, 0.35);
     }
   }
 }

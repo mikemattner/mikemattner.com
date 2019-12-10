@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Wave :class="['wavy', flip == true ? 'wavy--flip' : '']" />
+    <SmallWave :class="['wave-it', flip == true ? 'wave-it--flip' : '']" />
   </div>
 </template>
 
 <script>
-import Wave from '@/assets/img/wavy.svg'
+import SmallWave from '@/assets/img/small-wave.svg'
 
 export default {
-  name: 'Wavy',
+  name: 'WaveRight',
   components: {
-    Wave
+    SmallWave
   },
   props: {
     flip: Boolean
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wavy {
+.wave-it {
   fill: $darkBlue-3;
   margin-bottom: -1rem;
   @media (min-width: $tablet) {
@@ -28,8 +28,7 @@ export default {
   &--flip {
     margin-bottom: 0;
     margin-top: -1rem;
-    transform: rotate(180deg);
-    // transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
     @media (min-width: $tablet) {
       margin-bottom: 0;
       margin-top: -2rem;

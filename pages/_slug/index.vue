@@ -15,10 +15,10 @@
           </div>
         </template>
       </PageHero>
-      <Wavy flip />
+      <WaveRight flip />
       <div id="content" class="container">
         <div class="columns is-centered">
-          <div class="column is-two-thirds">
+          <div class="column is-three-fifths">
             <p
               v-scroll-reveal
               v-html="post.attributes.description"
@@ -153,8 +153,8 @@ export default {
   }
   .description {
     font-size: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba($white, 0.1);
+    // padding-bottom: 1rem;
+    // border-bottom: 1px solid rgba($white, 0.1);
   }
   .meta {
     font-size: 0.675rem;

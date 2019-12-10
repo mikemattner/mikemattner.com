@@ -11,7 +11,7 @@
           </div>
         </template>
       </PageHero>
-      <Wavy flip />
+      <WaveRight flip />
       <section id="content" class="section">
         <div v-scroll-reveal class="container">
           <Work left pull-left :info="JennAirWorkbook" />

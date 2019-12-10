@@ -171,7 +171,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
       background-color: $transparent-bg;
       display: flex;
       align-items: stretch;
-      justify-content: flex-start;
+      justify-content: center;
       flex-direction: column;
       clip-path: circle(25% at 150% -50%);
 
@@ -190,7 +190,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 4rem;
+        // margin-left: 4rem;
       }
       .brand-logo {
         &__image {
@@ -218,7 +218,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0.25rem 0;
+          margin: 0.5rem 0;
           padding: 0;
           opacity: 0;
           transform: translateY(-20px);

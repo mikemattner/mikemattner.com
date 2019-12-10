@@ -11,7 +11,7 @@
           </div>
         </template>
       </PageHero>
-      <Wavy flip />
+      <WaveRight flip />
       <div id="content" class="container">
         <div class="columns">
           <div class="column is-full">

@@ -1,7 +1,8 @@
 <template>
   <footer class="footer">
-    <Wavy />
+    <WaveRight />
     <div class="darker">
+      <p class="email--link">hello @ mikemattner.com</p>
       <p>
         &copy; {{ theYear }} Mike Mattner. Made in Michigan. Built with Nuxt.
         <fa-icon icon="heart" size="sm"></fa-icon>
@@ -32,12 +33,21 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5%;
-    height: 3rem;
+    flex-direction: column;
+    padding: 0 5% 1rem;
+    // height: 3rem;
     box-sizing: border-box;
     font-size: 0.675rem;
     background-color: $darkBlue-3;
     color: rgba(255, 255, 255, 0.25);
+    p {
+      margin: 0;
+    }
+    .email--link {
+      font-size: 1.5rem;
+      letter-spacing: 0.075rem;
+      color: $white;
+    }
 
     svg {
       fill: $orange;

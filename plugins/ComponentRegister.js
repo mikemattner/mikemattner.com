@@ -11,6 +11,7 @@ import BaseImage from '../components/base/media/BaseImage.vue'
 import StaticImage from '../components/base/media/StaticImage.vue'
 import Wavy from '../components/base/decorative/Wavy.vue'
 import WavyLines from '../components/base/decorative/WavyLines.vue'
+import WaveRight from '../components/base/decorative/WaveRight.vue'
 import Loading from '../components/base/UI/Loading.vue'
 import Button from '../components/base/UI/Button.vue'
 import ButtonLink from '../components/base/UI/ButtonLink.vue'
@@ -25,6 +26,7 @@ Vue.component('AppHeader', AppHeader)
 Vue.component('AppFooter', AppFooter)
 Vue.component('Wavy', Wavy)
 Vue.component('WavyLines', WavyLines)
+Vue.component('WaveRight', WaveRight)
 Vue.component('ArticleLink', ArticleLink)
 Vue.component('ArticleList', ArticleList)
 Vue.component('AllArticles', AllArticles)
