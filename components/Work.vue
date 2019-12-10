@@ -167,7 +167,7 @@ export default {
     }
     @media (min-width: $tablet) {
       background-color: $darkBlue-1;
-      padding: 1.5rem 3rem;
+      padding: 3rem 3rem;
       border-radius: 2px;
       box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
         -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);

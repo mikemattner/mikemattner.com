@@ -14,7 +14,7 @@ JennAirWorkbook:
         product training experience. Users access the PWA on an 11" tablet, can 
         write freeform notes, and then retrieve those notes on any device post training.
   image:
-    src: img/workbook/wow-curriculum-flame.jpg
+    src: img/workbook/wow-curriculum-internal.jpg
     alt: JennAir Workbook home screen
   link:
 
@@ -41,12 +41,13 @@ WhirlpoolTopLoad:
   tags:
     - Development
     - Animation
+    - jQuery
     - AEM
   description: Working with a world class UX team, I implemented the design and
-        experience of the interactive touch control piece that featured video,
-        complex animations, and user lead interactions.
+        experience of the interactive touch control piece that helped show users
+        how this new touch interface operated.
   image:
-    src: img/whirlpool/primary.jpg
+    src: img/whirlpool/secondary.jpg
     alt: Whirlpool Intuitive Touch Control intro
   link: https://www.whirlpool.com/laundry/cabrio-top-load-washer-set.html
 
