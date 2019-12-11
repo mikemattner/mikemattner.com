@@ -6,7 +6,7 @@
       left == true ? 'left' : ''
     ]"
   >
-    <div class="column is-7-desktop is-half-tablet work-imagery">
+    <div class="column is-6-desktop is-half-tablet work-imagery">
       <div class="work-sample">
         <StaticImage
           :src="info.image.src"
@@ -14,14 +14,14 @@
           class="sample right"
         />
       </div>
-      <StaticImage
+      <!-- <StaticImage
         :src="`img/brand/${info.logo}`"
         :alt="info.title"
         class="brand-logo"
-      />
+      /> -->
     </div>
-    <div class="column is-5-desktop is-half-tablet work-description">
-      <Header tag="h6">{{ info.year }}</Header>
+    <div class="column is-6-desktop is-half-tablet work-description">
+      <Header tag="h6">{{ info.brand }}</Header>
       <Header tag="h3" decorator>{{ info.title }}</Header>
       <p v-html="info.description"></p>
       <ul class="list--tags">
@@ -122,7 +122,7 @@ export default {
   }
   h3 {
     margin-top: 0.25rem;
-    font-size: 2rem;
+    // font-size: 2rem;
   }
   &.left {
     .work-description {
@@ -227,7 +227,7 @@ export default {
     flex-wrap: wrap;
 
     li {
-      margin: 0 0.5rem 0 0;
+      margin: 0.5rem 0.5rem 0.5rem 0;
       padding: 0.25rem 0.5rem;
       border-radius: 20px;
       font-size: 0.675rem;

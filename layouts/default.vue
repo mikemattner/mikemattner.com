@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default">
     <AppHeader />
     <nuxt />
     <AppFooter />
@@ -7,6 +7,9 @@
 </template>
 
 <style lang="scss">
+.default {
+  overflow-x: hidden;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.375s;

@@ -34,7 +34,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0 5% 1rem;
+    padding: 1rem 5% 1rem;
     // height: 3rem;
     box-sizing: border-box;
     font-size: 0.675rem;
@@ -47,6 +47,9 @@ export default {
       font-size: 1.5rem;
       letter-spacing: 0.075rem;
       color: $white;
+      @media (max-width: $tablet) {
+        font-size: 1rem;
+      }
     }
 
     svg {

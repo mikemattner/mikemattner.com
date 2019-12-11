@@ -81,7 +81,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
     height: 3.5rem;
     box-sizing: border-box;
     transition: $transition;
@@ -92,6 +92,10 @@ $transparent-bg: rgba($darkBlue-3, 1);
     left: 0;
     right: 0;
     width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 0 2rem;
+    }
 
     &__logo {
       a {

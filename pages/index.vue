@@ -64,7 +64,8 @@ export default {
       writing,
       JennAirWorkbook,
       JennAirHub,
-      WhirlpoolTopLoad
+      WhirlpoolTopLoad,
+      postCount: 0
     }
   },
   async asyncData() {
@@ -193,16 +194,32 @@ export default {
 
     &--writing {
       h2 {
-        font-size: 3rem;
+        @media (min-width: $tablet) {
+          font-size: 3rem;
+        }
       }
       h6 {
         margin-top: 2rem;
       }
     }
     &--work {
-      h2 {
-        font-size: 3rem;
-        margin-bottom: 0;
+      .is--work--header {
+        @media (min-width: $tablet) {
+          text-align: center;
+        }
+        h2 {
+          @media (min-width: $tablet) {
+            font-size: 3rem;
+          }
+          margin-bottom: 0;
+
+          &.decorator:after {
+            @media (min-width: $tablet) {
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
       }
     }
 
