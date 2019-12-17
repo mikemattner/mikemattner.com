@@ -56,7 +56,7 @@ export default {
     position: relative;
     overflow: hidden;
     @media (min-width: $tablet) {
-      padding: 2rem 3.5rem 2rem 1rem;
+      padding: 1rem;
     }
     .icon {
       // width: 2rem;

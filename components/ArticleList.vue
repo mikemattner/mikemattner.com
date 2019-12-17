@@ -44,12 +44,12 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
-  @media (min-width: $tablet) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
-  }
+  // @media (min-width: $tablet) {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   grid-column-gap: 20px;
+  //   grid-row-gap: 10px;
+  // }
 
   li {
     margin: 0;
