@@ -12,10 +12,9 @@
       <p class="article-description">
         {{ article.attributes.description }}
       </p>
-      <div class="icon">
-        <!-- <fa-icon icon="chevron-right" size="lg"></fa-icon> -->
-      </div>
-      <span class="button__bubble"></span>
+      <!-- <div class="icon">
+        <fa-icon icon="chevron-right" size="lg"></fa-icon>
+      </div> -->
     </nuxt-link>
   </article>
 </template>
@@ -51,30 +50,31 @@ export default {
 .single-link {
   a {
     display: block;
-    padding: 2rem 3rem 2rem 0;
+    // padding: 2rem 3rem 2rem 0;
+    padding: 1.5rem 0;
     background-image: none;
     position: relative;
     overflow: hidden;
     @media (min-width: $tablet) {
-      padding: 1rem;
+      padding: 1.5rem 0;
     }
-    .icon {
-      // width: 2rem;
-      // height: 2rem;
-      // border-radius: 50%;
-      // background-color: rgba($black, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      right: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: $transition;
-      &:before {
-        @include arrow-right(rgba($white, 0.25));
-      }
-    }
+    // .icon {
+    //   // width: 2rem;
+    //   // height: 2rem;
+    //   // border-radius: 50%;
+    //   // background-color: rgba($black, 0.1);
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   position: absolute;
+    //   right: 2rem;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   transition: $transition;
+    //   &:before {
+    //     @include arrow-right(rgba($white, 0.25));
+    //   }
+    // }
     svg {
       opacity: 0.25;
       transition: $transition;
@@ -92,8 +92,8 @@ export default {
     }
     &:hover {
       // background-color: $darkBlue-5;
-      border-radius: 2px;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+      // border-radius: 2px;
+      // box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
       // transform: scale(1.01);
       // background-size: 100% 100%;
       h3 {
@@ -139,18 +139,18 @@ export default {
     width: 100%;
     a {
       width: 100%;
-      &:hover {
-        background-color: rgba($darkBlue-6, 0);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
-      }
-      .button__bubble {
-        background-color: $darkBlue-6;
-      }
-      @media (min-width: $tablet) {
-        .icon {
-          display: none;
-        }
-      }
+      // &:hover {
+      //   background-color: rgba($darkBlue-6, 0);
+      //   box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
+      // }
+      // .button__bubble {
+      //   background-color: $darkBlue-6;
+      // }
+      // @media (min-width: $tablet) {
+      //   .icon {
+      //     display: none;
+      //   }
+      // }
     }
   }
   .article-title {

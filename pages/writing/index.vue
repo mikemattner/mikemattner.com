@@ -3,18 +3,18 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <div class="columns">
-            <div class="column is-full">
-              <Header tag="h1" decorator>{{ intro.title }}</Header>
+          <div class="columns is-centered">
+            <div class="column is-three-fifths">
+              <Header tag="h1">{{ intro.title }}</Header>
               <p v-html="intro.body"></p>
             </div>
           </div>
         </template>
       </PageHero>
-      <WaveRight flip />
+      <!-- <WaveRight flip /> -->
       <div id="content" class="container">
-        <div class="columns">
-          <div class="column is-full">
+        <div class="columns is-centered">
+          <div class="column is-three-fifths">
             <AllArticles :posts="posts" />
             <!-- <ul class="article-list">
               <li
@@ -64,40 +64,41 @@ export default {
 <style lang="scss">
 .section--article {
   min-height: 90vh;
+  padding-bottom: 4rem;
   .article-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    @media (min-width: $tablet) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 10px;
-    }
+    // @media (min-width: $tablet) {
+    //   display: grid;
+    //   grid-template-columns: repeat(2, 1fr);
+    //   grid-column-gap: 20px;
+    //   grid-row-gap: 10px;
+    // }
 
-    @media (min-width: $widescreen) {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 10px;
-    }
+    // @media (min-width: $widescreen) {
+    //   display: grid;
+    //   grid-template-columns: repeat(3, 1fr);
+    //   grid-column-gap: 20px;
+    //   grid-row-gap: 10px;
+    // }
 
-    li {
-      margin: 0;
-      justify-self: stretch;
-      align-self: stretch;
-      display: flex;
-      align-items: stretch;
-      justify-content: flex-start;
+    // li {
+    //   margin: 0;
+    //   justify-self: stretch;
+    //   align-self: stretch;
+    //   display: flex;
+    //   align-items: stretch;
+    //   justify-content: flex-start;
 
-      @media (max-width: $tablet) {
-        border-bottom: 1px solid $darkBlue-6;
+    //   @media (max-width: $tablet) {
+    //     border-bottom: 1px solid $darkBlue-6;
 
-        &:first-child {
-          border-top: 1px solid $darkBlue-6;
-        }
-      }
-    }
+    //     &:first-child {
+    //       border-top: 1px solid $darkBlue-6;
+    //     }
+    //   }
+    // }
   }
   .meta {
     font-size: 0.675rem;

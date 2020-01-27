@@ -32,7 +32,7 @@ export default {
 <style lang="scss">
 .hero {
   font-size: 1.25rem;
-  min-height: 65vh;
+  min-height: 30vh;
   padding-top: 4rem;
   padding-bottom: 4rem;
   display: flex;
@@ -51,6 +51,7 @@ export default {
     font-size: 3rem;
     letter-spacing: 0.09rem;
     line-height: 1;
+    margin: 1rem 0;
     small {
       display: block;
       font-family: $sans-serif-font;

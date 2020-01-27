@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <WaveRight />
+    <!-- <WaveRight /> -->
     <div class="darker">
       <p class="email--link">hello @ mikemattner.com</p>
       <p>

@@ -6,7 +6,7 @@
         :key="post.attributes.title"
         class="article"
       >
-        <ArticleLink :article="post" archive />
+        <ArticleLink :article="post" />
       </li>
     </ul>
   </section>

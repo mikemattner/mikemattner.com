@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <PageHero arrow>
+    <PageHero>
       <template v-slot:default>
-        <div class="columns">
-          <div class="column is-offset-one-quarter is-two-thirds">
+        <div class="columns is-centered">
+          <div class="column is-three-fifths">
             <BaseImage
               :src="`${intro.image}`"
               :alt="intro.imageAlt"
@@ -16,15 +16,12 @@
         </div>
       </template>
     </PageHero>
-    <WaveRight />
+    <!-- <WaveRight /> -->
     <section id="content" class="section section--writing section--dark">
       <div v-scroll-reveal class="container">
-        <div class="columns">
-          <div class="column">
-            <Header tag="h6">{{ writing.meta }}</Header>
-            <Header tag="h2" decorator>{{ writing.title }}</Header>
-          </div>
-          <div class="column is-three-quarters">
+        <div class="columns is-centered">
+          <div class="column is-three-fifths">
+            <Header tag="h2">{{ writing.title }}</Header>
             <ArticleList :posts="posts" />
             <Button :to="writing.link" class="button">{{
               writing.buttonTitle
@@ -33,7 +30,7 @@
         </div>
       </div>
     </section>
-    <WaveRight flip />
+    <!-- <WaveRight flip />
     <section class="section section--work">
       <div class="container">
         <div class="columns is--work--header">
@@ -46,7 +43,7 @@
         <Work right :info="JennAirHub" />
         <Work left :info="WhirlpoolTopLoad" />
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -128,12 +125,16 @@ export default {
   }
   .hero {
     @media (min-width: $tablet) {
-      h1 {
-        margin-left: -5rem;
-      }
+      // h1 {
+      //   margin-left: -5rem;
+      // }
     }
     .column {
       position: relative;
+      &.is-vertical-center {
+        display: flex;
+        align-items: center;
+      }
     }
     .self-portrait {
       // position: absolute;
@@ -150,9 +151,10 @@ export default {
       @media (min-width: $tablet) {
         margin-top: 0;
         position: absolute;
-        top: 2rem;
-        left: -13rem;
-        width: 350px;
+        // top: 50%;
+        // transform: translateY(-50%);
+        left: -150px;
+        width: 200px;
         z-index: -1;
       }
     }
@@ -193,12 +195,16 @@ export default {
     }
 
     &--writing {
+      padding-top: 0;
       h2 {
         @media (min-width: $tablet) {
           font-size: 3rem;
         }
       }
       h6 {
+        margin-top: 2rem;
+      }
+      .button {
         margin-top: 2rem;
       }
     }

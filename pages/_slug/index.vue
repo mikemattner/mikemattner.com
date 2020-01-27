@@ -4,7 +4,7 @@
       <PageHero arrow dark>
         <template v-slot:default>
           <div class="columns is-centered">
-            <div class="column is-two-thirds">
+            <div class="column is-three-fifths">
               <Header tag="h1">{{ post.attributes.title }}</Header>
               <div class="meta">
                 <span class="tag">{{ post.attributes.topic }}</span>
@@ -15,7 +15,7 @@
           </div>
         </template>
       </PageHero>
-      <WaveRight flip />
+      <!-- <WaveRight flip /> -->
       <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
@@ -164,7 +164,7 @@ export default {
       margin: 0 0.25rem;
     }
     .tag {
-      font-size: 0.575rem;
+      font-size: 0.675rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }

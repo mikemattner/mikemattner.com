@@ -25,11 +25,11 @@
           <li>
             <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
           </li>
-          <li>
+          <!-- <li>
             <nuxt-link to="/work"
               ><span @click="toggle()">Work</span></nuxt-link
             >
-          </li>
+          </li> -->
           <li>
             <nuxt-link to="/writing"
               ><span @click="toggle()">Writing</span></nuxt-link
