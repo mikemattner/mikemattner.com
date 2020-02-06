@@ -7,6 +7,8 @@ My second run at a javascript framwork based portfolio, blog, and general inform
 
 - [x] Dynamic generation of routes for .md files
 - [x] Use a CMS for content generation (Forestry!)
+- [ ] Design tweaks
+- [ ] Color palette updates https://mycolor.space/
 - [ ] Generate, fill in some old content for the blog
 - [ ] Reusable blog list component
 - [ ] Blog pagination
