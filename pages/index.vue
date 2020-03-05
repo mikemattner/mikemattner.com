@@ -196,9 +196,24 @@ export default {
 
     &--writing {
       padding-top: 0;
+      // h2 {
+      //   @media (min-width: $tablet) {
+      //     font-size: 3rem;
+      //   }
+      // }
       h2 {
-        @media (min-width: $tablet) {
-          font-size: 3rem;
+        position: relative;
+        margin: 2rem 0;
+        &:before {
+          content: '';
+          position: absolute;
+          left: -20px;
+          top: -20px;
+          bottom: -20px;
+          right: -20px;
+          // width: 300px;
+          background-color: $darkBlue-1;
+          z-index: -1;
         }
       }
       h6 {

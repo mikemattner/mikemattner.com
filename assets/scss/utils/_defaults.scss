@@ -63,7 +63,7 @@ h6 {
 
 h1,
 h2 {
-  // font-family: $serif-font;
+  font-family: $serif-font;
   font-weight: 900;
 }
 
@@ -74,9 +74,9 @@ h6 {
   font-weight: 700;
 }
 
-h2 {
-  font-size: 2rem;
-}
+// h2 {
+//   font-size: 2rem;
+// }
 ul,
 ol {
   margin-left: 0;
