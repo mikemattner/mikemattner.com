@@ -18,7 +18,7 @@
     </PageHero>
     <!-- <WaveRight /> -->
     <section id="content" class="section section--writing section--dark">
-      <div v-scroll-reveal class="container">
+      <div class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
             <Header tag="h2">{{ writing.title }}</Header>
@@ -204,17 +204,17 @@ export default {
       h2 {
         position: relative;
         margin: 2rem 0;
-        &:before {
-          content: '';
-          position: absolute;
-          left: -20px;
-          top: -20px;
-          bottom: -20px;
-          right: -20px;
-          // width: 300px;
-          background-color: $darkBlue-1;
-          z-index: -1;
-        }
+        // &:before {
+        //   content: '';
+        //   position: absolute;
+        //   left: -20px;
+        //   top: -20px;
+        //   bottom: -20px;
+        //   right: -20px;
+        //   // width: 300px;
+        //   background-color: $darkBlue-1;
+        //   z-index: -1;
+        // }
       }
       h6 {
         margin-top: 2rem;

@@ -32,9 +32,9 @@ export default {
 <style lang="scss">
 .hero {
   font-size: 1.25rem;
-  min-height: 30vh;
+  // min-height: 30vh;
   padding-top: 4rem;
-  padding-bottom: 4rem;
+  // padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,6 +43,7 @@ export default {
   z-index: 100;
   &--full {
     min-height: 100vh;
+    padding-bottom: 4rem;
   }
   &--dark {
     background-color: $darkBlue-3;

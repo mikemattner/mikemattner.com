@@ -1,14 +1,14 @@
 <template>
   <section class="section section--article">
     <article :key="$route.params.slug">
-      <PageHero arrow dark>
+      <PageHero dark>
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-three-fifths">
               <Header tag="h1">{{ post.attributes.title }}</Header>
               <div class="meta">
-                <span class="tag">{{ post.attributes.topic }}</span>
-                <span class="bull">&bull;</span>
+                <!-- <span class="tag">{{ post.attributes.topic }}</span>
+                <span class="bull">&bull;</span> -->
                 <time>{{ formattedDate }}</time>
               </div>
             </div>
@@ -19,12 +19,8 @@
       <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
-            <p
-              v-scroll-reveal
-              v-html="post.attributes.description"
-              class="description"
-            ></p>
-            <div v-scroll-reveal v-html="post.html"></div>
+            <!-- <p v-html="post.attributes.description" class="description"></p> -->
+            <div v-html="post.html"></div>
             <div class="links">
               <Button v-if="nextPath" :to="`/${nextPath}`" class="button"
                 >Previous Article</Button
