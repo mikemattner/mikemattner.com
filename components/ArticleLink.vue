@@ -1,21 +1,13 @@
 <template>
   <article :class="['single-link', archive == true ? 'article--link' : '']">
-    <div class="article-meta">
-      <!-- <span class="tag">{{ article.attributes.topic }}</span>
-      <span class="bull">&bull;</span> -->
-      <time>{{ formatDate(article.attributes.date) }}</time>
-    </div>
     <nuxt-link :to="`/${formatSlug(article.attributes.title)}`">
+      <div class="article-meta">
+        <time>{{ formatDate(article.attributes.date) }}</time>
+      </div>
       <Header tag="h3" class="article-title">{{
         article.attributes.title
       }}</Header>
     </nuxt-link>
-    <p class="article-description">
-      {{ article.attributes.description }}
-    </p>
-    <!-- <div class="icon">
-        <fa-icon icon="chevron-right" size="lg"></fa-icon>
-      </div> -->
   </article>
 </template>
 
@@ -50,37 +42,40 @@ export default {
 .single-link {
   display: block;
   // padding: 2rem 3rem 2rem 0;
-  padding: 1.5rem 0;
   background-image: none;
   position: relative;
   overflow: hidden;
-  @media (min-width: $tablet) {
+  // @media (min-width: $tablet) {
+  //   padding: 1.5rem 0;
+  // }
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: none;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0 0;
     padding: 1.5rem 0;
-  }
-  svg {
-    opacity: 0.25;
-    transition: $transition;
-    fill: $white;
-    color: $white;
-    transform: translateX(2px);
+    border-bottom: 1px solid rgba($white, 0.05);
   }
   h3 {
     transition: $transition;
-    background-image: linear-gradient($orange, $orange);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
-    display: inline-block;
+    font-size: 1rem;
+    margin: 0;
+    transition: all 0.25s ease-in-out;
+    // display: inline-block;
   }
-  // &:hover {
-  //   h3 {
-  //     color: $white;
-  //     background-size: 100% 6px;
-  //   }
-  //   p {
-  //     color: $white;
-  //   }
-  // }
+  &:hover {
+    background-color: $darkBlue-1;
+    h3 {
+      transform: translateX(20px);
+      color: $orange;
+    }
+    .article-meta {
+      color: $orange;
+    }
+  }
   &.article--link {
     // display: flex;
     // align-items: stretch;
@@ -91,7 +86,7 @@ export default {
     }
   }
   .article-title {
-    margin: 0 0 0.25rem;
+    margin: 0;
   }
   .article-description {
     color: $white;
@@ -101,16 +96,10 @@ export default {
   }
   .article-meta {
     font-size: 0.675rem;
-    margin: 0 0 0.25rem;
+    margin: 0 0.25rem 0 0;
+    width: 100px;
+    text-transform: uppercase;
     color: rgba($white, 0.35);
-    .bull {
-      margin: 0 0.25rem;
-    }
-    .tag {
-      font-size: 0.575rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
   }
 }
 </style>

@@ -44,7 +44,7 @@ export default {
       margin: 0;
     }
     .email--link {
-      font-size: 1.5rem;
+      font-size: 1rem;
       letter-spacing: 0.075rem;
       color: $white;
       @media (max-width: $tablet) {

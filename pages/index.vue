@@ -4,11 +4,11 @@
       <template v-slot:default>
         <div class="columns is-centered">
           <div class="column is-three-fifths">
-            <BaseImage
+            <!-- <BaseImage
               :src="`${intro.image}`"
               :alt="intro.imageAlt"
               class="self-portrait"
-            />
+            /> -->
             <Header tag="h1" decorator>{{ intro.title }}</Header>
             <p v-html="intro.body"></p>
             <p v-html="intro.social"></p>
