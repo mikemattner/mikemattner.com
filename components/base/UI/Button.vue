@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss">
 .button {
-  border: 1px solid $darkBlue-7;
+  border: 1px solid $primary;
   padding: 0.5rem 1rem;
   display: block;
   text-align: center;
@@ -46,12 +46,12 @@ export default {
 
   &:focus {
     outline: 0;
-    border-color: $orange;
+    border-color: $primary;
   }
 
   &:hover {
-    color: $white;
-    border-color: $orange;
+    color: $darkBlue-1;
+    border-color: $primary;
     border-radius: 2px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     background-image: none;
@@ -63,7 +63,7 @@ export default {
     position: absolute;
     z-index: -1;
     border-radius: 50%;
-    background-color: $orange;
+    background-color: $primary;
     will-change: transform;
     transform: translate(-50%, -50%) scale(0);
     transition-property: transform;

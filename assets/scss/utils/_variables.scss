@@ -20,7 +20,13 @@ $darkBlue-14: tint($darkBlue, 80%);
 
 $orange: rgba(255,88,1,1.0);
 
-$green: #A3BE8C;
+$green: #72EBB2;
+
+$lightGreen: #33B27D;
+
+$tertiary: $lightGreen;
+
+$primary: $green; //rgba(255,88,1,1.0);
 
 $white: rgba(255,255,255,1.0);
 $black: rgba(0,0,0,1.0);

@@ -19,13 +19,13 @@
 
   &:focus {
     outline: 0;
-    border-color: $orange;
+    border-color: $primary;
   }
 
   &:hover {
     color: $white;
-    border-color: $orange;
-    background-color: $orange;
+    border-color: $primary;
+    background-color: $primary;
     border-radius: 2px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     background-image: none;

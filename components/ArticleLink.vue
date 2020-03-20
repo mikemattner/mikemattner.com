@@ -70,10 +70,10 @@ export default {
     background-color: $darkBlue-1;
     h3 {
       transform: translateX(20px);
-      color: $orange;
+      color: $primary;
     }
     .article-meta {
-      color: $orange;
+      color: $primary;
     }
   }
   &.article--link {
@@ -99,7 +99,7 @@ export default {
     margin: 0 0.25rem 0 0;
     width: 100px;
     text-transform: uppercase;
-    color: rgba($white, 0.35);
+    color: $primary;
   }
 }
 </style>

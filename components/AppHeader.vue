@@ -234,7 +234,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
           }
 
           &.nuxt-link-exact-active {
-            color: $orange;
+            color: $primary;
             background-size: 100% 0;
           }
         }

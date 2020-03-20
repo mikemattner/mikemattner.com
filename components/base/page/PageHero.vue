@@ -56,12 +56,13 @@ export default {
     letter-spacing: 0.09rem;
     line-height: 1;
     margin: 1rem 0;
+    color: $primary;
     small {
       display: block;
       font-family: $sans-serif-font;
       font-size: 1.25rem;
       font-weight: 400;
-      color: $darkBlue-9;
+      // color: $darkBlue-9;
       text-transform: uppercase;
       margin-bottom: 1.25rem;
     }
@@ -76,7 +77,8 @@ export default {
   &.hero--bold {
     h1 {
       @media (min-width: 760px) {
-        font-size: 6rem;
+        // font-size: 6rem;
+        color: $primary;
       }
     }
   }

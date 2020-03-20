@@ -53,8 +53,8 @@ export default {
     }
 
     svg {
-      fill: $orange;
-      color: $orange;
+      fill: $primary;
+      color: $primary;
     }
   }
 }

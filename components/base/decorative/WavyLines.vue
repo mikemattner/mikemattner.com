@@ -21,7 +21,7 @@ export default {
 <style scoped lang="scss">
 .wavy {
   &--lines {
-    stroke: $darkBlue-6;
+    stroke: rgba($white, 0.05);
     fill: transparent;
   }
   &--flip {

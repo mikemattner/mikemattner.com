@@ -48,7 +48,7 @@ h6 {
       border-radius: 3px;
       left: 0;
       bottom: 0;
-      background-color: $orange;
+      background-color: $primary;
       // border-bottom: 3px solid #ff5801;
     }
 
@@ -89,7 +89,7 @@ a {
   color: $white;
   transition: $transition;
   text-decoration: none;
-  background-image: linear-gradient($orange, $orange);
+  background-image: linear-gradient($primary, $primary);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 100% 1px;
@@ -137,11 +137,11 @@ code {
   padding-right: 2px;
 }
 ::selection {
-  background: $orange;
+  background: $primary;
   color: $white;
 }
 ::-moz-selection {
-  background: $orange;
+  background: $primary;
   color: $white;
 }
 img::selection {
