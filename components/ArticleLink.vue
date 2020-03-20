@@ -56,7 +56,7 @@ export default {
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0 0;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.25rem;
     border-bottom: 1px solid rgba($white, 0.05);
   }
   h3 {

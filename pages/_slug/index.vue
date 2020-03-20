@@ -156,6 +156,7 @@ export default {
     font-size: 0.675rem;
     margin: 0;
     color: rgba($white, 0.35);
+    text-transform: uppercase;
     .bull {
       margin: 0 0.25rem;
     }

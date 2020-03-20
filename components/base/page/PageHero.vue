@@ -3,6 +3,7 @@
     :class="[
       'hero',
       full == true ? 'hero--full' : '',
+      bold == true ? 'hero--bold' : '',
       dark == true ? 'hero--dark' : ''
     ]"
   >
@@ -12,8 +13,9 @@
         class="anchor"
         href="#content"
         aria-label="Scroll to the primary content."
+        v-if="arrow"
       >
-        <div v-if="arrow" class="bounce-arrow"></div>
+        <div class="bounce-arrow"></div>
       </ScrollLink>
     </div>
   </header>
@@ -24,6 +26,7 @@ export default {
   props: {
     full: Boolean,
     dark: Boolean,
+    bold: Boolean,
     arrow: Boolean
   }
 }
@@ -63,12 +66,19 @@ export default {
       margin-bottom: 1.25rem;
     }
     @media (min-width: 760px) {
-      font-size: 5rem;
+      font-size: 4.5rem;
     }
   }
   h2 {
     color: rgba($white, 0.5);
     font-weight: 400;
+  }
+  &.hero--bold {
+    h1 {
+      @media (min-width: 760px) {
+        font-size: 6rem;
+      }
+    }
   }
   .container {
     position: relative;

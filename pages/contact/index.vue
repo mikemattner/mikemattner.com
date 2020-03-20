@@ -129,6 +129,8 @@ export default {
 
 <style lang="scss">
 .contact {
+  min-height: 90vh;
+  padding-bottom: 4rem;
   h2 {
     margin-top: 0.25rem;
   }

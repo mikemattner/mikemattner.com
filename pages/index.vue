@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero>
+    <PageHero bold>
       <template v-slot:default>
         <div class="columns is-centered">
           <div class="column is-three-fifths">
@@ -11,12 +11,13 @@
             /> -->
             <Header tag="h1" decorator>{{ intro.title }}</Header>
             <p v-html="intro.body"></p>
-            <p v-html="intro.social"></p>
+            <p v-html="intro.social" class="social"></p>
           </div>
         </div>
       </template>
     </PageHero>
     <!-- <WaveRight /> -->
+    <WavyLines />
     <section id="content" class="section section--writing section--dark">
       <div class="container">
         <div class="columns is-centered">
@@ -136,6 +137,9 @@ export default {
         align-items: center;
       }
     }
+    .social {
+      font-size: 1rem;
+    }
     .self-portrait {
       // position: absolute;
       // top: -5rem;
@@ -204,15 +208,14 @@ export default {
       h2 {
         position: relative;
         margin: 2rem 0;
-        // &:before {
+        display: flex;
+        align-items: center;
+        // &:after {
         //   content: '';
         //   position: absolute;
-        //   left: -20px;
-        //   top: -20px;
-        //   bottom: -20px;
-        //   right: -20px;
-        //   // width: 300px;
-        //   background-color: $darkBlue-1;
+        //   width: 100%;
+        //   height: 1px;
+        //   background-color: $darkBlue-6;
         //   z-index: -1;
         // }
       }

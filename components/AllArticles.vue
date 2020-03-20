@@ -38,3 +38,30 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  // @media (min-width: $tablet) {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   grid-column-gap: 20px;
+  //   grid-row-gap: 10px;
+  // }
+
+  li {
+    // margin: 0;
+    // justify-self: stretch;
+    // align-self: stretch;
+    // display: flex;
+    // align-items: stretch;
+    // justify-content: flex-start;
+
+    &:first-child {
+      border-top: 1px solid rgba($white, 0.05);
+    }
+  }
+}
+</style>

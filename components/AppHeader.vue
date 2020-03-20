@@ -18,30 +18,30 @@
           <span></span>
         </div>
       </div>
-    </div>
-    <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
-      <nav class="nav__block">
-        <ul>
-          <li>
-            <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
-          </li>
-          <!-- <li>
+      <div id="nav" class="navbar__nav" :class="{ active: navOpen }">
+        <nav class="nav__block">
+          <ul>
+            <li>
+              <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
+            </li>
+            <!-- <li>
             <nuxt-link to="/work"
               ><span @click="toggle()">Work</span></nuxt-link
             >
           </li> -->
-          <li>
-            <nuxt-link to="/writing"
-              ><span @click="toggle()">Writing</span></nuxt-link
-            >
-          </li>
-          <li>
-            <nuxt-link to="/contact"
-              ><span @click="toggle()">Contact</span></nuxt-link
-            >
-          </li>
-        </ul>
-      </nav>
+            <li>
+              <nuxt-link to="/writing"
+                ><span @click="toggle()">Writing</span></nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/contact"
+                ><span @click="toggle()">Contact</span></nuxt-link
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </headroom>
 </template>
@@ -98,8 +98,15 @@ $transparent-bg: rgba($darkBlue-3, 1);
     }
 
     &__logo {
+      z-index: 1000;
       a {
         text-decoration: none;
+      }
+    }
+    &__menu {
+      z-index: 1000;
+      @media (min-width: 768px) {
+        display: none;
       }
     }
     &__menu-button {
@@ -158,122 +165,110 @@ $transparent-bg: rgba($darkBlue-3, 1);
       }
     }
     &__nav {
-      font-size: 2.25rem;
-      font-weight: 900;
-      letter-spacing: 0.125rem;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.125s 0.25s ease-in-out, clip-path 0.5s;
-      transform: translateY(-50vh);
-      z-index: 999;
-      background-color: $transparent-bg;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      flex-direction: column;
-      clip-path: circle(25% at 150% -50%);
-
-      @media (min-width: 768px) {
-        font-size: 3rem;
-      }
-
-      h2 {
-        font-size: 0.875rem;
-        margin-top: 0;
-        opacity: 0;
-        transition: $transition;
-      }
-      .nav__block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        // margin-left: 4rem;
-      }
-      .brand-logo {
-        &__image {
-          height: 1.5rem;
-          width: 1.5rem;
-          z-index: 10;
-          margin-right: 1rem;
-
-          .circle-shape {
-            fill: $white;
-            transition: $transition;
-          }
-          .logo-shape {
-            fill: $darkBlue-2;
-            transition: $transition;
-          }
-        }
-      }
-
+      font-size: 0.75rem;
       ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         list-style: none;
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0.5rem 0;
+          margin: 0 0 0 1rem;
           padding: 0;
-          opacity: 0;
-          transform: translateY(-20px);
-          transition: $transition-cubic;
         }
       }
+      @media (max-width: 768px) {
+        font-size: 2.25rem;
+        font-weight: 900;
+        letter-spacing: 0.125rem;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.125s 0.25s ease-in-out, clip-path 0.5s;
+        transform: translateY(-50vh);
+        z-index: 999;
+        background-color: $transparent-bg;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: column;
+        clip-path: circle(25% at 150% -50%);
 
-      a {
-        display: block;
-        text-decoration: none;
-        position: relative;
-        background-size: 100% 0px;
-        line-height: 1.2;
-
-        &:hover {
-          background-size: 100% 6px;
-        }
-
-        &.nuxt-link-exact-active {
-          color: $orange;
-          background-size: 100% 0;
-        }
-      }
-      &.active {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1) translateY(0);
-        transition: $transition, clip-path 0.75s;
-        clip-path: circle(100%);
-        h2 {
-          opacity: 1;
-          transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        .nav__block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          list-style: none;
+          margin: 0 0 0 0;
+          padding: 0;
           li {
-            opacity: 1;
-            transform: translateY(0);
+            margin: 0.5rem 0;
+            padding: 0;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: $transition-cubic;
+          }
+        }
 
-            &:nth-child(1) {
-              transition: all 0.25s 0.375s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(2) {
-              transition: all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(3) {
-              transition: all 0.25s 0.625s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(4) {
-              transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        a {
+          display: block;
+          text-decoration: none;
+          position: relative;
+          background-size: 100% 0px;
+          line-height: 1.2;
+
+          &:hover {
+            background-size: 100% 6px;
+          }
+
+          &.nuxt-link-exact-active {
+            color: $orange;
+            background-size: 100% 0;
+          }
+        }
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1) translateY(0);
+          transition: $transition, clip-path 0.75s;
+          clip-path: circle(100%);
+          h2 {
+            opacity: 1;
+            transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
+          ul {
+            li {
+              opacity: 1;
+              transform: translateY(0);
+
+              &:nth-child(1) {
+                transition: all 0.25s 0.375s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              &:nth-child(2) {
+                transition: all 0.25s 0.5s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              &:nth-child(3) {
+                transition: all 0.25s 0.625s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              &:nth-child(4) {
+                transition: all 0.25s 0.75s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
             }
           }
         }
@@ -294,21 +289,21 @@ $transparent-bg: rgba($darkBlue-3, 1);
   //     height: 2.5rem;
   //   }
   // }
-  &--not-top {
-    .navbar {
-      // background-color: $darkBlue-3;
-      // box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-      @media (min-width: 768px) {
-        // height: 2.5rem;
-      }
-      // &.active {
-      //   box-shadow: none;
-      //   background-color: $darkBlue-3;
-      //   @media (min-width: 768px) {
-      //     background-color: $transparent-bg;
-      //   }
-      // }
-    }
-  }
+  // &--not-top {
+  //   .navbar {
+  //     background-color: $darkBlue-3;
+  //     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  //     @media (min-width: 768px) {
+  //       height: 2.5rem;
+  //     }
+  //     &.active {
+  //       box-shadow: none;
+  //       background-color: $darkBlue-3;
+  //       @media (min-width: 768px) {
+  //         background-color: $transparent-bg;
+  //       }
+  //     }
+  //   }
+  // }
 }
 </style>

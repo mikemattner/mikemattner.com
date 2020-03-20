@@ -52,19 +52,15 @@ export default {
   // }
 
   li {
-    margin: 0;
-    justify-self: stretch;
-    align-self: stretch;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
+    // margin: 0;
+    // justify-self: stretch;
+    // align-self: stretch;
+    // display: flex;
+    // align-items: stretch;
+    // justify-content: flex-start;
 
-    @media (max-width: $tablet) {
-      border-bottom: 1px solid $darkBlue-6;
-
-      &:first-child {
-        border-top: 1px solid $darkBlue-6;
-      }
+    &:first-child {
+      border-top: 1px solid rgba($white, 0.05);
     }
   }
 }
