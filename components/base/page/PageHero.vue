@@ -52,36 +52,37 @@ export default {
     background-color: $darkBlue-3;
   }
   h1 {
-    font-size: 3rem;
+    // font-size: 3rem;
     letter-spacing: 0.09rem;
-    line-height: 1;
-    margin: 1rem 0;
+    line-height: 0.85;
+    // margin: 1rem 0;
     color: $primary;
-    small {
-      display: block;
-      font-family: $sans-serif-font;
-      font-size: 1.25rem;
-      font-weight: 400;
-      // color: $darkBlue-9;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
+    // small {
+    //   display: block;
+    //   font-family: $sans-serif-font;
+    //   font-size: 1.25rem;
+    //   font-weight: 400;
+    //   // color: $darkBlue-9;
+    //   text-transform: uppercase;
+    //   margin-bottom: 1.25rem;
+    // }
     @media (min-width: 760px) {
-      font-size: 4.5rem;
+      // font-size: 4.5rem;
     }
   }
   h2 {
     color: rgba($white, 0.5);
     font-weight: 400;
   }
-  &.hero--bold {
-    h1 {
-      @media (min-width: 760px) {
-        // font-size: 6rem;
-        color: $primary;
-      }
-    }
-  }
+  // &.hero--bold {
+  //   h1 {
+  //     @media (min-width: 760px) {
+  //       font-size: 8rem;
+  //       color: $primary;
+  //       line-height: 0.85;
+  //     }
+  //   }
+  // }
   .container {
     position: relative;
   }

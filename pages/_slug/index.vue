@@ -1,11 +1,13 @@
 <template>
-  <section class="section section--article">
+  <section class="section section--single--article">
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-three-fifths">
-              <Header tag="h1">{{ post.attributes.title }}</Header>
+              <Header tag="h1" class="display-3">{{
+                post.attributes.title
+              }}</Header>
               <div class="meta">
                 <!-- <span class="tag">{{ post.attributes.topic }}</span>
                 <span class="bull">&bull;</span> -->
@@ -131,7 +133,7 @@ export default {
 </script>
 
 <style lang="scss">
-.section--article {
+.section--single--article {
   min-height: 90vh;
   pre {
     background-color: $darkBlue-2;
@@ -153,7 +155,7 @@ export default {
     // border-bottom: 1px solid rgba($white, 0.1);
   }
   .meta {
-    font-size: 0.675rem;
+    font-size: $small;
     margin: 0;
     color: rgba($white, 0.35);
     text-transform: uppercase;
@@ -180,6 +182,12 @@ export default {
       align-self: stretch;
       flex-grow: 1;
     }
+  }
+  h2 {
+    font-size: $h5;
+  }
+  h3 {
+    font-size: $h5;
   }
 }
 </style>

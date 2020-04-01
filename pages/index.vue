@@ -22,7 +22,7 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
-            <Header tag="h2">{{ writing.title }}</Header>
+            <Header tag="h2" class="display-5">{{ writing.title }}</Header>
             <ArticleList :posts="posts" />
             <Button :to="writing.link" class="button">{{
               writing.buttonTitle

@@ -4,7 +4,7 @@
       <div class="article-meta">
         <time>{{ formatDate(article.attributes.date) }}</time>
       </div>
-      <Header tag="h3" class="article-title">{{
+      <Header tag="h3" class="article-title display-6">{{
         article.attributes.title
       }}</Header>
     </nuxt-link>
@@ -65,7 +65,6 @@ export default {
     margin: 0;
     transition: all 0.25s ease-in-out;
     color: $white;
-    // display: inline-block;
   }
   &:hover {
     background-color: $darkBlue-1;
@@ -78,9 +77,6 @@ export default {
     }
   }
   &.article--link {
-    // display: flex;
-    // align-items: stretch;
-    // justify-content: stretch;
     width: 100%;
     a {
       width: 100%;
@@ -89,14 +85,8 @@ export default {
   .article-title {
     margin: 0;
   }
-  .article-description {
-    color: $white;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 0.875rem;
-  }
   .article-meta {
-    font-size: 0.675rem;
+    font-size: $small;
     margin: 0 0.25rem 0 0;
     width: 100px;
     text-transform: uppercase;
