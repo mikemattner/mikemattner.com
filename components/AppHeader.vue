@@ -165,7 +165,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
       }
     }
     &__nav {
-      font-size: 0.75rem;
+      font-size: 1rem;
       ul {
         display: flex;
         flex-direction: row;
@@ -174,7 +174,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0 0 0 1rem;
+          margin: 0 0 0 1.5rem;
           padding: 0;
         }
       }

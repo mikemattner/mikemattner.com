@@ -15,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
   color: $white;
   margin: 2.75rem 0 1.05rem;
@@ -54,6 +54,8 @@ h1,
 .display-1 {
   font-size: $h1;
   margin-top: 0;
+  letter-spacing: 0.0125rem;
+  line-height: 0.85;
 }
 h2,
 .display-2 {
@@ -79,7 +81,25 @@ small,
 .text-small {
   font-size: $small;
 }
-
+.text-display-large {
+  font-size: $h1;
+  letter-spacing: 0.0125rem;
+  line-height: 0.85;
+  @media (min-width: $tablet) {
+    font-size: $huge;
+  }
+}
+@media (min-width: $tablet) {
+  .text-indent-2rem {
+    text-indent: -2rem;
+  }
+  .text-indent-3rem {
+    text-indent: -3rem;
+  }
+  .text-indent-4rem {
+    text-indent: -4rem;
+  }
+}
 ul,
 ol {
   margin-left: 0;

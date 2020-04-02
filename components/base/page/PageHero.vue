@@ -53,8 +53,8 @@ export default {
   }
   h1 {
     // font-size: 3rem;
-    letter-spacing: 0.09rem;
-    line-height: 0.85;
+    // letter-spacing: 0.09rem;
+    // line-height: 0.85;
     // margin: 1rem 0;
     color: $primary;
     // small {
@@ -100,7 +100,7 @@ export default {
       height: 3rem;
       margin: 0 auto;
       &:before {
-        @include arrow-down(rgba($white, 0.25));
+        @include arrow-down(rgba($primary, 1));
         animation: bounce 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;

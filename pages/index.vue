@@ -4,12 +4,15 @@
       <template v-slot:default>
         <div class="columns is-centered">
           <div class="column is-three-fifths">
-            <BaseImage
-              :src="`${intro.image}`"
-              :alt="intro.imageAlt"
-              class="self-portrait"
-            />
-            <Header tag="h1" decorator>{{ intro.title }}</Header>
+            <div class="self-portrait">
+              <BaseImage :src="`${intro.image}`" :alt="intro.imageAlt" />
+            </div>
+            <Header
+              tag="h1"
+              class="text-display-large text-indent-3rem"
+              decorator
+              >{{ intro.title }}</Header
+            >
             <p v-html="intro.body"></p>
             <p v-html="intro.social" class="social"></p>
           </div>
@@ -23,6 +26,7 @@
         <div class="columns is-centered">
           <div class="column is-three-fifths">
             <Header tag="h2" class="display-5">{{ writing.title }}</Header>
+            <p>{{ writing.body }}</p>
             <ArticleList :posts="posts" />
             <Button :to="writing.link" class="button">{{
               writing.buttonTitle
@@ -31,13 +35,15 @@
         </div>
       </div>
     </section>
-    <!-- <WaveRight flip />
+    <!-- <WaveRight flip /> 
     <section class="section section--work">
       <div class="container">
         <div class="columns is--work--header">
           <div class="column">
-            <Header tag="h6">Some of My</Header>
-            <Header tag="h2" decorator>Most Recent Projects</Header>
+            <Header tag="h6" class="text-small">Some of My</Header>
+            <Header tag="h2" class="display-5" decorator
+              >Most Recent Projects</Header
+            >
           </div>
         </div>
         <Work left pull-left :info="JennAirWorkbook" />
@@ -144,12 +150,26 @@ export default {
       // position: absolute;
       // top: -5rem;
       // left: 7rem;
+      position: relative;
+      margin-bottom: -3rem;
       border-radius: 2px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
       transition: $transition;
+      overflow: hidden;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($darkBlue, 0.5);
+        mix-blend-mode: hard-light;
+      }
       &:hover {
-        .self-portrait {
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        &:after {
+          background-color: rgba($darkBlue, 0.375);
         }
       }
       @media (min-width: $tablet) {
@@ -157,9 +177,12 @@ export default {
         position: absolute;
         // top: 50%;
         // transform: translateY(-50%);
-        left: -150px;
-        width: 200px;
+        left: -200px;
+        width: 350px;
         z-index: -1;
+      }
+      img {
+        margin: 0;
       }
     }
   }
@@ -207,9 +230,9 @@ export default {
       // }
       h2 {
         position: relative;
-        margin: 2rem 0;
-        display: flex;
-        align-items: center;
+        // margin: 2rem 0;
+        // display: flex;
+        // align-items: center;
         // &:after {
         //   content: '';
         //   position: absolute;
@@ -218,9 +241,6 @@ export default {
         //   background-color: $darkBlue-6;
         //   z-index: -1;
         // }
-      }
-      h6 {
-        margin-top: 2rem;
       }
       .button {
         margin-top: 2rem;
@@ -232,9 +252,9 @@ export default {
           text-align: center;
         }
         h2 {
-          @media (min-width: $tablet) {
-            font-size: 3rem;
-          }
+          // @media (min-width: $tablet) {
+          //   font-size: 3rem;
+          // }
           margin-bottom: 0;
 
           &.decorator:after {

@@ -1,9 +1,3 @@
-// @for $i from 1 through 5 {
-//   .display-#{$i},
-//   h#{$i} {
-//     font-size: $h#{$i};
-//   }
-// }
 @mixin min-media($breakpoint) {
     @media (min-width: $breakpoint) {
         @content;

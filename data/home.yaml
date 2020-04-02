@@ -9,7 +9,7 @@ intro:
   imgAlt: A Picture of me.
 
 writing:
-  meta: Some of My
   title: Recent Writing
+  body: Mostly relating to my profession with the occasional hobby related bit.
   buttonTitle: Read More
   link: /writing

@@ -71,6 +71,7 @@ export default {
     h3 {
       transform: translateX(20px);
       color: $primary;
+      font-style: italic;
     }
     .article-meta {
       color: $primary;
@@ -90,7 +91,8 @@ export default {
     margin: 0 0.25rem 0 0;
     width: 100px;
     text-transform: uppercase;
-    color: $primary;
+    color: rgba($white, 0.35);
+    transition: $transition;
   }
 }
 </style>
