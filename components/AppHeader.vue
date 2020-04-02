@@ -165,7 +165,8 @@ $transparent-bg: rgba($darkBlue-3, 1);
       }
     }
     &__nav {
-      font-size: 1rem;
+      font-size: $small;
+      // text-transform: uppercase;
       ul {
         display: flex;
         flex-direction: row;
@@ -176,6 +177,13 @@ $transparent-bg: rgba($darkBlue-3, 1);
         li {
           margin: 0 0 0 1.5rem;
           padding: 0;
+          a {
+            // background-image: none;
+
+            &.nuxt-link-exact-active {
+              color: $primary;
+            }
+          }
         }
       }
       @media (max-width: 768px) {
