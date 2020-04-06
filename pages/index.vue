@@ -4,9 +4,9 @@
       <template v-slot:default>
         <div class="columns is-centered">
           <div class="column is-three-fifths">
-            <div class="self-portrait">
+            <!-- <div class="self-portrait">
               <BaseImage :src="`${intro.image}`" :alt="intro.imageAlt" />
-            </div>
+            </div> -->
             <Header
               tag="h1"
               class="text-display-large text-indent-3rem"

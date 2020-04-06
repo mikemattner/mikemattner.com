@@ -7,6 +7,7 @@
       <Header tag="h3" class="article-title display-6">{{
         article.attributes.title
       }}</Header>
+      <!-- <p class="article-description">{{ article.attributes.description }}</p> -->
     </nuxt-link>
   </article>
 </template>
@@ -83,13 +84,17 @@ export default {
       width: 100%;
     }
   }
+  .article-description {
+    margin-left: 2rem;
+    font-size: $small;
+  }
   .article-title {
     margin: 0;
   }
   .article-meta {
     font-size: $small;
     margin: 0 0.25rem 0 0;
-    width: 100px;
+    flex: 0 0 100px;
     text-transform: uppercase;
     color: rgba($white, 0.35);
     transition: $transition;
