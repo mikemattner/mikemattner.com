@@ -24,10 +24,10 @@
             <!-- <p v-html="post.attributes.description" class="description"></p> -->
             <div v-html="post.html"></div>
             <div class="links">
-              <Button v-if="nextPath" :to="`/${nextPath}`" class="button"
+              <Button v-if="nextPath" :to="`/${nextPath}`" class="button prev"
                 >Previous Article</Button
               >
-              <Button v-if="prevPath" :to="`/${prevPath}`" class="button"
+              <Button v-if="prevPath" :to="`/${prevPath}`" class="button next"
                 >Next Article</Button
               >
             </div>
@@ -177,10 +177,24 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
 
-    a {
+    a.button {
       align-self: stretch;
       flex-grow: 1;
+      @media (max-width: 768px) {
+        margin: 0.5rem 0;
+      }
+      // &.prev {
+      //   justify-self: flex-start;
+      // }
+      // &.next {
+      //   justify-self: flex-end;
+      // }
     }
   }
   h2 {
