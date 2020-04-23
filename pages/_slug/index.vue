@@ -1,11 +1,13 @@
 <template>
-  <section class="section section--article">
+  <section class="section section--single--article">
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
           <div class="columns is-centered">
             <div class="column is-three-fifths">
-              <Header tag="h1">{{ post.attributes.title }}</Header>
+              <Header tag="h1" class="display-3">{{
+                post.attributes.title
+              }}</Header>
               <div class="meta">
                 <!-- <span class="tag">{{ post.attributes.topic }}</span>
                 <span class="bull">&bull;</span> -->
@@ -22,10 +24,10 @@
             <!-- <p v-html="post.attributes.description" class="description"></p> -->
             <div v-html="post.html"></div>
             <div class="links">
-              <Button v-if="nextPath" :to="`/${nextPath}`" class="button"
+              <Button v-if="nextPath" :to="`/${nextPath}`" class="button prev"
                 >Previous Article</Button
               >
-              <Button v-if="prevPath" :to="`/${prevPath}`" class="button"
+              <Button v-if="prevPath" :to="`/${prevPath}`" class="button next"
                 >Next Article</Button
               >
             </div>
@@ -131,7 +133,7 @@ export default {
 </script>
 
 <style lang="scss">
-.section--article {
+.section--single--article {
   min-height: 90vh;
   pre {
     background-color: $darkBlue-2;
@@ -153,7 +155,7 @@ export default {
     // border-bottom: 1px solid rgba($white, 0.1);
   }
   .meta {
-    font-size: 0.675rem;
+    font-size: $small;
     margin: 0;
     color: rgba($white, 0.35);
     text-transform: uppercase;
@@ -175,11 +177,31 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
 
-    a {
+    a.button {
       align-self: stretch;
       flex-grow: 1;
+      @media (max-width: 768px) {
+        margin: 0.5rem 0;
+      }
+      // &.prev {
+      //   justify-self: flex-start;
+      // }
+      // &.next {
+      //   justify-self: flex-end;
+      // }
     }
+  }
+  h2 {
+    font-size: $h5;
+  }
+  h3 {
+    font-size: $h5;
   }
 }
 </style>

@@ -36,7 +36,7 @@ $black: rgba(0,0,0,1.0);
 // Typography
 // ----------------------------------------------------------------------------------------------------------------
 $sans-serif-font: "Geomanist", Helvetica, sans-serif;
-$serif-font: "Geomanist", Helvetica, sans-serif; //'salomeregular', Georgia, serif;
+$serif-font: 'salomeregular', Georgia, serif; //'salomeregular', Georgia, serif;
 $source-code-font: 'hack',Menlo, Monaco, monospace;
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -83,3 +83,15 @@ $speed: 86ms !default;
 // Flags
 
 $variable-columns: true !default;
+
+// ----------------------------------------------------------------------------------------------------------------
+// Typographic Scale
+// ----------------------------------------------------------------------------------------------------------------
+$scale: 1.5;
+$small: 1rem / $scale;
+$h5: $scale * 1rem;
+$h4: $scale * $h5;
+$h3: $scale * $h4;
+$h2: $scale * $h3;
+$h1: $scale * $h2;
+$huge: $scale * $h1;

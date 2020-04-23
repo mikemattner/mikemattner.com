@@ -11,20 +11,10 @@
           </div>
         </template>
       </PageHero>
-      <!-- <WaveRight flip /> -->
       <div id="content" class="container">
         <div class="columns is-centered">
           <div class="column is-three-fifths">
             <AllArticles :posts="posts" />
-            <!-- <ul class="article-list">
-              <li
-                v-for="article in articles"
-                :key="article.title"
-                class="article"
-              >
-                <ArticleLink :article="article" archive />
-              </li>
-            </ul> -->
           </div>
         </div>
       </div>

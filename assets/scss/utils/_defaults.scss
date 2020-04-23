@@ -2,88 +2,11 @@
 * {
   box-shadow: inset 0 0 1px red;
 }*/
-html {
-  font-size: calc(14px + 0.5vw);
-  line-height: 1.5;
-  letter-spacing: 0.0125rem;
-  @media (min-width: 1200px) {
-    font-size: 20px;
-  }
-}
 body {
   background-color: $darkBlue-3;
-  color: $darkBlue-13;
-  font-family: $sans-serif-font;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
-  color: $white;
-
-  small {
-    font-family: $sans-serif-font;
-    font-size: 0.375em;
-    text-transform: uppercase;
-  }
-
-  &.decorator {
-    padding-bottom: 1.5rem;
-    position: relative;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 3rem;
-      height: 1px;
-      border-radius: 3px;
-      left: 0;
-      bottom: 0;
-      background-color: $primary;
-      // border-bottom: 3px solid #ff5801;
-    }
-
-    &--center {
-      &:after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-  }
-}
-
-h1,
-h2 {
-  font-family: $serif-font;
-  font-weight: 900;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-}
-
-// h2 {
-//   font-size: 2rem;
-// }
-ul,
-ol {
-  margin-left: 0;
-  padding-left: 0;
-}
-ul {
-  padding-left: 1.125em;
 }
 a {
   color: $white;
@@ -99,7 +22,6 @@ a {
     background-size: 100% 6px;
   }
 }
-
 hr {
   background-color: $darkBlue-7;
   width: 100%;
@@ -107,9 +29,6 @@ hr {
   border: 0;
   margin: 0;
 }
-// .container {
-//     max-width: 60rem;
-// }
 .container {
   width: 100%;
   max-width: 70rem;
@@ -120,7 +39,6 @@ hr {
     padding: 0 2rem;
   }
 }
-
 img {
   display: block;
   width: 100%;
@@ -150,13 +68,6 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
-blockquote {
-  padding-left: 30px;
-  position: relative;
-  border-left: 3px solid $darkBlue-8;
-  margin: 1rem 0;
-}
-
 @media (max-width: $tablet) {
   .columns {
     display: flex;

@@ -21,8 +21,8 @@
       /> -->
     </div>
     <div class="column is-6-desktop is-half-tablet work-description">
-      <Header tag="h6">{{ info.brand }}</Header>
-      <Header tag="h3" decorator>{{ info.title }}</Header>
+      <Header tag="h6" class="text-small">{{ info.brand }}</Header>
+      <Header tag="h3" class="display-6" decorator>{{ info.title }}</Header>
       <p v-html="info.description"></p>
       <ul class="list--tags">
         <li v-for="(tag, index) in info.tags" :key="index">

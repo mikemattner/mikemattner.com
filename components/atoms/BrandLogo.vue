@@ -35,11 +35,11 @@ export default {
     z-index: 10;
 
     .circle-shape {
-      fill: $primary;
+      fill: transparent;
       transition: $transition;
     }
     .logo-shape {
-      fill: $darkBlue;
+      fill: $primary;
       transition: $transition;
     }
   }
@@ -60,10 +60,10 @@ export default {
     &:hover {
       .brand-logo__image {
         .circle-shape {
-          fill: rgba($primary, 0);
+          fill: rgba($primary, 1);
         }
         .logo-shape {
-          fill: $primary;
+          fill: $darkBlue;
         }
       }
       .brand-logo__type {
