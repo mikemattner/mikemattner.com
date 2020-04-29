@@ -11,13 +11,9 @@
           </div>
         </template>
       </PageHero>
-      <div id="content" class="container">
-        <div class="columns is-centered">
-          <div class="column is-three-fifths">
-            <AllArticles :posts="posts" />
-          </div>
-        </div>
-      </div>
+      <section id="content">
+        <AllArticles :posts="posts" />
+      </section>
     </div>
   </section>
 </template>

@@ -29,16 +29,16 @@ hr {
   border: 0;
   margin: 0;
 }
-.container {
-  width: 100%;
-  max-width: 70rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+// .container {
+//   width: 100%;
+//   max-width: 70rem;
+//   margin: 0 auto;
+//   padding: 0 1rem;
 
-  @include min-media(768px) {
-    padding: 0 2rem;
-  }
-}
+//   @include min-media(768px) {
+//     padding: 0 2rem;
+//   }
+// }
 img {
   display: block;
   width: 100%;

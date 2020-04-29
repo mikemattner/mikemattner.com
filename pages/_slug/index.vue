@@ -3,35 +3,29 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <div class="columns is-centered">
-            <div class="column is-three-fifths">
-              <Header tag="h1" class="display-3">{{
-                post.attributes.title
-              }}</Header>
-              <div class="meta">
-                <!-- <span class="tag">{{ post.attributes.topic }}</span>
-                <span class="bull">&bull;</span> -->
-                <time>{{ formattedDate }}</time>
-              </div>
-            </div>
+          <div class="meta main-content">
+            <!-- Topic posted in {{ post.attributes.topic }} on -->
+            <time>{{ formattedDate }}</time>
           </div>
+          <Header tag="h1" class="display-3 main-content">{{
+            post.attributes.title
+          }}</Header>
         </template>
       </PageHero>
-      <!-- <WaveRight flip /> -->
-      <div id="content" class="container">
-        <div class="columns is-centered">
-          <div class="column is-three-fifths">
-            <!-- <p v-html="post.attributes.description" class="description"></p> -->
-            <div v-html="post.html"></div>
-            <div class="links">
-              <Button v-if="nextPath" :to="`/${nextPath}`" class="button prev"
-                >Previous Article</Button
-              >
-              <Button v-if="prevPath" :to="`/${prevPath}`" class="button next"
-                >Next Article</Button
-              >
-            </div>
-          </div>
+      <div id="content" class="layout">
+        <!-- <div class="meta margin-content">
+          Topic posted in {{ post.attributes.topic }} on
+          <time>{{ formattedDate }}</time>
+        </div> -->
+        <!-- <p v-html="post.attributes.description" class="description"></p> -->
+        <div v-html="post.html" class="post-content"></div>
+        <div class="links main-content">
+          <Button v-if="nextPath" :to="`/${nextPath}`" class="button prev"
+            >Previous Article</Button
+          >
+          <Button v-if="prevPath" :to="`/${prevPath}`" class="button next"
+            >Next Article</Button
+          >
         </div>
       </div>
     </article>
@@ -158,15 +152,15 @@ export default {
     font-size: $small;
     margin: 0;
     color: rgba($white, 0.35);
-    text-transform: uppercase;
-    .bull {
-      margin: 0 0.25rem;
-    }
-    .tag {
-      font-size: 0.675rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
+    // text-transform: uppercase;
+    // .bull {
+    //   margin: 0 0.25rem;
+    // }
+    // .tag {
+    //   font-size: 0.675rem;
+    //   letter-spacing: 1.5px;
+    //   text-transform: uppercase;
+    // }
   }
   .links {
     margin-top: 2rem;
