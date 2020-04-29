@@ -4,14 +4,6 @@ $max-width: 58rem;
 .layout {
   display: grid;
   column-gap: $column-gap;
-  // grid-template-columns:
-  //   [full-start] $column-gap
-  //   [full-content-start margin-start] repeat( 2, 1fr )
-  //   [margin-end main-content-start] repeat( 4, 1fr )
-  //   [main-content-end out-margin-start] 1fr
-  //   [out-margin-end] 1fr
-  //   [full-content-end] minmax($column-gap, calc(100vw - 72rem))
-  //   [full-end];
   grid-template-columns:
     [full-start] $column-gap
     [full-content-start margin-start] 1fr
