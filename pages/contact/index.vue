@@ -2,7 +2,7 @@
   <div class="contact">
     <PageHero full>
       <template v-slot:default>
-        <Header tag="h1" class="display-2">{{ intro.title }}</Header>
+        <Header tag="h1" class="display-2" v-html="intro.title"></Header>
         <p v-html="intro.body"></p>
       </template>
     </PageHero>
@@ -58,9 +58,9 @@ export default {
     h1,
     p {
       grid-column: main-content / span 6;
-      @media (min-width: $tablet) {
-        grid-column: margin-start / span 8;
-      }
+      // @media (min-width: $tablet) {
+      //   grid-column: margin-start / span 8;
+      // }
     }
   }
 }

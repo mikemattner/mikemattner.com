@@ -3,13 +3,18 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <div class="meta main-content">
-            <!-- Topic posted in {{ post.attributes.topic }} on -->
-            <time>{{ formattedDate }}</time>
+          <Header
+            tag="h1"
+            class="display-3 full-width"
+            v-html="post.attributes.title"
+          ></Header>
+          <div class="meta full-width">
+            Topic posted
+            <time
+              ><strong>{{ formattedDate }}</strong></time
+            >
+            in <strong>{{ post.attributes.topic }}</strong> on
           </div>
-          <Header tag="h1" class="display-3 main-content">{{
-            post.attributes.title
-          }}</Header>
         </template>
       </PageHero>
       <div id="content" class="layout">
@@ -129,6 +134,12 @@ export default {
 <style lang="scss">
 .section--single--article {
   min-height: 90vh;
+  .hero {
+    text-align: center;
+    h1 {
+      margin-bottom: 0.75rem;
+    }
+  }
   pre {
     background-color: $darkBlue-2;
     font-size: 0.75rem;
@@ -150,8 +161,9 @@ export default {
   }
   .meta {
     font-size: $small;
-    margin: 0;
-    color: rgba($white, 0.35);
+    margin: 0 0 2rem;
+    // color: $tertiary;
+    color: rgba($white, 0.5);
     // text-transform: uppercase;
     // .bull {
     //   margin: 0 0.25rem;
@@ -168,13 +180,13 @@ export default {
     border-top: 1px solid rgba($white, 0.1);
     text-align: center;
     font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 20px 1fr;
     }
 
     a.button {
@@ -183,12 +195,16 @@ export default {
       @media (max-width: 768px) {
         margin: 0.5rem 0;
       }
-      // &.prev {
-      //   justify-self: flex-start;
-      // }
-      // &.next {
-      //   justify-self: flex-end;
-      // }
+      @media (min-width: 768px) {
+        width: 200px;
+        &.prev {
+          grid-column: 1;
+        }
+        &.next {
+          grid-column: 3;
+          justify-self: end;
+        }
+      }
     }
   }
   h2 {

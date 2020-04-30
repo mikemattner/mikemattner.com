@@ -1,5 +1,5 @@
 $column-gap: 1.25rem;
-$max-width: 62rem;
+$max-width: 25rem;
 
 .layout {
   display: grid;
@@ -10,11 +10,11 @@ $max-width: 62rem;
   @media (min-width: $tablet) {
     column-gap: $column-gap;
     grid-template-columns:
-      [full-start] minmax($column-gap, calc(100vw - #{$max-width}))
+      [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
       [margin-start] 1fr
       [margin-end main-content-start] repeat( 6, 1fr )
       [main-content-end outdent-start] 1fr 
-      [full-end] minmax($column-gap, calc(100vw - #{$max-width}));
+      [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
   }
 
 }
@@ -30,8 +30,7 @@ $max-width: 62rem;
 .full-width {
   grid-column: full-start / span 8;
   @media (min-width: $tablet) {
-    grid-column-start: full-start;
-    grid-column-end: full-end;
+    grid-column: full-start / span 10;
   }
 }
 .margin-content {

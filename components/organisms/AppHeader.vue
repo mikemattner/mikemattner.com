@@ -81,7 +81,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 1.25rem;
     height: 3.5rem;
     box-sizing: border-box;
     transition: $transition;

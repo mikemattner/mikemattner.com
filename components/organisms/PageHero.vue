@@ -38,7 +38,7 @@ export default {
   //   background-color: $darkBlue-3;
   // }
   h1 {
-    // color: $primary;
+    color: $primary;
     margin-bottom: 2rem;
   }
   h2 {
