@@ -75,12 +75,6 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'UA-2423210-1'
-      }
-    ],
     '@nuxtjs/sitemap'
   ],
   sitemap: {
