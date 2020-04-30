@@ -9,7 +9,7 @@
           decorator
         ></Header>
         <div class="self-portrait">
-          <BaseImage :src="`${intro.image}`" :alt="intro.imageAlt" />
+          <StaticImage :src="`${intro.image}`" :alt="intro.imageAlt" />
         </div>
         <div class="header-content">
           <p v-html="intro.body"></p>
