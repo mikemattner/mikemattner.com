@@ -3,11 +3,9 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <Header
-            tag="h1"
-            class="display-3 full-width"
-            v-html="post.attributes.title"
-          ></Header>
+          <Header tag="h1" class="display-3 full-width">{{
+            post.attributes.title
+          }}</Header>
           <div class="meta full-width">
             Topic posted
             <time
