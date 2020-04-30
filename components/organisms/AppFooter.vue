@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <!-- <WaveRight /> -->
-    <div class="darker">
+    <div class="darker margin-start-outdent">
       <p class="email--link">hello @ mikemattner.com</p>
       <p>
         &copy; {{ theYear }} Mike Mattner. Made in Michigan. Built with Nuxt.
@@ -34,7 +34,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1rem 5% 1rem;
+    padding: 1rem 0 1rem;
     // height: 3rem;
     box-sizing: border-box;
     font-size: 0.675rem;

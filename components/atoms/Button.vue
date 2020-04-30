@@ -39,6 +39,7 @@ export default {
   font-size: 0.75rem;
   position: relative;
   overflow: hidden;
+  font-weight: 700;
 
   @media (min-width: $tablet) {
     max-width: 200px;

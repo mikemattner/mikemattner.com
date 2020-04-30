@@ -1,0 +1,62 @@
+$column-gap: 1.25rem;
+$max-width: 25rem;
+
+.layout {
+  display: grid;
+  grid-template-columns:
+      [full-start] $column-gap
+      [main-content] repeat( 6, 1fr ) 
+      [full-end] $column-gap;
+  @media (min-width: $tablet) {
+    column-gap: $column-gap;
+    grid-template-columns:
+      [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
+      [margin-start] 1fr
+      [margin-end main-content-start] repeat( 6, 1fr )
+      [main-content-end outdent-start] 1fr 
+      [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
+  }
+
+}
+
+.main-content {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column-start: main-content-start;
+    grid-column-end: main-content-end;
+  }
+}
+.full-content,
+.full-width {
+  grid-column: full-start / span 8;
+  @media (min-width: $tablet) {
+    grid-column: full-start / span 10;
+  }
+}
+.margin-content {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column: margin-start;
+    text-align: right;
+  }
+}
+.outdent-content {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column: outdent-start;
+    text-align: right;
+  }
+}
+
+.post-content,
+.post-content > * {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column-start: main-content-start;
+    grid-column-end: main-content-end;
+  }
+}
+
+.post-content p:first-child {
+  margin-top: 0;
+}
