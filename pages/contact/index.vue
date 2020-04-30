@@ -2,7 +2,7 @@
   <div class="contact">
     <PageHero full>
       <template v-slot:default>
-        <Header tag="h1" class="display-2" v-html="intro.title"></Header>
+        <Header tag="h1" class="display-2">{{ intro.title }}</Header>
         <p v-html="intro.body"></p>
       </template>
     </PageHero>

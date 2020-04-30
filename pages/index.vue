@@ -2,12 +2,9 @@
   <div class="home">
     <PageHero bold>
       <template v-slot:default>
-        <Header
-          tag="h1"
-          class="text-display-large"
-          v-html="intro.title"
-          decorator
-        ></Header>
+        <Header tag="h1" class="text-display-large" decorator>{{
+          intro.title
+        }}</Header>
         <div class="self-portrait">
           <StaticImage :src="`${intro.image}`" :alt="intro.imageAlt" />
         </div>
