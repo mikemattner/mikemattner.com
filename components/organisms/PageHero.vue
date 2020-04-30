@@ -1,23 +1,13 @@
 <template>
   <header
     :class="[
-      'hero',
+      'hero layout',
       full == true ? 'hero--full' : '',
       bold == true ? 'hero--bold' : '',
       dark == true ? 'hero--dark' : ''
     ]"
   >
-    <div class="container">
-      <slot></slot>
-      <ScrollLink
-        class="anchor"
-        href="#content"
-        aria-label="Scroll to the primary content."
-        v-if="arrow"
-      >
-        <div class="bounce-arrow"></div>
-      </ScrollLink>
-    </div>
+    <slot></slot>
   </header>
 </template>
 
@@ -34,57 +24,26 @@ export default {
 
 <style lang="scss">
 .hero {
-  font-size: 1.25rem;
-  // min-height: 30vh;
-  padding-top: 4rem;
-  // padding-bottom: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  padding-top: 6rem;
   position: relative;
   z-index: 100;
-  &--full {
-    min-height: 100vh;
-    padding-bottom: 4rem;
+  @media (min-width: $tablet) {
+    padding-top: 8rem;
   }
-  &--dark {
-    background-color: $darkBlue-3;
-  }
+  // &--full {
+  //   min-height: 100vh;
+  //   padding-bottom: 4rem;
+  // }
+  // &--dark {
+  //   background-color: $darkBlue-3;
+  // }
   h1 {
-    // font-size: 3rem;
-    // letter-spacing: 0.09rem;
-    // line-height: 0.85;
-    // margin: 1rem 0;
     color: $primary;
-    // small {
-    //   display: block;
-    //   font-family: $sans-serif-font;
-    //   font-size: 1.25rem;
-    //   font-weight: 400;
-    //   // color: $darkBlue-9;
-    //   text-transform: uppercase;
-    //   margin-bottom: 1.25rem;
-    // }
-    @media (min-width: 760px) {
-      // font-size: 4.5rem;
-    }
+    margin-bottom: 2rem;
   }
   h2 {
     color: rgba($white, 0.5);
     font-weight: 400;
-  }
-  // &.hero--bold {
-  //   h1 {
-  //     @media (min-width: 760px) {
-  //       font-size: 8rem;
-  //       color: $primary;
-  //       line-height: 0.85;
-  //     }
-  //   }
-  // }
-  .container {
-    position: relative;
   }
   .anchor {
     display: flex;

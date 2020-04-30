@@ -96,7 +96,7 @@ export default {
     margin: 0 0.25rem 0 0;
     flex: 0 0 100px;
     text-transform: uppercase;
-    color: rgba($white, 0.35);
+    color: rgba($white, 0.5);
     transition: $transition;
   }
 }

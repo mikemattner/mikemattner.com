@@ -2,53 +2,32 @@
   <div class="home">
     <PageHero bold>
       <template v-slot:default>
-        <div class="columns is-centered">
-          <div class="column is-three-fifths">
-            <!-- <div class="self-portrait">
-              <BaseImage :src="`${intro.image}`" :alt="intro.imageAlt" />
-            </div> -->
-            <Header
-              tag="h1"
-              class="text-display-large text-indent-3rem"
-              decorator
-              >{{ intro.title }}</Header
-            >
-            <p v-html="intro.body"></p>
-            <p v-html="intro.social" class="social"></p>
-          </div>
+        <Header tag="h1" class="text-display-large" decorator>{{
+          intro.title
+        }}</Header>
+        <div class="self-portrait">
+          <StaticImage :src="`${intro.image}`" :alt="intro.imageAlt" />
+        </div>
+        <div class="header-content">
+          <p v-html="intro.body"></p>
+          <p v-html="intro.social" class="social"></p>
+          <!-- <Button :to="writing.link" class="button">{{
+            writing.buttonTitle
+          }}</Button> -->
         </div>
       </template>
     </PageHero>
-    <WavyLines />
-    <section id="content" class="section section--writing section--dark">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-three-fifths">
-            <Header tag="h2" class="display-5">{{ writing.title }}</Header>
-            <p>{{ writing.body }}</p>
-            <AllArticles :posts="posts" />
-            <Button :to="writing.link" class="button">{{
-              writing.buttonTitle
-            }}</Button>
-          </div>
-        </div>
+    <!-- <WavyLines /> -->
+    <section id="content" class="section section--writing layout">
+      <div class="main-content">
+        <Header tag="h2" class="display-5">{{ writing.title }}</Header>
+        <p>{{ writing.body }}</p>
+        <AllArticles :posts="posts" />
+        <Button :to="writing.link" class="button">{{
+          writing.buttonTitle
+        }}</Button>
       </div>
     </section>
-    <!-- <section class="section section--work">
-      <div class="container">
-        <div class="columns is--work--header">
-          <div class="column">
-            <Header tag="h6" class="text-small">Some of My</Header>
-            <Header tag="h2" class="display-5" decorator
-              >Most Recent Projects</Header
-            >
-          </div>
-        </div>
-        <Work left pull-left :info="JennAirWorkbook" />
-        <Work right :info="JennAirHub" />
-        <Work left :info="WhirlpoolTopLoad" />
-      </div>
-    </section> -->
   </div>
 </template>
 
@@ -94,163 +73,106 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  // .hero {
-  // .column {
-  //   position: relative;
-  //   &.is-vertical-center {
-  //     display: flex;
-  //     align-items: center;
-  //   }
-  // }
-  // .social {
-  //   font-size: 1rem;
-  // }
-  // .self-portrait {
-  //   // position: absolute;
-  //   // top: -5rem;
-  //   // left: 7rem;
-  //   position: relative;
-  //   margin-bottom: -3rem;
-  //   border-radius: 2px;
-  //   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-  //   transition: $transition;
-  //   overflow: hidden;
-  //   &:after {
-  //     content: '';
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     background-color: rgba($darkBlue, 0.5);
-  //     mix-blend-mode: hard-light;
-  //   }
-  //   &:hover {
-  //     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  //     &:after {
-  //       background-color: rgba($darkBlue, 0.375);
-  //     }
-  //   }
-  //   @media (min-width: $tablet) {
-  //     margin-top: 0;
-  //     position: absolute;
-  //     // top: 50%;
-  //     // transform: translateY(-50%);
-  //     left: -200px;
-  //     width: 350px;
-  //     z-index: -1;
-  //   }
-  //   img {
-  //     margin: 0;
-  //   }
-  // }
-  // }
-  // h2 {
-  //   margin-top: 0.25rem;
-  // }
-  // h6 {
-  //   margin: 0;
-  //   // text-transform: uppercase;
-  //   // color: $darkBlue-10;
-  //   // letter-spacing: 0.0675rem;
-  //   font-weight: 400;
-  //   // font-family: serif;
-  //   // font-style: italic;
-  // }
+  .hero {
+    h1 {
+      grid-column: main-content / span 6;
+      // mix-blend-mode: hard-light;
+      line-height: 0.85;
+      @media (min-width: $tablet) {
+        // text-shadow: 0 1px 20px rgba($black, 0.5);
+        align-self: center;
+        grid-column: margin-start / span 4;
+        grid-row: 1;
+      }
+      @media (min-width: $widescreen) {
+        text-indent: -0.25em;
+      }
+      @media (min-width: $fullhd) {
+        text-indent: -0.5em;
+      }
+    }
+    .header-content {
+      grid-column: main-content / span 6;
+      @media (min-width: $tablet) {
+        position: relative;
+        &:after {
+          content: '';
+          mix-blend-mode: color;
+          border-radius: 2px;
+          background-color: rgba($darkBlue-2, 1);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 2;
+        }
+        &:before {
+          content: '';
+          border-radius: 2px;
+          background-color: rgba($darkBlue-2, 0.75);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 1;
+        }
+        padding: 0 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        align-self: center;
+        grid-column: 3 / span 6;
+        grid-row: 2;
+        p,
+        .button {
+          position: relative;
+          z-index: 3;
+        }
+      }
+    }
+    .self-portrait {
+      border-radius: 2px;
+      overflow: hidden;
+      grid-column: main-content / span 6;
+      z-index: -1;
+      position: relative;
+      height: 100%;
+      background-color: $darkBlue-3;
+      opacity: 0.675;
+      @media (min-width: $tablet) {
+        grid-row: 1 / span 2;
+        grid-column: 5 / span 5;
+        align-self: start;
+      }
+      img {
+        margin: 0;
+        mix-blend-mode: luminosity;
+        @media (min-width: $tablet) {
+          @include cover-background(top);
+        }
+      }
+    }
+  }
   .section {
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
-
-    .container {
-      position: relative;
-      z-index: 10;
-    }
-
-    @media (min-width: $tablet) {
-      .container {
-        min-height: 40vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
 
     &--dark {
       background-color: $darkBlue-3;
     }
 
     &--writing {
-      padding-top: 0;
-      // h2 {
-      //   @media (min-width: $tablet) {
-      //     font-size: 3rem;
-      //   }
-      // }
+      padding-top: 2rem;
+      p {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
       .button {
         margin-top: 2rem;
       }
     }
-    // &--work {
-    //   .is--work--header {
-    //     @media (min-width: $tablet) {
-    //       text-align: center;
-    //     }
-    //     h2 {
-    //       // @media (min-width: $tablet) {
-    //       //   font-size: 3rem;
-    //       // }
-    //       margin-bottom: 0;
-
-    //       &.decorator:after {
-    //         @media (min-width: $tablet) {
-    //           left: 50%;
-    //           transform: translateX(-50%);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // .is-summary {
-    //   p {
-    //     font-size: 0.75rem;
-    //   }
-    // }
-
-    // .more-work {
-    //   background-color: $darkBlue-3;
-    //   border-radius: 2px;
-    //   padding: 1rem 2rem;
-    //   h3,
-    //   p {
-    //     margin: 0;
-    //   }
-    //   @media (min-width: $mobile) {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //   }
-    // }
-
-    // @media (max-width: $tablet) {
-    //   .columns {
-    //     display: flex;
-    //     flex-direction: column;
-    //     .column {
-    //       padding-top: 0;
-    //       padding-bottom: 0;
-    //       &.copy {
-    //         order: 2;
-    //         padding-top: 0;
-    //       }
-    //       &.header {
-    //         order: 1;
-    //         padding-bottom: 0;
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
 </style>
