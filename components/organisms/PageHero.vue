@@ -24,16 +24,12 @@ export default {
 
 <style lang="scss">
 .hero {
-  // font-size: 1.25rem;
-  // min-height: 30vh;
-  padding-top: 4rem;
-  // padding-bottom: 4rem;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: stretch;
+  padding-top: 6rem;
   position: relative;
   z-index: 100;
+  @media (min-width: $tablet) {
+    padding-top: 8rem;
+  }
   // &--full {
   //   min-height: 100vh;
   //   padding-bottom: 4rem;
@@ -42,16 +38,12 @@ export default {
   //   background-color: $darkBlue-3;
   // }
   h1 {
-    color: $primary;
-    margin-bottom: 3rem;
+    // color: $primary;
+    margin-bottom: 2rem;
   }
   h2 {
     color: rgba($white, 0.5);
     font-weight: 400;
-  }
-  p {
-    // grid-column-start: margin-end;
-    // grid-column-end: outdent-start;
   }
   .anchor {
     display: flex;

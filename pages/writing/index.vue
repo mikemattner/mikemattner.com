@@ -3,15 +3,13 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <div class="columns is-centered">
-            <div class="column is-three-fifths">
-              <Header tag="h1">{{ intro.title }}</Header>
-              <p v-html="intro.body"></p>
-            </div>
-          </div>
+          <Header tag="h1" class="display-2 main-content">{{
+            intro.title
+          }}</Header>
+          <p v-html="intro.body" class="main-content"></p>
         </template>
       </PageHero>
-      <section id="content">
+      <section id="content" class="layout">
         <AllArticles :posts="posts" />
       </section>
     </div>
@@ -51,8 +49,16 @@ export default {
 .section--article {
   min-height: 90vh;
   padding-bottom: 4rem;
-  .hero .columns {
-    margin-bottom: 0;
+  .hero {
+    h1 {
+      margin-bottom: 0rem;
+      @media (min-width: $tablet) {
+        text-indent: -0.75rem;
+      }
+    }
+    p {
+      margin-bottom: 3rem;
+    }
   }
   .article-list {
     list-style: none;

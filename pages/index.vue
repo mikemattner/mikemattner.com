@@ -5,9 +5,9 @@
         <Header tag="h1" class="text-display-large" decorator>{{
           intro.title
         }}</Header>
-        <!-- <div class="self-portrait">
+        <div class="self-portrait">
           <BaseImage :src="`${intro.image}`" :alt="intro.imageAlt" />
-        </div> -->
+        </div>
         <div class="header-content">
           <p v-html="intro.body"></p>
           <p v-html="intro.social" class="social"></p>
@@ -16,7 +16,7 @@
     </PageHero>
     <WavyLines />
     <section id="content" class="section section--writing layout">
-      <div class="margin-start-outdent">
+      <div class="main-content">
         <Header tag="h2" class="display-5">{{ writing.title }}</Header>
         <p>{{ writing.body }}</p>
         <AllArticles :posts="posts" />
@@ -72,20 +72,43 @@ export default {
 .home {
   .hero {
     h1 {
-      align-self: center;
-      grid-column: full-content-start / span 4;
-      grid-row: 1;
+      grid-column: main-content / span 6;
+      color: $primary;
+      @media (min-width: $tablet) {
+        text-shadow: 0 1px 20px rgba($black, 0.5);
+        align-self: center;
+        grid-column: margin-start / span 4;
+        grid-row: 1;
+      }
     }
     .header-content {
-      align-self: start;
-      grid-column: 3 / span 6;
-      grid-row: 2;
+      grid-column: main-content / span 6;
+      @media (min-width: $tablet) {
+        border-radius: 2px;
+        padding: 0 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        background-color: rgba($darkBlue-2, 0.75);
+        align-self: center;
+        grid-column: 3 / span 6;
+        grid-row: 2;
+      }
     }
     .self-portrait {
-      grid-column: 6 / span 3;
-      // grid-row: 1 / -1;
-      grid-row-start: 1;
-      grid-row-end: 2;
+      border-radius: 2px;
+      overflow: hidden;
+      grid-column: main-content / span 6;
+      z-index: -1;
+      @media (min-width: $tablet) {
+        grid-row: 1 / span 2;
+        grid-column: 6 / span 4;
+        align-self: start;
+        // grid-row-start: 1;
+        // grid-row-end: 2;
+      }
+      img {
+        margin: 0;
+      }
     }
   }
   .section {
@@ -93,26 +116,16 @@ export default {
     position: relative;
     overflow: hidden;
 
-    .container {
-      position: relative;
-      z-index: 10;
-    }
-
-    @media (min-width: $tablet) {
-      .container {
-        min-height: 40vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
-
     &--dark {
       background-color: $darkBlue-3;
     }
 
     &--writing {
       padding-top: 0;
+      p {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
       .button {
         margin-top: 2rem;
       }

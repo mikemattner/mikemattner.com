@@ -105,9 +105,9 @@ $transparent-bg: rgba($darkBlue-3, 1);
     }
     &__menu {
       z-index: 1000;
-      // @media (min-width: 768px) {
-      //   display: none;
-      // }
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
     &__menu-button {
       display: flex;
@@ -165,119 +165,121 @@ $transparent-bg: rgba($darkBlue-3, 1);
       }
     }
     &__nav {
-      // font-size: $small;
-      // ul {
-      //   display: flex;
-      //   flex-direction: row;
-      //   align-items: center;
-      //   list-style: none;
-      //   margin: 0 0 0 0;
-      //   padding: 0;
-      //   li {
-      //     margin: 0 0 0 1.5rem;
-      //     padding: 0;
-      //     a {
-      //       // background-image: none;
-
-      //       &.nuxt-link-exact-active {
-      //         color: $primary;
-      //       }
-      //     }
-      //   }
-      // }
-      // @media (max-width: 768px) {
-      font-size: 2.25rem;
-      font-weight: 900;
-      letter-spacing: 0.125rem;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.125s 0.5s ease-in-out, clip-path 0.75s;
-      transform: translateY(-50vh);
-      z-index: 999;
-      background-color: $transparent-bg;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      flex-direction: column;
-      clip-path: circle(25% at 150% -50%);
-
-      .nav__block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+      font-size: 1rem;
       ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         list-style: none;
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0.5rem 0;
+          margin: 0 0 0 1.5rem;
           padding: 0;
-          opacity: 0;
-          transform: translateY(-20px);
-          transition: $transition-cubic;
-        }
-      }
+          a {
+            // background-image: none;
 
-      a {
-        display: block;
-        text-decoration: none;
-        position: relative;
-        background-size: 100% 0px;
-        line-height: 1.2;
-
-        &:hover {
-          background-size: 100% 6px;
-        }
-
-        &.nuxt-link-exact-active {
-          color: $primary;
-          background-size: 100% 0;
-        }
-      }
-      &.active {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1) translateY(0);
-        transition: $transition, clip-path 0.75s;
-        clip-path: circle(100%);
-        h2 {
-          opacity: 1;
-          transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        ul {
-          li {
-            opacity: 1;
-            transform: translateY(0);
-
-            &:nth-child(1) {
-              transition: all 0.25s 0.375s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(2) {
-              transition: all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(3) {
-              transition: all 0.25s 0.625s
-                cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            &:nth-child(4) {
-              transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            &.nuxt-link-exact-active {
+              color: $primary;
             }
           }
         }
       }
-      // }
+      @media (max-width: 768px) {
+        font-size: 2.25rem;
+        font-weight: 900;
+        letter-spacing: 0.125rem;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.125s 0.5s ease-in-out, clip-path 0.75s;
+        transform: translateY(-50vh);
+        z-index: 999;
+        background-color: $transparent-bg;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: column;
+        clip-path: circle(25% at 150% -50%);
+
+        .nav__block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          list-style: none;
+          margin: 0 0 0 0;
+          padding: 0;
+          li {
+            margin: 0.5rem 0;
+            padding: 0;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: $transition-cubic;
+          }
+        }
+
+        a {
+          display: block;
+          text-decoration: none;
+          position: relative;
+          background-size: 100% 0px;
+          line-height: 1.2;
+
+          &:hover {
+            background-size: 100% 6px;
+          }
+
+          &.nuxt-link-exact-active {
+            color: $primary;
+            background-size: 100% 0;
+          }
+        }
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1) translateY(0);
+          transition: $transition, clip-path 0.75s;
+          clip-path: circle(100%);
+          h2 {
+            opacity: 1;
+            transition: all 0.25s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
+          ul {
+            li {
+              opacity: 1;
+              transform: translateY(0);
+
+              &:nth-child(1) {
+                transition: all 0.25s 0.375s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              &:nth-child(2) {
+                transition: all 0.25s 0.5s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              &:nth-child(3) {
+                transition: all 0.25s 0.625s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              &:nth-child(4) {
+                transition: all 0.25s 0.75s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+            }
+          }
+        }
+      }
     }
   }
   // &--pinned {

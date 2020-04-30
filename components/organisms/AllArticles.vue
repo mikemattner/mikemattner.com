@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main-content">
     <ul class="article-list">
       <li
         v-for="post in sortedPosts"

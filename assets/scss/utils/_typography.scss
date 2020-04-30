@@ -37,7 +37,7 @@ h6 {
       width: 3rem;
       height: 1px;
       border-radius: 3px;
-      left: 0;
+      left: 0.5rem;
       bottom: 0;
       background-color: $primary;
     }
@@ -52,10 +52,13 @@ h6 {
 }
 h1,
 .display-1 {
-  font-size: $h1;
+  font-size: $h2;
   margin-top: 0;
   letter-spacing: 0.0125rem;
-  line-height: 0.85;
+  line-height: 1;
+  @media (min-width: $tablet) {
+    font-size: $h1;
+  }
 }
 h2,
 .display-2 {
