@@ -20,7 +20,10 @@
           Topic posted in {{ post.attributes.topic }} on
           <time>{{ formattedDate }}</time>
         </div> -->
-        <!-- <p v-html="post.attributes.description" class="description"></p> -->
+        <p
+          v-html="post.attributes.description"
+          class="post-content description"
+        ></p>
         <div v-html="post.html" class="post-content"></div>
         <div class="links main-content">
           <Button v-if="nextPath" :to="`/${nextPath}`" class="button prev"
@@ -143,7 +146,7 @@ export default {
     font-size: 0.75rem;
     padding: 2rem;
     border-radius: 2px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+    box-shadow: 0 2px 20px rgba($darkBlue-1, 0.15);
     @media (min-width: $tablet) {
       margin-left: -4rem;
       margin-right: -4rem;
@@ -154,6 +157,7 @@ export default {
   }
   .description {
     font-size: 1.5rem;
+    line-height: 1.4;
     // padding-bottom: 1rem;
     // border-bottom: 1px solid rgba($white, 0.1);
   }

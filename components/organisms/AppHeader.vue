@@ -93,7 +93,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
     right: 0;
     width: 100%;
 
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
       padding: 0 2rem;
     }
 
@@ -105,7 +105,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
     }
     &__menu {
       z-index: 1000;
-      @media (min-width: 768px) {
+      @media (min-width: 769px) {
         display: none;
       }
     }

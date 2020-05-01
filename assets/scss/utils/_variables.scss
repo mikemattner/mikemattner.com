@@ -2,8 +2,26 @@
 // Colors
 // ----------------------------------------------------------------------------------------------------------------
 
+// Originals
+// rgba(255,88,1,1.0)
+// rgba(39,47,52,1.0)
+
+// New theme
+// https://coolors.co/333745-e63462-fe5f55-c7efcf-eef5db
+
+$darkBlue: #333745;
+$pink: #e63462; 
+$orange: #fe5f55;
+$green: #c7efcf;
+$green-light: #eef5db;
+
+$white: rgba(255,255,255,1.0);
+$black: rgba(0,0,0,1.0);
+
+$primary: $pink;
+$tertiary: $green-light;
+
 // Shades
-$darkBlue: #333745; //rgba(39,47,52,1.0);
 $darkBlue-1: shade($darkBlue, 60%);
 $darkBlue-2: shade($darkBlue, 50%);
 $darkBlue-3: shade($darkBlue, 40%);
@@ -20,17 +38,6 @@ $darkBlue-11: tint($darkBlue, 50%);
 $darkBlue-12: tint($darkBlue, 60%);
 $darkBlue-13: tint($darkBlue, 70%);
 $darkBlue-14: tint($darkBlue, 80%);
-
-$orange: #e63462; //rgba(255,88,1,1.0)
-$green: #c7efcf;
-$lightGreen: #33B27D;
-
-$white: rgba(255,255,255,1.0);
-$black: rgba(0,0,0,1.0);
-
-$primary: $orange;
-$tertiary: #eef5db;
-
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography

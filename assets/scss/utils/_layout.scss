@@ -31,6 +31,7 @@ $max-width: 25rem;
   grid-column: full-start / span 8;
   @media (min-width: $tablet) {
     grid-column: full-start / span 10;
+    padding: 0 $column-gap;
   }
 }
 .margin-content {
