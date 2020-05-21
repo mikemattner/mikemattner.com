@@ -56,11 +56,11 @@ code {
 }
 ::selection {
   background: $primary;
-  color: $darkBlue-1;
+  color: $white;
 }
 ::-moz-selection {
   background: $primary;
-  color: $darkBlue-1;
+  color: $white;
 }
 img::selection {
   background: transparent;

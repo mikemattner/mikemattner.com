@@ -17,7 +17,6 @@
         </div>
       </template>
     </PageHero>
-    <!-- <WavyLines /> -->
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5">{{ writing.title }}</Header>
@@ -139,7 +138,7 @@ export default {
       position: relative;
       height: 100%;
       background-color: $darkBlue-3;
-      opacity: 0.675;
+      opacity: 1;
       @media (min-width: $tablet) {
         grid-row: 1 / span 2;
         grid-column: 5 / span 5;
@@ -147,7 +146,7 @@ export default {
       }
       img {
         margin: 0;
-        mix-blend-mode: luminosity;
+        mix-blend-mode: overlay;
         @media (min-width: $tablet) {
           @include cover-background(top);
         }
