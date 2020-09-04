@@ -27,7 +27,7 @@
     "frontmatter-markdown-loader": "^2.0.0",
     "js-yaml-loader": "^1.0.1",
     "markdown-it-highlightjs": "^3.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nuxt": "^2.4.0",
     "nuxt-blog-module": "^0.0.2",
     "nuxt-svg-loader": "^1.0.1",
