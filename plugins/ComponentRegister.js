@@ -4,7 +4,8 @@ import AppFooter from '../components/organisms/AppFooter.vue'
 import BrandLogo from '../components/atoms/BrandLogo.vue'
 import ArticleLink from '../components/molecules/ArticleLink.vue'
 import AllArticles from '../components/organisms/AllArticles.vue'
-import Work from '../components/organisms/Work.vue'
+// import Work from '../components/organisms/Work.vue'
+import WorkCard from '../components/work/WorkCard.vue'
 import PageHero from '../components/organisms/PageHero.vue'
 import BaseImage from '../components/media/BaseImage.vue'
 import StaticImage from '../components/media/StaticImage.vue'
@@ -32,5 +33,6 @@ Vue.component('Loading', Loading)
 Vue.component('Button', Button)
 Vue.component('ButtonLink', ButtonLink)
 Vue.component('ScrollLink', ScrollLink)
-Vue.component('Work', Work)
+// Vue.component('Work', Work)
+Vue.component('WorkCard', WorkCard)
 Vue.component('Header', Header)
