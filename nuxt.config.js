@@ -91,6 +91,13 @@ export default {
       '~/assets/scss/utils/_mixins.scss'
     ]
   },
+  content: {
+    markdown: {
+      prism: {
+        theme: false,
+      }
+    }
+  },
   svgLoader: {
     svgoConfig: {
       plugins: [
