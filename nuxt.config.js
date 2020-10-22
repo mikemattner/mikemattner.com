@@ -75,7 +75,8 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxt/content'
   ],
   sitemap: {
     gzip: true,
@@ -89,6 +90,13 @@ export default {
       '~/assets/scss/utils/_variables.scss',
       '~/assets/scss/utils/_mixins.scss'
     ]
+  },
+  content: {
+    markdown: {
+      prism: {
+        theme: false,
+      }
+    }
   },
   svgLoader: {
     svgoConfig: {
