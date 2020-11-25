@@ -2,7 +2,7 @@
   <div class="contact">
     <PageHero full>
       <template v-slot:default>
-        <Header tag="h1" class="display-2">{{ intro.title }}</Header>
+        <Header tag="h1" class="display-3" decorator>{{ intro.title }}</Header>
         <p v-html="intro.body"></p>
       </template>
     </PageHero>
@@ -16,7 +16,7 @@ import {
   skills,
   softwares,
   technical,
-  brands
+  brands,
 } from '~/data/contact.yaml'
 
 export default {
@@ -30,14 +30,14 @@ export default {
       skills,
       softwares,
       technical,
-      brands
+      brands,
     }
   },
   head() {
     return {
-      titleTemplate: `Contact – %s`
+      titleTemplate: `Contact – %s`,
     }
-  }
+  },
 }
 </script>
 
@@ -49,7 +49,7 @@ export default {
     h1 {
       margin-bottom: 0rem;
       @media (min-width: $tablet) {
-        text-indent: -0.25rem;
+        // text-indent: -0.25rem;
       }
     }
     p {

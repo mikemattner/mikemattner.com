@@ -2,7 +2,7 @@
   <headroom class="headroom--surround">
     <div class="navbar" :class="{ active: navOpen }" role="banner">
       <div class="navbar__logo">
-        <nuxt-link to="/"><BrandLogo label/></nuxt-link>
+        <nuxt-link to="/"><BrandLogo label /></nuxt-link>
       </div>
       <div class="navbar__menu">
         <div
@@ -52,23 +52,23 @@ headroom.computed.style = () => ''
 export default {
   name: 'AppHeader',
   components: {
-    headroom
+    headroom,
   },
   data() {
     return {
-      navOpen: false
+      navOpen: false,
     }
   },
   methods: {
-    toggle: function() {
+    toggle() {
       this.navOpen = !this.navOpen
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($darkBlue-3, 1);
+$transparent-bg: rgba($bodyBackground, 1);
 .headroom {
   &--surround {
     position: fixed;
@@ -122,7 +122,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         height: 2px;
         background-color: $white;
         transition: $transition-cubic;
-        border-radius: 2px;
+        border-radius: $radius-small;
         width: 32px;
         display: block;
         &:nth-child(2) {
@@ -174,7 +174,7 @@ $transparent-bg: rgba($darkBlue-3, 1);
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0 0 0 1.5rem;
+          margin: 0 0 0 $defaultPadding;
           padding: 0;
           a {
             // background-image: none;
@@ -284,28 +284,28 @@ $transparent-bg: rgba($darkBlue-3, 1);
   }
   // &--pinned {
   //   .navbar {
-  //     background-color: $darkBlue-3;
+  //     background-color: $bodyBackground;
   //     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   //     height: 3.5rem;
   //   }
   // }
   // &--unpinned {
   //   .navbar {
-  //     background-color: $darkBlue-3;
+  //     background-color: $bodyBackground;
   //     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   //     height: 2.5rem;
   //   }
   // }
   // &--not-top {
   //   .navbar {
-  //     background-color: $darkBlue-3;
+  //     background-color: $bodyBackground;
   //     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   //     @media (min-width: 768px) {
   //       height: 2.5rem;
   //     }
   //     &.active {
   //       box-shadow: none;
-  //       background-color: $darkBlue-3;
+  //       background-color: $bodyBackground;
   //       @media (min-width: 768px) {
   //         background-color: $transparent-bg;
   //       }

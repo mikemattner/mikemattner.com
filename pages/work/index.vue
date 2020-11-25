@@ -30,7 +30,7 @@ import {
   JennAirWorkbook,
   JennAirHub,
   WhirlpoolTopLoad,
-  Craftsman
+  Craftsman,
 } from '~/data/work.yaml'
 
 export default {
@@ -42,14 +42,14 @@ export default {
       JennAirWorkbook,
       JennAirHub,
       WhirlpoolTopLoad,
-      Craftsman
+      Craftsman,
     }
   },
   head() {
     return {
-      titleTemplate: `Work – %s`
+      titleTemplate: `Work – %s`,
     }
-  }
+  },
 }
 </script>
 

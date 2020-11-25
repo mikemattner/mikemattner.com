@@ -22,7 +22,7 @@
   height: 0.625rem;
   width: 0.625rem;
   border: 3px solid $color;
-  border-radius: 2px;
+  border-radius: $radius-small;
   border-right: 0;
   border-top: 0;
   transform: rotate(-45deg);
@@ -36,7 +36,7 @@
   height: 0.625rem;
   width: 0.625rem;
   border: 3px solid $color;
-  border-radius: 2px;
+  border-radius: $radius-small;
   border-right: 0;
   border-top: 0;
   transform: rotate(-135deg);
@@ -187,7 +187,7 @@
 
 @mixin arrow($color: transparent) {
   border: 3px solid $color;
-  border-radius: 2px;
+  border-radius: $radius-small;
   border-right: 0;
   border-top: 0;
   content: " ";
@@ -208,7 +208,7 @@
 
 @mixin block {
   &:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: $defaultPadding;
   }
 }
 

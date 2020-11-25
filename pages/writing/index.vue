@@ -3,14 +3,14 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <Header tag="h1" class="display-2 main-content">{{
+          <Header tag="h1" class="display-3 main-content" decorator>{{
             intro.title
           }}</Header>
           <p v-html="intro.body" class="main-content"></p>
         </template>
       </PageHero>
       <section id="content" class="layout">
-        <AllArticles :posts="posts" />
+        <AllArticles :posts="writing" />
       </section>
     </div>
   </section>
@@ -23,25 +23,29 @@ export default {
   scrollToTop: true,
   data() {
     return {
-      intro
+      intro,
     }
   },
-  async asyncData() {
-    // create context via webpack to map over all blog posts
-    const allPosts = await require.context('~/articles/', true, /\.md$/)
-    const posts = allPosts.keys().map(key => {
-      // give back the value of each post context
-      return allPosts(key)
-    })
+  async asyncData({ $content, app }) {
+    let writing
+    try {
+      writing = await $content('writing').sortBy('date', 'desc').fetch()
+    } catch (error) {
+      try {
+        writing = await $content('writing').sortBy('date', 'desc').fetch()
+      } catch (error) {
+        return error({ statusCode: 404, message: 'Page not found' })
+      }
+    }
     return {
-      posts
+      writing,
     }
   },
   head() {
     return {
-      titleTemplate: `Writing – %s`
+      titleTemplate: `Writing – %s`,
     }
-  }
+  },
 }
 </script>
 
@@ -53,7 +57,7 @@ export default {
     h1 {
       margin-bottom: 0rem;
       @media (min-width: $tablet) {
-        text-indent: -0.75rem;
+        // text-indent: -0.75rem;
       }
     }
     p {

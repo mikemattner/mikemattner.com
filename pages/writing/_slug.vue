@@ -1,0 +1,193 @@
+<template>
+  <section class="section section--single--article">
+    <article :key="$route.params.slug">
+      <PageHero dark>
+        <template v-slot:default>
+          <Header
+            tag="h1"
+            class="display-4 full-width"
+            v-html="writing.title"
+            decorator
+            center
+          ></Header>
+          <div class="meta full-width">
+            Posted
+            <time
+              ><strong>{{ formattedDate }}</strong></time
+            >
+            in
+            <span v-for="item in writing.tag" :key="item">{{ item }}</span>
+          </div>
+        </template>
+      </PageHero>
+      <div id="content">
+        <nuxt-content :document="writing" />
+        <div class="layout">
+          <div class="links main-content">
+            <Button
+              v-if="prev"
+              :to="`/writing/${prev.slug}`"
+              class="button prev"
+              >Previous Article</Button
+            >
+            <Button
+              v-if="next"
+              :to="`/writing/${next.slug}`"
+              class="button next"
+              >Next Article</Button
+            >
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</template>
+
+<script>
+export default {
+  transition: 'fade',
+  scrollToTop: true,
+  computed: {
+    formattedDate() {
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+      }
+      return new Date(this.writing.date).toLocaleDateString('en-us', options)
+    },
+  },
+  async asyncData({ $content, params }) {
+    try {
+      const writing = await $content('writing', params.slug).fetch()
+
+      const [prev, next] = await $content('writing')
+        .only(['date', 'slug'])
+        .sortBy('date', 'asc')
+        .surround(params.slug)
+        .fetch()
+
+      return {
+        writing,
+        prev,
+        next,
+      }
+    } catch (err) {
+      /* eslint-disable */
+      console.debug('No Post:', err)
+      /* eslint-enable */
+      return false
+    }
+  },
+  head() {
+    if (!this.post) return
+    return {
+      titleTemplate: `${this.writing.title} – %s`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.writing.title,
+        },
+      ],
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+.section--single--article {
+  min-height: 90vh;
+  .hero {
+    text-align: center;
+    h1 {
+      margin-bottom: 0.75rem;
+    }
+  }
+  .nuxt-content-highlight {
+    position: relative;
+    background-color: $darkShadeBackground;
+    font-size: 0.75rem;
+    padding: $defaultPadding;
+    border-radius: 2px;
+    box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
+    .filename {
+      position: absolute;
+      right: $defaultPadding/2;
+      top: $defaultPadding/2;
+      font-size: 0.75rem;
+      padding: $defaultPadding/5;
+      background-color: $bodyBackground;
+      border-radius: $radius-small;
+    }
+  }
+  pre {
+    background-color: transparent;
+    white-space: pre-wrap;
+    code {
+      background-color: transparent;
+    }
+  }
+  .description {
+    font-size: $h5;
+    line-height: $scale;
+    // padding-bottom: 1rem;
+    // border-bottom: 1px solid rgba($white, 0.1);
+  }
+  .meta {
+    font-size: $small;
+    margin: 0 0 2rem;
+    // color: $tertiary;
+    color: tint($darkBlue, 20%);
+    // text-transform: uppercase;
+    // .bull {
+    //   margin: 0 0.25rem;
+    // }
+    // .tag {
+    //   font-size: 0.675rem;
+    //   letter-spacing: 1.5px;
+    //   text-transform: uppercase;
+    // }
+  }
+  .links {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid $borderColor-light;
+    text-align: center;
+    font-size: 0.75rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 20px 1fr;
+    }
+
+    a.button {
+      align-self: stretch;
+      flex-grow: 1;
+      @media (max-width: 768px) {
+        margin: 0.5rem 0;
+      }
+      @media (min-width: 768px) {
+        width: 200px;
+        &.prev {
+          grid-column: 1;
+        }
+        &.next {
+          grid-column: 3;
+          justify-self: end;
+        }
+      }
+    }
+  }
+  h2 {
+    font-size: $h6;
+  }
+  h3 {
+    font-size: $h6;
+  }
+}
+</style>

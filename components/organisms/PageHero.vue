@@ -4,7 +4,7 @@
       'hero layout',
       full == true ? 'hero--full' : '',
       bold == true ? 'hero--bold' : '',
-      dark == true ? 'hero--dark' : ''
+      dark == true ? 'hero--dark' : '',
     ]"
   >
     <slot></slot>
@@ -17,8 +17,8 @@ export default {
     full: Boolean,
     dark: Boolean,
     bold: Boolean,
-    arrow: Boolean
-  }
+    arrow: Boolean,
+  },
 }
 </script>
 
@@ -35,7 +35,7 @@ export default {
   //   padding-bottom: 4rem;
   // }
   // &--dark {
-  //   background-color: $darkBlue-3;
+  //   background-color: $bodyBackground;
   // }
   h1 {
     color: $primary;

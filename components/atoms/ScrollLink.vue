@@ -9,8 +9,8 @@ export default {
   props: {
     href: {
       type: String,
-      default: '#content'
-    }
+      default: '#content',
+    },
   },
   computed: {
     active() {
@@ -18,7 +18,7 @@ export default {
       return (
         this.href.replace(/\/$/, '') === this.$route.path.replace(/\/$/, '')
       )
-    }
+    },
   },
   methods: {
     click(event) {
@@ -43,7 +43,7 @@ export default {
       if (!element) return false
 
       return true
-    }
-  }
+    },
+  },
 }
 </script>

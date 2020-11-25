@@ -7,19 +7,19 @@ export default {
   props: {
     src: {
       type: String,
-      required: true
+      required: true,
     },
     alt: {
       default: '',
       type: String,
-      required: false
-    }
+      required: false,
+    },
   },
   data() {
     return {
-      placeholder: 'img/Rectangle.png'
+      placeholder: 'img/Rectangle.png',
     }
-  }
+  },
 }
 </script>
 

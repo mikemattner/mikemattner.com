@@ -1,5 +1,11 @@
 <template>
-  <component :is="tag" :class="{ decorator: decorator }">
+  <component
+    :is="tag"
+    :class="[
+      decorator == true ? 'decorator' : '',
+      center == true ? 'decorator--center' : '',
+    ]"
+  >
     <slot />
   </component>
 </template>
@@ -9,9 +15,10 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'h3'
+      default: 'h3',
     },
-    decorator: Boolean
-  }
+    decorator: Boolean,
+    center: Boolean,
+  },
 }
 </script>

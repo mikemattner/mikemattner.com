@@ -10,11 +10,11 @@ import Lines from '@/assets/img/wavy-lines.svg'
 export default {
   name: 'WavyLines',
   components: {
-    Lines
+    Lines,
   },
   props: {
-    flip: Boolean
-  }
+    flip: Boolean,
+  },
 }
 </script>
 

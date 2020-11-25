@@ -21,14 +21,14 @@ export default class ButtonBubble {
     Object.assign(this.bubble.style, {
       left: `${offsetX}px`,
       top: `${offsetY}px`,
-      padding: `${radius}px`
+      padding: `${radius}px`,
     })
   }
 
   centerBubble() {
     this.positionBubble({
       offsetX: this.button.offsetWidth / 2,
-      offsetY: this.button.offsetHeight / 2
+      offsetY: this.button.offsetHeight / 2,
     })
   }
 }

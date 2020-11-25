@@ -3,7 +3,7 @@
   box-shadow: inset 0 0 1px red;
 }*/
 body {
-  background-color: $darkBlue-3;
+  background-color: $bodyBackground;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 0;
@@ -12,18 +12,19 @@ a {
   color: $white;
   transition: $transition;
   text-decoration: none;
-  background-image: linear-gradient($primary, $primary);
+  background-image: $linearGradient;
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 100% 1px;
 
   &:hover {
-    color: $white;
-    background-size: 100% 6px;
+    color: $primary;
+    background-size: 100% 1px;
+    background-image: $linearGradient;
   }
 }
 hr {
-  background-color: $darkBlue-7;
+  background-color: $borderColor-light;
   width: 100%;
   height: 1px;
   border: 0;
@@ -43,14 +44,13 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: $defaultPadding;
 }
 code {
   font-family: $source-code-font;
   font-size: 0.9rem;
-  color: $darkBlue-11;
-  background-color: $darkBlue-3;
-  border-radius: 2px;
+  color: $codeColor;
+  border-radius: $radius-small;
   padding-left: 2px;
   padding-right: 2px;
 }

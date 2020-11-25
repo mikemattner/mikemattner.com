@@ -764,7 +764,7 @@ $column-gap: 2rem !default;
   }
 
   &:not(:last-child) {
-    margin-bottom: calc(1.5rem - #{$column-gap});
+    margin-bottom: calc($defaultPadding - #{$column-gap});
   }
 
   // Modifiers
@@ -783,7 +783,7 @@ $column-gap: 2rem !default;
     }
 
     &:not(:last-child) {
-      margin-bottom: 1.5rem;
+      margin-bottom: $defaultPadding;
     }
 
     &:last-child {

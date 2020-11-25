@@ -10,17 +10,17 @@ import SmallWave from '@/assets/img/small-wave.svg'
 export default {
   name: 'WaveRight',
   components: {
-    SmallWave
+    SmallWave,
   },
   props: {
-    flip: Boolean
-  }
+    flip: Boolean,
+  },
 }
 </script>
 
 <style scoped lang="scss">
 .wave-it {
-  fill: $darkBlue-3;
+  fill: $borderColor-light;
   margin-bottom: -1rem;
   @media (min-width: $tablet) {
     margin-bottom: -2rem;
