@@ -30,10 +30,11 @@ export default {
   @media (min-width: $tablet) {
     padding-top: 8rem;
   }
-  // &--full {
-  //   min-height: 100vh;
-  //   padding-bottom: 4rem;
-  // }
+  &--full {
+    // min-height: 100vh;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid $borderColor-light;
+  }
   // &--dark {
   //   background-color: $bodyBackground;
   // }

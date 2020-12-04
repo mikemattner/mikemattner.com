@@ -12,7 +12,10 @@
       <section id="content" class="layout">
         <div class="main-content">
           <AllArticles :posts="writing" />
-          <Button to="/writing/" class="button">Back to Articles</Button>
+          <Button to="/writing/" class="button"
+            ><fa-icon icon="chevron-left" size="sm"></fa-icon> Back to
+            Articles</Button
+          >
         </div>
       </section>
     </div>

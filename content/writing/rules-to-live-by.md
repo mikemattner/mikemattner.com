@@ -11,9 +11,9 @@ category:
     - Entries
 tag:
     - Wisdom
-post_format: []
-mm_reference:
-    - 'Sourced from the article <a href="https://kottke.org/18/02/a-list-of-25-principles-of-adult-behavior-by-john-perry-barlow"><em>A list of 25 Principles of Adult Behavior by John Perry Barlow</em></a> from the venerable <a href="https://kottke.org">Kottke</a>.'
+mm_link:
+    - https://kottke.org/18/02/a-list-of-25-principles-of-adult-behavior-by-john-perry-barlow
+linktitle: Via Kottke
 ---
 These are from John Perry Barlow, but what a fine, fine list this is.
 

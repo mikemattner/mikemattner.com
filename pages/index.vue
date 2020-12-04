@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero bold>
+    <PageHero bold full>
       <template v-slot:default>
         <Header
           tag="h1"

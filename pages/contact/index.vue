@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <PageHero full>
+    <PageHero>
       <template v-slot:default>
         <Header tag="h1" class="display-3" decorator>{{ intro.title }}</Header>
         <p v-html="intro.body"></p>

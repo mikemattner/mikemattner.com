@@ -24,7 +24,7 @@
               </li>
             </ul>
             <div v-if="writing.mm_link" class="article-link" target="_blank">
-              <ButtonLink :href="writing.mm_link[0]"
+              <ButtonLink :href="writing.mm_link[0]" target="_blank"
                 ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
                 ><span v-else>Visit Link</span>
                 <fa-icon icon="external-link-alt" size="sm"></fa-icon
@@ -172,6 +172,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 0.5rem;
       .button {
         font-size: $small;
         padding: 5px 10px;
