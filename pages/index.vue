@@ -2,7 +2,12 @@
   <div class="home">
     <PageHero bold>
       <template v-slot:default>
-        <Header tag="h1" class="display-3" decorator>{{ intro.title }}</Header>
+        <Header
+          tag="h1"
+          class="display-3"
+          v-html="intro.title"
+          decorator
+        ></Header>
         <div class="header-content">
           <p v-html="intro.body"></p>
           <p v-html="intro.social" class="social"></p>
@@ -97,8 +102,8 @@ export default {
     &--writing {
       padding-top: 2rem;
       p {
-        margin-top: 0;
-        margin-bottom: 2rem;
+        // margin-top: 0;
+        // margin-bottom: 2rem;
       }
       .button {
         margin-top: 2rem;

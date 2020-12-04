@@ -10,7 +10,7 @@ id: 9941
 category:
     - Entries
 tag:
-    - CSS
+    - Development
 post_format: []
 ---
 I’ve been playing around with fluid type for a while and happened upon a pen by…I don’t remember who. I forked it a while ago, but in essence we’re simply attempting to scale type based on viewport size.

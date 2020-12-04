@@ -11,7 +11,7 @@ thumbnail: ../../../../uploads/2018/07/hail-2880x1800-2018-v1-150x150.png
 category:
     - Images
 tag:
-    - 'Michigan Football'
+    - Sports
 post_format:
     - Image
 mm_reference:

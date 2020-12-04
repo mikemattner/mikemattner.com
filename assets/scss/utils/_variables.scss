@@ -9,22 +9,28 @@
 // New theme
 // https://coolors.co/333745-e63462-fe5f55-c7efcf-eef5db
 
-$darkBlue: #1a1a2e; //#333745;
-$pink: #e94560; 
+$darkBlue: #2B2D42; //#333745;
+$blueSteel: #8D99AE;
+$red: #EF233C;
+$angerRed: #D90429;
 $white: rgba(255,255,255,1.0);
 $black: rgba(0,0,0,1.0);
 
-$primary: $pink;
-$tertiary: #0f3460;
+$primary: $red;
+$tertiary: $blueSteel;
 
-$codeColor: tint($darkBlue, 50%);
-$bodyColor: tint($darkBlue, 80%);
+$codeColor: #EDF2F4;
+$bodyColor: #EDF2F4;
 $bodyBackground: shade($darkBlue, 40%);
 $borderColor-light: tint($darkBlue, 10%);
-$darkShadeBackground: shade($darkBlue, 90%);
+$darkShadeBackground: shade($darkBlue, 60%);
+
+$tagColor: $blueSteel;
 
 $linearGradient: linear-gradient(to right, #e94560,#ad2564,#721f59);
 $rightTopGradient: linear-gradient(to right top, #e94560, #ad2564, #721f59);
+
+$solidGradient: linear-gradient(to right, $primary, $primary);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography
@@ -60,7 +66,7 @@ $fullhd-enabled: true !default;
 // Miscellaneous
 // ----------------------------------------------------------------------------------------------------------------
 
-$transition: all 0.25s ease-in-out;
+$transition: all 0.125s ease-in-out;
 $transition-cubic: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $easing: ease-out !default;
 $radius-small: 2px !default;

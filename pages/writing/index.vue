@@ -3,11 +3,26 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <Header tag="h1" class="display-3 main-content" decorator>{{
-            intro.title
-          }}</Header>
-          <p v-html="intro.body" class="main-content"></p>
-        </template>
+          <div class="main-content">
+            <Header tag="h1" class="display-3 main-content" decorator>{{
+              intro.title
+            }}</Header>
+            <!-- <p v-html="intro.body" class="main-content"></p> -->
+            <div>
+              <p>
+                I like to write about:
+                <span class="tags">
+                  <span v-for="tag in tags" :key="tag">
+                    <a :href="`/tag/${formattedTag(tag.name)}`">{{
+                      tag.name
+                    }}</a> </span
+                  >. Whether I provide much substance to those topics is up for
+                  debate.
+                </span>
+              </p>
+            </div>
+          </div></template
+        >
       </PageHero>
       <section id="content" class="layout">
         <AllArticles :posts="writing" />
@@ -26,18 +41,27 @@ export default {
       intro,
     }
   },
+  methods: {
+    formattedTag(tag) {
+      return tag.toLowerCase().trim()
+    },
+  },
   async asyncData({ $content, app }) {
     let writing
+    let tags
     try {
+      tags = await $content('tag').fetch()
       writing = await $content('writing').sortBy('date', 'desc').fetch()
     } catch (error) {
       try {
+        writing = await $content('writing').sortBy('date', 'desc').fetch()
         writing = await $content('writing').sortBy('date', 'desc').fetch()
       } catch (error) {
         return error({ statusCode: 404, message: 'Page not found' })
       }
     }
     return {
+      tags,
       writing,
     }
   },
@@ -68,6 +92,22 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+  .tags {
+    span {
+      display: inline-block;
+      margin-right: 0.25em;
+
+      &:after {
+        content: ',';
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          content: '';
+        }
+      }
+    }
   }
   .meta {
     font-size: 0.675rem;

@@ -3,20 +3,33 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <Header
-            tag="h1"
-            class="display-4 full-width"
-            v-html="writing.title"
-            decorator
-            center
-          ></Header>
-          <div class="meta full-width">
+          <div class="meta top full-width">
             Posted
             <time
               ><strong>{{ formattedDate }}</strong></time
             >
-            in
-            <span v-for="item in writing.tag" :key="item">{{ item }}</span>
+          </div>
+          <Header
+            tag="h1"
+            class="display-4 full-width"
+            v-html="writing.title"
+            center
+          ></Header>
+          <div class="meta full-width">
+            <ul class="tags">
+              <li v-for="item in writing.tag" :key="item" :value="link">
+                <nuxt-link :to="`/tag/${formattedTag(item)}`">{{
+                  item
+                }}</nuxt-link>
+              </li>
+            </ul>
+            <div v-if="writing.mm_link" class="article-link" target="_blank">
+              <ButtonLink :href="writing.mm_link[0]"
+                ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
+                ><span v-else>Visit Link</span>
+                <fa-icon icon="external-link-alt" size="sm"></fa-icon
+              ></ButtonLink>
+            </div>
           </div>
         </template>
       </PageHero>
@@ -28,14 +41,21 @@
               v-if="prev"
               :to="`/writing/${prev.slug}`"
               class="button prev"
-              >Previous Article</Button
+              ><fa-icon icon="chevron-left" size="sm"></fa-icon> Previous
+              Article</Button
             >
+            <!-- <Button v-else to="/writing/" class="button prev"
+              >Back to Articles
+            </Button> -->
             <Button
               v-if="next"
               :to="`/writing/${next.slug}`"
               class="button next"
-              >Next Article</Button
-            >
+              >Next Article <fa-icon icon="chevron-right" size="sm"></fa-icon
+            ></Button>
+            <!-- <Button v-else to="/writing/" class="button next"
+              >Back to Articles
+            </Button> -->
           </div>
         </div>
       </div>
@@ -56,6 +76,11 @@ export default {
         timeZone: 'UTC',
       }
       return new Date(this.writing.date).toLocaleDateString('en-us', options)
+    },
+  },
+  methods: {
+    formattedTag(tag) {
+      return tag.toLowerCase().trim()
     },
   },
   async asyncData({ $content, params }) {
@@ -138,17 +163,51 @@ export default {
   .meta {
     font-size: $small;
     margin: 0 0 2rem;
-    // color: $tertiary;
-    color: tint($darkBlue, 20%);
-    // text-transform: uppercase;
-    // .bull {
-    //   margin: 0 0.25rem;
-    // }
-    // .tag {
-    //   font-size: 0.675rem;
-    //   letter-spacing: 1.5px;
-    //   text-transform: uppercase;
-    // }
+    color: tint($darkBlue, 40%);
+    &.top {
+      margin: 0;
+    }
+    .article-link {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .button {
+        font-size: $small;
+        padding: 5px 10px;
+        svg {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+    ul {
+      &.tags {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+          font-size: $small;
+          margin: $defaultPadding/5;
+          a {
+            display: block;
+            background-image: none;
+            padding: 2px 10px;
+            border-radius: 10px;
+            background-color: $tagColor;
+            color: shade($tagColor, 80%);
+            font-weight: 700;
+            &:hover {
+              background-image: none;
+              background-color: $primary;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
   }
   .links {
     margin-top: 2rem;

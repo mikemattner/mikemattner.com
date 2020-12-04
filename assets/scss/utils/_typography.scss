@@ -27,6 +27,11 @@ h6 {
     font-family: $sans-serif-font;
     font-size: 0.375em;
     text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.01rem;
+    font-weight: 400;
+    color: $blueSteel;
+    // color: tint($darkBlue, 30%);
   }
 
   &.decorator {
@@ -59,15 +64,19 @@ h1,
   font-size: $h2;
   margin-top: 0;
   letter-spacing: 0.0125rem;
-  line-height: 1.2;
+  line-height: 1;
 
-  @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
-    background: $linearGradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+  small {
+    font-size: 0.175em;
   }
+
+  // @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
+  //   background: $linearGradient;
+  //   background-clip: text;
+  //   -webkit-background-clip: text;
+  //   color: transparent;
+  //   -webkit-text-fill-color: transparent;
+  // }
 
   @media (min-width: $tablet) {
     font-size: $h1;

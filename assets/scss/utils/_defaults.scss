@@ -12,15 +12,15 @@ a {
   color: $white;
   transition: $transition;
   text-decoration: none;
-  background-image: $linearGradient;
+  background-image: $solidGradient;
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 100% 1px;
 
   &:hover {
-    color: $primary;
-    background-size: 100% 1px;
-    background-image: $linearGradient;
+    color: $white;
+    background-size: 100% 100%;
+    background-image: $solidGradient;
   }
 }
 hr {

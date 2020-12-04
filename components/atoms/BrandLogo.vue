@@ -32,8 +32,8 @@ export default {
     width: 1.75rem;
     padding: $defaultPadding/8;
     border-radius: 50%;
-    border: 1px solid rgba($white, 1);
-    background: $darkShadeBackground;
+    border: 1px solid $blueSteel;
+    // background: $darkShadeBackground;
     z-index: 10;
     transition: $transition;
 
@@ -63,11 +63,12 @@ export default {
     &:hover {
       .brand-logo__image {
         border: 1px solid rgba($primary, 1);
+        background-color: $primary;
         .circle-shape {
           fill: rgba($primary, 1);
         }
         .logo-shape {
-          fill: $primary;
+          fill: $white;
         }
       }
       .brand-logo__type {

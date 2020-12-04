@@ -10,13 +10,13 @@ id: 9928
 category:
     - Entries
 tag:
-    - Dotfiles
+    - Development
 ---
 I accidentally ran into a bit of laziness during my development process that turned into a productivity boon, and should prove to be absolutely essential during the setup of any new Mac I might purchase in the future.
 
 Let me preface this by saying **I am not** a native of the command line–by any stretch. I find it to be cumbersome and annoying to remember commands and all of the possible flags that might apply to them. Even something as simple as showing hidden files on the Mac can be obnoxious:
 
-```bash
+```bash[terminal]
 # Show hidden files
 --- ~ » defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder
 
@@ -28,7 +28,7 @@ What if I could just type `show` or `hide` and be done with it? This is where al
 
 At first I created a simple `.aliases` file and started to add what I needed:
 
-```bash
+```bash[.aliases]
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"

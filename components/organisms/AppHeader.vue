@@ -181,6 +181,10 @@ $transparent-bg: rgba($bodyBackground, 1);
 
             &.nuxt-link-exact-active {
               color: $primary;
+
+              &:hover {
+                color: $white;
+              }
             }
           }
         }

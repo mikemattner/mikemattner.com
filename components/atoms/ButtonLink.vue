@@ -1,5 +1,5 @@
 <template>
-  <a :href="href" :class="'button'" rel="nofollow" target="_blank">
+  <a :href="href" :class="'button'" rel="nofollow" :target="target">
     <slot />
   </a>
 </template>
@@ -12,6 +12,10 @@ export default {
     href: {
       type: String,
       default: '#',
+    },
+    target: {
+      type: String,
+      default: '',
     },
   },
   mounted() {

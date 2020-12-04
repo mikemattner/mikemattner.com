@@ -79,9 +79,9 @@ export default {
       color: $primary;
       // font-style: italic;
     }
-    .article-meta {
-      color: $primary;
-    }
+    // .article-meta {
+    //   color: $primary;
+    // }
   }
   &.article--link {
     width: 100%;
@@ -102,7 +102,7 @@ export default {
     line-height: 1;
     flex: 0 0 100px;
     text-transform: uppercase;
-    color: tint($darkBlue, 30%);
+    color: $blueSteel;
     transition: $transition;
   }
 }
