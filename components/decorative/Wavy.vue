@@ -10,17 +10,17 @@ import Wave from '@/assets/img/wavy.svg'
 export default {
   name: 'Wavy',
   components: {
-    Wave
+    Wave,
   },
   props: {
-    flip: Boolean
-  }
+    flip: Boolean,
+  },
 }
 </script>
 
 <style scoped lang="scss">
 .wavy {
-  fill: $darkBlue-3;
+  fill: $borderColor-light;
   margin-bottom: -1rem;
   @media (min-width: $tablet) {
     margin-bottom: -2rem;

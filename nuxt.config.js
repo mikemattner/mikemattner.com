@@ -1,30 +1,5 @@
-import path from 'path'
-/* eslint-disable */
-const glob = require('glob')
-const hljs = require('highlight.js')
-const md = require('markdown-it')({
-  html: true,
-  highlight: function(str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value
-      } catch (__) {}
-    }
-
-    return '' // use external default escaping
-  }
-})
-/* eslint-enable */
-let files = glob.sync( '**/*.md' , { cwd: 'articles' });
-
-function getSlugs(post, _) {
-  let slug = post.substr(0, post.lastIndexOf('.'));
-  return `/${slug}`;
-}
-
 export default {
-  mode: 'universal',
-
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -39,7 +14,13 @@ export default {
         content: 'UX designer & developer in Michigan'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {        
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap",
+      }
+    ]
   },
 
   /*
@@ -51,7 +32,7 @@ export default {
    ** Global CSS
    */
   css: [
-    '@/node_modules/highlight.js/styles/nord.css',
+    // '@/node_modules/highlight.js/styles/nord.css',
     '@/assets/scss/app.scss'
   ],
 
@@ -94,7 +75,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: false,
+        theme: 'prism-themes/themes/prism-nord.css',
       }
     }
   },
@@ -149,24 +130,6 @@ export default {
         test: /\.yaml$/,
         loader: 'js-yaml-loader'
       })
-      config.module.rules.push({
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        include: path.resolve(__dirname, 'articles'),
-        options: {
-          markdown: body => {
-            return md.render(body)
-          }
-        }
-      })
-    }
-  },
-  /**
-   * Dynamic route generation
-   */
-  generate: {
-    routes: function() {
-      return files.map(getSlugs)
     }
   }
 }

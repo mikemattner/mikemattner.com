@@ -3,7 +3,7 @@
     :class="[
       'columns is-vcentered is--work',
       right == true ? 'right' : '',
-      left == true ? 'left' : ''
+      left == true ? 'left' : '',
     ]"
   >
     <div class="column is-6-desktop is-half-tablet work-imagery">
@@ -30,9 +30,7 @@
         </li>
       </ul>
       <p v-if="info.link">
-        <ButtonLink :href="info.link" class="button">
-          View Work
-        </ButtonLink>
+        <ButtonLink :href="info.link" class="button"> View Work </ButtonLink>
       </p>
     </div>
   </div>
@@ -45,9 +43,9 @@ export default {
     left: Boolean,
     info: {
       type: Object,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 }
 </script>
 
@@ -62,9 +60,9 @@ export default {
     margin-right: 0;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    border-radius: 2px;
+    border-radius: $radius-small;
     overflow: hidden;
-    background-color: $darkBlue-1;
+    background-color: $darkShadeBackground;
     box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
       -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);
   }
@@ -79,7 +77,7 @@ export default {
         right: 0;
         bottom: 0;
         top: 0;
-        background-color: $darkBlue-1;
+        background-color: $darkShadeBackground;
         opacity: 0.75;
         z-index: 10;
         transition: all 0.5s ease-in-out;
@@ -155,7 +153,7 @@ export default {
       }
       @media (min-width: $widescreen) {
         margin-left: -4rem;
-        background-color: $darkBlue-1;
+        background-color: $darkShadeBackground;
       }
     }
   }
@@ -166,9 +164,9 @@ export default {
       // padding: 0;
     }
     @media (min-width: $tablet) {
-      background-color: $darkBlue-1;
+      background-color: $darkShadeBackground;
       padding: 3rem 3rem;
-      border-radius: 2px;
+      border-radius: $radius-small;
       box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
         -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);
     }
@@ -176,13 +174,13 @@ export default {
   .work-imagery {
     padding-top: 0;
     transition: all 0.5s ease-in-out;
-    // background-color: $darkBlue-1;
+    // background-color: $darkShadeBackground;
     @media (min-width: $tablet) {
       // padding-bottom: 0;
       // padding-left: 0;
       // padding-right: 0;
       padding: 0;
-      border-radius: 2px;
+      border-radius: $radius-small;
       box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.15),
         -2px 2px 20px rgba(0, 0, 0, 0.15), -4px 4px 50px rgba(0, 0, 0, 0.5);
     }
@@ -232,7 +230,7 @@ export default {
       border-radius: 20px;
       font-size: 0.675rem;
       text-transform: uppercase;
-      background-color: $darkBlue-3;
+      background-color: $bodyBackground;
       color: rgba($white, 0.35);
     }
   }

@@ -1,33 +1,41 @@
 html {
-  color: $darkBlue-13;
+  color: $bodyColor;
   font-family: $sans-serif-font;
   font-weight: 400;
   font-size: calc(14px + 0.5vw);
   line-height: 1.65;
   letter-spacing: 0.0125rem;
+
   @media (min-width: 1600px) {
     // font-size: 22px;
   }
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: $serif-font;
+  font-weight: 500;
   line-height: 1.2;
   color: $white;
-  margin: 2.75rem 0 1.05rem;
+  margin: 1.75rem 0 0.05rem;
 
   small {
     font-family: $sans-serif-font;
     font-size: 0.375em;
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.01rem;
+    font-weight: 400;
+    color: $blueSteel;
+    // color: tint($darkBlue, 30%);
   }
 
   &.decorator {
-    padding-bottom: 1.5rem;
+    padding-bottom: $defaultPadding;
     position: relative;
 
     &:after {
@@ -36,8 +44,8 @@ h6 {
       position: absolute;
       width: 3rem;
       height: 1px;
-      border-radius: 3px;
-      left: 0.5rem;
+      border-radius: $radius-small;
+      left: 0;
       bottom: 0;
       background-color: $primary;
     }
@@ -50,67 +58,94 @@ h6 {
     }
   }
 }
+
 h1,
 .display-1 {
   font-size: $h2;
   margin-top: 0;
   letter-spacing: 0.0125rem;
   line-height: 1;
+
+  small {
+    font-size: $small;
+  }
+
+  // @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
+  //   background: $linearGradient;
+  //   background-clip: text;
+  //   -webkit-background-clip: text;
+  //   color: transparent;
+  //   -webkit-text-fill-color: transparent;
+  // }
+
   @media (min-width: $tablet) {
     font-size: $h1;
   }
 }
+
 h2,
 .display-2 {
   font-size: $h2;
 }
+
 h3,
 .display-3 {
   font-size: $h3;
 }
+
 h4,
 .display-4 {
   font-size: $h4;
 }
+
 h5,
 .display-5 {
   font-size: $h5;
 }
+
 h6,
 .display-6 {
-  font-size: 1rem;
+  font-size: $h6;
 }
+
 small,
 .text-small {
   font-size: $small;
 }
+
 .text-display-large {
   font-size: $h2;
   letter-spacing: 0.0125rem;
   line-height: 0.85;
+
   @media (min-width: $tablet) {
     font-size: $huge;
   }
 }
+
 @media (min-width: $tablet) {
   .text-indent-2rem {
     text-indent: -2rem;
   }
+
   .text-indent-3rem {
     text-indent: -3rem;
   }
+
   .text-indent-4rem {
     text-indent: -4rem;
   }
 }
+
 ul,
 ol {
   margin-left: 0;
   padding-left: 1.125em;
 }
+
 blockquote {
   padding-left: 30px;
   position: relative;
-  border-left: 3px solid $darkBlue-8;
+  border-left: 3px solid $borderColor-light;
   margin: 1rem 0;
 }

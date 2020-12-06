@@ -1,13 +1,14 @@
 <template>
   <article :class="['single-link', archive == true ? 'article--link' : '']">
-    <nuxt-link :to="`/${formatSlug(article.attributes.title)}`">
+    <nuxt-link :to="`/writing/${formatSlug(article.slug)}`">
       <div class="article-meta">
-        <time>{{ formatDate(article.attributes.date) }}</time>
+        <time>{{ formatDate(article.date) }}</time>
       </div>
-      <Header tag="h3" class="article-title display-6">{{
-        article.attributes.title
-      }}</Header>
-      <!-- <p class="article-description">{{ article.attributes.description }}</p> -->
+      <Header
+        tag="h3"
+        class="article-title display-6"
+        v-html="article.title"
+      ></Header>
     </nuxt-link>
   </article>
 </template>
@@ -17,25 +18,28 @@ export default {
   props: {
     article: {
       type: Object,
-      required: true
+      required: true,
     },
-    archive: Boolean
+    archive: Boolean,
   },
   methods: {
     formatDate(date) {
-      return new Date(date).toDateString().slice(4)
+      const options = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        timeZone: 'UTC',
+      }
+      return new Date(date).toLocaleDateString('en-us', options)
     },
     formatExcerpt(body) {
       return body.slice(0, 200).trimEnd()
     },
     formatSlug(title) {
       const regex = / /gi
-      return title
-        .toLowerCase()
-        .trim()
-        .replace(regex, '-')
-    }
-  }
+      return title.toLowerCase().trim().replace(regex, '-')
+    },
+  },
 }
 </script>
 
@@ -47,36 +51,37 @@ export default {
   position: relative;
   overflow: hidden;
   // @media (min-width: $tablet) {
-  //   padding: 1.5rem 0;
+  //   padding: $defaultPadding 0;
   // }
   a {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: baseline;
     background-image: none;
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0 0;
-    padding: 1.5rem 0.25rem;
-    border-bottom: 1px solid rgba($white, 0.05);
+    padding: $defaultPadding $defaultPadding/5;
+    border-bottom: 1px solid tint($darkBlue, 2%);
   }
   h3 {
     transition: $transition;
     font-size: 1rem;
+    line-height: 1;
     margin: 0;
     transition: all 0.25s ease-in-out;
     color: $white;
   }
   &:hover {
-    background-color: $darkBlue-1;
+    background-color: $darkShadeBackground;
     h3 {
-      transform: translateX(20px);
+      // transform: translateX(20px);
       color: $primary;
-      font-style: italic;
+      // font-style: italic;
     }
-    .article-meta {
-      color: $primary;
-    }
+    // .article-meta {
+    //   color: $primary;
+    // }
   }
   &.article--link {
     width: 100%;
@@ -93,10 +98,11 @@ export default {
   }
   .article-meta {
     font-size: $small;
-    margin: 0 0.25rem 0 0;
+    margin: 0.25rem 0.25rem 0 0;
+    line-height: 1;
     flex: 0 0 100px;
     text-transform: uppercase;
-    color: rgba($white, 0.5);
+    color: $blueSteel;
     transition: $transition;
   }
 }

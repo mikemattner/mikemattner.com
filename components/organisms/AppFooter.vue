@@ -16,14 +16,14 @@ export default {
   name: 'AppHeader',
   data() {
     return {
-      theDate: new Date()
+      theDate: new Date(),
     }
   },
   computed: {
-    theYear: function() {
+    theYear() {
       return this.theDate.getFullYear()
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -38,7 +38,7 @@ export default {
     // height: 3rem;
     box-sizing: border-box;
     font-size: 0.675rem;
-    background-color: $darkBlue-3;
+    background-color: $bodyBackground;
     color: rgba(255, 255, 255, 0.25);
     p {
       margin: 0;

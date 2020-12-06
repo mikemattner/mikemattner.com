@@ -1,7 +1,8 @@
 $column-gap: 1.25rem;
 $max-width: 25rem;
 
-.layout {
+.layout,
+.nuxt-content {
   display: grid;
   grid-template-columns:
       [full-start] $column-gap
@@ -16,14 +17,28 @@ $max-width: 25rem;
       [main-content-end outdent-start] 1fr 
       [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
   }
-
 }
 
-.main-content {
+.main-content,
+.nuxt-content > * {
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
     grid-column-start: main-content-start;
     grid-column-end: main-content-end;
+  }
+}
+.nuxt-content > .nuxt-content-highlight {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column-start: margin-start;
+    grid-column-end: full-end;
+  }
+}
+.nuxt-content img {
+  grid-column: full-start / span 8;
+  @media (min-width: $tablet) {
+    grid-column: full-start / span 10;
+    padding: 0 $column-gap;
   }
 }
 .full-content,
@@ -53,8 +68,7 @@ $max-width: 25rem;
 .post-content > * {
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
-    grid-column-start: main-content-start;
-    grid-column-end: main-content-end;
+    grid-column: main-content / span 6;
   }
 }
 
