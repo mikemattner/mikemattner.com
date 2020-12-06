@@ -3,14 +3,29 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <Header tag="h1" class="display-2 main-content">{{
-            intro.title
-          }}</Header>
-          <p v-html="intro.body" class="main-content"></p>
-        </template>
+          <div class="main-content">
+            <Header tag="h1" class="display-3 main-content" decorator>{{
+              intro.title
+            }}</Header>
+            <!-- <p v-html="intro.body" class="main-content"></p> -->
+            <div>
+              <p>
+                I like to write about:
+                <span class="tags">
+                  <span v-for="tag in tags" :key="tag">
+                    <a :href="`/tag/${formattedTag(tag.name)}`">{{
+                      tag.name
+                    }}</a> </span
+                  >. Whether I provide much substance to those topics is up for
+                  debate.
+                </span>
+              </p>
+            </div>
+          </div></template
+        >
       </PageHero>
       <section id="content" class="layout">
-        <AllArticles :posts="posts" />
+        <AllArticles :posts="writing" />
       </section>
     </div>
   </section>
@@ -23,25 +38,38 @@ export default {
   scrollToTop: true,
   data() {
     return {
-      intro
+      intro,
     }
   },
-  async asyncData() {
-    // create context via webpack to map over all blog posts
-    const allPosts = await require.context('~/articles/', true, /\.md$/)
-    const posts = allPosts.keys().map(key => {
-      // give back the value of each post context
-      return allPosts(key)
-    })
+  methods: {
+    formattedTag(tag) {
+      return tag.toLowerCase().trim()
+    },
+  },
+  async asyncData({ $content, app }) {
+    let writing
+    let tags
+    try {
+      tags = await $content('tag').fetch()
+      writing = await $content('writing').sortBy('date', 'desc').fetch()
+    } catch (error) {
+      try {
+        writing = await $content('writing').sortBy('date', 'desc').fetch()
+        writing = await $content('writing').sortBy('date', 'desc').fetch()
+      } catch (error) {
+        return error({ statusCode: 404, message: 'Page not found' })
+      }
+    }
     return {
-      posts
+      tags,
+      writing,
     }
   },
   head() {
     return {
-      titleTemplate: `Writing – %s`
+      titleTemplate: `Writing – %s`,
     }
-  }
+  },
 }
 </script>
 
@@ -53,7 +81,7 @@ export default {
     h1 {
       margin-bottom: 0rem;
       @media (min-width: $tablet) {
-        text-indent: -0.75rem;
+        // text-indent: -0.75rem;
       }
     }
     p {
@@ -64,6 +92,22 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+  .tags {
+    span {
+      display: inline-block;
+      margin-right: 0.25em;
+
+      &:after {
+        content: ',';
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          content: '';
+        }
+      }
+    }
   }
   .meta {
     font-size: 0.675rem;

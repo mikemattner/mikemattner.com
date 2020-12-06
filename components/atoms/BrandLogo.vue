@@ -1,9 +1,7 @@
 <template>
   <div class="brand-logo">
     <MyLogo />
-    <div v-if="label == true" class="brand-logo__type">
-      Mike Mattner
-    </div>
+    <div v-if="label == true" class="brand-logo__type">Mike Mattner</div>
   </div>
 </template>
 
@@ -12,11 +10,11 @@ import MyLogo from '@/assets/img/logo.svg'
 export default {
   name: 'BrandLogo',
   components: {
-    MyLogo
+    MyLogo,
   },
   props: {
-    label: Boolean
-  }
+    label: Boolean,
+  },
 }
 </script>
 
@@ -32,26 +30,31 @@ export default {
   &__image {
     height: 1.75rem;
     width: 1.75rem;
+    padding: $defaultPadding/8;
+    border-radius: 50%;
+    border: 1px solid $blueSteel;
+    // background: $darkShadeBackground;
     z-index: 10;
+    transition: $transition;
 
     .circle-shape {
       fill: transparent;
       transition: $transition;
     }
     .logo-shape {
-      fill: $primary;
+      fill: $white;
       transition: $transition;
     }
   }
 
   &__type {
     font-size: 1rem;
-    letter-spacing: 0.125rem;
+    // letter-spacing: 0.125rem;
     font-weight: 400;
     margin-left: 0.5rem;
-    opacity: 0;
+    // opacity: 0;
     transition: all 0.125s ease-in-out;
-    transform: translateX(-100px);
+    // transform: translateX(-100px);
     color: #fff;
     z-index: 9;
     text-decoration: none;
@@ -59,17 +62,19 @@ export default {
   @media (min-width: 768px) {
     &:hover {
       .brand-logo__image {
+        border: 1px solid rgba($primary, 1);
+        background-color: $primary;
         .circle-shape {
           fill: rgba($primary, 1);
         }
         .logo-shape {
-          fill: $darkBlue;
+          fill: $white;
         }
       }
       .brand-logo__type {
-        opacity: 1;
-        transform: translateX(0);
-        color: #fff;
+        // opacity: 1;
+        // transform: translateX(0);
+        // color: #fff;
       }
     }
   }

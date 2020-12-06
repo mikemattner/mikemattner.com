@@ -1,11 +1,7 @@
 <template>
   <section class="main-content">
     <ul class="article-list">
-      <li
-        v-for="post in sortedPosts"
-        :key="post.attributes.title"
-        class="article"
-      >
+      <li v-for="post in posts" :key="post.title" class="article">
         <ArticleLink :article="post" />
       </li>
     </ul>
@@ -16,26 +12,9 @@ export default {
   props: {
     posts: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
-  computed: {
-    sortedPosts() {
-      const sortedPosts = this.posts
-      sortedPosts.sort((a, b) => {
-        const dateA = new Date(a.attributes.date)
-        const dateB = new Date(b.attributes.date)
-        if (dateA < dateB) {
-          return 1
-        }
-        if (dateA > dateB) {
-          return -1
-        }
-        return 0
-      })
-      return sortedPosts
-    }
-  }
 }
 </script>
 
@@ -60,7 +39,7 @@ export default {
     // justify-content: flex-start;
 
     &:first-child {
-      border-top: 1px solid rgba($white, 0.05);
+      border-top: 1px solid tint($darkBlue, 2%);
     }
   }
 }

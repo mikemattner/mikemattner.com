@@ -33,7 +33,7 @@
     flex-direction: column;
 
     & > .tile.is-child:not(:last-child) {
-      margin-bottom: 1.5rem !important;
+      margin-bottom: $defaultPadding !important;
     }
   }
 

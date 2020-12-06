@@ -4,7 +4,7 @@
       'hero layout',
       full == true ? 'hero--full' : '',
       bold == true ? 'hero--bold' : '',
-      dark == true ? 'hero--dark' : ''
+      dark == true ? 'hero--dark' : '',
     ]"
   >
     <slot></slot>
@@ -17,8 +17,8 @@ export default {
     full: Boolean,
     dark: Boolean,
     bold: Boolean,
-    arrow: Boolean
-  }
+    arrow: Boolean,
+  },
 }
 </script>
 
@@ -30,15 +30,16 @@ export default {
   @media (min-width: $tablet) {
     padding-top: 8rem;
   }
-  // &--full {
-  //   min-height: 100vh;
-  //   padding-bottom: 4rem;
-  // }
+  &--full {
+    // min-height: 100vh;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid $borderColor-light;
+  }
   // &--dark {
-  //   background-color: $darkBlue-3;
+  //   background-color: $bodyBackground;
   // }
   h1 {
-    color: $primary;
+    // color: $primary;
     margin-bottom: 2rem;
   }
   h2 {

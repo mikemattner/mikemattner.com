@@ -1,9 +1,12 @@
 ---
 topic: Development
 title: Built With Nuxt
-date: 2019-05-02T17:00:00.000+00:00
+date: 2019-05-02
 description: Building with a more modern development experience.
-
+category:
+    - Entries
+tag:
+    - Development
 ---
 **9/10/29** – This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files, but am now using Forestry as a CMS for markdown files. It's super simple.
 
@@ -19,8 +22,7 @@ I started by building just a few simple pages that acted as a brochure style exp
 
 I'm primarily loading content from a few different static sources: yaml, json, and markdown files. For example, \`index.vue\` pulls in the following:
 
-```js
-// index.vue
+```js[index.vue]
 import {
   intro,
   statement,
@@ -34,7 +36,7 @@ import articles from '@/static/articleList.json'
 
 The `articleList.json` file is the simplest way to link to the specific markdown file with a slug, give it a title, and give it a description. Eventually I could add quite a bit more detail, but today, it's functional. Unfortunately, I think that this approach is unlikely to remain sustainable.
 
-```json
+```json[articleList.json]
 [  
   {  
     "title": "Built With Nuxt",  

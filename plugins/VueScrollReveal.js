@@ -11,5 +11,5 @@ Vue.use(VueScrollReveal, {
   scale: 1,
   distance: '10px',
   easing: 'ease-in-out',
-  mobile: false
+  mobile: false,
 })

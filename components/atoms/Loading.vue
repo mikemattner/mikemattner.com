@@ -10,8 +10,8 @@
 <script>
 export default {
   props: {
-    loading: Boolean
-  }
+    loading: Boolean,
+  },
 }
 </script>
 <style scoped lang="scss">
@@ -26,7 +26,7 @@ export default {
   visibility: hidden;
   transition: all 0.75s ease-in-out;
   z-index: 10100;
-  background-color: rgba($darkBlue-3, 0.7);
+  background-color: rgba($bodyBackground, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;

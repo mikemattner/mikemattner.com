@@ -3,6 +3,7 @@ import AppHeader from '../components/organisms/AppHeader.vue'
 import AppFooter from '../components/organisms/AppFooter.vue'
 import BrandLogo from '../components/atoms/BrandLogo.vue'
 import ArticleLink from '../components/molecules/ArticleLink.vue'
+import SearchForm from '../components/molecules/SearchForm.vue'
 import AllArticles from '../components/organisms/AllArticles.vue'
 // import Work from '../components/organisms/Work.vue'
 import WorkCard from '../components/work/WorkCard.vue'
@@ -28,6 +29,7 @@ Vue.component('Wavy', Wavy)
 Vue.component('WavyLines', WavyLines)
 Vue.component('WaveRight', WaveRight)
 Vue.component('ArticleLink', ArticleLink)
+Vue.component('SearchForm', SearchForm)
 Vue.component('AllArticles', AllArticles)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)

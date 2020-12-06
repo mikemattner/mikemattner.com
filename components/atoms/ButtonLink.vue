@@ -1,5 +1,5 @@
 <template>
-  <a :href="href" :class="'button'" rel="nofollow" target="_blank">
+  <a :href="href" :class="'button'" rel="nofollow" :target="target">
     <slot />
   </a>
 </template>
@@ -11,19 +11,23 @@ export default {
   props: {
     href: {
       type: String,
-      default: '#'
-    }
+      default: '#',
+    },
+    target: {
+      type: String,
+      default: '',
+    },
   },
   mounted() {
     this.initialize(ButtonBubble, '.button')
   },
   methods: {
-    initialize: function(Script, selector, ...options) {
+    initialize(Script, selector, ...options) {
       document
         .querySelectorAll(selector)
-        .forEach(element => new Script(element, ...options))
-    }
-  }
+        .forEach((element) => new Script(element, ...options))
+    },
+  },
 }
 </script>
 
@@ -53,7 +57,7 @@ export default {
   &:hover {
     color: $white;
     border-color: $primary;
-    border-radius: 2px;
+    border-radius: $radius-small;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     background-image: none;
     // transform: scale(1.02);
@@ -65,6 +69,14 @@ export default {
     z-index: -1;
     border-radius: 50%;
     background-color: $primary;
+    // background-image: linear-gradient(
+    //   to right top,
+    //   #e63462,
+    //   #ad2564,
+    //   #721f59,
+    //   #3c1742,
+    //   #130422
+    // );
     will-change: transform;
     transform: translate(-50%, -50%) scale(0);
     transition-property: transform;

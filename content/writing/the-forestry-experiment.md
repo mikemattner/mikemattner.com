@@ -1,10 +1,13 @@
 ---
 topic: Development
 title: The Forestry Experiment
-date: 2019-09-11T04:00:00.000+00:00
+date: 2019-09-11
 description: Using a CMS that generates the sort of markdown files I was tired of
   creating manually.
-
+category:
+    - Entries
+tag:
+    - Development
 ---
 From a certain perspective I'm still building a static website with markdown files and avoiding dealing with an API&mdash;an API would be overkill in this situation. 
 
