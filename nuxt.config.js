@@ -60,10 +60,7 @@ export default {
     '@nuxt/content'
   ],
   sitemap: {
-    gzip: true,
-    routes: function() {
-      return files.map(getSlugs)
-    }
+    gzip: true
   },
   styleResources: {
     scss: [
