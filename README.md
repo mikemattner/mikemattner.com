@@ -6,14 +6,16 @@ My second run at a javascript framwork based portfolio, blog, and general inform
 ## ToDos
 
 - [x] Dynamic generation of routes for .md files
-- [x] Use a CMS for content generation (Forestry!)
-- [ ] Design tweaks
-- [ ] Color palette updates https://mycolor.space/
-- [ ] Generate, fill in some old content for the blog
-- [ ] Reusable blog list component
-- [ ] Blog pagination
-- [ ] Build out portfolio with CMS capabilities
+- [x] ~~Use a CMS for content generation (Forestry!)~~
+- [x] Design tweaks
+- [x] Color palette updates https://mycolor.space/
+- [x] Generate, fill in some old content for the blog
+- [x] Reusable blog list component
+- [ ] Organize blog list by year
+- [x] Update to [Nuxt Content](https://content.nuxtjs.org/)
 - [ ] Generate content for portfolio
+- ~~Blog pagination~~
+- ~~Build out portfolio with CMS capabilities~~
 
 ## Build Setup
 

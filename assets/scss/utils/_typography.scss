@@ -67,7 +67,7 @@ h1,
   line-height: 1;
 
   small {
-    font-size: 0.25em;
+    font-size: $small;
   }
 
   // @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {

@@ -56,7 +56,7 @@ export default {
   a {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: baseline;
     background-image: none;
     background-position: 0% 100%;
     background-repeat: no-repeat;
