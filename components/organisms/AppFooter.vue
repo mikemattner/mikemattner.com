@@ -5,6 +5,9 @@
       <p class="email--link">hello @ mikemattner.com</p>
       <p>
         &copy; {{ theYear }} Mike Mattner. Made in Michigan. Built with Nuxt.
+        <a href="https://github.com/mikemattner/mikemattner.com"
+          >Open Sourced</a
+        >
         <fa-icon icon="heart" size="sm"></fa-icon>
       </p>
     </div>

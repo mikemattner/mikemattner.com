@@ -50,7 +50,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `Writing – %s`,
+      title: `${this.tag.name}  – %s`,
     }
   },
 }
