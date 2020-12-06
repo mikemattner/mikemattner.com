@@ -56,12 +56,8 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/sitemap',
     '@nuxt/content'
   ],
-  sitemap: {
-    gzip: true
-  },
   styleResources: {
     scss: [
       '~/assets/scss/utils/_functions.scss',
