@@ -59,6 +59,6 @@ I found one particular [repo](https://github.com/mathiasbynens/dotfiles) by Math
 
 I follow a few prompts and install what I need to get up and running. I can share my dev environment between machines fairly easily this way.
 
-If you’re interested, feel free to browse my repo for reference, or fork it if you want to build on it. Keep in mind, there are more repos available with more sophisticated setups than my own if you’re looking for something more robust, but if you’re knew to this level of customization on this level, this is a good start.
+If you’re interested, feel free to browse my repo for reference, or fork it if you want to build on it. Keep in mind, there are more repos available with more sophisticated setups than my own if you’re looking for something more robust, but if you’re new to this level of customization on this level, this is a good start.
 
 [View Project on GitHub](https://github.com/mikemattner/macos-system-setup)

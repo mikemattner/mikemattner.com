@@ -53,14 +53,14 @@ $max-width: 25rem;
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
     grid-column: margin-start;
-    text-align: right;
+    text-align: left;
   }
 }
 .outdent-content {
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
     grid-column: outdent-start;
-    text-align: right;
+    text-align: left;
   }
 }
 

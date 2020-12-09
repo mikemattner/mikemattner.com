@@ -3,7 +3,7 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <div class="meta top full-width">
+          <div class="meta top main-content">
             Posted
             <time
               ><strong>{{ formattedDate }}</strong></time
@@ -11,18 +11,11 @@
           </div>
           <Header
             tag="h1"
-            class="display-4 full-width"
+            class="display-4 main-content"
             v-html="writing.title"
             center
           ></Header>
-          <div class="meta full-width">
-            <ul class="tags">
-              <li v-for="item in writing.tag" :key="item" :value="link">
-                <nuxt-link :to="`/tag/${formattedTag(item)}`">{{
-                  item
-                }}</nuxt-link>
-              </li>
-            </ul>
+          <div class="meta flex main-content">
             <div v-if="writing.mm_link" class="article-link" target="_blank">
               <ButtonLink :href="writing.mm_link[0]" target="_blank"
                 ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
@@ -30,6 +23,13 @@
                 <fa-icon icon="external-link-alt" size="sm"></fa-icon
               ></ButtonLink>
             </div>
+            <ul class="tags">
+              <li v-for="item in writing.tag" :key="item" :value="link">
+                <nuxt-link :to="`/tag/${formattedTag(item)}`">{{
+                  item
+                }}</nuxt-link>
+              </li>
+            </ul>
           </div>
         </template>
       </PageHero>
@@ -106,13 +106,30 @@ export default {
     }
   },
   head() {
-    if (!this.post) return
     return {
       titleTemplate: `${this.writing.title} – %s`,
       meta: [
         {
           hid: 'description',
           name: 'description',
+          content: this.writing.title,
+        },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.writing.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.writing.title,
+        },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.writing.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
           content: this.writing.title,
         },
       ],
@@ -125,7 +142,7 @@ export default {
 .section--single--article {
   min-height: 90vh;
   .hero {
-    text-align: center;
+    // text-align: center;
     h1 {
       margin-bottom: 0.75rem;
     }
@@ -135,16 +152,18 @@ export default {
     background-color: $darkShadeBackground;
     font-size: 0.75rem;
     padding: $defaultPadding;
-    border-radius: 2px;
+    border-radius: $radius-small;
     box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
+    padding-top: $defaultPadding * 1.5;
     .filename {
       position: absolute;
       right: $defaultPadding/2;
-      top: $defaultPadding/2;
+      top: $defaultPadding * 2;
       font-size: 0.75rem;
-      padding: $defaultPadding/5;
+      padding: $defaultPadding/7;
       background-color: $bodyBackground;
       border-radius: $radius-small;
+      display: none;
     }
   }
   pre {
@@ -154,11 +173,69 @@ export default {
       background-color: transparent;
     }
   }
+  .language-bash,
+  .language-js,
+  .language-css,
+  .language-html,
+  .language-json {
+    &:before {
+      content: 'language';
+      position: absolute;
+      // background-color: $bodyBackground;
+      border-bottom: 1px solid rgba($borderColor-light, 0.25);
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: $defaultPadding/5 $defaultPadding;
+      text-transform: uppercase;
+      font-size: $small;
+    }
+  }
+  .language-bash {
+    &:before {
+      content: 'bash';
+    }
+  }
+  .language-js {
+    &:before {
+      content: 'javascript';
+    }
+  }
+  .language-css {
+    &:before {
+      content: 'css';
+    }
+  }
+  .language-html {
+    &:before {
+      content: 'html';
+    }
+  }
+  .language-json {
+    &:before {
+      content: 'json';
+    }
+  }
   .description {
     font-size: $h5;
     line-height: $scale;
     // padding-bottom: 1rem;
     // border-bottom: 1px solid rgba($white, 0.1);
+  }
+  .margin-content,
+  .outdent-content {
+    font-size: $small;
+    color: $blueSteel;
+  }
+  @media (min-width: $tablet) {
+    .outdent-content {
+      padding-left: $defaultPadding/4;
+      border-left: 1px solid rgba($borderColor-light, 0.5);
+    }
+    .margin-content {
+      padding-right: $defaultPadding/4;
+      border-right: 1px solid rgba($borderColor-light, 0.5);
+    }
   }
   .meta {
     font-size: $small;
@@ -167,12 +244,17 @@ export default {
     &.top {
       margin: 0;
     }
+    &.flex {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
     .article-link {
       text-align: center;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-top: 0.5rem;
+      justify-content: flex-start;
+      margin-right: $defaultPadding/2;
       .button {
         font-size: $small;
         padding: 5px 10px;
@@ -188,10 +270,10 @@ export default {
         list-style: none;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         li {
           font-size: $small;
-          margin: $defaultPadding/5;
+          margin: $defaultPadding/5 $defaultPadding/5 $defaultPadding/5 0;
           a {
             display: block;
             background-image: none;

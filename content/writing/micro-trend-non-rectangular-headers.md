@@ -21,6 +21,13 @@ Per [CSS-Tricks](https://css-tricks.com/creating-non-rectangular-headers/), ther
 
 As mentioned above, my preference in this case is `transform: skew`, although it introduces extraneous elements to the page–a seemingly forgotten rule is to not do so for presentational purposes–but this can certainly be accomplished with pseudo elements.
 
+<p class="codepen" data-height="365" data-theme-id="dark" data-default-tab="css,result" data-user="erikdkennedy" data-slug-hash="EZozpV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Trapezoid Header Using Transform: SkewY">
+  <span>See the Pen <a href="https://codepen.io/erikdkennedy/pen/EZozpV">
+  Trapezoid Header Using Transform: SkewY</a> by Erik Kennedy (<a href="https://codepen.io/erikdkennedy">@erikdkennedy</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 The article referenced above uses an extra element in the document to create the effect–which is perfectly reasonable–as does the stripe website.
 
 > Stripe’s homepage design uses this method, and even more brilliantly, they include a few children spans (each is a block of color) that get skewed with the parent element, creating a more complex and colorful effect.

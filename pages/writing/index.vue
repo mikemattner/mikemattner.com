@@ -7,17 +7,15 @@
             <Header tag="h1" class="display-3 main-content" decorator>{{
               intro.title
             }}</Header>
-            <!-- <p v-html="intro.body" class="main-content"></p> -->
             <div>
               <p>
-                I like to write about:
+                {{ intro.body }}
                 <span class="tags">
                   <span v-for="tag in tags" :key="tag">
                     <a :href="`/tag/${formattedTag(tag.name)}`">{{
                       tag.name
                     }}</a> </span
-                  >. Whether I provide much substance to those topics is up for
-                  debate.
+                  >.
                 </span>
               </p>
             </div>

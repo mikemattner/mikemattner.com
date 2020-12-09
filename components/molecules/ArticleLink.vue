@@ -26,7 +26,7 @@ export default {
     formatDate(date) {
       const options = {
         year: 'numeric',
-        month: 'short',
+        month: 'long',
         day: 'numeric',
         timeZone: 'UTC',
       }
@@ -55,7 +55,9 @@ export default {
   // }
   a {
     display: flex;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     align-items: baseline;
     background-image: none;
     background-position: 0% 100%;
@@ -79,9 +81,9 @@ export default {
       color: $primary;
       // font-style: italic;
     }
-    // .article-meta {
-    //   color: $primary;
-    // }
+    .article-meta {
+      color: $primary;
+    }
   }
   &.article--link {
     width: 100%;
@@ -98,12 +100,15 @@ export default {
   }
   .article-meta {
     font-size: $small;
-    margin: 0.25rem 0.25rem 0 0;
+    margin: 0 0 0.5rem 0;
     line-height: 1;
-    flex: 0 0 100px;
-    text-transform: uppercase;
+    // flex: 0 0 100px;
+    // text-transform: uppercase;
     color: $blueSteel;
     transition: $transition;
+    time {
+      transition: $transition;
+    }
   }
 }
 </style>
