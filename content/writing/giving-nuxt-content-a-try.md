@@ -42,7 +42,7 @@ var md = require("markdown-it")({
 });
 ```
 
-Through some other wonderful magic in different pages and dynamic routes, I got it all funtional. And then I just stopped trying to write using this system. It felt messy, cumbersome, and not fun. It made me miss WordPress.
+Through some other wonderful magic in different pages and dynamic routes, I got it all functional. And then I just stopped trying to write using this system. It felt messy, cumbersome, and not fun. It made me miss WordPress.
 
 ### Nuxt Content
 
