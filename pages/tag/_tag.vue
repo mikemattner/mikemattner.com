@@ -3,8 +3,8 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <template v-slot:default>
-          <Header tag="h1" class="display-3 main-content" decorator
-            ><small>Entries tagged:</small> {{ tag.name }}</Header
+          <Header tag="h1" class="display-3 main-content" decorator>
+            {{ tag.name }}</Header
           >
           <p v-html="tag.description" class="main-content"></p>
         </template>
@@ -13,8 +13,8 @@
         <div class="main-content">
           <AllArticles :posts="writing" />
           <Button to="/writing/" class="button"
-            ><fa-icon icon="chevron-left" size="sm"></fa-icon> Back to
-            Articles</Button
+            ><fa-icon icon="chevron-left" size="sm"></fa-icon>
+            {{ button.text }}</Button
           >
         </div>
       </section>
@@ -26,6 +26,13 @@
 export default {
   transition: 'fade',
   scrollToTop: true,
+  data() {
+    return {
+      button: {
+        text: 'Back to Articles',
+      },
+    }
+  },
   async asyncData({ $content, params }) {
     try {
       const tags = await $content('tag')
@@ -50,7 +57,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.tag.name}  – %s`,
+      titleTemplate: `${this.tag.name}  – %s`,
     }
   },
 }

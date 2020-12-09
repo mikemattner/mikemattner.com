@@ -49,6 +49,10 @@ export default {
     max-width: 200px;
   }
 
+  svg {
+    height: 1em;
+  }
+
   &:focus {
     outline: 0;
     border-color: $primary;
