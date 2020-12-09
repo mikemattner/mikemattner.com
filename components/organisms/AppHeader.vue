@@ -92,6 +92,11 @@ $transparent-bg: rgba($bodyBackground, 1);
     left: 0;
     right: 0;
     width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba($bodyBackground, 0.9) 50%,
+      rgba($bodyBackground, 0) 100%
+    );
 
     @media (min-width: 769px) {
       padding: 0 2rem;
@@ -180,7 +185,7 @@ $transparent-bg: rgba($bodyBackground, 1);
             // background-image: none;
 
             &.nuxt-link-exact-active {
-              color: $primary;
+              color: $blueSteel;
 
               &:hover {
                 color: $white;

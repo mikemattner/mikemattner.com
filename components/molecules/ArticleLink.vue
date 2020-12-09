@@ -69,7 +69,7 @@ export default {
   h3 {
     transition: $transition;
     font-size: 1rem;
-    line-height: 1;
+    line-height: 1.3;
     margin: 0;
     transition: all 0.25s ease-in-out;
     color: $white;
