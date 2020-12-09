@@ -174,7 +174,7 @@ export default {
     }
   }
   .language-bash,
-  .language-js,
+  .language-javascript,
   .language-css,
   .language-html,
   .language-json {
@@ -196,7 +196,7 @@ export default {
       content: 'bash';
     }
   }
-  .language-js {
+  .language-javascript {
     &:before {
       content: 'javascript';
     }

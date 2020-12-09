@@ -20,7 +20,7 @@ $primary: $red;
 $tertiary: $blueSteel;
 
 $codeColor: #EDF2F4;
-$bodyColor: #EDF2F4;
+$bodyColor: rgba(#fff,0.6);
 $bodyBackground: shade($darkBlue, 40%);
 $borderColor-light: tint($darkBlue, 10%);
 $darkShadeBackground: shade($darkBlue, 60%);
@@ -30,7 +30,8 @@ $tagColor: $blueSteel;
 $linearGradient: linear-gradient(to right, #e94560,#ad2564,#721f59);
 $rightTopGradient: linear-gradient(to right top, #e94560, #ad2564, #721f59);
 
-$solidGradient: linear-gradient(to right, $primary, $primary);
+$solidGradient: linear-gradient(to right, $blueSteel, $blueSteel);
+$solidPrimaryGradient: linear-gradient(to right, $primary, $primary);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography
