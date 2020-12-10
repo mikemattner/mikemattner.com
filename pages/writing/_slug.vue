@@ -44,18 +44,18 @@
               ><fa-icon icon="chevron-left" size="sm"></fa-icon> Previous
               Article</Button
             >
-            <!-- <Button v-else to="/writing/" class="button prev"
+            <Button v-else to="/writing/" class="button prev"
               >Back to Articles
-            </Button> -->
+            </Button>
             <Button
               v-if="next"
               :to="`/writing/${next.slug}`"
               class="button next"
               >Next Article <fa-icon icon="chevron-right" size="sm"></fa-icon
             ></Button>
-            <!-- <Button v-else to="/writing/" class="button next"
+            <Button v-else to="/writing/" class="button next"
               >Back to Articles
-            </Button> -->
+            </Button>
           </div>
         </div>
       </div>
@@ -155,6 +155,9 @@ export default {
     border-radius: $radius-small;
     box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
     padding-top: $defaultPadding * 1.5;
+    @media (max-width: 768px) {
+      overflow-x: scroll;
+    }
     .filename {
       position: absolute;
       right: $defaultPadding/2;
@@ -168,9 +171,11 @@ export default {
   }
   pre {
     background-color: transparent;
-    white-space: pre-wrap;
     code {
       background-color: transparent;
+    }
+    @media (min-width: 769px) {
+      white-space: pre-wrap;
     }
   }
   .language-bash,
@@ -304,7 +309,8 @@ export default {
 
     @media (min-width: 768px) {
       display: grid;
-      grid-template-columns: 1fr 20px 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 1.25rem;
     }
 
     a.button {
@@ -322,6 +328,10 @@ export default {
           grid-column: 3;
           justify-self: end;
         }
+        // &.back {
+        //   grid-column: 2;
+        //   justify-self: center;
+        // }
       }
     }
   }

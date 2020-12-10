@@ -20,7 +20,7 @@ $primary: $red;
 $tertiary: $blueSteel;
 
 $codeColor: #EDF2F4;
-$bodyColor: rgba(#fff,0.6);
+$bodyColor: #EDF2F4;
 $bodyBackground: shade($darkBlue, 40%);
 $borderColor-light: tint($darkBlue, 10%);
 $darkShadeBackground: shade($darkBlue, 60%);
@@ -80,9 +80,10 @@ $speed: 86ms !default;
 // Typographic Scale
 // ----------------------------------------------------------------------------------------------------------------
 $scale: 1.5;
-$small: 1rem / $scale;
+$base: 1rem;
+$small: $base / $scale;
 $h6: 1.25rem;
-$h5: $scale * 1rem;
+$h5: $scale * $base;
 $h4: $scale * $h5;
 $h3: $scale * $h4;
 $h2: $scale * $h3;

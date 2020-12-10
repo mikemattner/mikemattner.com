@@ -1,6 +1,6 @@
 <template>
   <headroom class="headroom--surround">
-    <div class="navbar" :class="{ active: navOpen }" role="banner">
+    <div class="navbar layout" :class="{ active: navOpen }" role="banner">
       <div class="navbar__logo">
         <nuxt-link to="/"><BrandLogo label /></nuxt-link>
       </div>
@@ -25,18 +25,18 @@
               <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
             </li>
             <!-- <li>
-            <nuxt-link to="/work"
-              ><span @click="toggle()">Work</span></nuxt-link
-            >
-          </li> -->
+              <nuxt-link to="/work"
+                ><span @click="toggle()">Work</span></nuxt-link
+              >
+            </li> -->
             <li>
               <nuxt-link to="/writing"
                 ><span @click="toggle()">Writing</span></nuxt-link
               >
             </li>
             <li>
-              <nuxt-link to="/contact"
-                ><span @click="toggle()">Contact</span></nuxt-link
+              <nuxt-link to="/about"
+                ><span @click="toggle()">About</span></nuxt-link
               >
             </li>
           </ul>
@@ -78,9 +78,9 @@ $transparent-bg: rgba($bodyBackground, 1);
     z-index: 1001;
   }
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
     padding: 0 1.25rem;
     height: 3.5rem;
     box-sizing: border-box;
@@ -94,18 +94,30 @@ $transparent-bg: rgba($bodyBackground, 1);
     width: 100%;
     background-image: linear-gradient(
       to bottom,
-      rgba($bodyBackground, 0.9) 50%,
+      rgba($bodyBackground, 1) 0%,
+      rgba($bodyBackground, 0.7) 70%,
       rgba($bodyBackground, 0) 100%
     );
 
     @media (min-width: 769px) {
-      padding: 0 2rem;
+      // padding: 0 2rem;
+      padding: 0;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     &__logo {
       z-index: 1000;
       a {
         text-decoration: none;
+      }
+      @media (min-width: 769px) {
+        grid-column: full-start / span 2;
+        justify-self: center;
       }
     }
     &__menu {
@@ -170,7 +182,7 @@ $transparent-bg: rgba($bodyBackground, 1);
       }
     }
     &__nav {
-      font-size: 1rem;
+      font-size: $base * 0.75;
       ul {
         display: flex;
         flex-direction: row;
@@ -179,7 +191,7 @@ $transparent-bg: rgba($bodyBackground, 1);
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0 0 0 $defaultPadding;
+          margin: 0 $defaultPadding 0 0;
           padding: 0;
           a {
             // background-image: none;
@@ -193,6 +205,12 @@ $transparent-bg: rgba($bodyBackground, 1);
             }
           }
         }
+        @media (min-width: 769px) {
+        }
+      }
+      @media (min-width: 769px) {
+        grid-column-start: main-content-start;
+        grid-column-end: main-content-end;
       }
       @media (max-width: 768px) {
         font-size: 2.25rem;
@@ -250,7 +268,7 @@ $transparent-bg: rgba($bodyBackground, 1);
           }
 
           &.nuxt-link-exact-active {
-            color: $primary;
+            color: $primary !important;
             background-size: 100% 0;
           }
         }

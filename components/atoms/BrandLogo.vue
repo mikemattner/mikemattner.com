@@ -26,16 +26,24 @@ export default {
   overflow: hidden;
   transition: $transition;
   color: #fff;
+  padding: 0 $defaultPadding/8;
 
   &__image {
-    height: 1.75rem;
-    width: 1.75rem;
+    height: 1.25rem;
+    width: 1.25rem;
     padding: $defaultPadding/8;
     border-radius: 50%;
     border: 1px solid $blueSteel;
     // background: $darkShadeBackground;
     z-index: 10;
     transition: $transition;
+    flex: 0 0 1.25rem;
+
+    @media (max-width: 768px) {
+      height: 1.75rem;
+      width: 1.75rem;
+      flex: 0 0 1.75rem;
+    }
 
     .circle-shape {
       fill: transparent;
@@ -48,18 +56,22 @@ export default {
   }
 
   &__type {
-    font-size: 1rem;
+    font-size: $base * 0.75;
     // letter-spacing: 0.125rem;
     font-weight: 400;
     margin-left: 0.5rem;
     // opacity: 0;
     transition: all 0.125s ease-in-out;
     // transform: translateX(-100px);
+    line-height: 1.2;
     color: #fff;
     z-index: 9;
     text-decoration: none;
+    @media (max-width: 768px) {
+      font-size: $base;
+    }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     &:hover {
       .brand-logo__image {
         border: 1px solid rgba($primary, 1);

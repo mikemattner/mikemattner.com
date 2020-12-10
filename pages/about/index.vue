@@ -2,8 +2,13 @@
   <div class="contact">
     <PageHero>
       <template v-slot:default>
-        <Header tag="h1" class="display-3" decorator>{{ intro.title }}</Header>
-        <p v-html="intro.body"></p>
+        <Header
+          tag="h1"
+          class="display-3"
+          v-html="statement.title"
+          decorator
+        ></Header>
+        <p v-html="statement.body"></p>
       </template>
     </PageHero>
   </div>
@@ -17,10 +22,10 @@ import {
   softwares,
   technical,
   brands,
-} from '~/data/contact.yaml'
+} from '~/data/about.yaml'
 
 export default {
-  name: 'Contact',
+  name: 'About',
   transition: 'fade',
   scrollToTop: true,
   data() {
