@@ -1,20 +1,16 @@
 intro:
-  title: Hello there.
-  body: I&rsquo;m Mike Mattner, a native Michigander working as a UX/UI developer at Aisle Rocket.
-  social: I'm @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>, 
-      <a href="https://twitter.com/mikemattner">Twitter</a>, <a href="https://codepen.io/mikemattner/#">Codepen</a>, 
-      &amp; <a href="https://github.com/mikemattner">GitHub</a>.
-  image: me.jpg
-  imgAlt: A Picture of me.
+  title: Get in Touch
+  body: Do you have something to discuss? Reach out to me at 
+      <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.
 
 statement:
-  meta: I Focus On
-  title: Design &amp; Development
-  body: <strong>I&rsquo;ve worked for over 13-years</strong> as a designer and developer on the web. 
+  title: Development &amp; Design Focused
+  body: <p><strong>I&rsquo;ve worked for over 13-years</strong> as a designer and developer on the web. 
       At every professional stop I&rsquo;ve been a hybrid in a creative or production based role and 
       have a broad knowledge base because of it. I'm passionate about building things for the web, 
-      and I'd love to help. I'm open to interesting freelance opportunities, so if I seem like a fit, 
-      please reach out.
+      and couldn't imagine a life without it.</p>
+
+      <p>I am currently working as a senior UI/UX Developer at Aisle Rocket.</p>
 
 skills:
   - Front End Development

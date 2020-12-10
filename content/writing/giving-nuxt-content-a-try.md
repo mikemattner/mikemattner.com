@@ -32,14 +32,43 @@ module.exports = {
 }
 ```
 
-From there, adding front matter support to the config file was a little goofy.
+From there, adding front matter support and then route generation to the config file was a little goofy. The whole thing felt a little hacked together, to be honest. Especially in comparison to the previously mentioned frameworks that included all of this out of the box.
 
 ```javascript
-const fm = require("front-matter");
-var md = require("markdown-it")({
+import path from 'path'
+/* eslint-disable */
+const glob = require('glob')
+const hljs = require('highlight.js')
+const md = require('markdown-it')({
   html: true,
-  typographer: true
-});
+  highlight: function(str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(lang, str).value
+      } catch (__) {}
+    }
+
+    return '' // use external default escaping
+  }
+})
+/* eslint-enable */
+let files = glob.sync( '**/*.md' , { cwd: 'articles' });
+
+function getSlugs(post, _) {
+  let slug = post.substr(0, post.lastIndexOf('.'));
+  return `/${slug}`;
+}
+
+/* Generating routes */
+module.exports = {
+  [...]
+  generate: {
+    routes: function() {
+      return files.map(getSlugs)
+    }
+  }
+  [...]
+}
 ```
 
 Through some other wonderful magic in different pages and dynamic routes, I got it all functional. And then I just stopped trying to write using this system. It felt messy, cumbersome, and not fun. It made me miss WordPress.

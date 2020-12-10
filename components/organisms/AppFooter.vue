@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer">
+  <footer class="footer layout">
     <!-- <WaveRight /> -->
-    <div class="darker margin-start-outdent">
+    <div class="darker main-content margin-start-outdent">
       <p class="email--link">hello @ mikemattner.com</p>
       <p>
         &copy; {{ theYear }} Mike Mattner. Made in Michigan. Built with Nuxt.
@@ -33,16 +33,18 @@ export default {
 <style lang="scss">
 .footer {
   .darker {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding: 1rem 0 1rem;
     // height: 3rem;
     box-sizing: border-box;
     font-size: 0.675rem;
     background-color: $bodyBackground;
     color: rgba(255, 255, 255, 0.25);
+    @media (max-width: 768px) {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // flex-direction: column;
+    }
     p {
       margin: 0;
     }
