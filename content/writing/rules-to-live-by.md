@@ -1,17 +1,10 @@
 ---
 title: 'Rules to Live By'
 date: 2018-02-08
-status: publish
-permalink: /2018/02/rules-to-live-by
-author: Mike
-excerpt: ''
-type: post
-id: 9913
-category:
-    - Entries
+type: link
 tag:
     - Wisdom
-mm_link:
+link:
     - https://kottke.org/18/02/a-list-of-25-principles-of-adult-behavior-by-john-perry-barlow
 linktitle: Via Kottke
 ---

@@ -3,8 +3,7 @@ topic: Development
 title: Built With Nuxt
 date: 2019-05-02
 description: Building with a more modern development experience.
-category:
-    - Entries
+type: entry
 tag:
     - Development
 ---

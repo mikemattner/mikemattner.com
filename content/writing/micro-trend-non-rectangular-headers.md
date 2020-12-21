@@ -1,10 +1,11 @@
 ---
 title: Micro Trend&#58; Non-Rectangular Headers
 date: 2017-06-09
+type: link
 tag:
     - Design
     - Development
-mm_link:
+link:
     - https://css-tricks.com/creating-non-rectangular-headers/
 ---
 I love techniques that allow designers and developers to “break” the boxed in nature of web design in a general sense. As a micro trend, non-rectangular headers have become one of my favorite techniques to accomplish this ask.

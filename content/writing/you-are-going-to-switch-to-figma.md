@@ -1,9 +1,10 @@
 ---
 title: You Are Going to Switch to Figma
 date: 2017-05-26
+type: link
 tag:
     - Design
-mm_link:
+link:
     - https://medium.com/@tomjohndesign/you-are-going-to-switch-to-figma-351dc05c9a33
 ---
 Guys, if you’re not already aware of it, you should learn now: [Figma](https://www.figma.com/) is a powerful alternative to [Sketch](https://www.sketchapp.com/). It’s collaborative, browser based, and highly flexible.

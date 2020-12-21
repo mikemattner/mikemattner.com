@@ -1,6 +1,7 @@
 ---
 title: Giving Nuxt Content a Try
 date: 2020-12-09
+type: entry
 tag:
     - Development
 ---

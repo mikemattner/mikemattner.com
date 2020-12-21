@@ -1,10 +1,10 @@
 ---
 title: 10 Ways to Have a Better Conversation
 date: 2017-05-30
-status: publish
+type: link
 tag:
     - Wisdom
-mm_link:
+link:
     - http://kottke.org/17/05/10-ways-to-have-a-better-conversation
 ---
 
