@@ -16,8 +16,8 @@
             center
           ></Header>
           <div class="meta flex main-content">
-            <div v-if="writing.mm_link" class="article-link" target="_blank">
-              <ButtonLink :href="writing.mm_link[0]" target="_blank"
+            <div v-if="writing.link" class="article-link" target="_blank">
+              <ButtonLink :href="writing.link[0]" target="_blank"
                 ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
                 ><span v-else>Visit Link</span>
                 <fa-icon icon="external-link-alt" size="sm"></fa-icon
@@ -33,7 +33,7 @@
           </div>
         </template>
       </PageHero>
-      <div id="content">
+      <div id="content" :data-type="writing.type">
         <nuxt-content :document="writing" />
         <div class="layout">
           <div class="links main-content">

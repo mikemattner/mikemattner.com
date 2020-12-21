@@ -1,21 +1,10 @@
 ---
 title: 'Carl Sagan’s “Baloney Detection Kit”'
 date: 2018-04-03
-status: publish
-permalink: /2018/04/carl-sagans-baloney-detection-kit-a-toolkit-that-can-help-you-scientifically-separate-sense-from-nonsense
-author: Mike
-excerpt: ''
-type: post
-id: 9919
-category:
-    - Links
+type: link
 tag:
     - Wisdom
-post_format:
-    - Link
-mm_reference:
-    - 'Via <a href="https://kottke.org/18/04/carl-sagans-tools-for-critical-thinking-and-detecting-bullshit">Kottke</a>.'
-mm_link:
+link:
     - 'https://kottke.org/18/04/carl-sagans-tools-for-critical-thinking-and-detecting-bullshit'
 ---
 > Wherever possible there must be independent confirmation of the “facts.”

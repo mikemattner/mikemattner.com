@@ -1,10 +1,11 @@
 ---
 title: Brad Frost on Frontend Design
 date: 2017-02-22
+type: entry
 tag:
     - Design
     - Development
-mm_link:
+link:
     - http://bradfrost.com/blog/post/frontend-design/
 ---
 > Somewhere between design – a world of personas, pixels, and polish – and engineering – a world of logic, loops, and linux – lies frontend design. Frontend design involves creating the HTML, CSS, and presentational JavaScript code that makes up a user interface.

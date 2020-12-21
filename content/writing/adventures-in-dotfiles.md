@@ -1,14 +1,7 @@
 ---
-title: 'Adventures in Dotfiles'
+title: Adventures in Dotfiles
 date: 2018-06-05
-status: publish
-permalink: /2018/06/adventures-in-dotfiles
-author: Mike
-excerpt: ''
-type: post
-id: 9928
-category:
-    - Entries
+type: entry
 tag:
     - Development
 ---

@@ -31,10 +31,10 @@ export default {
   &__image {
     height: 1.25rem;
     width: 1.25rem;
-    padding: $defaultPadding/8;
+    padding: $defaultPadding/25;
     border-radius: 50%;
     border: 1px solid $blueSteel;
-    // background: $darkShadeBackground;
+    background: $blueSteel;
     z-index: 10;
     transition: $transition;
     flex: 0 0 1.25rem;
@@ -50,7 +50,7 @@ export default {
       transition: $transition;
     }
     .logo-shape {
-      fill: $white;
+      fill: shade($blueSteel, 80%);
       transition: $transition;
     }
   }

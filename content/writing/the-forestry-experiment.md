@@ -4,8 +4,7 @@ title: The Forestry Experiment
 date: 2019-09-11
 description: Using a CMS that generates the sort of markdown files I was tired of
   creating manually.
-category:
-    - Entries
+type: entry
 tag:
     - Development
 ---

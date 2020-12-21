@@ -1,9 +1,10 @@
 ---
 title: Things To Avoid When Writing CSS
 date: 2015-10-26
+type: link
 tag:
     - Development
-mm_link:
+link:
     - https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.sk52gph80
 ---
 > Multiple files

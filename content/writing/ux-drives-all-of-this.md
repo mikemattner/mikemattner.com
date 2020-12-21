@@ -1,9 +1,10 @@
 ---
 title: UX Drives All of This
 date: 2017-05-08
+type: link
 tag:
     - Development
-mm_link:
+link:
     - https://css-tricks.com/ux-drives-all-of-this/
 ---
 > Thomas has a point: web development has only gotten more complicated.

@@ -1,21 +1,10 @@
 ---
 title: 'Book: <em>Sapiens: A Brief History of Humankind</em>'
 date: 2018-08-28
-status: publish
-permalink: /2018/08/book-sapiens-a-brief-history-of-humankind
-author: Mike
-excerpt: ''
-type: post
-id: 9623
-category:
-    - Links
+type: link
 tag:
     - History
-post_format:
-    - Link
-mm_reference:
-    - 'Via <a href="http://kottke.org/16/01/the-invention-of-farming">Kottke</a>.'
-mm_link:
+link:
     - 'http://www.amazon.com/exec/obidos/ASIN/B00ICN066A/ref=nosim/0sil8'
 ---
 Based on the synopsis, I’m very interested in reading this book:

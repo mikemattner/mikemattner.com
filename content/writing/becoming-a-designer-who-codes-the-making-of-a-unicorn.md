@@ -1,10 +1,11 @@
 ---
 title: Becoming a Designer Who Codes, The Making of a Unicorn
 date: 2016-03-29
+type: entry
 tag:
     - Design
     - Development
-mm_link:
+link:
     - http://blog.invisionapp.com/becoming-a-designer-who-codes/
 ---
 Guys, you can be proficient in one or the other, but knowing both disciplines is the key to creating a successful product.
