@@ -64,7 +64,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `UX Designer & Developer in Michigan – %s`,
+      titleTemplate: `UI/UX Designer & Developer in Michigan – %s`,
     }
   },
 }

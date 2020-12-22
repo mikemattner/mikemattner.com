@@ -147,6 +147,11 @@ export default {
       margin-bottom: 0.75rem;
     }
   }
+  .nuxt-content {
+    p code {
+      background-color: $darkShadeBackground;
+    }
+  }
   .nuxt-content-highlight {
     position: relative;
     background-color: $darkShadeBackground;

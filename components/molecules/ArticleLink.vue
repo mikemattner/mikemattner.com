@@ -78,11 +78,11 @@ export default {
     background-color: $darkShadeBackground;
     h3 {
       // transform: translateX(20px);
-      color: $primary;
+      // color: $primary;
       // font-style: italic;
     }
     .article-meta {
-      color: $primary;
+      // color: $primary;
     }
   }
   &.article--link {
@@ -102,6 +102,7 @@ export default {
     font-size: $small;
     margin: 0 0 0.5rem 0;
     line-height: 1;
+    font-weight: 400;
     // flex: 0 0 100px;
     // text-transform: uppercase;
     color: $blueSteel;
