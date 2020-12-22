@@ -12,9 +12,9 @@
                 {{ intro.body }}
                 <span class="tags">
                   <span v-for="tag in tags" :key="tag">
-                    <a :href="`/tag/${formattedTag(tag.name)}`">{{
+                    <nuxt-link :to="`/tag/${formattedTag(tag.name)}`">{{
                       tag.name
-                    }}</a> </span
+                    }}</nuxt-link> </span
                   >.
                 </span>
               </p>
@@ -101,6 +101,9 @@ export default {
       }
       &:last-child {
         margin-right: 0;
+        &:before {
+          content: 'and ';
+        }
         &:after {
           content: '';
         }

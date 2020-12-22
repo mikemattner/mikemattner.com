@@ -8,7 +8,7 @@
           v-html="statement.title"
           decorator
         ></Header>
-        <p v-html="statement.body"></p>
+        <div v-html="statement.body"></div>
       </template>
     </PageHero>
   </div>
@@ -61,7 +61,7 @@ export default {
       margin-bottom: 3rem;
     }
     h1,
-    p {
+    div {
       grid-column: main-content / span 6;
       // @media (min-width: $tablet) {
       //   grid-column: margin-start / span 8;

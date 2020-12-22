@@ -145,6 +145,17 @@ ol {
 blockquote {
   padding-left: 30px;
   position: relative;
-  border-left: 3px solid $borderColor-light;
+  // border-left: 3px solid $borderColor-light;
   margin: 1rem 0;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: $radius-small;
+    background-color: $borderColor-light;
+  }
 }
