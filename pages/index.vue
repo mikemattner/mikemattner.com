@@ -14,6 +14,12 @@
         </div>
       </template>
     </PageHero>
+    <section id="photos" class="section section--images three-col">
+      <div v-for="image in images" :key="image.src" class="personal-image">
+        <StaticImage :src="image.src" alt="image.alt" />
+        <div class="label">{{ image.alt }}</div>
+      </div>
+    </section>
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5">{{ writing.title }}</Header>
@@ -42,6 +48,20 @@ export default {
       JennAirWorkbook,
       JennAirHub,
       WhirlpoolTopLoad,
+      images: [
+        {
+          src: 'img/mike-cat.jpg',
+          alt: 'Here I photo bomb my cat.',
+        },
+        {
+          src: 'img/mike-painting.jpg',
+          alt: 'What a lovely painting!',
+        },
+        {
+          src: 'img/mike-cooking.jpg',
+          alt: 'Grilling before the game.',
+        },
+      ],
     }
   },
   async asyncData({ $content, app }) {
@@ -107,6 +127,66 @@ export default {
       }
       .button {
         margin-top: 2rem;
+      }
+    }
+    &--images {
+      padding-bottom: 0;
+      .personal-image {
+        border-radius: $radius-small;
+        overflow: hidden;
+        // height: 250px;
+        width: 100%;
+        position: relative;
+        &::before {
+          content: '';
+          padding-bottom: 100%;
+          display: block;
+        }
+        img {
+          @include cover-background(top);
+          transition: $transition-slow;
+          transform: scale(1);
+          z-index: 1;
+        }
+        .label {
+          z-index: 2;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: $defaultPadding $defaultPadding/5;
+          font-size: $small;
+          text-align: center;
+          background-image: linear-gradient(
+            to top,
+            rgba($bodyBackground, 0.9) 0%,
+            rgba($bodyBackground, 0) 100%
+          );
+          // font-family: $serif-font;
+        }
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+        &:nth-child(1) {
+          grid-column: main-content / span 3;
+          @media (min-width: $tablet) {
+            grid-column: first-col;
+          }
+        }
+        &:nth-child(2) {
+          grid-column: main-content / span 3;
+          @media (min-width: $tablet) {
+            grid-column: second-col;
+          }
+        }
+        &:nth-child(3) {
+          grid-column: main-content / span 3;
+          @media (min-width: $tablet) {
+            grid-column: third-col;
+          }
+        }
       }
     }
   }
