@@ -19,6 +19,23 @@ $max-width: 25rem;
   }
 }
 
+.three-col {
+  display: grid;
+  grid-template-columns:
+      [full-start] $column-gap
+      [main-content] repeat( 3, 1fr ) 
+      [full-end] $column-gap;
+  @media (min-width: $tablet) {
+    column-gap: $column-gap;
+    grid-template-columns:
+    [full-start] $column-gap
+    [first-col] 1fr
+    [second-col] 1fr
+    [third-col] 1fr
+    [full-end] $column-gap;
+  }
+}
+
 .main-content,
 .nuxt-content > * {
   grid-column: main-content / span 6;

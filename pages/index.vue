@@ -11,6 +11,7 @@
         <div class="header-content">
           <p v-html="intro.body"></p>
           <p v-html="intro.social" class="social"></p>
+          <Button to="/about" class="button">More About Me</Button>
         </div>
       </template>
     </PageHero>

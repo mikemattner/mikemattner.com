@@ -4,12 +4,13 @@
     <div class="darker main-content margin-start-outdent">
       <p class="email--link">hello @ mikemattner.com</p>
       <p>
-        &copy; {{ theYear }} Mike Mattner. Made in Michigan. Built with Nuxt.
-        <a href="https://github.com/mikemattner/mikemattner.com"
-          >Open Sourced</a
-        >
+        This personal site is
+        <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a
+        >. Fork it, modify it for yourself, or just browse the code. Made in
+        Michigan and built with Nuxt.
         <fa-icon icon="heart" size="sm"></fa-icon>
       </p>
+      <p>&copy; {{ theYear }} Mike Mattner.</p>
     </div>
   </footer>
 </template>
@@ -46,12 +47,13 @@ export default {
       // flex-direction: column;
     }
     p {
-      margin: 0;
+      // margin: 0;
     }
     .email--link {
       font-size: 1rem;
       letter-spacing: 0.075rem;
       color: $white;
+      font-family: $serif-font;
       @media (max-width: $tablet) {
         font-size: 1rem;
       }

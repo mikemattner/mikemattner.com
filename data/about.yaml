@@ -5,12 +5,18 @@ intro:
 
 statement:
   title: Development &amp; Design Focused
-  body: <p><strong>I&rsquo;ve worked for over 13-years</strong> as a designer and developer on the web. 
+  subtitle: I bridge the gap between design and technology.
+
+page:
+  title: A Little History
+  body: <p>I&rsquo;ve worked for over 13-years as a designer and developer on the web. 
       At every professional stop I&rsquo;ve been a hybrid in a creative or production based role and 
       have a broad knowledge base because of it. I'm passionate about building things for the web, 
       and couldn't imagine a life without it.</p>
 
-      <p>I am currently working as a senior UI/UX Developer at Aisle Rocket.</p>
+      <p>I am currently working as a senior UI/UX Developer at Aisle Rocket. I work on a wide variety
+      of brands and projects involving product launches, component driven product design, and
+      technical consultation.</p>
 
 skills:
   - Front End Development
@@ -21,8 +27,6 @@ skills:
 
 softwares:
   - Figma
-  - Sketch
-  - Sublime Text
   - VS Code
   - iTerm
   - Photoshop
@@ -34,6 +38,8 @@ technical:
   - Sass/SCSS
   - JavaScript
   - VueJS
+  - React
+  - React Native
   - npm/yarn
   - webpack
   - Gulp
