@@ -53,6 +53,7 @@ export default {
   // @media (min-width: $tablet) {
   //   padding: $defaultPadding 0;
   // }
+  transition: $transition;
   a {
     display: flex;
     align-items: flex-start;
