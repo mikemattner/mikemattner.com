@@ -8,6 +8,15 @@
     ]"
   >
     <slot></slot>
+    <StaticImage
+      v-if="image"
+      :src="image"
+      alt="imageAlt"
+      class="background-image"
+    />
+    <div v-if="arrow" class="anchor main-content" aria-hidden="true">
+      <div class="bounce-arrow"></div>
+    </div>
   </header>
 </template>
 
@@ -18,6 +27,14 @@ export default {
     dark: Boolean,
     bold: Boolean,
     arrow: Boolean,
+    image: {
+      type: String,
+      default: '',
+    },
+    imageAlt: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
@@ -27,8 +44,23 @@ export default {
   padding-top: 6rem;
   position: relative;
   z-index: 100;
+  overflow: hidden;
   @media (min-width: $tablet) {
     padding-top: 8rem;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to top,
+      rgba($bodyBackground, 1) 0%,
+      rgba($bodyBackground, 0) 100%
+    );
+    z-index: 2;
   }
   &--full {
     // min-height: 100vh;
@@ -46,10 +78,16 @@ export default {
     color: rgba($white, 0.5);
     font-weight: 400;
   }
+  h1,
+  h2,
+  p,
+  div {
+    z-index: 100;
+  }
   .anchor {
     display: flex;
     position: absolute;
-    bottom: -5rem;
+    bottom: 0;
     height: 3rem;
     width: 3rem;
     left: 50%;
@@ -58,13 +96,21 @@ export default {
     .bounce-arrow {
       display: block;
       height: 3rem;
-      margin: 0 auto;
+      margin: 0;
       &:before {
-        @include arrow-down(rgba($primary, 1));
+        @include arrow-down(rgba($blueSteel, 1));
         animation: bounce 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
       }
+    }
+  }
+  .background-image {
+    @include cover-background(top);
+    z-index: 1;
+    opacity: 0;
+    &.v-lazy-image-loaded {
+      opacity: 0.5;
     }
   }
 }

@@ -30,6 +30,7 @@ export default {
 <style lang="scss">
 .button {
   border: 1px solid $primary;
+  border-radius: $radius-small;
   padding: 0.5rem 1rem;
   display: block;
   text-align: center;
