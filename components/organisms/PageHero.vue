@@ -90,8 +90,9 @@ export default {
     bottom: 0;
     height: 3rem;
     width: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    // transform: translateX(-50%);
+    left: 0;
     background-image: none;
     .bounce-arrow {
       display: block;

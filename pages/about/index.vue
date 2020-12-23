@@ -2,24 +2,10 @@
   <div class="about">
     <PageHero>
       <template v-slot:default>
-        <Header
-          tag="h1"
-          class="display-3"
-          v-html="statement.title"
-          decorator
-        ></Header>
+        <Header tag="h1" class="display-3" v-html="statement.title"></Header>
         <p v-html="statement.subtitle"></p>
       </template>
     </PageHero>
-    <!--<section
-      id="personal-photo"
-      class="section section--images section--personal four-col"
-    >
-      <div class="personal-image">
-        <StaticImage :src="images[0].src" :alt="images[0].alt" />
-        <div class="label">{{ images[0].alt }}</div>
-      </div>
-    </section> -->
     <section id="photos" class="section section--images three-col">
       <div v-for="image in images" :key="image.src" class="personal-image">
         <StaticImage :src="image.src" alt="image.alt" />

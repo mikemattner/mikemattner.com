@@ -7,12 +7,13 @@ JennAirWorkbook:
   title: Immersive Training
   logo: jennairAlt.svg
   year: 2019
+  role: Developer
   tags:
     - Vue
     - PWA
     - Firebase
-  description: Part of a team that produced a fully immersive JennAir
-        product training experience.
+  description: Part of a team that produced a fully immersive JennAir product training experience, 
+               including a freeform note taking experience that could follow you across devices.
   image:
     src: img/workbook/wow-curriculum-internal.jpg
     alt: JennAir Workbook home screen
@@ -23,22 +24,40 @@ JennAirHub:
   title: Influencer Hub
   logo: jennairAlt.svg
   year: 2018
+  role: Developer
   tags:
     - Development
     - Design
     - Animation
   description: When JennAir rebranded, I was a key team member for the
-        development and design of the overhauled experience.
+        development and design of the overhauled training dashboard.
   image:
     src: img/jennair/columns.jpg
     alt: JennAir Influencer Hub feature page
   link:
 
+MaytagExperience:
+  brand: Maytag
+  title: Landing Page Experiences
+  logo: maytag.svg
+  year: 2020
+  role: Developer
+  tags:
+    - Development
+    - Animation
+    - jQuery
+    - AEM
+  description: I was the lead developer on a total reimagining of the category and sub-category landing pages.
+  image:
+    src: img/whirlpool/secondary.jpg
+    alt: Whirlpool Intuitive Touch Control intro
+
 WhirlpoolTopLoad:
   brand: Whirlpool
-  title: Experiential Design
+  title: Experiential Interactive Piece
   logo: whirlpool.svg
   year: 2016
+  role: Developer
   tags:
     - Development
     - Animation
@@ -48,13 +67,13 @@ WhirlpoolTopLoad:
   image:
     src: img/whirlpool/secondary.jpg
     alt: Whirlpool Intuitive Touch Control intro
-  link: https://www.whirlpool.com/laundry/cabrio-top-load-washer-set.html
 
 Craftsman:
   brand: Craftsman
   title: Updated Brand Transition
   logo: craftsman.svg
   year: 2016 – 2018 
+  role: Developer
   tags:
     - Development
   description: Working with Craftsman's in-house design team on the brand transition.
