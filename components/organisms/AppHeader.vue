@@ -39,6 +39,13 @@
                 ><span @click="toggle()">About</span></nuxt-link
               >
             </li>
+            <li>
+              <a
+                href="/files/mikemattner_20201223.pdf"
+                download="MikeMattner.pdf"
+                >Resume</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
