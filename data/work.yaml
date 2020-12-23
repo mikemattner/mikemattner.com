@@ -1,19 +1,13 @@
-intro:
-  title: Work
+introduction:
+  title: Selected Work
   body: A selection of projects I&rsquo;ve worked on as a designer and developer.
 
 JennAirWorkbook:
   brand: JennAir
   title: Immersive Training
-  logo: jennairAlt.svg
   year: 2019
   role: Developer
-  tags:
-    - Vue
-    - PWA
-    - Firebase
-  description: Part of a team that produced a fully immersive JennAir product training experience, 
-               including a freeform note taking experience that could follow you across devices.
+  description: Coming soon.
   image:
     src: img/workbook/wow-curriculum-internal.jpg
     alt: JennAir Workbook home screen
@@ -22,15 +16,9 @@ JennAirWorkbook:
 JennAirHub:
   brand: JennAir
   title: Influencer Hub
-  logo: jennairAlt.svg
   year: 2018
   role: Developer
-  tags:
-    - Development
-    - Design
-    - Animation
-  description: When JennAir rebranded, I was a key team member for the
-        development and design of the overhauled training dashboard.
+  description: Coming soon.
   image:
     src: img/jennair/columns.jpg
     alt: JennAir Influencer Hub feature page
@@ -38,46 +26,21 @@ JennAirHub:
 
 MaytagExperience:
   brand: Maytag
-  title: Landing Page Experiences
-  logo: maytag.svg
-  year: 2020
+  title: Maytag.com
+  year: 2020 - Present
   role: Developer
-  tags:
-    - Development
-    - Animation
-    - jQuery
-    - AEM
-  description: I was the lead developer on a total reimagining of the category and sub-category landing pages.
+  description: Coming soon.
   image:
-    src: img/whirlpool/secondary.jpg
-    alt: Whirlpool Intuitive Touch Control intro
+    src: img/maytag/primary.jpg
+    alt: Maytag experience
 
 WhirlpoolTopLoad:
   brand: Whirlpool
-  title: Experiential Interactive Piece
-  logo: whirlpool.svg
-  year: 2016
+  title: Whirlpool.com
+  year: 2016 - Present
   role: Developer
-  tags:
-    - Development
-    - Animation
-    - jQuery
-    - AEM
-  description: Implemented the interactive educational piece for a new laundry UI.
+  description: Coming soon.
   image:
-    src: img/whirlpool/secondary.jpg
+    src: img/whirlpool/primary.jpg
     alt: Whirlpool Intuitive Touch Control intro
 
-Craftsman:
-  brand: Craftsman
-  title: Updated Brand Transition
-  logo: craftsman.svg
-  year: 2016 – 2018 
-  role: Developer
-  tags:
-    - Development
-  description: Working with Craftsman's in-house design team on the brand transition.
-  image:
-    src: img/craftsman/pride.jpg
-    alt: Craftsman's new owner announcement
-  link: https://www.craftsman.com
