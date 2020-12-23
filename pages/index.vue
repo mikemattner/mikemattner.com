@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero bold full>
+    <PageHero bold full arrow>
       <template v-slot:default>
         <Header
           tag="h1"
@@ -9,8 +9,7 @@
           decorator
         ></Header>
         <div class="header-content">
-          <p v-html="intro.body"></p>
-          <p v-html="intro.social" class="social"></p>
+          <div v-html="intro.body"></div>
           <Button to="/about" class="button">More About Me</Button>
         </div>
       </template>
@@ -65,7 +64,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `UI/UX Designer & Developer in Michigan – %s`,
+      titleTemplate: `UX/UI Designer & Developer in Michigan – %s`,
     }
   },
 }
@@ -77,9 +76,9 @@ export default {
     h1 {
       grid-column: main-content / span 6;
       // mix-blend-mode: hard-light;
-      line-height: 0.85;
+      // line-height: 0.85;
       @media (min-width: $tablet) {
-        grid-column: main-content / span 6;
+        grid-column: main-content / span 7;
       }
     }
     .header-content {

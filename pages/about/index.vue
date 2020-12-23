@@ -11,6 +11,15 @@
         <p v-html="statement.subtitle"></p>
       </template>
     </PageHero>
+    <!--<section
+      id="personal-photo"
+      class="section section--images section--personal four-col"
+    >
+      <div class="personal-image">
+        <StaticImage :src="images[0].src" :alt="images[0].alt" />
+        <div class="label">{{ images[0].alt }}</div>
+      </div>
+    </section> -->
     <section id="photos" class="section section--images three-col">
       <div v-for="image in images" :key="image.src" class="personal-image">
         <StaticImage :src="image.src" alt="image.alt" />
@@ -24,20 +33,18 @@
         v-html="page.title"
       ></Header>
       <div class="main-content" v-html="page.body"></div>
+      <Header
+        tag="h2"
+        class="display-6 main-content"
+        v-html="intro.title"
+      ></Header>
+      <div class="main-content" v-html="intro.body"></div>
     </section>
   </div>
 </template>
 
 <script>
-import {
-  intro,
-  statement,
-  page,
-  skills,
-  softwares,
-  technical,
-  brands,
-} from '~/data/about.yaml'
+import { intro, statement, page } from '~/data/about.yaml'
 
 export default {
   name: 'About',
@@ -48,18 +55,14 @@ export default {
       intro,
       statement,
       page,
-      skills,
-      softwares,
-      technical,
-      brands,
       images: [
-        {
-          src: 'img/mike-cat.jpg',
-          alt: 'Here I photo bomb my cat.',
-        },
         {
           src: 'img/mike-painting.jpg',
           alt: 'What a lovely painting!',
+        },
+        {
+          src: 'img/mike-cat.jpg',
+          alt: 'Here is the time I photo bombed my cat.',
         },
         {
           src: 'img/mike-cooking.jpg',
@@ -83,43 +86,44 @@ export default {
   .hero {
     h1 {
       margin-bottom: 0rem;
-      @media (min-width: $tablet) {
-        // text-indent: -0.25rem;
-      }
     }
     p {
-      margin-bottom: 3rem;
+      // margin-bottom: 3rem;
     }
-    h1,
+    h1 {
+      grid-column: main-content / span 7;
+    }
     p {
       grid-column: main-content / span 6;
-      // @media (min-width: $tablet) {
-      //   grid-column: margin-start / span 8;
-      // }
     }
   }
   .section {
     &--images {
-      padding: 0 0 $defaultPadding;
+      padding: $defaultPadding * 2 0 $defaultPadding;
       .personal-image {
         border-radius: $radius;
-        box-shadow: 0 2px 25px rgba($darkShadeBackground, 0.33);
+        box-shadow: 0 2px 25px rgba($darkShadeBackground, 0.125);
         overflow: hidden;
         width: 100%;
         position: relative;
-        @media (max-width: $tablet) {
-          height: 250px;
-        }
-        @media (min-width: $tablet) {
-          &::before {
-            content: '';
-            padding-bottom: 100%;
-            display: block;
-          }
+        // @media (max-width: $tablet) {
+        //   height: 250px;
+        // }
+        // @media (min-width: $tablet) {
+        //   &::before {
+        //     content: '';
+        //     padding-bottom: 100%;
+        //     display: block;
+        //   }
+        // }
+        &::before {
+          content: '';
+          padding-bottom: 100%;
+          display: block;
         }
         img {
           @include cover-background(top);
-          transition: $transition-slow;
+          transition: $transition-slow-ease;
           transform: scale(1);
           z-index: 1;
         }
@@ -129,7 +133,7 @@ export default {
           left: 0;
           right: 0;
           bottom: 0;
-          padding: $defaultPadding * 2 $defaultPadding/5 $defaultPadding;
+          padding: $defaultPadding * 3 $defaultPadding/5 $defaultPadding/2;
           font-size: $small;
           text-align: center;
           background-image: linear-gradient(
@@ -138,36 +142,78 @@ export default {
             rgba($bodyBackground, 0) 100%
           );
           font-family: $serif-font;
-          transition: $transition-slow;
+          transition: $transition-slow-ease;
+          opacity: 0;
+          @media (max-width: $tablet) {
+            display: none;
+            visibilty: hidden;
+          }
         }
         &:hover {
           img {
             transform: scale(1.1);
+            transition: $transition-slow;
           }
           .label {
-            padding: $defaultPadding * 2 $defaultPadding/5 $defaultPadding * 2;
+            // padding: $defaultPadding * 2 $defaultPadding/5 $defaultPadding * 2;
+            opacity: 1;
           }
         }
         &:nth-child(1) {
-          grid-column: main-content / span 3;
-          margin-bottom: $defaultPadding;
-          @media (min-width: $tablet) {
-            grid-column: first-col;
-            margin-bottom: 0;
-          }
+          grid-column: first-col;
         }
         &:nth-child(2) {
-          grid-column: main-content / span 3;
-          margin-bottom: $defaultPadding;
-          @media (min-width: $tablet) {
-            grid-column: second-col;
-            margin-bottom: 0;
-          }
+          grid-column: second-col;
         }
         &:nth-child(3) {
-          grid-column: main-content / span 3;
-          @media (min-width: $tablet) {
-            grid-column: third-col;
+          grid-column: third-col;
+        }
+        // &:nth-child(1) {
+        //   grid-column: first-col / span 2;
+        //   grid-row: 1 / span 2;
+        //   @media (max-width: $tablet) {
+        //     grid-column: first-col;
+        //     grid-row: 1;
+        //     margin-bottom: $defaultPadding;
+        //   }
+        // }
+        // &:nth-child(2) {
+        //   grid-column: third-col / span 2;
+        //   grid-row: 1;
+        //   margin-bottom: $defaultPadding;
+        //   @media (max-width: $tablet) {
+        //     grid-column: second-col;
+        //     grid-row: 1;
+        //     margin-bottom: $defaultPadding;
+        //   }
+        // }
+        // &:nth-child(3) {
+        //   grid-column: third-col;
+        //   grid-row: 2;
+        //   @media (max-width: $tablet) {
+        //     grid-column: first-col;
+        //     grid-row: 2;
+        //   }
+        // }
+        // &:nth-child(4) {
+        //   grid-column: fourth-col;
+        //   grid-row: 2;
+        //   @media (max-width: $tablet) {
+        //     grid-column: second-col;
+        //     grid-row: 2;
+        //   }
+        // }
+      }
+      &.section--personal {
+        .personal-image {
+          grid-column: first-col / span 4;
+          height: 350px;
+          @media (max-width: $tablet) {
+            grid-column: first-col / span 3;
+            grid-row: 2;
+          }
+          &:before {
+            display: none;
           }
         }
       }

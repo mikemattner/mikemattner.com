@@ -1,67 +1,21 @@
 intro:
   title: Get in Touch
-  body: Do you have something to discuss? Reach out to me at 
-      <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.
+  body: <p>Do you have something to discuss? Please reach out to me at 
+      <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>
 
 statement:
-  title: Development &amp; Design Focused
-  subtitle: I bridge the gap between design and technology.
+  title: Developer &amp; Designer
+  subtitle: An attempt at bridging the gap between design and technology.
 
 page:
-  title: A Little History
-  body: <p>I&rsquo;ve worked for over 13-years as a designer and developer on the web. 
-      At every professional stop I&rsquo;ve been a hybrid in a creative or production based role and 
-      have a broad knowledge base because of it. I'm passionate about building things for the web, 
-      and couldn't imagine a life without it.</p>
-
-      <p>I am currently working as a senior UI/UX Developer at Aisle Rocket. I work on a wide variety
-      of brands and projects involving product launches, component driven product design, and
-      technical consultation.</p>
-
-skills:
-  - Front End Development
-  - Creative Direction
-  - UX/UI Design
-  - Creative Strategy
-  - CI/CD with Git
-
-softwares:
-  - Figma
-  - VS Code
-  - iTerm
-  - Photoshop
-  - InDesign
-  - After Effects
-
-technical:
-  - HTML/CSS
-  - Sass/SCSS
-  - JavaScript
-  - VueJS
-  - React
-  - React Native
-  - npm/yarn
-  - webpack
-  - Gulp
-  - jQuery
-  - php
-
-brands:
-  - name: JennAir<sup>&reg;</sup>
-    image: jennairAlt.svg
-  - name: Maytag<sup>&reg;</sup>
-    image: maytag.svg
-  - name: Whirlpool<sup>&reg;</sup>
-    image: whirlpool.svg
-  - name: Craftsman<sup>&reg;</sup>
-    image: craftsman.svg
-  - name: Bushnell
-    image: bushnell.svg
-  - name: KitchenAid<sup>&reg;</sup>
-    image: kitchenaid.svg
-  - name: Amana<sup>&reg;</sup>
-    image: amana.svg
-  - name: Gladiator<sup>&reg;</sup>
-    image: gladiator.svg
-  - name: Kenmore<sup>&reg;</sup>
-    image: kenmore.svg
+  title: A Little About Me
+  body: <p>I&rsquo;ve worked for over 14 years as a designer and developer on the web in a hybrid-based 
+        role and have a broad knowledge base because of it. To get a feel for my place in the development
+        world, I'll refer you to 
+        <a href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">this</a>.</p>
+        <p>In my current role as a senior UX/UI Developer at Aisle Rocket I work on a wide variety
+        of brands and projects involving CPG product launches, component driven product design, and
+        internal tools. I'm largely focused on experience development for mass market brands.</p>
+        <p>In my spare time I enjoy spending time with my wife and pets, reading, keeping up with 
+        politics (to the detriment of our collective health these days), woodworking, home improvement 
+        projects, and sipping a fine craft beer.</p>

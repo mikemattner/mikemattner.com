@@ -11,7 +11,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'UI/UX Designer & Developer in Michigan'
+        content: 'UX/UI Designer & Developer in Michigan'
       }
     ],
     link: [
