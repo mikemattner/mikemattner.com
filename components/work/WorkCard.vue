@@ -2,8 +2,8 @@
   <div
     :class="[
       'is--work',
-      dark == true ? 'dark' : '',
-      light == true ? 'light' : '',
+      right == true ? 'right' : '',
+      left == true ? 'left' : '',
     ]"
   >
     <div class="work-body">
@@ -16,9 +16,7 @@
           />
         </div>
         <div class="work-info">
-          <Header tag="h6" class="text-small"
-            >{{ info.brand }} / {{ info.year }} / {{ info.role }}</Header
-          >
+          <Header tag="h6" class="text-small">{{ info.year }}</Header>
           <Header tag="h3" class="display-6">{{ info.title }}</Header>
           <p v-html="info.description"></p>
         </div>
@@ -30,8 +28,8 @@
 <script>
 export default {
   props: {
-    dark: Boolean,
-    light: Boolean,
+    right: Boolean,
+    left: Boolean,
     info: {
       type: Object,
       default: null,
@@ -64,6 +62,10 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      align-items: center;
+    }
     // @media (min-width: $tablet) {
     //   position: absolute;
     //   top: 0;
@@ -89,7 +91,9 @@ export default {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
       padding: $defaultPadding;
-
+      @media (min-width: $tablet) {
+        width: 50%;
+      }
       // @media (min-width: $tablet) {
       //   padding: $defaultPadding * 2 $defaultPadding $defaultPadding / 2;
       //   position: absolute;
@@ -104,6 +108,17 @@ export default {
     .work-image {
       img {
         margin-bottom: 0;
+      }
+      @media (min-width: $tablet) {
+        position: relative;
+        height: 300px;
+        width: 50%;
+        overflow: hidden;
+        border-radius: $radius;
+        img {
+          @include cover-background(center);
+          z-index: 1;
+        }
       }
       // @media (min-width: $tablet) {
       //   overflow: hidden;
@@ -149,11 +164,6 @@ export default {
     margin-top: 0.25rem;
     font-family: $sans-serif-font;
     font-weight: 700;
-  }
-  &.light {
-    .work-info {
-      color: $darkShadeBackground;
-    }
   }
 }
 </style>

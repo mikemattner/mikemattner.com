@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <PageHero bold full arrow>
+    <PageHero bold full>
       <template v-slot:default>
         <Header
           tag="h1"
-          class="display-3"
+          class="display-4"
           v-html="intro.title"
           decorator
         ></Header>
@@ -14,12 +14,18 @@
         </div>
       </template>
     </PageHero>
-    <!-- <section class="section--work two-col">
-      <WorkCard :info="MaytagExperience" />
-      <WorkCard :info="JennAirWorkbook" />
-      <WorkCard :info="JennAirHub" />
-      <WorkCard :info="WhirlpoolTopLoad" />
-    </section> -->
+    <section class="section--work">
+      <div class="layout">
+        <Header tag="h2" class="display-5" v-html="introduction.title"></Header>
+        <p v-html="introduction.body"></p>
+      </div>
+      <div class="two-col">
+        <WorkCard :info="MaytagExperience" />
+        <WorkCard :info="JennAirWorkbook" />
+        <WorkCard :info="JennAirHub" />
+        <WorkCard :info="WhirlpoolTopLoad" />
+      </div>
+    </section>
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5">{{ writing.title }}</Header>
@@ -36,6 +42,7 @@
 <script>
 import { intro, writing } from '~/data/home.yaml'
 import {
+  introduction,
   JennAirWorkbook,
   JennAirHub,
   MaytagExperience,
@@ -50,6 +57,7 @@ export default {
     return {
       intro,
       writing,
+      introduction,
       JennAirWorkbook,
       JennAirHub,
       MaytagExperience,
@@ -90,7 +98,7 @@ export default {
       // mix-blend-mode: hard-light;
       // line-height: 0.85;
       @media (min-width: $tablet) {
-        grid-column: main-content / span 7;
+        grid-column: main-content / span 6;
       }
     }
     .header-content {
@@ -115,16 +123,29 @@ export default {
       padding-top: 2rem;
       padding-bottom: 4rem;
       border-bottom: 1px solid $borderColor-light;
+      .layout {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        h2,
+        p {
+          grid-column: main-content / span 6;
+          // mix-blend-mode: hard-light;
+          // line-height: 0.85;
+          @media (min-width: $tablet) {
+            grid-column: main-content / span 7;
+          }
+        }
+      }
       @media (min-width: $tablet) {
-        padding-top: 4rem;
-        padding-bottom: 8rem;
+        padding-top: 0;
+        padding-bottom: 10rem;
 
         .is--work:nth-child(even) {
           margin-top: 6rem;
           margin-bottom: -6rem;
         }
         // .is--work:nth-child(2n + 1) {
-        //   margin-top: 6rem;
+        //   margin-top: -6rem;
         //   margin-bottom: -6rem;
         // }
       }
