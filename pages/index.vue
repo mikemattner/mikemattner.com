@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero bold full>
+    <PageHero bold full arrow>
       <template v-slot:default>
         <Header
           tag="h1"
@@ -14,6 +14,12 @@
         </div>
       </template>
     </PageHero>
+    <!-- <section class="section--work two-col">
+      <WorkCard :info="MaytagExperience" />
+      <WorkCard :info="JennAirWorkbook" />
+      <WorkCard :info="JennAirHub" />
+      <WorkCard :info="WhirlpoolTopLoad" />
+    </section> -->
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5">{{ writing.title }}</Header>
@@ -29,7 +35,12 @@
 
 <script>
 import { intro, writing } from '~/data/home.yaml'
-import { JennAirWorkbook, JennAirHub, WhirlpoolTopLoad } from '~/data/work.yaml'
+import {
+  JennAirWorkbook,
+  JennAirHub,
+  MaytagExperience,
+  WhirlpoolTopLoad,
+} from '~/data/work.yaml'
 
 export default {
   name: 'Home',
@@ -41,6 +52,7 @@ export default {
       writing,
       JennAirWorkbook,
       JennAirHub,
+      MaytagExperience,
       WhirlpoolTopLoad,
     }
   },
@@ -98,6 +110,25 @@ export default {
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
+
+    &--work {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid $borderColor-light;
+      @media (min-width: $tablet) {
+        padding-top: 4rem;
+        padding-bottom: 8rem;
+
+        .is--work:nth-child(even) {
+          margin-top: 6rem;
+          margin-bottom: -6rem;
+        }
+        // .is--work:nth-child(2n + 1) {
+        //   margin-top: 6rem;
+        //   margin-bottom: -6rem;
+        // }
+      }
+    }
 
     &--writing {
       padding-top: 2rem;

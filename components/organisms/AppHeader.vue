@@ -41,7 +41,7 @@
             </li>
             <li>
               <a
-                href="/files/mikemattner_20201223.pdf"
+                href="/files/mikemattner_20201224.pdf"
                 download="MikeMattner.pdf"
                 >Resume</a
               >
