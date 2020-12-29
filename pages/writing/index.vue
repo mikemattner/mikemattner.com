@@ -1,10 +1,10 @@
 <template>
   <section class="section section--article">
     <div :key="$route.params.slug">
-      <PageHero dark>
+      <PageHero>
         <template v-slot:default>
           <div class="main-content">
-            <Header tag="h1" class="display-3 main-content" decorator>{{
+            <Header tag="h1" class="display-4 main-content" decorator>{{
               intro.title
             }}</Header>
             <div>
@@ -86,6 +86,9 @@ export default {
       margin-bottom: 3rem;
     }
   }
+  // #content {
+  //   padding-top: $defaultPadding;
+  // }
   .article-list {
     list-style: none;
     margin: 0;

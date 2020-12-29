@@ -26,15 +26,16 @@ export default {
   overflow: hidden;
   transition: $transition;
   color: #fff;
-  padding: 0 $defaultPadding/8;
+  padding: 0;
 
   &__image {
     height: 1.25rem;
     width: 1.25rem;
-    padding: $defaultPadding/25;
+    padding: 0;
     border-radius: 50%;
-    border: 1px solid $blueSteel;
+    // border: 1px solid $white;
     background: $blueSteel;
+    // background: shade($blueSteel, 80%);
     z-index: 10;
     transition: $transition;
     flex: 0 0 1.25rem;
@@ -51,6 +52,7 @@ export default {
     }
     .logo-shape {
       fill: shade($blueSteel, 80%);
+      // fill: $white;
       transition: $transition;
     }
   }
@@ -74,7 +76,7 @@ export default {
   @media (min-width: 769px) {
     &:hover {
       .brand-logo__image {
-        border: 1px solid rgba($primary, 1);
+        // border: 1px solid rgba($primary, 1);
         background-color: $primary;
         .circle-shape {
           fill: rgba($primary, 1);

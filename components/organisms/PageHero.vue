@@ -5,6 +5,7 @@
       full == true ? 'hero--full' : '',
       bold == true ? 'hero--bold' : '',
       dark == true ? 'hero--dark' : '',
+      image == true ? 'hero--image' : '',
     ]"
   >
     <slot></slot>
@@ -48,28 +49,30 @@ export default {
   @media (min-width: $tablet) {
     padding-top: 8rem;
   }
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-image: linear-gradient(
-      to top,
-      rgba($bodyBackground, 1) 0%,
-      rgba($bodyBackground, 0) 100%
-    );
-    z-index: 2;
+  &--image {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to top,
+        rgba($bodyBackground, 1) 0%,
+        rgba($bodyBackground, 0) 100%
+      );
+      z-index: 2;
+    }
   }
   &--full {
     // min-height: 100vh;
     padding-bottom: 4rem;
-    border-bottom: 1px solid $borderColor-light;
+    // border-bottom: 1px solid $borderColor-light;
   }
-  // &--dark {
-  //   background-color: $bodyBackground;
-  // }
+  &--dark {
+    background-color: $darkShadeBackground;
+  }
   h1 {
     // color: $primary;
     margin-bottom: 2rem;

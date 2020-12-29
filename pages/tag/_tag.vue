@@ -1,9 +1,9 @@
 <template>
   <section class="section section--article">
     <div :key="$route.params.slug">
-      <PageHero dark>
+      <PageHero>
         <template v-slot:default>
-          <Header tag="h1" class="display-3 main-content" decorator>
+          <Header tag="h1" class="display-4 main-content" decorator>
             {{ tag.name }}</Header
           >
           <p v-html="tag.description" class="main-content"></p>

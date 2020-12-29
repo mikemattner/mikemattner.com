@@ -4,7 +4,7 @@
       <template v-slot:default>
         <Header
           tag="h1"
-          class="display-4"
+          class="display-3"
           v-html="intro.title"
           decorator
         ></Header>
@@ -14,9 +14,14 @@
         </div>
       </template>
     </PageHero>
-    <section class="section--work">
+    <section class="section--work section--dark">
       <div class="layout">
-        <Header tag="h2" class="display-5" v-html="introduction.title"></Header>
+        <Header
+          tag="h2"
+          class="display-5"
+          v-html="introduction.title"
+          decorator
+        ></Header>
         <p v-html="introduction.body"></p>
       </div>
       <div class="two-col">
@@ -28,7 +33,9 @@
     </section>
     <section id="content" class="section section--writing layout">
       <div class="main-content">
-        <Header tag="h2" class="display-5">{{ writing.title }}</Header>
+        <Header tag="h2" class="display-5" decorator>{{
+          writing.title
+        }}</Header>
         <p>{{ writing.body }}</p>
         <AllArticles :posts="posts" />
         <Button :to="writing.link" class="button">{{
@@ -97,8 +104,10 @@ export default {
       grid-column: main-content / span 6;
       // mix-blend-mode: hard-light;
       // line-height: 0.85;
+      font-size: $h4;
       @media (min-width: $tablet) {
-        grid-column: main-content / span 6;
+        grid-column: main-content / span 8;
+        font-size: $h3;
       }
     }
     .header-content {
@@ -122,7 +131,7 @@ export default {
     &--work {
       padding-top: 2rem;
       padding-bottom: 4rem;
-      border-bottom: 1px solid $borderColor-light;
+      // border-bottom: 1px solid $borderColor-light;
       .layout {
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -160,6 +169,10 @@ export default {
       .button {
         margin-top: 2rem;
       }
+    }
+
+    &--dark {
+      background-color: $darkShadeBackground;
     }
   }
 }

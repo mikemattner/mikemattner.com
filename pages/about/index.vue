@@ -2,7 +2,12 @@
   <div class="about">
     <PageHero>
       <template v-slot:default>
-        <Header tag="h1" class="display-3" v-html="statement.title"></Header>
+        <Header
+          tag="h1"
+          class="display-4"
+          v-html="statement.title"
+          decorator
+        ></Header>
         <p v-html="statement.subtitle"></p>
       </template>
     </PageHero>
@@ -22,15 +27,15 @@
       <Header
         tag="h2"
         class="display-6 main-content"
-        v-html="intro.title"
+        v-html="contact.title"
       ></Header>
-      <div class="main-content" v-html="intro.body"></div>
+      <div class="main-content" v-html="contact.body"></div>
     </section>
   </div>
 </template>
 
 <script>
-import { intro, statement, page } from '~/data/about.yaml'
+import { contact, statement, page } from '~/data/about.yaml'
 
 export default {
   name: 'About',
@@ -38,7 +43,7 @@ export default {
   scrollToTop: true,
   data() {
     return {
-      intro,
+      contact,
       statement,
       page,
       images: [

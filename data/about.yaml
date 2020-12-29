@@ -1,23 +1,20 @@
-intro:
-  title: Get in Touch
-  body: <p>Do you have something to discuss? Please reach out to me at 
-      <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>
-
 statement:
-  title: About me
-  subtitle: It&rsquo;s great to meet you! My career is an attempt at bridging the gap 
-            between design and technology, while delivering
-            world class experiences for consumers.
+  title: I&rsquo;m Mike, a designer & developer from Michigan.
+  subtitle: It&rsquo;s great to meet you! I&rsquo;ve worked for over 14 years as a designer and developer 
+            on the web in a largely hybrid-based role. To get a feel for my place in the development
+        world, I'll refer you to 
+        <a href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">this</a>.
 
 page:
   title: A Little About Me
-  body: <p>I&rsquo;ve worked for over 14 years as a designer and developer on the web in a hybrid-based 
-        role and have a broad knowledge base because of it. To get a feel for my place in the development
-        world, I'll refer you to 
-        <a href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">this</a>.</p>
-        <p>In my current role as a senior UX/UI Developer at Aisle Rocket I work on a wide variety
+  body: <p>In my current role as a senior UX/UI Developer at Aisle Rocket I work on a wide variety
         of brands and projects involving CPG product launches, component driven product design, and
         internal tools. I'm largely focused on experience development for mass market brands.</p>
         <p>In my spare time I enjoy spending time with my wife and pets, reading, keeping up with 
         politics (to the detriment of our collective health these days), woodworking, home improvement 
         projects, and sipping a fine craft beer.</p>
+
+contact:
+  title: Get in Touch
+  body: <p>Do you have something to discuss? Please reach out to me at 
+      <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>

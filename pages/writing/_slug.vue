@@ -5,9 +5,7 @@
         <template v-slot:default>
           <div class="meta top main-content">
             Posted
-            <time
-              ><strong>{{ formattedDate }}</strong></time
-            >
+            <time>{{ formattedDate }}</time>
           </div>
           <Header
             tag="h1"
@@ -45,7 +43,8 @@
               Article</Button
             >
             <Button v-else to="/writing/" class="button prev"
-              >Back to Articles
+              ><fa-icon icon="chevron-left" size="sm"></fa-icon> Back to
+              Articles
             </Button>
             <Button
               v-if="next"
@@ -55,6 +54,7 @@
             ></Button>
             <Button v-else to="/writing/" class="button next"
               >Back to Articles
+              <fa-icon icon="chevron-right" size="sm"></fa-icon>
             </Button>
           </div>
         </div>
@@ -250,7 +250,8 @@ export default {
   .meta {
     font-size: $small;
     margin: 0 0 2rem;
-    color: tint($darkBlue, 40%);
+    // color: tint($darkBlue, 40%);
+    color: $blueSteel;
     &.top {
       margin: 0;
     }
@@ -267,7 +268,8 @@ export default {
       margin-right: $defaultPadding/2;
       .button {
         font-size: $small;
-        padding: 5px 10px;
+        // padding: 5px 10px;
+        padding: 2px 10px;
         svg {
           margin-left: 0.5rem;
         }
@@ -289,12 +291,15 @@ export default {
             background-image: none;
             padding: 2px 10px;
             border-radius: 10px;
-            background-color: $tagColor;
-            color: shade($tagColor, 80%);
+            background-color: rgba($tagColor, 0);
+            // color: shade($tagColor, 80%);
+            border: 2px solid $tagColor;
+            color: $tagColor;
             font-weight: 700;
             &:hover {
               background-image: none;
               background-color: $primary;
+              border: 2px solid $primary;
               color: $white;
             }
           }
@@ -303,9 +308,9 @@ export default {
     }
   }
   .links {
-    margin-top: 2rem;
+    // margin-top: 2rem;
     padding: 1rem 0;
-    border-top: 1px solid $borderColor-light;
+    // border-top: 1px solid $borderColor-light;
     text-align: center;
     font-size: 0.75rem;
     flex-direction: column;
