@@ -1,5 +1,5 @@
 $column-gap: 1.25rem;
-$max-width: 25rem;
+$max-width: 30rem;
 
 .layout,
 .nuxt-content {
@@ -12,9 +12,11 @@ $max-width: 25rem;
     column-gap: $column-gap;
     grid-template-columns:
       [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
+      [content-start] 1fr
       [margin-start] 1fr
       [margin-end main-content-start] repeat( 6, 1fr )
       [main-content-end outdent-start] 1fr 
+      [content-end] 1fr
       [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
   }
 }

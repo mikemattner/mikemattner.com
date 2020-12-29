@@ -41,9 +41,9 @@ export default {
 <style scoped lang="scss">
 .is--work {
   .work-body {
-    background-color: $darkShadeBackground;
-    border-radius: $radius;
-    box-shadow: 0 2px 25px 1px rgba($darkShadeBackground, 0.25);
+    // background-color: $darkShadeBackground;
+    // border-radius: $radius;
+    // box-shadow: 0 2px 25px rgba($black, 0.25);
     position: relative;
     overflow: hidden;
     @media (max-width: $tablet) {
@@ -63,8 +63,8 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     @media (min-width: $tablet) {
-      flex-direction: row;
-      align-items: center;
+      // flex-direction: row;
+      // align-items: center;
     }
     // @media (min-width: $tablet) {
     //   position: absolute;
@@ -92,7 +92,7 @@ export default {
       transition: $transition-slow-ease;
       padding: $defaultPadding;
       @media (min-width: $tablet) {
-        width: 50%;
+        // width: 50%;
       }
       // @media (min-width: $tablet) {
       //   padding: $defaultPadding * 2 $defaultPadding $defaultPadding / 2;
@@ -111,8 +111,8 @@ export default {
       }
       @media (min-width: $tablet) {
         position: relative;
-        height: 300px;
-        width: 50%;
+        height: 350px;
+        // width: 50%;
         overflow: hidden;
         border-radius: $radius;
         img {

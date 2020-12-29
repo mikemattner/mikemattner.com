@@ -62,7 +62,7 @@ export default {
     background-position: 0% 100%;
     background-repeat: no-repeat;
     background-size: 0 0;
-    padding: $defaultPadding $defaultPadding / 5;
+    padding: $defaultPadding 0;
     border-bottom: 1px solid tint($darkBlue, 2%);
   }
   h3 {
@@ -84,6 +84,8 @@ export default {
   }
   .article-title {
     margin: 0;
+    z-index: 2;
+    position: relative;
   }
   .article-meta {
     font-size: $small;
@@ -92,36 +94,47 @@ export default {
     font-weight: 400;
     color: $blueSteel;
     transition: all 0.25s ease-in-out;
+    z-index: 2;
+    position: relative;
   }
   .anchor {
     display: flex;
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%) translateX(-50%);
-    left: 0;
+    right: 0;
+    transform: translateY(100%) translateX(30%);
     background-image: none;
     transition: all 0.25s ease-in-out;
     opacity: 0;
+    padding: 40px;
+    border-radius: 50%;
+    background-color: $blueSteel;
+    z-index: 0;
     .bounce-arrow {
       display: block;
       margin: 0;
       &:before {
-        @include arrow-right(rgba($blueSteel, 1));
+        @include arrow-right(rgba($white, 1));
       }
     }
   }
   &:hover {
-    background-color: $darkShadeBackground;
-    // h3 {
-    //   transform: translateX(50px);
+    // background-color: $darkShadeBackground;
+    // a {
+    //   padding: $defaultPadding $defaultPadding;
     // }
-    // .article-meta {
-    //   transform: translateX(50px);
-    // }
+    h3 {
+      // transform: translateX(20px);
+      color: $primary;
+    }
+    .article-meta {
+      // transform: translateX(20px);
+      color: $primary;
+    }
     // .anchor {
     //   opacity: 1;
-    //   transform: translateY(-50%) translateX(10px);
+    //   padding: 80px;
+    //   transform: translateY(-50%) translateX(30%);
     // }
   }
 }

@@ -43,7 +43,8 @@
               <a
                 href="/files/mikemattner_20201224.pdf"
                 download="MikeMattner.pdf"
-                >Resume</a
+                target="_blank"
+                >R&eacute;sum&eacute;</a
               >
             </li>
           </ul>
@@ -75,7 +76,7 @@ export default {
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($bodyBackground, 1);
+$transparent-bg: rgba($darkShadeBackground, 1);
 .headroom {
   &--surround {
     position: fixed;
@@ -99,12 +100,7 @@ $transparent-bg: rgba($bodyBackground, 1);
     left: 0;
     right: 0;
     width: 100%;
-    background-image: linear-gradient(
-      to bottom,
-      rgba($bodyBackground, 1) 0%,
-      rgba($bodyBackground, 0.7) 70%,
-      rgba($bodyBackground, 0) 100%
-    );
+    background: none;
 
     @media (min-width: 769px) {
       // padding: 0 2rem;
@@ -123,8 +119,8 @@ $transparent-bg: rgba($bodyBackground, 1);
         text-decoration: none;
       }
       @media (min-width: 769px) {
-        grid-column: full-start / span 2;
-        justify-self: center;
+        grid-column: content-start / span 2;
+        // justify-self: center;
       }
     }
     &__menu {
@@ -202,13 +198,35 @@ $transparent-bg: rgba($bodyBackground, 1);
           padding: 0;
           a {
             // background-image: none;
+            position: relative;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            color: $blueSteel;
 
             &.nuxt-link-exact-active {
-              color: $blueSteel;
+              color: $white;
+              font-weight: 700;
+              background-image: $solidPrimaryGradient;
+
+              // &:before {
+              //   content: '';
+              //   display: block;
+              //   // position: absolute;
+              //   margin-right: $defaultPadding/5;
+              //   width: 10px;
+              //   height: 10px;
+              //   border: 2px solid $primary;
+              //   border-radius: 10px;
+              //   flex: 0 0 10px;
+              // }
 
               &:hover {
                 color: $white;
               }
+            }
+            &:hover {
+              color: $white;
             }
           }
         }
@@ -220,12 +238,13 @@ $transparent-bg: rgba($bodyBackground, 1);
         grid-column-end: main-content-end;
       }
       @media (max-width: 768px) {
-        font-size: 2.25rem;
+        font-size: 1rem;
         font-weight: 900;
         letter-spacing: 0.125rem;
         position: fixed;
         top: 0;
-        bottom: 0;
+        // bottom: 0;
+        padding: 4.5rem 1rem 2.5rem;
         left: 0;
         right: 0;
         width: 100%;
@@ -240,17 +259,18 @@ $transparent-bg: rgba($bodyBackground, 1);
         justify-content: center;
         flex-direction: column;
         clip-path: circle(25% at 150% -50%);
+        box-shadow: 0 2px 25px 1px rgba($black, 0.25);
 
         .nav__block {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-end;
           justify-content: center;
         }
         ul {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-end;
           list-style: none;
           margin: 0 0 0 0;
           padding: 0;
@@ -275,7 +295,7 @@ $transparent-bg: rgba($bodyBackground, 1);
           }
 
           &.nuxt-link-exact-active {
-            color: $primary !important;
+            color: $white !important;
             background-size: 100% 0;
           }
         }
@@ -330,21 +350,26 @@ $transparent-bg: rgba($bodyBackground, 1);
   //     height: 2.5rem;
   //   }
   // }
-  // &--not-top {
-  //   .navbar {
-  //     background-color: $bodyBackground;
-  //     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-  //     @media (min-width: 768px) {
-  //       height: 2.5rem;
-  //     }
-  //     &.active {
-  //       box-shadow: none;
-  //       background-color: $bodyBackground;
-  //       @media (min-width: 768px) {
-  //         background-color: $transparent-bg;
-  //       }
-  //     }
-  //   }
-  // }
+  &--not-top {
+    .navbar {
+      background-color: rgba($darkShadeBackground, 1);
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgba($bodyBackground, 1) 0%,
+      //   rgba($bodyBackground, 0) 100%
+      // );
+      // box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+      @media (min-width: 768px) {
+        height: 2.5rem;
+      }
+      // &.active {
+      //   box-shadow: none;
+      //   background-color: $bodyBackground;
+      //   @media (min-width: 768px) {
+      //     background-color: $transparent-bg;
+      //   }
+      // }
+    }
+  }
 }
 </style>

@@ -33,8 +33,8 @@ export default {
 
 <style lang="scss">
 .button {
-  border: 1px solid $primary;
-  border-radius: $radius-small;
+  border: 2px solid $primary;
+  border-radius: $radius-large;
   padding: 0.5rem 1rem;
   display: block;
   text-align: center;
@@ -62,7 +62,7 @@ export default {
   &:hover {
     color: $white;
     border-color: $primary;
-    border-radius: $radius-small;
+    // border-radius: $radius-small;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     background-image: none;
     // transform: scale(1.02);
