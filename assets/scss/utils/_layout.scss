@@ -79,8 +79,10 @@ $max-width: 30rem;
     column-gap: $column-gap;
     row-gap: $column-gap;
     grid-template-columns:
+      [full-start] minmax($column-gap, calc(40vw - #{$max-width}))
       [first-col] 1fr
-      [second-col] 1fr;
+      [second-col] 1fr
+      [full-end] minmax($column-gap, calc(40vw - #{$max-width}));
   }
 }
 

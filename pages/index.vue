@@ -153,7 +153,20 @@ export default {
       @media (min-width: $tablet) {
         padding-top: 0;
         padding-bottom: 10rem;
-
+        .is--work {
+          &:nth-child(1) {
+            grid-column: first-col;
+          }
+          &:nth-child(2) {
+            grid-column: second-col;
+          }
+          &:nth-child(3) {
+            grid-column: first-col;
+          }
+          &:nth-child(4) {
+            grid-column: second-col;
+          }
+        }
         .is--work:nth-child(even) {
           margin-top: 6rem;
           margin-bottom: -6rem;

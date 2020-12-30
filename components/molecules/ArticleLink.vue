@@ -113,6 +113,10 @@ export default {
       padding: $defaultPadding/5;
       border-radius: 50%;
       background: $blueSteel;
+      @include max-media($tablet) {
+        width: 1.5rem !important;
+        height: 1.5rem;
+      }
       path {
         fill: shade($blueSteel, 90%);
       }

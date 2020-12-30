@@ -7,13 +7,14 @@
     ]"
   >
     <fa-icon
+      class="input-icon"
       icon="times"
       size="sm"
       title="Clear Search"
       @click="clearSearch()"
       v-if="active"
     ></fa-icon>
-    <fa-icon icon="search" size="sm" v-else></fa-icon>
+    <fa-icon class="input-icon" icon="search" size="sm" v-else></fa-icon>
     <input
       v-model="query"
       type="search"
@@ -25,6 +26,24 @@
       <li v-for="article of writing" :key="article.slug">
         <nuxt-link :to="`/writing/${formatSlug(article.slug)}`"
           ><span v-html="article.title"></span
+          ><fa-icon
+            v-if="article.type == 'link'"
+            class="article-type"
+            icon="link"
+            size="sm"
+          ></fa-icon
+          ><fa-icon
+            v-if="article.type == 'quote'"
+            class="article-type"
+            icon="quote-left"
+            size="sm"
+          ></fa-icon
+          ><fa-icon
+            v-if="article.type == 'entry'"
+            class="article-type"
+            icon="stream"
+            size="sm"
+          ></fa-icon
         ></nuxt-link>
       </li>
     </ul>
@@ -76,18 +95,19 @@ export default {
 .search-form {
   position: relative;
 
-  .svg-inline--fa {
+  .input-icon {
     position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 103;
-    width: 1rem;
-    height: 1rem;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
     &.fa-search {
       pointer-events: none;
       path {
-        fill: shade($blueSteel, 60%);
+        fill: shade($blueSteel, 30%);
       }
     }
     &.fa-times {
@@ -127,7 +147,7 @@ export default {
       box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
     }
     &::placeholder {
-      color: shade($blueSteel, 60%);
+      color: shade($blueSteel, 30%);
       opacity: 1;
     }
   }
@@ -151,13 +171,37 @@ export default {
       padding: 0 $defaultPadding/3;
 
       a {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background-image: none;
         padding: $defaultPadding/3 $defaultPadding/2;
         border-radius: $radius-large;
+
+        .article-type {
+          margin-left: 1rem;
+          width: 1.25rem !important;
+          height: 1.25rem;
+          padding: $defaultPadding/5;
+          border-radius: 50%;
+          background: $blueSteel;
+          @include max-media($tablet) {
+            width: 1.5rem !important;
+            height: 1.5rem;
+          }
+          path {
+            fill: shade($blueSteel, 90%);
+          }
+        }
         &:hover {
           background-color: shade($blueSteel, 10%);
-          // color: shade($blueSteel, 90%);
+
+          .article-type {
+            background: shade($blueSteel, 90%);
+            path {
+              fill: $white;
+            }
+          }
         }
       }
     }

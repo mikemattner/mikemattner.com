@@ -41,7 +41,7 @@
           <TagList :tags="writing.tag" />
         </div>
       </PageHero>
-      <div id="content" :data-type="writing.type">
+      <div id="content" :data-type="writing.type" :class="writing.type">
         <nuxt-content :document="writing" />
         <div class="layout">
           <p v-if="writing.type == 'quote'" class="attribution">
@@ -164,9 +164,22 @@ export default {
       padding: $defaultPadding/5;
       border-radius: 50%;
       background: $blueSteel;
+      @include max-media($tablet) {
+        width: 1.5rem !important;
+        height: 1.5rem;
+      }
       path {
         fill: shade($blueSteel, 90%);
       }
+    }
+  }
+  #content {
+    padding-top: 2rem;
+  }
+  .quote {
+    blockquote {
+      font-size: $base * 1.25;
+      line-height: 1.5;
     }
   }
   .nuxt-content {
