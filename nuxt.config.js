@@ -1,3 +1,5 @@
+import getRoutes from './utils/getRoutes'
+
 export default {
   target: 'static',
   /*
@@ -58,6 +60,8 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxt/content',
+    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/sitemap',
   ],
   styleResources: {
     scss: [
@@ -107,6 +111,24 @@ export default {
   /*
    ** Build configuration
    */
+  optimizedImages: {
+    inlineImageLimit: -1,
+    handleImages: ['jpeg', 'png', 'webp', 'gif'],
+    optimizeImages: true,
+    optimizeImagesInDev: false,
+    defaultImageLoader: 'img-loader',
+    mozjpeg: {
+      quality: 85,
+    },
+    optipng: false,
+    pngquant: {
+      speed: 7,
+      quality: [0.65, 0.8],
+    },
+    webp: {
+      quality: 85,
+    },
+  },
   build: {
     /*
      ** You can extend webpack config here
@@ -125,6 +147,12 @@ export default {
         test: /\.yaml$/,
         loader: 'js-yaml-loader',
       })
+    },
+  },
+  sitemap: {
+    hostname: 'https://mikemattner.com',
+    routes() {
+      return getRoutes()
     },
   },
 }
