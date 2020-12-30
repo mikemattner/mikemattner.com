@@ -1,18 +1,16 @@
 <template>
   <div class="home">
     <PageHero bold full>
-      <template v-slot:default>
-        <Header
-          tag="h1"
-          class="display-3"
-          v-html="intro.title"
-          decorator
-        ></Header>
-        <div class="header-content">
-          <div v-html="intro.body"></div>
-          <Button to="/about">More About Me</Button>
-        </div>
-      </template>
+      <Header
+        tag="h1"
+        class="display-3"
+        v-html="intro.title"
+        decorator
+      ></Header>
+      <div class="header-content">
+        <div v-html="intro.body"></div>
+        <Button to="/about">More About Me</Button>
+      </div>
     </PageHero>
     <section class="section--work section--dark">
       <div class="layout">
@@ -37,6 +35,7 @@
           writing.title
         }}</Header>
         <p>{{ writing.body }}</p>
+        <SearchForm />
         <AllArticles :posts="posts" />
         <Button :to="writing.link">{{ writing.buttonTitle }}</Button>
       </div>
@@ -121,6 +120,14 @@ export default {
       }
     }
   }
+  .search-form {
+    // margin-top: 3rem;
+    margin-bottom: 2rem;
+    grid-column: main-content / span 6;
+    @media (min-width: $tablet) {
+      grid-column: main-content / span 6;
+    }
+  }
   .section {
     padding: 4rem 0;
     position: relative;
@@ -131,7 +138,7 @@ export default {
       padding-bottom: 4rem;
       // border-bottom: 1px solid $borderColor-light;
       .layout {
-        padding-top: 2rem;
+        // padding-top: 2rem;
         padding-bottom: 2rem;
         h2,
         p {

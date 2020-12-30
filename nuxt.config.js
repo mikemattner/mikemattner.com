@@ -11,16 +11,17 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'UX/UI Designer & Developer in Michigan'
-      }
+        content: 'UX/UI Designer & Developer in Michigan',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {        
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap",
-      }
-    ]
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap',
+      },
+    ],
   },
 
   /*
@@ -33,7 +34,7 @@ export default {
    */
   css: [
     // '@/node_modules/highlight.js/styles/nord.css',
-    '@/assets/scss/app.scss'
+    '@/assets/scss/app.scss',
   ],
 
   /*
@@ -44,7 +45,7 @@ export default {
     '~/plugins/lazyimage.js',
     '~/plugins/imageContext.js',
     '~/plugins/VueFontAwesome.js',
-    { src: '~/plugins/VueScrollReveal.js', ssr: false }
+    { src: '~/plugins/VueScrollReveal.js', ssr: false },
   ],
 
   /*
@@ -56,28 +57,29 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxt/content'
+    '@nuxt/content',
   ],
   styleResources: {
     scss: [
       '~/assets/scss/utils/_functions.scss',
       '~/assets/scss/utils/_variables.scss',
-      '~/assets/scss/utils/_mixins.scss'
-    ]
+      '~/assets/scss/utils/_mixins.scss',
+    ],
   },
   content: {
     markdown: {
       prism: {
         theme: 'prism-themes/themes/prism-nord.css',
-      }
-    }
+      },
+    },
+    fullTextSearchFields: ['title', 'description', 'text'],
   },
   svgLoader: {
     svgoConfig: {
       plugins: [
-        { prefixIds: false } // Disables prefixing for SVG IDs
-      ]
-    }
+        { prefixIds: false }, // Disables prefixing for SVG IDs
+      ],
+    },
   },
   /*
    ** Axios module configuration
@@ -92,15 +94,15 @@ export default {
         urlPattern: 'https://fonts.googleapis.com/.*',
         handler: 'cacheFirst',
         method: 'GET',
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
       },
       {
         urlPattern: 'https://fonts.gstatic.com/.*',
         handler: 'cacheFirst',
         method: 'GET',
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-      }
-    ]
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
+      },
+    ],
   },
   /*
    ** Build configuration
@@ -116,13 +118,13 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
       config.module.rules.push({
         test: /\.yaml$/,
-        loader: 'js-yaml-loader'
+        loader: 'js-yaml-loader',
       })
-    }
-  }
+    },
+  },
 }

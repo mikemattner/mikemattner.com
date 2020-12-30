@@ -1,28 +1,27 @@
 <template>
-  <section class="section section--article">
+  <section class="section section--writing">
     <div :key="$route.params.slug">
       <PageHero>
-        <template v-slot:default>
-          <div class="main-content">
-            <Header tag="h1" class="display-4 main-content" decorator>{{
-              intro.title
-            }}</Header>
-            <div>
-              <p>
-                {{ intro.body }}
-                <span class="tags">
-                  <span v-for="tag in tags" :key="tag">
-                    <nuxt-link :to="`/tag/${formattedTag(tag.name)}`">{{
-                      tag.name
-                    }}</nuxt-link> </span
-                  >.
-                </span>
-              </p>
-            </div>
-          </div></template
-        >
+        <div class="main-content">
+          <Header tag="h1" class="display-4 main-content" decorator>{{
+            intro.title
+          }}</Header>
+          <div>
+            <p>
+              {{ intro.body }}
+              <span class="tags">
+                <span v-for="tag in tags" :key="tag">
+                  <nuxt-link :to="`/tag/${formattedTag(tag.name)}`">{{
+                    tag.name
+                  }}</nuxt-link> </span
+                >.
+              </span>
+            </p>
+          </div>
+        </div>
       </PageHero>
       <section id="content" class="layout">
+        <SearchForm />
         <AllArticles :posts="writing" />
       </section>
     </div>
@@ -72,10 +71,11 @@ export default {
 </script>
 
 <style lang="scss">
-.section--article {
+.section--writing {
   min-height: 90vh;
   padding-bottom: 4rem;
   .hero {
+    // border-bottom: 1px solid $borderColor-light;
     h1 {
       margin-bottom: 0rem;
       @media (min-width: $tablet) {
@@ -83,16 +83,16 @@ export default {
       }
     }
     p {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
   }
-  // #content {
-  //   padding-top: $defaultPadding;
-  // }
-  .article-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .search-form {
+    // margin-top: 3rem;
+    margin-bottom: 2rem;
+    grid-column: main-content / span 6;
+    @media (min-width: $tablet) {
+      grid-column: main-content / span 6;
+    }
   }
   .tags {
     span {

@@ -241,8 +241,9 @@ $transparent-bg: rgba($darkShadeBackground, 1);
         }
       }
       @media (min-width: 769px) {
-        grid-column-start: main-content-start;
-        grid-column-end: main-content-end;
+        // grid-column-start: main-content-start;
+        // grid-column-end: main-content-end;
+        grid-column: main-content-start / span 3;
       }
       @media (max-width: 768px) {
         font-size: 1.25rem;

@@ -1,15 +1,13 @@
 <template>
   <div class="about">
     <PageHero>
-      <template v-slot:default>
-        <Header
-          tag="h1"
-          class="display-4"
-          v-html="statement.title"
-          decorator
-        ></Header>
-        <p v-html="statement.subtitle"></p>
-      </template>
+      <Header
+        tag="h1"
+        class="display-4"
+        v-html="statement.title"
+        decorator
+      ></Header>
+      <p v-html="statement.subtitle"></p>
     </PageHero>
     <section id="photos" class="section section--images three-col">
       <div v-for="image in images" :key="image.src" class="personal-image">
@@ -92,8 +90,8 @@ export default {
     &--images {
       padding: $defaultPadding * 2 0 $defaultPadding;
       .personal-image {
-        border-radius: $radius;
-        box-shadow: 0 2px 25px rgba($darkShadeBackground, 0.125);
+        border-radius: $radius-large;
+        box-shadow: 0 2px 25px rgba($black, 0.125);
         overflow: hidden;
         width: 100%;
         position: relative;

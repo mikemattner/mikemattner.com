@@ -2,6 +2,7 @@
 title: 'Marcus Aurelius'
 date: 2018-01-11
 type: quote
+attribution: 'Marcus Aurelius'
 tag:
     - Wisdom
 link:

@@ -1,17 +1,26 @@
 <template>
-  <article :class="['single-link', archive == true ? 'article--link' : '']">
+  <article
+    :class="['single-link', archive == true ? 'article--link' : '']"
+    :data-type="article.type"
+  >
     <nuxt-link :to="`/writing/${formatSlug(article.slug)}`">
       <div class="article-meta">
         <time>{{ formatDate(article.date) }}</time>
       </div>
-      <Header
-        tag="h3"
-        class="article-title display-6"
-        v-html="article.title"
+      <Header tag="h3" class="article-title display-6"
+        ><span v-html="article.title"></span
+        ><fa-icon v-if="article.type == 'link'" icon="link" size="sm"></fa-icon
+        ><fa-icon
+          v-if="article.type == 'quote'"
+          icon="quote-left"
+          size="sm"
+        ></fa-icon
+        ><fa-icon
+          v-if="article.type == 'entry'"
+          icon="stream"
+          size="sm"
+        ></fa-icon
       ></Header>
-      <div class="anchor" aria-hidden="true">
-        <div class="bounce-arrow"></div>
-      </div>
     </nuxt-link>
   </article>
 </template>
@@ -73,21 +82,41 @@ export default {
       bottom: ($defaultPadding/5) * -1;
       left: ($defaultPadding/2) * -1;
       right: ($defaultPadding/2) * -1;
-      border-radius: $radius;
+      border-radius: $radius-large;
       background-color: $darkShadeBackground;
-      transition: $transition;
+      transition: $transition-cubic;
       opacity: 0;
       transform: scale(1.2);
       pointer-events: none;
       filter: blur(1.5rem);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0);
     }
   }
   h3 {
-    font-size: 1rem;
+    // font-size: 1rem;
+    display: flex;
+    align-items: center;
     line-height: 1.3;
     margin: 0;
     transition: all 0.25s ease-in-out;
     color: $white;
+    width: 100%;
+
+    @include max-media($tablet) {
+      justify-content: space-between;
+    }
+
+    svg {
+      margin-left: 1rem;
+      width: 1.25rem !important;
+      height: 1.25rem;
+      padding: $defaultPadding/5;
+      border-radius: 50%;
+      background: $blueSteel;
+      path {
+        fill: shade($blueSteel, 90%);
+      }
+    }
   }
   &.article--link {
     width: 100%;
@@ -114,49 +143,18 @@ export default {
     z-index: 2;
     position: relative;
   }
-  .anchor {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(100%) translateX(30%);
-    background-image: none;
-    transition: all 0.25s ease-in-out;
-    opacity: 0;
-    padding: 40px;
-    border-radius: 50%;
-    background-color: $blueSteel;
-    z-index: 0;
-    .bounce-arrow {
-      display: block;
-      margin: 0;
-      &:before {
-        @include arrow-right(rgba($white, 1));
-      }
-    }
-  }
   &:hover {
-    // background-color: $darkShadeBackground;
-    // a {
-    //   padding: $defaultPadding $defaultPadding;
-    // }
     a:after {
       opacity: 1;
       transform: scale(1);
       filter: blur(0);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     }
-    h3 {
-      // transform: translateX(20px);
-      color: $primary;
-    }
-    .article-meta {
-      // transform: translateX(20px);
-      color: $primary;
-    }
-    // .anchor {
-    //   opacity: 1;
-    //   padding: 80px;
-    //   transform: translateY(-50%) translateX(30%);
+    // h3 {
+    //   color: $primary;
+    // }
+    // .article-meta {
+    //   color: $primary;
     // }
   }
 }
