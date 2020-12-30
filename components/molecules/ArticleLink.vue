@@ -51,7 +51,7 @@ export default {
   display: block;
   background-image: none;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   transition: $transition;
   a {
     display: flex;
@@ -63,7 +63,24 @@ export default {
     background-repeat: no-repeat;
     background-size: 0 0;
     padding: $defaultPadding 0;
-    border-bottom: 1px solid tint($darkBlue, 2%);
+    // border-bottom: 1px solid tint($darkBlue, 2%);
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: ($defaultPadding/5) * -1;
+      bottom: ($defaultPadding/5) * -1;
+      left: ($defaultPadding/2) * -1;
+      right: ($defaultPadding/2) * -1;
+      border-radius: $radius;
+      background-color: $darkShadeBackground;
+      transition: $transition;
+      opacity: 0;
+      transform: scale(1.2);
+      pointer-events: none;
+      filter: blur(1.5rem);
+    }
   }
   h3 {
     font-size: 1rem;
@@ -123,6 +140,11 @@ export default {
     // a {
     //   padding: $defaultPadding $defaultPadding;
     // }
+    a:after {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
     h3 {
       // transform: translateX(20px);
       color: $primary;

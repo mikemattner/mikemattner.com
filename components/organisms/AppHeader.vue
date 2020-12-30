@@ -186,6 +186,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
     }
     &__nav {
       font-size: $base * 0.75;
+      letter-spacing: 0.03em;
       ul {
         display: flex;
         flex-direction: row;
@@ -197,17 +198,19 @@ $transparent-bg: rgba($darkShadeBackground, 1);
           margin: 0 $defaultPadding 0 0;
           padding: 0;
           a {
-            // background-image: none;
+            background-size: 100% 0;
             position: relative;
             font-weight: 400;
+            // text-transform: uppercase;
             display: flex;
             align-items: center;
             color: $blueSteel;
 
             &.nuxt-link-exact-active {
               color: $white;
-              font-weight: 700;
+              // font-weight: 700;
               background-image: $solidPrimaryGradient;
+              background-size: 100% 1px;
 
               // &:before {
               //   content: '';
@@ -223,10 +226,14 @@ $transparent-bg: rgba($darkShadeBackground, 1);
 
               &:hover {
                 color: $white;
+                // background-size: 100% 100%;
+                background-image: $solidPrimaryGradient;
               }
             }
             &:hover {
               color: $white;
+              background-size: 100% 2px;
+              background-image: $solidPrimaryGradient;
             }
           }
         }
@@ -238,13 +245,13 @@ $transparent-bg: rgba($darkShadeBackground, 1);
         grid-column-end: main-content-end;
       }
       @media (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 900;
         letter-spacing: 0.125rem;
         position: fixed;
         top: 0;
         // bottom: 0;
-        padding: 4.5rem 1rem 2.5rem;
+        padding: 4.5rem 1.25rem 2.5rem;
         left: 0;
         right: 0;
         width: 100%;
@@ -352,7 +359,8 @@ $transparent-bg: rgba($darkShadeBackground, 1);
   // }
   &--not-top {
     .navbar {
-      background-color: rgba($darkShadeBackground, 1);
+      background-color: rgba($darkShadeBackground, 0.9);
+      backdrop-filter: blur(10px);
       // background-image: linear-gradient(
       //   to bottom,
       //   rgba($bodyBackground, 1) 0%,

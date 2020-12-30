@@ -36,7 +36,7 @@ a {
 
   &:hover {
     color: $white;
-    background-size: 100% 100%;
+    background-size: 100% 2px;
     background-image: $solidPrimaryGradient;
     // &:before {
     //   transform: scale(1);

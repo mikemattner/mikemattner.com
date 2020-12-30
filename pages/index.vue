@@ -10,7 +10,7 @@
         ></Header>
         <div class="header-content">
           <div v-html="intro.body"></div>
-          <Button to="/about" class="button">More About Me</Button>
+          <Button to="/about">More About Me</Button>
         </div>
       </template>
     </PageHero>
@@ -38,9 +38,7 @@
         }}</Header>
         <p>{{ writing.body }}</p>
         <AllArticles :posts="posts" />
-        <Button :to="writing.link" class="button">{{
-          writing.buttonTitle
-        }}</Button>
+        <Button :to="writing.link">{{ writing.buttonTitle }}</Button>
       </div>
     </section>
   </div>
