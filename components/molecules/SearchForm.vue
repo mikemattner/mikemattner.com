@@ -117,6 +117,7 @@ export default {
     position: relative;
     transition: $transition;
     z-index: 100;
+    -webkit-appearance: none;
     &:focus {
       border-color: $blueSteel;
       box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
