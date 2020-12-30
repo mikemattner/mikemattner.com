@@ -1,7 +1,7 @@
 <template>
   <ul class="tags">
     <li v-for="tag in tags" :key="tag">
-      <Button :to="`/tag/${formattedTag(tag)}`" ghost>{{ tag }}</Button>
+      <Button :to="`/tag/${formattedTag(tag)}`" ghost small>{{ tag }}</Button>
     </li>
   </ul>
 </template>
@@ -32,10 +32,6 @@ ul {
     justify-content: flex-start;
     li {
       margin: 0 $defaultPadding/5 0 0;
-      a.button {
-        padding: 2px 10px;
-        font-size: $small;
-      }
     }
   }
 }

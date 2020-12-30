@@ -43,32 +43,17 @@ $source-code-font: 'hack',Menlo, Monaco, monospace;
 // ----------------------------------------------------------------------------------------------------------------
 // Responsiveness
 // ----------------------------------------------------------------------------------------------------------------
-
-// The container horizontal gap, which acts as the offset for breakpoints
-$gap: 64px !default;
-
-$mobile: 450px !default;
-
-// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
 $tablet: 769px !default;
-
-// 960px container + 4rem
-$desktop: 960px + 2 * $gap !default;
-
-// 1152px container + 4rem
-$widescreen: 1152px + 2 * $gap !default;
-$widescreen-enabled: true !default;
-
-// 1344px container + 4rem
-$fullhd: 1344px + 2 * $gap !default;
-$fullhd-enabled: true !default;
+$desktop: 960px !default;
+$widescreen: 1152px !default;
+$fullhd: 1344px !default;
 
 // ----------------------------------------------------------------------------------------------------------------
 // Miscellaneous
 // ----------------------------------------------------------------------------------------------------------------
 
 $transition: all 0.125s ease-in-out;
-$transition-cubic: all 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$transition-cubic: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $transition-slow: all 1.25s cubic-bezier(0.68, 0, 0.265, 1.55);
 $transition-slow-ease: all 1.25s ease-in-out;
 $easing: ease-out !default;

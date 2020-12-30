@@ -41,49 +41,41 @@ export default {
 <style scoped lang="scss">
 .is--work {
   .work-body {
-    // background-color: $darkShadeBackground;
-    // border-radius: $radius;
-    // box-shadow: 0 2px 25px rgba($black, 0.25);
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     @media (max-width: $tablet) {
       grid-column: main-content;
       margin-bottom: $defaultPadding;
     }
-    // @media (min-width: $tablet) {
-    //   &::before {
-    //     content: '';
-    //     padding-bottom: 70%;
-    //     display: block;
-    //   }
-    // }
   }
   .work-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media (min-width: $tablet) {
-      // flex-direction: row;
-      // align-items: center;
-    }
-    // @media (min-width: $tablet) {
+
+    // &:after {
+    //   content: '';
+    //   display: block;
     //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   height: 100%;
-    //   width: 100%;
+    //   top: ($defaultPadding/2) * -1;
+    //   bottom: ($defaultPadding/2) * -1;
+    //   left: ($defaultPadding/2) * -1;
+    //   right: ($defaultPadding/2) * -1;
+    //   border-radius: $radius-large;
+    //   background-color: rgba($black, 0.5);
+    //   transition: $transition-cubic;
+    //   opacity: 0;
+    //   transform: scale(1.2);
+    //   pointer-events: none;
+    //   filter: blur(1.5rem);
+    //   box-shadow: 0 0 5px rgba(0, 0, 0, 0);
     // }
-    // @media (min-width: $tablet) {
+    // &:hover {
     //   &:after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     z-index: 2;
-    //     transition: $transition-slow-ease;
-    //     background-color: rgba($black, 0.7);
+    //     opacity: 1;
+    //     transform: scale(1);
+    //     filter: blur(0);
+    //     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     //   }
     // }
 
@@ -91,71 +83,28 @@ export default {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
       padding: $defaultPadding 0;
-      @media (min-width: $tablet) {
-        // width: 50%;
-      }
-      // @media (min-width: $tablet) {
-      //   padding: $defaultPadding * 2 $defaultPadding $defaultPadding / 2;
-      //   position: absolute;
-      //   left: 0;
-      //   right: 0;
-      //   bottom: 0;
-      //   z-index: 3;
-      //   // transform: translateY(10%);
-      //   // opacity: 0;
-      // }
+      z-index: 2;
+      position: relative;
     }
     .work-image {
+      background-color: $black;
+      border-radius: $radius-large;
       img {
         margin-bottom: 0;
       }
       @media (min-width: $tablet) {
         position: relative;
         height: 350px;
-        // width: 50%;
         overflow: hidden;
-        border-radius: $radius;
         img {
           @include cover-background(center);
           z-index: 1;
         }
       }
-      // @media (min-width: $tablet) {
-      //   overflow: hidden;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   right: 0;
-      //   bottom: 0;
-      //   width: 100%;
-      //   z-index: 1;
-      //   transition: $transition-slow-ease;
-      //   transform: scale(1);
-      //   img {
-      //     @include cover-background(center);
-      //     z-index: 1;
-      //   }
-      // }
     }
-    // @media (min-width: $tablet) {
-    //   &:hover {
-    //     .work-image {
-    //       transform: scale(1.1);
-    //       transition: $transition-slow;
-    //     }
-    //     .work-info {
-    //       opacity: 1;
-    //       transform: translateY(0);
-    //     }
-    //     &:after {
-    //       background-color: rgba($black, 0.9);
-    //     }
-    //   }
-    // }
   }
   h6 {
     font-family: $sans-serif-font;
-    // font-weight: 700;
     margin-top: 0;
     margin-bottom: 0;
     color: $blueSteel;

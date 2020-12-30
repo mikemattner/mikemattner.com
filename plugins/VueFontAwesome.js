@@ -8,9 +8,25 @@ import {
   faChevronLeft,
   faExternalLinkAlt,
   faLink,
+  faSearch,
+  faPlus,
+  faTimes,
+  faQuoteLeft,
+  faStream,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faHeart, faChevronRight, faChevronLeft, faExternalLinkAlt, faLink)
+library.add(
+  faHeart,
+  faChevronRight,
+  faChevronLeft,
+  faExternalLinkAlt,
+  faLink,
+  faSearch,
+  faPlus,
+  faTimes,
+  faQuoteLeft,
+  faStream
+)
 
 Vue.component('fa-icon', FontAwesomeIcon)

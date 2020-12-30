@@ -5,6 +5,7 @@
       'button',
       secondary == true ? 'button--secondary' : '',
       ghost == true ? 'button--secondary-ghost' : '',
+      small == true ? 'button--small' : '',
     ]"
     rel="nofollow"
     :target="target"
@@ -20,6 +21,7 @@ export default {
   props: {
     secondary: Boolean,
     ghost: Boolean,
+    small: Boolean,
     href: {
       type: String,
       default: '#',

@@ -4,6 +4,7 @@
       'button',
       secondary == true ? 'button--secondary' : '',
       ghost == true ? 'button--secondary-ghost' : '',
+      small == true ? 'button--small' : '',
     ]"
     :to="to"
   >
@@ -18,6 +19,7 @@ export default {
   props: {
     secondary: Boolean,
     ghost: Boolean,
+    small: Boolean,
     to: {
       type: String,
       default: '/',

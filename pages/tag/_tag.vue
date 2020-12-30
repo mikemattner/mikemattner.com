@@ -1,13 +1,11 @@
 <template>
-  <section class="section section--article">
+  <section class="section section--tag">
     <div :key="$route.params.slug">
       <PageHero>
-        <template v-slot:default>
-          <Header tag="h1" class="display-4 main-content" decorator>
-            {{ tag.name }}</Header
-          >
-          <p v-html="tag.description" class="main-content"></p>
-        </template>
+        <Header tag="h1" class="display-4 main-content" decorator>
+          {{ tag.name }}</Header
+        >
+        <p v-html="tag.description" class="main-content"></p>
       </PageHero>
       <section id="content" class="layout">
         <div class="main-content">
@@ -64,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-.section--article {
+.section--tag {
   min-height: 90vh;
   padding-bottom: 4rem;
   .hero {
@@ -78,22 +76,12 @@ export default {
       margin-bottom: 3rem;
     }
   }
-  .article-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .meta {
-    font-size: 0.675rem;
-    margin: 0;
-    color: rgba($white, 0.25);
-    .bull {
-      margin: 0 0.25rem;
-    }
-    .tag {
-      font-size: 0.575rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+  .search-form {
+    // margin-top: 3rem;
+    margin-bottom: 3rem;
+    grid-column: main-content / span 6;
+    @media (min-width: $tablet) {
+      grid-column: main-content / span 6;
     }
   }
   .links {

@@ -15,6 +15,14 @@ $max-width: 30rem;
       [content-start] 1fr
       [margin-start] 1fr
       [margin-end main-content-start] repeat( 6, 1fr )
+      [main-content-end full-end] minmax($column-gap, calc(50vw - #{$max-width}));
+  }
+  @media (min-width: $desktop) {
+    grid-template-columns:
+      [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
+      [content-start] 1fr
+      [margin-start] 1fr
+      [margin-end main-content-start] repeat( 6, 1fr )
       [main-content-end outdent-start] 1fr 
       [content-end] 1fr
       [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
@@ -88,7 +96,11 @@ $max-width: 30rem;
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
     grid-column-start: margin-start;
-    grid-column-end: full-end;
+    grid-column-end: main-content-end;
+  }
+  @media (min-width: $desktop) {
+    grid-column-start: margin-start;
+    grid-column-end: content-end;
   }
 }
 .nuxt-content img {

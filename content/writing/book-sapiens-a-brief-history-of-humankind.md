@@ -1,5 +1,5 @@
 ---
-title: 'Book: <em>Sapiens: A Brief History of Humankind</em>'
+title: 'Book: Sapiens: A Brief History of Humankind'
 date: 2018-08-28
 type: link
 tag:

@@ -2,31 +2,52 @@
   <section class="section section--single--article">
     <article :key="$route.params.slug">
       <PageHero dark>
-        <template v-slot:default>
-          <div class="meta top main-content">
-            Posted
-            <time>{{ formattedDate }}</time>
+        <div class="meta top main-content">
+          <fa-icon
+            v-if="writing.type == 'link'"
+            class="article-type"
+            icon="link"
+            size="sm"
+          ></fa-icon
+          ><fa-icon
+            v-if="writing.type == 'quote'"
+            class="article-type"
+            icon="quote-left"
+            size="sm"
+          ></fa-icon>
+          <fa-icon
+            v-if="writing.type == 'entry'"
+            class="article-type"
+            icon="stream"
+            size="sm"
+          ></fa-icon>
+          Posted
+          <time>{{ formattedDate }}</time>
+        </div>
+        <Header
+          tag="h1"
+          class="display-4 main-content"
+          v-html="writing.title"
+          center
+        ></Header>
+        <div class="meta flex main-content">
+          <div v-if="writing.link" class="article-link" target="_blank">
+            <ButtonLink :href="writing.link[0]" target="_blank" small
+              ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
+              ><span v-else>View Link</span>
+              <fa-icon icon="external-link-alt" size="sm"></fa-icon
+            ></ButtonLink>
           </div>
-          <Header
-            tag="h1"
-            class="display-4 main-content"
-            v-html="writing.title"
-            center
-          ></Header>
-          <div class="meta flex main-content">
-            <div v-if="writing.link" class="article-link" target="_blank">
-              <ButtonLink :href="writing.link[0]" target="_blank"
-                ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
-                ><span v-else>Visit Link</span>
-                <fa-icon icon="external-link-alt" size="sm"></fa-icon
-              ></ButtonLink>
-            </div>
-            <TagList :tags="writing.tag" />
-          </div>
-        </template>
+          <TagList :tags="writing.tag" />
+        </div>
       </PageHero>
       <div id="content" :data-type="writing.type">
         <nuxt-content :document="writing" />
+        <div class="layout">
+          <p v-if="writing.type == 'quote'" class="attribution">
+            &mdash; {{ writing.attribution }}
+          </p>
+        </div>
         <div class="layout">
           <div class="links main-content">
             <Button
@@ -135,6 +156,18 @@ export default {
     h1 {
       margin-bottom: 0.75rem;
     }
+    .article-type {
+      display: block;
+      margin-bottom: 1rem;
+      width: 1.25rem !important;
+      height: 1.25rem;
+      padding: $defaultPadding/5;
+      border-radius: 50%;
+      background: $blueSteel;
+      path {
+        fill: shade($blueSteel, 90%);
+      }
+    }
   }
   .nuxt-content {
     p code {
@@ -180,7 +213,6 @@ export default {
     &:before {
       content: 'language';
       position: absolute;
-      // background-color: $bodyBackground;
       border-bottom: 1px solid rgba($borderColor-light, 0.25);
       top: 0;
       right: 0;
@@ -255,10 +287,10 @@ export default {
       align-items: center;
       justify-content: flex-start;
       margin-right: $defaultPadding/2;
+      padding-right: $defaultPadding/2;
+      border-right: 1px solid $borderColor-light;
       .button {
-        font-size: $small;
-        // padding: 5px 10px;
-        padding: 2px 10px;
+        margin: 0.5rem 0;
         svg {
           margin-left: 0.5rem;
         }
@@ -266,40 +298,31 @@ export default {
     }
   }
   .links {
-    // margin-top: 2rem;
     padding: 1rem 0;
-    // border-top: 1px solid $borderColor-light;
     text-align: center;
     font-size: 0.75rem;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-
-    @media (min-width: 768px) {
-      display: grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.25rem;
+    @include min-media($tablet) {
       grid-template-columns: 1fr 1fr 1fr;
-      grid-column-gap: 1.25rem;
     }
 
     a.button {
-      align-self: stretch;
-      flex-grow: 1;
-      @media (max-width: 768px) {
-        margin: 0.5rem 0;
+      @include max-media($tablet) {
+        justify-self: stretch;
       }
-      @media (min-width: 768px) {
+      @include min-media($tablet) {
         width: 200px;
-        &.prev {
-          grid-column: 1;
-        }
-        &.next {
-          grid-column: 3;
+      }
+      &.prev {
+        grid-column: 1;
+      }
+      &.next {
+        @include min-media($tablet) {
           justify-self: end;
+          grid-column: 3;
         }
-        // &.back {
-        //   grid-column: 2;
-        //   justify-self: center;
-        // }
       }
     }
   }
@@ -308,6 +331,15 @@ export default {
   }
   h3 {
     font-size: $h6;
+  }
+  .attribution {
+    font-size: $small;
+    text-transform: uppercase;
+    grid-column: main-content / span 6;
+    @media (min-width: $tablet) {
+      grid-column-start: main-content-start;
+      grid-column-end: main-content-end;
+    }
   }
 }
 </style>

@@ -1,12 +1,31 @@
 <template>
-  <div>
-    <input v-model="query" type="search" autocomplete="off" />
+  <div
+    :class="[
+      'search-form',
+      active == true ? 'active' : '',
+      small == true ? 'small' : '',
+    ]"
+  >
+    <fa-icon
+      icon="times"
+      size="sm"
+      title="Clear Search"
+      @click="clearSearch()"
+      v-if="active"
+    ></fa-icon>
+    <fa-icon icon="search" size="sm" v-else></fa-icon>
+    <input
+      v-model="query"
+      type="search"
+      placeholder="Search"
+      autocomplete="off"
+    />
 
-    <ul v-if="articles.length">
-      <li v-for="article of articles" :key="article.slug">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">{{
-          article.title
-        }}</NuxtLink>
+    <ul v-if="writing.length">
+      <li v-for="article of writing" :key="article.slug">
+        <nuxt-link :to="`/writing/${formatSlug(article.slug)}`"
+          ><span v-html="article.title"></span
+        ></nuxt-link>
       </li>
     </ul>
   </div>
@@ -14,26 +33,144 @@
 
 <script>
 export default {
+  props: {
+    small: Boolean,
+  },
   data() {
     return {
       query: '',
-      articles: [],
+      writing: [],
+      active: false,
     }
   },
   watch: {
     async query(query) {
       if (!query) {
         this.writing = []
+        this.active = false
         return
       }
-
+      this.active = true
       this.writing = await this.$content('writing')
-        .only(['title', 'slug'])
         .sortBy('date', 'desc')
         .limit(12)
         .search(query)
         .fetch()
     },
   },
+  methods: {
+    formatSlug(title) {
+      const regex = / /gi
+      return title.toLowerCase().trim().replace(regex, '-')
+    },
+    clearSearch() {
+      this.query = ''
+      this.writing = []
+      this.active = false
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.search-form {
+  position: relative;
+
+  .svg-inline--fa {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 103;
+    width: 1rem;
+    height: 1rem;
+    &.fa-search {
+      pointer-events: none;
+      path {
+        fill: shade($blueSteel, 60%);
+      }
+    }
+    &.fa-times {
+      cursor: pointer;
+      // transform: rotate(45deg) translateY(-50%);
+      transform-origin: center center;
+      path {
+        transition: $transition;
+        fill: $blueSteel;
+      }
+      &:hover {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  input {
+    background: $darkShadeBackground;
+    border: 1px solid $darkShadeBackground;
+    border-radius: $radius-large;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
+    padding: $defaultPadding/2 $defaultPadding/2;
+    width: 100%;
+    color: $blueSteel;
+    position: relative;
+    transition: $transition;
+    z-index: 100;
+    &:focus {
+      border-color: $blueSteel;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
+      outline: none;
+    }
+    &:hover {
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
+    }
+    &::placeholder {
+      color: shade($blueSteel, 60%);
+      opacity: 1;
+    }
+  }
+  ul {
+    background: $darkShadeBackground;
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    right: 0;
+    border-color: $blueSteel;
+    color: $blueSteel;
+    margin: 0;
+    padding: $defaultPadding/3 0;
+    border-radius: $radius-large;
+    z-index: 101;
+    list-style: none;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.33);
+    overflow: hidden;
+    li {
+      margin: 0;
+      padding: 0 $defaultPadding/3;
+
+      a {
+        display: block;
+        background-image: none;
+        padding: $defaultPadding/3 $defaultPadding/2;
+        border-radius: $radius-large;
+        &:hover {
+          background-color: shade($blueSteel, 10%);
+          // color: shade($blueSteel, 90%);
+        }
+      }
+    }
+  }
+  &.active {
+    input {
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
+    }
+  }
+  &.small {
+    font-size: $base * 0.75;
+    input {
+      padding: $defaultPadding/3;
+    }
+  }
+}
+</style>
