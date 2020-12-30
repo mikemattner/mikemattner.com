@@ -5,6 +5,7 @@ import BrandLogo from '../components/atoms/BrandLogo.vue'
 import ArticleLink from '../components/molecules/ArticleLink.vue'
 import SearchForm from '../components/molecules/SearchForm.vue'
 import AllArticles from '../components/organisms/AllArticles.vue'
+import TagList from '../components/organisms/TagList.vue'
 // import Work from '../components/organisms/Work.vue'
 import WorkCard from '../components/work/WorkCard.vue'
 import PageHero from '../components/organisms/PageHero.vue'
@@ -31,6 +32,7 @@ Vue.component('WaveRight', WaveRight)
 Vue.component('ArticleLink', ArticleLink)
 Vue.component('SearchForm', SearchForm)
 Vue.component('AllArticles', AllArticles)
+Vue.component('TagList', TagList)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)
 Vue.component('ButtonLink', ButtonLink)

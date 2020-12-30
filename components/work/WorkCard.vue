@@ -90,7 +90,7 @@ export default {
     .work-info {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
-      padding: $defaultPadding;
+      padding: $defaultPadding 0;
       @media (min-width: $tablet) {
         // width: 50%;
       }

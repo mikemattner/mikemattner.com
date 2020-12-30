@@ -1,14 +1,25 @@
 <template>
-  <a :href="href" :class="'button'" rel="nofollow" :target="target">
-    <slot />
+  <a
+    :href="href"
+    :class="[
+      'button',
+      secondary == true ? 'button--secondary' : '',
+      ghost == true ? 'button--secondary-ghost' : '',
+    ]"
+    rel="nofollow"
+    :target="target"
+  >
+    <span class="button__content">
+      <slot />
+    </span>
   </a>
 </template>
 
 <script>
-import ButtonBubble from '@/assets/js/button.js'
-
 export default {
   props: {
+    secondary: Boolean,
+    ghost: Boolean,
     href: {
       type: String,
       default: '#',
@@ -19,76 +30,40 @@ export default {
     },
   },
   mounted() {
-    this.initialize(ButtonBubble, '.button')
+    this.createElement()
+    this.$el.addEventListener('mouseleave', this.positionBubble.bind(this))
+    this.$el.addEventListener('mouseenter', this.positionBubble.bind(this))
+    this.$el.addEventListener('focusin', this.centerBubble.bind(this))
+    this.$el.addEventListener('focusout', this.centerBubble.bind(this))
+  },
+  beforeDestroy() {
+    this.$el.removeEventListener('mouseleave', this.positionBubble)
+    this.$el.removeEventListener('mouseenter', this.positionBubble)
+    this.$el.removeEventListener('focusin', this.centerBubble)
+    this.$el.removeEventListener('focusout', this.centerBubble)
   },
   methods: {
-    initialize(Script, selector, ...options) {
-      document
-        .querySelectorAll(selector)
-        .forEach((element) => new Script(element, ...options))
+    createElement() {
+      const bubble = document.createElement('span')
+      bubble.className = 'button__bubble'
+      this.$el.appendChild(bubble)
+    },
+    positionBubble({ offsetX, offsetY }) {
+      const xRadius = Math.max(offsetX, this.$el.offsetWidth - offsetX)
+      const yRadius = Math.max(offsetY, this.$el.offsetHeight - offsetY)
+      const radius = Math.sqrt(xRadius * xRadius + yRadius * yRadius)
+      Object.assign(this.$el.querySelector('.button__bubble').style, {
+        left: `${offsetX}px`,
+        top: `${offsetY}px`,
+        padding: `${radius}px`,
+      })
+    },
+    centerBubble() {
+      this.positionBubble({
+        offsetX: this.$el.offsetWidth / 2,
+        offsetY: this.$el.offsetHeight / 2,
+      })
     },
   },
 }
 </script>
-
-<style lang="scss">
-.button {
-  border: 2px solid $primary;
-  border-radius: $radius-large;
-  padding: 0.5rem 1rem;
-  display: block;
-  text-align: center;
-  background-image: none;
-  margin: 1rem 0;
-  transition: $transition;
-  font-size: 0.75rem;
-  position: relative;
-  overflow: hidden;
-  font-weight: 700;
-
-  @media (min-width: $tablet) {
-    max-width: 200px;
-  }
-
-  svg {
-    height: 1em;
-  }
-
-  &:focus {
-    outline: 0;
-    border-color: $primary;
-  }
-
-  &:hover {
-    color: $white;
-    border-color: $primary;
-    // border-radius: $radius-small;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-    background-image: none;
-    // transform: scale(1.02);
-  }
-
-  &__bubble {
-    transition: $transition;
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    background-color: $primary;
-    // background-image: linear-gradient(
-    //   to right top,
-    //   #e63462,
-    //   #ad2564,
-    //   #721f59,
-    //   #3c1742,
-    //   #130422
-    // );
-    will-change: transform;
-    transform: translate(-50%, -50%) scale(0);
-    transition-property: transform;
-  }
-  &:hover &__bubble,
-  &:focus &__bubble {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-</style>

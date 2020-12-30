@@ -39,7 +39,7 @@ export default {
     // justify-content: flex-start;
 
     &:first-child {
-      border-top: 1px solid tint($darkBlue, 2%);
+      // border-top: 1px solid tint($darkBlue, 2%);
     }
   }
 }

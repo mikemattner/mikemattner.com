@@ -21,13 +21,7 @@
                 <fa-icon icon="external-link-alt" size="sm"></fa-icon
               ></ButtonLink>
             </div>
-            <ul class="tags">
-              <li v-for="item in writing.tag" :key="item" :value="link">
-                <nuxt-link :to="`/tag/${formattedTag(item)}`">{{
-                  item
-                }}</nuxt-link>
-              </li>
-            </ul>
+            <TagList :tags="writing.tag" />
           </div>
         </template>
       </PageHero>
@@ -76,11 +70,6 @@ export default {
         timeZone: 'UTC',
       }
       return new Date(this.writing.date).toLocaleDateString('en-us', options)
-    },
-  },
-  methods: {
-    formattedTag(tag) {
-      return tag.toLowerCase().trim()
     },
   },
   async asyncData({ $content, params }) {
@@ -272,37 +261,6 @@ export default {
         padding: 2px 10px;
         svg {
           margin-left: 0.5rem;
-        }
-      }
-    }
-    ul {
-      &.tags {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        li {
-          font-size: $small;
-          margin: $defaultPadding/5 $defaultPadding/5 $defaultPadding/5 0;
-          a {
-            display: block;
-            background-image: none;
-            padding: 2px 10px;
-            border-radius: 10px;
-            background-color: rgba($tagColor, 0);
-            // color: shade($tagColor, 80%);
-            border: 2px solid $tagColor;
-            color: $tagColor;
-            font-weight: 700;
-            &:hover {
-              background-image: none;
-              background-color: $primary;
-              border: 2px solid $primary;
-              color: $white;
-            }
-          }
         }
       }
     }
