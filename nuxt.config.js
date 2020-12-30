@@ -76,7 +76,7 @@ export default {
         theme: 'prism-themes/themes/prism-nord.css',
       },
     },
-    fullTextSearchFields: ['title', 'description', 'text'],
+    fullTextSearchFields: ['title', 'description', 'text', 'type'],
   },
   svgLoader: {
     svgoConfig: {

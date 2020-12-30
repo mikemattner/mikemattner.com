@@ -12,7 +12,7 @@
   position: relative;
   overflow: hidden;
   font-weight: 700;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
 
   &--small {
     padding: 2px 10px;
@@ -40,7 +40,7 @@
   &:hover {
     color: $white;
     border-color: shade($primary, 20%);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
     background-image: none;
   }
 
