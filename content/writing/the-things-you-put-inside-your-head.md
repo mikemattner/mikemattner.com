@@ -3,6 +3,7 @@ title: The Things You Put Inside Your Head
 date: 2018-02-09
 type: quote
 attribution: 'Maria Popova'
+description: 'Diverse knowledge creates more diverse understanding.'
 tag:
     - Wisdom
 link:

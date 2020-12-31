@@ -2,6 +2,7 @@
 title: The Effects of Noise
 date: 2017-09-12
 type: link
+description: 'Noise makes it very difficult to test either practical or academic theories about the way that financial or economic markets work.'
 tag:
     - Wisdom
 link:

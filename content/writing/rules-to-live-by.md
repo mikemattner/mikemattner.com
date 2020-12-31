@@ -2,6 +2,7 @@
 title: 'Rules to Live By'
 date: 2018-02-08
 type: link
+description: 'A little prescriptive, but definitely accurate.'
 tag:
     - Wisdom
 link:

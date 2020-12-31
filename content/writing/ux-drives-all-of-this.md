@@ -2,6 +2,7 @@
 title: UX Drives All of This
 date: 2017-05-08
 type: link
+description: 'Web development is getting very complex.'
 tag:
     - Development
 link:

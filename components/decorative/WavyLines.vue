@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Lines from '@/assets/img/wavy-lines.svg'
+import Lines from '@/assets/img/svg/wavy-lines.svg'
 
 export default {
   name: 'WavyLines',

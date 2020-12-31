@@ -2,6 +2,7 @@
 title: Becoming a Designer Who Codes, The Making of a Unicorn
 date: 2016-03-29
 type: entry
+description: 'Learn the medium you&rsquo;re working with.'
 tag:
     - Design
     - Development

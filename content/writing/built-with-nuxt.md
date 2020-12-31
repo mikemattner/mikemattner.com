@@ -2,12 +2,12 @@
 topic: Development
 title: Built With Nuxt
 date: 2019-05-02
-description: Building with a more modern development experience.
+description: Building my personal site with a more modern development experience.
 type: entry
 tag:
     - Development
 ---
-**9/10/29** – This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files, but am now using Forestry as a CMS for markdown files. It's super simple.
+**12/31/2020** – *This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files. Can I also comment on 2020 as a whole? Because, no thanks, I don't want to do that again.*
 
 ### Introduction
 

@@ -2,6 +2,7 @@
 title: Revitalizing Liberalism in the Age of Brexit and Trump
 date: 2016-12-06
 type: link
+description: 'The fact that liberalism has become rote is central to our problem.'
 tag:
     - Politics
 link:

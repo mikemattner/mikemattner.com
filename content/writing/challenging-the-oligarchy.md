@@ -2,6 +2,7 @@
 title: Challenging the Oligarchy
 date: 2015-12-05
 type: link
+description: 'Income inequality is an increasingly difficult problem to pin down.'
 tag:
     - Economics
 link:

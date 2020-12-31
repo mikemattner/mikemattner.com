@@ -2,6 +2,7 @@
 title: Brad Frost on Frontend Design
 date: 2017-02-22
 type: entry
+description: 'Working on the front of the front end.'
 tag:
     - Design
     - Development

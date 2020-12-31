@@ -3,6 +3,7 @@ title: 'Marcus Aurelius'
 date: 2018-01-11
 type: quote
 attribution: 'Marcus Aurelius'
+description: 'Feeling empathy when one is wronged.'
 tag:
     - Wisdom
 link:

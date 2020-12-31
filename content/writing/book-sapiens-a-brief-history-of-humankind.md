@@ -2,6 +2,7 @@
 title: 'Book: Sapiens: A Brief History of Humankind'
 date: 2018-08-28
 type: link
+description: 'A book discussing a murky period in human history, and provides a very interesting backdrop to our development.'
 tag:
     - History
 link:

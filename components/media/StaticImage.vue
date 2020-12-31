@@ -1,5 +1,5 @@
 <template>
-  <VLazyImage :src="src" :alt="alt" :src-placeholder="placeholder" />
+  <VLazyImage :src="`img/${src}`" :alt="alt" :src-placeholder="placeholder" />
 </template>
 
 <script>
