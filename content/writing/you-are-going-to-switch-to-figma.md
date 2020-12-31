@@ -2,6 +2,7 @@
 title: You Are Going to Switch to Figma
 date: 2017-05-26
 type: link
+description: 'As a professional I have made the switch and wow oh wow is it an amazing collaborative tool.'
 tag:
     - Design
 link:

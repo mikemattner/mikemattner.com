@@ -2,6 +2,7 @@
 title: 'Carl Sagan’s “Baloney Detection Kit”'
 date: 2018-04-03
 type: link
+description: 'Wherever possible there must be independent confirmation of the “facts.”'
 tag:
     - Wisdom
 link:

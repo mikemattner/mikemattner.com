@@ -7,7 +7,7 @@
       <div class="article-meta">
         <time>{{ formatDate(article.date) }}</time>
       </div>
-      <Header tag="h3" class="article-title display-6"
+      <Header tag="h3" class="article-title"
         ><span v-html="article.title"></span
         ><fa-icon v-if="article.type == 'link'" icon="link" size="sm"></fa-icon
         ><fa-icon
@@ -21,6 +21,9 @@
           size="sm"
         ></fa-icon
       ></Header>
+      <div v-if="article.description" class="article-description">
+        <span v-html="article.description"></span>
+      </div>
     </nuxt-link>
   </article>
 </template>
@@ -93,7 +96,7 @@ export default {
     }
   }
   h3 {
-    // font-size: 1rem;
+    font-size: $base;
     display: flex;
     align-items: center;
     line-height: 1.3;
@@ -104,6 +107,7 @@ export default {
 
     @include max-media($tablet) {
       justify-content: space-between;
+      font-size: $base * 1.2;
     }
 
     svg {
@@ -129,8 +133,14 @@ export default {
     }
   }
   .article-description {
-    margin-left: 2rem;
+    margin-top: 0.5rem;
     font-size: $small;
+    font-weight: 400;
+    color: $bodyColor;
+    z-index: 2;
+    @include max-media($tablet) {
+      font-size: $base;
+    }
   }
   .article-title {
     margin: 0;

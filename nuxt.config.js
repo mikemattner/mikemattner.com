@@ -60,7 +60,6 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxt/content',
-    '@aceforth/nuxt-optimized-images',
     '@nuxtjs/sitemap',
   ],
   styleResources: {
@@ -85,6 +84,7 @@ export default {
       ],
     },
   },
+
   /*
    ** Axios module configuration
    */
@@ -111,31 +111,13 @@ export default {
   /*
    ** Build configuration
    */
-  optimizedImages: {
-    inlineImageLimit: -1,
-    handleImages: ['jpeg', 'png', 'webp', 'gif'],
-    optimizeImages: true,
-    optimizeImagesInDev: false,
-    defaultImageLoader: 'img-loader',
-    mozjpeg: {
-      quality: 85,
-    },
-    optipng: false,
-    pngquant: {
-      speed: 7,
-      quality: [0.65, 0.8],
-    },
-    webp: {
-      quality: 85,
-    },
-  },
   build: {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend(config, { isDev, isClient, loaders: { vue } }) {
       // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

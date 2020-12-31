@@ -11,7 +11,7 @@
     </PageHero>
     <section id="photos" class="section section--images three-col">
       <div v-for="image in images" :key="image.src" class="personal-image">
-        <StaticImage :src="image.src" alt="image.alt" />
+        <StaticImage :src="image.src" :alt="image.alt" />
         <div class="label">{{ image.alt }}</div>
       </div>
     </section>
@@ -46,15 +46,15 @@ export default {
       page,
       images: [
         {
-          src: 'img/mike-painting.jpg',
+          src: 'personal/mike-painting.jpg',
           alt: 'What a lovely painting!',
         },
         {
-          src: 'img/mike-cat.jpg',
+          src: 'personal/mike-cat.jpg',
           alt: 'Here is the time I photo bombed my cat.',
         },
         {
-          src: 'img/mike-cooking.jpg',
+          src: 'personal/mike-cooking.jpg',
           alt: 'Michigan tailgating, but with a tiny grill!',
         },
       ],
@@ -91,7 +91,7 @@ export default {
       padding: $defaultPadding * 2 0 $defaultPadding;
       .personal-image {
         border-radius: $radius-large;
-        box-shadow: 0 2px 25px rgba($black, 0.125);
+        box-shadow: 0 2px 15px rgba($black, 0.125);
         overflow: hidden;
         width: 100%;
         position: relative;

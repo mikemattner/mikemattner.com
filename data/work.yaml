@@ -9,7 +9,7 @@ JennAirWorkbook:
   role: Developer
   description: Coming soon.
   image:
-    src: img/workbook/wow-curriculum-internal.jpg
+    src: work/workbook/wow-curriculum-internal.jpg
     alt: JennAir Workbook home screen
   link:
 
@@ -20,7 +20,7 @@ JennAirHub:
   role: Developer
   description: Coming soon.
   image:
-    src: img/jennair/columns.jpg
+    src: work/jennair/columns.jpg
     alt: JennAir Influencer Hub feature page
   link:
 
@@ -31,7 +31,7 @@ MaytagExperience:
   role: Developer
   description: Coming soon.
   image:
-    src: img/maytag/primary.jpg
+    src: work/maytag/primary.jpg
     alt: Maytag experience
 
 WhirlpoolTopLoad:
@@ -41,6 +41,6 @@ WhirlpoolTopLoad:
   role: Developer
   description: Coming soon.
   image:
-    src: img/whirlpool/primary.jpg
+    src: work/whirlpool/primary.jpg
     alt: Whirlpool Intuitive Touch Control intro
 

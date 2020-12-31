@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MyLogo from '@/assets/img/logo.svg'
+import MyLogo from '@/assets/img/svg/logo.svg'
 export default {
   name: 'BrandLogo',
   components: {

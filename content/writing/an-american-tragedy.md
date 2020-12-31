@@ -2,6 +2,7 @@
 title: An American Tragedy
 date: 2016-11-09
 type: link
+description: 'I am glad 2020 forced this man out of office.'
 tag:
     - Politics
 link:

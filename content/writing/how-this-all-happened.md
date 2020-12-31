@@ -2,10 +2,9 @@
 title: 'How This All Happened'
 date: 2019-01-04
 type: link
+description: 'This is a short story about what happened to the U.S. economy since the end of World War II.'
 tag:
     - Economics
-post_format:
-    - Link
 link:
     - 'https://www.collaborativefund.com/blog/how-this-all-happened/'
 ---

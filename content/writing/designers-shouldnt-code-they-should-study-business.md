@@ -2,6 +2,7 @@
 title: Designers shouldn’t code. They should study business.
 date: 2016-02-16
 type: link
+description: 'I do not totally agree with this take.'
 tag:
     - Development
     - Design
