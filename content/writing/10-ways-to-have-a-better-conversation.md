@@ -2,6 +2,7 @@
 title: 10 Ways to Have a Better Conversation
 date: 2017-05-30
 type: link
+description: 'Conversational skills seem lacking. This might help.'
 tag:
     - Wisdom
 link:

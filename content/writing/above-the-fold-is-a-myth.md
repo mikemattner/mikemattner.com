@@ -2,6 +2,7 @@
 title: Above the Fold is a Myth
 date: 2017-08-04
 type: link
+description: 'You probably didn&rsquo;t scroll all the way down here, did you?'
 tag:
     - Design
 link:

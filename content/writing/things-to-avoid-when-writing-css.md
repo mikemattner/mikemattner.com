@@ -2,6 +2,7 @@
 title: Things To Avoid When Writing CSS
 date: 2015-10-26
 type: link
+description: 'I do not agree with this take.'
 tag:
     - Development
 link:

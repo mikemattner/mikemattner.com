@@ -2,6 +2,7 @@
 title: A Conversation with Erik Spiekermann
 date: 2016-01-28
 type: link
+description: 'We should all learn the medium we work with.'
 tag:
     - Design
 link:

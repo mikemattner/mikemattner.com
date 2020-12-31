@@ -2,6 +2,7 @@
 title: Frameworks Without the Framework
 date: 2016-12-02
 type: link
+description: 'Web development is complex, and tools to solve problems might be overcomplicating things.'
 tag:
     - Development
 link:

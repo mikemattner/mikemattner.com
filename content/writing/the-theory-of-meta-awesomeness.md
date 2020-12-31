@@ -2,6 +2,7 @@
 title: The Theory of Meta-Awesomeness
 date: 2017-07-31
 type: link
+description: 'This goes thirty levels deep. And I now think it is kind of dumb.'
 tag:
     - Wisdom
 link:

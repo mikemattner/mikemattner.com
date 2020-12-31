@@ -2,6 +2,7 @@
 title: Adventures in Dotfiles
 date: 2018-06-05
 type: entry
+description: 'Making the setup of a new workstation a little easier for my future self.'
 tag:
     - Development
 ---
