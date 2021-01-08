@@ -21,7 +21,7 @@ I started by building just a few simple pages that acted as a brochure style exp
 
 I'm primarily loading content from a few different static sources: yaml, json, and markdown files. For example, \`index.vue\` pulls in the following:
 
-```js[index.vue]
+```javascript
 import {
   intro,
   statement,

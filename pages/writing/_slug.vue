@@ -192,7 +192,7 @@ export default {
     background-color: $darkShadeBackground;
     font-size: 0.75rem;
     padding: $defaultPadding;
-    border-radius: $radius-small;
+    border-radius: $radius-large;
     box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
     padding-top: $defaultPadding * 1.5;
     @media (max-width: 768px) {
