@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero bold full>
+    <PageHero bold full dark>
       <Header
         tag="h1"
         class="display-3"
@@ -12,7 +12,7 @@
         <Button to="/about">More About Me</Button>
       </div>
     </PageHero>
-    <section class="section--work section--dark">
+    <!-- <section class="section--work section--dark">
       <div class="layout">
         <Header
           tag="h2"
@@ -28,7 +28,7 @@
         <WorkCard :info="JennAirHub" />
         <WorkCard :info="WhirlpoolTopLoad" />
       </div>
-    </section>
+    </section> !-->
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5" decorator>{{
@@ -179,7 +179,7 @@ export default {
     }
 
     &--writing {
-      padding-top: 2rem;
+      padding-top: 0;
       p {
         // margin-top: 0;
         // margin-bottom: 2rem;
