@@ -71,11 +71,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     background-image: none;
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0 0;
     padding: $defaultPadding 0;
-    // border-bottom: 1px solid tint($darkBlue, 2%);
     position: relative;
     &:after {
       content: '';
@@ -85,6 +81,7 @@ export default {
       bottom: ($defaultPadding/5) * -1;
       left: ($defaultPadding/2) * -1;
       right: ($defaultPadding/2) * -1;
+      height: auto;
       border-radius: $radius-large;
       background-color: $darkShadeBackground;
       transition: $transition-cubic;
@@ -93,6 +90,9 @@ export default {
       pointer-events: none;
       filter: blur(1.5rem);
       box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    }
+    &:before {
+      display: none;
     }
   }
   h3 {
@@ -164,12 +164,6 @@ export default {
       filter: blur(0);
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
     }
-    // h3 {
-    //   color: $primary;
-    // }
-    // .article-meta {
-    //   color: $primary;
-    // }
   }
 }
 </style>
