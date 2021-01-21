@@ -12,36 +12,48 @@ a {
   color: $white;
   transition: $transition;
   text-decoration: none;
-  background-image: $solidGradient;
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
+  // background-image: $solidGradient;
+  // background-position: 0% 100%;
+  // background-repeat: no-repeat;
+  // background-size: 100% 1px;
   font-weight: 700;
   position: relative;
 
-  // &:before {
-  //   content: '';
-  //   position: absolute;
-  //   top: -4px;
-  //   bottom: -4px;
-  //   left: -4px;
-  //   right: -4px;
-  //   border-radius: $radius-small;
-  //   background-color: $darkShadeBackground;
-  //   z-index: -1;
-  //   transition: $transition;
-  //   transform: scale(1.5);
-  //   opacity: 0;
-  // }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    bottom: 0;
+    transition: $transition-med;
+  }
+
+  &:before {
+    background-color: $blueSteel;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+  &:after {
+    background-color: $primary;
+    left: 0;
+    right: 100%;
+    z-index: 0;
+    opacity: 0;
+  }
 
   &:hover {
     color: $white;
-    background-size: 100% 2px;
-    background-image: $solidPrimaryGradient;
+    // background-size: 100% 2px;
+    // background-image: $solidPrimaryGradient;
     // &:before {
     //   transform: scale(1);
     //   opacity: 0.5;
     // }
+    &:after {
+      right: 0;
+      opacity: 1;
+    }
   }
 }
 hr {

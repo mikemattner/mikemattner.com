@@ -209,7 +209,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
             &.nuxt-link-exact-active {
               color: $white;
               // font-weight: 700;
-              background-image: $solidPrimaryGradient;
+              // background-image: $solidPrimaryGradient;
               background-size: 100% 1px;
 
               // &:before {
@@ -225,15 +225,15 @@ $transparent-bg: rgba($darkShadeBackground, 1);
               // }
 
               &:hover {
-                color: $white;
+                // color: $white;
                 // background-size: 100% 100%;
-                background-image: $solidPrimaryGradient;
+                // background-image: $solidPrimaryGradient;
               }
             }
             &:hover {
               color: $white;
-              background-size: 100% 2px;
-              background-image: $solidPrimaryGradient;
+              // background-size: 100% 2px;
+              // background-image: $solidPrimaryGradient;
             }
           }
         }
@@ -369,7 +369,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
       // );
       // box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
       @media (min-width: 768px) {
-        height: 2.5rem;
+        height: 2rem;
       }
       // &.active {
       //   box-shadow: none;

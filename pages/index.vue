@@ -1,12 +1,7 @@
 <template>
   <div class="home">
     <PageHero bold full dark>
-      <Header
-        tag="h1"
-        class="display-3"
-        v-html="intro.title"
-        decorator
-      ></Header>
+      <Header tag="h1" class="display-3" v-html="intro.title"></Header>
       <div class="header-content">
         <div v-html="intro.body"></div>
         <Button to="/about">More About Me</Button>
@@ -103,7 +98,7 @@ export default {
       // line-height: 0.85;
       font-size: $h4;
       @media (min-width: $tablet) {
-        grid-column: main-content / span 8;
+        grid-column: content-start / span 10;
         font-size: $h3;
       }
     }
@@ -111,7 +106,7 @@ export default {
       grid-column: main-content / span 6;
       @media (min-width: $tablet) {
         position: relative;
-        grid-column: main-content / span 6;
+        grid-column: content-start / span 6;
         p,
         .button {
           position: relative;
