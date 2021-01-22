@@ -18,7 +18,7 @@ h4,
 h5,
 h6 {
   font-family: $serif-font;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.2;
   color: $white;
   margin: 1.75rem 0 0.05rem;
@@ -58,12 +58,21 @@ h6 {
   }
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sans-serif-font;
+  letter-spacing: 0.0125rem;
+}
+
 h1,
 .display-1 {
   font-size: $h2;
   margin-top: 0;
   letter-spacing: 0.0125rem;
-  line-height: 1.1;
+  // line-height: 1.1;
 
   small {
     font-size: $small;

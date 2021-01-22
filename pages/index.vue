@@ -94,24 +94,27 @@ export default {
   .hero {
     h1 {
       grid-column: main-content / span 6;
-      // mix-blend-mode: hard-light;
-      // line-height: 0.85;
       font-size: $h4;
       @media (min-width: $tablet) {
-        grid-column: content-start / span 10;
+        grid-column: content-start / span 8;
+        font-size: $h4;
+        margin-bottom: 1rem;
+      }
+      @media (min-width: $desktop) {
         font-size: $h3;
+        grid-column: content-start / span 10;
       }
     }
     .header-content {
       grid-column: main-content / span 6;
       @media (min-width: $tablet) {
-        position: relative;
+        grid-column: main-content / span 6;
+      }
+      @media (min-width: $desktop) {
         grid-column: content-start / span 6;
-        p,
-        .button {
-          position: relative;
-          z-index: 3;
-        }
+      }
+      .button {
+        margin-top: 2rem;
       }
     }
   }

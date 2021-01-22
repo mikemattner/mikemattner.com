@@ -3,7 +3,7 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <div class="meta top main-content">
-          <fa-icon
+          <!-- <fa-icon
             v-if="writing.type == 'link'"
             class="article-type"
             icon="link"
@@ -20,8 +20,7 @@
             class="article-type"
             icon="stream"
             size="sm"
-          ></fa-icon>
-          Posted
+          ></fa-icon> -->
           <time>{{ formattedDate }}</time>
         </div>
         <Header
@@ -284,7 +283,6 @@ export default {
   .meta {
     font-size: $small;
     margin: 0 0 2rem;
-    // color: tint($darkBlue, 40%);
     color: $blueSteel;
     &.top {
       margin: 0;
@@ -340,10 +338,10 @@ export default {
     }
   }
   h2 {
-    font-size: $h6;
+    font-size: $h5;
   }
   h3 {
-    font-size: $h6;
+    font-size: $h5;
   }
   .attribution {
     font-size: $small;
