@@ -18,13 +18,13 @@
     <section class="layout">
       <Header
         tag="h2"
-        class="display-6 main-content"
+        class="display-5 main-content"
         v-html="page.title"
       ></Header>
       <div class="main-content" v-html="page.body"></div>
       <Header
         tag="h2"
-        class="display-6 main-content"
+        class="display-5 main-content"
         v-html="contact.title"
       ></Header>
       <div class="main-content" v-html="contact.body"></div>
@@ -80,7 +80,10 @@ export default {
       // margin-bottom: 3rem;
     }
     h1 {
-      grid-column: main-content / span 7;
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        grid-column: main-content / span 7;
+      }
     }
     p {
       grid-column: main-content / span 6;

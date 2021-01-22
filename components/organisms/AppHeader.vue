@@ -195,7 +195,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
         margin: 0 0 0 0;
         padding: 0;
         li {
-          margin: 0 $defaultPadding 0 0;
+          margin: 0 $defaultPadding * 1.5 0 0;
           padding: 0;
           a {
             background-size: 100% 0;
