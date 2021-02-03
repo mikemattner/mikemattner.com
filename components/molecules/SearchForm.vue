@@ -155,8 +155,8 @@ export default {
     background: $darkShadeBackground;
     position: absolute;
     top: calc(100% + 1rem);
-    left: 0;
-    right: 0;
+    left: -$defaultPadding/2;
+    right: -$defaultPadding/2;
     border-color: $blueSteel;
     color: $blueSteel;
     margin: 0;
@@ -192,6 +192,10 @@ export default {
           path {
             fill: shade($blueSteel, 90%);
           }
+        }
+        &:before,
+        &:after {
+          display: none;
         }
         &:hover {
           background-color: shade($blueSteel, 10%);
