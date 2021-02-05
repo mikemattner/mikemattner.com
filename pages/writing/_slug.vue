@@ -3,7 +3,7 @@
     <article :key="$route.params.slug">
       <PageHero dark>
         <div class="meta top main-content">
-          <!-- <fa-icon
+          <fa-icon
             v-if="writing.type == 'link'"
             class="article-type"
             icon="link"
@@ -20,7 +20,7 @@
             class="article-type"
             icon="stream"
             size="sm"
-          ></fa-icon> -->
+          ></fa-icon>
           <time>{{ formattedDate }}</time>
         </div>
         <Header
@@ -29,24 +29,26 @@
           v-html="writing.title"
           center
         ></Header>
+        <p v-html="writing.description" class="main-content"></p>
         <div class="meta flex main-content">
-          <div v-if="writing.link" class="article-link" target="_blank">
-            <ButtonLink :href="writing.link[0]" target="_blank" small
-              ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
-              ><span v-else>View Link</span>
-              <fa-icon icon="external-link-alt" size="sm"></fa-icon
-            ></ButtonLink>
-          </div>
           <TagList :tags="writing.tag" />
         </div>
       </PageHero>
       <div id="content" :data-type="writing.type" :class="writing.type">
         <nuxt-content :document="writing" />
-        <div class="layout">
-          <p v-if="writing.type == 'quote'" class="attribution">
-            &mdash; {{ writing.attribution }}
-          </p>
+        <div class="layout" v-if="writing.type == 'quote'">
+          <p class="attribution">&mdash; {{ writing.attribution }}</p>
         </div>
+        <aside v-if="writing.link" class="layout">
+          <div class="article-link main-content">
+            <p>Take a gander at the content I&rsquo;m referencing</p>
+            <ButtonLink :href="writing.link[0]" target="_blank" small ghost
+              ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
+              ><span v-else>View Link</span>
+              <fa-icon icon="external-link-alt" size="sm"></fa-icon
+            ></ButtonLink>
+          </div>
+        </aside>
         <div class="layout">
           <div class="links main-content">
             <Button
@@ -157,7 +159,7 @@ export default {
     }
     .article-type {
       display: block;
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
       width: 1.25rem !important;
       height: 1.25rem;
       padding: $defaultPadding/5;
@@ -285,26 +287,43 @@ export default {
     margin: 0 0 2rem;
     color: $blueSteel;
     &.top {
-      margin: 0;
+      margin: 0 0 $defaultPadding/3;
+      display: flex;
+      align-items: center;
+      time {
+        margin-left: $defaultPadding/3;
+      }
     }
     &.flex {
       display: flex;
       align-items: center;
       justify-content: flex-start;
     }
-    .article-link {
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-right: $defaultPadding/2;
-      padding-right: $defaultPadding/2;
-      border-right: 1px solid $borderColor-light;
-      .button {
-        margin: 0.5rem 0;
-        svg {
-          margin-left: 0.5rem;
-        }
+  }
+  .article-link {
+    position: relative;
+    background-color: $darkShadeBackground;
+    font-size: 0.75rem;
+    padding: $defaultPadding/3 $defaultPadding;
+    border-radius: $radius-large;
+    box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $defaultPadding;
+    margin-top: $defaultPadding;
+    color: $blueSteel;
+    p {
+      margin-right: $defaultPadding;
+      padding-right: $defaultPadding;
+      font-weight: 700;
+      // border-right: 1px solid $blueSteel;
+    }
+    .button {
+      margin: 0.5rem 0;
+      svg {
+        margin-left: 0.5rem;
       }
     }
   }
