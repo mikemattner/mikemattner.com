@@ -16,7 +16,7 @@
           />
         </div>
         <div class="work-info">
-          <Header tag="h6" class="text-small">{{ info.year }}</Header>
+          <Header tag="h6" class="text-normal">{{ info.year }}</Header>
           <Header tag="h3" class="display-6">{{ info.title }}</Header>
           <p v-html="info.description"></p>
         </div>
@@ -53,42 +53,30 @@ export default {
     flex-direction: column;
     justify-content: space-between;
 
-    // &:after {
-    //   content: '';
-    //   display: block;
-    //   position: absolute;
-    //   top: ($defaultPadding/2) * -1;
-    //   bottom: ($defaultPadding/2) * -1;
-    //   left: ($defaultPadding/2) * -1;
-    //   right: ($defaultPadding/2) * -1;
-    //   border-radius: $radius-large;
-    //   background-color: rgba($black, 0.5);
-    //   transition: $transition-cubic;
-    //   opacity: 0;
-    //   transform: scale(1.2);
-    //   pointer-events: none;
-    //   filter: blur(1.5rem);
-    //   box-shadow: 0 0 5px rgba(0, 0, 0, 0);
-    // }
-    // &:hover {
-    //   &:after {
-    //     opacity: 1;
-    //     transform: scale(1);
-    //     filter: blur(0);
-    //     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.33);
-    //   }
-    // }
-
     .work-info {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
-      padding: $defaultPadding 0;
+      padding: $defaultPadding $defaultPadding 0;
       z-index: 2;
       position: relative;
+      text-align: center;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 100px;
+        background-color: $blueSteel;
+        top: -80px;
+      }
     }
     .work-image {
       background-color: $black;
       border-radius: $radius-large;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
+        0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
       img {
         margin-bottom: 0;
       }
@@ -108,10 +96,11 @@ export default {
     margin-top: 0;
     margin-bottom: 0;
     color: $blueSteel;
+    font-weight: 400;
   }
   h3 {
     margin-top: 0.25rem;
-    font-family: $sans-serif-font;
+    // font-family: $sans-serif-font;
     font-weight: 700;
   }
 }

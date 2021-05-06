@@ -58,9 +58,10 @@ export default {
   }
 
   &__type {
+    // font-family: $serif-font;
     font-size: $base * 0.75;
-    // letter-spacing: 0.125rem;
-    font-weight: 400;
+    // letter-spacing: 0.0125rem;
+    font-weight: 700;
     margin-left: 0.5rem;
     // opacity: 0;
     transition: all 0.125s ease-in-out;

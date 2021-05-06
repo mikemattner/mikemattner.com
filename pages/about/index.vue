@@ -1,20 +1,21 @@
 <template>
   <div class="about">
     <PageHero>
-      <Header
-        tag="h1"
-        class="display-4"
-        v-html="statement.title"
-        decorator
-      ></Header>
+      <Header tag="h1" class="display-4" v-html="statement.title"></Header>
       <p v-html="statement.subtitle"></p>
     </PageHero>
-    <section id="photos" class="section section--images three-col">
+    <section id="photos" class="section section--images layout">
+      <div class="personal-image">
+        <StaticImage :src="images[0].src" :alt="images[0].alt" />
+        <div class="label">{{ images[0].alt }}</div>
+      </div>
+    </section>
+    <!-- <section id="photos" class="section section--images three-col">
       <div v-for="image in images" :key="image.src" class="personal-image">
         <StaticImage :src="image.src" :alt="image.alt" />
         <div class="label">{{ image.alt }}</div>
       </div>
-    </section>
+    </section> -->
     <section class="layout">
       <Header
         tag="h2"
@@ -47,7 +48,7 @@ export default {
       images: [
         {
           src: 'personal/mike-painting.jpg',
-          alt: 'What a lovely painting!',
+          alt: 'What a lovely painting! Not mine.',
         },
         {
           src: 'personal/mike-cat.jpg',
@@ -93,11 +94,18 @@ export default {
     &--images {
       padding: $defaultPadding * 2 0 $defaultPadding;
       .personal-image {
-        border-radius: $radius-large;
-        box-shadow: 0 2px 15px rgba($black, 0.125);
+        border-radius: $radius-large 0 0 $radius-large;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+          0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
+          0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
         overflow: hidden;
         width: 100%;
         position: relative;
+
+        grid-column: main-content / span 6;
+        @media (min-width: $desktop) {
+          grid-column: main-content / span 9;
+        }
         // @media (max-width: $tablet) {
         //   height: 250px;
         // }
@@ -143,70 +151,35 @@ export default {
         }
         &:hover {
           img {
-            transform: scale(1.1);
-            transition: $transition-slow;
+            // transform: scale(1.1);
+            // transition: $transition-slow;
           }
           .label {
             // padding: $defaultPadding * 2 $defaultPadding/5 $defaultPadding * 2;
             opacity: 1;
           }
         }
-        &:nth-child(1) {
-          grid-column: first-col;
-        }
-        &:nth-child(2) {
-          grid-column: second-col;
-        }
-        &:nth-child(3) {
-          grid-column: third-col;
-        }
         // &:nth-child(1) {
-        //   grid-column: first-col / span 2;
-        //   grid-row: 1 / span 2;
-        //   @media (max-width: $tablet) {
-        //     grid-column: first-col;
-        //     grid-row: 1;
-        //     margin-bottom: $defaultPadding;
-        //   }
+        //   grid-column: first-col;
         // }
         // &:nth-child(2) {
-        //   grid-column: third-col / span 2;
-        //   grid-row: 1;
-        //   margin-bottom: $defaultPadding;
-        //   @media (max-width: $tablet) {
-        //     grid-column: second-col;
-        //     grid-row: 1;
-        //     margin-bottom: $defaultPadding;
-        //   }
+        //   grid-column: second-col;
         // }
         // &:nth-child(3) {
         //   grid-column: third-col;
-        //   grid-row: 2;
-        //   @media (max-width: $tablet) {
-        //     grid-column: first-col;
-        //     grid-row: 2;
-        //   }
-        // }
-        // &:nth-child(4) {
-        //   grid-column: fourth-col;
-        //   grid-row: 2;
-        //   @media (max-width: $tablet) {
-        //     grid-column: second-col;
-        //     grid-row: 2;
-        //   }
         // }
       }
       &.section--personal {
         .personal-image {
-          grid-column: first-col / span 4;
-          height: 350px;
-          @media (max-width: $tablet) {
-            grid-column: first-col / span 3;
-            grid-row: 2;
-          }
-          &:before {
-            display: none;
-          }
+          // grid-column: first-col / span 4;
+          // height: 350px;
+          // @media (max-width: $tablet) {
+          //   grid-column: first-col / span 3;
+          //   grid-row: 2;
+          // }
+          // &:before {
+          //   display: none;
+          // }
         }
       }
     }

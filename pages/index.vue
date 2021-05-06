@@ -1,13 +1,13 @@
 <template>
   <div class="home">
-    <PageHero bold full dark>
+    <PageHero bold full>
       <Header tag="h1" class="display-3" v-html="intro.title"></Header>
       <div class="header-content">
         <div v-html="intro.body"></div>
         <Button to="/about">More About Me</Button>
       </div>
     </PageHero>
-    <!-- <section class="section--work section--dark">
+    <section class="section--work section--dark">
       <div class="layout">
         <Header
           tag="h2"
@@ -23,7 +23,7 @@
         <WorkCard :info="JennAirHub" />
         <WorkCard :info="WhirlpoolTopLoad" />
       </div>
-    </section> !-->
+    </section>
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5" decorator>{{
@@ -96,13 +96,13 @@ export default {
       grid-column: main-content / span 6;
       font-size: $h4;
       @media (min-width: $tablet) {
-        grid-column: content-start / span 8;
+        grid-column: main-content / span 6;
         font-size: $h4;
         margin-bottom: 1rem;
       }
       @media (min-width: $desktop) {
-        font-size: $h3;
-        grid-column: content-start / span 10;
+        font-size: $h4;
+        grid-column: main-content / span 7;
       }
     }
     .header-content {
@@ -111,7 +111,7 @@ export default {
         grid-column: main-content / span 6;
       }
       @media (min-width: $desktop) {
-        grid-column: content-start / span 6;
+        grid-column: main-content / span 6;
       }
       .button {
         margin-top: 2rem;
