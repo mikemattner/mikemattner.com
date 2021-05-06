@@ -177,6 +177,7 @@ export default {
         background-image: none;
         padding: $defaultPadding/3 $defaultPadding/2;
         border-radius: $radius-large;
+        text-decoration: none;
 
         .article-type {
           margin-left: 1rem;

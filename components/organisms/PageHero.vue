@@ -6,6 +6,7 @@
       bold == true ? 'hero--bold' : '',
       dark == true ? 'hero--dark' : '',
       image == true ? 'hero--image' : '',
+      center == true ? 'hero--center' : '',
     ]"
   >
     <slot></slot>
@@ -24,10 +25,11 @@
 <script>
 export default {
   props: {
-    full: Boolean,
-    dark: Boolean,
-    bold: Boolean,
     arrow: Boolean,
+    bold: Boolean,
+    center: Boolean,
+    dark: Boolean,
+    full: Boolean,
     image: {
       type: String,
       default: '',
@@ -66,12 +68,16 @@ export default {
     }
   }
   &--full {
-    // min-height: 100vh;
-    padding-bottom: 4rem;
+    min-height: 90vh;
+    align-content: center;
+    // padding-bottom: 4rem;
     // border-bottom: 1px solid $borderColor-light;
   }
   &--dark {
     background-color: $darkShadeBackground;
+  }
+  &--center {
+    text-align: center;
   }
   h1 {
     // color: $primary;

@@ -77,7 +77,7 @@ $max-width: 30rem;
   padding-right: $column-gap;
   @media (min-width: $tablet) {
     column-gap: $column-gap;
-    row-gap: $column-gap;
+    row-gap: $column-gap * 2;
     grid-template-columns:
       [full-start] minmax($column-gap, calc(40vw - #{$max-width}))
       [first-col] 1fr

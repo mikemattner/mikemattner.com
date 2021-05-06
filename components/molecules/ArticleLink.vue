@@ -9,17 +9,7 @@
       </div>
       <Header tag="h3" class="article-title"
         ><span v-html="article.title"></span
-        ><fa-icon v-if="article.type == 'link'" icon="link" size="sm"></fa-icon
-        ><fa-icon
-          v-if="article.type == 'quote'"
-          icon="quote-left"
-          size="sm"
-        ></fa-icon
-        ><fa-icon
-          v-if="article.type == 'entry'"
-          icon="stream"
-          size="sm"
-        ></fa-icon
+        ><fa-icon :icon="categoryIcon" size="sm"></fa-icon
       ></Header>
       <div v-if="article.description" class="article-description">
         <span v-html="article.description"></span>
@@ -36,6 +26,18 @@ export default {
       required: true,
     },
     archive: Boolean,
+  },
+  computed: {
+    categoryIcon() {
+      switch (this.article.type) {
+        case 'link':
+          return 'link'
+        case 'quote':
+          return 'quote-left'
+        default:
+          return 'stream'
+      }
+    },
   },
   methods: {
     formatDate(date) {
@@ -73,6 +75,7 @@ export default {
     background-image: none;
     padding: $defaultPadding 0;
     position: relative;
+    text-decoration: none;
     &:after {
       content: '';
       display: block;
@@ -89,7 +92,9 @@ export default {
       transform: scale(1.2);
       pointer-events: none;
       filter: blur(1.5rem);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+        0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
     }
     &:before {
       display: none;

@@ -1,16 +1,15 @@
 statement:
   title: I&rsquo;m Mike, a designer & developer from Michigan.
-  subtitle: It&rsquo;s great to meet you! I&rsquo;ve worked for over 14 years as a designer and developer 
-            on the web in a largely hybrid-based role. To get a feel for my place in the development
-        world, I'll refer you to 
-        <a href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/">this</a>.
+  subtitle: I share a whole host of content on this blog. In some cases it will relate heavily
+            to my professional life, but more often than not it&rsquo;s just a bunch of topics 
+            that interest me.
 
 page:
   title: A Little About Me
   body: <p>In my current role as a senior UX/UI Developer at Aisle Rocket I work on a wide variety
         of brands and projects involving CPG product launches, component driven product design, and
-        internal tools. I'm largely focused on experience development for mass market brands.</p>
-        <p>In my spare time I enjoy spending time with my wife and pets, reading, keeping up with 
+        internal facing tools. I'm largely focused on experience development for mass market brands.</p>
+        <p>Outside of work I enjoy spending time with my wife and pets, reading, keeping up with 
         politics (to the detriment of our collective health these days), woodworking, home improvement 
         projects, and sipping a fine craft beer.</p>
 

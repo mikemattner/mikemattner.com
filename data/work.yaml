@@ -7,7 +7,7 @@ JennAirWorkbook:
   title: Immersive Training
   year: 2019
   role: Developer
-  description: Coming soon.
+  description: Vue based custom workbook with device independent note taking
   image:
     src: work/workbook/wow-curriculum-internal.jpg
     alt: JennAir Workbook home screen
@@ -18,7 +18,7 @@ JennAirHub:
   title: Influencer Hub
   year: 2018
   role: Developer
-  description: Coming soon.
+  description: Reimagining a premium knowledgbase for appliance professionals
   image:
     src: work/jennair/columns.jpg
     alt: JennAir Influencer Hub feature page
@@ -29,9 +29,9 @@ MaytagExperience:
   title: Maytag.com
   year: 2020 - Present
   role: Developer
-  description: Coming soon.
+  description: Reimagined customer experiences across all product categories
   image:
-    src: work/maytag/primary.jpg
+    src: work/maytag/mtg-modal.jpg
     alt: Maytag experience
 
 WhirlpoolTopLoad:
@@ -39,8 +39,8 @@ WhirlpoolTopLoad:
   title: Whirlpool.com
   year: 2016 - Present
   role: Developer
-  description: Coming soon.
+  description: Costumer experiences for premium product launches
   image:
-    src: work/whirlpool/primary.jpg
+    src: work/whirlpool/whp-lander.jpg
     alt: Whirlpool Intuitive Touch Control intro
 

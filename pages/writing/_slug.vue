@@ -4,21 +4,8 @@
       <PageHero dark>
         <div class="meta top main-content">
           <fa-icon
-            v-if="writing.type == 'link'"
             class="article-type"
-            icon="link"
-            size="sm"
-          ></fa-icon
-          ><fa-icon
-            v-if="writing.type == 'quote'"
-            class="article-type"
-            icon="quote-left"
-            size="sm"
-          ></fa-icon>
-          <fa-icon
-            v-if="writing.type == 'entry'"
-            class="article-type"
-            icon="stream"
+            :icon="categoryIcon"
             size="sm"
           ></fa-icon>
           <time>{{ formattedDate }}</time>
@@ -92,6 +79,16 @@ export default {
         timeZone: 'UTC',
       }
       return new Date(this.writing.date).toLocaleDateString('en-us', options)
+    },
+    categoryIcon() {
+      switch (this.writing.type) {
+        case 'link':
+          return 'link'
+        case 'quote':
+          return 'quote-left'
+        default:
+          return 'stream'
+      }
     },
   },
   async asyncData({ $content, params }) {
