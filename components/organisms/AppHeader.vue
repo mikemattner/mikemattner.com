@@ -1,7 +1,7 @@
 <template>
   <div class="navbar layout" :class="{ active: navOpen }" role="banner">
     <div class="navbar__logo">
-      <nuxt-link to="/"><BrandLogo label /></nuxt-link>
+      <nuxt-link to="/"><BrandLogo /></nuxt-link>
     </div>
     <div class="navbar__menu">
       <div
@@ -187,7 +187,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
         a {
           background-size: 100% 0;
           position: relative;
-          font-weight: 400;
+          font-weight: 700;
           // text-transform: uppercase;
           display: flex;
           align-items: center;
