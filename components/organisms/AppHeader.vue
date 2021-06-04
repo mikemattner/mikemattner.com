@@ -89,6 +89,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
 
   @media (min-width: 769px) {
     // padding: 0 2rem;
+    position: absolute;
     padding: 0;
     align-items: center;
   }
@@ -96,6 +97,7 @@ $transparent-bg: rgba($darkShadeBackground, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
   }
 
   &__logo {
