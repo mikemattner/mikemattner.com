@@ -1,13 +1,13 @@
 <template>
   <div class="home">
-    <PageHero bold full>
+    <PageHero dark bold full>
       <Header tag="h1" class="display-3" v-html="intro.title"></Header>
       <div class="header-content">
         <div v-html="intro.body"></div>
         <Button to="/about">More About Me</Button>
       </div>
     </PageHero>
-    <section class="section--work section--dark">
+    <!-- <section class="section--work section--dark">
       <div class="layout">
         <Header
           tag="h2"
@@ -23,7 +23,7 @@
         <WorkCard :info="JennAirHub" />
         <WorkCard :info="WhirlpoolTopLoad" />
       </div>
-    </section>
+    </section> -->
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5" decorator>{{
