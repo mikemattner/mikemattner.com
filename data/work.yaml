@@ -18,7 +18,7 @@ JennAirHub:
   title: Influencer Hub
   year: 2018
   role: Developer
-  description: Reimagining a premium knowledgbase for appliance professionals
+  description: Re-imagining a premium knowledge base for appliance professionals
   image:
     src: work/jennair/columns.jpg
     alt: JennAir Influencer Hub feature page
@@ -27,20 +27,22 @@ JennAirHub:
 MaytagExperience:
   brand: Maytag
   title: Maytag.com
-  year: 2020 - Present
+  year: 2019 - 2021
   role: Developer
-  description: Reimagined customer experiences across all product categories
+  description: Re-imagined customer experiences across all product categories
   image:
-    src: work/maytag/mtg-modal.jpg
+    src: work/maytag/primary.png
     alt: Maytag experience
+  link: https://maytag.com
 
-WhirlpoolTopLoad:
+WhirlpoolExperience:
   brand: Whirlpool
   title: Whirlpool.com
-  year: 2016 - Present
+  year: 2016 - 2021
   role: Developer
   description: Costumer experiences for premium product launches
   image:
-    src: work/whirlpool/whp-lander.jpg
+    src: work/whirlpool/primary.png
     alt: Whirlpool Intuitive Touch Control intro
+  link: https://whirlpool.com
 

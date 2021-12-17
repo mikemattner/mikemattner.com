@@ -34,8 +34,8 @@ export default {
     padding: 0;
     border-radius: 50%;
     // border: 1px solid $white;
-    background: $blueSteel;
-    // background: shade($blueSteel, 80%);
+    background: $middleGray;
+    // background: shade($middleGray, 80%);
     z-index: 10;
     transition: $transition;
     flex: 0 0 1.25rem;
@@ -51,21 +51,21 @@ export default {
       transition: $transition;
     }
     .logo-shape {
-      fill: shade($blueSteel, 80%);
+      fill: shade($middleGray, 80%);
       // fill: $white;
       transition: $transition;
     }
   }
 
   &__type {
-    // font-family: $serif-font;
     font-size: $base * 0.75;
     // letter-spacing: 0.0125rem;
     font-weight: 700;
     margin-left: 0.5rem;
-    // opacity: 0;
+    opacity: 0;
     transition: all 0.125s ease-in-out;
-    // transform: translateX(-100px);
+    transform: translateX(-100px);
+    visibility: hidden;
     line-height: 1.2;
     color: #fff;
     z-index: 9;
@@ -87,8 +87,9 @@ export default {
         }
       }
       .brand-logo__type {
-        // opacity: 1;
-        // transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
         // color: #fff;
       }
     }

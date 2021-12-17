@@ -17,8 +17,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $serif-font;
-  font-weight: 900;
+  font-family: $sans-serif-font;
+  font-weight: 700;
   line-height: 1.2;
   color: $white;
   margin: 1.75rem 0 0.05rem;
@@ -30,7 +30,7 @@ h6 {
     display: block;
     letter-spacing: 0.01rem;
     font-weight: 400;
-    color: $blueSteel;
+    color: $middleGray;
     // color: tint($darkBlue, 30%);
   }
 
@@ -58,33 +58,25 @@ h6 {
   }
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  // font-family: $sans-serif-font;
-  // letter-spacing: 0.0125rem;
-}
-
 h1,
 .display-1 {
   font-size: $h2;
   margin-top: 0;
   letter-spacing: 0.0125rem;
-  // line-height: 1.1;
+  color: $primary;
+  line-height: 1.1;
 
   small {
     font-size: $small;
   }
 
-  // @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
-  //   background: $linearGradient;
-  //   background-clip: text;
-  //   -webkit-background-clip: text;
-  //   color: transparent;
-  //   -webkit-text-fill-color: transparent;
-  // }
+  @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
+    background: $linearGradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 
   @media (min-width: $tablet) {
     font-size: $h1;

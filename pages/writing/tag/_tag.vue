@@ -5,12 +5,12 @@
         <Header tag="h1" class="display-4 main-content" decorator>
           {{ tag.name }}</Header
         >
-        <p v-html="tag.description" class="main-content"></p>
+        <p class="main-content" v-html="tag.description"></p>
       </PageHero>
       <section id="content" class="layout">
         <div class="main-content">
           <AllArticles :posts="writing" />
-          <Button to="/writing/" class="button"
+          <Button to="/writing/" primary ghost
             ><fa-icon icon="chevron-left" size="sm"></fa-icon>
             {{ button.text }}</Button
           >
@@ -22,15 +22,8 @@
 
 <script>
 export default {
-  transition: 'fade',
   scrollToTop: true,
-  data() {
-    return {
-      button: {
-        text: 'Back to Articles',
-      },
-    }
-  },
+  transition: 'fade',
   async asyncData({ $content, params }) {
     try {
       const tags = await $content('tag')
@@ -51,6 +44,13 @@ export default {
       console.debug('No Post:', err)
       /* eslint-enable */
       return false
+    }
+  },
+  data() {
+    return {
+      button: {
+        text: 'Back to Articles',
+      },
     }
   },
   head() {

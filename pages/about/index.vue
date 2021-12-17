@@ -10,12 +10,6 @@
         <div class="label">{{ images[0].alt }}</div>
       </div>
     </section>
-    <!-- <section id="photos" class="section section--images three-col">
-      <div v-for="image in images" :key="image.src" class="personal-image">
-        <StaticImage :src="image.src" :alt="image.alt" />
-        <div class="label">{{ image.alt }}</div>
-      </div>
-    </section> -->
     <section class="layout">
       <Header
         tag="h2"
@@ -94,7 +88,7 @@ export default {
     &--images {
       padding: $defaultPadding * 2 0 $defaultPadding;
       .personal-image {
-        border-radius: $radius-large 0 0 $radius-large;
+        border-radius: $radius-large;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
           0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
           0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
@@ -104,7 +98,7 @@ export default {
 
         grid-column: main-content / span 6;
         @media (min-width: $desktop) {
-          grid-column: main-content / span 9;
+          grid-column: main-content / span 6;
         }
         // @media (max-width: $tablet) {
         //   height: 250px;
@@ -141,7 +135,6 @@ export default {
             rgba($bodyBackground, 0.9) 0%,
             rgba($bodyBackground, 0) 100%
           );
-          font-family: $serif-font;
           transition: $transition-slow-ease;
           opacity: 0;
           @media (max-width: $tablet) {

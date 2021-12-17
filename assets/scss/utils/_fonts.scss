@@ -1,38 +1,3 @@
-// @font-face {
-//     font-family: 'hack';
-//     src: url('~@/assets/fonts/hack/hack-regular-webfont.woff2') format('woff2'),
-//          url('~@/assets/fonts/hack/hack-regular-webfont.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// /*Salome - serif face*/
-// @font-face {
-//     font-family: 'salomeregular';
-//     src: url('~@/assets/fonts/salome/salome-webfont.eot');
-//     src: url('~@/assets/fonts/salome/salome-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('~@/assets/fonts/salome/salome-webfont.woff2') format('woff2'),
-//          url('~@/assets/fonts/salome/salome-webfont.woff') format('woff'),
-//          url('~@/assets/fonts/salome/salome-webfont.ttf') format('truetype'),
-//          url('~@/assets/fonts/salome/salome-webfont.svg#salomeregular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-
-/* playfair-display-900 - latin */
-// @font-face {
-//     font-family: 'Playfair Display';
-//     font-style: normal;
-//     font-weight: 900;
-//     font-display: swap;
-//     src: local('Playfair Display Black'), local('PlayfairDisplay-Black'),
-//        url('~@/assets/fonts/Playfair/playfairdisplay-black-webfont.woff2') format('woff2'),
-//        url('~@/assets/fonts/Playfair/playfairdisplay-black-webfont.woff') format('woff'),
-//        url('~@/assets/fonts/Playfair/PlayfairDisplay-Black.ttf') format('truetype');
-// }
-
-
 //Geomanist Light
 @font-face {
     font-family: 'Geomanist';
@@ -45,23 +10,22 @@
     font-display: swap;
 }
 
-// //Geomanist Light Italic
-// @font-face {
-//     font-family: 'Geomanist';
-//     src: url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.eot');
-//     src: url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.woff2') format('woff2'),
-//          url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.woff') format('woff'),
-//          url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.ttf') format('truetype'),
-//          url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.svg#geomanistitalic') format('svg');
-//     font-weight: 100;
-//     font-style: italic;
-//     font-display: swap;
-// }
+//Geomanist Light Italic
+@font-face {
+    font-family: 'Geomanist';
+    src: url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.eot');
+    src: url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.woff2') format('woff2'),
+         url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.woff') format('woff'),
+         url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.ttf') format('truetype'),
+         url('~@/assets/fonts/Geomanist-Light-Italic/geomanist-light-italic-webfont.svg#geomanistitalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
 
 //Geomanist Regular
 @font-face {
-
     font-family: 'Geomanist';
     src: url('~@/assets/fonts/Geomanist-Regular/geomanist-regular-webfont.woff2') format('woff2'),
          url('~@/assets/fonts/Geomanist-Regular/geomanist-regular-webfont.woff') format('woff'),

@@ -1,28 +1,63 @@
 <template>
-  <nuxt-link
-    :class="[
-      'button',
-      secondary == true ? 'button--secondary' : '',
-      ghost == true ? 'button--secondary-ghost' : '',
-      small == true ? 'button--small' : '',
-    ]"
-    :to="to"
+  <component
+    :is="element"
+    :class="['button', classes]"
+    v-bind="{ ...attributes }"
   >
     <span class="button__content">
       <slot />
     </span>
-  </nuxt-link>
+  </component>
 </template>
 
 <script>
 export default {
   props: {
+    primary: Boolean,
     secondary: Boolean,
+    tertiary: Boolean,
     ghost: Boolean,
     small: Boolean,
+    link: Boolean,
     to: {
       type: String,
       default: '/',
+    },
+  },
+  computed: {
+    classes() {
+      return {
+        'button--link': this.link,
+        'button--tertiary': this.tertiary,
+        'button--secondary': this.secondary,
+        'button--secondary-ghost': this.ghost && this.secondary,
+        'button--primary-ghost': this.ghost && this.primary,
+        'button--small': this.small,
+      }
+    },
+    element() {
+      if (this.to) {
+        return 'nuxt-link'
+      }
+      if (this.href) {
+        return 'a'
+      }
+      return 'button'
+    },
+    attributes() {
+      if (this.href) {
+        return {
+          href: this.href,
+        }
+      }
+
+      if (this.to) {
+        return {
+          to: this.to,
+        }
+      }
+
+      return {}
     },
   },
   mounted() {
