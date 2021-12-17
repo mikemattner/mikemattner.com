@@ -13,27 +13,32 @@
         <Header
           tag="h1"
           class="display-4 main-content"
-          v-html="writing.title"
           center
+          v-html="writing.title"
         ></Header>
-        <p v-html="writing.description" class="main-content"></p>
+        <p class="main-content" v-html="writing.description"></p>
         <div class="meta flex main-content">
           <TagList :tags="writing.tag" />
         </div>
       </PageHero>
       <div id="content" :data-type="writing.type" :class="writing.type">
         <nuxt-content :document="writing" />
-        <div class="layout" v-if="writing.type == 'quote'">
+        <div v-if="writing.type == 'quote'" class="layout">
           <p class="attribution">&mdash; {{ writing.attribution }}</p>
         </div>
         <aside v-if="writing.link" class="layout">
           <div class="article-link main-content">
-            <p>Take a gander at the content I&rsquo;m referencing</p>
-            <ButtonLink :href="writing.link[0]" target="_blank" small ghost
+            <p>Visit the content I&rsquo;m referencing</p>
+            <Button
+              :href="writing.link[0]"
+              target="_blank"
+              small
+              secondary
+              ghost
               ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
               ><span v-else>View Link</span>
               <fa-icon icon="external-link-alt" size="sm"></fa-icon
-            ></ButtonLink>
+            ></Button>
           </div>
         </aside>
         <div class="layout">
@@ -42,22 +47,25 @@
               v-if="prev"
               :to="`/writing/${prev.slug}`"
               class="button prev"
+              primary
+              ghost
               ><fa-icon icon="chevron-left" size="sm"></fa-icon> Previous
               Article</Button
             >
-            <Button v-else to="/writing/" class="button prev"
-              ><fa-icon icon="chevron-left" size="sm"></fa-icon> Back to
-              Articles
+            <Button v-else to="/writing/" class="button prev" primary ghost
+              ><fa-icon icon="stream" size="sm"></fa-icon> Back to Articles
             </Button>
             <Button
               v-if="next"
               :to="`/writing/${next.slug}`"
               class="button next"
+              primary
+              ghost
               >Next Article <fa-icon icon="chevron-right" size="sm"></fa-icon
             ></Button>
-            <Button v-else to="/writing/" class="button next"
+            <Button v-else to="/writing/" class="button next" primary ghost
               >Back to Articles
-              <fa-icon icon="chevron-right" size="sm"></fa-icon>
+              <fa-icon icon="stream" size="sm"></fa-icon>
             </Button>
           </div>
         </div>
@@ -68,29 +76,8 @@
 
 <script>
 export default {
-  transition: 'fade',
   scrollToTop: true,
-  computed: {
-    formattedDate() {
-      const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        timeZone: 'UTC',
-      }
-      return new Date(this.writing.date).toLocaleDateString('en-us', options)
-    },
-    categoryIcon() {
-      switch (this.writing.type) {
-        case 'link':
-          return 'link'
-        case 'quote':
-          return 'quote-left'
-        default:
-          return 'stream'
-      }
-    },
-  },
+  transition: 'fade',
   async asyncData({ $content, params }) {
     try {
       const writing = await $content('writing', params.slug).fetch()
@@ -143,6 +130,27 @@ export default {
       ],
     }
   },
+  computed: {
+    formattedDate() {
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+      }
+      return new Date(this.writing.date).toLocaleDateString('en-us', options)
+    },
+    categoryIcon() {
+      switch (this.writing.type) {
+        case 'link':
+          return 'link'
+        case 'quote':
+          return 'quote-left'
+        default:
+          return 'stream'
+      }
+    },
+  },
 }
 </script>
 
@@ -161,13 +169,13 @@ export default {
       height: 1.25rem;
       padding: $defaultPadding/5;
       border-radius: 50%;
-      background: $blueSteel;
+      background: $middleGray;
       @include max-media($tablet) {
         width: 1.5rem !important;
         height: 1.5rem;
       }
       path {
-        fill: shade($blueSteel, 90%);
+        fill: shade($middleGray, 90%);
       }
     }
   }
@@ -267,7 +275,7 @@ export default {
   .margin-content,
   .outdent-content {
     font-size: $small;
-    color: $blueSteel;
+    color: $middleGray;
   }
   @media (min-width: $tablet) {
     .outdent-content {
@@ -282,7 +290,7 @@ export default {
   .meta {
     font-size: $small;
     margin: 0 0 2rem;
-    color: $blueSteel;
+    color: $middleGray;
     &.top {
       margin: 0 0 $defaultPadding/3;
       display: flex;
@@ -310,12 +318,12 @@ export default {
     justify-content: space-between;
     margin-bottom: $defaultPadding;
     margin-top: $defaultPadding;
-    color: $blueSteel;
+    color: $middleGray;
     p {
       margin-right: $defaultPadding;
       padding-right: $defaultPadding;
       font-weight: 700;
-      // border-right: 1px solid $blueSteel;
+      // border-right: 1px solid $middleGray;
     }
     .button {
       margin: 0.5rem 0;

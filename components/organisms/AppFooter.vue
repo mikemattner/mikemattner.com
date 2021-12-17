@@ -40,31 +40,19 @@ export default {
 .footer {
   .darker {
     padding: 1rem 0 1rem;
-    // height: 3rem;
     box-sizing: border-box;
     font-size: 0.675rem;
     background-color: $bodyBackground;
-    color: $blueSteel;
-    @media (max-width: 768px) {
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      // flex-direction: column;
-    }
-    p {
-      // margin: 0;
-    }
+    color: $middleGray;
     .email--link {
       font-size: 1rem;
       letter-spacing: 0.075rem;
       color: $white;
-      // font-family: $serif-font;
       font-weight: 700;
       @media (max-width: $tablet) {
         font-size: 1rem;
       }
     }
-
     svg {
       fill: $primary;
       color: $primary;

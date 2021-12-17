@@ -11,7 +11,7 @@
               {{ intro.body }}
               <span class="tags">
                 <span v-for="tag in tags" :key="tag">
-                  <nuxt-link :to="`/tag/${formattedTag(tag.name)}`">{{
+                  <nuxt-link :to="`/writing/tag/${formattedTag(tag.name)}`">{{
                     tag.name
                   }}</nuxt-link> </span
                 >.
@@ -31,18 +31,8 @@
 <script>
 import { intro } from '@/data/archive.yaml'
 export default {
-  transition: 'fade',
   scrollToTop: true,
-  data() {
-    return {
-      intro,
-    }
-  },
-  methods: {
-    formattedTag(tag) {
-      return tag.toLowerCase().trim()
-    },
-  },
+  transition: 'fade',
   async asyncData({ $content, app }) {
     let writing
     let tags
@@ -62,10 +52,20 @@ export default {
       writing,
     }
   },
+  data() {
+    return {
+      intro,
+    }
+  },
   head() {
     return {
       titleTemplate: `Writing – %s`,
     }
+  },
+  methods: {
+    formattedTag(tag) {
+      return tag.toLowerCase().trim()
+    },
   },
 }
 </script>

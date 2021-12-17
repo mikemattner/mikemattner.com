@@ -19,6 +19,10 @@
           <Header tag="h6" class="text-normal">{{ info.year }}</Header>
           <Header tag="h3" class="display-6">{{ info.title }}</Header>
           <p v-html="info.description"></p>
+          <Button v-if="info.link" :href="info.link" target="_blank" link
+            ><span>Visit</span>
+            <fa-icon icon="external-link-alt" size="sm"></fa-icon
+          ></Button>
         </div>
       </div>
     </div>
@@ -42,7 +46,6 @@ export default {
 .is--work {
   .work-body {
     position: relative;
-    // overflow: hidden;
     @media (max-width: $tablet) {
       grid-column: main-content;
       margin-bottom: $defaultPadding;
@@ -56,20 +59,10 @@ export default {
     .work-info {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
-      padding: $defaultPadding $defaultPadding 0;
+      padding: $defaultPadding 0 $defaultPadding * 2;
       z-index: 2;
       position: relative;
-      text-align: center;
-      &:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 1px;
-        height: 100px;
-        background-color: $blueSteel;
-        top: -80px;
-      }
+      text-align: left;
     }
     .work-image {
       background-color: $black;
@@ -77,6 +70,8 @@ export default {
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
         0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
         0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
+      margin-left: ($defaultPadding/2) * -1;
+      margin-right: ($defaultPadding/2) * -1;
       img {
         margin-bottom: 0;
       }
@@ -84,23 +79,17 @@ export default {
         position: relative;
         height: 350px;
         overflow: hidden;
-        img {
-          @include cover-background(center);
-          z-index: 1;
-        }
       }
     }
   }
   h6 {
-    font-family: $sans-serif-font;
     margin-top: 0;
     margin-bottom: 0;
-    color: $blueSteel;
+    color: $middleGray;
     font-weight: 400;
   }
   h3 {
     margin-top: 0.25rem;
-    // font-family: $sans-serif-font;
     font-weight: 700;
   }
 }

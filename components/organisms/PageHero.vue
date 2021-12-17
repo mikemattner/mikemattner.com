@@ -1,14 +1,5 @@
 <template>
-  <header
-    :class="[
-      'hero layout',
-      full == true ? 'hero--full' : '',
-      bold == true ? 'hero--bold' : '',
-      dark == true ? 'hero--dark' : '',
-      image == true ? 'hero--image' : '',
-      center == true ? 'hero--center' : '',
-    ]"
-  >
+  <header :class="['hero layout', classes]">
     <slot></slot>
     <StaticImage
       v-if="image"
@@ -26,7 +17,6 @@
 export default {
   props: {
     arrow: Boolean,
-    bold: Boolean,
     center: Boolean,
     dark: Boolean,
     full: Boolean,
@@ -37,6 +27,16 @@ export default {
     imageAlt: {
       type: String,
       default: '',
+    },
+  },
+  computed: {
+    classes() {
+      return {
+        'hero--full': this.full,
+        'hero--dark': this.dark,
+        'hero--image': this.image,
+        'hero--center': this.center,
+      }
     },
   },
 }
@@ -68,10 +68,8 @@ export default {
     }
   }
   &--full {
-    min-height: 90vh;
+    min-height: 80vh;
     align-content: center;
-    // padding-bottom: 4rem;
-    // border-bottom: 1px solid $borderColor-light;
   }
   &--dark {
     background-color: $darkShadeBackground;
@@ -99,8 +97,6 @@ export default {
     bottom: 0;
     height: 3rem;
     width: 3rem;
-    // left: 50%;
-    // transform: translateX(-50%);
     left: 0;
     background-image: none;
     .bounce-arrow {
@@ -108,7 +104,7 @@ export default {
       height: 3rem;
       margin: 0;
       &:before {
-        @include arrow-down(rgba($blueSteel, 1));
+        @include arrow-down(rgba($middleGray, 1));
         animation: bounce 1.5s;
         animation-direction: alternate;
         animation-iteration-count: infinite;

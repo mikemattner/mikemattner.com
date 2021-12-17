@@ -7,12 +7,12 @@
     ]"
   >
     <fa-icon
+      v-if="active"
       class="input-icon"
       icon="times"
       size="sm"
       title="Clear Search"
       @click="clearSearch()"
-      v-if="active"
     ></fa-icon>
     <fa-icon class="input-icon" icon="search" size="sm" v-else></fa-icon>
     <input
@@ -107,7 +107,7 @@ export default {
     &.fa-search {
       pointer-events: none;
       path {
-        fill: shade($blueSteel, 30%);
+        fill: shade($middleGray, 30%);
       }
     }
     &.fa-times {
@@ -116,7 +116,7 @@ export default {
       transform-origin: center center;
       path {
         transition: $transition;
-        fill: $blueSteel;
+        fill: $middleGray;
       }
       &:hover {
         path {
@@ -133,13 +133,13 @@ export default {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
     padding: $defaultPadding/2 $defaultPadding/2;
     width: 100%;
-    color: $blueSteel;
+    color: $middleGray;
     position: relative;
     transition: $transition;
     z-index: 100;
     -webkit-appearance: none;
     &:focus {
-      border-color: $blueSteel;
+      border-color: $middleGray;
       box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
       outline: none;
     }
@@ -147,7 +147,7 @@ export default {
       box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
     }
     &::placeholder {
-      color: shade($blueSteel, 30%);
+      color: shade($middleGray, 30%);
       opacity: 1;
     }
   }
@@ -157,8 +157,8 @@ export default {
     top: calc(100% + 1rem);
     left: -$defaultPadding/2;
     right: -$defaultPadding/2;
-    border-color: $blueSteel;
-    color: $blueSteel;
+    border-color: $middleGray;
+    color: $middleGray;
     margin: 0;
     padding: $defaultPadding/3 0;
     border-radius: $radius-large;
@@ -185,13 +185,13 @@ export default {
           height: 1.25rem;
           padding: $defaultPadding/5;
           border-radius: 50%;
-          background: $blueSteel;
+          background: $middleGray;
           @include max-media($tablet) {
             width: 1.5rem !important;
             height: 1.5rem;
           }
           path {
-            fill: shade($blueSteel, 90%);
+            fill: shade($middleGray, 90%);
           }
         }
         &:before,
@@ -199,10 +199,10 @@ export default {
           display: none;
         }
         &:hover {
-          background-color: shade($blueSteel, 10%);
+          background-color: shade($middleGray, 10%);
 
           .article-type {
-            background: shade($blueSteel, 90%);
+            background: shade($middleGray, 90%);
             path {
               fill: $white;
             }

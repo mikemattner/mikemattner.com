@@ -1,7 +1,7 @@
 <template>
   <div class="navbar layout" :class="{ active: navOpen }" role="banner">
     <div class="navbar__logo">
-      <nuxt-link to="/"><BrandLogo /></nuxt-link>
+      <nuxt-link to="/"><BrandLogo label /></nuxt-link>
     </div>
     <div class="navbar__menu">
       <div
@@ -21,7 +21,9 @@
       <nav class="nav__block">
         <ul>
           <li>
-            <nuxt-link to="/"><span @click="toggle()">Home</span></nuxt-link>
+            <nuxt-link to="/" exact
+              ><span @click="toggle()">Home</span></nuxt-link
+            >
           </li>
           <!-- <li>
               <nuxt-link to="/work"
@@ -34,7 +36,7 @@
             >
           </li>
           <li>
-            <nuxt-link to="/about"
+            <nuxt-link to="/about" exact
               ><span @click="toggle()">About</span></nuxt-link
             >
           </li>
@@ -101,9 +103,12 @@ $transparent-bg: rgba($darkShadeBackground, 1);
   }
 
   &__logo {
+    display: flex;
+    align-items: center;
     z-index: 1000;
     a {
       text-decoration: none;
+      display: inline-flex;
     }
     @media (min-width: 769px) {
       grid-column: content-start / span 2;
@@ -191,36 +196,15 @@ $transparent-bg: rgba($darkShadeBackground, 1);
           // text-transform: uppercase;
           display: flex;
           align-items: center;
-          color: $blueSteel;
+          color: $middleGray;
 
-          &.nuxt-link-exact-active {
+          &.nuxt-link-active {
             color: $white;
-            // font-weight: 700;
-            // background-image: $solidPrimaryGradient;
             background-size: 100% 1px;
-
-            // &:before {
-            //   content: '';
-            //   display: block;
-            //   // position: absolute;
-            //   margin-right: $defaultPadding/5;
-            //   width: 10px;
-            //   height: 10px;
-            //   border: 2px solid $primary;
-            //   border-radius: 10px;
-            //   flex: 0 0 10px;
-            // }
-
-            &:hover {
-              // color: $white;
-              // background-size: 100% 100%;
-              // background-image: $solidPrimaryGradient;
-            }
+            text-decoration-color: $primary;
           }
           &:hover {
             color: $white;
-            // background-size: 100% 2px;
-            // background-image: $solidPrimaryGradient;
           }
         }
       }
@@ -228,8 +212,6 @@ $transparent-bg: rgba($darkShadeBackground, 1);
       }
     }
     @media (min-width: 769px) {
-      // grid-column-start: main-content-start;
-      // grid-column-end: main-content-end;
       grid-column: main-content-start / span 3;
     }
     @media (max-width: 768px) {
@@ -238,7 +220,6 @@ $transparent-bg: rgba($darkShadeBackground, 1);
       letter-spacing: 0.125rem;
       position: fixed;
       top: 0;
-      // bottom: 0;
       padding: 4.5rem 1.25rem 2.5rem;
       left: 0;
       right: 0;

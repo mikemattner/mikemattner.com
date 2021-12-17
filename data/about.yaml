@@ -1,15 +1,18 @@
 statement:
   title: I&rsquo;m Mike, a designer & developer from Michigan.
-  subtitle: I share a whole host of content on this blog. In some cases it will relate heavily
-            to my professional life, but more often than not it&rsquo;s just a bunch of topics 
-            that interest me.
+  subtitle: In my day job, I design and build things for the web. I currently work as a UI Engineer at AccuLynx, 
+            but I was previously a UX/UI Developer at Aisle Rocket.
 
 page:
   title: A Little About Me
-  body: <p>I currently work as a UI Engineer at AccuLynx.</p>
+  body: <p>I grew up in Michigan and got into web development in my early teenage years in the 1990&rsquo;s&mdash;the
+        era of table based layouts and inline styles. Back then I was more of an avid gamer than I am now. I really 
+        enjoyed the Dark Forces series and even 
+        <a href="https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/" target="_blank">created a website</a>
+        dedicated to mods for the Jedi Knight iteration.</p>
+        <p>From there, the path to my future career was set.</p>
         <p>Outside of work I enjoy spending time with my wife and pets, reading, keeping up with 
-        politics (to the detriment of our collective health these days), woodworking, home improvement 
-        projects, and sipping a fine craft beer.</p>
+        politics, woodworking, home improvement projects, and sipping a fine craft beer.</p>
 
 contact:
   title: Get in Touch

@@ -1,9 +1,12 @@
 .button {
-  border: 2px solid $primary;
+  border: 1px solid $primary;
   background-color: $primary;
   border-radius: $radius-large;
-  padding: 0.5rem 1rem;
-  display: block;
+  color: $darkBlue;
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-image: none;
   margin: 1rem 0;
@@ -49,7 +52,7 @@
 
   &:hover {
     color: $white;
-    border-color: shade($primary, 20%);
+    border-color: $primaryHover;
     box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
               0 2px 2px rgba(0,0,0,0.11), 
               0 4px 4px rgba(0,0,0,0.11), 
@@ -64,7 +67,7 @@
     position: absolute;
     z-index: 1;
     border-radius: 50%;
-    background-color: shade($primary, 20%);
+    background-color: $primaryHover;
     will-change: transform;
     transform: translate(-50%, -50%) scale(0);
     transition-property: transform;
@@ -74,27 +77,88 @@
   &:focus &__bubble {
     transform: translate(-50%, -50%) scale(1);
   }
-  &--secondary {
-    border-color: $blueSteel;
-    background-color: $blueSteel;
-    color: shade($blueSteel, 90%);
+
+  &--primary-ghost {
+    border-color: $primary;
+    background-color: transparent;
+    color: $white;
     &:hover {
-      border-color: shade($blueSteel, 20%);
+      border-color: $primary;
       color: $white;
     }
     .button__bubble {
-      background-color: shade($blueSteel, 20%);
+      background-color: rgba($primary, 0.125);
+    }
+  }
+
+  &--secondary {
+    color: $white;
+    border-color: $secondary;
+    background-color: $secondary;
+    &:hover {
+      border-color: $secondaryHover;
+      color: $white;
+    }
+    .button__bubble {
+      background-color: $secondaryHover;
     }
   }
   &--secondary-ghost {
-    border-color: $blueSteel;
+    color: $white;
+    border-color: $secondary;
     background-color: transparent;
     &:hover {
-      border-color: $blueSteel;
-      color: shade($blueSteel, 90%);
+      border-color: $secondaryHover;
+      color: $white;
     }
     .button__bubble {
-      background-color: $blueSteel;
+      background-color: rgba($secondaryHover, 0.5);
+    }
+  }
+  &--tertiary {
+    color: $primary;
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    &:active {
+      border-color: transparent;
+    }
+    &:hover {
+      border-color: transparent;
+      color: $white;
+    }
+    .button__bubble {
+      background-color: rgba($primary, 0.125);
+    }
+  }
+  &--link {
+    color: $primary;
+    border-color: transparent;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    display: inline-flex;
+    text-decoration: underline;
+    text-decoration-color: $middleGray;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: auto;
+    margin: 0.5rem 0;
+    
+    &:active {
+      border-color: transparent;
+    }
+    &:hover {
+      border-color: transparent;
+      box-shadow: none;
+      color: $white;
+      text-decoration-color: $primary;
+      text-decoration-thickness: 3px;
+    }
+    .button__bubble {
+      display: none;
+      background-color: rgba($primary, 0.125);
     }
   }
 }

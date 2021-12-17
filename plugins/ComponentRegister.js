@@ -16,7 +16,6 @@ import WavyLines from '../components/decorative/WavyLines.vue'
 import WaveRight from '../components/decorative/WaveRight.vue'
 import Loading from '../components/atoms/Loading.vue'
 import Button from '../components/atoms/Button.vue'
-import ButtonLink from '../components/atoms/ButtonLink.vue'
 import ScrollLink from '../components/atoms/ScrollLink.vue'
 import Header from '../components/atoms/Header.vue'
 
@@ -35,7 +34,6 @@ Vue.component('AllArticles', AllArticles)
 Vue.component('TagList', TagList)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)
-Vue.component('ButtonLink', ButtonLink)
 Vue.component('ScrollLink', ScrollLink)
 // Vue.component('Work', Work)
 Vue.component('WorkCard', WorkCard)

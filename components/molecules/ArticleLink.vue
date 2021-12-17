@@ -121,13 +121,13 @@ export default {
       height: 1.25rem;
       padding: $defaultPadding/5;
       border-radius: 50%;
-      background: $blueSteel;
+      background: $middleGray;
       @include max-media($tablet) {
         width: 1.5rem !important;
         height: 1.5rem;
       }
       path {
-        fill: shade($blueSteel, 90%);
+        fill: shade($middleGray, 90%);
       }
     }
   }
@@ -157,7 +157,7 @@ export default {
     margin: 0 0 0.5rem 0;
     line-height: 1;
     font-weight: 400;
-    color: $blueSteel;
+    color: $middleGray;
     transition: all 0.25s ease-in-out;
     z-index: 2;
     position: relative;
