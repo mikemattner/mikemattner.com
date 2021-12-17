@@ -1,5 +1,5 @@
 <template>
-  <header :class="['hero layout', classes]">
+  <header id="hero" :class="['hero layout', classes]">
     <slot></slot>
     <StaticImage
       v-if="image"

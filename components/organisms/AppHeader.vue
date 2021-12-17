@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar layout" :class="{ active: navOpen }" role="banner">
+  <div id="navbar" :class="['navbar', 'layout', classes]" role="banner">
     <div class="navbar__logo">
       <nuxt-link to="/"><BrandLogo label /></nuxt-link>
     </div>
@@ -25,11 +25,6 @@
               ><span @click="toggle()">Home</span></nuxt-link
             >
           </li>
-          <!-- <li>
-              <nuxt-link to="/work"
-                ><span @click="toggle()">Work</span></nuxt-link
-              >
-            </li> -->
           <li>
             <nuxt-link to="/writing"
               ><span @click="toggle()">Writing</span></nuxt-link
@@ -60,28 +55,52 @@ export default {
   data() {
     return {
       navOpen: false,
+      fixed: false,
+      navBarElm: null,
     }
+  },
+  computed: {
+    classes() {
+      return {
+        active: this.navOpen,
+        fixed: this.fixed,
+      }
+    },
+  },
+  mounted() {
+    this.navBarElm = document.getElementById('navbar')
+    window.addEventListener('scroll', this.updateNavBarFixed)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.updateNavBarFixed)
   },
   methods: {
     toggle() {
       this.navOpen = !this.navOpen
+    },
+    updateNavBarFixed() {
+      const scrollPos = window.scrollY
+      const navbarBottom = this.navBarElm.offsetHeight
+      if (scrollPos > navbarBottom) {
+        this.fixed = true
+      } else {
+        this.fixed = false
+      }
     },
   },
 }
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($darkShadeBackground, 1);
+$transparent-bg: rgba($darkShadeBackground, 0.9);
 .navbar {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
+  background-color: none;
   padding: 0 1.25rem;
-  height: 3.5rem;
+  height: 3rem;
   box-sizing: border-box;
   transition: $transition;
   z-index: 1001;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -89,9 +108,12 @@ $transparent-bg: rgba($darkShadeBackground, 1);
   width: 100%;
   background: none;
 
+  &.fixed {
+    background-color: $transparent-bg;
+  }
+
   @media (min-width: 769px) {
-    // padding: 0 2rem;
-    position: absolute;
+    position: fixed;
     padding: 0;
     align-items: center;
   }
@@ -112,7 +134,6 @@ $transparent-bg: rgba($darkShadeBackground, 1);
     }
     @media (min-width: 769px) {
       grid-column: content-start / span 2;
-      // justify-self: center;
     }
   }
   &__menu {
@@ -193,7 +214,6 @@ $transparent-bg: rgba($darkShadeBackground, 1);
           background-size: 100% 0;
           position: relative;
           font-weight: 700;
-          // text-transform: uppercase;
           display: flex;
           align-items: center;
           color: $middleGray;
@@ -310,40 +330,4 @@ $transparent-bg: rgba($darkShadeBackground, 1);
     }
   }
 }
-// &--pinned {
-//   .navbar {
-//     background-color: $bodyBackground;
-//     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-//     height: 3.5rem;
-//   }
-// }
-// &--unpinned {
-//   .navbar {
-//     background-color: $bodyBackground;
-//     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-//     height: 2.5rem;
-//   }
-// }
-// &--not-top {
-//   .navbar {
-//     background-color: rgba($darkShadeBackground, 0.9);
-//     backdrop-filter: blur(10px);
-//     // background-image: linear-gradient(
-//     //   to bottom,
-//     //   rgba($bodyBackground, 1) 0%,
-//     //   rgba($bodyBackground, 0) 100%
-//     // );
-//     // box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
-//     @media (min-width: 768px) {
-//       height: 2rem;
-//     }
-//     // &.active {
-//     //   box-shadow: none;
-//     //   background-color: $bodyBackground;
-//     //   @media (min-width: 768px) {
-//     //     background-color: $transparent-bg;
-//     //   }
-//     // }
-//   }
-// }
 </style>

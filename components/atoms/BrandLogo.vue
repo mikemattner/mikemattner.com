@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
@@ -29,16 +29,15 @@ export default {
   padding: 0;
 
   &__image {
-    height: 1.25rem;
-    width: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     padding: 0;
     border-radius: 50%;
-    // border: 1px solid $white;
-    background: $middleGray;
-    // background: shade($middleGray, 80%);
+    border: 1px solid $middleGray;
+    background: transparent;
     z-index: 10;
     transition: $transition;
-    flex: 0 0 1.25rem;
+    flex: 0 0 1.5rem;
 
     @media (max-width: 768px) {
       height: 1.75rem;
@@ -51,15 +50,13 @@ export default {
       transition: $transition;
     }
     .logo-shape {
-      fill: shade($middleGray, 80%);
-      // fill: $white;
+      fill: $middleGray;
       transition: $transition;
     }
   }
 
   &__type {
     font-size: $base * 0.75;
-    // letter-spacing: 0.0125rem;
     font-weight: 700;
     margin-left: 0.5rem;
     opacity: 0;
@@ -77,13 +74,13 @@ export default {
   @media (min-width: 769px) {
     &:hover {
       .brand-logo__image {
-        // border: 1px solid rgba($primary, 1);
+        border: 1px solid rgba($primary, 1);
         background-color: $primary;
         .circle-shape {
           fill: rgba($primary, 1);
         }
         .logo-shape {
-          fill: $white;
+          fill: $darkBlue;
         }
       }
       .brand-logo__type {

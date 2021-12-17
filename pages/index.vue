@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero bold full>
+    <PageHero full>
       <Header tag="h1" class="display-3" v-html="intro.title"></Header>
       <div class="header-content">
         <div v-html="intro.body"></div>
