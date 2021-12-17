@@ -1,5 +1,4 @@
 {
-    "cSpell.words": [
-        "linktitle"
-    ]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }

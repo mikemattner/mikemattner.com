@@ -53,7 +53,8 @@
               Article</Button
             >
             <Button v-else to="/writing/" class="button prev" primary ghost
-              ><fa-icon icon="stream" size="sm"></fa-icon> Back to Articles
+              ><fa-icon icon="chevron-left" size="sm"></fa-icon> Back to
+              Articles
             </Button>
             <Button
               v-if="next"
@@ -65,7 +66,7 @@
             ></Button>
             <Button v-else to="/writing/" class="button next" primary ghost
               >Back to Articles
-              <fa-icon icon="stream" size="sm"></fa-icon>
+              <fa-icon icon="chevron-right" size="sm"></fa-icon>
             </Button>
           </div>
         </div>
@@ -93,11 +94,8 @@ export default {
         prev,
         next,
       }
-    } catch (err) {
-      /* eslint-disable */
-      console.debug('No Post:', err)
-      /* eslint-enable */
-      return false
+    } catch (error) {
+      return error({ statusCode: 404, message: 'Tags not found' })
     }
   },
   head() {

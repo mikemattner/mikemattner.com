@@ -39,11 +39,8 @@ export default {
         writing,
         tag,
       }
-    } catch (err) {
-      /* eslint-disable */
-      console.debug('No Post:', err)
-      /* eslint-enable */
-      return false
+    } catch (error) {
+      return error({ statusCode: 404, message: 'Tags not found' })
     }
   },
   data() {

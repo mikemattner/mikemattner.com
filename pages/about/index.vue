@@ -32,8 +32,8 @@ import { contact, statement, page } from '~/data/about.yaml'
 
 export default {
   name: 'About',
-  transition: 'fade',
   scrollToTop: true,
+  transition: 'fade',
   data() {
     return {
       contact,
@@ -70,9 +70,6 @@ export default {
   .hero {
     h1 {
       margin-bottom: 0rem;
-    }
-    p {
-      // margin-bottom: 3rem;
     }
     h1 {
       grid-column: main-content / span 6;
@@ -139,16 +136,11 @@ export default {
           opacity: 0;
           @media (max-width: $tablet) {
             display: none;
-            visibilty: hidden;
+            visibility: hidden;
           }
         }
         &:hover {
-          img {
-            // transform: scale(1.1);
-            // transition: $transition-slow;
-          }
           .label {
-            // padding: $defaultPadding * 2 $defaultPadding/5 $defaultPadding * 2;
             opacity: 1;
           }
         }
@@ -161,19 +153,6 @@ export default {
         // &:nth-child(3) {
         //   grid-column: third-col;
         // }
-      }
-      &.section--personal {
-        .personal-image {
-          // grid-column: first-col / span 4;
-          // height: 350px;
-          // @media (max-width: $tablet) {
-          //   grid-column: first-col / span 3;
-          //   grid-row: 2;
-          // }
-          // &:before {
-          //   display: none;
-          // }
-        }
       }
     }
   }
