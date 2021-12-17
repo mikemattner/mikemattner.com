@@ -14,7 +14,7 @@
       title="Clear Search"
       @click="clearSearch()"
     ></fa-icon>
-    <fa-icon class="input-icon" icon="search" size="sm" v-else></fa-icon>
+    <fa-icon v-else class="input-icon" icon="search" size="sm"></fa-icon>
     <input
       v-model="query"
       type="search"

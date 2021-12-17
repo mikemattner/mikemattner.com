@@ -107,6 +107,9 @@ export default {
       },
     ],
   },
+  generate: {
+    fallback: '404.html',
+  },
   /*
    ** Build configuration
    */
@@ -132,6 +135,12 @@ export default {
   },
   sitemap: {
     hostname: 'https://mikemattner.com',
+    gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date(),
+    },
     routes() {
       return getRoutes()
     },
