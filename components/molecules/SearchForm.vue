@@ -18,7 +18,7 @@
     <input
       v-model="query"
       type="search"
-      placeholder="Search"
+      placeholder="Search writing"
       autocomplete="off"
     />
 
@@ -107,7 +107,7 @@ export default {
     &.fa-search {
       pointer-events: none;
       path {
-        fill: shade($middleGray, 30%);
+        fill: $primary;
       }
     }
     &.fa-times {
@@ -116,7 +116,7 @@ export default {
       transform-origin: center center;
       path {
         transition: $transition;
-        fill: $middleGray;
+        fill: $primary;
       }
       &:hover {
         path {
@@ -139,7 +139,7 @@ export default {
     z-index: 100;
     -webkit-appearance: none;
     &:focus {
-      border-color: $middleGray;
+      border-color: $primary;
       box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
       outline: none;
     }
@@ -185,7 +185,8 @@ export default {
           height: 1.25rem;
           padding: $defaultPadding/5;
           border-radius: 50%;
-          background: $middleGray;
+          background: $primary;
+          color: $darkBlue;
           @include max-media($tablet) {
             width: 1.5rem !important;
             height: 1.5rem;
@@ -199,12 +200,13 @@ export default {
           display: none;
         }
         &:hover {
-          background-color: shade($middleGray, 10%);
+          background-color: $primary;
+          color: $darkBlue;
 
           .article-type {
-            background: shade($middleGray, 90%);
+            background: $white;
             path {
-              fill: $white;
+              fill: $darkBlue;
             }
           }
         }

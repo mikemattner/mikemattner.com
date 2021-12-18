@@ -33,7 +33,7 @@ export default {
     height: 1.5rem;
     padding: 0;
     border-radius: 50%;
-    border: 1px solid $middleGray;
+    border: 1px solid $primary;
     background: transparent;
     z-index: 10;
     transition: $transition;
@@ -50,7 +50,7 @@ export default {
       transition: $transition;
     }
     .logo-shape {
-      fill: $middleGray;
+      fill: $primary;
       transition: $transition;
     }
   }

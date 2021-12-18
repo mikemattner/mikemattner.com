@@ -13,7 +13,7 @@ a {
   transition: $transition;
   font-weight: 700;
   position: relative;
-  text-decoration-color: $middleGray;
+  text-decoration-color: $primary;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: auto;
@@ -63,8 +63,8 @@ img::-moz-selection {
   .columns {
     display: flex;
     flex-direction: column;
-    padding-top:2rem;
-    padding-bottom:2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     .column {
       padding-top: 0;
       padding-bottom: 0;
