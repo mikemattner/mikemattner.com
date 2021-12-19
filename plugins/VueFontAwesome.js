@@ -31,4 +31,4 @@ library.add(
   faUser
 )
 
-Vue.component('fa-icon', FontAwesomeIcon)
+Vue.component('FaIcon', FontAwesomeIcon)

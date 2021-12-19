@@ -79,7 +79,7 @@
 export default {
   scrollToTop: true,
   transition: 'fade',
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params, error }) {
     try {
       const writing = await $content('writing', params.slug).fetch()
 
@@ -94,8 +94,8 @@ export default {
         prev,
         next,
       }
-    } catch (error) {
-      return error({ statusCode: 404, message: 'Tags not found' })
+    } catch (e) {
+      return error({ statusCode: 404, message: 'Article not found' })
     }
   },
   head() {
@@ -165,7 +165,7 @@ export default {
       // margin-bottom: 1rem;
       width: 1.25rem !important;
       height: 1.25rem;
-      padding: $defaultPadding/5;
+      padding: math.div($defaultPadding, 5);
       border-radius: 50%;
       background: $middleGray;
       @include max-media($tablet) {
@@ -204,10 +204,10 @@ export default {
     }
     .filename {
       position: absolute;
-      right: $defaultPadding/2;
+      right: math.div($defaultPadding, 2);
       top: $defaultPadding * 2;
       font-size: 0.75rem;
-      padding: $defaultPadding/7;
+      padding: math.div($defaultPadding, 7);
       background-color: $bodyBackground;
       border-radius: $radius-small;
       display: none;
@@ -234,7 +234,7 @@ export default {
       top: 0;
       right: 0;
       left: 0;
-      padding: $defaultPadding/5 $defaultPadding;
+      padding: math.div($defaultPadding, 5) $defaultPadding;
       text-transform: uppercase;
       font-size: $small;
     }
@@ -277,11 +277,11 @@ export default {
   }
   @media (min-width: $tablet) {
     .outdent-content {
-      padding-left: $defaultPadding/4;
+      padding-left: math.div($defaultPadding, 4);
       border-left: 1px solid rgba($borderColor-light, 0.5);
     }
     .margin-content {
-      padding-right: $defaultPadding/4;
+      padding-right: math.div($defaultPadding, 4);
       border-right: 1px solid rgba($borderColor-light, 0.5);
     }
   }
@@ -290,11 +290,11 @@ export default {
     margin: 0 0 2rem;
     color: $middleGray;
     &.top {
-      margin: 0 0 $defaultPadding/3;
+      margin: 0 0 math.div($defaultPadding, 3);
       display: flex;
       align-items: center;
       time {
-        margin-left: $defaultPadding/3;
+        margin-left: math.div($defaultPadding, 3);
       }
     }
     &.flex {
@@ -307,7 +307,7 @@ export default {
     position: relative;
     background-color: $darkShadeBackground;
     font-size: 0.75rem;
-    padding: $defaultPadding/3 $defaultPadding;
+    padding: math.div($defaultPadding, 3) $defaultPadding;
     border-radius: $radius-large;
     box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
     text-align: center;

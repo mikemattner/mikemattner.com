@@ -131,7 +131,7 @@ export default {
     border: 1px solid $darkShadeBackground;
     border-radius: $radius-large;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
-    padding: $defaultPadding/2 $defaultPadding/2;
+    padding: math.div($defaultPadding, 2) math.div($defaultPadding, 2);
     width: 100%;
     color: $middleGray;
     position: relative;
@@ -155,12 +155,12 @@ export default {
     background: $darkShadeBackground;
     position: absolute;
     top: calc(100% + 1rem);
-    left: -$defaultPadding/2;
-    right: -$defaultPadding/2;
+    left: math.div(-$defaultPadding, 2);
+    right: math.div(-$defaultPadding, 2);
     border-color: $middleGray;
     color: $middleGray;
     margin: 0;
-    padding: $defaultPadding/3 0;
+    padding: math.div($defaultPadding, 3) 0;
     border-radius: $radius-large;
     z-index: 101;
     list-style: none;
@@ -168,14 +168,14 @@ export default {
     overflow: hidden;
     li {
       margin: 0;
-      padding: 0 $defaultPadding/3;
+      padding: 0 math.div($defaultPadding, 3);
 
       a {
         display: flex;
         align-items: center;
         justify-content: space-between;
         background-image: none;
-        padding: $defaultPadding/3 $defaultPadding/2;
+        padding: math.div($defaultPadding, 3) math.div($defaultPadding, 2);
         border-radius: $radius-large;
         text-decoration: none;
 
@@ -183,7 +183,7 @@ export default {
           margin-left: 1rem;
           width: 1.25rem !important;
           height: 1.25rem;
-          padding: $defaultPadding/5;
+          padding: math.div($defaultPadding, 5);
           border-radius: 50%;
           background: $primary;
           color: $darkBlue;
@@ -221,7 +221,7 @@ export default {
   &.small {
     font-size: $base * 0.75;
     input {
-      padding: $defaultPadding/3;
+      padding: math.div($defaultPadding, 3);
     }
   }
 }

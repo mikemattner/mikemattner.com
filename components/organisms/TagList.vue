@@ -33,7 +33,7 @@ ul {
     align-items: center;
     justify-content: flex-start;
     li {
-      margin: 0 $defaultPadding/5 0 0;
+      margin: 0 math.div($defaultPadding, 5) 0 0;
     }
   }
 }
