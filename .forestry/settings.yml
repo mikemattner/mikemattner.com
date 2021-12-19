@@ -5,11 +5,17 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: content/tags
+  label: Tags
+  create: documents
+  match: "**/*"
+  new_doc_ext: ".md"
+- type: directory
   path: content/writing
   label: Article
   create: documents
-  match: "*.md"
-  new_doc_ext: ".md"
+  match: "**/*"
+  new_doc_ext: md
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
