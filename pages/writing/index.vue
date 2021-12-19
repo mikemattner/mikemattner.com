@@ -10,7 +10,7 @@
             <p>
               {{ intro.body }}
               <span class="tags">
-                <span v-for="tag in tags" :key="tag">
+                <span v-for="(tag, index) in tags" :key="index">
                   <nuxt-link :to="`/writing/tag/${formattedTag(tag.name)}`">{{
                     tag.name
                   }}</nuxt-link> </span
@@ -33,18 +33,18 @@ import { intro } from '@/data/archive.yaml'
 export default {
   scrollToTop: true,
   transition: 'fade',
-  async asyncData({ $content, app }) {
+  async asyncData({ $content, app, error }) {
     let writing
     let tags
     try {
       tags = await $content('tag').fetch()
       writing = await $content('writing').sortBy('date', 'desc').fetch()
-    } catch (error) {
+    } catch (e) {
       try {
         writing = await $content('writing').sortBy('date', 'desc').fetch()
         writing = await $content('writing').sortBy('date', 'desc').fetch()
-      } catch (error) {
-        return error({ statusCode: 404, message: 'Page not found' })
+      } catch (e) {
+        return error({ statusCode: 404, message: 'Content not found' })
       }
     }
     return {

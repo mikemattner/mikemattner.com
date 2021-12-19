@@ -129,7 +129,8 @@ export default {
           left: 0;
           right: 0;
           bottom: 0;
-          padding: $defaultPadding * 3 $defaultPadding/5 $defaultPadding/2;
+          padding: $defaultPadding * 3 math.div($defaultPadding, 5)
+            math.div($defaultPadding, 2);
           font-size: $small;
           text-align: center;
           background-image: linear-gradient(

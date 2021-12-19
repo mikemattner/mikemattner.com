@@ -52,18 +52,18 @@ export default {
   name: 'Home',
   scrollToTop: true,
   transition: 'fade',
-  async asyncData({ $content, app }) {
+  async asyncData({ $content, app, error }) {
     let posts
     try {
       posts = await $content('writing').sortBy('date', 'desc').limit(6).fetch()
-    } catch (error) {
+    } catch (e) {
       try {
         posts = await $content('writing')
           .sortBy('date', 'desc')
           .limit(6)
           .fetch()
-      } catch (error) {
-        return error({ statusCode: 404, message: 'Page not found' })
+      } catch (e) {
+        return error({ statusCode: 404, message: 'Content not found' })
       }
     }
     return {

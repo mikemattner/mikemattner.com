@@ -24,7 +24,7 @@
 export default {
   scrollToTop: true,
   transition: 'fade',
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params, error }) {
     try {
       const tags = await $content('tag')
         .where({ slug: { $contains: params.tag } })
@@ -39,8 +39,8 @@ export default {
         writing,
         tag,
       }
-    } catch (error) {
-      return error({ statusCode: 404, message: 'Tags not found' })
+    } catch (e) {
+      return error({ statusCode: 404, message: 'Tag not found' })
     }
   },
   data() {
