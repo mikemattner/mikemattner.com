@@ -1,7 +1,12 @@
 <template>
   <div class="about">
     <PageHero>
-      <Header tag="h1" class="display-4" v-html="statement.title"></Header>
+      <Header
+        tag="h1"
+        class="display-4"
+        decorator
+        v-html="statement.title"
+      ></Header>
       <p v-html="statement.subtitle"></p>
     </PageHero>
     <section id="photos" class="section section--images layout">
