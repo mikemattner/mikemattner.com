@@ -1,0 +1,10 @@
+---
+label: Tags
+hide_body: true
+fields:
+- type: text
+  name: name
+  label: name
+- type: textarea
+  name: description
+  label: description
