@@ -80,10 +80,10 @@ export default {
       content: '';
       display: block;
       position: absolute;
-      top: ($defaultPadding/5) * -1;
-      bottom: ($defaultPadding/5) * -1;
-      left: ($defaultPadding/2) * -1;
-      right: ($defaultPadding/2) * -1;
+      top: math.div($defaultPadding, 5) * -1;
+      bottom: math.div($defaultPadding, 5) * -1;
+      left: math.div($defaultPadding, 2) * -1;
+      right: math.div($defaultPadding, 2) * -1;
       height: auto;
       border-radius: $radius-large;
       background-color: $darkShadeBackground;
@@ -119,7 +119,7 @@ export default {
       margin-left: 1rem;
       width: 1.25rem !important;
       height: 1.25rem;
-      padding: $defaultPadding/5;
+      padding: math.div($defaultPadding, 5);
       border-radius: 50%;
       background: $middleGray;
       @include max-media($tablet) {

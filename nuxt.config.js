@@ -117,7 +117,8 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, { isDev, isClient, loaders: { vue } }) {
+    extend(config, { isDev, isClient, loaders }) {
+      loaders.scss.additionalData = '@use "sass:math";'
       // Run ESLint on save
       if (isDev && isClient) {
         config.module.rules.push({
@@ -137,7 +138,7 @@ export default {
     hostname: 'https://mikemattner.com',
     gzip: true,
     defaults: {
-      changefreq: 'daily',
+      changefreq: 'weekly',
       priority: 1,
       lastmod: new Date(),
     },

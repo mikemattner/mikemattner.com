@@ -9,16 +9,16 @@
 // New theme
 // https://coolors.co/333745-e63462-fe5f55-c7efcf-eef5db
 
-$darkBlue: #2B2D42; //#333745;
-$coolGray: #F0F1F5;
-$coolGraySecondary: #E3E4E8;
-$middleGray: #74768D;
+$darkBlue: #2b2d42; //#333745;
+$coolGray: #f0f1f5;
+$coolGraySecondary: #e3e4e8;
+$middleGray: #74768d;
 $middleGraySecondary: #515363;
-$red: #EF233C;
-$redSecondary: #A7192A;
+$red: #ef233c;
+$redSecondary: #a7192a;
 $green: #00c6c2;
-$white: rgba(255,255,255,1.0);
-$black: rgba(0,0,0,1.0);
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
 
 $primary: $green;
 $primaryHover: shade($green, 40%);
@@ -35,8 +35,8 @@ $darkShadeBackground: shade($darkBlue, 60%);
 
 $tagColor: $middleGray;
 
-$linearGradient: linear-gradient(to right, #00c6c2, #009db3, #1e7595); 
-$rightTopGradient: linear-gradient(to right top, #ebeeff,#a8aac3,#74768d);
+$linearGradient: linear-gradient(to right, #00c6c2, #009db3, #1e7595);
+$rightTopGradient: linear-gradient(to right top, #ebeeff, #a8aac3, #74768d);
 
 $solidGradient: linear-gradient(to right, $middleGray, $middleGray);
 $solidPrimaryGradient: linear-gradient(to right, $primary, $primary);
@@ -44,8 +44,8 @@ $solidPrimaryGradient: linear-gradient(to right, $primary, $primary);
 // ----------------------------------------------------------------------------------------------------------------
 // Typography
 // ----------------------------------------------------------------------------------------------------------------
-$sans-serif-font: "Geomanist", Helvetica, sans-serif;
-$source-code-font: 'Fira Code',Menlo, Monaco, monospace;
+$sans-serif-font: 'Geomanist', Helvetica, sans-serif;
+$source-code-font: 'Fira Code', Menlo, Monaco, monospace;
 
 // ----------------------------------------------------------------------------------------------------------------
 // Responsiveness
@@ -76,7 +76,7 @@ $speed: 86ms !default;
 // ----------------------------------------------------------------------------------------------------------------
 $scale: 1.5;
 $base: 1rem;
-$small: $base / $scale;
+$small: math.div($base, $scale);
 $h6: 1.25rem;
 $h5: $scale * $base;
 $h4: $scale * $h5;
