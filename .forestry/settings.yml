@@ -4,9 +4,17 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: heading
+  label: Content
 - type: directory
   path: content/writing
   label: Articles
+  create: all
+  match: "**/*"
+  new_doc_ext: ".md"
+- type: directory
+  path: content/tag
+  label: Tags
   create: all
   match: "**/*"
   new_doc_ext: ".md"
