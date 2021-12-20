@@ -7,11 +7,13 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: content/writing
+  path: ''
   label: Articles
   create: all
   match: "**/*"
-  new_doc_ext: md
+  new_doc_ext: ".md"
+  templates:
+  - articles
 - type: directory
   path: content/tag
   label: Tags
