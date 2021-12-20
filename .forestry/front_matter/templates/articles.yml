@@ -4,19 +4,40 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
 - type: datetime
   name: date
-  label: date
-- type: text
-  name: type
-  label: type
+  label: Date
+  config:
+    export_format: YYYY-MM-DD
+    date_format: MM/DD/YYYY
+    time_format: h:mm
+- name: type
+  type: select
+  default: entry
+  config:
+    required: true
+    options:
+    - link
+    - entry
+    - quote
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Type
 - type: text
   name: description
-  label: description
+  label: Description
 - type: list
   name: tag
-  label: tag
+  label: Tag
+  config:
+    use_select: true
+    source:
+      type: pages
+      section: tags
 - type: list
   name: link
-  label: link
+  label: Link
