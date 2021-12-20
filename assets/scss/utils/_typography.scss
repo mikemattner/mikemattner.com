@@ -31,11 +31,7 @@ h6 {
   }
 
   &.decorator {
-    // padding-bottom: $defaultPadding;
-    position: relative;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
+    padding-bottom: $defaultPadding;
 
     &:after {
       content: '';
@@ -72,6 +68,8 @@ h1,
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    display: list-item;
   }
 
   @media (min-width: $tablet) {
