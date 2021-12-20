@@ -1,4 +1,4 @@
 ---
-name: Design
-description: Design related mumbo jumbo. 
+title: Design
+description: Design related mumbo jumbo.
 ---

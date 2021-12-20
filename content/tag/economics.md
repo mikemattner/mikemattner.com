@@ -1,4 +1,4 @@
 ---
-name: Economics
+title: Economics
 description: Anything tangentially related to the study of economics.
 ---

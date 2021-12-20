@@ -60,6 +60,34 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    '@nuxtjs/feed',
+  ],
+  feed: [
+    {
+      create: async (feed) => {
+        const $content = require('@nuxt/content').$content
+        feed.options = {
+          title: 'Mike Mattner',
+          link: 'https://mikemattner.com',
+          description: 'Just another developer blog.',
+        }
+
+        const writing = await $content('writing').sortBy('date', 'asc').fetch()
+        writing.forEach((article) => {
+          const url = `https://mikemattner.com/writing/${article.slug}`
+          feed.addItem({
+            content: article.bodyHtml,
+            date: new Date(article.date),
+            description: article.description,
+            id: url,
+            link: url,
+            title: article.title,
+          })
+        })
+      },
+      path: '/feed',
+      type: 'rss2',
+    },
   ],
   styleResources: {
     scss: [

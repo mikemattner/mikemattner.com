@@ -3,7 +3,7 @@
     <div :key="$route.params.slug">
       <PageHero>
         <Header tag="h1" class="display-4 main-content" decorator>
-          {{ tag.name }}</Header
+          {{ tag.title }}</Header
         >
         <p class="main-content" v-html="tag.description"></p>
       </PageHero>
@@ -32,7 +32,7 @@ export default {
         .fetch()
       const tag = tags.length > 0 ? tags[0] : {}
       const writing = await $content('writing', params.slug)
-        .where({ tag: { $contains: tag.name } })
+        .where({ tag: { $contains: tag.title } })
         .sortBy('date', 'desc')
         .fetch()
       return {

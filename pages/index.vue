@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <PageHero full>
-      <Header tag="h1" class="display-3" v-html="intro.title"></Header>
+      <Header tag="h1" class="display-4" v-html="intro.title"></Header>
       <div class="header-content">
         <div v-html="intro.body"></div>
         <Button to="/about" primary ghost>More About Me</Button>
@@ -94,14 +94,11 @@ export default {
   .hero {
     h1 {
       grid-column: main-content / span 6;
-      font-size: $h4;
       @media (min-width: $tablet) {
         grid-column: main-content / span 6;
-        font-size: $h4;
         margin-bottom: 1rem;
       }
       @media (min-width: $desktop) {
-        font-size: $h4;
         grid-column: main-content / span 7;
       }
     }

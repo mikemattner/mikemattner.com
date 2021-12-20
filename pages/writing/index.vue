@@ -11,8 +11,8 @@
               {{ intro.body }}
               <span class="tags">
                 <span v-for="(tag, index) in tags" :key="index">
-                  <nuxt-link :to="`/writing/tag/${formattedTag(tag.name)}`">{{
-                    tag.name
+                  <nuxt-link :to="`/writing/tag/${formattedTag(tag.title)}`">{{
+                    tag.title
                   }}</nuxt-link> </span
                 >.
               </span>
