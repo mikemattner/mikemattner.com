@@ -33,9 +33,9 @@ h6 {
   &.decorator {
     // padding-bottom: $defaultPadding;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
 
     &:after {
       content: '';
@@ -67,7 +67,7 @@ h1,
   }
 
   @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
-    background: $linearGradient;
+    background-image: $linearGradient;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
