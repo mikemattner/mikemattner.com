@@ -2,13 +2,9 @@ html {
   color: $bodyColor;
   font-family: $sans-serif-font;
   font-weight: 400;
-  font-size: calc(14px + 0.5vw);
-  line-height: 1.65;
+  font-size: clamp(1rem, calc(14px + 0.5vw), 2rem);
+  line-height: 1.75;
   letter-spacing: 0.0125rem;
-
-  @media (min-width: 1600px) {
-    // font-size: 22px;
-  }
 }
 
 h1,
@@ -145,6 +141,37 @@ ul,
 ol {
   margin-left: 0;
   padding-left: 1.125em;
+  list-style: none;
+}
+
+ul {
+  li {
+    &:before {
+      content: '\22B3';
+      color: $primary;
+      font-weight: bold;
+      display: inline-block;
+      width: 0.75em;
+      margin-left: -0.75em;
+    }
+  }
+}
+
+ol {
+  li {
+    counter-increment: li;
+    &:before {
+      content: counter(li);
+      color: $primary;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1.5em;
+      margin-right: 0.5em;
+      text-align: right;
+      direction: rtl;
+    }
+  }
 }
 
 blockquote {

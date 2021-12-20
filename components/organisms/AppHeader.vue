@@ -210,6 +210,9 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
       li {
         margin: 0 $defaultPadding * 1.5 0 0;
         padding: 0;
+        &:before {
+          display: none;
+        }
         a {
           background-size: 100% 0;
           position: relative;
@@ -227,8 +230,6 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
             color: $white;
           }
         }
-      }
-      @media (min-width: 769px) {
       }
     }
     @media (min-width: 769px) {

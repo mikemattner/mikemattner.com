@@ -1,20 +1,33 @@
 statement:
   title: I&rsquo;m Mike, a designer & developer from Michigan.
-  subtitle: In my day job, I design and build things for the web. I currently work as a UI Engineer at AccuLynx, 
-            but I was previously a UX/UI Developer at Aisle Rocket.
+  subtitle:
+    In my day job, I design and build things for the web. I currently work as a UI Engineer at AccuLynx,
+    but I was previously a UX/UI Developer at Aisle Rocket.
 
 page:
   title: A Little About Me
-  body: <p>I grew up in Michigan and got into web development in my early teenage years in the 1990&rsquo;s&mdash;the
-        era of table based layouts and inline styles. Back then I was more of an avid gamer than I am now. I really 
-        enjoyed the Dark Forces series and even 
-        <a href="https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/" target="_blank">created a website</a>
-        dedicated to mods for the Jedi Knight iteration.</p>
-        <p>From there, the path to my future career was set.</p>
-        <p>Outside of work I enjoy spending time with my wife and pets, reading, keeping up with 
-        politics, woodworking, home improvement projects, and sipping a fine craft beer.</p>
+  body:
+    <p>I grew up in Michigan and got into web development in my early teenage years in the 1990&rsquo;s&mdash;the
+    era of table based layouts and inline styles. Back then I was more of an avid gamer than I am now. I really
+    enjoyed the Dark Forces series and even
+    <a href="https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/" target="_blank">created a website</a>
+    dedicated to mods for the Jedi Knight iteration.</p>
+    <p>From there, the path to my future career was set.</p>
+    <p>Outside of work I enjoy spending time with my wife and pets, reading, keeping up with
+    politics, woodworking, home improvement projects, and sipping a fine craft beer.</p>
+
+experience:
+  techTitle: Professional Things
+  techBody:
+    <p>On a day-to-day basis, I'm primarily dealing with front end of the web tech and helping to craft the UI of relatively large application.</p>
+    <p>Some of the technologies I've been working with personally and professionally:</p>
+  tech:
+    - JavaScript
+    - TypeScript
+    - Vue
+    - Nuxt
 
 contact:
   title: Get in Touch
-  body: <p>Do you have something to discuss? Please reach out to me at 
-      <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>
+  body: <p>Do you have something to discuss? Please reach out to me at
+    <a href="mailto:hello@mikemattner.com">hello@mikemattner.com</a>.</p>

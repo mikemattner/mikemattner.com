@@ -5,25 +5,28 @@ $max-width: 30rem;
 .nuxt-content {
   display: grid;
   grid-template-columns:
-      [full-start] $column-gap
-      [main-content] repeat( 6, 1fr ) 
-      [full-end] $column-gap;
+    [full-start] $column-gap
+    [main-content] repeat(6, 1fr)
+    [full-end] $column-gap;
   @media (min-width: $tablet) {
     column-gap: $column-gap;
     grid-template-columns:
       [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
       [content-start] 1fr
       [margin-start] 1fr
-      [margin-end main-content-start] repeat( 6, 1fr )
-      [main-content-end full-end] minmax($column-gap, calc(50vw - #{$max-width}));
+      [margin-end main-content-start] repeat(6, 1fr)
+      [main-content-end full-end] minmax(
+        $column-gap,
+        calc(50vw - #{$max-width})
+      );
   }
   @media (min-width: $desktop) {
     grid-template-columns:
       [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
       [content-start] 1fr
       [margin-start] 1fr
-      [margin-end main-content-start] repeat( 6, 1fr )
-      [main-content-end outdent-start] 1fr 
+      [margin-end main-content-start] repeat(6, 1fr)
+      [main-content-end outdent-start] 1fr
       [content-end] 1fr
       [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
   }
@@ -39,12 +42,12 @@ $max-width: 30rem;
   @media (min-width: $tablet) {
     column-gap: $column-gap;
     grid-template-columns:
-    [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
-    [first-col] 1fr
-    [second-col] 1fr
-    [third-col] 1fr
-    [fourth-col] 1fr
-    [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
+      [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
+      [first-col] 1fr
+      [second-col] 1fr
+      [third-col] 1fr
+      [fourth-col] 1fr
+      [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
   }
 }
 
@@ -61,18 +64,17 @@ $max-width: 30rem;
   @media (min-width: $tablet) {
     column-gap: $column-gap;
     grid-template-columns:
-    [full-start] $column-gap
-    [first-col] 1fr
-    [second-col] 1fr
-    [third-col] 1fr
-    [full-end] $column-gap;
+      [full-start] $column-gap
+      [first-col] 1fr
+      [second-col] 1fr
+      [third-col] 1fr
+      [full-end] $column-gap;
   }
 }
 
 .two-col {
   display: grid;
-  grid-template-columns:
-    [main-content] 1fr;
+  grid-template-columns: [main-content] 1fr;
   padding-left: $column-gap;
   padding-right: $column-gap;
   @media (min-width: $tablet) {
@@ -105,11 +107,15 @@ $max-width: 30rem;
     grid-column-end: content-end;
   }
 }
-.nuxt-content img {
-  grid-column: full-start / span 8;
+.nuxt-content figure {
+  grid-column: main-content / span 6;
   @media (min-width: $tablet) {
-    grid-column: full-start / span 10;
-    padding: 0 $column-gap;
+    grid-column-start: margin-start;
+    grid-column-end: main-content-end;
+  }
+  @media (min-width: $desktop) {
+    grid-column-start: margin-start;
+    grid-column-end: content-end;
   }
 }
 .full-content,

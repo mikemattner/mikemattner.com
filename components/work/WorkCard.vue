@@ -12,7 +12,7 @@
           <StaticImage
             :src="info.image.src"
             :alt="info.image.alt"
-            class="sample"
+            class="work-sample"
           />
         </div>
         <div class="work-info">
@@ -63,6 +63,11 @@ export default {
       z-index: 2;
       position: relative;
       text-align: left;
+
+      svg {
+        fill: $primary;
+        color: $primary;
+      }
     }
     .work-image {
       background-color: $black;
@@ -72,8 +77,9 @@ export default {
         0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
       margin-left: math.div($defaultPadding, 2) * -1;
       margin-right: math.div($defaultPadding, 2) * -1;
-      img {
+      ::v-deep .work-sample img {
         margin-bottom: 0;
+        margin-top: 0;
       }
       @media (min-width: $tablet) {
         position: relative;
@@ -85,7 +91,7 @@ export default {
   h6 {
     margin-top: 0;
     margin-bottom: 0;
-    color: $bodyColor;
+    color: $primary;
     font-weight: 400;
     font-size: $small;
   }

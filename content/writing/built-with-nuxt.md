@@ -5,9 +5,10 @@ date: 2019-05-02
 description: Building my personal site with a more modern development experience.
 type: entry
 tag:
-    - Development
+  - Development
 ---
-**12/31/2020** – *This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files. Can I also comment on 2020 as a whole? Because, no thanks, I don't want to do that again.*
+
+**12/31/2020** – _This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files. Can I also comment on 2020 as a whole? Because, no thanks, I don't want to do that again._
 
 ### Introduction
 
@@ -19,7 +20,7 @@ I started by building just a few simple pages that acted as a brochure style exp
 
 ### Loading Content
 
-I'm primarily loading content from a few different static sources: yaml, json, and markdown files. For example, \`index.vue\` pulls in the following:
+I'm primarily loading content from a few different static sources: yaml, json, and markdown files. For example, `index.vue` pulls in the following:
 
 ```javascript
 import {
@@ -27,7 +28,7 @@ import {
   statement,
   skills,
   softwares,
-  technical
+  technical,
 } from '@/data/home.yaml'
 
 import articles from '@/static/articleList.json'
@@ -36,14 +37,14 @@ import articles from '@/static/articleList.json'
 The `articleList.json` file is the simplest way to link to the specific markdown file with a slug, give it a title, and give it a description. Eventually I could add quite a bit more detail, but today, it's functional. Unfortunately, I think that this approach is unlikely to remain sustainable.
 
 ```json[articleList.json]
-[  
-  {  
-    "title": "Built With Nuxt",  
-    "description": "My journey towards a more modern development experience.",  
-    "topic": "Development",  
-    "date": "May 6, 2019",  
-    "path": "built-with-nuxt"  
-  }  
+[
+  {
+    "title": "Built With Nuxt",
+    "description": "My journey towards a more modern development experience.",
+    "topic": "Development",
+    "date": "May 6, 2019",
+    "path": "built-with-nuxt"
+  }
 ]
 ```
 

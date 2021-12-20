@@ -1,7 +1,7 @@
 <template>
   <section class="section section--single--article">
     <article :key="$route.params.slug">
-      <PageHero dark>
+      <PageHero :image="writing.image" :image-alt="writing.imageAlt" dark>
         <div class="meta top main-content">
           <fa-icon
             class="article-type"
@@ -12,8 +12,7 @@
         </div>
         <Header
           tag="h1"
-          class="display-4 main-content"
-          center
+          class="display-3 main-content"
           v-html="writing.title"
         ></Header>
         <!-- <p class="main-content" v-html="writing.description"></p> -->
@@ -22,10 +21,6 @@
         </div>
       </PageHero>
       <div id="content" :data-type="writing.type" :class="writing.type">
-        <nuxt-content :document="writing" />
-        <div v-if="writing.type == 'quote'" class="layout">
-          <p class="attribution">&mdash; {{ writing.attribution }}</p>
-        </div>
         <aside v-if="writing.link" class="layout">
           <div class="article-link main-content">
             <p>Visit the content I&rsquo;m referencing</p>
@@ -41,6 +36,10 @@
             ></Button>
           </div>
         </aside>
+        <nuxt-content :document="writing" />
+        <div v-if="writing.type == 'quote'" class="layout">
+          <p class="attribution">&mdash; {{ writing.attribution }}</p>
+        </div>
         <div class="layout">
           <div class="links main-content">
             <Button
@@ -173,7 +172,7 @@ export default {
         height: 1.5rem;
       }
       path {
-        fill: shade($middleGray, 90%);
+        fill: $darkBlue;
       }
     }
   }
@@ -187,7 +186,7 @@ export default {
     }
   }
   .nuxt-content {
-    p code {
+    code {
       background-color: $darkShadeBackground;
     }
   }
@@ -307,7 +306,7 @@ export default {
     position: relative;
     background-color: $darkShadeBackground;
     font-size: 0.75rem;
-    padding: math.div($defaultPadding, 3) $defaultPadding;
+    padding: math.div($defaultPadding, 3) math.div($defaultPadding, 2);
     border-radius: $radius-large;
     box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
     text-align: center;
@@ -315,7 +314,8 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-bottom: $defaultPadding;
-    margin-top: $defaultPadding;
+    margin-left: math.div($defaultPadding, 2) * -1;
+    margin-right: math.div($defaultPadding, 2) * -1;
     color: $middleGray;
     p {
       margin-right: $defaultPadding;
@@ -327,6 +327,8 @@ export default {
       margin: 0.5rem 0;
       svg {
         margin-left: 0.5rem;
+        fill: $primary;
+        color: $primary;
       }
     }
   }

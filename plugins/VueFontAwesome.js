@@ -14,6 +14,7 @@ import {
   faQuoteLeft,
   faStream,
   faUser,
+  faRss,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -28,7 +29,8 @@ library.add(
   faTimes,
   faQuoteLeft,
   faStream,
-  faUser
+  faUser,
+  faRss
 )
 
 Vue.component('FaIcon', FontAwesomeIcon)

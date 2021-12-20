@@ -12,9 +12,18 @@
         This personal site is
         <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a
         >. Fork it, modify it for yourself, or just browse the code. Made in
-        Michigan and built with Nuxt. &copy; {{ theYear }} Mike Mattner.
-        <a href="https://mikemattner.com/feed" class="footer-feed">RSS</a>
-        <fa-icon icon="heart" size="sm"></fa-icon>
+        Michigan and built with Nuxt. Content &copy; {{ theYear }} Mike Mattner.
+        <a
+          href="https://mikemattner.com/feed"
+          title="RSS Feed"
+          class="footer-feed"
+          ><fa-icon icon="rss" size="sm"></fa-icon
+        ></a>
+        <a
+          href="https://github.com/mikemattner/mikemattner.com"
+          title="View GitHub Project"
+          ><fa-icon icon="heart" size="sm"></fa-icon
+        ></a>
       </p>
     </div>
   </footer>
@@ -45,9 +54,26 @@ export default {
     background-color: $bodyBackground;
     color: $middleGray;
     svg {
-      fill: $primary;
-      color: $primary;
-      margin-left: math.div($defaultPadding, 4);
+      &.fa-heart {
+        fill: $primary;
+        color: $primary;
+        margin-left: math.div($defaultPadding, 4);
+        transition: $transition;
+        &:hover {
+          fill: $white;
+          color: $white;
+        }
+      }
+      &.fa-rss {
+        fill: $primary;
+        color: $primary;
+        margin-left: math.div($defaultPadding, 4);
+        transition: $transition;
+        &:hover {
+          fill: $white;
+          color: $white;
+        }
+      }
     }
   }
 }

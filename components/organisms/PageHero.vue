@@ -4,7 +4,7 @@
     <StaticImage
       v-if="image"
       :src="image"
-      alt="imageAlt"
+      :alt="imageAlt"
       class="background-image"
     />
     <div v-if="arrow" class="anchor main-content" aria-hidden="true">
@@ -61,8 +61,8 @@ export default {
       left: 0;
       background-image: linear-gradient(
         to top,
-        rgba($bodyBackground, 1) 0%,
-        rgba($bodyBackground, 0) 100%
+        rgba($darkShadeBackground, 1) 0%,
+        rgba($darkShadeBackground, 0) 100%
       );
       z-index: 2;
     }

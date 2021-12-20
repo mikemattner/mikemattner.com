@@ -16,11 +16,11 @@
   overflow: hidden;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-              0 2px 2px rgba(0,0,0,0.11), 
-              0 4px 4px rgba(0,0,0,0.11), 
-              0 8px 8px rgba(0,0,0,0.11), 
-              0 16px 16px rgba(0,0,0,0.11); 
+  // box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+  //             0 2px 2px rgba(0,0,0,0.11),
+  //             0 4px 4px rgba(0,0,0,0.11),
+  //             0 8px 8px rgba(0,0,0,0.11),
+  //             0 16px 16px rgba(0,0,0,0.11);
 
   &:before,
   &:after {
@@ -53,12 +53,12 @@
   &:hover {
     color: $white;
     border-color: $primaryHover;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-              0 2px 2px rgba(0,0,0,0.11), 
-              0 4px 4px rgba(0,0,0,0.11), 
-              0 8px 8px rgba(0,0,0,0.11), 
-              0 16px 16px rgba(0,0,0,0.11), 
-              0 32px 32px rgba(0,0,0,0.11);
+    // box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+    //           0 2px 2px rgba(0,0,0,0.11),
+    //           0 4px 4px rgba(0,0,0,0.11),
+    //           0 8px 8px rgba(0,0,0,0.11),
+    //           0 16px 16px rgba(0,0,0,0.11),
+    //           0 32px 32px rgba(0,0,0,0.11);
     background-image: none;
   }
 
@@ -132,7 +132,7 @@
     }
   }
   &--link {
-    color: $primary;
+    color: $white;
     border-color: transparent;
     border-radius: 0;
     background-color: transparent;
@@ -140,12 +140,12 @@
     padding: 0;
     display: inline-flex;
     text-decoration: underline;
-    text-decoration-color: $middleGray;
+    text-decoration-color: $primary;
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
     text-decoration-skip-ink: auto;
     margin: 0.5rem 0;
-    
+
     &:active {
       border-color: transparent;
     }

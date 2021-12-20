@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <PageHero full>
-      <Header tag="h1" class="display-4" v-html="intro.title"></Header>
+      <Header
+        tag="h1"
+        class="display-3"
+        decorator
+        v-html="intro.title"
+      ></Header>
       <div class="header-content">
         <div v-html="intro.body"></div>
         <Button to="/about" primary ghost>More About Me</Button>
@@ -29,7 +34,7 @@
         <Header tag="h2" class="display-5" decorator>{{
           writing.title
         }}</Header>
-        <AllArticles :posts="posts" />
+        <AllArticles :posts="posts" short />
         <Button :to="writing.link" ghost primary>{{
           writing.buttonTitle
         }}</Button>

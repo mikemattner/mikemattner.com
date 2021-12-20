@@ -14,6 +14,10 @@ export default {
       type: Array,
       required: true,
     },
+    short: {
+      type: Boolean,
+      required: false,
+    },
   },
 }
 </script>
@@ -23,5 +27,11 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
+
+  li {
+    &:before {
+      display: none;
+    }
+  }
 }
 </style>

@@ -170,6 +170,9 @@ export default {
       margin: 0;
       padding: 0 math.div($defaultPadding, 3);
 
+      &:before {
+        display: none;
+      }
       a {
         display: flex;
         align-items: center;

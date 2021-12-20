@@ -34,6 +34,9 @@ ul {
     justify-content: flex-start;
     li {
       margin: 0 math.div($defaultPadding, 5) 0 0;
+      &::before {
+        display: none;
+      }
     }
   }
 }

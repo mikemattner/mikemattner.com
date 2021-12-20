@@ -127,7 +127,7 @@ export default {
         height: 1.5rem;
       }
       path {
-        fill: shade($middleGray, 90%);
+        fill: $darkBlue;
       }
     }
   }
@@ -157,7 +157,7 @@ export default {
     margin: 0 0 0.5rem 0;
     line-height: 1;
     font-weight: 400;
-    color: $bodyColor;
+    color: $primary;
     transition: all 0.25s ease-in-out;
     z-index: 2;
     position: relative;

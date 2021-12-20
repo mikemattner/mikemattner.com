@@ -3,7 +3,7 @@
     <PageHero>
       <Header
         tag="h1"
-        class="display-4"
+        class="display-3"
         decorator
         v-html="statement.title"
       ></Header>
@@ -11,11 +11,26 @@
     </PageHero>
     <section id="photos" class="section section--images layout">
       <div class="personal-image">
-        <StaticImage :src="images[0].src" :alt="images[0].alt" />
-        <div class="label">{{ images[0].alt }}</div>
+        <StaticImage
+          :src="images[0].src"
+          :alt="images[0].alt"
+          :caption="images[0].alt"
+          rounded
+        />
       </div>
     </section>
     <section class="layout">
+      <Header
+        tag="h2"
+        class="display-5 main-content"
+        v-html="experience.techTitle"
+      ></Header>
+      <div class="main-content" v-html="experience.techBody"></div>
+      <ul class="main-content technology-list">
+        <li v-for="(item, index) in experience.tech" :key="index">
+          {{ item }}
+        </li>
+      </ul>
       <Header
         tag="h2"
         class="display-5 main-content"
@@ -33,7 +48,7 @@
 </template>
 
 <script>
-import { contact, statement, page } from '~/data/about.yaml'
+import { contact, experience, page, statement } from '~/data/about.yaml'
 
 export default {
   name: 'About',
@@ -42,8 +57,9 @@ export default {
   data() {
     return {
       contact,
-      statement,
+      experience,
       page,
+      statement,
       images: [
         {
           src: 'personal/mike-painting.jpg',
@@ -90,76 +106,20 @@ export default {
     &--images {
       padding: $defaultPadding * 2 0 $defaultPadding;
       .personal-image {
-        border-radius: $radius-large;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-          0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
-          0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
-        overflow: hidden;
-        width: 100%;
-        position: relative;
-
         grid-column: main-content / span 6;
         @media (min-width: $desktop) {
           grid-column: main-content / span 6;
         }
-        // @media (max-width: $tablet) {
-        //   height: 250px;
-        // }
-        // @media (min-width: $tablet) {
-        //   &::before {
-        //     content: '';
-        //     padding-bottom: 100%;
-        //     display: block;
-        //   }
-        // }
-        &::before {
-          content: '';
-          padding-bottom: 100%;
-          display: block;
-        }
-        img {
-          @include cover-background(top);
-          transition: $transition-slow-ease;
-          transform: scale(1);
-          z-index: 1;
-        }
-        .label {
-          z-index: 2;
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          padding: $defaultPadding * 3 math.div($defaultPadding, 5)
-            math.div($defaultPadding, 2);
-          font-size: $small;
-          text-align: center;
-          background-image: linear-gradient(
-            to top,
-            rgba($bodyBackground, 0.9) 0%,
-            rgba($bodyBackground, 0) 100%
-          );
-          transition: $transition-slow-ease;
-          opacity: 0;
-          @media (max-width: $tablet) {
-            display: none;
-            visibility: hidden;
-          }
-        }
-        &:hover {
-          .label {
-            opacity: 1;
-          }
-        }
-        // &:nth-child(1) {
-        //   grid-column: first-col;
-        // }
-        // &:nth-child(2) {
-        //   grid-column: second-col;
-        // }
-        // &:nth-child(3) {
-        //   grid-column: third-col;
-        // }
       }
+    }
+  }
+  .technology-list {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      flex: 0 0 50%;
     }
   }
 }
