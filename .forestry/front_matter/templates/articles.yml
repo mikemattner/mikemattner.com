@@ -1,0 +1,22 @@
+---
+label: Articles
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: type
+  label: type
+- type: text
+  name: description
+  label: description
+- type: list
+  name: tag
+  label: tag
+- type: list
+  name: link
+  label: link
