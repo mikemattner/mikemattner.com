@@ -22,12 +22,12 @@ sections:
   new_doc_ext: md
   templates:
   - tags
-- type: heading
+- type: directory
+  path: data
   label: Pages
-- type: document
-  path: data/data.yaml
-  label: About
+  create: all
   match: "**/*"
+  new_doc_ext: ".yaml"
 upload_dir: static/img
 public_path: "/img"
 front_matter_path: ''
