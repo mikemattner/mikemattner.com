@@ -25,7 +25,7 @@ sections:
 - type: heading
   label: Pages
 - type: document
-  path: data
+  path: data/data.yaml
   label: About
   match: "**/*"
 upload_dir: static/img
