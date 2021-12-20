@@ -2,11 +2,12 @@
 title: Two Years of Change
 date: 2021-12-18
 type: entry
-description: 'This has been a bit of a wild two years. Life disrupted and changed. Friends lost...and lost respect. It has been hard to keep up with tech. This is not about tech.'
+description: This has been a bit of a wild two years. Life disrupted and changed,
+  friends lost. It has been hard to keep up with tech.
 tag:
-  - Personal
----
+- Personal
 
+---
 The last time I wrote anything for my personal site, it was the same old developer blog drivel: I've redesigned/redeveloped something again. But even then we were in month nine of the Covid 19 pandemic, and getting excited about tech was, let's say...really fucking difficult.
 
 We're approaching year two this coming March, and the anxiety levels are still high. A good portion of my pre-pandemic life involved some form of social interaction, whether that was in the office or outside of it, but I'm now inside my home and anxious about leaving. Sure, I started venturing out a bit in June of 2021, but the evolution of the virus, the refusal to vaccinate or take ANY mitigating measures brought me right back to the alert state I was in starting in March of 2020.
