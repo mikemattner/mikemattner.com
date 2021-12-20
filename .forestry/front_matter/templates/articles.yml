@@ -36,8 +36,17 @@ fields:
   config:
     use_select: true
     source:
-      type: pages
+      type: simple
       section: tags
+    options:
+    - Design
+    - Development
+    - Wisdom
+    - Economics
+    - Futurology
+    - History
+    - Personal
+    - Politics
 - type: list
   name: link
   label: Link

@@ -27,7 +27,7 @@ sections:
   label: Pages
   create: all
   match: "**/*"
-  new_doc_ext: ".yaml"
+  new_doc_ext: yaml
 upload_dir: static/img
 public_path: "/img"
 front_matter_path: ''
