@@ -22,6 +22,12 @@ sections:
   new_doc_ext: md
   templates:
   - tags
+- type: heading
+  label: Pages
+- type: document
+  path: data
+  label: About
+  match: "**/*"
 upload_dir: static/img
 public_path: "/img"
 front_matter_path: ''
