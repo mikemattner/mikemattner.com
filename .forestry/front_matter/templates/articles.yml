@@ -12,6 +12,15 @@ fields:
     export_format: YYYY-MM-DD
     date_format: MM/DD/YYYY
     time_format: h:mm
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
 - name: type
   type: select
   default: entry
@@ -27,9 +36,6 @@ fields:
       file: 
       path: 
   label: Type
-- type: text
-  name: description
-  label: Description
 - type: list
   name: tag
   label: Tag
