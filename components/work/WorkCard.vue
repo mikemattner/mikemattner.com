@@ -85,8 +85,9 @@ export default {
   h6 {
     margin-top: 0;
     margin-bottom: 0;
-    color: $middleGray;
+    color: $bodyColor;
     font-weight: 400;
+    font-size: $small;
   }
   h3 {
     margin-top: 0.25rem;

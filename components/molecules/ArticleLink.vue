@@ -157,7 +157,7 @@ export default {
     margin: 0 0 0.5rem 0;
     line-height: 1;
     font-weight: 400;
-    color: $middleGray;
+    color: $bodyColor;
     transition: all 0.25s ease-in-out;
     z-index: 2;
     position: relative;

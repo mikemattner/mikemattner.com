@@ -27,8 +27,8 @@ $secondaryHover: $middleGraySecondary;
 $tertiary: $coolGray;
 $tertiaryHover: $coolGraySecondary;
 
-$codeColor: $coolGraySecondary;
-$bodyColor: $coolGraySecondary;
+$codeColor: tint($darkBlue, 50%);
+$bodyColor: tint($darkBlue, 50%);
 $bodyBackground: shade($darkBlue, 40%);
 $borderColor-light: tint($darkBlue, 10%);
 $darkShadeBackground: shade($darkBlue, 60%);

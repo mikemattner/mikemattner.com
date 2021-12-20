@@ -16,7 +16,7 @@
           center
           v-html="writing.title"
         ></Header>
-        <p class="main-content" v-html="writing.description"></p>
+        <!-- <p class="main-content" v-html="writing.description"></p> -->
         <div class="meta flex main-content">
           <TagList :tags="writing.tag" />
         </div>
