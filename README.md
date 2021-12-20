@@ -1,4 +1,5 @@
 # MikeMattner.com Built with Nuxt Edition
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c59c68ee-fcf6-4d6e-af5d-9263f36ac533/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-5270b3/deploys)
 
 My second run at a javascript framwork based portfolio, blog, and general information site. I'm using `nuxt generate` to build a static website hosted by Netlify.
@@ -6,20 +7,20 @@ My second run at a javascript framwork based portfolio, blog, and general inform
 ## ToDos
 
 - [x] Dynamic generation of routes for .md files
-- [x] ~~Use a CMS for content generation (Forestry!)~~
+- [x] Use a CMS for content generation (Forestry!)
 - [x] Design tweaks
 - [x] Color palette updates https://mycolor.space/
 - [x] Generate, fill in some old content for the blog
 - [x] Reusable blog list component
 - [ ] Organize blog list by year
 - [x] Update to [Nuxt Content](https://content.nuxtjs.org/)
-- [ ] Generate content for portfolio
+- [x] Generate content for portfolio
 - ~~Blog pagination~~
 - ~~Build out portfolio with CMS capabilities~~
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 
