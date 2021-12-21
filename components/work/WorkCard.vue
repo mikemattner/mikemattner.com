@@ -163,7 +163,6 @@ export default {
   }
   h3 {
     margin-top: 0.25rem;
-    font-weight: 700;
   }
 }
 </style>

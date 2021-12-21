@@ -7,7 +7,7 @@
       <div class="article-meta">
         <time>{{ formatDate(article.date) }}</time>
       </div>
-      <Header tag="h3" class="article-title"
+      <Header tag="h3" class="display-5 article-title"
         ><span v-html="article.title"></span
         ><fa-icon :icon="categoryIcon" size="sm"></fa-icon
       ></Header>
