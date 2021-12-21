@@ -17,7 +17,7 @@
       <div class="layout">
         <Header
           tag="h2"
-          class="display-5"
+          class="display-4"
           decorator
           v-html="introduction.title"
         ></Header>
@@ -28,7 +28,7 @@
     <WaveRight flip />
     <section id="content" class="section section--writing layout">
       <div class="main-content">
-        <Header tag="h2" class="display-5" decorator>{{
+        <Header tag="h2" class="display-4" decorator>{{
           writing.title
         }}</Header>
         <p v-html="writing.body"></p>
