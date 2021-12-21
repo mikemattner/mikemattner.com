@@ -2,7 +2,7 @@
   <section class="section section--tag">
     <div :key="$route.params.slug">
       <PageHero>
-        <Header tag="h1" class="display-3 main-content" decorator>
+        <Header tag="h1" class="display-1 main-content" decorator>
           {{ tag.title }}</Header
         >
         <p class="main-content" v-html="tag.description"></p>

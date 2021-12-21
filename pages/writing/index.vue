@@ -3,7 +3,7 @@
     <div :key="$route.params.slug">
       <PageHero>
         <div class="main-content">
-          <Header tag="h1" class="display-3 main-content" decorator>{{
+          <Header tag="h1" class="display-2 main-content" decorator>{{
             intro.title
           }}</Header>
           <div>

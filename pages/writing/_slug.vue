@@ -12,7 +12,7 @@
         </div>
         <Header
           tag="h1"
-          class="display-3 main-content"
+          class="display-1 main-content"
           v-html="writing.title"
         ></Header>
         <div class="meta flex main-content">
@@ -373,10 +373,10 @@ export default {
     }
   }
   h2 {
-    font-size: $h5;
+    font-size: $h4;
   }
   h3 {
-    font-size: $h5;
+    font-size: $h4;
   }
   .attribution {
     font-size: $small;

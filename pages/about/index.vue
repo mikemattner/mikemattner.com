@@ -3,7 +3,7 @@
     <PageHero>
       <Header
         tag="h1"
-        class="display-3"
+        class="display-1"
         decorator
         v-html="statement.title"
       ></Header>
@@ -22,7 +22,7 @@
     <section class="layout">
       <Header
         tag="h2"
-        class="display-5 main-content"
+        class="display-4 main-content"
         v-html="experience.techTitle"
       ></Header>
       <div class="main-content" v-html="experience.techBody"></div>
@@ -33,13 +33,13 @@
       </ul>
       <Header
         tag="h2"
-        class="display-5 main-content"
+        class="display-4 main-content"
         v-html="page.title"
       ></Header>
       <div class="main-content" v-html="page.body"></div>
       <Header
         tag="h2"
-        class="display-5 main-content"
+        class="display-4 main-content"
         v-html="contact.title"
       ></Header>
       <div class="main-content" v-html="contact.body"></div>

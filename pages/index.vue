@@ -3,7 +3,7 @@
     <PageHero full>
       <Header
         tag="h1"
-        class="display-3"
+        class="text-huge"
         decorator
         v-html="intro.title"
       ></Header>

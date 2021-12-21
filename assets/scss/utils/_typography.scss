@@ -13,9 +13,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $sans-serif-font;
+  font-family: $display-font;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   color: $white;
   margin: 1.75rem 0 0.05rem;
 
@@ -56,7 +56,7 @@ h1,
   margin-top: 0;
   letter-spacing: 0.0125rem;
   color: $primary;
-  line-height: 1.1;
+  line-height: 1;
 
   small {
     font-size: $small;
@@ -119,6 +119,14 @@ small,
   @media (min-width: $tablet) {
     font-size: $huge;
   }
+}
+
+.text-huge {
+  font-size: $huge;
+}
+
+.text-display-font {
+  font-family: $display-font;
 }
 
 @media (min-width: $tablet) {

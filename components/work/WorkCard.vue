@@ -17,8 +17,8 @@
           />
         </div>
         <div class="work-info">
-          <Header tag="h6" class="text-normal">{{ info.year }}</Header>
-          <Header tag="h3" class="display-6">{{ info.title }}</Header>
+          <div class="work-year">{{ info.year }}</div>
+          <Header tag="h3" class="display-5">{{ info.title }}</Header>
           <p v-html="info.description"></p>
           <Button
             v-if="info.link"
@@ -154,7 +154,7 @@ export default {
       }
     }
   }
-  h6 {
+  .work-year {
     margin-top: 0;
     margin-bottom: 0;
     color: $primary;

@@ -101,7 +101,7 @@ export default {
     }
   }
   h3 {
-    font-size: $base;
+    font-size: $h5;
     display: flex;
     align-items: center;
     line-height: 1.3;
