@@ -12,6 +12,7 @@
         <Button to="/about" primary ghost>More About Me</Button>
       </div>
     </PageHero>
+    <WaveRight />
     <section class="section--work section--dark">
       <div class="layout">
         <Header
@@ -23,12 +24,13 @@
         <p v-html="introduction.body"></p>
       </div>
       <div class="layout">
-        <WorkCard :info="MaytagExperience" />
-        <WorkCard :info="WhirlpoolExperience" />
-        <WorkCard :info="JennAirWorkbook" />
-        <WorkCard :info="JennAirHub" />
+        <WorkCard :info="MaytagExperience" right />
+        <WorkCard :info="WhirlpoolExperience" left />
+        <WorkCard :info="JennAirWorkbook" right />
+        <WorkCard :info="JennAirHub" left />
       </div>
     </section>
+    <WaveRight flip />
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-5" decorator>{{

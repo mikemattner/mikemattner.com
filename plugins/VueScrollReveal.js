@@ -7,9 +7,9 @@ Vue.use(VueScrollReveal, {
   class: 'v-scroll-reveal',
   duration: 800,
   delay: 500,
-  useDelay: 'always',
-  scale: 1,
+  useDelay: 'once',
+  scale: 1.2,
   distance: '10px',
-  easing: 'ease-in-out',
+  easing: 'cubic-bezier(0.68, 0, 0.265, 1.55)',
   mobile: false,
 })

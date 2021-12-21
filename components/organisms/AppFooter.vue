@@ -1,5 +1,6 @@
 <template>
   <footer class="footer layout">
+    <WavyLines class="edge-to-edge" />
     <div class="darker main-content margin-start-outdent">
       <p>
         @mikemattner on

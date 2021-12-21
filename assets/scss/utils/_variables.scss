@@ -23,15 +23,14 @@ $black: rgba(0, 0, 0, 1);
 $primary: $green;
 $primaryHover: shade($green, 40%);
 $secondary: $middleGray;
-$secondaryHover: $middleGraySecondary;
-$tertiary: $coolGray;
-$tertiaryHover: $coolGraySecondary;
+$secondaryHover: shade($middleGray, 40%);
 
 $codeColor: tint($darkBlue, 70%);
 $bodyColor: tint($darkBlue, 70%);
 $bodyBackground: shade($darkBlue, 40%);
 $borderColor-light: tint($darkBlue, 10%);
 $darkShadeBackground: shade($darkBlue, 60%);
+$darkerShadeBackground: shade($darkBlue, 80%);
 
 $tagColor: $middleGray;
 

@@ -36,12 +36,21 @@
             >
           </li>
           <li>
-            <a
+            <!-- <a
               href="/files/mikemattner_20201224.pdf"
               download="MikeMattner.pdf"
               target="_blank"
               >R&eacute;sum&eacute;</a
-            >
+            > -->
+            <Button
+              href="/files/mikemattner_20201224.pdf"
+              target="_blank"
+              secondary
+              ghost
+              small
+              ><span>R&eacute;sum&eacute;</span>
+              <fa-icon icon="arrow-alt-circle-down" size="sm"></fa-icon
+            ></Button>
           </li>
         </ul>
       </nav>
@@ -233,7 +242,7 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
       }
     }
     @media (min-width: 769px) {
-      grid-column: main-content-start / span 3;
+      grid-column: main-content-start / span 6;
     }
     @media (max-width: 768px) {
       font-size: 1.25rem;

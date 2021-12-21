@@ -20,7 +20,7 @@ export default {
 
 <style scoped lang="scss">
 .wavy {
-  fill: $borderColor-light;
+  fill: $darkShadeBackground;
   margin-bottom: -1rem;
   @media (min-width: $tablet) {
     margin-bottom: -2rem;

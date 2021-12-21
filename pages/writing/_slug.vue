@@ -20,6 +20,7 @@
           <TagList :tags="writing.tag" />
         </div>
       </PageHero>
+      <WaveRight flip />
       <div id="content" :data-type="writing.type" :class="writing.type">
         <aside v-if="writing.link" class="layout">
           <div class="article-link main-content">
@@ -177,7 +178,7 @@ export default {
     }
   }
   #content {
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
   .quote {
     blockquote {

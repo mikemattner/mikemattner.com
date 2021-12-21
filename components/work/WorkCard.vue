@@ -1,5 +1,6 @@
 <template>
   <div
+    v-scroll-reveal
     :class="[
       'is--work',
       right == true ? 'right' : '',
@@ -19,10 +20,19 @@
           <Header tag="h6" class="text-normal">{{ info.year }}</Header>
           <Header tag="h3" class="display-6">{{ info.title }}</Header>
           <p v-html="info.description"></p>
-          <Button v-if="info.link" :href="info.link" target="_blank" link
+          <Button
+            v-if="info.link"
+            :href="info.link"
+            target="_blank"
+            primary
+            ghost
+            small
             ><span>Visit</span>
             <fa-icon icon="external-link-alt" size="sm"></fa-icon
           ></Button>
+          <ul class="work-tech">
+            <li v-for="(item, index) in info.tech" :key="index">{{ item }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -69,6 +79,22 @@ export default {
         color: $primary;
       }
     }
+
+    .work-tech {
+      font-size: 0.5rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      line-height: 1.25;
+
+      @media (max-width: $tablet) {
+        font-size: $small;
+      }
+
+      li {
+        margin-right: math.div($defaultPadding, 2);
+      }
+    }
     .work-image {
       background-color: $black;
       border-radius: $radius-large;
@@ -85,6 +111,59 @@ export default {
         position: relative;
         height: 350px;
         overflow: hidden;
+      }
+    }
+  }
+
+  &.right {
+    @media (min-width: $tablet) {
+      .work-body {
+        margin-bottom: $defaultPadding * 1.5;
+      }
+      .work-content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        align-items: center;
+        .work-info {
+          padding: $defaultPadding math.div($defaultPadding, 1.5);
+          background-color: rgba($darkerShadeBackground, 0.95);
+          border-radius: $radius-large;
+          grid-column: 8 / span 5;
+          grid-row: 1;
+        }
+        .work-image {
+          height: auto;
+          grid-column: 1 / span 8;
+          grid-row: 1;
+          max-height: 350px;
+        }
+      }
+    }
+  }
+  &.left {
+    @media (min-width: $tablet) {
+      .work-body {
+        margin-bottom: $defaultPadding * 1.5;
+      }
+      .work-content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        align-items: center;
+        .work-info {
+          padding: $defaultPadding math.div($defaultPadding, 1.5);
+          background-color: rgba($darkerShadeBackground, 0.95);
+          border-radius: $radius-large;
+          grid-column: 1 / span 5;
+          grid-row: 1;
+        }
+        .work-image {
+          height: auto;
+          grid-column: 5 / span 8;
+          grid-row: 1;
+          max-height: 350px;
+        }
       }
     }
   }
