@@ -1,14 +1,13 @@
 intro:
   title: I&rsquo;m Mike, a designer & developer from Michigan.
   body: <p>I currently work as a UI Engineer at&nbsp;AccuLynx.
-        You can find me as @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>, 
-        <a href="https://twitter.com/mikemattner">Twitter</a>, 
-        <a href="https://codepen.io/mikemattner/#">Codepen</a>, 
-        &amp; <a href="https://github.com/mikemattner">GitHub</a>.</p>
+    You can find me as @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
+    <a href="https://twitter.com/mikemattner">Twitter</a>,
+    <a href="https://codepen.io/mikemattner/#">Codepen</a>,
+    &amp; <a href="https://github.com/mikemattner">GitHub</a>.</p>
 
 writing:
   title: Writing
   body: Writing about my profession, hobbies, and other longer format topics.
-        Typically rambling and a little boring.
   buttonTitle: Read More
   link: /writing

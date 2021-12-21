@@ -4,7 +4,7 @@
   border-radius: $radius-large;
   color: $darkBlue;
   padding: 0.5rem 0.5rem;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -22,14 +22,20 @@
   //             0 8px 8px rgba(0,0,0,0.11),
   //             0 16px 16px rgba(0,0,0,0.11);
 
+  @media (min-width: $tablet) {
+    display: inline-flex;
+  }
+
   &:before,
   &:after {
     display: none;
   }
 
   &--small {
-    padding: 2px 10px;
-    font-size: $small;
+    @media (min-width: $tablet) {
+      font-size: $small;
+      padding: 5px 10px;
+    }
   }
 
   &__content {
@@ -43,6 +49,29 @@
 
   svg {
     height: 1em;
+    z-index: 2;
+    fill: $white;
+    color: $white;
+  }
+
+  &--icon-right {
+    .button__content {
+      order: 1;
+    }
+    svg {
+      order: 2;
+      margin-left: math.div($defaultPadding, 4);
+    }
+  }
+
+  &--icon-left {
+    .button__content {
+      order: 2;
+    }
+    svg {
+      order: 1;
+      margin-right: math.div($defaultPadding, 4);
+    }
   }
 
   &:focus {
@@ -89,6 +118,10 @@
     .button__bubble {
       background-color: rgba($primary, 0.125);
     }
+    svg {
+      fill: $primary;
+      color: $primary;
+    }
   }
 
   &--secondary {
@@ -102,6 +135,10 @@
     .button__bubble {
       background-color: $secondaryHover;
     }
+    svg {
+      fill: $white;
+      color: $white;
+    }
   }
   &--secondary-ghost {
     color: $white;
@@ -113,6 +150,10 @@
     }
     .button__bubble {
       background-color: rgba($secondaryHover, 0.5);
+    }
+    svg {
+      fill: $primary;
+      color: $primary;
     }
   }
   &--tertiary {

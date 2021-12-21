@@ -24,12 +24,13 @@
             v-if="info.link"
             :href="info.link"
             target="_blank"
+            icon="external-link-alt"
+            icon-right
             primary
             ghost
             small
-            ><span>Visit</span>
-            <fa-icon icon="external-link-alt" size="sm"></fa-icon
-          ></Button>
+            >Visit</Button
+          >
           <ul class="work-tech">
             <li v-for="(item, index) in info.tech" :key="index">{{ item }}</li>
           </ul>
@@ -69,30 +70,29 @@ export default {
     .work-info {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
-      padding: $defaultPadding 0 $defaultPadding * 2;
+      padding: $defaultPadding 0;
       z-index: 2;
       position: relative;
       text-align: left;
+      padding: $defaultPadding math.div($defaultPadding, 1.5);
+      background-color: rgba($darkerShadeBackground, 0.95);
+      border-radius: $radius-large;
 
-      svg {
-        fill: $primary;
-        color: $primary;
+      @media (max-width: $tablet) {
+        margin-top: -$defaultPadding * 1.5;
       }
     }
 
     .work-tech {
-      font-size: 0.5rem;
+      font-size: $small;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 0;
+      margin-top: math.div($defaultPadding, 4);
       line-height: 1.25;
 
-      @media (max-width: $tablet) {
-        font-size: $small;
-      }
-
       li {
-        margin-right: math.div($defaultPadding, 2);
+        margin-right: math.div($defaultPadding, 1.5);
       }
     }
     .work-image {
@@ -117,18 +117,12 @@ export default {
 
   &.right {
     @media (min-width: $tablet) {
-      .work-body {
-        margin-bottom: $defaultPadding * 1.5;
-      }
       .work-content {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr;
         align-items: center;
         .work-info {
-          padding: $defaultPadding math.div($defaultPadding, 1.5);
-          background-color: rgba($darkerShadeBackground, 0.95);
-          border-radius: $radius-large;
           grid-column: 8 / span 5;
           grid-row: 1;
         }
@@ -136,25 +130,18 @@ export default {
           height: auto;
           grid-column: 1 / span 8;
           grid-row: 1;
-          max-height: 350px;
         }
       }
     }
   }
   &.left {
     @media (min-width: $tablet) {
-      .work-body {
-        margin-bottom: $defaultPadding * 1.5;
-      }
       .work-content {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr;
         align-items: center;
         .work-info {
-          padding: $defaultPadding math.div($defaultPadding, 1.5);
-          background-color: rgba($darkerShadeBackground, 0.95);
-          border-radius: $radius-large;
           grid-column: 1 / span 5;
           grid-row: 1;
         }

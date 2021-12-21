@@ -36,21 +36,16 @@
             >
           </li>
           <li>
-            <!-- <a
-              href="/files/mikemattner_20201224.pdf"
-              download="MikeMattner.pdf"
-              target="_blank"
-              >R&eacute;sum&eacute;</a
-            > -->
             <Button
               href="/files/mikemattner_20201224.pdf"
               target="_blank"
+              icon="arrow-alt-circle-down"
+              icon-right
               secondary
               ghost
               small
-              ><span>R&eacute;sum&eacute;</span>
-              <fa-icon icon="arrow-alt-circle-down" size="sm"></fa-icon
-            ></Button>
+              >R&eacute;sum&eacute;
+            </Button>
           </li>
         </ul>
       </nav>
@@ -238,6 +233,9 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
           &:hover {
             color: $white;
           }
+        }
+        .button {
+          margin: 0;
         }
       }
     }

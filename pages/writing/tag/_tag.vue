@@ -10,10 +10,9 @@
       <section id="content" class="layout">
         <div class="main-content">
           <AllArticles :posts="writing" />
-          <Button to="/writing/" primary ghost
-            ><fa-icon icon="chevron-left" size="sm"></fa-icon>
-            {{ button.text }}</Button
-          >
+          <Button to="/writing/" icon="chevron-left" icon-left primary ghost>
+            {{ button.text }}
+          </Button>
         </div>
       </section>
     </div>

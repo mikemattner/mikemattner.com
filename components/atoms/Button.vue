@@ -7,6 +7,7 @@
     <span class="button__content">
       <slot />
     </span>
+    <fa-icon v-if="icon" :icon="icon" size="sm"></fa-icon>
   </component>
 </template>
 
@@ -19,6 +20,12 @@ export default {
     ghost: Boolean,
     small: Boolean,
     link: Boolean,
+    iconRight: Boolean,
+    iconLeft: Boolean,
+    icon: {
+      type: String,
+      default: '',
+    },
     to: {
       type: String,
       default: '/',
@@ -33,6 +40,8 @@ export default {
         'button--secondary-ghost': this.ghost && this.secondary,
         'button--primary-ghost': this.ghost && this.primary,
         'button--small': this.small,
+        'button--icon-right': this.iconRight,
+        'button--icon-left': this.iconLeft,
       }
     },
     element() {

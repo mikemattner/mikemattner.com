@@ -6,7 +6,7 @@ import ArticleLink from '../components/molecules/ArticleLink.vue'
 import SearchForm from '../components/molecules/SearchForm.vue'
 import AllArticles from '../components/organisms/AllArticles.vue'
 import TagList from '../components/organisms/TagList.vue'
-// import Work from '../components/organisms/Work.vue'
+import WorkList from '../components/work/WorkList.vue'
 import WorkCard from '../components/work/WorkCard.vue'
 import PageHero from '../components/organisms/PageHero.vue'
 import BaseImage from '../components/media/BaseImage.vue'
@@ -35,6 +35,6 @@ Vue.component('TagList', TagList)
 Vue.component('Loading', Loading)
 Vue.component('Button', Button)
 Vue.component('ScrollLink', ScrollLink)
-// Vue.component('Work', Work)
+Vue.component('WorkList', WorkList)
 Vue.component('WorkCard', WorkCard)
 Vue.component('Header', Header)

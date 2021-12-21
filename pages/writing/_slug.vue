@@ -15,7 +15,6 @@
           class="display-3 main-content"
           v-html="writing.title"
         ></Header>
-        <!-- <p class="main-content" v-html="writing.description"></p> -->
         <div class="meta flex main-content">
           <TagList :tags="writing.tag" />
         </div>
@@ -28,13 +27,14 @@
             <Button
               :href="writing.link[0]"
               target="_blank"
+              icon="external-link-alt"
+              icon-right
               small
               secondary
               ghost
               ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
               ><span v-else>View Link</span>
-              <fa-icon icon="external-link-alt" size="sm"></fa-icon
-            ></Button>
+            </Button>
           </div>
         </aside>
         <nuxt-content :document="writing" />
@@ -47,26 +47,41 @@
               v-if="prev"
               :to="`/writing/${prev.slug}`"
               class="button prev"
+              icon="chevron-left"
+              icon-left
               primary
               ghost
-              ><fa-icon icon="chevron-left" size="sm"></fa-icon> Previous
-              Article</Button
+              >Previous Article</Button
             >
-            <Button v-else to="/writing/" class="button prev" primary ghost
-              ><fa-icon icon="chevron-left" size="sm"></fa-icon> Back to
-              Articles
+            <Button
+              v-else
+              to="/writing/"
+              class="button prev"
+              icon="chevron-left"
+              icon-left
+              primary
+              ghost
+              >Back to Articles
             </Button>
             <Button
               v-if="next"
               :to="`/writing/${next.slug}`"
               class="button next"
+              icon="chevron-right"
+              icon-right
               primary
               ghost
-              >Next Article <fa-icon icon="chevron-right" size="sm"></fa-icon
-            ></Button>
-            <Button v-else to="/writing/" class="button next" primary ghost
+              >Next Article
+            </Button>
+            <Button
+              v-else
+              to="/writing/"
+              class="button next"
+              icon="chevron-right"
+              icon-right
+              primary
+              ghost
               >Back to Articles
-              <fa-icon icon="chevron-right" size="sm"></fa-icon>
             </Button>
           </div>
         </div>
@@ -326,11 +341,6 @@ export default {
     }
     .button {
       margin: 0.5rem 0;
-      svg {
-        margin-left: 0.5rem;
-        fill: $primary;
-        color: $primary;
-      }
     }
   }
   .links {

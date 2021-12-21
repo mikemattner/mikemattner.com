@@ -22,12 +22,7 @@
           v-html="introduction.title"
         ></Header>
         <p v-html="introduction.body"></p>
-      </div>
-      <div class="layout">
-        <WorkCard :info="MaytagExperience" right />
-        <WorkCard :info="WhirlpoolExperience" left />
-        <WorkCard :info="JennAirWorkbook" right />
-        <WorkCard :info="JennAirHub" left />
+        <WorkList :work="work" />
       </div>
     </section>
     <WaveRight flip />
@@ -36,6 +31,7 @@
         <Header tag="h2" class="display-5" decorator>{{
           writing.title
         }}</Header>
+        <p v-html="writing.body"></p>
         <AllArticles :posts="posts" short />
         <Button :to="writing.link" ghost primary>{{
           writing.buttonTitle
@@ -47,13 +43,7 @@
 
 <script>
 import { intro, writing } from '~/data/home.yaml'
-import {
-  introduction,
-  JennAirWorkbook,
-  JennAirHub,
-  MaytagExperience,
-  WhirlpoolExperience,
-} from '~/data/work.yaml'
+import { introduction, work } from '~/data/work.yaml'
 
 export default {
   name: 'Home',
@@ -82,10 +72,7 @@ export default {
       intro,
       writing,
       introduction,
-      JennAirWorkbook,
-      JennAirHub,
-      MaytagExperience,
-      WhirlpoolExperience,
+      work,
     }
   },
   head() {
@@ -131,18 +118,9 @@ export default {
     &--work {
       padding-top: 2rem;
       padding-bottom: 2rem;
-      .layout {
-        // padding-top: 2rem;
-        padding-bottom: 2rem;
-        h2,
-        p {
-          grid-column: main-content / span 6;
-          @media (min-width: $tablet) {
-            grid-column: main-content / span 7;
-          }
-        }
-      }
-      .is--work {
+
+      h2,
+      p {
         grid-column: main-content / span 6;
         @media (min-width: $tablet) {
           grid-column: main-content / span 7;
@@ -152,7 +130,7 @@ export default {
 
     &--writing {
       padding-top: 0;
-      h2 {
+      p {
         margin-bottom: 2rem;
       }
       .button {
