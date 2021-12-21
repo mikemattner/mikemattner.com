@@ -122,7 +122,11 @@ small,
 }
 
 .text-huge {
-  font-size: $huge;
+  font-size: $h2;
+
+  @media (min-width: $tablet) {
+    font-size: $huge;
+  }
 }
 
 .text-display-font {
