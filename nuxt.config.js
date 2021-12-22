@@ -48,17 +48,15 @@ export default {
    */
   plugins: [
     '~/plugins/lazyimage.js',
-    '~/plugins/imageContext.js',
     '~/plugins/VueFontAwesome.js',
     { src: '~/plugins/VueScrollReveal.js', ssr: false },
   ],
   components: {
     dirs: [
-      '~/components/atoms',
       '~/components/decorative',
       '~/components/media',
-      '~/components/molecules',
       '~/components/organisms',
+      '~/components/ui',
       '~/components/work',
     ],
   },

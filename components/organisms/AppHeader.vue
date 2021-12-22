@@ -74,6 +74,7 @@ export default {
   mounted() {
     this.navBarElm = document.getElementById('navbar')
     window.addEventListener('scroll', this.updateNavBarFixed)
+    this.updateNavBarFixed()
   },
   destroyed() {
     window.removeEventListener('scroll', this.updateNavBarFixed)
