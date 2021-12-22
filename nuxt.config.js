@@ -47,12 +47,21 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/ComponentRegister.js',
     '~/plugins/lazyimage.js',
     '~/plugins/imageContext.js',
     '~/plugins/VueFontAwesome.js',
     { src: '~/plugins/VueScrollReveal.js', ssr: false },
   ],
+  components: {
+    dirs: [
+      '~/components/atoms',
+      '~/components/decorative',
+      '~/components/media',
+      '~/components/molecules',
+      '~/components/organisms',
+      '~/components/work',
+    ],
+  },
 
   /*
    ** Nuxt.js modules
