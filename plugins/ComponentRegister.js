@@ -9,7 +9,6 @@ import TagList from '../components/organisms/TagList.vue'
 import WorkList from '../components/work/WorkList.vue'
 import WorkCard from '../components/work/WorkCard.vue'
 import PageHero from '../components/organisms/PageHero.vue'
-import BaseImage from '../components/media/BaseImage.vue'
 import StaticImage from '../components/media/StaticImage.vue'
 import Wavy from '../components/decorative/Wavy.vue'
 import WavyLines from '../components/decorative/WavyLines.vue'
@@ -21,7 +20,6 @@ import Header from '../components/atoms/Header.vue'
 
 Vue.component('PageHero', PageHero)
 Vue.component('BrandLogo', BrandLogo)
-Vue.component('BaseImage', BaseImage)
 Vue.component('StaticImage', StaticImage)
 Vue.component('AppHeader', AppHeader)
 Vue.component('AppFooter', AppFooter)

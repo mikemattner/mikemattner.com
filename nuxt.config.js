@@ -93,6 +93,10 @@ export default {
       type: 'rss2',
     },
   ],
+  buildModules: ['@aceforth/nuxt-optimized-images'],
+  optimizedImages: {
+    optimizeImages: true,
+  },
   styleResources: {
     scss: [
       '~/assets/scss/utils/_functions.scss',

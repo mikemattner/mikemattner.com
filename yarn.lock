@@ -2,16 +2,16 @@
 # yarn lockfile v1
 
 
-"@aceforth/nuxt-optimized-images@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@aceforth/nuxt-optimized-images/-/nuxt-optimized-images-1.3.0.tgz#af2ac82fe22f812650c6a062d70cf15c2d4d770d"
-  integrity sha512-mVa7Sjzzpu7k70b6m98QzljOpAJFi+blNh7QENoMNUqIUsAy4YsOxhxIteqy4GHjbcFp30fysQ9qMxFdQ/6GuQ==
+"@aceforth/nuxt-optimized-images@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@aceforth/nuxt-optimized-images/-/nuxt-optimized-images-1.4.0.tgz#fc5431c8886b619059c7759c21946c1f42089d9f"
+  integrity sha512-f5Gao6t5C08cr518goxb72cWH/xg2W4kIRLzfDT7hku04nsjQk2x3KhJGJ4at6jXAlWIh9SLKBHPCLRyzZr9OA==
   dependencies:
     consola "^2.15.0"
     imagemin "^7.0.1"
-    img-loader "^3.0.1"
-    raw-loader "^4.0.1"
-    url-loader "^4.1.0"
+    img-loader "^3.0.2"
+    raw-loader "^4.0.2"
+    url-loader "^4.1.1"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4":
   version "7.10.4"
@@ -1330,31 +1330,6 @@
     axios-retry "^3.1.8"
     consola "^2.15.0"
     defu "^3.1.0"
-
-"@nuxtjs/blog@^0.0.1-6":
-  version "0.0.1-6"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/blog/-/blog-0.0.1-6.tgz#48d118564a1ed4244034984967a79dc20d81dc8d"
-  integrity sha512-J0O0R7X0tmhuetxLZljlmLM6R2Pacvu4qOpXqTSM/ScOF6VbIIhz6CQQ7quh8i6Kd8Tb4wbCJ0yE1FFlTlN9mw==
-  dependencies:
-    babel-plugin-transform-object-rest-spread "^6.23.0"
-    babel-polyfill "^6.23.0"
-    chalk "2.0.1"
-    cheerio "^1.0.0-rc.1"
-    express "^4.15.3"
-    flat "^2.0.1"
-    front-matter "^2.1.2"
-    glob latest
-    markdown-it "8.3.1"
-    markdown-it-decorate "1.2.2"
-    markdown-it-emoji "1.4.0"
-    merge-options "^1.0.0"
-    node-sass "^4.5.3"
-    pify "^3.0.0"
-    prismjs "^1.6.0"
-    sass-loader "^6.0.6"
-    slug "^0.9.1"
-    vue-disqus "^2.0.3"
-    webpack "^3.0.0"
 
 "@nuxtjs/eslint-config@^5.0.0":
   version "5.0.0"
@@ -6649,7 +6624,7 @@ imagemin@7.0.1, imagemin@^7.0.1:
     p-pipe "^3.0.0"
     replace-ext "^1.0.0"
 
-img-loader@^3.0.1:
+img-loader@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/img-loader/-/img-loader-3.0.2.tgz#423d39cb45f017e88c7959b2740226ce4c9001aa"
   integrity sha512-rSriLKgvi85Km7ppSF+AEAM3nU4fxpvCkaXtC/IoCEU7jfks55bEANFs0bB9YXYkxY9JurZQIZFtXh5Gue3upw==
@@ -7520,11 +7495,6 @@ lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
-
-lazysizes@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.2.2.tgz#800e5914725fef1863bd9a1e19e1bb423c536f8b"
-  integrity sha512-fYgOv1Y35M86/7qyAdPPqoOhuyZrjxEAPxqwToRY2bO/PoBJ4lSqZYuZoavNp6eyuLpIAdHodpsPfj2Lkt86FQ==
 
 lazysizes@^5.3.0-beta1:
   version "5.3.0-beta1"
@@ -8755,13 +8725,6 @@ nuxt-blog-module@^0.0.2:
     slug "^0.9.1"
     vue-disqus "^2.0.3"
     webpack "^3.0.0"
-
-nuxt-lazysizes@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/nuxt-lazysizes/-/nuxt-lazysizes-1.1.2.tgz#fc13513363633e5b3a7814977be3b8e752fd7994"
-  integrity sha512-7n1MbkFWMM7yRTqUKslhxrC5V4L8gH3M71h/h1jECwmejf/OTlhDbNrAbt8ms0V88jiX9hEqnHN9+Vrl/FKPAQ==
-  dependencies:
-    lazysizes "^5.2.2"
 
 nuxt-svg-loader@^1.0.1:
   version "1.2.0"
@@ -10395,7 +10358,7 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-raw-loader@^4.0.1:
+raw-loader@^4.0.1, raw-loader@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-4.0.2.tgz#1aac6b7d1ad1501e66efdac1522c73e59a584eb6"
   integrity sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==
@@ -12511,7 +12474,7 @@ url-loader@^2.3.0:
     mime "^2.4.4"
     schema-utils "^2.5.0"
 
-url-loader@^4.1.0:
+url-loader@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-4.1.1.tgz#28505e905cae158cf07c92ca622d7f237e70a4e2"
   integrity sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==
