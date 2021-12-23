@@ -16,6 +16,7 @@ My second run at a javascript framework based portfolio, blog, and general infor
 - [x] Organize blog list by year
 - [x] Update to [Nuxt Content](https://content.nuxtjs.org/)
 - [x] Add post type archiving
+- [x] Add year filters to primary writing page
 - [ ] Generate content for portfolio
 - [ ] Enhance generated content
 
