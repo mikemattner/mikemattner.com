@@ -21,6 +21,5 @@ module.exports = {
   rules: {
     "vue/no-v-html": "off",
     "vue/script-setup-uses-vars": "off",
-    "vue/no-v-for-template-key": "off",
   },
 }

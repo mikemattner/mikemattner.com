@@ -42,28 +42,25 @@
             >
           </div>
         </div>
-        <template
-          v-for="(item, index) in sortedPosts"
-          class="layout year-group"
-        >
-          <hr
-            v-if="index === 0"
-            :key="index"
-            class="margin-to-main year-group-sep"
-          />
-          <template v-if="!filtered || yearSelected.includes(item.year)">
-            <div :key="index" class="year-designation">
-              <Header :id="item.year" tag="h3" class="display-5">
-                {{ item.year }}
-              </Header>
-            </div>
-            <ul :key="index" class="article-list main-content">
-              <li v-for="post in item.posts" :key="post.title" class="article">
-                <ArticleLink :article="post" />
-              </li>
-            </ul>
-            <hr :key="index" class="margin-to-main year-group-sep" />
-          </template>
+      </div>
+      <div
+        v-for="(item, index) in sortedPosts"
+        :key="index"
+        class="layout year-group"
+      >
+        <hr v-if="index === 0" class="margin-to-main year-group-sep" />
+        <template v-if="!filtered || yearSelected.includes(item.year)">
+          <div class="year-designation">
+            <Header :id="item.year" tag="h3" class="display-5">
+              {{ item.year }}
+            </Header>
+          </div>
+          <ul class="article-list main-content">
+            <li v-for="post in item.posts" :key="post.title" class="article">
+              <ArticleLink :article="post" />
+            </li>
+          </ul>
+          <hr class="margin-to-main year-group-sep" />
         </template>
       </div>
     </template>
