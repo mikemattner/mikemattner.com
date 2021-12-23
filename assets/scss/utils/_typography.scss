@@ -111,6 +111,14 @@ small,
   font-size: $base;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .text-display-large {
   font-size: $h2;
   letter-spacing: 0.0125rem;

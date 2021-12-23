@@ -1,7 +1,7 @@
 <template>
   <div id="navbar" :class="['navbar', 'layout', classes]" role="banner">
     <div class="navbar__logo">
-      <nuxt-link to="/"><BrandLogo label /></nuxt-link>
+      <NuxtLink to="/"><BrandLogo label /></NuxtLink>
     </div>
     <div class="navbar__menu">
       <div
@@ -21,21 +21,21 @@
       <nav class="nav__block">
         <ul>
           <li>
-            <nuxt-link to="/" exact
-              ><span @click="toggle()">Home</span></nuxt-link
+            <NuxtLink to="/" exact
+              ><span @click="toggle()">Home</span></NuxtLink
             >
           </li>
           <li>
-            <nuxt-link to="/writing"
-              ><span @click="toggle()">Writing</span></nuxt-link
+            <NuxtLink to="/writing"
+              ><span @click="toggle()">Writing</span></NuxtLink
             >
           </li>
           <li>
-            <nuxt-link to="/about" exact
-              ><span @click="toggle()">About</span></nuxt-link
+            <NuxtLink to="/about" exact
+              ><span @click="toggle()">About</span></NuxtLink
             >
           </li>
-          <li>
+          <li class="resume-item">
             <Button
               href="/files/mikemattner_20201224.pdf"
               target="_blank"
@@ -46,6 +46,19 @@
               small
               >R&eacute;sum&eacute;
             </Button>
+            <span class="icon-surround">
+              <a
+                href="https://mikemattner.com/feed"
+                title="RSS Feed"
+                class="footer-feed"
+                ><fa-icon icon="rss" size="sm"></fa-icon
+              ></a>
+              <a
+                href="https://github.com/mikemattner/mikemattner.com"
+                title="View GitHub Project"
+                ><fa-icon icon="heart" size="sm"></fa-icon
+              ></a>
+            </span>
           </li>
         </ul>
       </nav>
@@ -235,13 +248,53 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
             color: $white;
           }
         }
+        &.resume-item {
+          margin-left: auto;
+          margin-right: 0;
+          display: flex;
+          align-items: center;
+          @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-end;
+          }
+          .icon-surround {
+            display: flex;
+            align-items: center;
+          }
+          svg {
+            &.fa-heart {
+              fill: $primary;
+              color: $primary;
+              margin-left: math.div($defaultPadding, 2);
+              transition: $transition;
+              &:hover {
+                fill: $white;
+                color: $white;
+              }
+            }
+            &.fa-rss {
+              fill: $primary;
+              color: $primary;
+              margin-left: math.div($defaultPadding, 1.5);
+              transition: $transition;
+              &:hover {
+                fill: $white;
+                color: $white;
+              }
+            }
+          }
+        }
         .button {
           margin: 0;
+
+          @media (max-width: 768px) {
+            margin: math.div($defaultPadding, 1.5) 0;
+          }
         }
       }
     }
     @media (min-width: 769px) {
-      grid-column: main-content-start / span 6;
+      grid-column: main-content-start / span 8;
     }
     @media (max-width: 768px) {
       font-size: 1.25rem;
