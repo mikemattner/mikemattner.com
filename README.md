@@ -2,22 +2,22 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c59c68ee-fcf6-4d6e-af5d-9263f36ac533/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-5270b3/deploys)
 
-My second run at a javascript framework based portfolio, blog, and general information site. I'm using `nuxt generate` to build a static website hosted by Netlify.
+My second run at a javascript framework based portfolio, blog, and general information site. I'm using `nuxt generate` to build a static website hosted by Netlify. I seem to be modifying this pretty frequently.
 
 ## ToDos
 
 - [x] Dynamic generation of routes for .md files
 - [x] Use a CMS for content generation (Forestry!)
-- [x] Design tweaks
+- [ ] Switch content writing to Notion
+- [ ] Design tweaks for content archives
 - [x] Color palette updates https://mycolor.space/
 - [x] Generate, fill in some old content for the blog
 - [x] Reusable blog list component
 - [x] Organize blog list by year
 - [x] Update to [Nuxt Content](https://content.nuxtjs.org/)
 - [x] Add post type archiving
-- [x] Generate content for portfolio
-- [ ] ~~Blog pagination~~
-- [ ] ~~Build out portfolio with CMS capabilities~~
+- [ ] Generate content for portfolio
+- [ ] Enhance generated content
 
 ## Build Setup
 
