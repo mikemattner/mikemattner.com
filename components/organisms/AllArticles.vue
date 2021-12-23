@@ -15,9 +15,11 @@
       >
         <hr v-if="index === 0" class="margin-to-main year-group-sep" />
 
-        <Header :id="item.year" tag="h3" class="display-5 year-designation">
-          {{ item.year }}
-        </Header>
+        <div class="year-designation">
+          <Header :id="item.year" tag="h3" class="display-5">
+            {{ item.year }}
+          </Header>
+        </div>
         <ul class="article-list main-content">
           <li v-for="post in item.posts" :key="post.title" class="article">
             <ArticleLink :article="post" />
@@ -90,6 +92,11 @@ export default {
     grid-column: main-content / span 7;
     @media (min-width: 769px) {
       grid-column: margin-start / span 1;
+
+      h3 {
+        position: sticky;
+        top: 80px;
+      }
     }
   }
   .year-group-sep {

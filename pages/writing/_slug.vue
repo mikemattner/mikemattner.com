@@ -3,11 +3,13 @@
     <article :key="$route.params.slug">
       <PageHero :image="writing.image" :image-alt="writing.imageAlt" dark>
         <div class="meta top main-content">
-          <fa-icon
-            class="article-type"
-            :icon="categoryIcon"
-            size="sm"
-          ></fa-icon>
+          <NuxtLink :to="`/writing/type/${writing.type}`">
+            <fa-icon
+              class="article-type"
+              :icon="categoryIcon"
+              size="sm"
+            ></fa-icon>
+          </NuxtLink>
           <time>{{ formattedDate }}</time>
         </div>
         <Header

@@ -8,7 +8,9 @@
 
 <style lang="scss">
 .default {
-  overflow-x: hidden;
+  @media (max-width: 768px) {
+    overflow-x: hidden;
+  }
 }
 .fade-enter-active,
 .fade-leave-active {

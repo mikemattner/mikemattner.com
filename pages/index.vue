@@ -113,7 +113,6 @@ export default {
   .section {
     padding: 4rem 0;
     position: relative;
-    overflow: hidden;
 
     &--work {
       padding-top: 2rem;
