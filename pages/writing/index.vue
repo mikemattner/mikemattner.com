@@ -20,9 +20,11 @@
           </div>
         </div>
       </PageHero>
-      <section id="content" class="layout">
-        <SearchForm />
-        <AllArticles :posts="writing" />
+      <section id="content">
+        <div class="layout">
+          <SearchForm />
+        </div>
+        <AllArticles :posts="writing" list-all />
       </section>
     </div>
   </section>

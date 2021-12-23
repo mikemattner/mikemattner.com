@@ -147,6 +147,14 @@ $max-width: 30rem;
   }
 }
 
+.margin-to-main {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column: margin-start / span 7;
+    text-align: left;
+  }
+}
+
 .post-content,
 .post-content > * {
   grid-column: main-content / span 6;
