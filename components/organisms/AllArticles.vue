@@ -9,52 +9,61 @@
     </div>
     <template v-if="listAll">
       <div class="layout">
-        <div class="filters-header">
-          <Button
-            v-if="filtered"
-            tertiary
-            ghost
-            small
-            icon="times"
-            icon-right
-            @click.native="clearFilter()"
-          >
-            Clear
-          </Button>
-        </div>
-        <div class="year-filters main-content">
-          <Button
-            v-for="(item, index) in yearPosts"
-            :key="index"
-            :class="[yearSelected.includes(item) ? 'active' : '']"
-            :data-year="item"
-            primary
-            ghost
-            small
-            @click.native="filter(item)"
-            >{{ item }}</Button
-          >
-        </div>
-      </div>
-      <div
-        v-for="(item, index) in sortedPosts"
-        :key="index"
-        class="layout year-group"
-        :data-year="item.year"
-      >
-        <hr v-if="index === 0" class="margin-to-main year-group-sep" />
-        <template v-if="!filtered || yearSelected.includes(item.year)">
-          <div class="year-designation">
-            <Header :id="item.year" tag="h3" class="display-5">
-              {{ item.year }}
+        <div class="main-content">
+          <div class="filters-header">
+            <Header tag="h3" class="text-small text-uppercase">
+              Filter by Year
             </Header>
+            <Button
+              v-if="filtered"
+              tertiary
+              ghost
+              small
+              icon="times"
+              icon-right
+              @click.native="clearFilter()"
+            >
+              Clear Filters
+            </Button>
           </div>
-          <ul class="article-list main-content">
-            <li v-for="post in item.posts" :key="post.title" class="article">
-              <ArticleLink :article="post" />
-            </li>
-          </ul>
-          <hr class="margin-to-main year-group-sep" />
+          <div class="year-filters">
+            <Button
+              v-for="(item, index) in yearPosts"
+              :key="index"
+              :icon="isSelected(item)"
+              icon-right
+              :class="[yearSelected.includes(item) ? 'active' : '']"
+              :data-year="item"
+              secondary
+              ghost
+              small
+              @click.native="filter(item)"
+              >{{ item }}</Button
+            >
+          </div>
+        </div>
+        <template
+          v-for="(item, index) in sortedPosts"
+          class="layout year-group"
+        >
+          <hr
+            v-if="index === 0"
+            :key="index"
+            class="margin-to-main year-group-sep"
+          />
+          <template v-if="!filtered || yearSelected.includes(item.year)">
+            <div :key="index" class="year-designation">
+              <Header :id="item.year" tag="h3" class="display-5">
+                {{ item.year }}
+              </Header>
+            </div>
+            <ul :key="index" class="article-list main-content">
+              <li v-for="post in item.posts" :key="post.title" class="article">
+                <ArticleLink :article="post" />
+              </li>
+            </ul>
+            <hr :key="index" class="margin-to-main year-group-sep" />
+          </template>
         </template>
       </div>
     </template>
@@ -119,16 +128,21 @@ export default {
         this.filtered = true
         this.yearSelected.push(year)
       } else if (this.yearSelected.includes(year)) {
-        this.filtered = false
         const index = this.yearSelected.indexOf(year)
         if (index > -1) {
           this.yearSelected.splice(index, 1)
+        }
+        if (this.yearSelected.length < 1) {
+          this.filtered = false
         }
       }
     },
     clearFilter() {
       this.filtered = false
       this.yearSelected = []
+    },
+    isSelected(year) {
+      return this.yearSelected.includes(year) ? 'times' : 'plus'
     },
   },
 }
@@ -140,6 +154,7 @@ export default {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: math.div($defaultPadding, 2);
     .button {
       margin: 0;
       margin-right: math.div($defaultPadding, 2);
@@ -149,15 +164,16 @@ export default {
     }
   }
   .filters-header {
-    grid-column: main-content / span 7;
-    @media (min-width: 769px) {
-      grid-column: margin-start / span 1;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+    display: flex;
+    align-items: baseline;
+    @media (max-width: 768px) {
+      margin-top: math.div($defaultPadding, 2);
+    }
+    h3 {
+      margin: math.div($defaultPadding, 2) 0;
     }
     .button {
-      margin: 0;
+      margin: 0 0 0 math.div($defaultPadding, 4);
     }
   }
   .year-designation {
@@ -173,6 +189,10 @@ export default {
   }
   .year-group-sep {
     margin: $defaultPadding 0;
+
+    &.first-in-list {
+      margin: 0 0 $defaultPadding 0;
+    }
   }
   .article-list {
     list-style: none;

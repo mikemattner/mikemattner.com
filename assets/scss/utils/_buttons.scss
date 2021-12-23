@@ -2,7 +2,7 @@
   border: 1px solid $primary;
   background-color: $primary;
   border-radius: $radius-large;
-  color: $darkBlue;
+  color: $darkShadeBackground;
   padding: 0.5rem 0.5rem;
   display: flex;
   align-items: center;
@@ -89,17 +89,6 @@
     //           0 16px 16px rgba(0,0,0,0.11),
     //           0 32px 32px rgba(0,0,0,0.11);
     background-image: none;
-  }
-
-  &.active {
-    color: $white;
-    border-color: $primary;
-    background-color: $primary;
-    color: $darkBlue;
-
-    &:hover {
-      color: $darkBlue;
-    }
   }
 
   &__bubble {
@@ -211,6 +200,25 @@
     .button__bubble {
       display: none;
       background-color: rgba($primary, 0.125);
+    }
+  }
+  &.active {
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+    color: $darkShadeBackground;
+
+    svg {
+      color: $darkShadeBackground;
+      fill: $darkShadeBackground;
+    }
+
+    &:hover {
+      color: $darkShadeBackground;
+    }
+    .button__bubble {
+      display: none;
+      background-color: $primaryHover;
     }
   }
 }
