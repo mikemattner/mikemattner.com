@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <PageHero>
+    <PageHero dark>
       <Header
         tag="h1"
         class="display-1"
@@ -9,40 +9,36 @@
       ></Header>
       <p v-html="statement.subtitle"></p>
     </PageHero>
-    <section id="photos" class="section section--images layout">
+    <WaveRight flip />
+    <section class="section layout">
       <div class="personal-image">
-        <StaticImage
-          :src="images[0].src"
-          :alt="images[0].alt"
-          :caption="images[0].alt"
-          rounded
-        />
+        <StaticImage :src="images[0].src" :alt="images[0].alt" rounded />
       </div>
-    </section>
-    <section class="layout">
-      <Header
-        tag="h2"
-        class="display-4 main-content"
-        v-html="experience.techTitle"
-      ></Header>
-      <div class="main-content" v-html="experience.techBody"></div>
-      <ul class="main-content technology-list">
-        <li v-for="(item, index) in experience.tech" :key="index">
-          {{ item }}
-        </li>
-      </ul>
-      <Header
-        tag="h2"
-        class="display-4 main-content"
-        v-html="page.title"
-      ></Header>
-      <div class="main-content" v-html="page.body"></div>
-      <Header
-        tag="h2"
-        class="display-4 main-content"
-        v-html="contact.title"
-      ></Header>
-      <div class="main-content" v-html="contact.body"></div>
+      <div class="personal-story">
+        <Header
+          tag="h2"
+          class="display-4 main-content"
+          v-html="experience.techTitle"
+        ></Header>
+        <div class="main-content" v-html="experience.techBody"></div>
+        <ul class="main-content technology-list">
+          <li v-for="(item, index) in experience.tech" :key="index">
+            {{ item }}
+          </li>
+        </ul>
+        <Header
+          tag="h2"
+          class="display-4 main-content"
+          v-html="page.title"
+        ></Header>
+        <div class="main-content" v-html="page.body"></div>
+        <Header
+          tag="h2"
+          class="display-4 main-content"
+          v-html="contact.title"
+        ></Header>
+        <div class="main-content" v-html="contact.body"></div>
+      </div>
     </section>
   </div>
 </template>
@@ -86,9 +82,8 @@ export default {
 
 <style lang="scss">
 .about {
-  min-height: 90vh;
-  padding-bottom: 4rem;
   .hero {
+    padding-bottom: $defaultPadding * 2;
     h1 {
       margin-bottom: 0rem;
     }
@@ -103,13 +98,51 @@ export default {
     }
   }
   .section {
-    &--images {
-      padding: $defaultPadding * 2 0 $defaultPadding;
-      .personal-image {
-        grid-column: main-content / span 6;
-        @media (min-width: $desktop) {
-          grid-column: main-content / span 6;
+    padding: $defaultPadding 0;
+    .section-divider {
+      display: none;
+      @media (min-width: $desktop) {
+        display: block;
+        margin-bottom: $defaultPadding;
+        grid-column: 2 / span 10;
+      }
+    }
+    .personal-image {
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        grid-column: content-start / span 4;
+        figure {
+          max-width: 80%;
+          margin: 0 auto;
+          position: relative;
+          img {
+            z-index: 1;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            background-color: $bodyBackground;
+            opacity: 0.75;
+            mix-blend-mode: difference;
+            transition: $transition;
+          }
+          &:hover {
+            &:after {
+              opacity: 0;
+            }
+          }
         }
+      }
+    }
+    .personal-story {
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        grid-column: 6 / span 5;
       }
     }
   }

@@ -338,6 +338,12 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
           opacity: 0;
           transform: translateY(-20px);
           transition: $transition-cubic;
+
+          .fa-heart,
+          .fa-rss {
+            transform: translateX(20px);
+            transition: $transition-cubic;
+          }
         }
       }
 
@@ -385,6 +391,22 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
             }
             &:nth-child(4) {
               transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            &:nth-child(4) {
+              transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+              .fa-rss,
+              .fa-heart {
+                opacity: 1;
+                transform: translateY(0);
+              }
+              .fa-rss {
+                transition: all 0.25s 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
+              .fa-heart {
+                transition: all 0.25s 1.25s
+                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              }
             }
           }
         }

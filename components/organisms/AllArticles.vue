@@ -106,17 +106,17 @@ export default {
         sortedArray[item] = { year: item, posts: [] }
       })
 
+      this.posts.forEach((item, index) => {
+        const year = this.convertDate(item.date)
+        sortedArray[year].posts.push(item)
+      })
+
       const ordered = Object.keys(sortedArray)
         .sort()
         .reverse()
         .map((key) => {
           return sortedArray[key]
         })
-
-      this.posts.forEach((item, index) => {
-        const year = this.convertDate(item.date)
-        sortedArray[year].posts.push(item)
-      })
 
       this.sortedPosts = ordered
     },
@@ -139,7 +139,7 @@ export default {
       this.yearSelected = []
     },
     isSelected(year) {
-      return this.yearSelected.includes(year) ? 'times' : 'plus'
+      return this.yearSelected.includes(year) ? 'times' : ''
     },
   },
 }
@@ -179,7 +179,7 @@ export default {
       grid-column: margin-start / span 1;
 
       h3 {
-        position: sticky;
+        // position: sticky;
         top: 80px;
       }
     }

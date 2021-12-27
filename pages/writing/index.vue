@@ -43,7 +43,7 @@ export default {
       writing = await $content('writing').sortBy('date', 'desc').fetch()
     } catch (e) {
       try {
-        writing = await $content('writing').sortBy('date', 'desc').fetch()
+        tags = await $content('tag').fetch()
         writing = await $content('writing').sortBy('date', 'desc').fetch()
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
