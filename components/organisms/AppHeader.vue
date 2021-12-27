@@ -341,7 +341,7 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
 
           .fa-heart,
           .fa-rss {
-            transform: translateX(20px);
+            transform: translateY(-20px);
             transition: $transition-cubic;
           }
         }

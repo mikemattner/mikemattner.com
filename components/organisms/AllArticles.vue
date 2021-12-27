@@ -9,11 +9,19 @@
     </div>
     <template v-if="listAll">
       <div class="layout">
+        <hr class="margin-to-main" />
         <div class="main-content">
           <div class="filters-header">
-            <Header tag="h3" class="text-small text-uppercase">
-              Filter by Year
-            </Header>
+            <Button
+              secondary
+              small
+              icon="filter"
+              icon-right
+              :class="[{ active: filtersOpen }]"
+              @click.native="openFilters()"
+            >
+              Filters
+            </Button>
             <Button
               v-if="filtered"
               tertiary
@@ -26,7 +34,7 @@
               Clear Filters
             </Button>
           </div>
-          <div class="year-filters">
+          <div :class="['year-filters', { active: filtersOpen }]">
             <Button
               v-for="(item, index) in yearPosts"
               :key="index"
@@ -48,7 +56,10 @@
         :key="index"
         class="layout year-group"
       >
-        <hr v-if="index === 0" class="margin-to-main year-group-sep" />
+        <hr
+          v-if="index === 0"
+          class="margin-to-main year-group-sep first-in-list"
+        />
         <template v-if="!filtered || yearSelected.includes(item.year)">
           <div class="year-designation">
             <Header :id="item.year" tag="h3" class="display-5">
@@ -80,9 +91,10 @@ export default {
   },
   data() {
     return {
-      yearPosts: Array,
-      sortedPosts: Object,
       filtered: false,
+      filtersOpen: false,
+      sortedPosts: Object,
+      yearPosts: Array,
       yearSelected: [],
     }
   },
@@ -141,6 +153,9 @@ export default {
     isSelected(year) {
       return this.yearSelected.includes(year) ? 'times' : ''
     },
+    openFilters() {
+      this.filtersOpen = !this.filtersOpen
+    },
   },
 }
 </script>
@@ -151,7 +166,10 @@ export default {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding-bottom: math.div($defaultPadding, 2);
+    padding-bottom: 0;
+    opacity: 0;
+    max-height: 0;
+    transition: $transition;
     .button {
       margin: 0;
       margin-right: math.div($defaultPadding, 2);
@@ -159,17 +177,21 @@ export default {
         margin-top: math.div($defaultPadding, 2);
       }
     }
+
+    &.active {
+      max-height: 500px;
+      opacity: 1;
+      padding-bottom: math.div($defaultPadding, 2);
+    }
   }
   .filters-header {
     display: flex;
     align-items: baseline;
-    @media (max-width: 768px) {
-      margin-top: math.div($defaultPadding, 2);
-    }
+
     h3 {
       margin: math.div($defaultPadding, 2) 0;
     }
-    .button {
+    .button:nth-child(2) {
       margin: 0 0 0 math.div($defaultPadding, 4);
     }
   }
