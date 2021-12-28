@@ -3,7 +3,7 @@
     <div :key="$route.params.slug">
       <PageHero>
         <div class="main-content">
-          <Header tag="h1" class="display-2 main-content" decorator>{{
+          <Header tag="h1" class="display-1 main-content" decorator>{{
             intro.title
           }}</Header>
           <div>
@@ -24,7 +24,7 @@
         <div class="layout">
           <SearchForm />
         </div>
-        <AllArticles :posts="writing" list-all />
+        <AllArticles :posts="writing" :all-tags="tags" list-all />
       </section>
     </div>
   </section>

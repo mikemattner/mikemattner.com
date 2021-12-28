@@ -7,7 +7,7 @@
     <span class="button__content">
       <slot />
     </span>
-    <fa-icon v-if="icon" :icon="icon" size="sm"></fa-icon>
+    <FaIcon v-if="icon" :icon="icon" size="sm"></FaIcon>
   </component>
 </template>
 

@@ -142,7 +142,7 @@ export default {
     .personal-story {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
-        grid-column: 6 / span 5;
+        grid-column: 6 / span 4;
       }
     }
   }
