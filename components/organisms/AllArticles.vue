@@ -205,9 +205,14 @@ export default {
 
       this.posts.forEach((item, index) => {
         const year = this.convertDate(item.date)
-        const tag = this.convertList(item.tag)
+
+        item.tag.forEach((item) => {
+          if (!sortedArray[year].tags.includes(item)) {
+            sortedArray[year].tags.push(item)
+          }
+        })
+
         sortedArray[year].posts.push(item)
-        sortedArray[year].tags.push(tag)
       })
 
       const ordered = Object.keys(sortedArray)
@@ -255,7 +260,7 @@ export default {
 .all-articles {
   .all-filters {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: $base;
     padding-bottom: 0;
     opacity: 0;
@@ -304,7 +309,8 @@ export default {
     display: flex;
     align-items: center;
     .button--clear {
-      margin: 0 0 0 math.div($defaultPadding, 4);
+      margin: 0 0 0 auto;
+      // margin: 0 0 0 math.div($defaultPadding, 4);
     }
   }
   .year-designation {
