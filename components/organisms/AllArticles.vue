@@ -46,7 +46,6 @@
                   :icon="isSelected(item)"
                   icon-right
                   :class="[filtersSelected.includes(item) ? 'active' : '']"
-                  :data-year="item"
                   secondary
                   ghost
                   small
@@ -65,7 +64,6 @@
                   :icon="isSelected(item)"
                   icon-right
                   :class="[filtersSelected.includes(item) ? 'active' : '']"
-                  :data-year="item"
                   secondary
                   ghost
                   small
@@ -87,45 +85,16 @@
           v-if="index === 0"
           class="margin-to-main year-group-sep first-in-list"
         />
-        <template
-          v-if="
-            !filtered ||
-            (filteredBoth &&
-              filtersSelected.includes(item.year) &&
-              filtersSelected.some((r) => item.tags.includes(r))) ||
-            (!filteredBoth &&
-              filteredYears &&
-              filtersSelected.includes(item.year)) ||
-            (!filteredBoth &&
-              filteredTags &&
-              filtersSelected.some((r) => item.tags.includes(r)))
-          "
-        >
-          <div class="year-designation" :data-tags="item.tags">
+        <template v-if="displayFiltered(item.year, item.tags)">
+          <div class="year-designation">
             <Header :id="item.year" tag="h3" class="display-5">
               {{ item.year }}
             </Header>
           </div>
           <ul class="article-list main-content">
-            <li
-              v-for="post in item.posts"
-              :key="post.title"
-              :data-tags="convertList(post.tag)"
-              class="article"
-            >
+            <li v-for="post in item.posts" :key="post.title" class="article">
               <ArticleLink
-                v-if="
-                  !filtered ||
-                  (filteredBoth &&
-                    filtersSelected.includes(item.year) &&
-                    filtersSelected.some((r) => post.tag.includes(r))) ||
-                  (!filteredBoth &&
-                    filteredTags &&
-                    filtersSelected.some((r) => post.tag.includes(r))) ||
-                  (!filteredBoth &&
-                    filteredYears &&
-                    filtersSelected.includes(item.year))
-                "
+                v-if="displayFiltered(item.year, post.tag)"
                 :article="post"
               />
             </li>
@@ -172,7 +141,7 @@ export default {
     filteredYears() {
       return this.filtersSelected.some((r) => this.yearsInPosts.includes(r))
     },
-    filteredBoth() {
+    filteredAll() {
       return this.filteredTags && this.filteredYears
     },
     filtersIcon() {
@@ -248,9 +217,30 @@ export default {
     openFilters() {
       this.filtersOpen = !this.filtersOpen
     },
-    convertList(items) {
-      if (items.length === 1) return items.join()
-      return items.join(',')
+    displayFiltered(year, tag) {
+      if (!this.filtered) return true
+      if (
+        this.filteredAll &&
+        this.filtersSelected.includes(year) &&
+        this.filtersSelected.some((r) => tag.includes(r))
+      ) {
+        return true
+      }
+      if (
+        !this.filteredAll &&
+        this.filteredYears &&
+        this.filtersSelected.includes(year)
+      ) {
+        return true
+      }
+      if (
+        !this.filteredAll &&
+        this.filteredTags &&
+        this.filtersSelected.some((r) => tag.includes(r))
+      ) {
+        return true
+      }
+      return false
     },
   },
 }
