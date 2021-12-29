@@ -51,7 +51,7 @@ export default {
   },
   head() {
     return {
-      titleTemplate: `${this.type.name}  – %s`,
+      titleTemplate: `${this.type.title}  – %s`,
     }
   },
 }
