@@ -58,11 +58,12 @@ export default {
   &__type {
     font-size: $base * 0.75;
     font-weight: 700;
+    font-family: $display-font;
     margin-left: 0.5rem;
-    opacity: 0;
+    // opacity: 0;
     transition: all 0.125s ease-in-out;
-    transform: translateX(-100px);
-    visibility: hidden;
+    // transform: translateX(-100px);
+    // visibility: hidden;
     line-height: 1.2;
     color: #fff;
     z-index: 9;
@@ -84,9 +85,9 @@ export default {
         }
       }
       .brand-logo__type {
-        opacity: 1;
-        transform: translateX(0);
-        visibility: visible;
+        // opacity: 1;
+        // transform: translateX(0);
+        // visibility: visible;
         // color: #fff;
       }
     }

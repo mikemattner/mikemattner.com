@@ -1,12 +1,13 @@
 <template>
   <section class="section section--tag">
     <div :key="$route.params.slug">
-      <PageHero>
+      <PageHero dark>
         <Header tag="h1" class="display-1 main-content" decorator>
           {{ tag.title }}</Header
         >
         <p class="main-content" v-html="tag.description"></p>
       </PageHero>
+      <WaveRight flip />
       <section id="content" class="layout">
         <div class="main-content">
           <AllArticles :posts="writing" />

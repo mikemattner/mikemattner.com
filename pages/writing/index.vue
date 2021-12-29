@@ -1,7 +1,7 @@
 <template>
   <section class="section section--writing">
     <div :key="$route.params.slug">
-      <PageHero>
+      <PageHero dark>
         <div class="main-content">
           <Header tag="h1" class="display-1 main-content" decorator>{{
             intro.title
@@ -20,6 +20,7 @@
           </div>
         </div>
       </PageHero>
+      <WaveRight flip />
       <section id="content">
         <div class="layout">
           <SearchForm />
@@ -89,8 +90,7 @@ export default {
     }
   }
   .search-form {
-    // margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: math.div($defaultPadding, 2);
     grid-column: main-content / span 6;
     @media (min-width: $tablet) {
       grid-column: main-content / span 6;

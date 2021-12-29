@@ -9,20 +9,14 @@
     </template>
     <template v-if="listAll">
       <div class="layout">
-        <div class="main-content">
-          <hr />
-          <div class="filters-header">
-            <Button
-              secondary
-              ghost
-              small
-              :icon="filtersIcon"
-              icon-right
-              :class="['button--filter', { active: filtersOpen }]"
-              @click.native="openFilters()"
-            >
-              Filters
-            </Button>
+        <div
+          :class="[
+            'main-content',
+            'filters-container',
+            { active: filtersOpen },
+          ]"
+        >
+          <div :class="['filters-header']">
             <Button
               v-if="filtered"
               class="button--clear"
@@ -34,6 +28,17 @@
               @click.native="clearFilter()"
             >
               Clear Filters
+            </Button>
+            <Button
+              tertiary
+              ghost
+              small
+              :icon="filtersIcon"
+              icon-right
+              :class="['button--filter', { active: filtersOpen }]"
+              @click.native="openFilters()"
+            >
+              Filters
             </Button>
           </div>
           <div :class="['all-filters', { active: filtersOpen }]">
@@ -252,10 +257,12 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: $base;
-    padding-bottom: 0;
+    padding: 0 math.div($defaultPadding, 2);
     opacity: 0;
     max-height: 0;
     transition: $transition-cubic;
+    background-color: $darkShadeBackground;
+    border-radius: $radius-large $radius-large 0 0;
 
     h3 {
       margin-top: 0;
@@ -287,7 +294,7 @@ export default {
     &.active {
       max-height: 500px;
       opacity: 1;
-      padding-bottom: math.div($defaultPadding, 2);
+      padding: math.div($defaultPadding, 2);
 
       .filter-row {
         opacity: 1;
@@ -298,9 +305,9 @@ export default {
   .filters-header {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     .button--clear {
-      margin: 0 0 0 auto;
-      // margin: 0 0 0 math.div($defaultPadding, 4);
+      margin: 0 auto 0 0;
     }
   }
   .year-designation {

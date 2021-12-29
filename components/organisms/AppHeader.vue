@@ -128,6 +128,9 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
 
   &.fixed {
     background-color: $transparent-bg;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+      0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+      0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
   }
 
   @media (min-width: 769px) {
@@ -339,12 +342,12 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
           transform: translateY(-20px);
           transition: $transition-cubic;
 
-          .fa-heart,
-          .fa-rss {
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: $transition-cubic;
-          }
+          // .fa-heart,
+          // .fa-rss {
+          //   opacity: 0;
+          //   transform: translateY(-20px);
+          //   transition: $transition-cubic;
+          // }
         }
       }
 
@@ -396,18 +399,18 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
             &:nth-child(4) {
               transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-              .fa-rss,
-              .fa-heart {
-                opacity: 1;
-                transform: translateY(0);
-              }
-              .fa-rss {
-                transition: all 0.25s 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-              }
-              .fa-heart {
-                transition: all 0.25s 1.25s
-                  cubic-bezier(0.68, -0.55, 0.265, 1.55);
-              }
+              // .fa-rss,
+              // .fa-heart {
+              //   opacity: 1;
+              //   transform: translateY(0);
+              // }
+              // .fa-rss {
+              //   transition: all 0.25s 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              // }
+              // .fa-heart {
+              //   transition: all 0.25s 1.25s
+              //     cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              // }
             }
           }
         }
