@@ -2,11 +2,11 @@
 title: Sorting Content For Archives
 date: 2021-12-27
 type: entry
-description: 'Organizing Nuxt&rsquo;s built-in content with array sorting.'
+description: Organizing Nuxt&rsquo;s built-in content with array sorting.
 tag:
-  - Development
----
+- Development
 
+---
 I keep playing around with how best to display content using Nuxt. I think initially setting this up, I opted to display a long list of articles and roll with it. Over time this will weaken the scannable nature of the archive page.
 
 I'm attempting to rectify this now while the list is short by breaking it down into a year-based archive.
@@ -108,6 +108,8 @@ this.sortedPosts = ordered
 ```
 
 This isn't the most clever solution, but if as a Nuxt Content user you're looking for some inspiration, feel free to take this code and modify it. Let me know if you have a better solution.
+
+## Conclusion
 
 Being able to sort the list into years gives me a more scannable page layout as well, and, because I now have it displayed this way, I have added unnecessary year filtering. Why not?
 

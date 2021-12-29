@@ -27,7 +27,7 @@ sections:
   label: Types
   create: all
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 - type: directory
   path: data
   label: Pages
