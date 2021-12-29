@@ -24,7 +24,7 @@
               Filters
             </Button>
             <Button
-              v-if="filtered || tagsFiltered"
+              v-if="filtered"
               class="button--clear"
               tertiary
               ghost
