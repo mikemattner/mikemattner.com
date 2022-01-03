@@ -84,12 +84,12 @@ export default {
           fill: $darkBlue;
         }
       }
-      .brand-logo__type {
-        // opacity: 1;
-        // transform: translateX(0);
-        // visibility: visible;
-        // color: #fff;
-      }
+      // .brand-logo__type {
+      //   // opacity: 1;
+      //   // transform: translateX(0);
+      //   // visibility: visible;
+      //   // color: #fff;
+      // }
     }
   }
 }
