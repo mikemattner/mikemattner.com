@@ -36,7 +36,7 @@ export default {
     border: 1px solid $primary;
     background: transparent;
     z-index: 10;
-    transition: $transition;
+    transition: $transition-cubic-slow;
     flex: 0 0 1.5rem;
 
     @media (max-width: 768px) {
@@ -47,11 +47,11 @@ export default {
 
     .circle-shape {
       fill: transparent;
-      transition: $transition;
+      transition: $transition-cubic-slow;
     }
     .logo-shape {
       fill: $primary;
-      transition: $transition;
+      transition: $transition-cubic-slow;
     }
   }
 
@@ -77,6 +77,7 @@ export default {
       .brand-logo__image {
         border: 1px solid rgba($primary, 1);
         background-color: $primary;
+        transform: rotate(720deg);
         .circle-shape {
           fill: rgba($primary, 1);
         }

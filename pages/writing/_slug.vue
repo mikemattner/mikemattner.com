@@ -376,9 +376,18 @@ export default {
   }
   h2 {
     font-size: $h4;
+
+    &:after {
+      content: '';
+      margin-top: math.div($defaultPadding, 2);
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $borderColor-light;
+    }
   }
   h3 {
-    font-size: $h4;
+    font-size: $h5;
   }
   .attribution {
     font-size: $small;
