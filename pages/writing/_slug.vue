@@ -4,11 +4,9 @@
       <PageHero :image="writing.image" :image-alt="writing.imageAlt" dark>
         <div class="meta top main-content">
           <NuxtLink :to="`/writing/type/${writing.type}`">
-            <fa-icon
-              class="article-type"
-              :icon="categoryIcon"
-              size="sm"
-            ></fa-icon>
+            <span class="article-type"
+              ><fa-icon :icon="categoryIcon" size="sm"></fa-icon>
+            </span>
           </NuxtLink>
           <time>{{ formattedDate }}</time>
         </div>
@@ -178,13 +176,15 @@ export default {
       margin-bottom: 0.75rem;
     }
     .article-type {
-      display: block;
-      // margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 1.25rem !important;
       height: 1.25rem;
-      padding: math.div($defaultPadding, 5);
+      padding: 0;
       border-radius: 50%;
       background: $middleGray;
+      flex-shrink: 0;
       @include max-media($tablet) {
         width: 1.5rem !important;
         height: 1.5rem;

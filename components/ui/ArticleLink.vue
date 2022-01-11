@@ -7,10 +7,12 @@
       <div class="article-meta">
         <time>{{ formatDate(article.date) }}</time>
       </div>
-      <Header tag="h3" class="display-5 article-title"
-        ><span v-html="article.title"></span
-        ><fa-icon :icon="categoryIcon" size="sm"></fa-icon
-      ></Header>
+      <Header tag="h3" class="display-5 article-title">
+        <span v-html="article.title"></span>
+        <span class="article-type">
+          <fa-icon :icon="categoryIcon" size="sm"></fa-icon>
+        </span>
+      </Header>
       <div v-if="article.description" class="article-description">
         <span v-html="article.description"></span>
       </div>
@@ -115,13 +117,18 @@ export default {
       font-size: $base * 1.2;
     }
 
-    svg {
-      margin-left: 1rem;
+    .article-type {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 1.25rem !important;
       height: 1.25rem;
-      padding: math.div($defaultPadding, 5);
+      padding: 0;
+      margin-left: math.div($defaultPadding, 3);
       border-radius: 50%;
       background: $middleGray;
+      font-size: $small;
+      flex-shrink: 0;
       @include max-media($tablet) {
         width: 1.5rem !important;
         height: 1.5rem;
