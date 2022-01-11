@@ -11,7 +11,7 @@ link:
 ---
 I love techniques that allow designers and developers to “break” the boxed in nature of web design in a general sense. As a micro trend, non-rectangular headers have become one of my favorite techniques to accomplish this ask.
 
-### So, how do I do this?
+## So, how do I do this?
 
 Per [CSS-Tricks](https://css-tricks.com/creating-non-rectangular-headers/), there are several methods available to accomplish this particular task:
 

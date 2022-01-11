@@ -12,6 +12,8 @@ Getting ready to start on year three of the pandemic has been a little overwhelm
 
 ## Personal Goals
 
+What I'm hoping to achieve on a personal level in 2022. This isn't exhaustive, but I do feel it's attainable.
+
 ### 1. Increase the number of books I read
 
 from just a few every year to one every other week. I have tended to pick up my phone over picking up a book in the last few years—time to actively change that habit. I figure starting and finishing a book within a two week time period is relatively attainable.
@@ -29,6 +31,8 @@ In early 2020, after a few years off from regular gym workouts, I jumped right b
 We’ve been in the middle of a kitchen remodel since before the beginning of the pandemic. We got it to a fully functioning state, and hit a motivation plateau. This year is the year of project completion, but this time, I need to chunk them out better, and decrease the size of said project. And then finish them. For the love of God, finish them.
 
 ## Professional Goals
+
+This category is tougher to get a handle on. I spent years burning out on some of the more technical portions of my career. Right now, these goals are a must attain status.
 
 ### 1. Typescript mastery
 

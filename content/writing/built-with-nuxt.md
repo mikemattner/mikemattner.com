@@ -10,7 +10,7 @@ tag:
 
 **12/31/2020** – _This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files. Can I also comment on 2020 as a whole? Because, no thanks, I don't want to do that again._
 
-### Introduction
+## Introduction
 
 I've spent far too many years working with WordPress as my personal writing platform – to the point of including years and years of old, stale code as I rebuilt or redesigned my old personal blog.
 
@@ -18,7 +18,7 @@ And so last year I decided to learn [VueJS](https://vuejs.org/)–and with it [N
 
 I started by building just a few simple pages that acted as a brochure style experience and have started to build out some additional features. The first is a simple blogging platform using markdown files.
 
-### Loading Content
+## Loading Content
 
 I'm primarily loading content from a few different static sources: yaml, json, and markdown files. For example, `index.vue` pulls in the following:
 

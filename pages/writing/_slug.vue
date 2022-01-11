@@ -381,13 +381,41 @@ export default {
       content: '';
       margin-top: math.div($defaultPadding, 2);
       display: block;
-      height: 1px;
+      height: 4px;
       width: 100%;
-      background-color: $borderColor-light;
+      border-top: 2px dotted $borderColor-light;
     }
   }
   h3 {
     font-size: $h5;
+  }
+  h2,
+  h3,
+  h4 {
+    & > a {
+      margin-left: 0;
+      opacity: 0;
+      transition: $transition;
+      &:before {
+        content: '#';
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-left: -1.25rem;
+        padding-right: 1rem;
+        position: absolute;
+      }
+    }
+    &:hover {
+      & > a {
+        opacity: 1;
+      }
+    }
   }
   .attribution {
     font-size: $small;

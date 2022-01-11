@@ -10,7 +10,7 @@ One of the primary reasons I exited the WordPress space for my personal portfoli
 
 At the same time as all of this was going on, I was also diving head first into the world of [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/) at work. Going with a solution like this for a personal project seemed like such a natural path towards professional development, and a safe solution for ditching WordPress. No offense to WordPress&mdash;it can be great and I miss the writing experience&mdash;but I just couldn't continue to fix a constant hack that probably shouldn't have been happening.
 
-### How to Handle Content
+## How to Handle Content
 Quite frankly, one of the most difficult decisions I made was to just jettison everything from a content perspective and to start fresh (although, you'll see on the site some of that old content back in action). I think I'd been posting periodically since about 2006 on this very domain. That is a LONG time, and a lot of SEO potential I just scrapped.
 
 As I found myself more interested in this development direction, and the notion of static site generators, I figured a simple markdown implementation would suit me just fine.
@@ -75,7 +75,7 @@ module.exports = {
 
 Through some other wonderful magic in different pages and dynamic routes, I got it all functional. And then I just stopped trying to write using this system. It felt messy, cumbersome, and not fun. It made me miss WordPress.
 
-### Nuxt Content
+## Nuxt Content
 
 I was pretty close to giving up on this experiment entirely until I saw the release of [Nuxt Content](https://content.nuxtjs.org). It completely changed the game for me. I no longer needed to think about how to handle routes, tagging, etc. when it came to the content. I could rely on the system itself to make development and writing a breeze.
 
