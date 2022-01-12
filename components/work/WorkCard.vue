@@ -88,11 +88,20 @@ export default {
       display: flex;
       align-items: flex-start;
       margin-bottom: 0;
-      margin-top: math.div($defaultPadding, 4);
+      padding-left: 0;
+      margin-top: math.div($defaultPadding, 6);
       line-height: 1.25;
 
       li {
-        margin-right: math.div($defaultPadding, 1.5);
+        margin-right: math.div($defaultPadding, 4);
+        margin-left: 0;
+        padding: math.div($defaultPadding, 6);
+        border-radius: $radius;
+        background-color: $bodyBackground;
+        line-height: 1;
+        &:before {
+          display: none;
+        }
       }
     }
     .work-image {
