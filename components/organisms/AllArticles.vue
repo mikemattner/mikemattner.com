@@ -3,7 +3,11 @@
     <template v-if="!listAll">
       <ul class="article-list main-content">
         <li v-for="post in posts" :key="post.title" class="article">
-          <ArticleLink :article="post" />
+          <ArticleLink
+            v-if="post.type === 'entry' || post.type === 'link'"
+            :article="post"
+          />
+          <QuoteDisplay v-if="post.type === 'quote'" :article="post" />
         </li>
       </ul>
     </template>
@@ -99,7 +103,16 @@
           <ul class="article-list main-content">
             <li v-for="post in item.posts" :key="post.title" class="article">
               <ArticleLink
-                v-if="displayFiltered(item.year, post.tag)"
+                v-if="
+                  (post.type === 'entry' || post.type === 'link') &&
+                  displayFiltered(item.year, post.tag)
+                "
+                :article="post"
+              />
+              <QuoteDisplay
+                v-if="
+                  post.type === 'quote' && displayFiltered(item.year, post.tag)
+                "
                 :article="post"
               />
             </li>

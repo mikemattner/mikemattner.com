@@ -21,7 +21,7 @@
         </div>
       </PageHero>
       <WaveRight flip />
-      <section id="content">
+      <section>
         <div class="layout">
           <SearchForm />
         </div>
