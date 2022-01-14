@@ -117,23 +117,13 @@ export default {
           position: relative;
           img {
             z-index: 1;
-          }
-          &:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
-            background-color: $bodyBackground;
-            opacity: 0.75;
-            mix-blend-mode: difference;
+            filter: grayscale(2);
             transition: $transition;
           }
           &:hover {
-            &:after {
-              opacity: 0;
+            img {
+              filter: grayscale(0);
+              transform: scale(1.05) rotate(1deg);
             }
           }
         }
