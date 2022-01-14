@@ -8,12 +8,14 @@
         <p class="main-content" v-html="tag.description"></p>
       </PageHero>
       <WaveRight flip />
-      <section id="content" class="layout">
-        <div class="main-content">
-          <AllArticles :posts="writing" />
-          <Button to="/writing/" icon="chevron-left" icon-left primary ghost>
-            {{ button.text }}
-          </Button>
+      <section>
+        <AllArticles list-all :posts="writing" />
+        <div class="layout">
+          <div class="main-content">
+            <Button to="/writing/" icon="chevron-left" icon-left primary ghost>
+              {{ button.text }}
+            </Button>
+          </div>
         </div>
       </section>
     </div>

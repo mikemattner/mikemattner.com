@@ -21,11 +21,11 @@
         </div>
       </PageHero>
       <WaveRight flip />
-      <section id="content">
+      <section>
         <div class="layout">
           <SearchForm />
         </div>
-        <AllArticles :posts="writing" :all-tags="tags" list-all />
+        <AllArticles :posts="writing" :all-tags="tags" list-all list-filters />
       </section>
     </div>
   </section>

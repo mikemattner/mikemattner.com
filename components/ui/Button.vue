@@ -26,6 +26,10 @@ export default {
       type: String,
       default: '',
     },
+    href: {
+      type: String,
+      default: '',
+    },
     to: {
       type: String,
       default: '',

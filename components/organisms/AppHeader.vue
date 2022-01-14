@@ -46,19 +46,6 @@
               small
               >R&eacute;sum&eacute;
             </Button>
-            <span class="icon-surround">
-              <a
-                href="https://mikemattner.com/feed"
-                title="RSS Feed"
-                class="footer-feed"
-                ><fa-icon icon="rss" size="sm"></fa-icon
-              ></a>
-              <a
-                href="https://github.com/mikemattner/mikemattner.com"
-                title="View GitHub Project"
-                ><fa-icon icon="heart" size="sm"></fa-icon
-              ></a>
-            </span>
           </li>
         </ul>
       </nav>

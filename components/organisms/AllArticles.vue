@@ -8,7 +8,7 @@
       </ul>
     </template>
     <template v-if="listAll">
-      <div class="layout">
+      <div v-if="listFilters" class="layout">
         <div
           :class="[
             'main-content',
@@ -99,7 +99,16 @@
           <ul class="article-list main-content">
             <li v-for="post in item.posts" :key="post.title" class="article">
               <ArticleLink
-                v-if="displayFiltered(item.year, post.tag)"
+                v-if="
+                  (post.type === 'entry' || post.type === 'link') &&
+                  displayFiltered(item.year, post.tag)
+                "
+                :article="post"
+              />
+              <QuoteDisplay
+                v-if="
+                  post.type === 'quote' && displayFiltered(item.year, post.tag)
+                "
                 :article="post"
               />
             </li>
@@ -125,6 +134,10 @@ export default {
       },
     },
     listAll: {
+      type: Boolean,
+      required: false,
+    },
+    listFilters: {
       type: Boolean,
       required: false,
     },
