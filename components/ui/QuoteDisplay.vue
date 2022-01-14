@@ -7,9 +7,9 @@
       <time>{{ formatDate(article.date) }}</time>
     </div>
     <Header tag="h3" class="display-5 article-title">
-      <nuxt-link :to="`/writing/${formatSlug(article.slug)}`">
+      <NuxtLink :to="`/writing/${formatSlug(article.slug)}`">
         <span v-html="article.title"></span>
-      </nuxt-link>
+      </NuxtLink>
       <span class="article-type">
         <fa-icon :icon="categoryIcon" size="sm"></fa-icon>
       </span>
@@ -69,7 +69,7 @@ export default {
   background-image: none;
   position: relative;
   transition: $transition;
-  margin: $defaultPadding 0;
+  padding: $defaultPadding 0;
 
   h3 {
     font-size: $h5;
@@ -125,11 +125,7 @@ export default {
     .attribution {
       font-size: $small;
       text-transform: uppercase;
-      grid-column: main-content / span 6;
-      @media (min-width: $tablet) {
-        grid-column-start: main-content-start;
-        grid-column-end: main-content-end;
-      }
+      margin-bottom: 0;
     }
   }
   .article-title {

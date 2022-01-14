@@ -3,16 +3,12 @@
     <template v-if="!listAll">
       <ul class="article-list main-content">
         <li v-for="post in posts" :key="post.title" class="article">
-          <ArticleLink
-            v-if="post.type === 'entry' || post.type === 'link'"
-            :article="post"
-          />
-          <QuoteDisplay v-if="post.type === 'quote'" :article="post" />
+          <ArticleLink :article="post" />
         </li>
       </ul>
     </template>
     <template v-if="listAll">
-      <div class="layout">
+      <div v-if="listFilters" class="layout">
         <div
           :class="[
             'main-content',
@@ -138,6 +134,10 @@ export default {
       },
     },
     listAll: {
+      type: Boolean,
+      required: false,
+    },
+    listFilters: {
       type: Boolean,
       required: false,
     },
