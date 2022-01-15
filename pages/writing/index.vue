@@ -4,11 +4,11 @@
       <PageHero dark>
         <div class="main-content">
           <Header tag="h1" class="display-1 main-content" decorator>{{
-            intro.title
+            writingPage.title
           }}</Header>
           <div>
             <p>
-              {{ intro.body }}
+              {{ writingPage.introBody }}
               <span class="tags">
                 <span v-for="(tag, index) in tags" :key="index">
                   <nuxt-link :to="`/writing/tag/${formattedTag(tag.title)}`">{{
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { intro } from '@/data/archive.yaml'
+import { writingPage } from '@/data/pages.yaml'
 export default {
   scrollToTop: true,
   transition: 'fade',
@@ -57,7 +57,7 @@ export default {
   },
   data() {
     return {
-      intro,
+      writingPage,
     }
   },
   head() {

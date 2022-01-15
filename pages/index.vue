@@ -5,10 +5,10 @@
         tag="h1"
         class="text-huge"
         decorator
-        v-html="intro.title"
+        v-html="homePage.intro.title"
       ></Header>
       <div class="header-content">
-        <div v-html="intro.body"></div>
+        <div v-html="homePage.intro.body"></div>
         <Button to="/about" primary ghost>More About Me</Button>
       </div>
     </PageHero>
@@ -19,9 +19,9 @@
           tag="h2"
           class="display-4"
           decorator
-          v-html="introduction.title"
+          v-html="homePage.work.title"
         ></Header>
-        <p v-html="introduction.body"></p>
+        <p v-html="homePage.work.body"></p>
         <WorkList :work="work" />
       </div>
     </section>
@@ -29,12 +29,12 @@
     <section id="content" class="section section--writing layout">
       <div class="main-content">
         <Header tag="h2" class="display-4" decorator>{{
-          writing.title
+          homePage.writing.title
         }}</Header>
-        <p v-html="writing.body"></p>
+        <p v-html="homePage.writing.body"></p>
         <AllArticles :posts="posts" short />
-        <Button :to="writing.link" ghost primary>{{
-          writing.buttonTitle
+        <Button :to="homePage.writing.link" ghost primary>{{
+          homePage.writing.buttonTitle
         }}</Button>
       </div>
     </section>
@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import { intro, writing } from '~/data/home.yaml'
-import { introduction, work } from '~/data/work.yaml'
+import { homePage } from '~/data/pages.yaml'
+import { work } from '~/data/work.yaml'
 
 export default {
   name: 'Home',
@@ -69,9 +69,7 @@ export default {
   },
   data() {
     return {
-      intro,
-      writing,
-      introduction,
+      homePage,
       work,
     }
   },
