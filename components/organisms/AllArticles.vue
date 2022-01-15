@@ -1,11 +1,11 @@
 <template>
   <section class="all-articles">
     <template v-if="!listAll">
-      <ul class="article-list main-content">
-        <li v-for="post in posts" :key="post.title" class="article">
-          <ArticleLink :article="post" />
-        </li>
-      </ul>
+      <div class="article-list">
+        <hr class="year-group-sep first-in-list" />
+        <ArticleLink v-for="post in posts" :key="post.title" :article="post" />
+        <hr class="year-group-sep" />
+      </div>
     </template>
     <template v-if="listAll">
       <div v-if="listFilters" class="layout">
