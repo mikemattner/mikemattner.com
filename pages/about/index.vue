@@ -5,57 +5,44 @@
         tag="h1"
         class="display-1"
         decorator
-        v-html="statement.title"
+        v-html="about.title"
       ></Header>
-      <p v-html="statement.subtitle"></p>
+      <p v-html="about.subtitle"></p>
     </PageHero>
-    <WaveRight flip />
     <section class="section layout">
       <div class="personal-image">
         <StaticImage :src="images[0].src" :alt="images[0].alt" rounded />
       </div>
       <div class="personal-story">
-        <Header
-          tag="h2"
-          class="display-4 main-content"
-          v-html="experience.techTitle"
-        ></Header>
-        <div class="main-content" v-html="experience.techBody"></div>
-        <ul class="main-content technology-list">
-          <li v-for="(item, index) in experience.tech" :key="index">
-            {{ item }}
-          </li>
-        </ul>
-        <Header
-          tag="h2"
-          class="display-4 main-content"
-          v-html="page.title"
-        ></Header>
-        <div class="main-content" v-html="page.body"></div>
-        <Header
-          tag="h2"
-          class="display-4 main-content"
-          v-html="contact.title"
-        ></Header>
-        <div class="main-content" v-html="contact.body"></div>
+        <nuxt-content :document="about" />
       </div>
     </section>
+    <WaveRight flip />
   </div>
 </template>
 
 <script>
-import { contact, experience, page, statement } from '~/data/about.yaml'
-
 export default {
   name: 'About',
   scrollToTop: true,
   transition: 'fade',
+  async asyncData({ $content, app, error }) {
+    let about
+    try {
+      about = await $content('about').fetch()
+    } catch (e) {
+      try {
+        about = await $content('about').fetch()
+      } catch (e) {
+        return error({ statusCode: 404, message: 'Content not found' })
+      }
+    }
+    return {
+      about,
+    }
+  },
   data() {
     return {
-      contact,
-      experience,
-      page,
-      statement,
       images: [
         {
           src: 'personal/mike-painting.jpg',
@@ -99,14 +86,8 @@ export default {
   }
   .section {
     padding: $defaultPadding 0;
-    .section-divider {
-      display: none;
-      @media (min-width: $desktop) {
-        display: block;
-        margin-bottom: $defaultPadding;
-        grid-column: 2 / span 10;
-      }
-    }
+    background-color: $darkShadeBackground;
+
     .personal-image {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
@@ -132,7 +113,23 @@ export default {
     .personal-story {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
-        grid-column: 6 / span 4;
+        grid-column: 6 / span 6;
+      }
+
+      h2 {
+        font-size: $h4;
+
+        &:after {
+          content: '';
+          margin-top: math.div($defaultPadding, 2);
+          display: block;
+          height: 4px;
+          width: 100%;
+          border-top: 2px dotted $borderColor-light;
+        }
+      }
+      h3 {
+        font-size: $h5;
       }
     }
   }

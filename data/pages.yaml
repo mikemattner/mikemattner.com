@@ -1,0 +1,26 @@
+homePage: 
+  intro:
+    title: I&rsquo;m Mike, a designer & developer from Michigan.
+    body: <p>I currently work as a UI Engineer at&nbsp;AccuLynx.
+      You can find me as @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
+      <a href="https://twitter.com/mikemattner">Twitter</a>,
+      <a href="https://codepen.io/mikemattner/#">Codepen</a>,
+      &amp; <a href="https://github.com/mikemattner">GitHub</a>.</p>
+
+  work:
+    title: Selected Work
+    body: A small selection of projects I&rsquo;ve worked on.
+
+  writing:
+    title: Writing
+    body: Writing about my profession, hobbies, and other longer format topics.
+    buttonTitle: Read More
+    link: /writing
+
+writingPage:
+  title: Writing
+  introBody: I like to write about
+
+usesPage:
+  title: Uses
+  body: Some of the technology I use on a day-to-day basis
