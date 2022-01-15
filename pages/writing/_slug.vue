@@ -21,6 +21,7 @@
       </PageHero>
       <WaveRight flip />
       <div id="content" :data-type="writing.type" :class="writing.type">
+        <nuxt-content :document="writing" />
         <aside v-if="writing.link" class="layout">
           <div class="article-link main-content">
             <p>Visit the content I&rsquo;m referencing</p>
@@ -37,7 +38,6 @@
             </Button>
           </div>
         </aside>
-        <nuxt-content :document="writing" />
         <div v-if="writing.type == 'quote'" class="layout">
           <p class="attribution">&mdash; {{ writing.attribution }}</p>
         </div>
@@ -331,7 +331,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: $defaultPadding;
+    margin-top: $defaultPadding;
     margin-left: math.div($defaultPadding, 2) * -1;
     margin-right: math.div($defaultPadding, 2) * -1;
     color: $middleGray;

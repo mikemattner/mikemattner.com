@@ -31,60 +31,14 @@ $max-width: 30rem;
       [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
   }
 }
-.four-col {
-  display: grid;
-  grid-template-columns:
-    [full-start] $column-gap
-    [first-col] 1fr
-    [first-gap] $column-gap
-    [second-col] 1fr
-    [full-end] $column-gap;
-  @media (min-width: $tablet) {
-    column-gap: $column-gap;
-    grid-template-columns:
-      [full-start] minmax($column-gap, calc(50vw - #{$max-width}))
-      [first-col] 1fr
-      [second-col] 1fr
-      [third-col] 1fr
-      [fourth-col] 1fr
-      [full-end] minmax($column-gap, calc(50vw - #{$max-width}));
-  }
-}
-
-.three-col {
-  display: grid;
-  grid-template-columns:
-    [full-start] $column-gap
-    [first-col] 1fr
-    [first-gap] $column-gap
-    [second-col] 1fr
-    [second-gap] $column-gap
-    [third-col] 1fr
-    [full-end] $column-gap;
-  @media (min-width: $tablet) {
-    column-gap: $column-gap;
-    grid-template-columns:
-      [full-start] $column-gap
-      [first-col] 1fr
-      [second-col] 1fr
-      [third-col] 1fr
-      [full-end] $column-gap;
-  }
-}
 
 .two-col {
   display: grid;
-  grid-template-columns: [main-content] 1fr;
-  padding-left: $column-gap;
-  padding-right: $column-gap;
+  grid-template-columns: 1fr;
   @media (min-width: $tablet) {
     column-gap: $column-gap;
-    row-gap: $column-gap * 2;
-    grid-template-columns:
-      [full-start] minmax($column-gap, calc(40vw - #{$max-width}))
-      [first-col] 1fr
-      [second-col] 1fr
-      [full-end] minmax($column-gap, calc(40vw - #{$max-width}));
+    row-gap: $column-gap;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -151,6 +105,14 @@ $max-width: 30rem;
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
     grid-column: margin-start / span 7;
+    text-align: left;
+  }
+}
+
+.margin-to-end {
+  grid-column: main-content / span 6;
+  @media (min-width: $tablet) {
+    grid-column: margin-start / span 8;
     text-align: left;
   }
 }
