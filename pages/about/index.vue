@@ -18,6 +18,7 @@
             :src="image.src"
             :alt="image.alt"
             circle
+            overlay
           />
           <!-- <StaticImage :src="images[0].src" :alt="images[0].alt" rounded />
           <StaticImage :src="images[0].src" :alt="images[0].alt" rounded /> -->
@@ -132,6 +133,11 @@ export default {
 
           img {
             filter: grayscale(0);
+          }
+          &.overlay {
+            &:after {
+              opacity: 0;
+            }
           }
         }
       }

@@ -307,7 +307,7 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
       justify-content: center;
       flex-direction: column;
       clip-path: circle(25% at 150% -50%);
-      box-shadow: 0 2px 25px 1px rgba($black, 0.25);
+      box-shadow: 0 2px 25px 1px rgba($darkShadeBackground, 0.25);
 
       .nav__block {
         display: flex;

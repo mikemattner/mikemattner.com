@@ -37,6 +37,11 @@ export default {
       type: Boolean,
       required: false,
     },
+    overlay: {
+      default: false,
+      type: Boolean,
+      required: false,
+    },
   },
   data() {
     return {
@@ -48,6 +53,7 @@ export default {
       return {
         rounded: this.rounded,
         circle: this.circle,
+        overlay: this.overlay,
       }
     },
   },
@@ -65,15 +71,41 @@ export default {
 figure {
   padding: 0;
   margin: 0;
+  position: relative;
 
   &.circle {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: $black;
     border-radius: $radius-rounded;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-      0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
-      0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 1px 1px rgba($darkShadeBackground, 0.11),
+      0 2px 2px rgba($darkShadeBackground, 0.11),
+      0 4px 4px rgba($darkShadeBackground, 0.11),
+      0 8px 16px rgba($darkShadeBackground, 0.11),
+      0 16px 16px rgba($darkShadeBackground, 0.11),
+      0 32px 64px rgba($darkShadeBackground, 0.11);
+
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+      &.overlay {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &.overlay {
+    &:after {
+      content: '';
+      @include absolute-center;
+      background-image: $solidPrimaryGradient;
+      mix-blend-mode: color;
+      opacity: 1;
+      transition: $transition-med;
+    }
   }
 
   figcaption {
@@ -94,17 +126,23 @@ figure {
   img {
     margin-bottom: 0.5rem;
     margin-top: 1rem;
+
+    &.overlay {
+      filter: grayscale(2);
+    }
     &.rounded {
       background-color: $black;
       border-radius: $radius-large;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-        0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
-        0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
+      box-shadow: 0 1px 1px rgba($darkShadeBackground, 0.11),
+        0 2px 2px rgba($darkShadeBackground, 0.11),
+        0 4px 4px rgba($darkShadeBackground, 0.11),
+        0 8px 16px rgba($darkShadeBackground, 0.11),
+        0 16px 16px rgba($darkShadeBackground, 0.11),
+        0 32px 64px rgba($darkShadeBackground, 0.11);
     }
     &.circle {
       display: block;
       margin: 0;
-      // @include cover-background(center);
     }
   }
 }

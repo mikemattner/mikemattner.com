@@ -24,8 +24,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap',
       },
     ],
   },
