@@ -51,6 +51,23 @@ export default {
   @media (min-width: $tablet) {
     padding-top: 8rem;
   }
+  background-color: #17232a;
+  background-image: $backGroundPattern;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to top,
+      rgba($bodyBackground, 1) 0%,
+      rgba($bodyBackground, 0) 90%
+    );
+    z-index: 2;
+  }
+
   &--image {
     &:before {
       content: '';
@@ -73,6 +90,13 @@ export default {
   }
   &--dark {
     background-color: $darkShadeBackground;
+    &:before {
+      background-image: linear-gradient(
+        to top,
+        rgba($darkShadeBackground, 1) 0%,
+        rgba($darkShadeBackground, 0) 50%
+      );
+    }
   }
   &--center {
     text-align: center;
