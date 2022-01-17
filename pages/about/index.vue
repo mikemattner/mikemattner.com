@@ -10,8 +10,18 @@
       <p v-html="about.subtitle"></p>
     </PageHero>
     <section class="section layout">
-      <div class="personal-image">
-        <StaticImage :src="images[0].src" :alt="images[0].alt" rounded />
+      <div class="personal-image_col">
+        <div class="personal-image">
+          <StaticImage
+            v-for="(image, index) in images"
+            :key="`image-${index}`"
+            :src="image.src"
+            :alt="image.alt"
+            circle
+          />
+          <!-- <StaticImage :src="images[0].src" :alt="images[0].alt" rounded />
+          <StaticImage :src="images[0].src" :alt="images[0].alt" rounded /> -->
+        </div>
       </div>
       <div class="personal-story">
         <nuxt-content :document="about" />
@@ -49,12 +59,8 @@ export default {
           alt: 'What a lovely painting! Not mine.',
         },
         {
-          src: 'personal/mike-cat.jpg',
-          alt: 'Here is the time I photo bombed my cat.',
-        },
-        {
-          src: 'personal/mike-cooking.jpg',
-          alt: 'Michigan tailgating, but with a tiny grill!',
+          src: 'personal/mike-profile.jpg',
+          alt: 'Generic profile image.',
         },
       ],
     }
@@ -89,23 +95,43 @@ export default {
     background-color: $darkShadeBackground;
 
     .personal-image {
-      grid-column: main-content / span 6;
-      @media (min-width: $desktop) {
-        grid-column: content-start / span 4;
-        figure {
-          max-width: 80%;
-          margin: 0 auto;
-          position: relative;
+      &_col {
+        grid-column: main-content / span 6;
+        @media (min-width: $desktop) {
+          align-items: start;
+          grid-column: content-start / span 4;
+        }
+      }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, minmax(100px, 1fr));
+      position: relative;
+      figure {
+        max-width: 80%;
+        margin: 0 auto;
+        position: relative;
+        transition: $transition;
+        img {
+          z-index: 1;
+          filter: grayscale(2);
+          transition: $transition;
+        }
+        &:nth-child(1) {
+          grid-row: 1 / span 2;
+          grid-column: 1 / span 2;
+          z-index: 1;
+        }
+        &:nth-child(2) {
+          grid-row: 2 / span 1;
+          grid-column: 2 / span 1;
+          z-index: 2;
+          margin-top: $defaultPadding;
+        }
+        &:hover {
+          transform: scale(1.05) rotate(1deg);
+
           img {
-            z-index: 1;
-            filter: grayscale(2);
-            transition: $transition;
-          }
-          &:hover {
-            img {
-              filter: grayscale(0);
-              transform: scale(1.05) rotate(1deg);
-            }
+            filter: grayscale(0);
           }
         }
       }
@@ -113,7 +139,7 @@ export default {
     .personal-story {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
-        grid-column: 6 / span 6;
+        grid-column: 6 / span 5;
       }
 
       h2 {

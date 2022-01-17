@@ -17,7 +17,7 @@ Outside of work I enjoy spending time with my wife and pets, reading, keeping up
 
 I’ve had *something* at this domain since 2005, running through various iterations of content management systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I had a self-hosed WordPress installation.
 
-For professional development reasons in 2019, I made the JAMstack switch to learn the approach and that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and use it as a basis to build your own.
+For professional development reasons in 2019, I made the **JAMstack** switch to learn the approach and that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and use it as a basis to build your own.
 
 ### Get In Touch
 
