@@ -1,5 +1,5 @@
 <template>
-  <figure>
+  <figure :class="classes">
     <VLazyImage
       :src="`/img/${src}`"
       :alt="alt"
@@ -66,6 +66,16 @@ figure {
   padding: 0;
   margin: 0;
 
+  &.circle {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: $black;
+    border-radius: $radius-rounded;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+      0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
+      0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
+  }
+
   figcaption {
     color: $middleGray;
     font-size: $small;
@@ -92,11 +102,9 @@ figure {
         0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
     }
     &.circle {
-      background-color: $black;
-      border-radius: $radius-rounded;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-        0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
-        0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
+      display: block;
+      margin: 0;
+      // @include cover-background(center);
     }
   }
 }
