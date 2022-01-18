@@ -79,6 +79,25 @@ figure {
   margin: 0;
   position: relative;
 
+  figcaption {
+    color: $middleGray;
+    font-size: $small;
+    padding: 0 math.div($defaultPadding, 2);
+    text-align: right;
+  }
+
+  img {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  &.rounded {
+    img {
+      background-color: $black;
+      border-radius: $radius-large;
+      box-shadow: $boxShadowLarge;
+    }
+  }
   &.circle {
     aspect-ratio: 1 / 1;
     overflow: hidden;
@@ -87,6 +106,7 @@ figure {
     box-shadow: $boxShadowLarge;
 
     img {
+      margin: 0;
       @include cover-background(center);
     }
 
@@ -94,6 +114,8 @@ figure {
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      background-image: $radialGradient;
       z-index: 3;
       color: $white;
       max-width: 80%;
@@ -103,6 +125,15 @@ figure {
     }
 
     &.overlay {
+      &:after {
+        content: '';
+        @include absolute-center;
+        background-image: $rightBottomGradient;
+        mix-blend-mode: color;
+        opacity: 1;
+        transition: $transition-med;
+        z-index: 2;
+      }
       img {
         filter: grayscale(2);
         z-index: 1;
@@ -111,7 +142,6 @@ figure {
 
     &:hover {
       figcaption {
-        background-image: $radialGradient;
         opacity: 1;
       }
       &.overlay {
@@ -134,13 +164,17 @@ figure {
     box-shadow: $boxShadowLarge;
 
     img {
+      margin: 0;
       @include cover-background(center);
     }
 
     figcaption {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
+      text-align: center;
+      padding: $defaultPadding;
+      background-image: $radialGradient;
       z-index: 3;
       color: $white;
       max-width: 80%;
@@ -150,6 +184,15 @@ figure {
     }
 
     &.overlay {
+      &:after {
+        content: '';
+        @include absolute-center;
+        background-image: $rightBottomGradient;
+        mix-blend-mode: color;
+        opacity: 1;
+        transition: $transition-med;
+        z-index: 2;
+      }
       img {
         filter: grayscale(2);
         z-index: 1;
@@ -158,7 +201,6 @@ figure {
 
     &:hover {
       figcaption {
-        background-image: $radialGradient;
         opacity: 1;
       }
       &.overlay {
@@ -170,43 +212,6 @@ figure {
           opacity: 0;
         }
       }
-    }
-  }
-
-  &.overlay {
-    &:after {
-      content: '';
-      @include absolute-center;
-      background-image: $rightBottomGradient;
-      mix-blend-mode: color;
-      opacity: 1;
-      transition: $transition-med;
-      z-index: 2;
-    }
-  }
-
-  figcaption {
-    color: $middleGray;
-    font-size: $small;
-    padding: 0 math.div($defaultPadding, 2);
-    text-align: right;
-
-    &.circle {
-      text-align: center;
-      border-radius: $radius-rounded;
-    }
-    &.rounded {
-      border-radius: $radius-large;
-    }
-  }
-
-  img {
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
-    &.rounded {
-      background-color: $black;
-      border-radius: $radius-large;
-      box-shadow: $boxShadowLarge;
     }
   }
 }
