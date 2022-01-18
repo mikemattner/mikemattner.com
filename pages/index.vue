@@ -1,6 +1,15 @@
 <template>
   <div class="home">
     <PageHero full>
+      <StaticImage
+        v-for="(image, index) in images"
+        :key="`image-${index}`"
+        :src="image.src"
+        :alt="image.alt"
+        class="personal-image"
+        circle
+        overlay
+      />
       <Header
         tag="h1"
         class="text-huge"
@@ -17,7 +26,7 @@
       <div class="layout">
         <Header
           tag="h2"
-          class="display-4"
+          class="display-3"
           decorator
           v-html="homePage.work.title"
         ></Header>
@@ -28,7 +37,7 @@
     <WaveRight flip />
     <section id="content" class="section section--writing layout">
       <div class="main-content">
-        <Header tag="h2" class="display-4" decorator>{{
+        <Header tag="h2" class="display-3" decorator>{{
           homePage.writing.title
         }}</Header>
         <p v-html="homePage.writing.body"></p>
@@ -71,6 +80,12 @@ export default {
     return {
       homePage,
       work,
+      images: [
+        {
+          src: 'personal/mike-profile-two.jpg',
+          alt: 'Generic profile image.',
+        },
+      ],
     }
   },
   head() {
@@ -92,6 +107,23 @@ export default {
       }
       @media (min-width: $desktop) {
         grid-column: main-content / span 7;
+      }
+    }
+
+    .personal-image {
+      transition: $transition-cubic;
+      grid-column: main-content / span 2;
+      margin-bottom: $defaultPadding;
+      @media (min-width: $tablet) {
+        margin-bottom: 0;
+        width: 80%;
+        grid-column: content-start / span 2;
+        align-self: start;
+        justify-self: center;
+        &:hover {
+          transform: scale(1.05) rotate(1deg);
+          z-index: 3;
+        }
       }
     }
     .header-content {

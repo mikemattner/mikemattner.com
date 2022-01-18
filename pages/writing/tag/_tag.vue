@@ -67,9 +67,6 @@ export default {
   .hero {
     h1 {
       margin-bottom: 0rem;
-      @media (min-width: $tablet) {
-        // text-indent: -0.75rem;
-      }
     }
     p {
       margin-bottom: 3rem;

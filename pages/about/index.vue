@@ -20,8 +20,6 @@
             circle
             overlay
           />
-          <!-- <StaticImage :src="images[0].src" :alt="images[0].alt" rounded />
-          <StaticImage :src="images[0].src" :alt="images[0].alt" rounded /> -->
         </div>
       </div>
       <div class="personal-story">
@@ -60,7 +58,11 @@ export default {
           alt: 'What a lovely painting! Not mine.',
         },
         {
-          src: 'personal/mike-profile.jpg',
+          src: 'personal/mike-cooking.jpg',
+          alt: 'Tailgating in Ann Arbor.',
+        },
+        {
+          src: 'personal/mike-profile-two.jpg',
           alt: 'Generic profile image.',
         },
       ],
@@ -110,7 +112,7 @@ export default {
       figure {
         width: 80%;
         margin: 0 auto;
-        transition: $transition;
+        transition: $transition-cubic;
         &:nth-child(1) {
           grid-row: 1 / span 2;
           grid-column: 1 / span 2;
@@ -121,6 +123,13 @@ export default {
           grid-column: 2 / span 1;
           z-index: 2;
           margin-top: $defaultPadding;
+        }
+        &:nth-child(3) {
+          grid-row: 2 / span 1;
+          grid-column: 1 / span 1;
+          z-index: 2;
+          margin-top: math.div($defaultPadding, 2);
+          width: 60%;
         }
         &:hover {
           transform: scale(1.05) rotate(1deg);
