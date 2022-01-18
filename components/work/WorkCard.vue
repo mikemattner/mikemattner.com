@@ -20,7 +20,7 @@
         </div>
         <div class="work-info">
           <div class="work-year">{{ info.year }}</div>
-          <Header tag="h3" class="display-5">{{ info.title }}</Header>
+          <Header tag="h3" class="display-5" decorator>{{ info.title }}</Header>
           <p v-html="info.description"></p>
           <Button
             v-if="info.link"
@@ -78,7 +78,8 @@ export default {
       z-index: 2;
 
       @media (max-width: $tablet) {
-        margin-top: -$defaultPadding * 2.5;
+        margin: math.div($defaultPadding, 2) * -1;
+        margin-bottom: 0;
         padding: $defaultPadding math.div($defaultPadding, 1.5);
         background-color: rgba($darkerShadeBackground, 0.95);
         border-radius: $radius-large;
@@ -87,7 +88,7 @@ export default {
       @media (min-width: $tablet) {
         z-index: 1;
         border-radius: $radius-large;
-        background-image: $linearDarkGradient;
+        // background-image: $linearDarkGradient;
       }
     }
 
@@ -130,16 +131,15 @@ export default {
         grid-template-rows: 1fr;
         align-items: center;
         .work-info {
-          grid-column: 5 / span 8;
+          grid-column: 6 / span 7;
           grid-row: 1;
         }
         .work-image {
           height: auto;
-          grid-column: 1 / span 4;
+          grid-column: 1 / span 5;
           grid-row: 1;
           ::v-deep figure {
             margin: 0 auto;
-            width: 90%;
           }
         }
       }
@@ -162,7 +162,6 @@ export default {
           grid-row: 1;
           ::v-deep figure {
             margin: 0 auto;
-            width: 90%;
           }
         }
       }

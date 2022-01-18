@@ -1,8 +1,8 @@
 <template>
   <ul class="work-list">
     <li v-for="(item, index) in work" :key="index">
-      <!-- <WorkCard :info="item" :right="index % 2 === 0" :left="index % 2 != 0" /> -->
-      <WorkCard :info="item" right />
+      <WorkCard :info="item" :right="index % 2 === 0" :left="index % 2 != 0" />
+      <!-- <WorkCard :info="item" right /> -->
     </li>
   </ul>
 </template>
@@ -25,6 +25,9 @@ export default {
 
   grid-column: main-content / span 6;
   @media (min-width: $tablet) {
+    grid-column: margin-start / span 7;
+  }
+  @media (min-width: $desktop) {
     grid-column: margin-start / span 8;
   }
 

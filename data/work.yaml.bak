@@ -1,0 +1,54 @@
+work:
+  - brand: Maytag
+    title: Maytag.com
+    year: 2019 - 2021
+    role: Developer
+    description: Re-imagined customer experiences across all product categories
+    image:
+      src: work/maytag/primary.png
+      alt: Maytag experience
+    link: https://maytag.com
+    tech:
+      - AEM Components
+      - HTML/CSS
+      - JavaScript
+
+  - brand: Whirlpool
+    title: Whirlpool.com
+    year: 2016 - 2021
+    role: Developer
+    description: Costumer experiences for premium product launches
+    image:
+      src: work/whirlpool/primary.png
+      alt: Whirlpool Intuitive Touch Control intro
+    link: https://whirlpool.com
+    tech:
+      - AEM Components
+      - HTML/CSS
+      - JavaScript
+
+  - brand: JennAir
+    title: Immersive Training
+    year: 2019
+    role: Developer
+    description: Vue based custom workbook with device independent note taking
+    image:
+      src: work/workbook/wow-curriculum-internal.jpg
+      alt: JennAir Workbook home screen
+    link:
+    tech:
+      - Vue
+      - React
+
+  - brand: JennAir
+    title: Influencer Hub
+    year: 2018
+    role: Developer
+    description: Re-imagining a premium knowledge base for appliance professionals
+    image:
+      src: work/jennair/columns.jpg
+      alt: JennAir Influencer Hub feature page
+    link:
+    tech:
+      - HTML/CSS
+      - JavaScript
