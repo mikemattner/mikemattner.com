@@ -67,8 +67,15 @@ export default {
   display: block;
   background-image: none;
   position: relative;
-  // overflow: hidden;
   transition: $transition;
+  //   display: flex;
+  //   align-items: flex-start;
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   background-image: none;
+  //   padding: $defaultPadding 0;
+  //   position: relative;
+  //   text-decoration: none;
   a {
     display: flex;
     align-items: flex-start;
@@ -95,9 +102,6 @@ export default {
       pointer-events: none;
       filter: blur(1.5rem);
       box-shadow: $boxShadowLarge;
-    }
-    &:before {
-      display: none;
     }
   }
   h3 {
