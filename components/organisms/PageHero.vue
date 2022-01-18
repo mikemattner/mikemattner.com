@@ -94,7 +94,7 @@ export default {
       background-image: linear-gradient(
         to top,
         rgba($darkShadeBackground, 1) 0%,
-        rgba($darkShadeBackground, 0) 50%
+        rgba($darkShadeBackground, 0) 90%
       );
     }
   }

@@ -14,7 +14,7 @@
             :src="info.image.src"
             :alt="info.image.alt"
             class="work-sample"
-            circle
+            square
             overlay
           />
         </div>

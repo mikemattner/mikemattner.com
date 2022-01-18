@@ -37,6 +37,11 @@ export default {
       type: Boolean,
       required: false,
     },
+    square: {
+      default: false,
+      type: Boolean,
+      required: false,
+    },
     overlay: {
       default: false,
       type: Boolean,
@@ -53,6 +58,7 @@ export default {
       return {
         rounded: this.rounded,
         circle: this.circle,
+        square: this.square,
         overlay: this.overlay,
       }
     },
@@ -78,6 +84,53 @@ figure {
     overflow: hidden;
     background-color: $black;
     border-radius: $radius-rounded;
+    box-shadow: $boxShadowLarge;
+
+    img {
+      @include cover-background(center);
+    }
+
+    figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      color: $white;
+      max-width: 80%;
+      opacity: 0;
+      transition: $transition;
+      @include absolute-center;
+    }
+
+    &.overlay {
+      img {
+        filter: grayscale(2);
+        z-index: 1;
+      }
+    }
+
+    &:hover {
+      figcaption {
+        background-image: $radialGradient;
+        opacity: 1;
+      }
+      &.overlay {
+        img {
+          filter: grayscale(0);
+          z-index: 1;
+        }
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &.square {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: $black;
+    border-radius: $radius-large;
     box-shadow: $boxShadowLarge;
 
     img {
