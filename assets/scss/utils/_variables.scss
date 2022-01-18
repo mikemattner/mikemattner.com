@@ -34,11 +34,23 @@ $darkerShadeBackground: shade($darkBlue, 80%);
 
 $tagColor: $middleGray;
 
-$linearGradient: linear-gradient(to right, #00dc82, #00c097, #00a29d);
+// Gradients
+$linearGradient: linear-gradient(110deg,hsl(167deg 100% 38%) 0%,hsl(167deg 100% 38%) 10%,hsl(167deg 100% 38%) 20%,hsl(167deg 100% 38%) 30%,hsl(167deg 100% 38%) 40%,hsl(167deg 100% 38%) 50%,hsl(170deg 100% 37%) 60%,hsl(172deg 100% 35%) 70%,hsl(174deg 100% 34%) 80%,hsl(176deg 100% 33%) 90%,hsl(178deg 100% 32%) 100%);
 $rightTopGradient: linear-gradient(to right top, #00dc82, #00c097, #00a29d);
+$rightBottomGradient: linear-gradient(to right bottom, #00dc82, #00c097, #00a29d);
 
+$radialGradient: radial-gradient(circle, rgba(15,23,28,1) 0%, rgba(15,23,28,0) 50%, rgba(15,23,28,0) 100%);
 $solidGradient: linear-gradient(to right, $middleGray, $middleGray);
 $solidPrimaryGradient: linear-gradient(to right, $primary, $primary);
+$linearDarkGradient: linear-gradient(to left, $darkerShadeBackground, rgba($darkerShadeBackground, 0));
+
+
+// Box Shadows
+$boxShadowSmall: 0 0 5px rgba(0, 0, 0, 0.33);
+$boxShadowSmallFocus: 0 4px 25px rgba(0, 0, 0, 0.33);
+$boxShadowSmallOverlay: 0 0 25px rgba(0, 0, 0, 0.33);
+$boxShadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
+$boxShadowLarge:  0 1px 1px rgba($darkerShadeBackground, 0.11), 0 2px 2px rgba($darkerShadeBackground, 0.11), 0 4px 4px rgba($darkerShadeBackground, 0.11), 0 8px 16px rgba($darkerShadeBackground, 0.11), 0 16px 16px rgba($darkerShadeBackground, 0.11), 0 32px 64px rgba($darkerShadeBackground, 0.11);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography

@@ -94,12 +94,7 @@ export default {
       transform: scale(1.2);
       pointer-events: none;
       filter: blur(1.5rem);
-      box-shadow: 0 1px 1px rgba($bodyBackground, 0.11),
-        0 2px 2px rgba($bodyBackground, 0.11),
-        0 4px 4px rgba($bodyBackground, 0.11),
-        0 8px 8px rgba($bodyBackground, 0.11),
-        0 16px 16px rgba($bodyBackground, 0.11),
-        0 32px 32px rgba($bodyBackground, 0.11);
+      box-shadow: $boxShadowLarge;
     }
     &:before {
       display: none;
@@ -177,7 +172,7 @@ export default {
       opacity: 1;
       transform: scale(1);
       filter: blur(0);
-      box-shadow: 0 2px 20px rgba($bodyBackground, 0.33);
+      box-shadow: $boxShadowLarge;
     }
   }
 }

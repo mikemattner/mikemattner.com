@@ -113,11 +113,9 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
   width: 100%;
   background: none;
 
-  &.fixed {
+  &.fixed:not(.active) {
     background-color: $transparent-bg;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-      0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
-      0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+    box-shadow: $boxShadowLarge;
   }
 
   @media (min-width: 769px) {
@@ -307,7 +305,7 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
       justify-content: center;
       flex-direction: column;
       clip-path: circle(25% at 150% -50%);
-      box-shadow: 0 2px 25px 1px rgba($darkShadeBackground, 0.25);
+      box-shadow: $boxShadowLarge;
 
       .nav__block {
         display: flex;

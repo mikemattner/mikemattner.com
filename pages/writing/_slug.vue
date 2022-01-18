@@ -214,7 +214,7 @@ export default {
     font-size: 0.75rem;
     padding: $defaultPadding;
     border-radius: $radius-large;
-    box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
+    box-shadow: $boxShadow;
     padding-top: $defaultPadding * 1.5;
     @media (max-width: 768px) {
       overflow-x: scroll;
@@ -326,7 +326,7 @@ export default {
     font-size: 0.75rem;
     padding: math.div($defaultPadding, 3) math.div($defaultPadding, 2);
     border-radius: $radius-large;
-    box-shadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
+    box-shadow: $boxShadow;
     text-align: center;
     display: flex;
     align-items: center;
