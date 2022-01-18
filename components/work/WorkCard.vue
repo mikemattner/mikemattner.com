@@ -14,6 +14,8 @@
             :src="info.image.src"
             :alt="info.image.alt"
             class="work-sample"
+            circle
+            overlay
           />
         </div>
         <div class="work-info">
@@ -70,16 +72,22 @@ export default {
     .work-info {
       font-size: 0.75rem;
       transition: $transition-slow-ease;
-      padding: $defaultPadding 0;
-      z-index: 2;
       position: relative;
       text-align: left;
       padding: $defaultPadding math.div($defaultPadding, 1.5);
-      background-color: rgba($darkerShadeBackground, 0.95);
-      border-radius: $radius-large;
+      z-index: 2;
 
       @media (max-width: $tablet) {
-        margin-top: -$defaultPadding * 1.5;
+        margin-top: -$defaultPadding * 2.5;
+        padding: $defaultPadding math.div($defaultPadding, 1.5);
+        background-color: rgba($darkerShadeBackground, 0.95);
+        border-radius: $radius-large;
+        box-shadow: $boxShadowLarge;
+      }
+      @media (min-width: $tablet) {
+        z-index: 1;
+        border-radius: $radius-large;
+        background-image: $linearDarkGradient;
       }
     }
 
@@ -105,21 +113,11 @@ export default {
       }
     }
     .work-image {
-      background-color: $black;
-      border-radius: $radius-large;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-        0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11),
-        0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 64px rgba(0, 0, 0, 0.11);
-      margin-left: math.div($defaultPadding, 2) * -1;
-      margin-right: math.div($defaultPadding, 2) * -1;
-      ::v-deep .work-sample img {
-        margin-bottom: 0;
-        margin-top: 0;
-      }
       @media (min-width: $tablet) {
-        position: relative;
-        height: 350px;
-        overflow: hidden;
+        z-index: 2;
+      }
+      ::v-deep .work-sample img {
+        margin: 0 auto;
       }
     }
   }
@@ -132,13 +130,17 @@ export default {
         grid-template-rows: 1fr;
         align-items: center;
         .work-info {
-          grid-column: 8 / span 5;
+          grid-column: 5 / span 8;
           grid-row: 1;
         }
         .work-image {
           height: auto;
-          grid-column: 1 / span 8;
+          grid-column: 1 / span 4;
           grid-row: 1;
+          ::v-deep figure {
+            margin: 0 auto;
+            width: 90%;
+          }
         }
       }
     }
@@ -151,14 +153,17 @@ export default {
         grid-template-rows: 1fr;
         align-items: center;
         .work-info {
-          grid-column: 1 / span 5;
+          grid-column: 1 / span 7;
           grid-row: 1;
         }
         .work-image {
           height: auto;
-          grid-column: 5 / span 8;
+          grid-column: 8 / span 5;
           grid-row: 1;
-          max-height: 350px;
+          ::v-deep figure {
+            margin: 0 auto;
+            width: 90%;
+          }
         }
       }
     }

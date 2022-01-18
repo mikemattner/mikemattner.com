@@ -130,7 +130,7 @@ export default {
     background: $darkShadeBackground;
     border: 1px solid $darkShadeBackground;
     border-radius: $radius-large;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
+    box-shadow: $boxShadowSmall;
     padding: math.div($defaultPadding, 2) math.div($defaultPadding, 2);
     width: 100%;
     color: $middleGray;
@@ -140,11 +140,11 @@ export default {
     -webkit-appearance: none;
     &:focus {
       border-color: $primary;
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
+      box-shadow: $boxShadowSmallFocus;
       outline: none;
     }
     &:hover {
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
+      box-shadow: $boxShadowSmallFocus;
     }
     &::placeholder {
       color: shade($middleGray, 30%);
@@ -164,7 +164,7 @@ export default {
     border-radius: $radius-large;
     z-index: 101;
     list-style: none;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.33);
+    box-shadow: $boxShadowSmallOverlay;
     overflow: hidden;
     li {
       margin: 0;
@@ -218,7 +218,7 @@ export default {
   }
   &.active {
     input {
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.33);
+      box-shadow: $boxShadowSmallFocus;
     }
   }
   &.small {

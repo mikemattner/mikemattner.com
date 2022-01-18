@@ -108,15 +108,9 @@ export default {
       grid-template-rows: repeat(2, minmax(100px, 1fr));
       position: relative;
       figure {
-        max-width: 80%;
+        width: 80%;
         margin: 0 auto;
-        position: relative;
         transition: $transition;
-        img {
-          z-index: 1;
-          filter: grayscale(2);
-          transition: $transition;
-        }
         &:nth-child(1) {
           grid-row: 1 / span 2;
           grid-column: 1 / span 2;
@@ -130,15 +124,6 @@ export default {
         }
         &:hover {
           transform: scale(1.05) rotate(1deg);
-
-          img {
-            filter: grayscale(0);
-          }
-          &.overlay {
-            &:after {
-              opacity: 0;
-            }
-          }
         }
       }
     }

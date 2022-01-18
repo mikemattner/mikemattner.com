@@ -78,18 +78,41 @@ figure {
     overflow: hidden;
     background-color: $black;
     border-radius: $radius-rounded;
-    box-shadow: 0 1px 1px rgba($darkShadeBackground, 0.11),
-      0 2px 2px rgba($darkShadeBackground, 0.11),
-      0 4px 4px rgba($darkShadeBackground, 0.11),
-      0 8px 16px rgba($darkShadeBackground, 0.11),
-      0 16px 16px rgba($darkShadeBackground, 0.11),
-      0 32px 64px rgba($darkShadeBackground, 0.11);
+    box-shadow: $boxShadowLarge;
+
+    img {
+      @include cover-background(center);
+    }
+
+    figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      color: $white;
+      max-width: 80%;
+      opacity: 0;
+      transition: $transition;
+      @include absolute-center;
+    }
+
+    &.overlay {
+      img {
+        filter: grayscale(2);
+        z-index: 1;
+      }
+    }
 
     &:hover {
-      img {
-        filter: grayscale(0);
+      figcaption {
+        background-image: $radialGradient;
+        opacity: 1;
       }
       &.overlay {
+        img {
+          filter: grayscale(0);
+          z-index: 1;
+        }
         &:after {
           opacity: 0;
         }
@@ -101,10 +124,11 @@ figure {
     &:after {
       content: '';
       @include absolute-center;
-      background-image: $solidPrimaryGradient;
+      background-image: $rightBottomGradient;
       mix-blend-mode: color;
       opacity: 1;
       transition: $transition-med;
+      z-index: 2;
     }
   }
 
@@ -126,23 +150,10 @@ figure {
   img {
     margin-bottom: 0.5rem;
     margin-top: 1rem;
-
-    &.overlay {
-      filter: grayscale(2);
-    }
     &.rounded {
       background-color: $black;
       border-radius: $radius-large;
-      box-shadow: 0 1px 1px rgba($darkShadeBackground, 0.11),
-        0 2px 2px rgba($darkShadeBackground, 0.11),
-        0 4px 4px rgba($darkShadeBackground, 0.11),
-        0 8px 16px rgba($darkShadeBackground, 0.11),
-        0 16px 16px rgba($darkShadeBackground, 0.11),
-        0 32px 64px rgba($darkShadeBackground, 0.11);
-    }
-    &.circle {
-      display: block;
-      margin: 0;
+      box-shadow: $boxShadowLarge;
     }
   }
 }
