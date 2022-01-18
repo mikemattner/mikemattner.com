@@ -119,11 +119,19 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
   }
 
   @media (min-width: 769px) {
+    &.fixed {
+      background-color: $transparent-bg;
+      box-shadow: $boxShadowLarge;
+    }
     position: fixed;
     padding: 0;
     align-items: center;
   }
   @media (max-width: 768px) {
+    &.fixed:not(.active) {
+      background-color: $transparent-bg;
+      box-shadow: $boxShadowLarge;
+    }
     display: flex;
     justify-content: space-between;
     align-items: center;
