@@ -8,8 +8,8 @@ My second run at a javascript framework based portfolio, blog, and general infor
 
 - [x] Dynamic generation of routes for .md files
 - [x] Use a CMS for content generation (Forestry!)
-- [ ] Switch content writing to Notion
-- [ ] Design tweaks for content archives
+- [x] Switch content writing to Notion
+- [x] Design tweaks for content archives
 - [x] Color palette updates https://mycolor.space/
 - [x] Generate, fill in some old content for the blog
 - [x] Reusable blog list component
@@ -17,6 +17,7 @@ My second run at a javascript framework based portfolio, blog, and general infor
 - [x] Update to [Nuxt Content](https://content.nuxtjs.org/)
 - [x] Add post type archiving
 - [x] Add year filters to primary writing page
+- [x] Image optimization
 - [ ] Generate content for portfolio
 - [ ] Enhance generated content
 

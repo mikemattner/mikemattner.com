@@ -100,9 +100,17 @@ export default {
       type: 'rss2',
     },
   ],
-  buildModules: ['@aceforth/nuxt-optimized-images'],
-  optimizedImages: {
-    optimizeImages: true,
+  buildModules: ['@nuxt/image'],
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
   },
   styleResources: {
     scss: [

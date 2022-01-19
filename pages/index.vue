@@ -6,6 +6,8 @@
         :key="`image-${index}`"
         :src="image.src"
         :alt="image.alt"
+        :width="image.width"
+        :height="image.height"
         class="personal-image"
         circle
         overlay
@@ -84,6 +86,8 @@ export default {
         {
           src: 'personal/mike-profile.jpg',
           alt: 'Generic profile image.',
+          width: '2000',
+          height: '1500',
         },
       ],
     }
