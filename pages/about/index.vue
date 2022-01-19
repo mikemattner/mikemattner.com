@@ -58,12 +58,12 @@ export default {
           alt: 'What a lovely painting! Not mine.',
         },
         {
-          src: 'personal/mike-cooking.jpg',
-          alt: 'Tailgating in Ann Arbor.',
+          src: 'personal/mike-profile.jpg',
+          alt: 'Generic profile image.',
         },
         {
-          src: 'personal/mike-profile-two.jpg',
-          alt: 'Generic profile image.',
+          src: 'personal/mike-cooking.jpg',
+          alt: 'Tailgating in Ann Arbor.',
         },
       ],
     }
@@ -129,11 +129,12 @@ export default {
           grid-column: 1 / span 1;
           z-index: 2;
           margin-top: math.div($defaultPadding, 2);
+          margin-left: math.div($defaultPadding, 2);
           width: 60%;
+          align-self: center;
         }
         &:hover {
-          transform: scale(1.05) rotate(1deg);
-          z-index: 3;
+          transform: scale(1.05) rotate(1deg) translate3d(0, 0, 0);
         }
       }
     }

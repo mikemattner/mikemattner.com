@@ -5,11 +5,11 @@ subtitle: 'I design and build for the web. Currently working as a UI Engineer at
 
 ## A Little About Me
 
-I was born and raised in Michigan, went to college and lived in Florida for a couple of years, then made my way back to enjoy the wonderful lakes and summer experience. If Michigan could exist in a slightly different winter climate, it would be just about perfect.
+I was born and raised in Michigan, went to college and lived in Florida, then made my way back to Michigan to enjoy the wonderful lakes and summer experience, and I've lived here ever since.
 
-I spent my teenage years tinkering with old computers with my dad—he always found these old hunks of junk to play with—which lead me to learn `BASIC`. Some of my best memories were rehabbing these old systems until we started to build our own and eventually get ourselves connected to the internet with dial-up. Holy shit, was that an eye-opening experience.
+Getting in to web development and design was a direct result of spending my teenage years tinkering with old computers with my dad—he always found these old hunks of junk to play with. I attempted to learn `BASIC` on those old machines. Some of my best memories were rehabbing these computers until we started to build our own. When we got ourselves connected to the internet with dial-up...holy shit, was that an eye-opening experience.
 
-Shortly after that, in the era of table based layouts, I started to learn the basics of `html/css`. Back then I was more of an avid gamer than I am now, and I really enjoyed the Dark Forces series. I [created a website](https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/) dedicated to mods for the Jedi Knight iteration, and decided around that time to turn web design and development into a career.
+Not long after that, in the era of table based layouts, I started to learn the basics of `html/css`. Being more of an avid gamer back then, and I really enjoyed the Dark Forces series. I [created a website](https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/) dedicated to mods for the Jedi Knight series, and decided around that time to turn web design and development into a career.
 
 Outside of work I enjoy spending time with my wife and pets, reading, keeping up with politics, woodworking, home improvement projects, and sipping a fine craft beer.
 
