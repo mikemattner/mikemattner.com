@@ -1,12 +1,5 @@
 <template>
-  <div
-    v-scroll-reveal
-    :class="[
-      'is--work',
-      right == true ? 'right' : '',
-      left == true ? 'left' : '',
-    ]"
-  >
+  <div :class="['work-card', ...classes]">
     <div class="work-body">
       <div class="work-content">
         <div class="work-image">
@@ -52,11 +45,19 @@ export default {
       default: null,
     },
   },
+  computed: {
+    classes() {
+      return {
+        right: this.right,
+        left: this.left,
+      }
+    },
+  },
 }
 </script>
 
 <style scoped lang="scss">
-.is--work {
+.work-card {
   .work-body {
     position: relative;
     @media (max-width: $tablet) {

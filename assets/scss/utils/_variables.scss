@@ -31,6 +31,7 @@ $bodyBackground: shade($darkBlue, 40%);
 $borderColor-light: tint($darkBlue, 10%);
 $darkShadeBackground: shade($darkBlue, 60%);
 $darkerShadeBackground: shade($darkBlue, 80%);
+$darkerShadeBlue: shade($darkBlue, 95%);
 
 $tagColor: $middleGray;
 
@@ -49,8 +50,8 @@ $linearDarkGradient: linear-gradient(to left, $darkerShadeBackground, rgba($dark
 $boxShadowSmall: 0 0 5px rgba(0, 0, 0, 0.33);
 $boxShadowSmallFocus: 0 4px 25px rgba(0, 0, 0, 0.33);
 $boxShadowSmallOverlay: 0 0 25px rgba(0, 0, 0, 0.33);
-$boxShadow: 0 2px 20px rgba($darkShadeBackground, 0.15);
-$boxShadowLarge:  0 1px 1px rgba($darkerShadeBackground, 0.11), 0 2px 2px rgba($darkerShadeBackground, 0.11), 0 4px 4px rgba($darkerShadeBackground, 0.11), 0 8px 16px rgba($darkerShadeBackground, 0.11), 0 16px 16px rgba($darkerShadeBackground, 0.11), 0 32px 64px rgba($darkerShadeBackground, 0.11);
+$boxShadow: 0 2px 20px rgba($darkerShadeBlue, 0.15);
+$boxShadowLarge:  0 1px 1px rgba($darkerShadeBlue, 0.11), 0 2px 2px rgba($darkerShadeBlue, 0.11), 0 4px 4px rgba($darkerShadeBlue, 0.11), 0 8px 16px rgba($darkerShadeBlue, 0.11), 0 16px 16px rgba($darkerShadeBlue, 0.11), 0 32px 64px rgba($darkerShadeBlue, 0.11);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography

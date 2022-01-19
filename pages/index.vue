@@ -82,7 +82,7 @@ export default {
       work,
       images: [
         {
-          src: 'personal/mike-profile-two.jpg',
+          src: 'personal/mike-profile.jpg',
           alt: 'Generic profile image.',
         },
       ],
@@ -121,7 +121,7 @@ export default {
         align-self: start;
         justify-self: center;
         &:hover {
-          transform: scale(1.05) rotate(1deg);
+          transform: scale(1.05) rotate(1deg) translate3d(0, 0, 0);
           z-index: 3;
         }
       }
