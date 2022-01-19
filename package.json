@@ -39,6 +39,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "@nuxt/image": "^0.6.0",
     "@nuxtjs/eslint-config": "^5.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^7.14.0",

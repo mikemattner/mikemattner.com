@@ -1,12 +1,12 @@
 <template>
-  <figure :class="classes">
-    <VLazyImage
+  <figure :class="['static-image', ...classes]">
+    <nuxt-picture
       :src="`/img/${src}`"
       :alt="alt"
-      :src-placeholder="placeholder"
-      :class="classes"
+      :width="width"
+      :height="height"
     />
-    <figcaption v-if="caption" :class="classes" v-html="caption"></figcaption>
+    <figcaption v-if="caption" v-html="caption"></figcaption>
   </figure>
 </template>
 
@@ -19,6 +19,16 @@ export default {
     },
     alt: {
       default: '',
+      type: String,
+      required: false,
+    },
+    width: {
+      default: null,
+      type: String,
+      required: false,
+    },
+    height: {
+      default: null,
       type: String,
       required: false,
     },
@@ -48,11 +58,6 @@ export default {
       required: false,
     },
   },
-  data() {
-    return {
-      placeholder: 'img/Rectangle.png',
-    }
-  },
   computed: {
     classes() {
       return {
@@ -67,14 +72,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-lazy-image {
-  opacity: 0;
-  transition: opacity 2s;
-}
-.v-lazy-image-loaded {
-  opacity: 1;
-}
-figure {
+.static-image {
   padding: 0;
   margin: 0;
   position: relative;
@@ -92,7 +90,7 @@ figure {
   }
 
   &.rounded {
-    img {
+    ::v-deep img {
       background-color: $black;
       border-radius: $radius-large;
       box-shadow: $boxShadowLarge;
@@ -105,7 +103,7 @@ figure {
     border-radius: $radius-rounded;
     box-shadow: $boxShadowLarge;
 
-    img {
+    ::v-deep img {
       margin: 0;
       @include cover-background(center);
     }
@@ -163,7 +161,7 @@ figure {
     border-radius: $radius-large;
     box-shadow: $boxShadowLarge;
 
-    img {
+    ::v-deep img {
       margin: 0;
       @include cover-background(center);
     }
