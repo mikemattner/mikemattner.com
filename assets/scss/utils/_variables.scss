@@ -47,11 +47,14 @@ $linearDarkGradient: linear-gradient(to left, $darkerShadeBackground, rgba($dark
 
 
 // Box Shadows
+// https://shadows.brumm.af/
 $boxShadowSmall: 0 0 5px rgba(0, 0, 0, 0.33);
 $boxShadowSmallFocus: 0 4px 25px rgba(0, 0, 0, 0.33);
 $boxShadowSmallOverlay: 0 0 25px rgba(0, 0, 0, 0.33);
 $boxShadow: 0 2px 20px rgba($darkerShadeBlue, 0.15);
-$boxShadowLarge:  0 1px 1px rgba($darkerShadeBlue, 0.11), 0 2px 2px rgba($darkerShadeBlue, 0.11), 0 4px 4px rgba($darkerShadeBlue, 0.11), 0 8px 16px rgba($darkerShadeBlue, 0.11), 0 16px 16px rgba($darkerShadeBlue, 0.11), 0 32px 64px rgba($darkerShadeBlue, 0.11);
+// $boxShadowLarge:  0 1px 1px rgba($darkerShadeBlue, 0.11), 0 2px 2px rgba($darkerShadeBlue, 0.11), 0 4px 4px rgba($darkerShadeBlue, 0.11), 0 8px 16px rgba($darkerShadeBlue, 0.11), 0 16px 16px rgba($darkerShadeBlue, 0.11), 0 32px 64px rgba($darkerShadeBlue, 0.11);
+
+$boxShadowLarge: 1.3px 0.7px 2.2px rgba($darkerShadeBlue, 0.02), 3.1px 1.7px 5.3px rgba($darkerShadeBlue, 0.028), 5.8px 3.3px 10px rgba($darkerShadeBlue, 0.035), 10.3px 5.8px 17.9px rgba($darkerShadeBlue, 0.042), 19.2px 10.9px 33.4px rgba($darkerShadeBlue, 0.05), 46px 26px 80px rgba($darkerShadeBlue, 0.07);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Typography

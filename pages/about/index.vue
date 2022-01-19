@@ -122,14 +122,13 @@ export default {
           grid-row: 2 / span 1;
           grid-column: 2 / span 1;
           z-index: 2;
-          margin-top: $defaultPadding;
+          margin-top: $defaultPadding * 1.25;
         }
         &:nth-child(3) {
           grid-row: 2 / span 1;
           grid-column: 1 / span 1;
           z-index: 2;
-          margin-top: math.div($defaultPadding, 2);
-          margin-left: math.div($defaultPadding, 2);
+          margin-top: $defaultPadding * -1;
           width: 60%;
           align-self: center;
         }
