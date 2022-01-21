@@ -1,22 +1,26 @@
 <template>
   <div class="project-card">
-    <div class="project-year">{{ info.year }}</div>
-    <Header tag="h3" class="display-5" decorator>{{ info.title }}</Header>
-    <nuxt-content :document="info" />
-    <Button
-      v-if="info.link"
-      :href="info.link.to"
-      target="_blank"
-      icon="external-link-alt"
-      icon-right
-      primary
-      ghost
-      small
-      >{{ info.link.title }}</Button
-    >
-    <ul class="project-tech">
-      <li v-for="(item, index) in info.tech" :key="index">{{ item }}</li>
-    </ul>
+    <div class="project-description">
+      <div class="project-year">{{ info.year }}</div>
+      <Header tag="h3" class="display-5" decorator>{{ info.title }}</Header>
+      <nuxt-content :document="info" />
+    </div>
+    <div class="project-info">
+      <Button
+        v-if="info.link"
+        :href="info.link.to"
+        target="_blank"
+        icon="external-link-alt"
+        icon-right
+        primary
+        ghost
+        small
+        >{{ info.link.title }}</Button
+      >
+      <ul class="project-tech">
+        <li v-for="(item, index) in info.tech" :key="index">{{ item }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -33,9 +37,13 @@ export default {
 
 <style scoped lang="scss">
 .project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   font-size: 0.75rem;
   transition: $transition-slow-ease;
-  position: relative;
   text-align: left;
   padding: $defaultPadding math.div($defaultPadding, 1.5);
   background-color: rgba($darkerShadeBackground, 0.95);

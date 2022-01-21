@@ -11,4 +11,4 @@ link:
 
 ---
 
-Randomly generate tickets for Mega Millions.
+Randomly generate tickets for Mega Millions. A totally useless project I've been using to test out technology for over a decade.

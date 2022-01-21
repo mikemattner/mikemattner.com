@@ -11,4 +11,4 @@ link:
     title: View on GitHub
 ---
 
-My own site uses [Nuxt](https://nuxtjs.org) and is available for your own use.
+My own site uses [Nuxt](https://nuxtjs.org) and is available for your own use as a nuxt blog starter, although it might be too personalized for my use.

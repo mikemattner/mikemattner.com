@@ -26,7 +26,9 @@
         <nuxt-content :document="about" />
       </div>
       <div class="personal-projects">
-        <Header tag="h3">Personal Projects</Header>
+        <Header tag="h3" class="personal-projects__header">
+          Personal Projects
+        </Header>
         <ProjectList :projects="projects" />
       </div>
     </section>
@@ -145,6 +147,7 @@ export default {
       }
     }
     .personal-story {
+      padding-bottom: $defaultPadding;
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
         grid-column: 6 / span 5;
@@ -169,11 +172,20 @@ export default {
     .personal-projects {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
-        grid-column: 6 / span 5;
+        grid-column: 3 / span 8;
       }
 
-      h3 {
-        font-size: $h5;
+      &__header {
+        font-size: $h4;
+
+        &:after {
+          content: '';
+          margin-top: math.div($defaultPadding, 2);
+          display: block;
+          height: 4px;
+          width: 100%;
+          border-top: 2px dotted $borderColor-light;
+        }
       }
     }
   }
