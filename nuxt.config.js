@@ -45,16 +45,13 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/lazyimage.js',
-    '~/plugins/VueFontAwesome.js',
-    { src: '~/plugins/VueScrollReveal.js', ssr: false },
-  ],
+  plugins: ['~/plugins/VueFontAwesome.js'],
   components: {
     dirs: [
       '~/components/decorative',
       '~/components/media',
       '~/components/organisms',
+      '~/components/projects',
       '~/components/ui',
       '~/components/work',
     ],

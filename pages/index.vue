@@ -54,7 +54,6 @@
 
 <script>
 import { homePage } from '~/data/pages.yaml'
-import { work } from '~/data/work.yaml'
 
 export default {
   name: 'Home',
@@ -62,26 +61,29 @@ export default {
   transition: 'fade',
   async asyncData({ $content, app, error }) {
     let posts
+    let work
     try {
       posts = await $content('writing').sortBy('date', 'desc').limit(6).fetch()
+      work = await $content('work').sortBy('date', 'desc').fetch()
     } catch (e) {
       try {
         posts = await $content('writing')
           .sortBy('date', 'desc')
           .limit(6)
           .fetch()
+        work = await $content('work').sortBy('date', 'desc').fetch()
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
       }
     }
     return {
       posts,
+      work,
     }
   },
   data() {
     return {
       homePage,
-      work,
       images: [
         {
           src: 'personal/mike-profile.jpg',

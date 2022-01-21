@@ -2,7 +2,6 @@
   <ul class="work-list">
     <li v-for="(item, index) in work" :key="index">
       <WorkCard :info="item" :right="index % 2 === 0" :left="index % 2 != 0" />
-      <!-- <WorkCard :info="item" right /> -->
     </li>
   </ul>
 </template>

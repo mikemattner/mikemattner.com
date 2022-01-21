@@ -12,9 +12,9 @@
           />
         </div>
         <div class="work-info">
-          <div class="work-year">{{ info.year }}</div>
+          <div class="work-year">{{ info.role }} | {{ info.year }}</div>
           <Header tag="h3" class="display-5" decorator>{{ info.title }}</Header>
-          <p v-html="info.description"></p>
+          <nuxt-content :document="info" />
           <Button
             v-if="info.link"
             :href="info.link"
@@ -78,6 +78,17 @@ export default {
       padding: $defaultPadding math.div($defaultPadding, 1.5);
       z-index: 2;
 
+      .work-year {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $primary;
+        font-weight: 400;
+        font-size: $small;
+      }
+      h3 {
+        margin-top: 0.25rem;
+      }
+
       @media (max-width: $tablet) {
         margin: math.div($defaultPadding, 2) * -1;
         margin-bottom: 0;
@@ -124,24 +135,31 @@ export default {
     }
   }
 
+  @media (min-width: $tablet) {
+    .work-content {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr;
+      align-items: center;
+      .work-image {
+        height: auto;
+        ::v-deep figure {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
   &.right {
     @media (min-width: $tablet) {
       .work-content {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 1fr;
-        align-items: center;
         .work-info {
           grid-column: 6 / span 7;
           grid-row: 1;
         }
         .work-image {
-          height: auto;
           grid-column: 1 / span 5;
           grid-row: 1;
-          ::v-deep figure {
-            margin: 0 auto;
-          }
         }
       }
     }
@@ -149,34 +167,16 @@ export default {
   &.left {
     @media (min-width: $tablet) {
       .work-content {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 1fr;
-        align-items: center;
         .work-info {
           grid-column: 1 / span 7;
           grid-row: 1;
         }
         .work-image {
-          height: auto;
           grid-column: 8 / span 5;
           grid-row: 1;
-          ::v-deep figure {
-            margin: 0 auto;
-          }
         }
       }
     }
-  }
-  .work-year {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: $primary;
-    font-weight: 400;
-    font-size: $small;
-  }
-  h3 {
-    margin-top: 0.25rem;
   }
 }
 </style>

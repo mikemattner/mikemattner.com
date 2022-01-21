@@ -25,6 +25,12 @@
       <div class="personal-story">
         <nuxt-content :document="about" />
       </div>
+      <div class="personal-projects">
+        <Header tag="h3" class="personal-projects__header">
+          Personal Projects
+        </Header>
+        <ProjectList :projects="projects" />
+      </div>
     </section>
     <WaveRight flip />
   </div>
@@ -37,17 +43,21 @@ export default {
   transition: 'fade',
   async asyncData({ $content, app, error }) {
     let about
+    let projects
     try {
       about = await $content('about').fetch()
+      projects = await $content('projects').sortBy('date', 'desc').fetch()
     } catch (e) {
       try {
         about = await $content('about').fetch()
+        projects = await $content('projects').sortBy('date', 'desc').fetch()
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
       }
     }
     return {
       about,
+      projects,
     }
   },
   data() {
@@ -80,10 +90,9 @@ export default {
 .about {
   .hero {
     padding-bottom: $defaultPadding * 2;
+
     h1 {
       margin-bottom: 0rem;
-    }
-    h1 {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
         grid-column: main-content / span 7;
@@ -138,6 +147,7 @@ export default {
       }
     }
     .personal-story {
+      padding-bottom: $defaultPadding;
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
         grid-column: 6 / span 5;
@@ -159,14 +169,24 @@ export default {
         font-size: $h5;
       }
     }
-  }
-  .technology-list {
-    margin-top: 0;
-    display: flex;
-    flex-wrap: wrap;
+    .personal-projects {
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        grid-column: 3 / span 8;
+      }
 
-    li {
-      flex: 0 0 50%;
+      &__header {
+        font-size: $h4;
+
+        &:after {
+          content: '';
+          margin-top: math.div($defaultPadding, 2);
+          display: block;
+          height: 4px;
+          width: 100%;
+          border-top: 2px dotted $borderColor-light;
+        }
+      }
     }
   }
 }
