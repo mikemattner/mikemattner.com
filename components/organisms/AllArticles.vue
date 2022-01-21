@@ -99,16 +99,7 @@
           <ul class="article-list main-content">
             <li v-for="post in item.posts" :key="post.title" class="article">
               <ArticleLink
-                v-if="
-                  (post.type === 'entry' || post.type === 'link') &&
-                  displayFiltered(item.year, post.tag)
-                "
-                :article="post"
-              />
-              <QuoteDisplay
-                v-if="
-                  post.type === 'quote' && displayFiltered(item.year, post.tag)
-                "
+                v-if="displayFiltered(item.year, post.tag)"
                 :article="post"
               />
             </li>
@@ -146,10 +137,10 @@ export default {
     return {
       filtered: false,
       filtersOpen: false,
-      sortedPosts: Object,
-      yearsInPosts: Array,
-      sortedTags: Array,
       filtersSelected: [],
+      sortedPosts: Object,
+      sortedTags: Array,
+      yearsInPosts: Array,
     }
   },
   computed: {

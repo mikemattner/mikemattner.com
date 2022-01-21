@@ -80,10 +80,9 @@ export default {
 .about {
   .hero {
     padding-bottom: $defaultPadding * 2;
+
     h1 {
       margin-bottom: 0rem;
-    }
-    h1 {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {
         grid-column: main-content / span 7;
@@ -158,15 +157,6 @@ export default {
       h3 {
         font-size: $h5;
       }
-    }
-  }
-  .technology-list {
-    margin-top: 0;
-    display: flex;
-    flex-wrap: wrap;
-
-    li {
-      flex: 0 0 50%;
     }
   }
 }
