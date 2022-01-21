@@ -1,14 +1,16 @@
 <template>
-  <ul class="work-list">
-    <li v-for="(item, index) in work" :key="index">
-      <WorkCard :info="item" :right="index % 2 === 0" :left="index % 2 != 0" />
-    </li>
-  </ul>
+  <section class="project-list two-col">
+    <ProjectCard
+      v-for="(item, index) in projects"
+      :key="`project-${index}`"
+      :info="item"
+    />
+  </section>
 </template>
 <script>
 export default {
   props: {
-    work: {
+    projects: {
       type: Array,
       required: true,
     },
@@ -17,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.work-list {
+.project-list {
   list-style: none;
   margin: 2rem 0;
   padding: 0;
@@ -28,20 +30,6 @@ export default {
   }
   @media (min-width: $desktop) {
     grid-column: margin-start / span 8;
-  }
-
-  li {
-    padding: 0;
-    margin: 0;
-    margin-bottom: $defaultPadding;
-
-    @media (min-width: $tablet) {
-      margin-bottom: $defaultPadding * 1.5;
-    }
-
-    &:before {
-      display: none;
-    }
   }
 }
 </style>

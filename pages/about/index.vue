@@ -25,6 +25,10 @@
       <div class="personal-story">
         <nuxt-content :document="about" />
       </div>
+      <div class="personal-projects">
+        <Header tag="h3">Personal Projects</Header>
+        <ProjectList :projects="projects" />
+      </div>
     </section>
     <WaveRight flip />
   </div>
@@ -37,17 +41,21 @@ export default {
   transition: 'fade',
   async asyncData({ $content, app, error }) {
     let about
+    let projects
     try {
       about = await $content('about').fetch()
+      projects = await $content('projects').sortBy('date', 'desc').fetch()
     } catch (e) {
       try {
         about = await $content('about').fetch()
+        projects = await $content('projects').sortBy('date', 'desc').fetch()
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
       }
     }
     return {
       about,
+      projects,
     }
   },
   data() {
@@ -154,6 +162,16 @@ export default {
           border-top: 2px dotted $borderColor-light;
         }
       }
+      h3 {
+        font-size: $h5;
+      }
+    }
+    .personal-projects {
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        grid-column: 6 / span 5;
+      }
+
       h3 {
         font-size: $h5;
       }
