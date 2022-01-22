@@ -46,11 +46,14 @@ export default {
     let projects
     try {
       about = await $content('about').fetch()
-      projects = await $content('projects').sortBy('date', 'desc').fetch()
+      projects = await fetch('https://api.github.com/users/mikemattner/repos', {
+        headers: {
+          Accept: 'application/vnd.github.v3+json',
+        },
+      }).then((res) => res.json())
     } catch (e) {
       try {
         about = await $content('about').fetch()
-        projects = await $content('projects').sortBy('date', 'desc').fetch()
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
       }
