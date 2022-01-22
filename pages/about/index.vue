@@ -54,6 +54,14 @@ export default {
     } catch (e) {
       try {
         about = await $content('about').fetch()
+        projects = await fetch(
+          'https://api.github.com/users/mikemattner/repos',
+          {
+            headers: {
+              Accept: 'application/vnd.github.v3+json',
+            },
+          }
+        ).then((res) => res.json())
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
       }
