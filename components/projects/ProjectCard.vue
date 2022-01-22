@@ -1,24 +1,39 @@
 <template>
   <div class="project-card">
     <div class="project-description">
-      <div class="project-year">{{ info.year }}</div>
-      <Header tag="h3" class="display-5" decorator>{{ info.title }}</Header>
-      <nuxt-content :document="info" />
+      <div class="project-description__header">
+        <div class="project-description__header-title">
+          <div class="project-year">{{ listYear(info.year) }}</div>
+          <Header tag="h3" class="display-5" decorator>{{ info.name }}</Header>
+        </div>
+        <div class="project-description__header-stats">
+          <div class="chip">
+            <FaIcon icon="eye" size="sm"></FaIcon> {{ info.watchers }}
+          </div>
+          <div class="chip">
+            <FaIcon icon="star" size="sm"></FaIcon> {{ info.stars }}
+          </div>
+        </div>
+      </div>
+      <p>{{ info.description }}</p>
     </div>
     <div class="project-info">
       <Button
-        v-if="info.link"
-        :href="info.link.to"
+        v-if="info.url"
+        :href="info.url"
         target="_blank"
-        icon="external-link-alt"
-        icon-right
+        icon="github-alt"
+        icon-left
+        brand-icon
+        icon-size="md"
         primary
         ghost
         small
-        >{{ info.link.title }}</Button
       >
+        View on GitHub
+      </Button>
       <ul class="project-tech">
-        <li v-for="(item, index) in info.tech" :key="index">{{ item }}</li>
+        <li v-for="(item, index) in info.topics" :key="index">{{ item }}</li>
       </ul>
     </div>
   </div>
@@ -32,6 +47,11 @@ export default {
       default: null,
     },
   },
+  methods: {
+    listYear(date) {
+      return new Date(date).getFullYear().toString()
+    },
+  },
 }
 </script>
 
@@ -40,7 +60,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
   font-size: 0.75rem;
   transition: $transition-slow-ease;
@@ -55,15 +75,35 @@ export default {
     margin-bottom: $defaultPadding;
   }
 
-  .project-year {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: $primary;
-    font-weight: 400;
-    font-size: $small;
-  }
-  h3 {
-    margin-top: 0.25rem;
+  .project-description__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .project-year {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: $primary;
+      font-weight: 400;
+      font-size: $small;
+    }
+    h3 {
+      margin-top: 0.25rem;
+    }
+    &-stats {
+      position: absolute;
+      top: math.div($defaultPadding, 4);
+      right: math.div($defaultPadding, 4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: math.div($defaultPadding, 4);
+      .chip {
+        padding: 0 math.div($defaultPadding, 4);
+        aspect-ratio: 2 / 1;
+        border-radius: $radius;
+        background: $bodyBackground;
+      }
+    }
   }
   .project-tech {
     font-size: $small;

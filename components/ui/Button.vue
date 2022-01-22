@@ -7,7 +7,7 @@
     <span class="button__content">
       <slot />
     </span>
-    <FaIcon v-if="icon" :icon="icon" size="sm"></FaIcon>
+    <FaIcon v-if="icon" :icon="[iconType, icon]" :size="iconSize"></FaIcon>
   </component>
 </template>
 
@@ -22,6 +22,12 @@ export default {
     link: Boolean,
     iconRight: Boolean,
     iconLeft: Boolean,
+    solidIcon: Boolean,
+    brandIcon: Boolean,
+    iconSize: {
+      type: String,
+      default: 'sm',
+    },
     icon: {
       type: String,
       default: '',
@@ -71,6 +77,15 @@ export default {
       }
 
       return {}
+    },
+    iconType() {
+      if (this.solidIcon) {
+        return 'fas'
+      }
+      if (this.brandIcon) {
+        return 'fab'
+      }
+      return 'fas'
     },
   },
   mounted() {
