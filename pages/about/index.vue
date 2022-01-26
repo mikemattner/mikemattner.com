@@ -10,7 +10,7 @@
       <p v-html="about.subtitle"></p>
     </PageHero>
     <section class="section layout">
-      <div class="personal-image_col">
+      <div class="meta_col">
         <div class="personal-image">
           <StaticImage
             v-for="(image, index) in images"
@@ -20,6 +20,26 @@
             circle
             overlay
           />
+        </div>
+        <div class="professional-info">
+          <h2 class="display-6">Experience</h2>
+          <ul class="text-small">
+            <li v-for="(item, index) in experience" :key="`exp-${index}`">
+              <strong>{{ item.company }}</strong> {{ item.title }}
+            </li>
+          </ul>
+          <h2 class="display-6">Skills</h2>
+          <ul class="text-small">
+            <li v-for="(item, index) in skills" :key="`exp-${index}`">
+              {{ item }}
+            </li>
+          </ul>
+          <h2 class="display-6">Tools</h2>
+          <ul class="text-small">
+            <li v-for="(item, index) in tools" :key="`exp-${index}`">
+              {{ item }}
+            </li>
+          </ul>
         </div>
       </div>
       <div class="personal-story">
@@ -37,6 +57,8 @@
 </template>
 
 <script>
+import { experience, skills, tools } from '~/data/resume.yaml'
+
 export default {
   name: 'About',
   scrollToTop: true,
@@ -73,6 +95,9 @@ export default {
   },
   data() {
     return {
+      experience,
+      skills,
+      tools,
       images: [
         {
           src: 'personal/mike-painting.jpg',
@@ -117,14 +142,29 @@ export default {
     padding: $defaultPadding 0;
     background-color: $darkShadeBackground;
 
-    .personal-image {
-      &_col {
-        grid-column: main-content / span 6;
-        @media (min-width: $desktop) {
-          align-items: start;
-          grid-column: content-start / span 4;
+    .meta_col {
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        align-items: start;
+        grid-column: content-start / span 4;
+      }
+    }
+
+    .professional-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 1.25rem;
+
+      h2,
+      ul {
+        grid-column: 1 / span 4;
+
+        @media (min-width: $tablet) {
+          grid-column: 2 / span 3;
         }
       }
+    }
+    .personal-image {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, minmax(100px, 1fr));
