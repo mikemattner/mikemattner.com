@@ -3,6 +3,7 @@ title: Whirlpool.com
 date: 2021-11-01
 year: '2016 - 2021'
 role: 'Developer'
+company: 'AisleRocket'
 tech:
     - AEM Components
     - HTML/CSS

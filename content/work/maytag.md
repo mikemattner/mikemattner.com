@@ -3,6 +3,7 @@ title: Maytag.com
 date: 2021-12-01
 year: '2019 - 2021'
 role: 'Developer'
+company: 'AisleRocket'
 tech:
     - AEM Components
     - HTML/CSS

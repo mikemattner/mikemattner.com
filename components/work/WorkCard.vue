@@ -12,7 +12,9 @@
           />
         </div>
         <div class="work-info">
-          <div class="work-year">{{ info.role }} | {{ info.year }}</div>
+          <div class="work-year">
+            {{ info.role }} | {{ info.year }} | {{ info.company }}
+          </div>
           <Header tag="h3" class="display-5" decorator>{{ info.title }}</Header>
           <nuxt-content :document="info" />
           <Button
