@@ -19,6 +19,6 @@ I’ve had *something* at this domain since 2005, running through various iterat
 
 For professional development reasons in 2019, I made the **JAMstack** switch to learn the approach and that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and use it as a basis to build your own.
 
-## Get In Touch
+### Get In Touch
 
 Do you have something to discuss? Please reach out to me at [hello@mikemattner.com](mailto:hello@mikemattner.com).
