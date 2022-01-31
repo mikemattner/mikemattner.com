@@ -35,8 +35,15 @@ experience:
 skills:
   - Front End Development
   - UX/UI Design
-  - Creative Direction
-  - Creative Strategy
+  - HTML/CSS
+  - Sass/SCSS
+  - JavaScript
+  - VueJS
+  - WordPress
+  - Adobe Experience Manager
+  - npm/yarn
+  - webpack
+  - Gulp
 
 tools:
   - Figma
@@ -48,8 +55,6 @@ technical:
   - Sass/SCSS
   - JavaScript
   - VueJS
-  - React
-  - React Native
   - WordPress
   - Adobe Experience Manager
   - npm/yarn

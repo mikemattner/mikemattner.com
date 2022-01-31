@@ -33,14 +33,13 @@ I tested out the call (`https://api.github.com/users/{{USERNAME}}/repos`) in [Po
 ```javascript
 sortProjects() {
     this.projectList = this.projects
-    .filter(
-        (item) =>
-        item.name === [YOUR PROJECT] ||
-        item.name === [YOUR PROJECT] ||
-        item.name === [YOUR PROJECT]
-    )
+    .filter((item) => {
+        return this.targetProjects.some((f) => {
+            return f.name === item.name
+        })
+    })
     .map((proj) => {
-        const title = this.betterNames
+        const title = this.targetProjects
             .filter((item) => item.name === proj.name)
             .map((item) => {
                 return item.title
@@ -61,10 +60,10 @@ sortProjects() {
 },
 ```
 
-You'll also notice I reference a `betterNames` object. This object contains more readable names than my original GitHub titles, so I'm able to use a slightly better option to describe the project. 
+You'll also notice I reference a `targetProjects` object. This object contains more readable names than my original GitHub titles, so I'm able to use a slightly better option to title the project and to consequently filter the full array to target those same projects.
 
 ```javascript
-betterNames: [
+targetProjects: [
     {
         name: 'mikemattner.com',
         title: 'This Site!',
