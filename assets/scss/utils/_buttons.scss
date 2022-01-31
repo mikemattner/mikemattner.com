@@ -116,19 +116,24 @@
   }
 
   &--secondary {
-    color: $white;
+    color: $bodyBackground;
     border-color: $secondary;
     background-color: $secondary;
-    &:hover {
-      border-color: $secondaryHover;
-      color: $white;
-    }
     .button__bubble {
       background-color: $secondaryHover;
     }
     svg {
-      fill: $white;
+      fill: $bodyBackground;
+      color: $bodyBackground;
+    }
+    &:hover {
+      border-color: $secondaryHover;
       color: $white;
+
+      svg {
+        fill: $white;
+        color: $white;
+      }
     }
   }
   &--secondary-ghost {

@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       projectList: [],
-      betterNames: [
+      targetProjects: [
         {
           name: 'mikemattner.com',
           title: 'This Site!',
@@ -48,16 +48,13 @@ export default {
   methods: {
     sortProjects() {
       this.projectList = this.projects
-        .filter(
-          (item) =>
-            item.name === 'mikemattner.com' ||
-            item.name === 'numbers' ||
-            item.name === 'macos-system-setup' ||
-            item.name === 'hello' ||
-            item.name === 'wp-theme-2016'
-        )
+        .filter((item) => {
+          return this.targetProjects.some((f) => {
+            return f.name === item.name
+          })
+        })
         .map((proj) => {
-          const title = this.betterNames
+          const title = this.targetProjects
             .filter((item) => item.name === proj.name)
             .map((item) => {
               return item.title

@@ -3,47 +3,51 @@
     <PageHero dark>
       <Header
         tag="h1"
-        class="display-1"
+        class="text-huge"
         decorator
         v-html="about.title"
       ></Header>
       <p v-html="about.subtitle"></p>
     </PageHero>
     <section class="section layout">
-      <div class="meta_col">
+      <div class="about-layout">
         <div class="personal-image">
-          <StaticImage
-            v-for="(image, index) in images"
-            :key="`image-${index}`"
-            :src="image.src"
-            :alt="image.alt"
-            circle
-            overlay
-          />
+          <div class="personal-image__list">
+            <StaticImage
+              v-for="(image, index) in images"
+              :key="`image-${index}`"
+              :src="image.src"
+              :alt="image.alt"
+              circle
+              overlay
+            />
+          </div>
+        </div>
+        <div class="personal-story">
+          <nuxt-content :document="about" />
         </div>
         <div class="professional-info">
-          <h2 class="display-6">Experience</h2>
-          <ul class="text-small">
-            <li v-for="(item, index) in experience" :key="`exp-${index}`">
-              <strong>{{ item.company }}</strong> {{ item.title }}
-            </li>
-          </ul>
-          <h2 class="display-6">Skills</h2>
-          <ul class="text-small">
-            <li v-for="(item, index) in skills" :key="`exp-${index}`">
-              {{ item }}
-            </li>
-          </ul>
-          <h2 class="display-6">Tools</h2>
-          <ul class="text-small">
-            <li v-for="(item, index) in tools" :key="`exp-${index}`">
-              {{ item }}
-            </li>
-          </ul>
+          <div class="professional-info__list">
+            <h2 class="display-6">Experience</h2>
+            <ul class="text-small">
+              <li v-for="(item, index) in experience" :key="`exp-${index}`">
+                <strong>{{ item.company }}</strong> {{ item.title }}
+              </li>
+            </ul>
+            <h2 class="display-6">Skills</h2>
+            <ul class="text-small">
+              <li v-for="(item, index) in skills" :key="`exp-${index}`">
+                {{ item }}
+              </li>
+            </ul>
+            <h2 class="display-6">Tools</h2>
+            <ul class="text-small">
+              <li v-for="(item, index) in tools" :key="`exp-${index}`">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="personal-story">
-        <nuxt-content :document="about" />
       </div>
       <div class="personal-projects">
         <Header tag="h3" class="personal-projects__header">
@@ -142,11 +146,19 @@ export default {
     padding: $defaultPadding 0;
     background-color: $darkShadeBackground;
 
-    .meta_col {
+    .about-layout {
       grid-column: main-content / span 6;
+      @media (min-width: $tablet) {
+        grid-column: content-start / span 8;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(3, minmax(100px, 1fr));
+        column-gap: 1.25rem;
+        align-content: start;
+      }
       @media (min-width: $desktop) {
-        align-items: start;
-        grid-column: content-start / span 4;
+        grid-column: content-start / span 9;
+        grid-template-columns: repeat(9, 1fr);
       }
     }
 
@@ -154,9 +166,10 @@ export default {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 1.25rem;
+      grid-column: 1 / span 4;
+      grid-row: 2 / span 2;
 
-      h2,
-      ul {
+      &__list {
         grid-column: 1 / span 4;
 
         @media (min-width: $tablet) {
@@ -165,10 +178,18 @@ export default {
       }
     }
     .personal-image {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, minmax(100px, 1fr));
-      position: relative;
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, minmax(100px, 1fr));
+        position: relative;
+      }
+
+      @media (min-width: $tablet) {
+        grid-column: 1 / span 4;
+        grid-row: 1;
+      }
+
       figure {
         width: 80%;
         margin: 0 auto;
@@ -199,9 +220,15 @@ export default {
     }
     .personal-story {
       padding-bottom: $defaultPadding;
-      grid-column: main-content / span 6;
+
+      @media (min-width: $tablet) {
+        grid-column: 5 / span 4;
+        grid-row: 1 / span 3;
+      }
+
       @media (min-width: $desktop) {
-        grid-column: 6 / span 5;
+        grid-column: 5 / span 5;
+        grid-row: 1 / span 3;
       }
 
       h2 {
@@ -220,6 +247,7 @@ export default {
         font-size: $h5;
       }
     }
+
     .personal-projects {
       grid-column: main-content / span 6;
       @media (min-width: $desktop) {

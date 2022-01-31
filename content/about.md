@@ -1,6 +1,6 @@
 ---
-title: 'I&rsquo;m Mike, a designer & developer from Michigan.'
-subtitle: 'I design and build for the web. Currently working as a UI Engineer at AccuLynx.'
+title: 'Hey, I&rsquo;m Mike.'
+subtitle: 'I design and build for the web, currently working as a UI Engineer at AccuLynx.'
 ---
 
 ## A Little About Me

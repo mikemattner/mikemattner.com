@@ -7,12 +7,30 @@
           <Header tag="h3" class="display-5" decorator>{{ info.name }}</Header>
         </div>
         <div class="project-description__header-stats">
-          <div class="chip">
-            <FaIcon icon="eye" size="sm"></FaIcon> {{ info.watchers }}
-          </div>
-          <div class="chip">
-            <FaIcon icon="star" size="sm"></FaIcon> {{ info.stars }}
-          </div>
+          <Button
+            :href="`${info.url}/watchers`"
+            target="_blank"
+            icon="eye"
+            icon-left
+            icon-size="sm"
+            tertiary
+            ghost
+            small
+          >
+            {{ info.watchers }}
+          </Button>
+          <Button
+            :href="`${info.url}/stargazers`"
+            target="_blank"
+            icon="star"
+            icon-left
+            icon-size="sm"
+            tertiary
+            ghost
+            small
+          >
+            {{ info.stars }}
+          </Button>
         </div>
       </div>
       <p>{{ info.description }}</p>
@@ -91,18 +109,12 @@ export default {
     }
     &-stats {
       position: absolute;
-      top: math.div($defaultPadding, 4);
+      top: math.div($defaultPadding, 4) * -1;
       right: math.div($defaultPadding, 4);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: math.div($defaultPadding, 4);
-      .chip {
-        padding: 0 math.div($defaultPadding, 4);
-        aspect-ratio: 2 / 1;
-        border-radius: $radius;
-        background: $bodyBackground;
-      }
     }
   }
   .project-tech {
