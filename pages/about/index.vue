@@ -40,12 +40,6 @@
                 {{ item }}
               </li>
             </ul>
-            <h2 class="display-6">Tools</h2>
-            <ul class="text-small">
-              <li v-for="(item, index) in tools" :key="`exp-${index}`">
-                {{ item }}
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -61,7 +55,7 @@
 </template>
 
 <script>
-import { experience, skills, tools } from '~/data/resume.yaml'
+import { experience, skills } from '~/data/resume.yaml'
 
 export default {
   name: 'About',
@@ -101,7 +95,6 @@ export default {
     return {
       experience,
       skills,
-      tools,
       images: [
         {
           src: 'personal/mike-painting.jpg',
@@ -152,7 +145,7 @@ export default {
         grid-column: content-start / span 8;
         display: grid;
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 0.5fr 1fr;
         column-gap: 1.25rem;
         align-content: start;
       }
