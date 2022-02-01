@@ -1,5 +1,5 @@
 <template>
-  <section class="project-list two-col">
+  <section class="project-list three-col">
     <ProjectCard
       v-for="(item, index) in projectList"
       :key="`project-${index}`"
@@ -79,6 +79,6 @@ export default {
 
 <style lang="scss" scoped>
 .project-list {
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
 }
 </style>

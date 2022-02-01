@@ -200,6 +200,9 @@ export default {
     padding-top: 0rem;
     background-color: $darkShadeBackground;
   }
+  .footnotes {
+    font-size: $small;
+  }
   .quote {
     blockquote {
       font-size: $base * 1.25;

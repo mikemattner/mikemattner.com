@@ -31,6 +31,11 @@
             >
           </li>
           <li>
+            <NuxtLink to="/projects"
+              ><span @click="toggle()">Projects</span></NuxtLink
+            >
+          </li>
+          <li>
             <NuxtLink to="/about" exact
               ><span @click="toggle()">About</span></NuxtLink
             >
@@ -211,7 +216,7 @@ $transparent-bg: rgba($darkerShadeBackground, 0.9);
     }
   }
   &__nav {
-    font-size: $base * 0.75;
+    font-size: $base * 0.675;
     letter-spacing: 0.03em;
     ul {
       display: flex;
@@ -221,7 +226,7 @@ $transparent-bg: rgba($darkerShadeBackground, 0.9);
       margin: 0 0 0 0;
       padding: 0;
       li {
-        margin: 0 $defaultPadding * 1.5 0 0;
+        margin: 0 $defaultPadding 0 0;
         padding: 0;
         &:before {
           display: none;
