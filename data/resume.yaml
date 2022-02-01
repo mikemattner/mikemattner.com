@@ -33,13 +33,11 @@ experience:
                  the Adobe Digital Publishing Suite in the transition away from printed assets.
 
 skills:
-  - Front End Development
   - UX/UI Design
   - HTML/CSS
   - Sass/SCSS
   - JavaScript
   - VueJS
-  - WordPress
   - Adobe Experience Manager
   - npm/yarn
   - webpack

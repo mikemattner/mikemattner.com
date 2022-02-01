@@ -8,12 +8,12 @@
           }}</Header>
           <div>
             <p>
-              {{ writingPage.introBody }}
+              <span v-html="writingPage.introBody"></span>
               <span class="tags">
                 <span v-for="(tag, index) in tags" :key="index">
-                  <nuxt-link :to="`/writing/tag/${formattedTag(tag.title)}`">{{
-                    tag.title
-                  }}</nuxt-link> </span
+                  <nuxt-link :to="`/writing/tag/${formattedTag(tag.title)}`">
+                    {{ tag.title }}
+                  </nuxt-link> </span
                 >.
               </span>
             </p>
@@ -86,7 +86,7 @@ export default {
       }
     }
     p {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
   }
   .search-form {

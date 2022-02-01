@@ -41,8 +41,7 @@
               target="_blank"
               icon="arrow-alt-circle-down"
               icon-right
-              secondary
-              ghost
+              secondary-dark
               small
               >R&eacute;sum&eacute;
             </Button>
@@ -97,7 +96,7 @@ export default {
 </script>
 
 <style lang="scss">
-$transparent-bg: rgba($darkShadeBackground, 0.9);
+$transparent-bg: rgba($darkerShadeBackground, 0.9);
 .navbar {
   background-color: none;
   padding: 0 1.25rem;
@@ -289,7 +288,10 @@ $transparent-bg: rgba($darkShadeBackground, 0.9);
         }
       }
     }
-    @media (min-width: 769px) {
+    @media (min-width: $tablet) {
+      grid-column: main-content-start / span 6;
+    }
+    @media (min-width: $desktop) {
       grid-column: main-content-start / span 8;
     }
     @media (max-width: 768px) {

@@ -152,7 +152,7 @@ export default {
         grid-column: content-start / span 8;
         display: grid;
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(3, minmax(100px, 1fr));
+        grid-template-rows: 1fr 2fr;
         column-gap: 1.25rem;
         align-content: start;
       }
@@ -168,6 +168,17 @@ export default {
       column-gap: 1.25rem;
       grid-column: 1 / span 4;
       grid-row: 2 / span 2;
+
+      @media (max-width: $tablet) {
+        padding: $defaultPadding;
+        background-color: $darkerShadeBackground;
+        border-radius: $radius-large;
+        box-shadow: boxShadow;
+
+        h2:first-child {
+          margin-top: 0;
+        }
+      }
 
       &__list {
         grid-column: 1 / span 4;

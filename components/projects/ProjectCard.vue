@@ -4,7 +4,7 @@
       <div class="project-description__header">
         <div class="project-description__header-title">
           <div class="project-year">{{ listYear(info.year) }}</div>
-          <Header tag="h3" class="display-5" decorator>{{ info.name }}</Header>
+          <Header tag="h3" class="display-5">{{ info.name }}</Header>
         </div>
         <div class="project-description__header-stats">
           <Button
@@ -50,9 +50,18 @@
       >
         View on GitHub
       </Button>
-      <ul class="project-tech">
-        <li v-for="(item, index) in info.topics" :key="index">{{ item }}</li>
-      </ul>
+      <div class="project-tech">
+        <Button
+          v-for="(item, index) in info.topics"
+          :key="index"
+          :href="`https://github.com/topics/${item}`"
+          target="_blank"
+          secondary-dark
+          small
+        >
+          {{ item }}
+        </Button>
+      </div>
     </div>
   </div>
 </template>
@@ -118,24 +127,15 @@ export default {
     }
   }
   .project-tech {
-    font-size: $small;
     display: flex;
     align-items: flex-start;
     margin-bottom: 0;
     padding-left: 0;
     margin-top: math.div($defaultPadding, 6);
-    line-height: 1.25;
 
-    li {
+    .button {
+      margin: 0;
       margin-right: math.div($defaultPadding, 4);
-      margin-left: 0;
-      padding: math.div($defaultPadding, 6);
-      border-radius: $radius;
-      background-color: $bodyBackground;
-      line-height: 1;
-      &:before {
-        display: none;
-      }
     }
   }
 }

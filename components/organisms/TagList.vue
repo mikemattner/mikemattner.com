@@ -1,7 +1,7 @@
 <template>
   <ul class="tags">
     <li v-for="tag in tags" :key="tag">
-      <Button :to="`/writing/tag/${formattedTag(tag)}`" secondary ghost small>{{
+      <Button :to="`/writing/tag/${formattedTag(tag)}`" secondary-dark small>{{
         tag
       }}</Button>
     </li>

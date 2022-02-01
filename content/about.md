@@ -1,13 +1,15 @@
 ---
-title: 'Hey, I&rsquo;m Mike.'
+title: 'Hey, I&rsquo;m Mike Mattner.'
 subtitle: 'I design and build for the web, currently working as a UI Engineer at AccuLynx.'
 ---
 
 ## A Little About Me
 
-Getting in to web development and design was a direct result of spending my teenage years tinkering with old computers with my dad—he always found these old hunks of junk to play with. I attempted to learn `BASIC` on those old machines. Some of my best memories were rehabbing these computers until we started to build our own. When we got ourselves connected to the internet with dial-up...holy shit, was that an eye-opening experience.
+Getting in to web development and design was a direct result of spending my teenage years tinkering with old computers with my dad. I attempted to learn `QBasic` on those old machines, and some of my best memories from childhood revolve around rehabbing these computers until we started to build our own. When we got ourselves connected to the internet with dial-up...holy shit, was that an eye-opening experience.
 
-Not long after that, in the era of table based layouts, I started to learn the basics of `html/css`. Being more of an avid gamer back then, and I really enjoyed the Dark Forces series. I [created a website](https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/) dedicated to mods for the Jedi Knight series, and decided around that time to turn web design and development into a career.
+Not too long after that I started to learn the basics of `html` and got my start on [Geocities](https://en.wikipedia.org/wiki/Yahoo!_GeoCities). Being more of an avid gamer back then, and a stereotypical fan of Star Wars, I spent as many hours as I could playing through the Dark Forces series. I eventually [created a website](https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/) dedicated to mods for the Jedi Knight iteration, and decided around that time to turn web design and development into a career.
+
+### Present Day
 
 I was born and raised in Michigan, went to college and lived in Florida, then made my way back to Michigan to enjoy the wonderful lakes and summer experience, and I've lived here ever since.
 

@@ -135,6 +135,28 @@
         color: $white;
       }
     }
+
+    &-dark {
+      background-color: $bodyBackground;
+      border-color: $bodyBackground;
+      color: $white;
+      .button__bubble {
+        background-color: $secondaryHover;
+      }
+      svg {
+        fill: $white;
+        color: $white;
+      }
+      &:hover {
+        border-color: $secondaryHover;
+        color: $white;
+  
+        svg {
+          fill: $white;
+          color: $white;
+        }
+      }
+    }
   }
   &--secondary-ghost {
     color: $white;

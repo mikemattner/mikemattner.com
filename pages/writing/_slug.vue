@@ -19,28 +19,29 @@
           <TagList :tags="writing.tag" />
         </div>
       </PageHero>
-      <WaveRight flip />
       <div id="content" :data-type="writing.type" :class="writing.type">
         <nuxt-content :document="writing" />
+        <div v-if="writing.type == 'quote'" class="layout">
+          <p class="attribution">&mdash; {{ writing.attribution }}</p>
+        </div>
         <aside v-if="writing.link" class="layout">
           <div class="article-link main-content">
-            <p>Visit the content I&rsquo;m referencing</p>
+            <div class="copy">
+              <Header tag="h6" class="display-6">Want to know more?</Header>
+              <p>View the content I&rsquo;m referencing</p>
+            </div>
             <Button
               :href="writing.link[0]"
               target="_blank"
               icon="external-link-alt"
               icon-right
               small
-              secondary
-              ghost
+              secondary-dark
               ><span v-if="writing.linktitle">{{ writing.linktitle }}</span
               ><span v-else>View Link</span>
             </Button>
           </div>
         </aside>
-        <div v-if="writing.type == 'quote'" class="layout">
-          <p class="attribution">&mdash; {{ writing.attribution }}</p>
-        </div>
         <div class="layout">
           <div class="links main-content">
             <Button
@@ -86,6 +87,7 @@
           </div>
         </div>
       </div>
+      <WaveRight flip />
     </article>
   </section>
 </template>
@@ -196,6 +198,7 @@ export default {
   }
   #content {
     padding-top: 0rem;
+    background-color: $darkShadeBackground;
   }
   .quote {
     blockquote {
@@ -205,12 +208,12 @@ export default {
   }
   .nuxt-content {
     code {
-      background-color: $darkShadeBackground;
+      background-color: $darkerShadeBackground;
     }
   }
   .nuxt-content-highlight {
     position: relative;
-    background-color: $darkShadeBackground;
+    background-color: $darkerShadeBackground;
     font-size: 0.75rem;
     padding: $defaultPadding;
     border-radius: $radius-large;
@@ -322,12 +325,12 @@ export default {
   }
   .article-link {
     position: relative;
-    background-color: $darkShadeBackground;
+    background-color: $darkerShadeBackground;
     font-size: 0.75rem;
-    padding: math.div($defaultPadding, 3) math.div($defaultPadding, 2);
+    padding: math.div($defaultPadding, 2) math.div($defaultPadding, 2);
     border-radius: $radius-large;
     box-shadow: $boxShadow;
-    text-align: center;
+    text-align: left;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -335,11 +338,15 @@ export default {
     margin-left: math.div($defaultPadding, 2) * -1;
     margin-right: math.div($defaultPadding, 2) * -1;
     color: $middleGray;
-    p {
+    .copy {
       margin-right: $defaultPadding;
       padding-right: $defaultPadding;
-      font-weight: 700;
-      // border-right: 1px solid $middleGray;
+    }
+    h6 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
     }
     .button {
       margin: 0.5rem 0;

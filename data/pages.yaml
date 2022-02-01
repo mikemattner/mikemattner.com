@@ -13,13 +13,13 @@ homePage:
 
   writing:
     title: Writing
-    body: Writing about my profession, hobbies, and other longer format topics.
+    body: Writing about my profession, hobbies, and other topics.
     buttonTitle: Read More
     link: /writing
 
 writingPage:
   title: Writing
-  introBody: I like to write about
+  introBody: I&rsquo;ve written about
 
 usesPage:
   title: Uses
