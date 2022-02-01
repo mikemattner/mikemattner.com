@@ -43,12 +43,6 @@
           </div>
         </div>
       </div>
-      <div class="personal-projects">
-        <Header tag="h3" class="personal-projects__header">
-          Personal Projects
-        </Header>
-        <ProjectList :projects="projects" />
-      </div>
     </section>
     <WaveRight flip />
   </div>
@@ -63,32 +57,17 @@ export default {
   transition: 'fade',
   async asyncData({ $content, app, error }) {
     let about
-    let projects
     try {
       about = await $content('about').fetch()
-      projects = await fetch('https://api.github.com/users/mikemattner/repos', {
-        headers: {
-          Accept: 'application/vnd.github.v3+json',
-        },
-      }).then((res) => res.json())
     } catch (e) {
       try {
         about = await $content('about').fetch()
-        projects = await fetch(
-          'https://api.github.com/users/mikemattner/repos',
-          {
-            headers: {
-              Accept: 'application/vnd.github.v3+json',
-            },
-          }
-        ).then((res) => res.json())
       } catch (e) {
         return error({ statusCode: 404, message: 'Content not found' })
       }
     }
     return {
       about,
-      projects,
     }
   },
   data() {
