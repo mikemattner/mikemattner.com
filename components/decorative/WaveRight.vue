@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SmallWave from '@/assets/img/svg/small-wave.svg'
+import SmallWave from '@/assets/img/svg/small-wave.svg?inline'
 
 export default {
   name: 'WaveRight',
