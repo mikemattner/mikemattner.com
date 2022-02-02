@@ -7,7 +7,7 @@ tag:
 - Development
 ---
 
-I was looking for a way to highlight projects from GitHub, and while those are not expansive or complex, my plan is to use this year as a springboard for more. The API provides a way to grab publicly available information for display, and I figured I would see if I could make that work for my situation.
+I was looking for a way to highlight projects from GitHub,[^1] and while those are not expansive or complex, my plan is to use this year as a springboard for more. The API provides a way to grab publicly available information for display, and I figured I would see if I could make that work for my situation.
 
 ## The API
 
@@ -76,3 +76,5 @@ I've also sorted the project by the `pushed_at` value returned from the call ass
 ### Conclusion
 
 This simple approach could be adapted to do more for a developer portfolio if desired. Highlight a single repo with this simple call: `https://api.github.com/repos/{{USERNAME}}/{{REPO_NAME}}` or grab every repo and display it all without my restrictions. Anything more extensive might require something more complex, but this was a simple way to pull in a few items I work on.
+
+[^1]: I have seriously neglected my own account.
