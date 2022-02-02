@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Wave from '@/assets/img/svg/wavy.svg'
+import Wave from '@/assets/img/svg/wavy.svg?inline'
 
 export default {
   name: 'Wavy',

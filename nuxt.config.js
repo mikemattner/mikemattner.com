@@ -61,9 +61,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-svg-loader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxt/content',
@@ -97,7 +95,7 @@ export default {
       type: 'rss2',
     },
   ],
-  buildModules: ['@nuxt/image'],
+  buildModules: ['@nuxt/image', '@nuxtjs/svg', '@nuxtjs/eslint-module'],
   image: {
     screens: {
       xs: 320,
@@ -123,13 +121,6 @@ export default {
       },
     },
     fullTextSearchFields: ['title', 'description', 'text', 'type'],
-  },
-  svgLoader: {
-    svgoConfig: {
-      plugins: [
-        { prefixIds: false }, // Disables prefixing for SVG IDs
-      ],
-    },
   },
 
   /*
@@ -168,14 +159,14 @@ export default {
     extend(config, { isDev, isClient, loaders }) {
       loaders.scss.additionalData = '@use "sass:math";'
       // Run ESLint on save
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-        })
-      }
+      // if (isDev && isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/,
+      //   })
+      // }
       config.module.rules.push({
         test: /\.yaml$/,
         loader: 'js-yaml-loader',

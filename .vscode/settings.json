@@ -14,5 +14,10 @@
   "yaml.schemas": {
     "file:///Users/mikemattner/.vscode/extensions/atlassian.atlascode-1.2.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
     "https://json.schemastore.org/yamllint.json": "file:///Users/mikemattner/Documents/htdocs/mikemattner.com/data/resume.yaml"
-  }
+  },
+  "json.schemas": [
+    { 
+      "$schema": "https://json.schemastore.org/jsconfig" 
+    }
+  ]
 }
