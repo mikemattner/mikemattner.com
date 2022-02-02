@@ -79,6 +79,6 @@ export default {
 
 <style lang="scss" scoped>
 .project-list {
-  padding: 0 0 2rem 0;
+  padding: 0;
 }
 </style>

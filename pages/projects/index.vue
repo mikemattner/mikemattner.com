@@ -5,9 +5,9 @@
         tag="h1"
         class="text-huge"
         decorator
-        v-html="personalProjects.title"
+        v-html="personalProjectsPage.title"
       ></Header>
-      <p v-html="personalProjects.subtitle"></p>
+      <p v-html="personalProjectsPage.subtitle"></p>
     </PageHero>
     <section class="section layout">
       <div class="personal-projects">
@@ -19,17 +19,15 @@
 </template>
 
 <script>
-import { experience, skills } from '~/data/resume.yaml'
-
 export default {
-  name: 'About',
+  name: 'Projects',
   scrollToTop: true,
   transition: 'fade',
   async asyncData({ $content, app, error }) {
-    let personalProjects
+    let personalProjectsPage
     let projects
     try {
-      personalProjects = await $content('personalprojects').fetch()
+      personalProjectsPage = await $content('personalProjects').fetch()
       projects = await fetch('https://api.github.com/users/mikemattner/repos', {
         headers: {
           Accept: 'application/vnd.github.v3+json',
@@ -37,7 +35,7 @@ export default {
       }).then((res) => res.json())
     } catch (e) {
       try {
-        personalProjects = await $content('about').fetch()
+        personalProjectsPage = await $content('personalProjects').fetch()
         projects = await fetch(
           'https://api.github.com/users/mikemattner/repos',
           {
@@ -51,33 +49,13 @@ export default {
       }
     }
     return {
-      personalProjects,
+      personalProjectsPage,
       projects,
-    }
-  },
-  data() {
-    return {
-      experience,
-      skills,
-      images: [
-        {
-          src: 'personal/mike-painting.jpg',
-          alt: 'What a lovely painting! Not mine.',
-        },
-        {
-          src: 'personal/mike-profile.jpg',
-          alt: 'Generic profile image.',
-        },
-        {
-          src: 'personal/mike-cooking.jpg',
-          alt: 'Tailgating in Ann Arbor.',
-        },
-      ],
     }
   },
   head() {
     return {
-      titleTemplate: `About – %s`,
+      titleTemplate: `Personal Projects – %s`,
     }
   },
 }
