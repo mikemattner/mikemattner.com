@@ -87,7 +87,7 @@ export default {
         grid-column: 2 / span 8;
       }
       @media (min-width: $desktop) {
-        grid-column: 2 / span 10;
+        grid-column: 2 / span 8;
       }
     }
   }

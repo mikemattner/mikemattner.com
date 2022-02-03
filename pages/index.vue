@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <PageHero dark full>
+    <PageHero full>
       <StaticImage
         v-for="(image, index) in images"
         :key="`image-${index}`"
@@ -23,7 +23,7 @@
         <Button to="/about" primary ghost>More About Me</Button>
       </div>
     </PageHero>
-    <WaveRight flip />
+    <WaveRight />
     <!-- <section class="section--work section--dark">
       <div class="layout">
         <Header
@@ -37,7 +37,7 @@
       </div>
     </section>
     <WaveRight flip /> -->
-    <section id="content" class="section section--writing layout">
+    <section id="content" class="section section--writing section--dark layout">
       <div class="main-content">
         <Header tag="h2" class="display-3" decorator>{{
           homePage.writing.title
@@ -49,6 +49,7 @@
         }}</Button>
       </div>
     </section>
+    <WaveRight flip />
   </div>
 </template>
 
@@ -147,7 +148,7 @@ export default {
   }
 
   .section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     position: relative;
 
     &--work {
@@ -164,7 +165,6 @@ export default {
     }
 
     &--writing {
-      padding-top: 0;
       p {
         margin-bottom: 2rem;
       }

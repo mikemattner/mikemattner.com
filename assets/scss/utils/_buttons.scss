@@ -132,10 +132,10 @@
     }
 
     &-dark {
-      background-color: $bodyBackground;
+      background-color: shade($darkBlue, 20%);
       color: $white;
       .button__bubble {
-        background-color: rgba($primary, 0.125);
+        background-color: $darkBlue;
       }
       svg {
         fill: $white;

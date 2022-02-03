@@ -136,7 +136,7 @@ export default {
 
     .professional-info {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       column-gap: 1.25rem;
       grid-column: 1 / span 4;
       grid-row: 2 / span 2;
@@ -169,7 +169,7 @@ export default {
       }
 
       @media (min-width: $tablet) {
-        grid-column: 1 / span 4;
+        grid-column: 2 / span 3;
         grid-row: 1;
       }
 

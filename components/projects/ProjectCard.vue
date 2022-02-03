@@ -109,7 +109,7 @@ export default {
     .project-year {
       margin-top: 0;
       margin-bottom: 0;
-      color: $primary;
+      color: $middleGray;
       font-weight: 400;
       font-size: $small;
     }

@@ -7,8 +7,7 @@
         >
         <p class="main-content" v-html="type.description"></p>
       </PageHero>
-      <WaveRight flip />
-      <section>
+      <section class="section--dark">
         <AllArticles list-all :posts="writing" />
         <div class="layout">
           <div class="main-content">
@@ -18,6 +17,7 @@
           </div>
         </div>
       </section>
+      <WaveRight flip />
     </div>
   </section>
 </template>
@@ -75,13 +75,9 @@ export default {
       margin-bottom: 3rem;
     }
   }
-  .search-form {
-    // margin-top: 3rem;
-    margin-bottom: 3rem;
-    grid-column: main-content / span 6;
-    @media (min-width: $tablet) {
-      grid-column: main-content / span 6;
-    }
+  .section--dark {
+    background-color: $darkShadeBackground;
+    padding-bottom: $defaultPadding * 2;
   }
   .links {
     margin-top: 2rem;
