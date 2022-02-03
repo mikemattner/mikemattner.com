@@ -1,5 +1,5 @@
 <template>
-  <section class="project-list three-col">
+  <section class="project-list two-col">
     <ProjectCard
       v-for="(item, index) in projectList"
       :key="`project-${index}`"

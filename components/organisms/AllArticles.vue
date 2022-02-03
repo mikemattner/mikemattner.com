@@ -2,9 +2,9 @@
   <section class="all-articles">
     <template v-if="!listAll">
       <div class="article-list">
-        <hr class="year-group-sep first-in-list" />
+        <!-- <hr class="year-group-sep first-in-list" /> -->
         <ArticleLink v-for="post in posts" :key="post.title" :article="post" />
-        <hr class="year-group-sep" />
+        <!-- <hr class="year-group-sep" /> -->
       </div>
     </template>
     <template v-if="listAll">
@@ -86,10 +86,10 @@
         :key="index"
         class="layout year-group"
       >
-        <hr
+        <!-- <hr
           v-if="index === 0"
           class="margin-to-main year-group-sep first-in-list"
-        />
+        /> -->
         <template v-if="displayFiltered(item.year, item.tags)">
           <div class="year-designation">
             <Header :id="item.year" tag="h3" class="display-5">
@@ -104,7 +104,7 @@
               />
             </li>
           </ul>
-          <hr class="margin-to-main year-group-sep" />
+          <!-- <hr class="margin-to-main year-group-sep" /> -->
         </template>
       </div>
     </template>
@@ -265,8 +265,8 @@ export default {
     opacity: 0;
     max-height: 0;
     transition: $transition-cubic;
-    background-color: $darkShadeBackground;
-    border-radius: $radius-large $radius-large 0 0;
+    background-color: $darkerShadeBackground;
+    border-radius: $radius-large;
 
     h3 {
       margin-top: 0;
@@ -317,10 +317,10 @@ export default {
   .year-designation {
     grid-column: main-content / span 7;
     @media (min-width: 769px) {
-      grid-column: margin-start / span 1;
+      grid-column: content-start / span 1;
 
       h3 {
-        // position: sticky;
+        position: sticky;
         top: 80px;
       }
     }

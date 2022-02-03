@@ -127,8 +127,8 @@ export default {
   }
 
   input {
-    background: $darkShadeBackground;
-    border: 1px solid $darkShadeBackground;
+    background: $darkerShadeBackground;
+    border: 1px solid $darkerShadeBackground;
     border-radius: $radius-large;
     box-shadow: $boxShadowSmall;
     padding: math.div($defaultPadding, 2) math.div($defaultPadding, 2);
@@ -152,7 +152,7 @@ export default {
     }
   }
   ul {
-    background: $darkShadeBackground;
+    background: $darkerShadeBackground;
     position: absolute;
     top: calc(100% + 1rem);
     left: math.div(-$defaultPadding, 2);

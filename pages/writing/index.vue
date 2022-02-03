@@ -9,7 +9,7 @@
           <div>
             <p>
               <span v-html="writingPage.introBody"></span>
-              <span class="tags">
+              <span class="tags-paragraph">
                 <span v-for="(tag, index) in tags" :key="index">
                   <nuxt-link :to="`/writing/tag/${formattedTag(tag.title)}`">
                     {{ tag.title }}</nuxt-link
@@ -20,13 +20,13 @@
           </div>
         </div>
       </PageHero>
-      <WaveRight flip />
-      <section>
+      <section class="section--dark">
         <div class="layout">
           <SearchForm />
         </div>
         <AllArticles :posts="writing" :all-tags="tags" list-all list-filters />
       </section>
+      <WaveRight flip />
     </div>
   </section>
 </template>
@@ -89,6 +89,10 @@ export default {
       margin-bottom: 3rem;
     }
   }
+  .section--dark {
+    background-color: $darkShadeBackground;
+    padding-bottom: $defaultPadding * 2;
+  }
   .search-form {
     margin-bottom: math.div($defaultPadding, 2);
     grid-column: main-content / span 6;
@@ -96,7 +100,7 @@ export default {
       grid-column: main-content / span 6;
     }
   }
-  .tags {
+  .tags-paragraph {
     span {
       display: inline-block;
       margin-right: 0.25em;

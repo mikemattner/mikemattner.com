@@ -3,11 +3,11 @@
     <article :key="$route.params.slug">
       <PageHero :image="writing.image" :image-alt="writing.imageAlt" dark>
         <div class="meta top main-content">
-          <NuxtLink :to="`/writing/type/${writing.type}`">
+          <!-- <NuxtLink :to="`/writing/type/${writing.type}`">
             <span class="article-type"
               ><fa-icon :icon="categoryIcon" size="sm"></fa-icon>
             </span>
-          </NuxtLink>
+          </NuxtLink> -->
           <time>{{ formattedDate }}</time>
         </div>
         <Header
@@ -316,9 +316,9 @@ export default {
       margin: 0 0 math.div($defaultPadding, 3);
       display: flex;
       align-items: center;
-      time {
-        margin-left: math.div($defaultPadding, 3);
-      }
+      // time {
+      //   margin-left: math.div($defaultPadding, 3);
+      // }
     }
     &.flex {
       display: flex;

@@ -1,22 +1,23 @@
 <template>
-  <article
-    :class="['single-link', archive == true ? 'article--link' : '']"
-    :data-type="article.type"
-  >
-    <nuxt-link :to="`/writing/${formatSlug(article.slug)}`">
-      <div class="article-meta">
+  <article :class="['single-article']" :data-type="article.type">
+    <nuxt-link
+      :to="`/writing/${formatSlug(article.slug)}`"
+      data-article-link="true"
+    >
+      <!-- <div class="article-meta">
         <time>{{ formatDate(article.date) }}</time>
-      </div>
+      </div> -->
       <Header tag="h3" class="display-5 article-title">
         <span v-html="article.title"></span>
-        <span class="article-type">
+        <!-- <span class="article-type">
           <fa-icon :icon="categoryIcon" size="sm"></fa-icon>
-        </span>
+        </span> -->
       </Header>
       <div v-if="article.description" class="article-description">
         <span v-html="article.description"></span>
       </div>
     </nuxt-link>
+    <TagList :tags="article.tag" />
   </article>
 </template>
 
@@ -63,46 +64,40 @@ export default {
 </script>
 
 <style lang="scss">
-.single-link {
+.single-article {
   display: block;
   background-image: none;
   position: relative;
   transition: $transition;
-  //   display: flex;
-  //   align-items: flex-start;
-  //   justify-content: center;
-  //   flex-direction: column;
-  //   background-image: none;
-  //   padding: $defaultPadding 0;
-  //   position: relative;
-  //   text-decoration: none;
-  a {
+  padding-bottom: $defaultPadding;
+
+  a[data-article-link] {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     background-image: none;
-    padding: $defaultPadding 0;
+    padding: $defaultPadding 0 math.div($defaultPadding, 2);
     position: relative;
     text-decoration: none;
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: math.div($defaultPadding, 5) * -1;
-      bottom: math.div($defaultPadding, 5) * -1;
-      left: math.div($defaultPadding, 2) * -1;
-      right: math.div($defaultPadding, 2) * -1;
-      height: auto;
-      border-radius: $radius-large;
-      background-color: $darkShadeBackground;
-      transition: $transition-cubic;
-      opacity: 0;
-      transform: scale(1.2);
-      pointer-events: none;
-      filter: blur(1.5rem);
-      box-shadow: $boxShadowLarge;
-    }
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   top: math.div($defaultPadding, 5) * -1;
+    //   bottom: math.div($defaultPadding, 5) * -1;
+    //   left: math.div($defaultPadding, 2) * -1;
+    //   right: math.div($defaultPadding, 2) * -1;
+    //   height: auto;
+    //   border-radius: $radius-large;
+    //   background-color: $darkShadeBackground;
+    //   transition: $transition-cubic;
+    //   opacity: 0;
+    //   transform: scale(1.2);
+    //   pointer-events: none;
+    //   filter: blur(1.5rem);
+    //   box-shadow: $boxShadowLarge;
+    // }
   }
   h3 {
     font-size: $h5;
@@ -110,9 +105,14 @@ export default {
     align-items: center;
     line-height: 1.3;
     margin: 0;
-    transition: all 0.25s ease-in-out;
+    transition: $transition;
     color: $white;
     width: 100%;
+    text-decoration: underline;
+    text-decoration-color: $primary;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: auto;
 
     @include max-media($tablet) {
       justify-content: space-between;
@@ -140,20 +140,15 @@ export default {
       }
     }
   }
-  &.article--link {
-    width: 100%;
-    a {
-      width: 100%;
-    }
-  }
   .article-description {
-    margin-top: 0.5rem;
+    margin-top: 0.125rem;
     font-size: $small;
     font-weight: 400;
     color: $bodyColor;
     z-index: 2;
     @include max-media($tablet) {
       font-size: $base;
+      line-height: 1.5;
     }
   }
   .article-title {
@@ -166,17 +161,27 @@ export default {
     margin: 0 0 0.5rem 0;
     line-height: 1;
     font-weight: 400;
-    color: $primary;
+    color: $middleGray;
     transition: all 0.25s ease-in-out;
     z-index: 2;
     position: relative;
   }
-  &:hover {
-    a:after {
-      opacity: 1;
-      transform: scale(1);
-      filter: blur(0);
-      box-shadow: $boxShadowLarge;
+
+  .tags .button {
+    margin: 0;
+    font-size: 0.5rem;
+  }
+
+  a[data-article-link]:hover {
+    // a:after {
+    //   opacity: 1;
+    //   transform: scale(1);
+    //   filter: blur(0);
+    //   box-shadow: $boxShadowLarge;
+    // }
+    h3 {
+      text-decoration-color: $primary;
+      text-decoration-thickness: 3px;
     }
   }
 }
