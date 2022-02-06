@@ -3,11 +3,8 @@
     <article :key="$route.params.slug">
       <PageHero :image="writing.image" :image-alt="writing.imageAlt" dark>
         <div class="meta top main-content">
-          <!-- <NuxtLink :to="`/writing/type/${writing.type}`">
-            <span class="article-type"
-              ><fa-icon :icon="categoryIcon" size="sm"></fa-icon>
-            </span>
-          </NuxtLink> -->
+          <NuxtLink to="/writing/" class="meta-back-link">Writing</NuxtLink>
+          <span class="meta-divider">/</span>
           <time>{{ formattedDate }}</time>
         </div>
         <Header
@@ -202,6 +199,14 @@ export default {
   }
   .footnotes {
     font-size: $small;
+
+    hr {
+      margin-top: $defaultPadding;
+    }
+  }
+  .footnote-backref {
+    margin-left: math.div($defaultPadding, 4);
+    display: inline-block;
   }
   .quote {
     blockquote {
@@ -324,6 +329,9 @@ export default {
       display: flex;
       align-items: center;
       justify-content: flex-start;
+    }
+    &-divider {
+      margin: 0 math.div($defaultPadding, 4);
     }
   }
   .article-link {
