@@ -1,7 +1,7 @@
 ---
 title: The End of Democracy is Unimaginable
 date: 2022-02-05
-type: link
+type: entry
 description: 'It feels impossible, but the end of democratic norms looks probable within the decade.'
 tag:
     - Politics

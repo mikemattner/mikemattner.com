@@ -5,9 +5,11 @@
         <div class="meta top main-content">
           <NuxtLink to="/writing/" class="meta-back-link">Writing</NuxtLink>
           <span class="meta-divider">/</span>
-          <NuxtLink :to="`/type/${writing.type}`" class="meta-back-link">{{
-            writing.type
-          }}</NuxtLink>
+          <NuxtLink
+            :to="`/writing/type/${writing.type}`"
+            class="meta-back-link"
+            >{{ writing.type }}</NuxtLink
+          >
           <span class="meta-divider">/</span>
           <time>{{ formattedDate }}</time>
         </div>
