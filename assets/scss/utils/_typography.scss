@@ -5,7 +5,7 @@ html {
   // font-size: clamp(1rem, calc(14px + 0.5vw), 2rem);
   font-size: clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem);
   line-height: 1.65;
-  letter-spacing: -1.18%;
+  letter-spacing: 0.0125rem;
 }
 
 h1,
@@ -15,11 +15,11 @@ h4,
 h5,
 h6 {
   font-family: $display-font;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1;
   color: $white;
   margin: 1.75rem 0 0.05rem;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 
   small {
     font-family: $sans-serif-font;
