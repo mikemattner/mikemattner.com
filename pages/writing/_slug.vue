@@ -233,9 +233,8 @@ export default {
     border-radius: $radius-large;
     box-shadow: $boxShadow;
     padding-top: $defaultPadding * 1.5;
-    @media (max-width: 768px) {
-      overflow-x: scroll;
-    }
+    overflow-x: auto;
+
     .filename {
       position: absolute;
       right: math.div($defaultPadding, 2);
@@ -251,9 +250,6 @@ export default {
     background-color: transparent;
     code {
       background-color: transparent;
-    }
-    @media (min-width: 769px) {
-      white-space: pre-wrap;
     }
   }
   .language-bash,
