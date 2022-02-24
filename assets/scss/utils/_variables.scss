@@ -59,8 +59,8 @@ $boxShadowLarge: 1.3px 0.7px 2.2px rgba($darkerShadeBlue, 0.02), 3.1px 1.7px 5.3
 // ----------------------------------------------------------------------------------------------------------------
 // Typography
 // ----------------------------------------------------------------------------------------------------------------
-$sans-serif-font: 'Geomanist', Helvetica, sans-serif;
-$display-font: 'Bebas Neue', 'Geomanist', sans-serif;
+$sans-serif-font: 'Inter', Helvetica, sans-serif;
+$display-font: 'Bebas Neue', 'Inter', sans-serif;
 $source-code-font: 'Fira Code', Menlo, Monaco, monospace;
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -100,13 +100,33 @@ $small: math.div($base, $scale);
 // $h3: $scale * $h4;
 // $h2: $scale * $h3;
 // $h1: $scale * $h2;
-$h6: 1rem;
-$h5: 1.25rem;
-$h4: 1.563rem;
-$h3: 1.953rem;
-$h2: 2.441rem;
-$h1: 3.052rem;
-$huge: 1.675 * $h2;
+
+
+//  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1140,20,1.125,10,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+//  :root {
+//     --step--2: clamp(0.79rem, calc(0.71rem + 0.39vw), 0.99rem);
+//     --step--1: clamp(0.89rem, calc(0.80rem + 0.43vw), 1.11rem);
+//     --step-0: clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem);
+//     --step-1: clamp(1.13rem, calc(1.02rem + 0.55vw), 1.41rem);
+//     --step-2: clamp(1.27rem, calc(1.14rem + 0.62vw), 1.58rem);
+//     --step-3: clamp(1.42rem, calc(1.28rem + 0.70vw), 1.78rem);
+//     --step-4: clamp(1.60rem, calc(1.45rem + 0.78vw), 2.00rem);
+//     --step-5: clamp(1.80rem, calc(1.63rem + 0.88vw), 2.25rem);
+//     --step-6: clamp(2.03rem, calc(1.83rem + 0.99vw), 2.53rem);
+//     --step-7: clamp(2.28rem, calc(2.06rem + 1.11vw), 2.85rem);
+//     --step-8: clamp(2.57rem, calc(2.32rem + 1.25vw), 3.21rem);
+//     --step-9: clamp(2.89rem, calc(2.60rem + 1.41vw), 3.61rem);
+//     --step-10: clamp(3.25rem, calc(2.93rem + 1.58vw), 4.06rem);
+//   }
+
+$h6: clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem);
+$h5: clamp(1.13rem, calc(1.02rem + 0.55vw), 1.41rem);
+$h4: clamp(1.27rem, calc(1.14rem + 0.62vw), 1.58rem);
+$h3: clamp(1.42rem, calc(1.28rem + 0.70vw), 1.78rem);
+$h2: clamp(2.03rem, calc(1.83rem + 0.99vw), 2.53rem);
+$h1: clamp(2.28rem, calc(2.06rem + 1.11vw), 2.85rem);
+$huge: clamp(3.25rem, calc(2.93rem + 1.58vw), 4.06rem);
 
 // ----------------------------------------------------------------------------------------------------------------
 // Padding Scale

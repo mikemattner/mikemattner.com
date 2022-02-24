@@ -2,9 +2,10 @@ html {
   color: $bodyColor;
   font-family: $sans-serif-font;
   font-weight: 400;
-  font-size: clamp(1rem, calc(14px + 0.5vw), 2rem);
+  // font-size: clamp(1rem, calc(14px + 0.5vw), 2rem);
+  font-size: clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem);
   line-height: 1.65;
-  letter-spacing: 0.0125rem;
+  letter-spacing: -1.18%;
 }
 
 h1,

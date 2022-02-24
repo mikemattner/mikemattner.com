@@ -20,11 +20,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Bebas+Neue&family=Inter:wght@100;400;700&display=swap',
       },
     ],
   },
