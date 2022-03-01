@@ -4,14 +4,11 @@
       :to="`/writing/${formatSlug(article.slug)}`"
       data-article-link="true"
     >
-      <!-- <div class="article-meta">
+      <div class="article-meta">
         <time>{{ formatDate(article.date) }}</time>
-      </div> -->
-      <Header tag="h3" class="display-5 article-title">
+      </div>
+      <Header tag="h3" class="display-6 article-title">
         <span v-html="article.title"></span>
-        <!-- <span class="article-type">
-          <fa-icon :icon="categoryIcon" size="sm"></fa-icon>
-        </span> -->
       </Header>
       <div v-if="article.description" class="article-description">
         <span v-html="article.description"></span>
@@ -69,7 +66,7 @@ export default {
   background-image: none;
   position: relative;
   transition: $transition;
-  padding-bottom: $defaultPadding;
+  padding-bottom: $defaultPadding * 1.5;
 
   a[data-article-link] {
     display: flex;
@@ -141,8 +138,8 @@ export default {
     }
   }
   .article-description {
-    margin-top: 0.125rem;
-    font-size: $small;
+    margin-top: 0.375rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: $bodyColor;
     z-index: 2;
@@ -158,10 +155,11 @@ export default {
   }
   .article-meta {
     font-size: $small;
+    text-transform: uppercase;
     margin: 0 0 0.5rem 0;
     line-height: 1;
     font-weight: 400;
-    color: $middleGray;
+    color: $primary;
     transition: all 0.25s ease-in-out;
     z-index: 2;
     position: relative;

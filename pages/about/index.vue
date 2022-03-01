@@ -28,13 +28,13 @@
         </div>
         <div class="professional-info">
           <div class="professional-info__list">
-            <h2 class="display-6">Experience</h2>
+            <Header tag="h2" class="text-small">Experience</Header>
             <ul class="text-small">
               <li v-for="(item, index) in experience" :key="`exp-${index}`">
                 <strong>{{ item.company }}</strong> {{ item.title }}
               </li>
             </ul>
-            <h2 class="display-6">Skills</h2>
+            <Header tag="h2" class="text-small">Skills</Header>
             <ul class="text-small">
               <li v-for="(item, index) in skills" :key="`exp-${index}`">
                 {{ item }}
@@ -141,6 +141,16 @@ export default {
       grid-column: 1 / span 4;
       grid-row: 2 / span 2;
 
+      @media (min-width: $tablet) {
+        ul {
+          opacity: 0.5;
+          transition: $transition;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
       @media (max-width: $tablet) {
         padding: $defaultPadding;
         background-color: $darkerShadeBackground;
@@ -227,7 +237,7 @@ export default {
         }
       }
       h3 {
-        font-size: $h5;
+        font-size: $h6;
       }
     }
 

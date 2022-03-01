@@ -92,7 +92,7 @@
         /> -->
         <template v-if="displayFiltered(item.year, item.tags)">
           <div class="year-designation">
-            <Header :id="item.year" tag="h3" class="display-5">
+            <Header :id="item.year" tag="h2" class="display-6">
               {{ item.year }}
             </Header>
           </div>
@@ -319,7 +319,7 @@ export default {
     @media (min-width: 769px) {
       grid-column: content-start / span 1;
 
-      h3 {
+      h2 {
         position: sticky;
         top: 80px;
       }
