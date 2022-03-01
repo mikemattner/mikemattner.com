@@ -30,7 +30,7 @@
         <aside v-if="writing.link" class="layout">
           <div class="article-link main-content">
             <div class="copy">
-              <Header tag="h6" class="display-6">Want to know more?</Header>
+              <Header tag="h6" class="text-normal">Want to know more?</Header>
               <p>View the content I&rsquo;m referencing</p>
             </div>
             <Button
@@ -179,6 +179,7 @@ export default {
     // text-align: center;
     h1 {
       margin-bottom: 0.75rem;
+      line-height: 1.2;
     }
     .article-type {
       display: flex;
