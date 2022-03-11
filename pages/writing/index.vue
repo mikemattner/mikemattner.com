@@ -3,7 +3,7 @@
     <div :key="$route.params.slug">
       <PageHero dark>
         <div class="main-content">
-          <Header tag="h1" class="text-huge main-content" decorator>{{
+          <Header tag="h1" class="text-huge main-content">{{
             writingPage.title
           }}</Header>
           <div>
@@ -87,6 +87,7 @@ export default {
     }
     p {
       font-size: $h6;
+      line-height: 1.5;
       margin-bottom: 3rem;
     }
   }
