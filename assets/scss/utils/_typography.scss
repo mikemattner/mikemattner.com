@@ -15,7 +15,7 @@ h4,
 h5,
 h6 {
   font-family: $display-font;
-  font-weight: 900;
+  font-weight: 999;
   line-height: 1;
   color: $white;
   margin: 1.75rem 0 0.05rem;
@@ -64,15 +64,15 @@ h1,
     font-size: $small;
   }
 
-  @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
-    background-image: $linearGradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-box-decoration-break: clone;
-    display: list-item;
-  }
+  // @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
+  //   background-image: $linearGradient;
+  //   background-clip: text;
+  //   -webkit-background-clip: text;
+  //   color: transparent;
+  //   -webkit-text-fill-color: transparent;
+  //   -webkit-box-decoration-break: clone;
+  //   display: list-item;
+  // }
 
   @media (min-width: $tablet) {
     font-size: $h1;

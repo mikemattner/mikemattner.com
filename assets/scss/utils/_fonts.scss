@@ -81,3 +81,12 @@
 //     font-style: italic;
 //     font-display: swap;
 // }
+
+//Manrope
+@font-face {
+    font-family: 'Manrope';
+    src: url('~@/assets/fonts/Manrope/Manrope.woff2') format('woff2'),
+         url('~@/assets/fonts/Manrope/Manrope.ttf') format('truetype');
+    font-weight: 1 999;
+    font-display: swap;
+}

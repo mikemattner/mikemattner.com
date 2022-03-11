@@ -26,7 +26,7 @@
         <div class="personal-story">
           <nuxt-content :document="about" />
         </div>
-        <div class="professional-info">
+        <!-- <div class="professional-info">
           <div class="professional-info__list">
             <Header tag="h2" class="text-small">Experience</Header>
             <ul class="text-small">
@@ -41,7 +41,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <WaveRight flip />
