@@ -74,6 +74,7 @@ export default {
       }
     }
     p {
+      font-size: $h6;
       grid-column: main-content / span 6;
     }
   }

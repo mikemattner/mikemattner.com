@@ -12,12 +12,7 @@
         circle
         overlay
       />
-      <Header
-        tag="h1"
-        class="text-huge"
-        decorator
-        v-html="homePage.intro.title"
-      ></Header>
+      <Header tag="h1" class="text-huge" v-html="homePage.intro.title"></Header>
       <div class="header-content">
         <div v-html="homePage.intro.body"></div>
         <Button to="/about" primary ghost>More About Me</Button>
@@ -134,6 +129,7 @@ export default {
       }
     }
     .header-content {
+      font-size: $h6;
       grid-column: main-content / span 6;
       @media (min-width: $tablet) {
         grid-column: main-content / span 6;

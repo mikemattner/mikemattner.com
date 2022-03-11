@@ -20,7 +20,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@100;400;700;900&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+        // href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@100;400;700;900&display=swap',
       },
     ],
   },

@@ -2,7 +2,7 @@
   <section class="section section--tag">
     <div :key="$route.params.slug">
       <PageHero dark>
-        <Header tag="h1" class="display-1 main-content" decorator>
+        <Header tag="h1" class="text-huge main-content" decorator>
           {{ tag.title }}</Header
         >
         <p class="main-content" v-html="tag.description"></p>
@@ -69,6 +69,7 @@ export default {
       margin-bottom: 0rem;
     }
     p {
+      font-size: $h6;
       margin-bottom: 3rem;
     }
   }
