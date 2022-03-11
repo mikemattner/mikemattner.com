@@ -138,8 +138,8 @@ export default {
     }
   }
   .article-description {
-    margin-top: 0.375rem;
-    font-size: 0.75rem;
+    margin-top: 0.75rem;
+    // font-size: 0.75rem;
     font-weight: 400;
     color: $bodyColor;
     z-index: 2;

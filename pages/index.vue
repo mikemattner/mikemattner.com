@@ -130,6 +130,7 @@ export default {
     }
     .header-content {
       font-size: $h6;
+      line-height: 1.5;
       grid-column: main-content / span 6;
       @media (min-width: $tablet) {
         grid-column: main-content / span 6;

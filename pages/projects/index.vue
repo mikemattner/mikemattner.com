@@ -4,7 +4,6 @@
       <Header
         tag="h1"
         class="text-huge"
-        decorator
         v-html="personalProjectsPage.title"
       ></Header>
       <p v-html="personalProjectsPage.subtitle"></p>
@@ -75,6 +74,7 @@ export default {
     }
     p {
       font-size: $h6;
+      line-height: 1.5;
       grid-column: main-content / span 6;
     }
   }
@@ -85,10 +85,10 @@ export default {
     .personal-projects {
       grid-column: main-content / span 6;
       @media (min-width: $tablet) {
-        grid-column: 2 / span 8;
+        grid-column: 3 / span 7;
       }
       @media (min-width: $desktop) {
-        grid-column: 2 / span 8;
+        grid-column: 3 / span 8;
       }
     }
   }

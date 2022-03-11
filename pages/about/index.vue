@@ -1,12 +1,7 @@
 <template>
   <div class="about">
     <PageHero dark>
-      <Header
-        tag="h1"
-        class="text-huge"
-        decorator
-        v-html="about.title"
-      ></Header>
+      <Header tag="h1" class="text-huge" v-html="about.title"></Header>
       <p v-html="about.subtitle"></p>
     </PageHero>
     <section class="section layout">
@@ -26,7 +21,7 @@
         <div class="personal-story">
           <nuxt-content :document="about" />
         </div>
-        <!-- <div class="professional-info">
+        <div class="professional-info">
           <div class="professional-info__list">
             <Header tag="h2" class="text-small">Experience</Header>
             <ul class="text-small">
@@ -34,14 +29,14 @@
                 <strong>{{ item.company }}</strong> {{ item.title }}
               </li>
             </ul>
-            <Header tag="h2" class="text-small">Skills</Header>
+            <!-- <Header tag="h2" class="text-small">Skills</Header>
             <ul class="text-small">
               <li v-for="(item, index) in skills" :key="`exp-${index}`">
                 {{ item }}
               </li>
-            </ul>
+            </ul> -->
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
     <WaveRight flip />
@@ -111,6 +106,8 @@ export default {
       }
     }
     p {
+      font-size: $h6;
+      line-height: 1.5;
       grid-column: main-content / span 6;
     }
   }
@@ -226,15 +223,6 @@ export default {
 
       h2 {
         font-size: $h4;
-
-        &:after {
-          content: '';
-          margin-top: math.div($defaultPadding, 2);
-          display: block;
-          height: 4px;
-          width: 100%;
-          border-top: 2px dotted $borderColor-light;
-        }
       }
       h3 {
         font-size: $h6;
