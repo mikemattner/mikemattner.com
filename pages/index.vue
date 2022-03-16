@@ -18,7 +18,7 @@
         <Button to="/about" primary ghost>More About Me</Button>
       </div>
     </PageHero>
-    <WaveRight />
+    <AnimatedWave />
     <!-- <section class="section--work section--dark">
       <div class="layout">
         <Header
