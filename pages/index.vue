@@ -15,7 +15,9 @@
       <Header tag="h1" class="text-huge" v-html="homePage.intro.title"></Header>
       <div class="header-content">
         <div v-html="homePage.intro.body"></div>
-        <Button to="/about" primary>More About Me</Button>
+        <Button to="/about" primary ghost icon="chevron-right" icon-right>
+          More About Me
+        </Button>
       </div>
     </PageHero>
     <AnimatedWave />
@@ -39,9 +41,15 @@
         }}</Header>
         <p v-html="homePage.writing.body"></p>
         <AllArticles :posts="posts" short />
-        <Button :to="homePage.writing.link" ghost primary>{{
-          homePage.writing.buttonTitle
-        }}</Button>
+        <Button
+          :to="homePage.writing.link"
+          ghost
+          primary
+          icon="chevron-right"
+          icon-right
+        >
+          {{ homePage.writing.buttonTitle }}
+        </Button>
       </div>
     </section>
     <WaveRight flip />
