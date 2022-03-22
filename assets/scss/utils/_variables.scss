@@ -21,7 +21,7 @@ $white: rgba(255, 255, 255, 1);
 $black: rgba(0, 0, 0, 1);
 
 $primary: hsl(167deg 100% 38%);
-$primaryHover: shade($green, 40%);
+$primaryHover: shade($primary, 40%);
 $secondary: $middleGray;
 $secondaryHover: shade($middleGray, 40%);
 

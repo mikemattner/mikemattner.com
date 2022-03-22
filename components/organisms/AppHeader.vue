@@ -171,7 +171,7 @@ $transparent-bg: rgba($darkerShadeBackground, 0.9);
     outline: none;
     span {
       height: 2px;
-      background-color: $white;
+      background-color: $primary;
       transition: $transition-cubic;
       border-radius: $radius-small;
       width: 32px;
@@ -182,7 +182,7 @@ $transparent-bg: rgba($darkerShadeBackground, 0.9);
     }
     &:hover {
       span {
-        background-color: $white;
+        background-color: $primary;
         &:nth-child(2) {
           width: 32px;
         }
@@ -190,7 +190,7 @@ $transparent-bg: rgba($darkerShadeBackground, 0.9);
     }
     &:active {
       span {
-        background-color: $white;
+        background-color: $primary;
         &:nth-child(2) {
           width: 32px;
         }
@@ -396,8 +396,9 @@ $transparent-bg: rgba($darkerShadeBackground, 0.9);
             &:nth-child(4) {
               transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             }
-            &:nth-child(4) {
-              transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            &:nth-child(5) {
+              transition: all 0.25s 0.875s
+                cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
               // .fa-rss,
               // .fa-heart {

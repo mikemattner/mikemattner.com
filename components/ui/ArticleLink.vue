@@ -66,7 +66,11 @@ export default {
   background-image: none;
   position: relative;
   transition: $transition;
-  padding-bottom: $defaultPadding * 1.5;
+  margin: $defaultPadding math.div($defaultPadding, 1.25) * -1;
+  padding: $defaultPadding math.div($defaultPadding, 1.25);
+  background-color: rgba($darkerShadeBackground, 0.95);
+  border-radius: $radius-large;
+  box-shadow: $boxShadowLarge;
 
   a[data-article-link] {
     display: flex;
@@ -74,7 +78,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     background-image: none;
-    padding: $defaultPadding 0 math.div($defaultPadding, 2);
+    // padding: $defaultPadding 0 math.div($defaultPadding, 2);
     position: relative;
     text-decoration: none;
     // &:after {
@@ -165,6 +169,9 @@ export default {
     position: relative;
   }
 
+  .tags {
+    margin-top: $defaultPadding;
+  }
   .tags .button {
     margin: 0;
     font-size: 0.5rem;

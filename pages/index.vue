@@ -15,7 +15,7 @@
       <Header tag="h1" class="text-huge" v-html="homePage.intro.title"></Header>
       <div class="header-content">
         <div v-html="homePage.intro.body"></div>
-        <Button to="/about" primary ghost>More About Me</Button>
+        <Button to="/about" primary>More About Me</Button>
       </div>
     </PageHero>
     <AnimatedWave />
