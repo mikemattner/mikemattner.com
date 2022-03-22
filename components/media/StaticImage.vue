@@ -82,6 +82,8 @@ export default {
     font-size: $small;
     padding: 0 math.div($defaultPadding, 2);
     text-align: right;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   img {

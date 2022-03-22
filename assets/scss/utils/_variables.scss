@@ -20,8 +20,20 @@ $green: rgba(0, 220, 130, 1);
 $white: rgba(255, 255, 255, 1);
 $black: rgba(0, 0, 0, 1);
 
-$primary: hsl(167deg 100% 38%);
-$primaryHover: shade($green, 40%);
+// https://uicolors.app/create
+$caribbean-green-50: #eafff7;
+$caribbean-green-100: #cdfeeb;
+$caribbean-green-200: #a0fadb;
+$caribbean-green-300: #63f2c9;
+$caribbean-green-400: #25e2b3;
+$caribbean-green-500: #00c298;
+$caribbean-green-600: #00a481;
+$caribbean-green-700: #00836b;
+$caribbean-green-800: #006756;
+$caribbean-green-900: #005548;
+
+$primary: $caribbean-green-500; //hsl(167deg 100% 38%)
+$primaryHover: $caribbean-green-800;
 $secondary: $middleGray;
 $secondaryHover: shade($middleGray, 40%);
 

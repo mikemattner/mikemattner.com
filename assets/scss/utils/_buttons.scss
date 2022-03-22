@@ -46,8 +46,8 @@
   svg {
     height: 1em;
     z-index: 2;
-    fill: $white;
-    color: $white;
+    fill: $darkShadeBackground;
+    color: $darkShadeBackground;
   }
 
   &--icon-right {
@@ -78,6 +78,10 @@
   &:hover {
     color: $white;
     background-image: none;
+    svg {
+      fill: $white;
+      color: $white;
+    }
   }
 
   &__bubble {
