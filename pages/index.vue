@@ -15,7 +15,7 @@
       <Header tag="h1" class="text-huge" v-html="homePage.intro.title"></Header>
       <div class="header-content">
         <div v-html="homePage.intro.body"></div>
-        <Button to="/about" primary ghost icon="chevron-right" icon-right>
+        <Button to="/about" primary icon="chevron-right" icon-right>
           More About Me
         </Button>
       </div>
@@ -43,7 +43,6 @@
         <AllArticles :posts="posts" short />
         <Button
           :to="homePage.writing.link"
-          ghost
           primary
           icon="chevron-right"
           icon-right
@@ -147,7 +146,7 @@ export default {
         grid-column: main-content / span 6;
       }
       .button {
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
     }
   }
