@@ -127,6 +127,7 @@ export default {
   }
 
   input {
+    font-family: $sans-serif-font;
     background: $darkerShadeBackground;
     border: 1px solid $darkerShadeBackground;
     border-radius: $radius-large;
