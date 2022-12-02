@@ -75,7 +75,7 @@ export default {
           alt: 'What a lovely painting! Not mine.',
         },
         {
-          src: 'personal/mike-profile.jpg',
+          src: 'personal/mike-profile-three.jpg',
           alt: 'Generic profile image.',
         },
         {

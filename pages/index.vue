@@ -89,10 +89,10 @@ export default {
       homePage,
       images: [
         {
-          src: 'personal/mike-profile.jpg',
+          src: 'personal/mike-profile-three.jpg',
           alt: 'Generic profile image.',
-          width: '2000',
-          height: '1500',
+          width: '900',
+          height: '900',
         },
       ],
     }
