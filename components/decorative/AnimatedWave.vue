@@ -15,25 +15,10 @@
         ></path>
       </defs>
       <g class="animated-waves">
-        <use href="#wave-pattern" x="48" y="0" fill="rgba(15, 23, 28,1"></use>
-        <use
-          href="#wave-pattern"
-          x="48"
-          y="3"
-          fill="rgba(15, 23, 28,0.7)"
-        ></use>
-        <use
-          href="#wave-pattern"
-          x="48"
-          y="5"
-          fill="rgba(15, 23, 28,0.3)"
-        ></use>
-        <use
-          href="#wave-pattern"
-          x="48"
-          y="7"
-          fill="rgba(15, 23, 28,0.7)"
-        ></use>
+        <use href="#wave-pattern" x="48" y="0"></use>
+        <use href="#wave-pattern" x="48" y="3"></use>
+        <use href="#wave-pattern" x="48" y="5"></use>
+        <use href="#wave-pattern" x="48" y="7"></use>
       </g>
     </svg>
   </div>
@@ -49,6 +34,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.animated-wave {
+  margin-bottom: -1px;
+}
+
 .css-waves {
   position: relative;
   width: 100%;
@@ -66,18 +55,22 @@ export default {
 .animated-waves > use:nth-child(1) {
   animation-delay: -2s;
   animation-duration: 7s;
+  fill: rgba(8, 8, 10, 1);
 }
 .animated-waves > use:nth-child(2) {
   animation-delay: -3s;
   animation-duration: 10s;
+  fill: rgba(8, 8, 10, 0.7);
 }
 .animated-waves > use:nth-child(3) {
   animation-delay: -4s;
   animation-duration: 13s;
+  fill: rgba(8, 8, 10, 0.3);
 }
 .animated-waves > use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 20s;
+  fill: rgba(8, 8, 10, 0.7);
 }
 @keyframes infinite-waves {
   0% {
