@@ -13,11 +13,7 @@
           <span class="meta-divider">/</span>
           <time>{{ formattedDate }}</time>
         </div>
-        <Header
-          tag="h1"
-          class="display-1 main-content"
-          v-html="writing.title"
-        ></Header>
+        <Header tag="h1" class="display-1" v-html="writing.title"></Header>
         <div class="meta flex main-content">
           <TagList :tags="writing.tag" />
         </div>
@@ -176,10 +172,13 @@ export default {
 .section--single--article {
   min-height: 90vh;
   .hero {
-    // text-align: center;
     h1 {
       margin-bottom: 0.75rem;
-      line-height: 1.2;
+      line-height: 1;
+      grid-column: main-content / span 6;
+      @media (min-width: $desktop) {
+        grid-column: main-content / span 7;
+      }
     }
     .article-type {
       display: flex;
