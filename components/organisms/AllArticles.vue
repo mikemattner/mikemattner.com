@@ -267,6 +267,7 @@ export default {
     transition: $transition-cubic;
     background-color: $darkerShadeBackground;
     border-radius: $radius-large;
+    margin: 0 -1.2rem;
 
     h3 {
       margin-top: 0;
