@@ -1,7 +1,7 @@
 html {
   color: $bodyColor;
   font-family: $sans-serif-font;
-  font-weight: 400;
+  font-weight: 350;
   // font-size: clamp(1rem, calc(14px + 0.5vw), 2rem);
   font-size: clamp(1.00rem, calc(0.90rem + 0.49vw), 1.25rem);
   line-height: 1.65;
@@ -54,14 +54,17 @@ h6 {
 
 h1,
 .display-1 {
-  font-size: $h2;
+  font-size: $h1;
   margin-top: 0;
   letter-spacing: 0.0125rem;
   color: $primary;
   line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
 
   small {
-    font-size: $small;
+    font-size: $h2;
+    font-weight: 200;
   }
 
   // @supports (background-clip: text) and (-webkit-text-fill-color: transparent) {
@@ -75,7 +78,7 @@ h1,
   // }
 
   @media (min-width: $tablet) {
-    font-size: $h1;
+    font-size: $huge;
   }
 }
 

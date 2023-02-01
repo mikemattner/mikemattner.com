@@ -1,5 +1,5 @@
 ---
-title: 'Hey, I&rsquo;m Mike Mattner.'
+title: 'Hey There <small>I&rsquo;m Mike Mattner.</small>'
 subtitle: 'I design and build for the web, currently working as a UI Engineer at AccuLynx.'
 ---
 

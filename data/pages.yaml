@@ -1,6 +1,6 @@
 homePage: 
   intro:
-    title: I&rsquo;m Mike, a designer & developer from Michigan.
+    title: I&rsquo;m Mike <small>a designer & developer from Michigan.</small>
     body: <p>I currently work as a UI Engineer at&nbsp;AccuLynx.
       You can find me as @mikemattner on <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
       <a href="https://mastodon.online/@mikemattner">Mastodon</a>,

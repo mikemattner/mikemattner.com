@@ -68,6 +68,7 @@ export default {
     color: #fff;
     z-index: 9;
     text-decoration: none;
+    text-transform: uppercase;
     @media (max-width: 768px) {
       font-size: $base;
     }

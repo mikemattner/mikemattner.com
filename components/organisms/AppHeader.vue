@@ -40,7 +40,7 @@
               ><span @click="toggle()">About</span></NuxtLink
             >
           </li>
-          <li class="resume-item">
+          <!-- <li class="resume-item">
             <Button
               href="/files/mikemattner_20201224.pdf"
               target="_blank"
@@ -50,7 +50,7 @@
               small
               >R&eacute;sum&eacute;
             </Button>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </div>
