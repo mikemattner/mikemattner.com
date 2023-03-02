@@ -4,7 +4,7 @@
       <p>
         @mikemattner on
         <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
-        <a href="https://mastodon.online/@mikemattner">Mastodon</a>,
+        <a href="https://mastodon.online/@mikemattner" rel="me">Mastodon</a>,
         <a href="https://codepen.io/mikemattner/#">Codepen</a>, &amp;
         <a href="https://github.com/mikemattner">GitHub</a>.
       </p>
