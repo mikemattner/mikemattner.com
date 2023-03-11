@@ -1,0 +1,31 @@
+:root {
+    --color-dark: #141418;
+    --color-light: #efefef;
+    --color-primary: #EF233C;
+    --color-middle-gray: #74768D;
+    --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
+    --size-step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+    --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
+    --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+    --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+    --transition: all 0.125s ease-in-out;
+    --transition-med: all 0.25s ease-in-out;
+    --transition-cubic: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cubic-med: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cubic-slow: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-slow: all 1.25s cubic-bezier(0.68, 0, 0.265, 1.55);
+    --transition-slow-ease: all 1.25s ease-in-out;
+    --background-color: var(--color-dark);
+    --font-color: var(--color-light);
+}
+
+html.light {
+    --background-color: var(--color-light);
+    --font-color: var(--color-dark);
+}
+  
+html.dark {
+    --background-color: var(--color-dark);
+    --font-color: var(--color-light);
+}

@@ -1,5 +1,5 @@
 <template>
   <main>
-    <ContentDoc />
+    <ContentDoc class="flow" />
   </main>
 </template>

@@ -1,3 +1,3 @@
 # About Content v2
 
-[Back home](/)
+[Back to test](/test)

@@ -1,0 +1,85 @@
+body {
+  background: var(--background-color);
+  color: var(--font-color);
+  padding: 2em;
+  font-family: var(--sans-font-family);
+  font-size: var(--size-step-0);
+  line-height: 1.7;
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 0.2ex;
+  text-underline-offset: 0.3ex;
+  transition: var(--transition);
+
+  &:hover {
+    text-underline-offset: 0.4ex;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--size-step-4);
+}
+
+h2 {
+  font-size: var(--size-step-3);
+}
+
+h3 {
+  font-size: var(--size-step-2);
+}
+
+ul,
+ol {
+  padding-inline-start: 1em;
+}
+
+blockquote {
+  padding-inline-start: 1em;
+  border-inline-start: 0.3em solid;
+  font-style: italic;
+  font-size: var(--size-step-1);
+}
+
+/* Utilities */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+/* Flow and rythm */
+:is(h1, h2, h3, blockquote) {
+  --flow-space: 1.5em;
+}
+
+:is(h1, h2, h3) + * {
+  --flow-space: 0.5em;
+}
+
+/* Line lengths */
+article {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+blockquote {
+  max-width: 50ch;
+}
+
+h1 {
+  max-width: 20ch;
+}
+
+h2,
+h3 {
+  max-width: 28ch;
+}
