@@ -1,0 +1,32 @@
+body {
+    background: var(--background-border-color);
+    color: var(--font-color);
+    font-family: var(--sans-font-family);
+    font-size: var(--size-step-0);
+    line-height: 1.7;
+    font-kerning: normal;
+}
+
+.app-layout {
+    background: var(--background-color);
+    border: 2rem solid var(--background-border-color);
+    min-height: 100vh;
+}
+
+main {
+    padding: 2rem;
+    margin-block-start: var(--flow-space, 1em);
+}
+  
+a {
+    color: var(--headline-font-color);
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 0.2ex;
+    text-underline-offset: 0.3ex;
+    transition: var(--transition-fast);
+  
+    &:hover {
+        text-underline-offset: 0.4ex;
+    }
+}
+  

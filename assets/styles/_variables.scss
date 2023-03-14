@@ -1,0 +1,65 @@
+:root {
+    // Typography
+    --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
+    --serif-font-family: Georgia, serif;
+
+    // Type scale: https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,18,1.333,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+    --size-step--2: clamp(0.63rem, calc(0.64rem + -0.01vw), 0.64rem);
+    --size-step--1: clamp(0.80rem, calc(0.78rem + 0.08vw), 0.84rem);
+    --size-step-0: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.50rem);
+    --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2.00rem);
+    --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+    --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+    --size-step-5: clamp(3.05rem, calc(2.47rem + 2.93vw), 4.74rem);
+    --size-step-6: clamp(3.82rem, calc(2.95rem + 4.34vw), 6.31rem);
+    --size-step-7: clamp(4.77rem, calc(3.50rem + 6.34vw), 8.41rem);
+
+    // Utilities - transitions
+    --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
+    --transition: all 0.25s cubic-bezier(.62,.16,.13,1.01);
+    --transition-med: all 0.5s cubic-bezier(.62,.16,.13,1.01);
+    --transition-cubic: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cubic-med: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cubic-slow: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-slow: all 1.25s cubic-bezier(0.68, 0, 0.265, 1.55);
+    --transition-slow-ease: all 1.25s cubic-bezier(.62,.16,.13,1.01);
+
+    // Color palette
+    --color-dark: hsl(240, 9%, 9%);
+    --color-dark-t: hsla(240, 9%, 9%, 80%);
+    --color-dark-bg-border: hsl(240, 9%, 5%);
+
+    --color-light: hsl(0, 0%, 94%);
+    --color-light-t: hsla(0, 0%, 94%, 70%);
+    --color-light-bg-border: hsl(0, 0%, 90%);
+    --color-light-bg: hsl(0, 0%, 98%);
+
+    --color-primary: hsl(353, 86%, 54%);
+    
+    --color-middle-gray: hsl(235, 10%, 50%);
+    --color-middle-gray-t: hsla(235, 10%, 50%, 40%);
+
+    // Baseline theme colors - dark
+    --background-color: var(--color-dark);
+    --background-border-color: var(--color-dark-bg-border);
+    --font-color: var(--color-light-t);
+    --headline-font-color: var(--color-light);
+    --border-color: hsl(240, 9%, 16%);
+}
+
+html.light {
+    --background-color: var(--color-light-bg);
+    --font-color: var(--color-dark-t);
+    --headline-font-color: var(--color-dark);
+    --background-border-color: var(--color-light-bg-border);
+    --border-color: hsl(0, 0%, 90%);
+}
+  
+html.dark {
+    --background-color: var(--color-dark);
+    --font-color: var(--color-light-t);
+    --headline-font-color: var(--color-light);
+    --background-border-color: var(--color-dark-bg-border);
+    --border-color: hsl(240, 9%, 16%);
+}
