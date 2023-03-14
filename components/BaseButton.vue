@@ -8,12 +8,30 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  primary: Boolean,
-  secondary: Boolean,
-  tertiary: Boolean,
-  ghost: Boolean,
-  small: Boolean,
-  link: Boolean,
+  primary: {
+    type: Boolean,
+    default: false,
+  },
+  secondary: {
+    type: Boolean,
+    default: false,
+  },
+  tertiary: {
+    type: Boolean,
+    default: false,
+  },
+  ghost: {
+    type: Boolean,
+    default: false,
+  },
+  small: {
+    type: Boolean,
+    default: false,
+  },
+  link: {
+    type: Boolean,
+    default: true,
+  },
   href: {
     type: String,
     default: '',
