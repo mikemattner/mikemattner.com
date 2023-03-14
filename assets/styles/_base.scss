@@ -11,6 +11,13 @@ body {
     background: var(--background-color);
     border: 2rem solid var(--background-border-color);
     min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: auto minmax(600px, 1fr) auto;
+    grid-template-areas:
+      'app-header'
+      'main-content'
+      'app-footer';
 }
 
 main {
