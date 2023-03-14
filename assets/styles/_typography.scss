@@ -1,34 +1,30 @@
-body {
-  background: var(--background-color);
-  color: var(--font-color);
-  padding: 2em;
-  font-family: var(--sans-font-family);
-  font-size: var(--size-step-0);
-  line-height: 1.7;
-}
-
-a {
-  color: currentColor;
-  text-decoration-color: var(--color-primary);
-  text-decoration-thickness: 0.2ex;
-  text-underline-offset: 0.3ex;
-  transition: var(--transition);
-
-  &:hover {
-    text-underline-offset: 0.4ex;
-  }
-}
-
 h1,
 h2,
 h3 {
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
   text-wrap: balance;
+  color: var(--headline-font-color);
+}
+
+.maximal-heading {
+  font-size: var(--size-step-7);
+  font-weight: 900;
+}
+
+.very-large-heading {
+  font-size: var(--size-step-6);
+  font-weight: 900;
+}
+
+.large-heading {
+  font-size: var(--size-step-5);
+  font-weight: 900;
 }
 
 h1 {
   font-size: var(--size-step-4);
+  font-weight: 900;
 }
 
 h2 {
@@ -46,9 +42,13 @@ ol {
 
 blockquote {
   padding-inline-start: 1em;
-  border-inline-start: 0.3em solid;
-  font-style: italic;
+  border-inline-start: 0.2em solid;
   font-size: var(--size-step-1);
+}
+
+hr {
+  border: none;
+  border-top: 0.75rem solid var(--border-color);
 }
 
 /* Utilities */
@@ -63,6 +63,10 @@ blockquote {
 
 :is(h1, h2, h3) + * {
   --flow-space: 0.5em;
+}
+
+:is(hr) {
+  --flow-space: 2.5em;
 }
 
 /* Line lengths */
@@ -82,4 +86,15 @@ h1 {
 h2,
 h3 {
   max-width: 28ch;
+}
+
+/* Blocks */
+.lede {
+  font-size: var(--size-step-1);
+  max-width: 50ch;
+  text-wrap: balance;
+}
+
+.lede + * {
+  --flow-space: 2em;
 }

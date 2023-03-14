@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c59c68ee-fcf6-4d6e-af5d-9263f36ac533/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-5270b3/deploys)
 
-Round three of framework based blogging.
+Round three of framework based blogging. Icons at [icones.js.org](https://icones.js.org/collection/all).
 
 ## ToDos
 

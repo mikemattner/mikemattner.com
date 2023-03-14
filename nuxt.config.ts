@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Mike Mattner',
       meta: [
         {
           name: 'description',
@@ -20,13 +19,8 @@ export default defineNuxtConfig({
         },
       ],
     },
+    pageTransition: { name: 'page', mode: 'out-in' },
   },
   css: ['@/assets/styles/app.scss'],
-  modules: [
-    '@nuxt/content',
-    '@vueuse/nuxt',
-    '@nuxt/image-edge',
-    'nuxt-svgo',
-    'nuxt-icon',
-  ],
+  modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon'],
 })

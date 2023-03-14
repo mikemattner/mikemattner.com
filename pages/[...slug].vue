@@ -1,5 +1,7 @@
 <template>
   <main>
-    <ContentDoc class="flow" />
+    <div class="flow">
+      <ContentDoc class="flow" />
+    </div>
   </main>
 </template>
