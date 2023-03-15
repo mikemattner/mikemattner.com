@@ -29,10 +29,10 @@
 </template>
 
 <script setup lang="ts">
-const date = ref<Date>(new Date())
+const date = ref<Date>(new Date());
 const theYear = computed<string>(() => {
-  return date.value.getFullYear().toString()
-})
+  return date.value.getFullYear().toString();
+});
 </script>
 
 <style lang="scss" scoped>

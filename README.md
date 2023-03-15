@@ -12,7 +12,7 @@ Round three of framework based blogging. Remix icons from [icones.js.org](https:
 - [ x ] Base Logo
 - [ x ] Base Navigation (Site Header)
 - [ x ] Base Footer (Site Footer)
-- [ ] Base Button
+- [ x ] Base Button
 - [ ] Base Image
 
 ### Larger Layouts and Content

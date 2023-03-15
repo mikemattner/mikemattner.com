@@ -15,6 +15,16 @@
     --size-step-6: clamp(3.82rem, calc(2.95rem + 4.34vw), 6.31rem);
     --size-step-7: clamp(4.77rem, calc(3.50rem + 6.34vw), 8.41rem);
 
+    // Utilities - sizing
+    --sizing-xxs: 0.063rem;
+    --sizing-xs: 0.125;
+    --sizing-sm: 0.313rem;
+    --sizing-md: 0.625rem;
+    --sizing-lg: 0.938rem;
+    --sizing-xl: 1.25rem;
+    --sizing-xxl: 1.875rem;
+    --sizing-xxxl: 3.125rem;
+
     // Utilities - transitions
     --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
     --transition: all 0.25s cubic-bezier(.62,.16,.13,1.01);
@@ -36,8 +46,11 @@
     --color-light-bg: hsl(0, 0%, 98%);
 
     --color-primary: hsl(353, 86%, 54%);
+    --color-primary-hover: hsla(353, 86%, 44%, 100%);
+    --color-primary-hover-t: hsla(353, 86%, 54%, 10%);
     
     --color-middle-gray: hsl(235, 10%, 50%);
+    --color-middle-hover: hsl(235, 10%, 30%);
     --color-middle-gray-t: hsla(235, 10%, 50%, 40%);
 
     // Baseline theme colors - dark

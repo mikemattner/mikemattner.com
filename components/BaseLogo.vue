@@ -6,12 +6,12 @@
 </template>
 
 <script setup lang="ts">
-import PrimaryLogo from '~/assets/images/logo.svg'
+import PrimaryLogo from '~/assets/images/logo.svg';
 
 const props = defineProps({
   showLabel: { type: Boolean, default: false },
   logoLarge: { type: Boolean, default: false },
-})
+});
 </script>
 
 <style lang="scss">
