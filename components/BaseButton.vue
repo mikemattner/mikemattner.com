@@ -9,11 +9,9 @@
 const props = defineProps({
   href: {
     type: String,
-    default: '',
   },
   to: {
     type: String,
-    default: '',
   },
   disabled: {
     type: Boolean,
