@@ -14,13 +14,13 @@
 </template>
 
 <script setup lang="ts">
-import { useColorMode, useCycleList } from '@vueuse/core'
+import { useColorMode, useCycleList } from '@vueuse/core';
 
 const mode = useColorMode({
   initialValue: 'dark',
   storageKey: 'mikemattner-com-theme',
-})
-const { next } = useCycleList(['dark', 'light'], { initialValue: mode })
+});
+const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 </script>
 
 <style lang="scss" scoped>

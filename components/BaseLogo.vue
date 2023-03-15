@@ -1,16 +1,17 @@
 <template>
-  <div class="brand-logo">
+  <div class="brand-logo" :class="{ large: logoLarge }">
     <PrimaryLogo />
     <div v-if="showLabel" class="brand-logo__type">Mike Mattner</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import PrimaryLogo from '~/assets/images/logo.svg'
+import PrimaryLogo from '~/assets/images/logo.svg';
 
 const props = defineProps({
   showLabel: { type: Boolean, default: false },
-})
+  logoLarge: { type: Boolean, default: false },
+});
 </script>
 
 <style lang="scss">
@@ -56,6 +57,14 @@ const props = defineProps({
     transition: all 0.125s ease-in-out;
     line-height: 1;
     letter-spacing: 0.0125rem;
+  }
+
+  &.large {
+    .brand-logo__image {
+      width: 2rem;
+      height: 2rem;
+      flex: 0 0 2rem;
+    }
   }
   @media (min-width: 769px) {
     &:hover {

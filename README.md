@@ -2,11 +2,23 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c59c68ee-fcf6-4d6e-af5d-9263f36ac533/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-5270b3/deploys)
 
-Round three of framework based blogging. Icons at [icones.js.org](https://icones.js.org/collection/all).
+Round three of framework based blogging. Remix icons from [icones.js.org](https://icones.js.org/collection/all).
 
 ## ToDos
 
-- [ ] Everything...
+### Components
+
+- [ x ] Theme Switcher (Dark/Light)
+- [ x ] Base Logo
+- [ x ] Base Navigation (Site Header)
+- [ x ] Base Footer (Site Footer)
+- [ x ] Base Button
+- [ ] Base Image
+
+### Larger Layouts and Content
+
+- [ ] Home page design
+- [ ] Get writing integrated
 
 ## Content v2 Minimal Starter
 

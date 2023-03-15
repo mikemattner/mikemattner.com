@@ -1,11 +1,11 @@
 <template>
   <header class="base-navigation">
-    <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
+    <NuxtLink to="/" class="brand-link"><BaseLogo logo-large /></NuxtLink>
     <nav class="base-navigation__main">
       <ul class="navigation-list">
-        <li class="navigation-list-item"><BaseButton to="/">Home</BaseButton></li>
-        <li class="navigation-list-item"><BaseButton to="/test">Writing</BaseButton></li>
-        <li class="navigation-list-item"><BaseButton to="/about">About</BaseButton></li>
+        <li class="navigation-list-item"><NuxtLink to="/">Home</NuxtLink></li>
+        <li class="navigation-list-item"><NuxtLink to="/test">Writing</NuxtLink></li>
+        <li class="navigation-list-item"><NuxtLink to="/about">About</NuxtLink></li>
       </ul>
     </nav>
     <ThemeSwitcher />
@@ -15,10 +15,11 @@
 <style lang="scss" scoped>
 .base-navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
   padding: 1.5rem 2rem;
+  grid-area: 'app-header';
 
   .brand-link {
     text-decoration: none;
