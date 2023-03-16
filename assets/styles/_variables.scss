@@ -25,6 +25,9 @@
     --sizing-xxl: 1.875rem;
     --sizing-xxxl: 3.125rem;
 
+    // Utilities - global
+    --max-width: 82.5rem;
+
     // Utilities - transitions
     --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
     --transition: all 0.25s cubic-bezier(.62,.16,.13,1.01);
@@ -37,7 +40,7 @@
 
     // Color palette
     --color-dark: hsl(240, 9%, 9%);
-    --color-dark-t: hsla(240, 9%, 9%, 80%);
+    --color-dark-t: hsla(240, 9%, 9%, 90%);
     --color-dark-bg-border: hsl(240, 9%, 5%);
 
     --color-light: hsl(0, 0%, 94%);
@@ -47,10 +50,10 @@
 
     --color-primary: hsl(353, 86%, 54%);
     --color-primary-hover: hsla(353, 86%, 44%, 100%);
-    --color-primary-hover-t: hsla(353, 86%, 54%, 10%);
+    --color-primary-hover-t: hsla(353, 86%, 54%, 30%);
     
     --color-middle-gray: hsl(235, 10%, 50%);
-    --color-middle-hover: hsl(235, 10%, 30%);
+    --color-middle-hover: hsla(235, 10%, 50%, 70%);
     --color-middle-gray-t: hsla(235, 10%, 50%, 40%);
 
     // Baseline theme colors - dark
@@ -59,6 +62,8 @@
     --font-color: var(--color-light-t);
     --headline-font-color: var(--color-light);
     --border-color: hsl(240, 9%, 16%);
+    --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
+    --image-background: var(--color-primary);
 }
 
 html.light {
@@ -67,6 +72,8 @@ html.light {
     --headline-font-color: var(--color-dark);
     --background-border-color: var(--color-light-bg-border);
     --border-color: hsl(0, 0%, 90%);
+    --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 68%) 54.62%, hsla(0, 0%, 98%, 100%) 79.18% );
+    --image-background: var(--color-light-bg);
 }
   
 html.dark {
@@ -75,4 +82,6 @@ html.dark {
     --headline-font-color: var(--color-light);
     --background-border-color: var(--color-dark-bg-border);
     --border-color: hsl(240, 9%, 16%);
+    --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
+    --image-background: var(--color-primary);
 }

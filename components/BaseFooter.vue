@@ -1,8 +1,7 @@
 <template>
   <footer class="base-footer">
     <div class="base-footer__layout">
-      <hr />
-      <div class="sidebar-area flow">
+      <div class="sidebar-area copyright-block flow">
         <p>
           <strong>&copy; {{ theYear }} Mike Mattner</strong>
         </p>
@@ -40,12 +39,26 @@ const theYear = computed<string>(() => {
   grid-area: 'app-footer';
   font-size: var(--size-step--1);
   padding: 2rem;
+  border-top: 1px solid var(--border-color);
+
+  @media (max-width: 715px) {
+    padding: 1rem;
+  }
 
   &__layout {
-    max-width: 72.5rem;
+    max-width: var(--max-width);
     margin-inline: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media (min-width: 767px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 766px) {
+      .copyright-block {
+        margin-block-end: 1.5rem;
+      }
+    }
 
     .content-area {
       grid-column: 2 / span 3;

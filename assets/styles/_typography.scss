@@ -22,17 +22,25 @@ h3 {
   font-weight: 900;
 }
 
-h1 {
+h1,
+.h1-heading {
   font-size: var(--size-step-4);
   font-weight: 900;
 }
 
-h2 {
+h2,
+.h2-heading {
   font-size: var(--size-step-3);
 }
 
-h3 {
+h3,
+.h3-heading {
   font-size: var(--size-step-2);
+}
+
+h4,
+.h4-heading {
+  font-size: var(--size-step-1);
 }
 
 ul,
