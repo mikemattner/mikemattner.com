@@ -1,6 +1,6 @@
 <template>
   <figure class="static-image">
-    <nuxt-picture :src="`${src}`" :alt="alt" :width="width" :height="height" />
+    <img :src="`${src}`" :alt="alt" :width="width" :height="height" />
     <figcaption v-if="caption" v-html="caption"></figcaption>
   </figure>
 </template>
