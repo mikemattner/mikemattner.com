@@ -18,22 +18,30 @@ body {
       'app-header'
       'main-content'
       'app-footer';
+
+    @media (max-width: 715px) {
+        border-width: 0.5rem;
+    }
 }
 
 main {
     padding: 2rem;
     margin-block-start: var(--flow-space, 1em);
+
+    @media (max-width: 715px) {
+        padding: 1rem;
+    }
 }
   
 a {
     color: var(--headline-font-color);
     text-decoration-color: var(--color-primary);
     text-decoration-thickness: 0.2ex;
-    text-underline-offset: 0.3ex;
+    text-underline-offset: 5px;
     transition: var(--transition-fast);
   
     &:hover {
-        text-underline-offset: 0.4ex;
+        text-underline-offset: 7px;
     }
 }
   

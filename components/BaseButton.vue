@@ -151,6 +151,7 @@ const attributes = computed(() => {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--sizing-md);
 
     &.is--loading {
       opacity: 0;
@@ -219,7 +220,7 @@ const attributes = computed(() => {
     color: var(--button-solid-color-text);
 
     &:hover:not(:disabled) {
-      color: var(--button-outline-color-text-hover);
+      color: var(--button-solid-color-text);
       background-color: var(--button-solid-background-color-hover);
     }
     --button-loader-color: var(--button-solid-color-text);

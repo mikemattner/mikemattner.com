@@ -72,3 +72,18 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-light);
+}
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-light);
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
