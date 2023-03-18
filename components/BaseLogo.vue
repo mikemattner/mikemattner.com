@@ -52,11 +52,13 @@ const props = defineProps({
   }
 
   &__type {
-    font-size: var(--size-step-0);
-    font-weight: 700;
+    font-size: var(--size-step--1);
     transition: all 0.125s ease-in-out;
     line-height: 1;
-    letter-spacing: 0.0125rem;
+    text-transform: uppercase;
+    font-variation-settings: 'wdth' 90;
+    font-weight: 700;
+    letter-spacing: 0.1em;
   }
 
   &.large {

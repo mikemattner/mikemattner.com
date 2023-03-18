@@ -6,9 +6,9 @@
         <h1 class="home-hello">Hello</h1>
         <div class="home-greeting flow">
           <p class="lede">
-            I&rsquo;m <strong>Mike Mattner</strong>, a creative developer from Michigan with over 15 years of experience
-            working with multidisciplinary teams in a variety of roles. I&rsquo;m currently working at AccuLynx as a Sr.
-            UI Engineer.
+            I&rsquo;m <strong>Mike</strong>, a creative developer from Michigan with over 15 years of experience working
+            with multidisciplinary teams in a variety of design and development roles. I&rsquo;m currently working at
+            AccuLynx as a Sr. UI Engineer.
           </p>
           <p>
             <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
@@ -26,11 +26,13 @@
       <div class="home-layout__content">
         <hr />
         <div class="content-area flow">
-          <h2>Lorem Testum</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti ad ipsum nulla iure libero, temporibus
-            fugit cum delectus porro odio ab, cumque fugiat natus ut consequatur mollitia error at eligendi.
-          </p>
+          <h2>Writing</h2>
+          <p>I'm building this out in the open, so bare with me. Here's a list of my articles.</p>
+          <ul>
+            <li v-for="post in data" :key="post.title">
+              <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -41,6 +43,8 @@
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });
+
+const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).limit(6).find());
 </script>
 
 <style lang="scss" scoped>
@@ -69,11 +73,18 @@ useHead({
   }
 
   &__content {
+    margin-block-end: 2rem;
+
     @media (min-width: 500px) {
       display: grid;
       gap: var(--sizing-xl);
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    hr {
+      grid-column: 1 / span 4;
       margin-block-start: 2rem;
+      margin-block-end: 3rem;
     }
   }
 
@@ -192,10 +203,6 @@ useHead({
 
   .sidebar-area {
     grid-column: 1;
-  }
-
-  hr {
-    grid-column: 1 / span 4;
   }
 
   .button-group {
