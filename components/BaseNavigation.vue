@@ -1,13 +1,17 @@
 <template>
   <header class="base-navigation">
-    <NuxtLink to="/" class="brand-link"><BaseLogo logo-large /></NuxtLink>
+    <NuxtLink to="/" class="brand-link"><BaseLogo logo-large show-label /></NuxtLink>
     <nav class="base-navigation__main">
       <ul class="navigation-list">
-        <li class="navigation-list__item"><NuxtLink class="navigation-list__item-link" to="/">Home</NuxtLink></li>
         <li class="navigation-list__item">
-          <NuxtLink class="navigation-list__item-link" to="/test">Writing</NuxtLink>
+          <NuxtLink class="navigation-list__item-link" to="/">Home</NuxtLink>
         </li>
-        <li class="navigation-list__item"><NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink></li>
+        <li class="navigation-list__item">
+          <NuxtLink class="navigation-list__item-link" to="/writing">Writing</NuxtLink>
+        </li>
+        <li class="navigation-list__item">
+          <NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink>
+        </li>
       </ul>
     </nav>
     <ThemeSwitcher />
