@@ -7,8 +7,8 @@
         <div class="home-greeting flow">
           <p class="lede">
             I&rsquo;m <strong>Mike</strong>, a creative developer from Michigan with over 15 years of experience working
-            with multidisciplinary teams in a variety of design and development roles. I&rsquo;m currently working at
-            AccuLynx as a Sr. UI Engineer.
+            on the web in a variety of design and development roles. I&rsquo;m currently working at AccuLynx as a Sr. UI
+            Engineer.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="sm" color="primary">

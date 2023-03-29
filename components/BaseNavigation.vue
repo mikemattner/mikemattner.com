@@ -14,7 +14,6 @@
         </li> -->
       </ul>
     </nav>
-    <ThemeSwitcher />
   </header>
 </template>
 
