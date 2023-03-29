@@ -9,7 +9,24 @@ tag:
 ---
 I’ve been playing around with fluid type for a while and happened upon a pen by…I don’t remember who. I forked it a while ago, but in essence we’re simply attempting to scale type based on viewport size.
 
-In the instance highlighted here, let’s say we want a bold header in a hero space to essentially always have that bold feel no matter what screen size we’re [viewing items at](https://codepen.io/mikemattner/pen/vrKoGO).
+In the instance highlighted here, let’s say we want a bold header in a hero space to essentially always have that bold feel no matter what screen size we're using ([codepen example](https://codepen.io/mikemattner/pen/vrKoGO)).
+
+```css
+html {
+  font-size: 16px;  
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero__title {
+  font-size: calc(100% + 5vw); 
+}
+```
 
 <!-- <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="mikemattner" data-slug-hash="vrKoGO" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Scaling Text with Viewport Units">
   <span>See the Pen <a href="https://codepen.io/mikemattner/pen/vrKoGO">

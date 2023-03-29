@@ -3,10 +3,11 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="content-area flow">
-          <h2>Writing</h2>
+          <h1>Writing</h1>
           <p>I'm building this out in the open, so bare with me. Here's a list of my articles.</p>
+          <h2>Articles</h2>
           <ul>
-            <li v-for="post in data" :key="post.title">
+            <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
               &mdash; {{ formatDate(post.date) }}
             </li>
@@ -25,6 +26,18 @@ useHead({
 });
 
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
+
+const posts = computed(() => {
+  return data?.value?.filter((post) => post.type === 'entry');
+});
+
+const links = computed(() => {
+  return data?.value?.filter((post) => post.type === 'link');
+});
+
+const quotes = computed(() => {
+  return data?.value?.filter((post) => post.type === 'quote');
+});
 </script>
 
 <style lang="scss" scoped>

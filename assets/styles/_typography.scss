@@ -43,6 +43,13 @@ h4,
   font-size: var(--size-step-1);
 }
 
+.eyebrow {
+  font-size: var(--size-step--1);
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-weight: 300;
+}
+
 ul,
 ol {
   padding-inline-start: 1em;
@@ -59,13 +66,12 @@ blockquote {
   // More traditional
   position: relative;
   padding: 2rem;
-  // border: 1px solid var(--color-middle-gray-t);
   border-left: 4px solid var(--color-middle-gray-t);
   font-size: var(--size-step-0);
-  // background-color: var(--color-dark-bg-border);
+  background-color: var(--color-dark-bg-border);
   border-radius: 0 var(--sizing-sm) var(--sizing-sm) 0;
-  margin-left: calc(var(--sizing-xl) * -1);
-  margin-right: calc(var(--sizing-xl) * -1);
+  // margin-left: calc(var(--sizing-xl) * -1);
+  // margin-right: calc(var(--sizing-xl) * -1);
 
   // &::before, &::after {
   //   content: "";

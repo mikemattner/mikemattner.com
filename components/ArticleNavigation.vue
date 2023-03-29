@@ -6,7 +6,7 @@
       :title="prev.title"
       class="prev-button"
       variant="outline"
-      size="sm"
+      size="md"
       color="primary"
     >
       <Icon name="ri:arrow-left-line" /> Previous
@@ -17,7 +17,7 @@
       :title="next.title"
       class="next-button"
       variant="outline"
-      size="sm"
+      size="md"
       color="primary"
     >
       Next <Icon name="ri:arrow-right-line" />
@@ -28,7 +28,10 @@
 <script setup lang="ts">
 const { path } = useRoute();
 
-const [prev, next] = await queryContent().only(['_path', 'title']).sort({ date: 1 }).findSurround({ _path: path });
+const [prev, next] = await queryContent('/writing')
+  .only(['_path', 'title'])
+  .sort({ date: 1 })
+  .findSurround({ _path: path });
 </script>
 
 <style lang="scss" scoped>

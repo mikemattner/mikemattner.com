@@ -11,8 +11,8 @@
             Engineer.
           </p>
           <div class="button-group">
-            <BaseButton to="/about" variant="outline" size="sm" color="primary">
-              <span>Learn More About Me</span> <Icon name="ri:arrow-right-line" />
+            <BaseButton to="/about" variant="outline" size="md" color="primary">
+              <span>Learn About Me</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
@@ -28,6 +28,11 @@
               &mdash; {{ formatDate(post.date) }}
             </li>
           </ul>
+          <div class="button-group">
+            <BaseButton to="/writing" variant="outline" size="md" color="primary">
+              <span>More Articles</span> <Icon name="ri:arrow-right-line" />
+            </BaseButton>
+          </div>
         </div>
       </div>
     </div>
