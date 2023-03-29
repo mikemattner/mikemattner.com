@@ -87,3 +87,20 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+sub, sup {
+  font-size: 50%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.85em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+strong {
+  font-weight: 700;
+}

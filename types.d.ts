@@ -8,4 +8,4 @@ type ButtonColor = 'primary' | 'secondary';
 
 type ButtonVariant = 'solid' | 'outline' | 'text' | 'link';
 
-type ButtonSize = 'md' | 'sm';
+type ButtonSize = 'md' | 'sm' | 'xs';

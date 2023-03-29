@@ -7,12 +7,12 @@
         <div class="home-greeting flow">
           <p class="lede">
             I&rsquo;m <strong>Mike</strong>, a creative developer from Michigan with over 15 years of experience working
-            with multidisciplinary teams in a variety of design and development roles. I&rsquo;m currently working at
-            AccuLynx as a Sr. UI Engineer.
+            on the web in a variety of design and development roles. I&rsquo;m currently working at AccuLynx as a Sr. UI
+            Engineer.
           </p>
           <div class="button-group">
-            <BaseButton to="/about" variant="outline" size="sm" color="primary">
-              <span>Learn More About Me</span> <Icon name="ri:arrow-right-line" />
+            <BaseButton to="/about" variant="outline" size="md" color="primary">
+              <span>Learn About Me</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
@@ -25,9 +25,14 @@
           <ul>
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-              {{ formatDate(post.date) }}
+              &mdash; {{ formatDate(post.date) }}
             </li>
           </ul>
+          <div class="button-group">
+            <BaseButton to="/writing" variant="outline" size="md" color="primary">
+              <span>More Articles</span> <Icon name="ri:arrow-right-line" />
+            </BaseButton>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +49,7 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.slice(0, 5);
+  return data?.value?.filter((post) => post.type === 'entry').slice(0, 5);
 });
 </script>
 

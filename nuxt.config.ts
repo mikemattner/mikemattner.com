@@ -24,14 +24,9 @@ export default defineNuxtConfig({
   css: ['@/assets/styles/app.scss'],
   modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon'],
   content: {
-    documentDriven: true,
     highlight: {
-      theme: {
-        // Default theme (same as single string)
-        default: 'github-dark',
-        // Theme used if `html.dark`
-        dark: 'github-dark',
-      },
+      theme: 'material-ocean',
+      preload: ['vue'],
     },
     markdown: {
       anchorLinks: false,

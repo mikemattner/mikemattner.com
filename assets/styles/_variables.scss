@@ -2,6 +2,7 @@
     // Typography
     --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
     --serif-font-family: Georgia, serif;
+    --code-font-family: 'JetBrains Mono', monospace;
 
     // Type scale: https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,18,1.333,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
     --size-step--2: clamp(0.63rem, calc(0.64rem + -0.01vw), 0.64rem);
@@ -67,11 +68,11 @@
 }
 
 html.light {
-    --background-color: var(--color-light-bg);
+    --background-color: var(--color-light-bg-border);
     --font-color: var(--color-dark-t);
     --headline-font-color: var(--color-dark);
-    --background-border-color: var(--color-light-bg-border);
-    --border-color: hsl(0, 0%, 90%);
+    --background-border-color: var(--color-light);
+    --border-color: hsl(240, 9%, 9%, 10%);
     --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 68%) 54.62%, hsla(0, 0%, 98%, 100%) 79.18% );
     --image-background: var(--color-light-bg);
 }

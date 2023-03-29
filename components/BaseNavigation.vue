@@ -4,17 +4,16 @@
     <nav class="base-navigation__main">
       <ul class="navigation-list">
         <li class="navigation-list__item">
-          <NuxtLink class="navigation-list__item-link" to="/">Home</NuxtLink>
+          <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/">Home</NuxtLink>
         </li>
         <li class="navigation-list__item">
-          <NuxtLink class="navigation-list__item-link" to="/writing">Writing</NuxtLink>
+          <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/writing">Writing</NuxtLink>
         </li>
         <!-- <li class="navigation-list__item">
           <NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink>
         </li> -->
       </ul>
     </nav>
-    <ThemeSwitcher />
   </header>
 </template>
 
@@ -69,7 +68,8 @@
       }
     }
 
-    .router-link-active {
+    .router-link-active,
+    .active-path {
       font-weight: 700;
       text-decoration-thickness: 0.4ex;
       color: var(--headline-font-color);

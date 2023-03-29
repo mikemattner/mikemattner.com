@@ -52,7 +52,7 @@ const props = defineProps({
   }
 
   &__type {
-    font-size: var(--size-step-0);
+    font-size: 1rem;
     transition: all 0.125s ease-in-out;
     line-height: 1;
     font-variation-settings: 'wdth' 90;
@@ -62,9 +62,9 @@ const props = defineProps({
 
   &.large {
     .brand-logo__image {
-      width: 2rem;
-      height: 2rem;
-      flex: 0 0 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      flex: 0 0 1.5rem;
     }
   }
   @media (min-width: 769px) {
