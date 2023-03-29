@@ -42,7 +42,7 @@ const props = defineProps({
     type: String as PropType<ButtonSize>,
     default: 'md',
     validator: (value: ButtonSize) => {
-      return ['md', 'sm'].includes(value);
+      return ['md', 'sm', 'xs'].includes(value);
     },
   },
 });
@@ -51,6 +51,7 @@ const classes = computed(() => {
   return {
     'button--md': props.size === 'md',
     'button--sm': props.size === 'sm',
+    'button--xs': props.size === 'xs',
     'button--narrow': props.isNarrow,
     'button--text': props.variant === 'text',
     'button--outline': props.variant === 'outline',
@@ -125,6 +126,11 @@ const attributes = computed(() => {
     cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &.button--xs {
+    font-size: var(--size-step--1);
+    padding: var(--sizing-sm);
   }
 
   &.button--sm {

@@ -8,7 +8,7 @@
           <ul>
             <li v-for="post in data" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-              {{ formatDate(post.date) }}
+              &mdash; {{ formatDate(post.date) }}
             </li>
           </ul>
         </div>

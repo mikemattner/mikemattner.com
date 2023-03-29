@@ -3,13 +3,14 @@
     <div class="base-footer__layout">
       <div class="copyright-area copyright-block flow">
         <p>
-          Copyright &copy; {{ theYear }} Mike Mattner. This personal site is
-          <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a> and built with
-          <a href="https://nuxt.com" rel="nofollow">Nuxt</a>. Made in Michigan.
+          This personal site is
+          <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it, modify it for yourself, or
+          just browse the code. Made in Michigan and built with <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
+          Content copyright &copy; {{ theYear }} Mike Mattner.
         </p>
       </div>
       <div class="meta-area flow">
-        <ThemeSwitcher />
+        <!-- <ThemeSwitcher /> -->
         <ul class="social-icons">
           <li>
             <a href="https://github.com/mikemattner" class="footer-icon">
@@ -73,6 +74,7 @@ const theYear = computed<string>(() => {
     }
 
     .copyright-area {
+      max-width: 85ch;
       grid-column: 1;
       @media (min-width: 767px) {
         display: flex;

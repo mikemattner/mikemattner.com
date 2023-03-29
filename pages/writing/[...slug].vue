@@ -27,6 +27,14 @@ const { path } = useRoute();
 const { data } = await useAsyncData(`content-${path}`, () => {
   return queryContent().where({ _path: path }).findOne();
 });
+
+const pageTitle = computed<string>(() => {
+  return data?.value?.title ? data?.value?.title : 'UX/UI Designer & Developer in Michigan';
+});
+
+useHead({
+  title: pageTitle.value,
+});
 </script>
 
 <style lang="scss" scoped>
@@ -53,6 +61,29 @@ const { data } = await useAsyncData(`content-${path}`, () => {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+:deep(.footnotes) {
+  font-size: var(--size-step--1);
+
+  hr {
+    margin-top: var(--sizing-lg);
+  }
+}
+:deep(sup a) {
+  display: inline-block;
+  padding: 3px;
+  background-color: var(--color-middle-gray);
+  color: var(--color-dark);
+  line-height: 1;
+  text-decoration: none;
+  margin-left: 2px;
+  font-weight: 700;
+  transition: var(--transition);
+  border-radius: 2px;
+
+  &:hover {
+    background-color: var(--color-primary);
   }
 }
 </style>

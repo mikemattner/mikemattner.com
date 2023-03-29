@@ -25,7 +25,7 @@
           <ul>
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-              {{ formatDate(post.date) }}
+              &mdash; {{ formatDate(post.date) }}
             </li>
           </ul>
         </div>
@@ -44,7 +44,7 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.slice(0, 5);
+  return data?.value?.filter((post) => post.type === 'entry').slice(0, 5);
 });
 </script>
 
