@@ -49,9 +49,37 @@ ol {
 }
 
 blockquote {
-  padding-inline-start: 1em;
-  border-inline-start: 0.2em solid;
-  font-size: var(--size-step-1);
+  position: relative;
+  padding-inline-start: 2.5em;
+  border-left: 1px solid var(--color-middle-gray);
+  font-size: var(--size-step-0);
+  margin-left: calc(var(--sizing-xl) * -1);
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+  }
+
+  &::before {
+    border: 1px solid var(--color-middle-gray);
+    background-color: var(--background-color);
+    width: 26px;
+    height: 26px;
+    left: -14px;
+    margin-top: -13px;
+    transform: rotate(45deg);
+  }
+  &::after {
+    content: '\201d';
+    font-size: var(--size-step-3);
+    height: 8px;
+    margin-top: 15px;
+    left: -4px;
+    width: 10px;
+    transform: rotate(180deg);
+    color: var(--color-middle-gray);
+  }
 }
 
 hr {
@@ -109,8 +137,17 @@ h3 {
 
 pre {
   position: relative;
+  font-family: var(--code-font-family);
+  font-size: 1rem;
   background-color: var(--color-dark-bg-border);
-  padding: var(--sizing-md);
+  padding: var(--sizing-xxl);
   border-radius: var(--sizing-sm);
   overflow-x: auto;
+  margin-left: calc(var(--sizing-xl) * -1 );
+  margin-right: calc(var(--sizing-xl) * -1 );
+  margin-block-start: 1.5rem;
+  margin-block-end: 1.5rem;
+}
+code {
+  font-family: var(--code-font-family);
 }
