@@ -8,6 +8,7 @@
           <ul>
             <li v-for="post in data" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+              {{ formatDate(post.date) }}
             </li>
           </ul>
         </div>
@@ -17,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+import { formatDate } from '../../utils/formatDate';
+
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });

@@ -8,13 +8,23 @@
       </div>
       <div class="content-area flow">
         <p>
-          @mikemattner on
-          <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
-          <a href="https://mastodon.online/@mikemattner" rel="me">Mastodon</a>,
-          <a href="https://codepen.io/mikemattner/#">Codepen</a>, &amp;
-          <a href="https://github.com/mikemattner">GitHub</a>. This personal site is
+          This personal site is
           <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Made in Michigan and built with
           <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
+        </p>
+        <p class="social-icons">
+          <a href="https://www.linkedin.com/in/mikeamattner/" class="footer-icon">
+            <Icon name="ri:linkedin-box-fill" />
+          </a>
+          <a href="https://mastodon.online/@mikemattner" rel="me" class="footer-icon">
+            <Icon name="ri:mastodon-fill" />
+          </a>
+          <a href="https://codepen.io/mikemattner/#" class="footer-icon">
+            <Icon name="ri:twitter-fill" />
+          </a>
+          <a href="https://github.com/mikemattner" class="footer-icon">
+            <Icon name="ri:github-fill" />
+          </a>
         </p>
         <!-- <p class="social-icons">
           <a href="https://mikemattner.com/feed" title="RSS Feed" class="footer-icon"><Icon name="ri:rss-fill" /></a>
@@ -81,7 +91,7 @@ const theYear = computed<string>(() => {
   }
   a.footer-icon {
     color: var(--color-primary);
-    font-size: var(--size-step-0);
+    font-size: var(--size-step-1);
 
     &:hover {
       color: var(--headline-font-color);

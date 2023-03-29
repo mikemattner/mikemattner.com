@@ -79,14 +79,14 @@ hr {
 }
 
 /* Line lengths */
-article {
-  max-width: 65ch;
-  margin-inline: auto;
-}
+// article {
+//   max-width: 65ch;
+//   margin-inline: auto;
+// }
 
-blockquote {
-  max-width: 50ch;
-}
+// blockquote {
+//   max-width: 50ch;
+// }
 
 h1 {
   max-width: 20ch;
@@ -105,4 +105,12 @@ h3 {
 
 .lede + * {
   --flow-space: 2em;
+}
+
+pre {
+  position: relative;
+  background-color: var(--color-dark-bg-border);
+  padding: var(--sizing-md);
+  border-radius: var(--sizing-sm);
+  overflow-x: auto;
 }

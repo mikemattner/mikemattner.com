@@ -10,12 +10,6 @@
             with multidisciplinary teams in a variety of design and development roles. I&rsquo;m currently working at
             AccuLynx as a Sr. UI Engineer.
           </p>
-          <p>
-            <a href="https://www.linkedin.com/in/mikeamattner/">LinkedIn</a>,
-            <a href="https://mastodon.online/@mikemattner" rel="me">Mastodon</a>,
-            <a href="https://codepen.io/mikemattner/#">Codepen</a>, &amp;
-            <a href="https://github.com/mikemattner">GitHub</a>.
-          </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="sm" color="primary">
               <span>Learn More About Me</span> <Icon name="ri:arrow-right-line" />
@@ -29,8 +23,9 @@
           <h2>Writing</h2>
           <p>I'm building this out in the open, so bare with me. Here's a list of my articles.</p>
           <ul>
-            <li v-for="post in data" :key="post.title">
+            <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+              {{ formatDate(post.date) }}
             </li>
           </ul>
         </div>
@@ -40,11 +35,17 @@
 </template>
 
 <script setup lang="ts">
+import { formatDate } from '../utils/formatDate';
+
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });
 
-const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).limit(6).find());
+const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
+
+const posts = computed(() => {
+  return data?.value?.slice(0, 5);
+});
 </script>
 
 <style lang="scss" scoped>

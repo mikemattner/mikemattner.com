@@ -30,7 +30,7 @@ const props = defineProps({
     padding: 0;
     border-radius: 50%;
     border: 1px solid var(--color-primary);
-    background: transparent;
+    background-color: var(--color-primary);
     z-index: 10;
     transition: var(--transition-cubic-slow);
     flex: 0 0 1.5rem;
@@ -42,23 +42,22 @@ const props = defineProps({
     }
 
     .circle-shape {
-      fill: transparent;
+      fill: var(--color-primary);
       transition: var(--transition-cubic-slow);
     }
     .logo-shape {
-      fill: var(--color-primary);
+      fill: var(--color-dark);
       transition: var(--transition-cubic-slow);
     }
   }
 
   &__type {
-    font-size: var(--size-step--1);
+    font-size: var(--size-step-0);
     transition: all 0.125s ease-in-out;
     line-height: 1;
-    text-transform: uppercase;
     font-variation-settings: 'wdth' 90;
-    font-weight: 700;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
   &.large {

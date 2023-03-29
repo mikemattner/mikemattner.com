@@ -9,9 +9,9 @@
         <li class="navigation-list__item">
           <NuxtLink class="navigation-list__item-link" to="/writing">Writing</NuxtLink>
         </li>
-        <li class="navigation-list__item">
+        <!-- <li class="navigation-list__item">
           <NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <ThemeSwitcher />
