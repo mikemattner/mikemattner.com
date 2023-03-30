@@ -58,9 +58,9 @@ useHead({
     display: grid;
     gap: var(--sizing-xl);
     grid-template-columns:
-      calc(50vw - 51.25rem)
+      calc(50vw - 41.25rem)
       repeat(6, 1fr)
-      calc(50vw - 31.25rem);
+      calc(50vw - 41.25rem);
   }
   @media (max-width: 1323px) {
     display: grid;
@@ -90,7 +90,7 @@ useHead({
 
     @media (max-width: 988px) {
       grid-column: 2 / span 6;
-      grid-row: 2;
+      grid-row: 1;
     }
   }
   .article-body {
@@ -117,7 +117,9 @@ useHead({
     grid-row: 2;
 
     &-block {
-      margin-block-end: 1.5rem;
+      @media (min-width: 989px) {
+        margin-block-end: 1.5rem;
+      }
     }
 
     .tag-list {
@@ -132,8 +134,7 @@ useHead({
 
     @media (max-width: 988px) {
       grid-column: 2 / span 6;
-      grid-row: 1;
-      border-top: none;
+      grid-row: 2;
       border-bottom: 1px solid var(--border-color);
       display: grid;
       grid-template-columns: 1fr 1fr;
