@@ -4,10 +4,10 @@
       <div class="copyright-area copyright-block flow">
         <p>
           This personal site is
-          <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it, modify it for yourself, or
-          just browse the code. Made in Michigan and built with <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
-          Content copyright &copy; {{ theYear }} Mike Mattner.
+          <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it and modify it for yourself,
+          or just browse the code. Made in Michigan and built with <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
         </p>
+        <p class="copyright-line">Content copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
       </div>
       <div class="meta-area flow">
         <!-- <ThemeSwitcher /> -->
@@ -53,7 +53,6 @@ const theYear = computed<string>(() => {
 <style lang="scss" scoped>
 .base-footer {
   grid-area: 'app-footer';
-  font-size: var(--size-step--1);
   padding: 2rem;
   border-top: 1px solid var(--border-color);
 
@@ -81,14 +80,18 @@ const theYear = computed<string>(() => {
       grid-column: 1;
       @media (min-width: 767px) {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+      }
+
+      .copyright-line {
+        font-size: var(--size-step--1);
       }
     }
 
     .meta-area {
       grid-column: 2;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 1rem;
 
       @media (min-width: 767px) {

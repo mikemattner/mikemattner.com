@@ -6,7 +6,7 @@
         <h1 class="home-hello">Hello</h1>
         <div class="home-greeting flow">
           <p class="lede">
-            I&rsquo;m <strong>Mike</strong>, a creative developer from Michigan with over 15 years of experience working
+            <strong>I&rsquo;m Mike</strong>, a creative developer from Michigan with over 15 years of experience working
             on the web in a variety of design and development roles. I&rsquo;m currently working at AccuLynx as a Sr. UI
             Engineer.
           </p>
@@ -51,7 +51,7 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => post.type === 'entry').slice(0, 5);
+  return data?.value?.filter((post) => post.type === 'entry').slice(0, 4);
 });
 </script>
 
@@ -135,22 +135,19 @@ const posts = computed(() => {
       z-index: 2;
       position: relative;
       opacity: 0.8;
-
-      @media (max-width: 929px) {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        -o-object-fit: cover;
-        object-fit: cover;
-        -o-object-position: center;
-        object-position: center;
-        font-family: 'object-fit: cover; object-position: center';
-        width: 100%;
-        height: 100%;
-      }
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      font-family: 'object-fit: cover; object-position: center';
+      width: 100%;
+      height: 100%;
     }
 
     &:before {
@@ -186,11 +183,13 @@ const posts = computed(() => {
     color: var(--color-primary);
     z-index: 2;
     position: relative;
-    font-size: clamp(var(--size-step-6), 12vw, 172px);
+    font-size: clamp(var(--size-step-6), 8vw, 172px);
 
     @media (min-width: 1053px) {
       grid-column: 1 / span 2;
-      grid-row: 2;
+      grid-row: 1 / span 2;
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
     }
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
