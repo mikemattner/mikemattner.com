@@ -62,6 +62,9 @@ const theYear = computed<string>(() => {
   }
 
   &__layout {
+    max-width: var(--max-width);
+    margin-inline: auto;
+
     @media (min-width: 767px) {
       display: grid;
       grid-template-columns: 1fr 1fr;

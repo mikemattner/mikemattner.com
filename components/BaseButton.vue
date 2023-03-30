@@ -34,6 +34,7 @@ const props = defineProps({
   },
   variant: {
     type: String as PropType<ButtonVariant>,
+    default: 'solid',
     validator: (value: ButtonVariant) => {
       return ['solid', 'outline', 'text', 'link'].includes(value);
     },
@@ -89,25 +90,19 @@ const attributes = computed(() => {
   --button-outline-text: var(--headline-font-color);
 
   --button-primary: var(--color-primary);
-  --button-primary-outline: inset 0 0 0 1px var(--color-primary);
+  --button-primary-outline: inset 0 0 0 2px var(--color-primary);
   --button-primary-hover: var(--color-primary-hover-t);
   --button-primary-solid-hover: var(--color-primary-hover);
 
   --button-secondary: var(--color-middle-gray);
-  --button-secondary-outline: inset 0 0 0 1px var(--color-middle-gray);
+  --button-secondary-outline: inset 0 0 0 2px var(--color-middle-gray);
   --button-secondary-hover: var(--color-middle-hover);
   --button-secondary-solid-hover: var(--color-middle-hover);
-
-  --button-green: #8bc541;
-  --button-green-outline: inset 0 0 0 1px var(--ax-green);
-  --button-green-hover: rgba(139, 197, 65, 0.1);
-  --button-green-solid-hover: #9cce5e;
 }
 .button {
   -webkit-appearance: none;
   appearance: none;
   border: 0;
-  border-radius: var(--sizing-sm);
   cursor: pointer;
   display: inline-block;
   font-family: var(--sans-font-family);

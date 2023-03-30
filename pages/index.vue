@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="home-page">
     <div class="home-layout">
       <div class="home-layout__hero">
         <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
@@ -17,12 +17,14 @@
           </div>
         </div>
       </div>
+      <hr />
       <div class="home-layout__content">
-        <hr />
-        <div class="content-area flow">
+        <div class="sidebar-area flow">
           <h2>Writing</h2>
           <p>I'm building this out in the open, so bare with me. Here's a list of my articles.</p>
-          <ul>
+        </div>
+        <div class="content-area flow">
+          <ul class="article-list">
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
               &mdash; {{ formatDate(post.date) }}
@@ -54,14 +56,27 @@ const posts = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.home-layout {
-  max-width: var(--max-width);
-  margin-inline: auto;
+.home-page {
+  padding: 0;
 
+  hr {
+    grid-column: 1 / span 4;
+    margin-block-start: 2rem;
+    margin-block-end: 3rem;
+  }
+}
+.home-layout {
   &__hero {
+    max-width: var(--max-width);
+    margin-inline: auto;
     gap: var(--sizing-xxl);
     margin-block-start: 2rem;
     margin-block-end: 2rem;
+    padding: 2rem;
+
+    @media (max-width: 715px) {
+      padding: 1rem;
+    }
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(5, 1fr);
@@ -79,18 +94,19 @@ const posts = computed(() => {
   }
 
   &__content {
-    margin-block-end: 2rem;
+    margin-block-end: 4rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding: 2rem;
 
-    @media (min-width: 500px) {
-      display: grid;
-      gap: var(--sizing-xl);
-      grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 715px) {
+      padding: 1rem;
     }
 
-    hr {
-      grid-column: 1 / span 4;
-      margin-block-start: 2rem;
-      margin-block-end: 3rem;
+    @media (min-width: 1054px) {
+      display: grid;
+      gap: var(--sizing-xxl);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -170,7 +186,7 @@ const posts = computed(() => {
     color: var(--color-primary);
     z-index: 2;
     position: relative;
-    font-size: var(--size-step-7);
+    font-size: clamp(var(--size-step-6), 12vw, 172px);
 
     @media (min-width: 1053px) {
       grid-column: 1 / span 2;
@@ -180,11 +196,10 @@ const posts = computed(() => {
       grid-column: 2 / span 3;
       grid-row: 1;
       align-self: self-end;
-      font-size: var(--size-step-6);
       line-height: 1;
     }
     @media (max-width: 500px) {
-      font-size: var(--size-step-6);
+      // font-size: var(--size-step-6);
       margin-top: -0.5em;
     }
   }
@@ -201,6 +216,11 @@ const posts = computed(() => {
       grid-column: 2 / span 3;
       grid-row: 2;
     }
+  }
+
+  .article-list {
+    list-style: none;
+    padding: 0;
   }
 
   .content-area {
