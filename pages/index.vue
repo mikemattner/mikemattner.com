@@ -3,8 +3,8 @@
     <div class="home-layout">
       <div class="home-layout__hero">
         <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
-        <h1 class="home-hello">Hello</h1>
         <div class="home-greeting flow">
+          <h1 class="home-hello">Why, Hello!</h1>
           <p class="lede">
             <strong>I&rsquo;m Mike</strong>, a creative developer from Michigan with over 15 years of experience working
             on the web in a variety of design and development roles.
@@ -64,35 +64,35 @@ const posts = computed(() => {
 
   hr {
     grid-column: 1 / span 4;
-    margin-block-start: 2rem;
+    margin-block-start: 3rem;
     margin-block-end: 3rem;
   }
 }
 .home-layout {
   &__hero {
-    max-width: var(--max-width);
+    max-width: 92.3125rem;
     margin-inline: auto;
     margin-block-start: 2rem;
     margin-block-end: 2rem;
-    padding: 2rem;
+
+    @media (min-width: 1053px) {
+      grid-template-columns: repeat(28, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      margin-block-start: 6rem;
+      margin-block-end: 6rem;
+    }
+    @media (max-width: 1052px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      padding: 2rem;
+      gap: var(--sizing-xxl) var(--sizing-xxl);
+    }
 
     @media (max-width: 715px) {
       padding: 1rem;
     }
 
-    @media (min-width: 1053px) {
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      margin-block-start: 2rem;
-      margin-block-end: 6rem;
-      gap: var(--sizing-xxl) var(--sizing-xxl);
-    }
-    @media (max-width: 1052px) {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, auto);
-    }
     @media (min-width: 500px) {
-      gap: var(--sizing-lg) var(--sizing-xxl);
       display: grid;
     }
   }
@@ -117,11 +117,11 @@ const posts = computed(() => {
   .profile-image {
     z-index: 1;
     overflow: hidden;
-    border-radius: 120px 2px 120px 2px;
-    aspect-ratio: 1 / 1.35;
+    aspect-ratio: 1 / 1.125;
+    border-radius: 10px;
 
     @media (min-width: 1053px) {
-      grid-column: 2 / span 2;
+      grid-column: 13 / -1;
       grid-row: 1 / span 3;
     }
     @media (max-width: 1052px) and (min-width: 501px) {
@@ -182,18 +182,16 @@ const posts = computed(() => {
     }
   }
   .home-hello {
-    text-transform: uppercase;
     color: var(--color-primary);
     z-index: 2;
     position: relative;
-    font-size: clamp(var(--size-step-6), 8vw, 150px);
+    font-size: clamp(var(--size-step-6), 10vw, 120px);
     line-height: 1;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 2;
-      grid-row: 1 / span 3;
-      align-self: center;
-      justify-self: self-start;
+      grid-column: 2 / span 16;
+      grid-row: 1 / span 1;
+      align-self: self-end;
     }
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
@@ -213,8 +211,9 @@ const posts = computed(() => {
     max-width: 65ch;
 
     @media (min-width: 1053px) {
-      grid-column: 4 / span 2;
+      grid-column: 2 / span 9;
       grid-row: 1 / span 3;
+      align-self: center;
     }
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
