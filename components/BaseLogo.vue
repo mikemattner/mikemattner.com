@@ -46,7 +46,7 @@ const props = defineProps({
       transition: var(--transition-cubic-slow);
     }
     .logo-shape {
-      fill: var(--color-dark);
+      fill: var(--color-light);
       transition: var(--transition-cubic-slow);
     }
   }
@@ -77,7 +77,7 @@ const props = defineProps({
           fill: var(--color-primary);
         }
         .logo-shape {
-          fill: var(--color-dark);
+          fill: var(--color-light);
         }
       }
     }

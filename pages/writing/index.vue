@@ -4,8 +4,6 @@
       <div class="writing-layout__content">
         <div class="content-area flow">
           <h1>Writing</h1>
-          <p>I'm building this out in the open, so bare with me. Here's a list of my articles.</p>
-          <h2>Articles</h2>
           <ul>
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <article class="flow">
+    <article class="about-me flow">
       <h1>About Me</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti ad ipsum nulla iure libero, temporibus fugit
@@ -58,3 +58,10 @@ useHead({
   title: 'About',
 });
 </script>
+
+<style lang="scss" scoped>
+.about-me {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+</style>
