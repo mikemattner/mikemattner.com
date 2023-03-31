@@ -7,8 +7,11 @@
         <div class="home-greeting flow">
           <p class="lede">
             <strong>I&rsquo;m Mike</strong>, a creative developer from Michigan with over 15 years of experience working
-            on the web in a variety of design and development roles. I&rsquo;m currently working at AccuLynx as a Sr. UI
-            Engineer.
+            on the web in a variety of design and development roles.
+          </p>
+          <p>
+            I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer. On the web, I'm primarily working with Vue and
+            Nuxt.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
@@ -69,7 +72,6 @@ const posts = computed(() => {
   &__hero {
     max-width: var(--max-width);
     margin-inline: auto;
-    gap: var(--sizing-xxl);
     margin-block-start: 2rem;
     margin-block-end: 2rem;
     padding: 2rem;
@@ -83,12 +85,14 @@ const posts = computed(() => {
       grid-template-rows: repeat(3, 1fr);
       margin-block-start: 2rem;
       margin-block-end: 6rem;
+      gap: var(--sizing-xxl) var(--sizing-xxl);
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, auto);
     }
     @media (min-width: 500px) {
+      gap: var(--sizing-lg) var(--sizing-xxl);
       display: grid;
     }
   }
@@ -113,20 +117,19 @@ const posts = computed(() => {
   .profile-image {
     z-index: 1;
     overflow: hidden;
-    border-radius: 30% 2px;
+    border-radius: 120px 2px 120px 2px;
+    aspect-ratio: 1 / 1.35;
 
     @media (min-width: 1053px) {
       grid-column: 2 / span 2;
       grid-row: 1 / span 3;
     }
-    @media (max-width: 1052px) and (min-width: 716px) {
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
-      aspect-ratio: 1;
-      align-self: self-end;
+    @media (max-width: 1052px) and (min-width: 501px) {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
     }
 
-    @media (max-width: 715px) {
+    @media (max-width: 500px) {
       aspect-ratio: 1;
     }
 
@@ -183,13 +186,14 @@ const posts = computed(() => {
     color: var(--color-primary);
     z-index: 2;
     position: relative;
-    font-size: clamp(var(--size-step-6), 8vw, 172px);
+    font-size: clamp(var(--size-step-6), 8vw, 150px);
+    line-height: 1;
 
     @media (min-width: 1053px) {
       grid-column: 1 / span 2;
-      grid-row: 1 / span 2;
-      writing-mode: vertical-lr;
-      text-orientation: mixed;
+      grid-row: 1 / span 3;
+      align-self: center;
+      justify-self: self-start;
     }
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
@@ -198,14 +202,15 @@ const posts = computed(() => {
       line-height: 1;
     }
     @media (max-width: 500px) {
-      // font-size: var(--size-step-6);
       margin-top: -0.5em;
+      margin-left: 0;
     }
   }
 
   .home-greeting {
     z-index: 2;
     align-self: center;
+    max-width: 65ch;
 
     @media (min-width: 1053px) {
       grid-column: 4 / span 2;
