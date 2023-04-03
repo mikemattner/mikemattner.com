@@ -1,185 +1,240 @@
 <template>
-  <div class="home">
-    <PageHero full>
-      <StaticImage
-        v-for="(image, index) in images"
-        :key="`image-${index}`"
-        :src="image.src"
-        :alt="image.alt"
-        :width="image.width"
-        :height="image.height"
-        class="personal-image"
-        circle
-        overlay
-      />
-      <Header tag="h1" class="text-huge" v-html="homePage.intro.title"></Header>
-      <div class="header-content">
-        <div v-html="homePage.intro.body"></div>
-        <Button to="/about" primary icon="chevron-right" icon-right>
-          More About Me
-        </Button>
+  <main class="home-page">
+    <div class="home-layout">
+      <div class="home-layout__hero">
+        <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
+        <div class="home-greeting flow">
+          <h1 class="home-hello">Hey there!</h1>
+          <p class="lede">
+            <strong>I&rsquo;m Mike</strong>, a creative developer from Michigan with over 15 years of experience working
+            on the web in a variety of design and development roles.
+          </p>
+          <p>
+            I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer. On the web, I'm primarily working with Vue and
+            Nuxt. This site is being designed and built out in the open.
+          </p>
+          <div class="button-group">
+            <BaseButton to="/about" variant="outline" size="md" color="primary">
+              <span>Learn About Me</span> <Icon name="ri:arrow-right-line" />
+            </BaseButton>
+          </div>
+        </div>
       </div>
-    </PageHero>
-    <AnimatedWave />
-    <!-- <section class="section--work section--dark">
-      <div class="layout">
-        <Header
-          tag="h2"
-          class="display-3"
-          decorator
-          v-html="homePage.work.title"
-        ></Header>
-        <p v-html="homePage.work.body"></p>
-        <WorkList :work="work" />
+      <hr />
+      <div class="home-layout__content">
+        <div class="sidebar-area flow">
+          <h2>Writing</h2>
+          <p>Some things I've written about over the years on topics like career, personal, and politics.</p>
+        </div>
+        <div class="content-area flow">
+          <ul class="article-list">
+            <li v-for="post in posts" :key="post.title">
+              <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+              &mdash; {{ formatDate(post.date) }}
+            </li>
+          </ul>
+          <div class="button-group">
+            <BaseButton to="/writing" variant="outline" size="md" color="primary">
+              <span>More Articles</span> <Icon name="ri:arrow-right-line" />
+            </BaseButton>
+          </div>
+        </div>
       </div>
-    </section>
-    <WaveRight flip /> -->
-    <section id="content" class="section section--writing section--dark layout">
-      <div class="main-content">
-        <Header tag="h2" class="display-3" decorator>{{
-          homePage.writing.title
-        }}</Header>
-        <p v-html="homePage.writing.body"></p>
-        <AllArticles :posts="posts" short />
-        <Button
-          :to="homePage.writing.link"
-          primary
-          icon="chevron-right"
-          icon-right
-        >
-          {{ homePage.writing.buttonTitle }}
-        </Button>
-      </div>
-    </section>
-    <WaveRight flip />
-  </div>
+    </div>
+  </main>
 </template>
 
-<script>
-import { homePage } from '~/data/pages.yaml'
+<script setup lang="ts">
+import { formatDate } from '../utils/formatDate';
 
-export default {
-  name: 'Home',
-  scrollToTop: true,
-  transition: 'fade',
-  async asyncData({ $content, app, error }) {
-    let posts
-    let work
-    try {
-      posts = await $content('writing').sortBy('date', 'desc').limit(6).fetch()
-      work = await $content('work').sortBy('date', 'desc').fetch()
-    } catch (e) {
-      try {
-        posts = await $content('writing')
-          .sortBy('date', 'desc')
-          .limit(6)
-          .fetch()
-        work = await $content('work').sortBy('date', 'desc').fetch()
-      } catch (e) {
-        return error({ statusCode: 404, message: 'Content not found' })
-      }
-    }
-    return {
-      posts,
-      work,
-    }
-  },
-  data() {
-    return {
-      homePage,
-      images: [
-        {
-          src: 'personal/mike-profile-three.jpg',
-          alt: 'Generic profile image.',
-          width: '900',
-          height: '900',
-        },
-      ],
-    }
-  },
-  head() {
-    return {
-      titleTemplate: `UX/UI Designer & Developer in Michigan – %s`,
-    }
-  },
-}
+useHead({
+  title: 'UX/UI Designer & Developer in Michigan',
+});
+
+const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
+
+const posts = computed(() => {
+  return data?.value?.filter((post) => post.type === 'entry').slice(0, 4);
+});
 </script>
 
-<style scoped lang="scss">
-.home {
-  .hero {
-    h1 {
-      grid-column: main-content / span 6;
-      @media (min-width: $tablet) {
-        grid-column: main-content / span 6;
-        margin-bottom: 1rem;
-      }
-      @media (min-width: $desktop) {
-        grid-column: main-content / span 7;
-      }
+<style lang="scss" scoped>
+.home-page {
+  padding: 0;
+
+  hr {
+    grid-column: 1 / span 4;
+    margin-block-start: 3rem;
+    margin-block-end: 3rem;
+  }
+}
+.home-layout {
+  &__hero {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+
+    @media (min-width: 1053px) {
+      grid-template-columns: repeat(28, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      margin-block-start: 6rem;
+      margin-block-end: 6rem;
+    }
+    @media (max-width: 1052px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      padding: 2rem;
+      gap: var(--sizing-xxl) var(--sizing-xxl);
     }
 
-    .personal-image {
-      transition: $transition-cubic;
-      grid-column: main-content / span 2;
-      margin-bottom: $defaultPadding;
-      @media (min-width: $tablet) {
-        margin-bottom: 0;
-        width: 80%;
-        grid-column: content-start / span 2;
-        align-self: start;
-        justify-self: center;
-        &:hover {
-          transform: scale(1.05) rotate(1deg) translate3d(0, 0, 0);
-          z-index: 3;
-        }
-      }
+    @media (max-width: 715px) {
+      padding: 1rem;
     }
-    .header-content {
-      font-size: $h6;
-      line-height: 1.5;
-      grid-column: main-content / span 6;
-      @media (min-width: $tablet) {
-        grid-column: main-content / span 6;
-      }
-      @media (min-width: $desktop) {
-        grid-column: main-content / span 6;
-      }
-      .button {
-        margin-top: 1rem;
-      }
+
+    @media (min-width: 500px) {
+      display: grid;
     }
   }
 
-  .section {
-    padding: 2rem 0;
+  &__content {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+
+    @media (min-width: 1053px) {
+      grid-template-columns: repeat(28, 1fr);
+      margin-block-start: 10rem;
+      margin-block-end: 10rem;
+      display: grid;
+    }
+
+    @media (max-width: 1052px) {
+      padding: 2rem;
+    }
+
+    @media (max-width: 715px) {
+      padding: 1rem;
+    }
+
+    @media (min-width: 500px) {
+    }
+  }
+
+  .profile-image {
+    z-index: 1;
+    overflow: hidden;
+    aspect-ratio: 1 / 1.125;
+    border-radius: 10px;
+
+    @media (min-width: 1053px) {
+      grid-column: 14 / -2;
+      grid-row: 1 / span 3;
+    }
+    @media (max-width: 1052px) and (min-width: 501px) {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    }
+
+    @media (max-width: 500px) {
+      aspect-ratio: 1;
+    }
+
+    :deep(img) {
+      mix-blend-mode: multiply;
+      z-index: 2;
+      position: relative;
+      opacity: 0.8;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      font-family: 'object-fit: cover; object-position: center';
+      width: 100%;
+      height: 100%;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: var(--gradient-1);
+      mix-blend-mode: normal;
+      opacity: 0.8;
+      z-index: 3;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: var(--image-background);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+      z-index: 1;
+    }
+  }
+  .home-hello {
+    color: var(--color-primary);
+    z-index: 2;
     position: relative;
+    font-size: clamp(var(--size-step-6), 10vw, 120px);
+    line-height: 1;
 
-    &--work {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-
-      h2,
-      p {
-        grid-column: main-content / span 6;
-        @media (min-width: $tablet) {
-          grid-column: main-content / span 7;
-        }
-      }
+    @media (max-width: 500px) {
+      margin-top: -0.5em;
     }
+  }
 
-    &--writing {
-      p {
-        margin-bottom: 2rem;
-      }
-      .button {
-        margin-top: 2rem;
-      }
-    }
+  .home-greeting {
+    z-index: 2;
+    align-self: center;
+    max-width: 65ch;
 
-    &--dark {
-      background-color: $darkShadeBackground;
+    @media (min-width: 1053px) {
+      grid-column: 2 / span 10;
+      grid-row: 1 / span 3;
+      align-self: center;
     }
+    @media (max-width: 1052px) {
+      grid-column: 2 / span 3;
+      grid-row: 2;
+    }
+  }
+
+  .article-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .content-area {
+    grid-column: 9 / -2;
+  }
+
+  .sidebar-area {
+    grid-column: 2 / span 6;
+  }
+
+  .button-group {
+    --flow-space: 2.5em;
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-md);
   }
 }
 </style>

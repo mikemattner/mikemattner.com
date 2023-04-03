@@ -18,7 +18,7 @@ And so last year I decided to learn [VueJS](https://vuejs.org/)–and with it [N
 
 I started by building just a few simple pages that acted as a brochure style experience and have started to build out some additional features. The first is a simple blogging platform using markdown files.
 
-## Loading Content
+### Loading Content
 
 I'm primarily loading content from a few different static sources: yaml, json, and markdown files. For example, `index.vue` pulls in the following:
 
