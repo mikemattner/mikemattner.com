@@ -28,14 +28,6 @@ const { data } = await useAsyncData('writing', () => queryContent('/writing').so
 const posts = computed(() => {
   return data?.value?.filter((post) => post.type === 'entry');
 });
-
-const links = computed(() => {
-  return data?.value?.filter((post) => post.type === 'link');
-});
-
-const quotes = computed(() => {
-  return data?.value?.filter((post) => post.type === 'quote');
-});
 </script>
 
 <style lang="scss" scoped>
@@ -57,6 +49,14 @@ const quotes = computed(() => {
       margin-block-start: 2rem;
       margin-block-end: 3rem;
     }
+  }
+
+  .writing-title {
+    color: var(--color-primary);
+    z-index: 2;
+    position: relative;
+    font-size: clamp(var(--size-step-6), 10vw, 120px);
+    line-height: 1;
   }
 
   .content-area {

@@ -2,35 +2,34 @@
   <footer class="base-footer">
     <div class="base-footer__layout">
       <div class="copyright-area copyright-block flow">
+        <h2 class="eyebrow">About This Site</h2>
         <p>
-          This personal site is
-          <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it and modify it for yourself,
-          or just browse the code. Made in Michigan and built with <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
+          Thanks for stopping by. I'm Mike, a creative developer from the beautiful state of Michigan. This personal
+          site is <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it and modify it for
+          yourself, or just browse the code. Made in Michigan and built with
+          <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
         </p>
         <p class="copyright-line">Content copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
       </div>
       <div class="meta-area flow">
+        <h2 class="eyebrow">Elsewhere</h2>
         <!-- <ThemeSwitcher /> -->
         <ul class="social-icons">
           <li>
-            <a href="https://github.com/mikemattner" class="footer-icon">
-              <Icon name="ri:github-fill" />
-            </a>
+            <a href="https://github.com/mikemattner" class="footer-icon"> <Icon name="ri:github-fill" /> Github </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/mikeamattner/" class="footer-icon">
-              <Icon name="ri:linkedin-box-fill" />
+              <Icon name="ri:linkedin-box-fill" /> LinkedIn
             </a>
           </li>
           <li>
             <a href="https://mastodon.online/@mikemattner" rel="me" class="footer-icon">
-              <Icon name="ri:mastodon-fill" />
+              <Icon name="ri:mastodon-fill" /> Mastodon
             </a>
           </li>
           <li>
-            <a href="https://codepen.io/mikemattner/#" class="footer-icon">
-              <Icon name="ri:twitter-fill" />
-            </a>
+            <a href="https://codepen.io/mikemattner/#" class="footer-icon"> <Icon name="ri:twitter-fill" /> Twitter </a>
           </li>
           <!-- <li>
             <a href="https://mikemattner.com/feed" title="RSS Feed" class="footer-icon">
@@ -53,8 +52,12 @@ const theYear = computed<string>(() => {
 <style lang="scss" scoped>
 .base-footer {
   grid-area: 'app-footer';
-  padding: 2rem;
+  padding: 2rem 0;
   border-top: 1px solid var(--border-color);
+
+  @media (max-width: 1052px) {
+    padding: 2rem;
+  }
 
   @media (max-width: 715px) {
     padding: 1rem;
@@ -67,6 +70,12 @@ const theYear = computed<string>(() => {
     @media (min-width: 767px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: var(--sizing-xxl);
+    }
+
+    @media (min-width: 1053px) {
+      grid-template-columns: repeat(28, 1fr);
+      gap: 0;
     }
 
     @media (max-width: 766px) {
@@ -77,10 +86,15 @@ const theYear = computed<string>(() => {
 
     .copyright-area {
       max-width: 85ch;
-      grid-column: 1;
+
       @media (min-width: 767px) {
+        grid-column: 1;
         display: flex;
         flex-direction: column;
+      }
+
+      @media (min-width: 1053px) {
+        grid-column: 2 / span 14;
       }
 
       .copyright-line {
@@ -89,13 +103,17 @@ const theYear = computed<string>(() => {
     }
 
     .meta-area {
-      grid-column: 2;
       display: flex;
       align-items: flex-start;
+      flex-direction: column;
       gap: 1rem;
 
       @media (min-width: 767px) {
-        justify-content: flex-end;
+        grid-column: 2;
+      }
+
+      @media (min-width: 1053px) {
+        grid-column: 18 / -2;
       }
     }
   }
@@ -109,12 +127,18 @@ const theYear = computed<string>(() => {
     margin: 0;
   }
   a.footer-icon {
-    color: var(--color-middle-gray);
-    font-size: var(--size-step-1);
     line-height: 1;
+    font-size: var(--size-step--1);
+
+    .icon {
+      font-size: var(--size-step-1);
+      color: var(--color-middle-gray);
+    }
 
     &:hover {
-      color: var(--color-primary);
+      .icon {
+        color: var(--color-primary);
+      }
     }
   }
 }
