@@ -4,14 +4,14 @@
       <div class="home-layout__hero">
         <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
         <div class="home-greeting flow">
-          <h1 class="home-hello">Why, Hello!</h1>
+          <h1 class="home-hello">Hey there!</h1>
           <p class="lede">
             <strong>I&rsquo;m Mike</strong>, a creative developer from Michigan with over 15 years of experience working
             on the web in a variety of design and development roles.
           </p>
           <p>
             I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer. On the web, I'm primarily working with Vue and
-            Nuxt.
+            Nuxt. This site is being designed and built out in the open.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
@@ -24,7 +24,7 @@
       <div class="home-layout__content">
         <div class="sidebar-area flow">
           <h2>Writing</h2>
-          <p>I'm building this out in the open, so bare with me. Here's a list of my articles.</p>
+          <p>Some things I've written about over the years on topics like career, personal, and politics.</p>
         </div>
         <div class="content-area flow">
           <ul class="article-list">
@@ -70,7 +70,7 @@ const posts = computed(() => {
 }
 .home-layout {
   &__hero {
-    max-width: 92.3125rem;
+    max-width: var(--max-width);
     margin-inline: auto;
     margin-block-start: 2rem;
     margin-block-end: 2rem;
@@ -98,19 +98,27 @@ const posts = computed(() => {
   }
 
   &__content {
-    margin-block-end: 4rem;
     max-width: var(--max-width);
     margin-inline: auto;
-    padding: 2rem;
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+
+    @media (min-width: 1053px) {
+      grid-template-columns: repeat(28, 1fr);
+      margin-block-start: 10rem;
+      margin-block-end: 10rem;
+      display: grid;
+    }
+
+    @media (max-width: 1052px) {
+      padding: 2rem;
+    }
 
     @media (max-width: 715px) {
       padding: 1rem;
     }
 
-    @media (min-width: 1054px) {
-      display: grid;
-      gap: var(--sizing-xxl);
-      grid-template-columns: repeat(4, 1fr);
+    @media (min-width: 500px) {
     }
   }
 
@@ -121,7 +129,7 @@ const posts = computed(() => {
     border-radius: 10px;
 
     @media (min-width: 1053px) {
-      grid-column: 13 / -1;
+      grid-column: 14 / -2;
       grid-row: 1 / span 3;
     }
     @media (max-width: 1052px) and (min-width: 501px) {
@@ -188,20 +196,8 @@ const posts = computed(() => {
     font-size: clamp(var(--size-step-6), 10vw, 120px);
     line-height: 1;
 
-    @media (min-width: 1053px) {
-      grid-column: 2 / span 16;
-      grid-row: 1 / span 1;
-      align-self: self-end;
-    }
-    @media (max-width: 1052px) {
-      grid-column: 2 / span 3;
-      grid-row: 1;
-      align-self: self-end;
-      line-height: 1;
-    }
     @media (max-width: 500px) {
       margin-top: -0.5em;
-      margin-left: 0;
     }
   }
 
@@ -211,7 +207,7 @@ const posts = computed(() => {
     max-width: 65ch;
 
     @media (min-width: 1053px) {
-      grid-column: 2 / span 9;
+      grid-column: 2 / span 10;
       grid-row: 1 / span 3;
       align-self: center;
     }
@@ -227,11 +223,11 @@ const posts = computed(() => {
   }
 
   .content-area {
-    grid-column: 2 / span 3;
+    grid-column: 9 / -2;
   }
 
   .sidebar-area {
-    grid-column: 1;
+    grid-column: 2 / span 6;
   }
 
   .button-group {

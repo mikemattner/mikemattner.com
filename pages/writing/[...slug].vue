@@ -58,9 +58,9 @@ useHead({
     display: grid;
     gap: var(--sizing-xl);
     grid-template-columns:
-      calc(50vw - 41.25rem)
+      calc(50vw - (var(--max-width) / 2))
       repeat(6, 1fr)
-      calc(50vw - 41.25rem);
+      calc(50vw - (var(--max-width) / 2));
   }
   @media (max-width: 1323px) {
     display: grid;
@@ -158,10 +158,8 @@ useHead({
 }
 :deep(.footnotes) {
   font-size: var(--size-step--1);
-
-  hr {
-    margin-top: var(--sizing-lg);
-  }
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--sizing-xxxl);
 }
 :deep(sup a) {
   display: inline-block;
