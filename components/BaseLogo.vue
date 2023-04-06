@@ -25,15 +25,15 @@ const props = defineProps({
   gap: 0.5rem;
 
   &__image {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     border-radius: 50%;
     border: 1px solid var(--color-primary);
     background-color: var(--color-primary);
     z-index: 10;
     transition: var(--transition-cubic-slow);
-    flex: 0 0 1.5rem;
+    flex: 0 0 2rem;
 
     @media (max-width: 768px) {
       height: 1.5rem;
@@ -52,21 +52,14 @@ const props = defineProps({
   }
 
   &__type {
-    font-size: 1rem;
+    font-size: var(--size-step--1);
     transition: all 0.125s ease-in-out;
     line-height: 1;
+    text-transform: uppercase;
     font-variation-settings: 'wdth' 90;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
   }
 
-  &.large {
-    .brand-logo__image {
-      width: 1.5rem;
-      height: 1.5rem;
-      flex: 0 0 1.5rem;
-    }
-  }
   @media (min-width: 769px) {
     &:hover {
       .brand-logo__image {
