@@ -4,7 +4,7 @@
       <div class="home-layout__hero">
         <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
         <div class="home-greeting flow">
-          <h1 class="home-hello">Hey there!</h1>
+          <h1 class="home-hello">Hello there!</h1>
           <p class="lede">
             <strong>I&rsquo;m Mike</strong>, a creative developer from Michigan with over 15 years of experience working
             on the web in a variety of design and development roles.
@@ -125,16 +125,16 @@ const posts = computed(() => {
   .profile-image {
     z-index: 1;
     overflow: hidden;
-    aspect-ratio: 1 / 1.125;
     border-radius: 10px;
 
     @media (min-width: 1053px) {
-      grid-column: 14 / -2;
+      grid-column: 15 / -2;
       grid-row: 1 / span 3;
     }
     @media (max-width: 1052px) and (min-width: 501px) {
       grid-column: 1 / span 2;
       grid-row: 1 / span 2;
+      aspect-ratio: 1 / 1.125;
     }
 
     @media (max-width: 500px) {
@@ -196,6 +196,10 @@ const posts = computed(() => {
     font-size: clamp(var(--size-step-6), 10vw, 120px);
     line-height: 1;
 
+    @media (min-width: 1053px) {
+      text-indent: -0.5rem;
+    }
+
     @media (max-width: 500px) {
       margin-top: -0.5em;
     }
@@ -207,7 +211,7 @@ const posts = computed(() => {
     max-width: 65ch;
 
     @media (min-width: 1053px) {
-      grid-column: 2 / span 10;
+      grid-column: 2 / span 11;
       grid-row: 1 / span 3;
       align-self: center;
     }
