@@ -52,6 +52,7 @@
 
     @media (min-width: 511px) {
       margin-left: auto;
+      font-size: var(--size-step--2);
     }
 
     .navigation-list {
