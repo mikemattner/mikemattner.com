@@ -1,6 +1,7 @@
 <template>
   <main>
     <article class="about-layout">
+      <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
       <div class="about-content flow">
         <h1>About Me</h1>
         <p>
@@ -8,8 +9,8 @@
           then.
         </p>
         <p>
-          Born and raised in Michigan, attended college and lived in Florida, and made my way back to Michigan to enjoy
-          the wonderful lakes and summer experience, I've lived here ever since.
+          Born and raised in Michigan, I attended college and lived in Florida, and made my way back to Michigan to
+          enjoy the wonderful lakes and summer experience. I've lived here ever since.
         </p>
         <p>
           Outside of work I enjoy spending time with my wife and pets, reading, keeping up with politics, woodworking,
@@ -51,6 +52,7 @@ useHead({
   margin-inline: auto;
   margin-block-start: 2rem;
   margin-block-end: 2rem;
+  display: grid;
 
   @media (min-width: 1053px) {
     grid-template-columns: repeat(28, 1fr);
@@ -68,16 +70,82 @@ useHead({
     padding: 1rem;
   }
 
-  @media (min-width: 500px) {
-    display: grid;
-  }
-
   .about-content {
     @media (min-width: 1053px) {
       grid-column: 2 / span 12;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
+    }
+  }
+
+  .profile-image {
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+
+    @media (min-width: 1053px) {
+      grid-column: 15 / -2;
+      grid-row: 1 / span 3;
+      aspect-ratio: 1 / 1.125;
+      align-self: self-start;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
+      grid-row: 1 / span 2;
+      aspect-ratio: 1 / 1.125;
+    }
+
+    @media (max-width: 500px) {
+      aspect-ratio: 1;
+    }
+
+    :deep(img) {
+      mix-blend-mode: multiply;
+      z-index: 2;
+      position: relative;
+      opacity: 0.8;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      font-family: 'object-fit: cover; object-position: center';
+      width: 100%;
+      height: 100%;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: var(--gradient-1);
+      mix-blend-mode: normal;
+      opacity: 0.8;
+      z-index: 3;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: var(--image-background);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+      z-index: 1;
     }
   }
 }

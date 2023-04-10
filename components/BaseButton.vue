@@ -91,7 +91,7 @@ const attributes = computed(() => {
 
   --button-primary: var(--color-primary);
   --button-primary-outline: inset 0 0 0 2px var(--color-primary);
-  --button-primary-hover: var(--color-primary-hover-t);
+  --button-primary-hover: var(--color-primary);
   --button-primary-solid-hover: var(--color-primary-hover);
 
   --button-secondary: var(--color-middle-gray);
@@ -253,7 +253,7 @@ const attributes = computed(() => {
     --button-outline-background-color: transparent;
     --button-outline-background-color-hover: var(--button-primary-hover);
     --button-outline-color-text: var(--button-outline-text);
-    --button-outline-color-text-hover: var(--button-outline-text);
+    --button-outline-color-text-hover: var(--button-solid-text);
     --button-outline-color: var(--button-primary-outline);
   }
 
