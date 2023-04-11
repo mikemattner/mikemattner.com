@@ -4,7 +4,7 @@
       <div class="home-layout__hero">
         <div class="home-greeting flow">
           <p class="main-lede">
-            <span class="f--color-primary">Hello there!</span> I&rsquo;m Mike, a creative developer from Michigan.
+            <strong class="f--color-primary">Hello there!</strong> I&rsquo;m Mike, a creative developer from Michigan.
           </p>
           <!-- <p>
             I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer. On the web, I'm primarily working with Vue and
@@ -51,7 +51,10 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => post.type === 'entry').slice(0, 3);
+  return data?.value
+    ?.filter((post) => post.type === 'entry')
+    .filter((post) => !post.draft)
+    .slice(0, 3);
 });
 </script>
 
@@ -121,11 +124,10 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    font-variation-settings: 'wdth' 90;
-    font-weight: 700;
+    font-variation-settings: 'wdth' 125;
     font-size: clamp(var(--size-step-4), 8vw, 100px);
     line-height: 100%;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
     color: var(--headline-font-color);
   }
 
@@ -153,10 +155,13 @@ const posts = computed(() => {
       display: flex;
       flex-direction: column;
       gap: var(--sizing-md);
-      max-width: 55ch;
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
       padding: var(--sizing-xxl) var(--sizing-md);
+
+      p {
+        max-width: 70ch;
+      }
     }
 
     time {

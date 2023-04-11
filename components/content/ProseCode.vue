@@ -69,10 +69,13 @@ const languageText = computed(() => (props.language ? languageMap[props.language
   padding: 0;
   border-radius: var(--sizing-sm);
   overflow-x: auto;
-  margin-left: calc(var(--sizing-xl) * -1);
-  margin-right: calc(var(--sizing-xl) * -1);
   margin-block-start: 1.5rem;
   margin-block-end: 1.5rem;
+
+  @media (min-width: 989px) {
+    margin-left: calc(var(--sizing-xl) * -1);
+    margin-right: calc(var(--sizing-xl) * -1);
+  }
 
   &-header {
     padding: var(--sizing-md) var(--sizing-lg);

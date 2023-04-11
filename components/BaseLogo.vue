@@ -27,15 +27,15 @@ const props = defineProps({
   gap: 0.5rem;
 
   &__image {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     padding: 0;
     border-radius: 50%;
     // border: 1px solid var(--color-middle-gray);
     background-color: var(--headline-font-color);
     z-index: 10;
     transition: var(--transition-cubic-slow);
-    flex: 0 0 4rem;
+    flex: 0 0 3.5rem;
 
     @media (max-width: 510px) {
       height: 1.5rem;
@@ -55,6 +55,7 @@ const props = defineProps({
     line-height: 1;
     font-variation-settings: 'ital' 10, 'wdth' 75, 'wght' 700;
     letter-spacing: 0.0125em;
+    transition: var(--transition-cubic-slow);
   }
 
   @media (min-width: 511px) {

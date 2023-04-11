@@ -4,6 +4,7 @@
       <div class="writing-layout__content">
         <div class="content-area flow">
           <h1>Writing</h1>
+          <p>Some things I've written about over the years on topics like career, personal, and politics.</p>
           <ul class="article-list">
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
@@ -27,7 +28,7 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => post.type === 'entry');
+  return data?.value?.filter((post) => post.type === 'entry').filter((post) => !post.draft);
 });
 </script>
 
@@ -56,6 +57,10 @@ const posts = computed(() => {
       margin-block-start: 2rem;
       margin-block-end: 3rem;
     }
+
+    p {
+      max-width: 70ch;
+    }
   }
 
   .writing-title {
@@ -68,7 +73,7 @@ const posts = computed(() => {
 
   .content-area {
     @media (min-width: 1053px) {
-      grid-column: 1 / span 14;
+      grid-column: 1 / span 18;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -99,10 +104,13 @@ const posts = computed(() => {
       display: flex;
       flex-direction: column;
       gap: var(--sizing-md);
-      max-width: 55ch;
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
       padding: var(--sizing-xxl) var(--sizing-md);
+
+      p {
+        max-width: 70ch;
+      }
     }
 
     time {

@@ -21,4 +21,4 @@ This is my life. I am often shoe-horned into the role of pure developer, when in
 > 
 > Here’s the thing: HTML, CSS, and presentational JavaScript build user interfaces – yes, the same user interfaces that those designers are meticulously crafting in tools like Photoshop and Sketch. In order for teams to build successful user interface design systems together, it’s crucial to treat frontend development as a core part of the design process.
 
-He mentions how he thinks that front end designers are particularly well-suited to bridge the divide between design and development and I couldn’t agree more. It’s a key skill set in any organization that creates and designs user interfaces.
+[Mr. Frost mentions](http://bradfrost.com/blog/post/frontend-design/) how he thinks that front end designers are particularly well-suited to bridge the divide between design and development and I couldn’t agree more. It’s a key skill set in any organization that creates and designs user interfaces.
