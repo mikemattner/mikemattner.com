@@ -72,8 +72,8 @@ const posts = computed(() => {
   &__hero {
     max-width: var(--max-width);
     margin-inline: auto;
-    margin-block-start: 2rem;
-    margin-block-end: 2rem;
+    margin-block-start: 4rem;
+    margin-block-end: 4rem;
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
@@ -82,13 +82,7 @@ const posts = computed(() => {
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, auto);
-      padding: 2rem;
       gap: var(--sizing-xxl) var(--sizing-xxl);
-    }
-
-    @media (max-width: 715px) {
-      padding: 1rem;
     }
 
     @media (min-width: 500px) {
@@ -99,8 +93,8 @@ const posts = computed(() => {
   &__content {
     max-width: var(--max-width);
     margin-inline: auto;
-    margin-block-start: 2rem;
-    margin-block-end: 2rem;
+    margin-block-start: 8rem;
+    margin-block-end: 4rem;
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);

@@ -1,5 +1,5 @@
 <template>
-  <button v-if="!belowTablet" @click="next()" class="theme-switcher" title="Toggle theme">
+  <button @click="next()" class="theme-switcher" title="Toggle theme">
     <div class="theme-switcher__toggle">
       <template v-if="mode === 'dark'">
         <Icon name="ri:moon-clear-fill" />
@@ -14,19 +14,13 @@
 </template>
 
 <script setup lang="ts">
-import { useColorMode, useCycleList, useBreakpoints } from '@vueuse/core';
+import { useColorMode, useCycleList } from '@vueuse/core';
 
 const mode = useColorMode({
   initialValue: 'dark',
   storageKey: 'mikemattner-com-theme',
 });
 const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
-
-const breakpoints = useBreakpoints({
-  mobile: 500,
-});
-
-const belowTablet = breakpoints.smaller('mobile');
 </script>
 
 <style lang="scss" scoped>
