@@ -43,10 +43,6 @@ const props = defineProps({
       flex: 0 0 1.5rem;
     }
 
-    .circle-shape {
-      fill: var(--color-primary);
-      transition: var(--transition-cubic-slow);
-    }
     .logo-shape {
       fill: var(--background-color);
       transition: var(--transition-cubic-slow);
@@ -57,7 +53,7 @@ const props = defineProps({
     font-size: var(--size-step-1);
     transition: all 0.125s ease-in-out;
     line-height: 1;
-    font-variation-settings: 'ital' 25, 'wdth' 70, 'wght' 700;
+    font-variation-settings: 'ital' 10, 'wdth' 75, 'wght' 700;
     letter-spacing: 0.0125em;
   }
 
@@ -67,12 +63,12 @@ const props = defineProps({
         // border: 2px solid var(--color-primary);
         // background-color: var(--color-primary);
         transform: rotate(720deg);
-        // .circle-shape {
-        //   fill: var(--color-primary);
-        // }
         // .logo-shape {
         //   fill: var(--color-primary);
         // }
+      }
+      .brand-logo__type {
+        font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
       }
     }
   }
