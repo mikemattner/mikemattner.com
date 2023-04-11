@@ -30,10 +30,33 @@
         <h3>Other Iterations</h3>
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
-          2.
+          2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
+          everything back to 2005 and styles weren't saved with the pages until about 2010.
         </p>
         <ul>
-          <li><a href="https://v1.mikemattner.com/">V1 Nuxt</a></li>
+          <li><a href="https://v1.mikemattner.com/" target="_blank">2021-2022</a></li>
+          <li>
+            <a href="https://web.archive.org/web/20210622133707/https://mikemattner.com/" target="_blank">2021</a>
+          </li>
+          <li>
+            <a href="https://web.archive.org/web/20200510231840/https://mikemattner.com/" target="_blank">2020</a>
+          </li>
+          <li>
+            <a href="https://web.archive.org/web/20171118135502/http://mikemattner.com/" target="_blank">2017-2019</a>
+          </li>
+          <li>
+            <a href="https://web.archive.org/web/20160401174705/http://www.mikemattner.com/" target="_blank">2016</a>
+          </li>
+          <li>
+            <a href="https://web.archive.org/web/20130514053042/http://www.mikemattner.com/" target="_blank"
+              >2013-2015</a
+            >
+          </li>
+          <li>
+            <a href="https://web.archive.org/web/20100412072243/http://www.mikemattner.com/" target="_blank"
+              >2010-2012</a
+            >
+          </li>
         </ul>
       </div>
     </article>

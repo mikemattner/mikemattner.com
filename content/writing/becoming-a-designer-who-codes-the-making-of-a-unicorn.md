@@ -6,8 +6,6 @@ description: 'Learn the medium you&rsquo;re working with.'
 tag:
     - Design
     - Development
-link:
-    - http://blog.invisionapp.com/becoming-a-designer-who-codes/
 ---
 Guys, you can be proficient in one or the other, but knowing both disciplines is the key to creating a successful product.
 
@@ -17,4 +15,4 @@ Guys, you can be proficient in one or the other, but knowing both disciplines is
 > 
 > If you’re a developer, you should understand that learning design is a nebulous process. I recommend you focus on the principles of UX design. It will help with what you build while you do programming exercises. Additionally, learning interaction and visual design both take lots of practice and time. You have to develop a feel for it, which won’t happen quickly.
 
-This article includes a great list of resources for getting started, I highly recommend it.
+This [article](http://blog.invisionapp.com/becoming-a-designer-who-codes/) includes a great list of resources for getting started, I highly recommend it.

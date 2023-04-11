@@ -6,7 +6,7 @@
         <p>
           Thanks for stopping by. I'm Mike, a creative developer from the beautiful state of Michigan. This personal
           site is <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it and modify it for
-          yourself, or just browse the code. Just don't steal it <em>all</em>. Made in Michigan and built with
+          yourself, or just browse the code. But, please, <em>don't steal it</em>. Made in Michigan and built with
           <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
         </p>
         <div class="theme-switcher">Switch theme: <ThemeSwitcher /></div>
