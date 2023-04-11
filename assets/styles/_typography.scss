@@ -136,6 +136,14 @@ hr {
   --flow-space: 2.5em;
 }
 
+p + p {
+  text-indent: var(--sizing-xl);
+}
+ 
+p + p {
+  --flow-space: 0;
+}
+
 /* Line lengths */
 // article {
 //   max-width: 65ch;
@@ -157,13 +165,17 @@ h3 {
 
 /* Blocks */
 .lede {
-  font-size: var(--size-step-2);
+  font-size: var(--size-step-1);
   text-wrap: balance;
 }
 
 .lede + * {
-  --flow-space: 2em;
+  --flow-space: 0.5em;
 }
+
+// .lede + p {
+//   text-indent: 0;
+// }
 
 pre {
   font-family: var(--code-font-family);

@@ -4,17 +4,17 @@
     --serif-font-family: Georgia, serif;
     --code-font-family: 'JetBrains Mono', monospace;
 
-    // Type scale: https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,18,1.333,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
-    --size-step--2: clamp(0.63rem, calc(0.64rem + -0.01vw), 0.64rem);
-    --size-step--1: clamp(0.80rem, calc(0.78rem + 0.08vw), 0.84rem);
-    --size-step-0: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
-    --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.50rem);
-    --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2.00rem);
-    --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
-    --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
-    --size-step-5: clamp(3.05rem, calc(2.47rem + 2.93vw), 4.74rem);
-    --size-step-6: clamp(3.82rem, calc(2.95rem + 4.34vw), 6.31rem);
-    --size-step-7: clamp(4.77rem, calc(3.50rem + 6.34vw), 8.41rem);
+    // Type scale: https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,22,1.333,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+    --size-step--2: clamp(0.64rem, calc(0.59rem + 0.23vw), 0.77rem);
+    --size-step--1: clamp(0.80rem, calc(0.72rem + 0.40vw), 1.03rem);
+    --size-step-0: clamp(1.00rem, calc(0.87rem + 0.65vw), 1.38rem);
+    --size-step-1: clamp(1.25rem, calc(1.05rem + 1.01vw), 1.83rem);
+    --size-step-2: clamp(1.56rem, calc(1.26rem + 1.53vw), 2.44rem);
+    --size-step-3: clamp(1.95rem, calc(1.50rem + 2.27vw), 3.26rem);
+    --size-step-4: clamp(2.44rem, calc(1.78rem + 3.30vw), 4.34rem);
+    --size-step-5: clamp(3.05rem, calc(2.10rem + 4.76vw), 5.79rem);
+    --size-step-6: clamp(3.82rem, calc(2.46rem + 6.78vw), 7.71rem);
+    --size-step-7: clamp(4.77rem, calc(2.85rem + 9.59vw), 10.28rem);
 
     // Utilities - sizing
     --sizing-xxs: 0.063rem;

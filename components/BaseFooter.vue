@@ -9,11 +9,11 @@
           yourself, or just browse the code. Made in Michigan and built with
           <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
         </p>
-        <p class="copyright-line">Content copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
+        <div class="copyright-line">Content copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</div>
+        <!-- <ThemeSwitcher /> -->
       </div>
       <div class="meta-area flow">
         <h2 class="eyebrow">Elsewhere</h2>
-        <!-- <ThemeSwitcher /> -->
         <ul class="social-icons">
           <li>
             <a href="https://github.com/mikemattner" class="footer-icon"> <Icon name="ri:github-fill" /> Github </a>
@@ -66,6 +66,8 @@ const theYear = computed<string>(() => {
   &__layout {
     max-width: var(--max-width);
     margin-inline: auto;
+    display: flex;
+    flex-direction: column-reverse;
 
     @media (min-width: 767px) {
       display: grid;
@@ -79,7 +81,7 @@ const theYear = computed<string>(() => {
     }
 
     @media (max-width: 766px) {
-      .copyright-block {
+      .meta-area {
         margin-block-end: 1.5rem;
       }
     }
@@ -99,14 +101,15 @@ const theYear = computed<string>(() => {
 
       .copyright-line {
         font-size: var(--size-step--1);
+        margin-block-start: 1.75rem;
       }
     }
 
     .meta-area {
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 1rem;
+      // display: flex;
+      // align-items: flex-start;
+      // flex-direction: column;
+      // gap: 1rem;
 
       @media (min-width: 767px) {
         grid-column: 2;

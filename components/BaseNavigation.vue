@@ -22,13 +22,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
   padding: 1.5rem 2rem;
   grid-area: 'app-header';
   border-bottom: 1px solid var(--border-color);
 
   @media (max-width: 715px) {
     padding: 1rem;
+  }
+
+  @media (max-width: 510px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--sizing-xl);
   }
 
   .brand-link {
@@ -41,10 +46,14 @@
 
   &__main {
     font-size: var(--size-step--1);
-    margin-left: auto;
     text-transform: uppercase;
     font-variation-settings: 'wdth' 90;
     letter-spacing: 0.1em;
+
+    @media (min-width: 511px) {
+      margin-left: auto;
+      font-size: var(--size-step--2);
+    }
 
     .navigation-list {
       display: grid;
