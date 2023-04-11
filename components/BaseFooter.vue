@@ -2,18 +2,18 @@
   <footer class="base-footer">
     <div class="base-footer__layout">
       <div class="copyright-area copyright-block flow">
-        <h2 class="eyebrow">About This Site</h2>
+        <h2 class="small-heading">About This Site</h2>
         <p>
           Thanks for stopping by. I'm Mike, a creative developer from the beautiful state of Michigan. This personal
           site is <a href="https://github.com/mikemattner/mikemattner.com">open sourced</a>. Fork it and modify it for
-          yourself, or just browse the code. Made in Michigan and built with
+          yourself, or just browse the code. Just don't steal it <em>all</em>. Made in Michigan and built with
           <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
         </p>
-        <div class="copyright-line">Content copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</div>
-        <!-- <ThemeSwitcher /> -->
+        <div class="theme-switcher">Switch theme: <ThemeSwitcher /></div>
+        <p class="copyright-line">Copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
       </div>
       <div class="meta-area flow">
-        <h2 class="eyebrow">Elsewhere</h2>
+        <h2 class="small-heading">Elsewhere</h2>
         <ul class="social-icons">
           <li>
             <a href="https://github.com/mikemattner" class="footer-icon"> <Icon name="ri:github-fill" /> Github </a>
@@ -52,12 +52,8 @@ const theYear = computed<string>(() => {
 <style lang="scss" scoped>
 .base-footer {
   grid-area: 'app-footer';
-  padding: 2rem 0;
+  padding: 2rem;
   border-top: 1px solid var(--border-color);
-
-  @media (max-width: 1052px) {
-    padding: 2rem;
-  }
 
   @media (max-width: 715px) {
     padding: 1rem;
@@ -88,7 +84,7 @@ const theYear = computed<string>(() => {
 
     .copyright-area {
       max-width: 85ch;
-
+      font-size: var(--size-step--1);
       @media (min-width: 767px) {
         grid-column: 1;
         display: flex;
@@ -96,12 +92,18 @@ const theYear = computed<string>(() => {
       }
 
       @media (min-width: 1053px) {
-        grid-column: 2 / span 14;
+        grid-column: 1 / span 15;
       }
 
       .copyright-line {
-        font-size: var(--size-step--1);
+        font-size: var(--size-step--2);
         margin-block-start: 1.75rem;
+      }
+
+      .theme-switcher {
+        display: flex;
+        align-items: center;
+        gap: var(--sizing-md);
       }
     }
 
@@ -116,7 +118,7 @@ const theYear = computed<string>(() => {
       }
 
       @media (min-width: 1053px) {
-        grid-column: 18 / -2;
+        grid-column: 18 / -1;
       }
     }
   }
@@ -132,13 +134,17 @@ const theYear = computed<string>(() => {
   a.footer-icon {
     line-height: 1;
     font-size: var(--size-step--1);
+    text-decoration: none;
 
     .icon {
       font-size: var(--size-step-1);
       color: var(--color-middle-gray);
+      transition: var(--transition-fast);
     }
 
     &:hover {
+      color: var(--color-primary);
+
       .icon {
         color: var(--color-primary);
       }

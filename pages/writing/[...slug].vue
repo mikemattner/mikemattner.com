@@ -52,6 +52,7 @@ useHead({
 .article-page {
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 0;
 }
 .article-layout {
   @media (min-width: 1324px) {

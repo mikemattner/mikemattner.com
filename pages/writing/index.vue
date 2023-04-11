@@ -4,10 +4,11 @@
       <div class="writing-layout__content">
         <div class="content-area flow">
           <h1>Writing</h1>
-          <ul>
+          <ul class="article-list">
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-              &mdash; {{ formatDate(post.date) }}
+              <time>{{ formatDate(post.date) }}</time>
+              <p class="small-text" v-html="post.description"></p>
             </li>
           </ul>
         </div>
@@ -72,6 +73,28 @@ const posts = computed(() => {
     display: flex;
     align-items: center;
     gap: var(--sizing-md);
+  }
+
+  .article-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--sizing-xxxl) 0 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sizing-md);
+      max-width: 55ch;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--sizing-xxl) var(--sizing-md);
+    }
+
+    time {
+      font-size: var(--size-step--2);
+      text-transform: uppercase;
+      margin-bottom: var(--sizing-lg);
+    }
   }
 }
 </style>
