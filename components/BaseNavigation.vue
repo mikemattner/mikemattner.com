@@ -1,39 +1,46 @@
 <template>
   <header class="base-navigation">
-    <NuxtLink to="/" class="brand-link"><BaseLogo logo-large show-label /></NuxtLink>
-    <nav class="base-navigation__main">
-      <ul class="navigation-list">
-        <li class="navigation-list__item">
-          <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/">Home</NuxtLink>
-        </li>
-        <li class="navigation-list__item">
-          <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/writing">Writing</NuxtLink>
-        </li>
-        <li class="navigation-list__item">
-          <NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink>
-        </li>
-      </ul>
-    </nav>
+    <div class="base-navigation__container">
+      <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
+      <nav class="base-navigation__main">
+        <ul class="navigation-list">
+          <li class="navigation-list__item">
+            <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/">Home</NuxtLink>
+          </li>
+          <li class="navigation-list__item">
+            <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/writing">Writing</NuxtLink>
+          </li>
+          <li class="navigation-list__item">
+            <NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
 .base-navigation {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   padding: 1.5rem 2rem;
   grid-area: 'app-header';
-  border-bottom: 1px solid var(--border-color);
+  // border-bottom: 1px solid var(--border-color);
 
   @media (max-width: 715px) {
     padding: 1rem;
   }
 
-  @media (max-width: 510px) {
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--sizing-xl);
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: var(--max-width);
+    margin-inline: auto;
+
+    @media (max-width: 510px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--sizing-xl);
+    }
   }
 
   .brand-link {
@@ -52,7 +59,7 @@
 
     @media (min-width: 511px) {
       margin-left: auto;
-      font-size: var(--size-step--2);
+      // font-size: var(--size-step--2);
     }
 
     .navigation-list {
@@ -64,12 +71,20 @@
       padding: 0;
       list-style: none;
 
+      @media (min-width: 511px) {
+        grid-auto-flow: row;
+      }
+
       &__item {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
         padding: 0;
+
+        @media (min-width: 511px) {
+          justify-content: flex-end;
+        }
 
         &-link {
           color: var(--font-color);
@@ -80,7 +95,6 @@
     .router-link-active,
     .active-path {
       font-weight: 700;
-      text-decoration-thickness: 0.4ex;
       color: var(--headline-font-color);
     }
   }
