@@ -39,10 +39,16 @@ const posts = computed(() => {
   &__content {
     margin-block-end: 2rem;
 
+    @media (min-width: 1053px) {
+      grid-template-columns: repeat(28, 1fr);
+    }
+    @media (max-width: 1052px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sizing-xxl) var(--sizing-xxl);
+    }
+
     @media (min-width: 500px) {
       display: grid;
-      gap: var(--sizing-xl);
-      grid-template-columns: repeat(4, 1fr);
     }
 
     hr {
@@ -61,7 +67,16 @@ const posts = computed(() => {
   }
 
   .content-area {
-    grid-column: 2 / span 3;
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 14;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
+    }
+
+    @media (max-width: 499px) {
+      padding-top: 2rem;
+    }
   }
 
   .sidebar-area {
