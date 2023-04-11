@@ -17,7 +17,6 @@
           </div> -->
         </div>
       </div>
-      <hr />
       <div class="home-layout__content">
         <div class="sidebar-area flow">
           <h2>Writing</h2>
@@ -27,7 +26,8 @@
           <ul class="article-list">
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
-              &mdash; {{ formatDate(post.date) }}
+              <time>{{ formatDate(post.date) }}</time>
+              <p class="small-text" v-html="post.description"></p>
             </li>
           </ul>
           <div class="button-group">
@@ -51,13 +51,16 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => post.type === 'entry').slice(0, 4);
+  return data?.value?.filter((post) => post.type === 'entry').slice(0, 3);
 });
 </script>
 
 <style lang="scss" scoped>
 .home-page {
-  padding: 0;
+  padding: 0 2rem;
+  @media (max-width: 715px) {
+    padding: 1rem;
+  }
 
   hr {
     grid-column: 1 / span 4;
@@ -101,20 +104,9 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 10rem;
+      margin-block-start: 15rem;
       margin-block-end: 10rem;
       display: grid;
-    }
-
-    @media (max-width: 1052px) {
-      padding: 2rem;
-    }
-
-    @media (max-width: 715px) {
-      padding: 1rem;
-    }
-
-    @media (min-width: 500px) {
     }
   }
 
@@ -149,7 +141,7 @@ const posts = computed(() => {
     // max-width: 65ch;
 
     @media (min-width: 1053px) {
-      grid-column: 2 / -2;
+      grid-column: 1 / -1;
       grid-row: 1 / span 3;
       align-self: center;
     }
@@ -161,14 +153,31 @@ const posts = computed(() => {
   .article-list {
     list-style: none;
     padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sizing-md);
+      max-width: 55ch;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--sizing-xxl) var(--sizing-md);
+    }
+
+    time {
+      font-size: var(--size-step--2);
+      text-transform: uppercase;
+      margin-bottom: var(--sizing-lg);
+    }
   }
 
   .content-area {
-    grid-column: 9 / -2;
+    grid-column: 9 / -1;
   }
 
   .sidebar-area {
-    grid-column: 2 / span 6;
+    grid-column: 1 / span 7;
   }
 
   .button-group {

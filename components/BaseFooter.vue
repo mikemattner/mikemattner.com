@@ -52,12 +52,8 @@ const theYear = computed<string>(() => {
 <style lang="scss" scoped>
 .base-footer {
   grid-area: 'app-footer';
-  padding: 2rem 0;
+  padding: 2rem;
   border-top: 1px solid var(--border-color);
-
-  @media (max-width: 1052px) {
-    padding: 2rem;
-  }
 
   @media (max-width: 715px) {
     padding: 1rem;
@@ -96,7 +92,7 @@ const theYear = computed<string>(() => {
       }
 
       @media (min-width: 1053px) {
-        grid-column: 2 / span 14;
+        grid-column: 1 / span 15;
       }
 
       .copyright-line {
@@ -122,7 +118,7 @@ const theYear = computed<string>(() => {
       }
 
       @media (min-width: 1053px) {
-        grid-column: 18 / -2;
+        grid-column: 18 / -1;
       }
     }
   }

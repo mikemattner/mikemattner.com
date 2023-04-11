@@ -31,6 +31,7 @@ const [prev, next] = await queryContent('/writing')
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--border-color);
+  margin-block-start: 4rem;
 }
 
 .prev-article {
@@ -40,7 +41,7 @@ const [prev, next] = await queryContent('/writing')
   justify-content: flex-start;
   align-self: self-start;
   height: 100%;
-  padding: var(--sizing-xxl) var(--sizing-md);
+  padding: var(--sizing-xxxl) var(--sizing-md);
 }
 .next-article {
   grid-column: 2;
@@ -49,7 +50,7 @@ const [prev, next] = await queryContent('/writing')
   align-items: flex-end;
   text-align: right;
   height: 100%;
-  padding: var(--sizing-xxl) var(--sizing-md);
+  padding: var(--sizing-xxxl) var(--sizing-md);
   border-left: 1px solid var(--border-color);
 }
 </style>

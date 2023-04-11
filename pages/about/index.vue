@@ -72,7 +72,7 @@ useHead({
 
   .about-content {
     @media (min-width: 1053px) {
-      grid-column: 2 / span 12;
+      grid-column: 1 / span 13;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -85,7 +85,7 @@ useHead({
     border-radius: 10px;
 
     @media (min-width: 1053px) {
-      grid-column: 15 / -2;
+      grid-column: 16 / -1;
       grid-row: 1 / span 3;
       aspect-ratio: 1 / 1.125;
       align-self: self-start;
