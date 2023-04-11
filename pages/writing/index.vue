@@ -28,7 +28,7 @@ useHead({
 const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => post.type === 'entry');
+  return data?.value?.filter((post) => post.type === 'entry').filter((post) => !post.draft);
 });
 </script>
 
