@@ -138,7 +138,7 @@ const theYear = computed<string>(() => {
 
     .icon {
       font-size: var(--size-step-1);
-      color: var(--color-middle-gray);
+      color: var(--color-middle-gray-t);
       transition: var(--transition-fast);
     }
 

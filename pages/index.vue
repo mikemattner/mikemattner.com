@@ -168,6 +168,10 @@ const posts = computed(() => {
 
   .content-area {
     grid-column: 9 / -1;
+
+    @media (max-width: 1052px) {
+      padding-top: 2rem;
+    }
   }
 
   .sidebar-area {
