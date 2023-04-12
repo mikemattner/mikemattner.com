@@ -25,7 +25,7 @@ useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });
 
-const { data } = await useAsyncData('writing', () => queryContent('/writing').sort({ date: -1 }).find());
+const { data } = await useAsyncData('writing-list', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
   return data?.value?.filter((post) => post.type === 'entry').filter((post) => !post.draft);

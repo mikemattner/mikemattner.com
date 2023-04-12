@@ -22,7 +22,6 @@
 <style lang="scss" scoped>
 .base-navigation {
   padding: 1.5rem 2rem;
-  grid-area: 'app-header';
   // border-bottom: 1px solid var(--border-color);
 
   @media (max-width: 715px) {

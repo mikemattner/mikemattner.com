@@ -51,7 +51,6 @@ const theYear = computed<string>(() => {
 
 <style lang="scss" scoped>
 .base-footer {
-  grid-area: 'app-footer';
   padding: 2rem;
   border-top: 1px solid var(--border-color);
 

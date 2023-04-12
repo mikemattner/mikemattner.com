@@ -18,10 +18,6 @@ body {
 
     display: grid;
     grid-template-rows: auto minmax(600px, 1fr) auto;
-    grid-template-areas:
-      'app-header'
-      'main-content'
-      'app-footer';
 
     @media (max-width: 715px) {
         // border-width: 0.5rem;
