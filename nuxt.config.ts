@@ -22,6 +22,11 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
+  router: {
+    options: {
+      strict: true,
+    },
+  },
   css: ['@/assets/styles/app.scss'],
   modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon'],
   content: {
