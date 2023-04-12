@@ -36,7 +36,7 @@ import { formatDate } from '~~/utils/formatDate';
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent().where({ _path: path }).findOne();
+  return queryContent(path).findOne();
 });
 
 const pageTitle = computed<string>(() => {
