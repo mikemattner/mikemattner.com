@@ -25,7 +25,7 @@
         <div class="content-area flow">
           <ul class="article-list">
             <li v-for="post in posts" :key="post.title">
-              <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
+              <NuxtLink :to="post._path" class="title">{{ post.title }}</NuxtLink>
               <time>{{ formatDate(post.date) }}</time>
               <p class="small-text" v-html="post.description"></p>
             </li>
@@ -158,6 +158,10 @@ const posts = computed(() => {
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
       padding: var(--sizing-xxl) var(--sizing-md);
+
+      .title {
+        font-weight: 700;
+      }
 
       p {
         max-width: 70ch;
