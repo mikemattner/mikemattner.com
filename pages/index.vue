@@ -3,9 +3,10 @@
     <div class="home-layout">
       <div class="home-layout__hero">
         <div class="home-greeting flow">
-          <p class="main-lede">
-            <strong class="f--color-primary">Hello there!</strong> I&rsquo;m Mike, a creative developer from Michigan.
-          </p>
+          <h1 class="main-lede">
+            <small class="intro">Hello there!</small>
+            <span>I&rsquo;m Mike, a designer <em>&amp;</em> developer from Michigan.</span>
+          </h1>
           <!-- <p>
             I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer. On the web, I'm primarily working with Vue and
             Nuxt. This site is being designed and built out in the open.
@@ -80,8 +81,8 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 8rem;
-      margin-block-end: 8rem;
+      margin-block-start: 12rem;
+      margin-block-end: 12rem;
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
@@ -101,34 +102,29 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 15rem;
+      margin-block-start: 10rem;
       margin-block-end: 10rem;
       display: grid;
     }
   }
 
-  .home-hello {
-    color: var(--color-primary);
-    z-index: 2;
-    position: relative;
-    font-size: clamp(var(--size-step-4), 8vw, 100px);
-    line-height: 1;
-
-    @media (min-width: 1053px) {
-      text-indent: -0.5rem;
-    }
-
-    @media (max-width: 500px) {
-      margin-top: -0.5em;
-    }
-  }
-
   .main-lede {
-    font-variation-settings: 'wdth' 125;
-    font-size: clamp(var(--size-step-4), 8vw, 100px);
-    line-height: 100%;
+    font-variation-settings: 'wdth' 100;
+    font-size: clamp(40px, 8vw, 95px);
+    line-height: 1;
     letter-spacing: -0.025em;
     color: var(--headline-font-color);
+    display: grid;
+    grid-auto-rows: auto;
+    gap: var(--sizing-md);
+    text-transform: uppercase;
+
+    .intro {
+      letter-spacing: 0.01em;
+      font-weight: 300;
+      font-size: var(--size-step--1);
+      line-height: 1.5;
+    }
   }
 
   .home-greeting {
