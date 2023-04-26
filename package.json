@@ -11,6 +11,7 @@
     "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
     "nuxt": "^3.4.0",
     "nuxt-icon": "^0.3.2",
+    "nuxt-module-feed": "^1.0.3",
     "nuxt-svgo": "^1.1.0",
     "prettier": "^2.8.4",
     "sass": "^1.59.2",

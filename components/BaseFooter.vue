@@ -9,7 +9,6 @@
           yourself, or just browse the code. But, please, <em>don't steal it</em>. Made in Michigan and built with
           <a href="https://nuxt.com" rel="nofollow">Nuxt</a>.
         </p>
-        <div class="theme-switcher">Switch theme: <ThemeSwitcher /></div>
         <p class="copyright-line">Copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
       </div>
       <div class="meta-area flow">
@@ -97,6 +96,7 @@ const theYear = computed<string>(() => {
       .copyright-line {
         font-size: var(--size-step--2);
         margin-block-start: 1.75rem;
+        text-indent: 0;
       }
 
       .theme-switcher {
