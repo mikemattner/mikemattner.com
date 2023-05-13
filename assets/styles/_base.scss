@@ -1,5 +1,5 @@
 body {
-    background: var(--background-border-color);
+    background: var(--background-color);
     color: var(--font-color);
     font-family: var(--sans-font-family);
     font-size: var(--size-step-0);
@@ -9,19 +9,26 @@ body {
 }
 
 .app-layout {
-    background: var(--background-color);
-    // border: 2rem solid var(--background-border-color);
-    margin: 2rem;
     min-height: 100vh;
     border-radius: 10px;
-    overflow: hidden;
-
     display: grid;
-    grid-template-rows: auto minmax(600px, 1fr) auto;
+
+    @media (min-width: 716px) {
+        grid-template-areas: 
+            "navigation body"
+            "navigation body"
+            "navigation footer";
+        grid-template-columns: 235px 1fr;
+
+        main {
+            grid-area: body;
+        }
+    }
 
     @media (max-width: 715px) {
-        // border-width: 0.5rem;
+        grid-template-rows: auto minmax(600px, 1fr) auto;
         margin: 0.5rem;
+        overflow: hidden;
     }
 }
 

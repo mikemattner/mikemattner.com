@@ -4,7 +4,6 @@
       <div class="home-layout__hero">
         <div class="home-greeting flow">
           <h1 class="main-lede">
-            <small class="intro">Hello there!</small>
             <span>I&rsquo;m Mike, a designer <em>&amp;</em> developer from Michigan.</span>
           </h1>
           <p>I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer.</p>
@@ -106,7 +105,7 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    font-variation-settings: 'wdth' 100;
+    // font-variation-settings: 'wdth' 100;
     font-size: clamp(40px, 8vw, 95px);
     line-height: 1;
     letter-spacing: -0.025em;
@@ -114,7 +113,7 @@ const posts = computed(() => {
     display: grid;
     grid-auto-rows: auto;
     gap: var(--sizing-md);
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
     .intro {
       letter-spacing: 0.01em;
