@@ -53,13 +53,15 @@ const theYear = computed<string>(() => {
   padding: 2rem;
   border-top: 1px solid var(--border-color);
 
+  @media (min-width: 716px) {
+    grid-area: footer;
+  }
+
   @media (max-width: 715px) {
     padding: 1rem;
   }
 
   &__layout {
-    max-width: var(--max-width);
-    margin-inline: auto;
     display: flex;
     flex-direction: column-reverse;
 
@@ -78,6 +80,10 @@ const theYear = computed<string>(() => {
       .meta-area {
         margin-block-end: 1.5rem;
       }
+    }
+
+    @media (max-width: 715px) {
+      margin-inline: auto;
     }
 
     .copyright-area {

@@ -110,6 +110,7 @@ const attributes = computed(() => {
   text-align: center;
   text-decoration: none;
   transition: var(--transition);
+  border-radius: var(--sizing-sm);
 
   &:focus {
     outline: 0;

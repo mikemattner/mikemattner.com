@@ -4,14 +4,17 @@
       <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
       <nav class="base-navigation__main">
         <ul class="navigation-list">
-          <li class="navigation-list__item">
-            <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/">Home</NuxtLink>
-          </li>
-          <li class="navigation-list__item">
-            <NuxtLink class="navigation-list__item-link" active-class="active-path" to="/writing">Writing</NuxtLink>
-          </li>
-          <li class="navigation-list__item">
-            <NuxtLink class="navigation-list__item-link" to="/about">About</NuxtLink>
+          <li class="navigation-list__item" v-for="item in navigationList" :key="item.title">
+            <BaseButton
+              class="navigation-list__item-link"
+              variant="text"
+              size="xs"
+              color="secondary"
+              active-class="active-path"
+              :to="item.url"
+            >
+              {{ item.title }}
+            </BaseButton>
           </li>
         </ul>
       </nav>
@@ -19,13 +22,34 @@
   </header>
 </template>
 
+<script setup lang="ts">
+const navigationList: NavigationList[] = [
+  {
+    title: 'Home',
+    url: '/',
+  },
+  {
+    title: 'Writing',
+    url: '/writing',
+  },
+  {
+    title: 'About',
+    url: '/about',
+  },
+];
+</script>
+
 <style lang="scss" scoped>
 .base-navigation {
   padding: 1.5rem 2rem;
-  // border-bottom: 1px solid var(--border-color);
+
+  @media (min-width: 716px) {
+    grid-area: navigation;
+  }
 
   @media (max-width: 715px) {
     padding: 1rem;
+    flex-direction: column;
   }
 
   &__container {
@@ -34,6 +58,15 @@
     align-items: center;
     max-width: var(--max-width);
     margin-inline: auto;
+
+    @media (min-width: 716px) {
+      padding-top: 4rem;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: sticky;
+      top: 0;
+    }
 
     @media (max-width: 510px) {
       flex-direction: column;
@@ -56,9 +89,13 @@
     font-variation-settings: 'wdth' 90;
     letter-spacing: 0.1em;
 
-    @media (min-width: 511px) {
+    @media (min-width: 716px) {
+      padding-top: 4rem;
+      padding-left: 3.5rem;
+    }
+
+    @media (min-width: 511px) and (max-width: 715px) {
       margin-left: auto;
-      // font-size: var(--size-step--2);
     }
 
     .navigation-list {
@@ -81,8 +118,12 @@
         margin: 0;
         padding: 0;
 
-        @media (min-width: 511px) {
+        @media (min-width: 511px) and (max-width: 715px) {
           justify-content: flex-end;
+        }
+
+        @media (min-width: 716px) {
+          justify-content: flex-start;
         }
 
         &-link {
