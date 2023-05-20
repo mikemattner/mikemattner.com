@@ -1,5 +1,5 @@
 body {
-    background: var(--background-color);
+    background: var(--background-border-color);
     color: var(--font-color);
     font-family: var(--sans-font-family);
     font-size: var(--size-step-0);
@@ -12,6 +12,8 @@ body {
     min-height: 100vh;
     border-radius: 10px;
     display: grid;
+    max-width: var(--max-width);
+    margin-inline: auto;
 
     @media (min-width: 716px) {
         grid-template-areas: 
@@ -19,6 +21,7 @@ body {
             "navigation body"
             "navigation footer";
         grid-template-columns: 235px 1fr;
+        gap: var(--sizing-lg);
 
         main {
             grid-area: body;

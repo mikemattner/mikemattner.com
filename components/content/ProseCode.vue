@@ -37,7 +37,7 @@ const props = withDefaults(
     filename?: string | null;
     highlights?: Array<number> | null;
   }>(),
-  { code: '', language: null, filename: null, highlights: [] }
+  { code: '', language: null, filename: null, highlights: null }
 );
 
 const languageMap: Record<string, { text: string }> = {
@@ -65,7 +65,7 @@ const languageText = computed(() => (props.language ? languageMap[props.language
 .code-container {
   position: relative;
   font-size: 1rem;
-  background-color: var(--color-dark-bg-border);
+  background-color: var(--background-color);
   padding: 0;
   border-radius: var(--sizing-sm);
   overflow-x: auto;

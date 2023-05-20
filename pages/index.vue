@@ -70,8 +70,6 @@ const posts = computed(() => {
 }
 .home-layout {
   &__hero {
-    max-width: var(--max-width);
-    margin-inline: auto;
     margin-block-start: 4rem;
     margin-block-end: 4rem;
 
@@ -85,6 +83,10 @@ const posts = computed(() => {
       gap: var(--sizing-xxl) var(--sizing-xxl);
     }
 
+    @media (max-width: 715px) {
+      margin-inline: auto;
+    }
+
     @media (min-width: 500px) {
       display: grid;
     }
@@ -92,7 +94,6 @@ const posts = computed(() => {
 
   &__content {
     max-width: var(--max-width);
-    margin-inline: auto;
     margin-block-start: 8rem;
     margin-block-end: 4rem;
 
@@ -101,6 +102,10 @@ const posts = computed(() => {
       margin-block-start: 10rem;
       margin-block-end: 10rem;
       display: grid;
+    }
+
+    @media (max-width: 715px) {
+      margin-inline: auto;
     }
   }
 
@@ -174,15 +179,12 @@ const posts = computed(() => {
   }
 
   .content-area {
-    grid-column: 9 / -1;
-
-    @media (max-width: 1052px) {
-      padding-top: 2rem;
-    }
+    grid-column: 1 / span 18;
+    padding-top: 2rem;
   }
 
   .sidebar-area {
-    grid-column: 1 / span 7;
+    grid-column: 1 / span 18;
   }
 
   .button-group {

@@ -62,7 +62,6 @@ const theYear = computed<string>(() => {
   }
 
   &__layout {
-    max-width: var(--max-width);
     display: flex;
     flex-direction: column-reverse;
 
