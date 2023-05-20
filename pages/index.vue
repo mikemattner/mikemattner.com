@@ -4,7 +4,6 @@
       <div class="home-layout__hero">
         <div class="home-greeting flow">
           <h1 class="main-lede">
-            <small class="intro">Hello there!</small>
             <span>I&rsquo;m Mike, a designer <em>&amp;</em> developer from Michigan.</span>
           </h1>
           <p>I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer.</p>
@@ -71,8 +70,6 @@ const posts = computed(() => {
 }
 .home-layout {
   &__hero {
-    max-width: var(--max-width);
-    margin-inline: auto;
     margin-block-start: 4rem;
     margin-block-end: 4rem;
 
@@ -86,6 +83,10 @@ const posts = computed(() => {
       gap: var(--sizing-xxl) var(--sizing-xxl);
     }
 
+    @media (max-width: 715px) {
+      margin-inline: auto;
+    }
+
     @media (min-width: 500px) {
       display: grid;
     }
@@ -93,7 +94,6 @@ const posts = computed(() => {
 
   &__content {
     max-width: var(--max-width);
-    margin-inline: auto;
     margin-block-start: 8rem;
     margin-block-end: 4rem;
 
@@ -103,10 +103,14 @@ const posts = computed(() => {
       margin-block-end: 10rem;
       display: grid;
     }
+
+    @media (max-width: 715px) {
+      margin-inline: auto;
+    }
   }
 
   .main-lede {
-    font-variation-settings: 'wdth' 100;
+    // font-variation-settings: 'wdth' 100;
     font-size: clamp(40px, 8vw, 95px);
     line-height: 1;
     letter-spacing: -0.025em;
@@ -114,7 +118,7 @@ const posts = computed(() => {
     display: grid;
     grid-auto-rows: auto;
     gap: var(--sizing-md);
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
     .intro {
       letter-spacing: 0.01em;
@@ -175,15 +179,12 @@ const posts = computed(() => {
   }
 
   .content-area {
-    grid-column: 9 / -1;
-
-    @media (max-width: 1052px) {
-      padding-top: 2rem;
-    }
+    grid-column: 1 / span 18;
+    padding-top: 2rem;
   }
 
   .sidebar-area {
-    grid-column: 1 / span 7;
+    grid-column: 1 / span 18;
   }
 
   .button-group {

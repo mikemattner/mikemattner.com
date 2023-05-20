@@ -71,8 +71,6 @@ useHead({
 
 <style lang="scss" scoped>
 .about-layout {
-  max-width: var(--max-width);
-  margin-inline: auto;
   margin-block-start: 2rem;
   margin-block-end: 2rem;
   display: grid;
@@ -85,7 +83,7 @@ useHead({
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(28, 1fr);
-    gap: 0;
+    gap: var(--sizing-xxl) 0;
     margin-block-start: 6rem;
     margin-block-end: 6rem;
   }
@@ -95,7 +93,7 @@ useHead({
       grid-column: 1 / span 4;
     }
     @media (min-width: 768px) {
-      grid-column: 1 / span 17;
+      grid-column: 1 / -1;
     }
     @media (min-width: 961px) {
       grid-column: 1 / span 13;
@@ -115,7 +113,7 @@ useHead({
     }
 
     @media (min-width: 768px) {
-      grid-column: 19 / -1;
+      grid-column: 1 / -1;
       aspect-ratio: 1 / 1.125;
       align-self: self-start;
     }

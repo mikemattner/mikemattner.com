@@ -1,12 +1,12 @@
-@font-face {
-  font-family: 'Hubot Sans';
-  src:
-    url('/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2 supports variations'),
-    url('/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2-variations');
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-  font-display: fallback;
-}
+// @font-face {
+//   font-family: 'Hubot Sans';
+//   src:
+//     url('/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2 supports variations'),
+//     url('/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2-variations');
+//   font-weight: 200 900;
+//   font-stretch: 75% 125%;
+//   font-display: fallback;
+// }
 
 @font-face {
   font-family: 'Mona Sans';
@@ -17,3 +17,11 @@
   font-stretch: 75% 125%;
   font-display: fallback;
 }
+
+// @font-face {
+//   font-family: 'Young Serif';
+//   src:
+//     url('/fonts/young-serif/YoungSerif-Regular.woff2') format('woff2 supports variations'),
+//     url('/fonts/young-serif/YoungSerif-Regular.woff2') format('woff2-variations');
+//   font-weight: 400;
+// }

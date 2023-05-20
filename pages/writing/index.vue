@@ -34,10 +34,11 @@ const posts = computed(() => {
 
 <style lang="scss" scoped>
 .writing-layout {
-  max-width: var(--max-width);
-  margin-inline: auto;
+  // max-width: var(--max-width);
+  // margin-inline: auto;
 
   &__content {
+    margin-block-start: 2rem;
     margin-block-end: 2rem;
 
     @media (min-width: 1053px) {
@@ -46,6 +47,11 @@ const posts = computed(() => {
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
       gap: var(--sizing-xxl) var(--sizing-xxl);
+    }
+
+    @media (min-width: 768px) {
+      margin-block-start: 6rem;
+      margin-block-end: 6rem;
     }
 
     @media (min-width: 500px) {
