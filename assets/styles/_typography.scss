@@ -59,6 +59,31 @@ h4,
   font-size: var(--size-step--1);
 }
 
+.bar-right {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  gap: var(--sizing-md);
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 1px;
+    background-color: var(--color-primary);
+  }
+
+  @media (min-width: 961px) {
+    &:before {
+      content: '';
+      height: 1px;
+      width: 3rem;
+      background-color: var(--color-primary);
+      position: absolute;
+      left: calc(-3rem + (var(--sizing-md) * -1 ));
+    }
+  }
+}
+
 ul,
 ol {
   padding-inline-start: 1em;
