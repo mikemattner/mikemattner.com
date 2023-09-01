@@ -76,6 +76,8 @@ useHead({
   display: grid;
   grid-template-rows: repeat(2, auto);
   gap: var(--sizing-xxl) var(--sizing-xxl);
+  max-width: var(--max-width);
+  margin-inline: auto;
 
   @media (min-width: 501px) {
     grid-template-columns: repeat(4, 1fr);

@@ -34,8 +34,8 @@ const posts = computed(() => {
 
 <style lang="scss" scoped>
 .writing-layout {
-  // max-width: var(--max-width);
-  // margin-inline: auto;
+  max-width: var(--max-width);
+  margin-inline: auto;
 
   &__content {
     margin-block-start: 2rem;

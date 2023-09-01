@@ -12,16 +12,14 @@ body {
     min-height: 100vh;
     border-radius: 10px;
     display: grid;
-    max-width: var(--max-width);
     margin-inline: auto;
 
     @media (min-width: 716px) {
         grid-template-areas: 
-            "navigation body"
-            "navigation body"
-            "navigation footer";
-        grid-template-columns: 235px 1fr;
-        gap: var(--sizing-lg);
+            "navigation"
+            "body"
+            "footer";
+        grid-template-columns: 1fr;
 
         main {
             grid-area: body;
@@ -45,13 +43,15 @@ main {
   
 a {
     color: var(--headline-font-color);
-    text-decoration-color: inherit;
+    text-decoration-color: var(--color-primary);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
+    text-decoration-style: wavy;
     transition: var(--transition-fast);
   
     &:hover {
-        text-decoration-color: var(--color-primary);
+        text-decoration-color: var(--color-highlight);
+        color: var(--color-highlight);
     }
 }
   
