@@ -1,22 +1,27 @@
 <template>
   <main>
     <article class="about-layout">
-      <BaseImage src="/images/mike-profile-two.jpg" class="profile-image" />
+      <BaseImage src="/images/mike-profile-three.jpg" class="profile-image" />
+      <div class="sidebar-area flow">
+        <h1>About</h1>
+        <p class="intro">A summary of my life, career, and this here website.</p>
+      </div>
       <div class="about-content flow">
-        <h1>About Me</h1>
+        <h2 class="bar-right">Just The Highlights</h2>
         <p>
-          I started my career in web design and development in 2006 and have been honing my craft little-by-little since
-          then.
+          I was born and raised in southwest Michigan in a largely idyllic lakeside community. I attended college and
+          lived in Florida for a few years before I made my way back to Michigan to enjoy the wonderful lakes and summer
+          experience. I've lived here ever since.
         </p>
         <p>
-          Born and raised in Michigan, I attended college and lived in Florida, and made my way back to Michigan to
-          enjoy the wonderful lakes and summer experience. I've lived here ever since.
+          I started my career in web design and development in 2006 and have been honing my craft little-by-little since
+          then. However, I really got my start in tinkering on the web in 1998. What a time to be on the internet!
         </p>
         <p>
           Outside of work I enjoy spending time with my wife and pets, reading, keeping up with politics, woodworking,
           home improvement projects, getting out on the lakes and rivers in the summer, and sipping a fine craft beer.
         </p>
-        <h2>This Site</h2>
+        <h2 class="bar-right">This Site</h2>
         <p>
           I’ve had <strong>something</strong> at this domain since 2005, running through various iterations of content
           management systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I
@@ -29,7 +34,7 @@
           that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and
           use it as a basis to build your own.
         </p>
-        <h3>Other Iterations</h3>
+        <h3 class="bar-right">Other Iterations</h3>
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
           2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
@@ -102,6 +107,26 @@ useHead({
     @media (min-width: 961px) {
       grid-column: 11 / span 18;
     }
+  }
+
+  .sidebar-area {
+    @media (min-width: 501px) {
+      grid-column: 1 / span 4;
+    }
+    @media (min-width: 768px) {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 961px) {
+      grid-column: 1 / span 28;
+      padding-bottom: var(--sizing-xxxl);
+    }
+  }
+
+  .intro {
+    letter-spacing: 0.01em;
+    font-weight: 300;
+    font-size: var(--size-step-2);
+    line-height: 1.5;
   }
 
   .profile-image {

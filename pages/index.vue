@@ -21,23 +21,17 @@
       </div>
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2>Writing</h2>
+          <h2 class="bar-right">Writing</h2>
           <p>
             Some things I've written about over the years on topics like my career, my personal updates, and on occasion
             a little politics.
           </p>
         </div>
         <div class="content-area flow">
-          <ul class="article-list">
-            <li v-for="post in posts" :key="post.title">
-              <NuxtLink :to="post._path" class="title">{{ post.title }}</NuxtLink>
-              <time>{{ formatDate(post.date) }}</time>
-              <p class="small-text" v-html="post.description"></p>
-            </li>
-          </ul>
+          <ArticleList :posts="posts" />
           <div class="button-group">
             <BaseButton to="/writing" variant="outline" size="md" color="primary">
-              <span>More Articles</span> <Icon name="ri:arrow-right-line" />
+              <span>More Writing</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
@@ -159,38 +153,9 @@ const posts = computed(() => {
     }
   }
 
-  .article-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sizing-md);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: var(--sizing-xxl) var(--sizing-md);
-
-      .title {
-        font-weight: 700;
-      }
-
-      p {
-        max-width: 70ch;
-      }
-    }
-
-    time {
-      font-size: var(--size-step--2);
-      text-transform: uppercase;
-      margin-bottom: var(--sizing-lg);
-    }
-  }
-
   .content-area {
     grid-column: 11 / span 18;
-    padding-top: 2rem;
+    margin: var(--sizing-xxxl) 0 0;
   }
 
   .sidebar-area {
