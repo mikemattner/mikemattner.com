@@ -10,13 +10,7 @@
           </p>
         </div>
         <div class="content-area flow">
-          <ul class="article-list">
-            <li v-for="post in posts" :key="post.title">
-              <NuxtLink :to="post._path" class="title">{{ post.title }}</NuxtLink>
-              <time>{{ formatDate(post.date) }}</time>
-              <p class="small-text" v-html="post.description"></p>
-            </li>
-          </ul>
+          <ArticleList :posts="posts" />
         </div>
       </div>
     </div>
@@ -83,6 +77,8 @@ const posts = computed(() => {
   }
 
   .content-area {
+    margin: var(--sizing-xxxl) 0 0;
+
     @media (min-width: 1053px) {
       grid-column: 11 / span 18;
     }
@@ -105,35 +101,6 @@ const posts = computed(() => {
     display: flex;
     align-items: center;
     gap: var(--sizing-md);
-  }
-
-  .article-list {
-    list-style: none;
-    padding: 0;
-    margin: var(--sizing-xxxl) 0 0;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      gap: var(--sizing-md);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: var(--sizing-xxl) var(--sizing-md);
-
-      .title {
-        font-weight: 700;
-      }
-
-      p {
-        max-width: 70ch;
-      }
-    }
-
-    time {
-      font-size: var(--size-step--2);
-      text-transform: uppercase;
-      margin-bottom: var(--sizing-lg);
-    }
   }
 }
 </style>
