@@ -38,15 +38,7 @@
             </BaseButton>
           </li>
           <li>
-            <BaseButton
-              variant="outline"
-              size="md"
-              color="primary"
-              href="https://codepen.io/mikemattner/#"
-              class="footer-icon"
-            >
-              <Icon name="ri:twitter-fill" /> Twitter
-            </BaseButton>
+            <a href="https://codepen.io/mikemattner/#" class="footer-icon"> <Icon name="ri:codepen-fill" /> Codepen </a>
           </li>
           <!-- <li>
             <a href="https://mikemattner.com/feed" title="RSS Feed" class="footer-icon">
