@@ -2,10 +2,11 @@
   <header class="base-navigation">
     <div class="base-navigation__container">
       <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
+
       <nav class="base-navigation__main">
         <ul class="navigation-list">
           <li class="navigation-list__item" v-for="item in navigationList" :key="item.title">
-            <BaseButton
+            <NuxtLink
               class="navigation-list__item-link"
               variant="text"
               size="xs"
@@ -14,10 +15,11 @@
               :to="item.url"
             >
               {{ item.title }}
-            </BaseButton>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
+      <!-- <ThemeSwitcher /> -->
     </div>
   </header>
 </template>
@@ -56,14 +58,13 @@ const navigationList: NavigationList[] = [
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    max-width: var(--max-width);
     margin-inline: auto;
+    gap: var(--sizing-xl);
 
-    @media (min-width: 716px) {
+    @media (min-width: 511px) {
       padding-top: 4rem;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
     }
@@ -90,26 +91,15 @@ const navigationList: NavigationList[] = [
     letter-spacing: 0.1em;
 
     @media (min-width: 716px) {
-      padding-top: 4rem;
-      padding-left: 3.5rem;
-    }
-
-    @media (min-width: 511px) and (max-width: 715px) {
       margin-left: auto;
     }
 
     .navigation-list {
-      display: grid;
-      grid-auto-columns: minmax(65px, 1fr);
-      grid-auto-flow: column;
-      gap: 0.75rem;
+      display: flex;
+      gap: var(--sizing-xxl);
       margin: 0;
       padding: 0;
       list-style: none;
-
-      @media (min-width: 511px) {
-        grid-auto-flow: row;
-      }
 
       &__item {
         display: flex;
@@ -123,11 +113,11 @@ const navigationList: NavigationList[] = [
         }
 
         @media (min-width: 716px) {
-          justify-content: flex-start;
+          justify-content: flex-end;
         }
 
         &-link {
-          color: var(--font-color);
+          text-decoration: none;
         }
       }
     }
@@ -135,7 +125,11 @@ const navigationList: NavigationList[] = [
     .router-link-active,
     .active-path {
       font-weight: 700;
-      color: var(--headline-font-color);
+      color: var(--color-primary);
+
+      &:hover {
+        color: var(--color-highlight);
+      }
     }
   }
 }

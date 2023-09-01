@@ -140,13 +140,9 @@ hr {
 :is(hr) {
   --flow-space: 2.5em;
 }
-
-p + p {
-  text-indent: var(--sizing-xl);
-}
  
 p + p {
-  --flow-space: 0;
+  --flow-space: 1.5em;
 }
 
 /* Line lengths */
