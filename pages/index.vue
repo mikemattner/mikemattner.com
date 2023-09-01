@@ -3,21 +3,29 @@
     <div class="home-layout">
       <div class="home-layout__hero">
         <div class="home-greeting flow">
-          <h1 class="main-lede">
-            <span>I&rsquo;m Mike, a designer <em>&amp;</em> developer from Michigan.</span>
-          </h1>
-          <p>I&rsquo;m currently working at AccuLynx as a Sr. UI Engineer.</p>
-          <div class="button-group">
-            <BaseButton to="/about" variant="outline" size="md" color="primary">
-              <span>Learn About Me</span> <Icon name="ri:arrow-right-line" />
-            </BaseButton>
-          </div>
+          <h1 class="main-lede">Hello! My name is Mike Mattner.</h1>
+          <p class="intro">
+            I&rsquo;m a designer <em>&amp;</em> UI developer from Michigan. I am currently working at AccuLynx as a Sr.
+            UI Engineer.
+          </p>
+          <p class="intro">
+            I&rsquo;ve previously worked as digital designer and manager of creatives, as well as a UX/UI developer at
+            an advertising agency.
+          </p>
+          <p class="intro">
+            In a former life I worked within the entire gamut of skills&mdash;in what was once called digital
+            design&mdash;including video editing, motion graphics, and more traditional graphic design. That set of
+            skills is now deprecated.
+          </p>
         </div>
       </div>
       <div class="home-layout__content">
         <div class="sidebar-area flow">
           <h2>Writing</h2>
-          <p>Some things I've written about over the years on topics like career, personal, and politics.</p>
+          <p>
+            Some things I've written about over the years on topics like my career, my personal updates, and on occasion
+            a little politics.
+          </p>
         </div>
         <div class="content-area flow">
           <ul class="article-list">
@@ -72,6 +80,8 @@ const posts = computed(() => {
   &__hero {
     margin-block-start: 4rem;
     margin-block-end: 4rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
@@ -94,6 +104,7 @@ const posts = computed(() => {
 
   &__content {
     max-width: var(--max-width);
+    margin-inline: auto;
     margin-block-start: 8rem;
     margin-block-end: 4rem;
 
@@ -110,22 +121,14 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    // font-variation-settings: 'wdth' 100;
+    font-variation-settings: 'wdth' 80;
     font-size: clamp(40px, 8vw, 95px);
     line-height: 1;
-    letter-spacing: -0.025em;
+    letter-spacing: 0.025em;
     color: var(--headline-font-color);
     display: grid;
     grid-auto-rows: auto;
     gap: var(--sizing-md);
-    // text-transform: uppercase;
-
-    .intro {
-      letter-spacing: 0.01em;
-      font-weight: 300;
-      font-size: var(--size-step--1);
-      line-height: 1.5;
-    }
   }
 
   .home-greeting {
@@ -135,7 +138,7 @@ const posts = computed(() => {
     line-height: 1.5;
 
     p {
-      --flow-space: 1.75em;
+      --flow-space: 0.75em;
       max-width: 65ch;
     }
 
@@ -146,6 +149,13 @@ const posts = computed(() => {
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
+    }
+
+    .intro {
+      letter-spacing: 0.01em;
+      font-weight: 300;
+      font-size: var(--size-step-2);
+      line-height: 1.5;
     }
   }
 
@@ -179,12 +189,12 @@ const posts = computed(() => {
   }
 
   .content-area {
-    grid-column: 1 / span 18;
+    grid-column: 11 / span 18;
     padding-top: 2rem;
   }
 
   .sidebar-area {
-    grid-column: 1 / span 18;
+    grid-column: 11 / span 18;
   }
 
   .button-group {

@@ -2,9 +2,14 @@
   <main>
     <div class="writing-layout">
       <div class="writing-layout__content">
-        <div class="content-area flow">
+        <div class="sidebar-area flow">
           <h1>Writing</h1>
-          <p>Some things I've written about over the years on topics like career, personal, and politics.</p>
+          <p>
+            Some things I've written about over the years on topics like my career, my personal updates, and on occasion
+            a little politics.
+          </p>
+        </div>
+        <div class="content-area flow">
           <ul class="article-list">
             <li v-for="post in posts" :key="post.title">
               <NuxtLink :to="post._path" class="title">{{ post.title }}</NuxtLink>
@@ -34,8 +39,8 @@ const posts = computed(() => {
 
 <style lang="scss" scoped>
 .writing-layout {
-  // max-width: var(--max-width);
-  // margin-inline: auto;
+  max-width: var(--max-width);
+  margin-inline: auto;
 
   &__content {
     margin-block-start: 2rem;
@@ -79,7 +84,7 @@ const posts = computed(() => {
 
   .content-area {
     @media (min-width: 1053px) {
-      grid-column: 1 / span 18;
+      grid-column: 11 / span 18;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -91,7 +96,8 @@ const posts = computed(() => {
   }
 
   .sidebar-area {
-    grid-column: 1;
+    grid-column: 1 / span 28;
+    font-size: var(--size-step-1);
   }
 
   .button-group {

@@ -55,8 +55,8 @@ useHead({
   padding-bottom: 0;
 }
 .article-layout {
-  // max-width: var(--max-width);
-  // margin-inline: auto;
+  max-width: var(--max-width);
+  margin-inline: auto;
   display: grid;
 
   @media (max-width: 881px) {
@@ -109,7 +109,7 @@ useHead({
     }
 
     @media (min-width: 1324px) {
-      grid-column: 1 / span 18;
+      grid-column: 6 / span 18;
       grid-row: 2;
     }
   }
@@ -123,7 +123,7 @@ useHead({
     grid-row: 2;
 
     @media (min-width: 1324px) {
-      grid-column: 20 / span 4;
+      grid-column: 1 / span 4;
       grid-row: 2;
     }
 
@@ -170,7 +170,7 @@ useHead({
     }
 
     @media (min-width: 1324px) {
-      grid-column: 1 / span 18;
+      grid-column: 1 / span 28;
       grid-row: 3;
     }
   }

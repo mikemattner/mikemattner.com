@@ -8,15 +8,15 @@
 //   font-display: fallback;
 // }
 
-@font-face {
-  font-family: 'Mona Sans';
-  src:
-    url('/fonts/mona-sans/Mona-Sans.woff2') format('woff2 supports variations'),
-    url('/fonts/mona-sans/Mona-Sans.woff2') format('woff2-variations');
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-  font-display: fallback;
-}
+// @font-face {
+//   font-family: 'Mona Sans';
+//   src:
+//     url('/fonts/mona-sans/Mona-Sans.woff2') format('woff2 supports variations'),
+//     url('/fonts/mona-sans/Mona-Sans.woff2') format('woff2-variations');
+//   font-weight: 200 900;
+//   font-stretch: 75% 125%;
+//   font-display: fallback;
+// }
 
 // @font-face {
 //   font-family: 'Young Serif';
@@ -25,3 +25,12 @@
 //     url('/fonts/young-serif/YoungSerif-Regular.woff2') format('woff2-variations');
 //   font-weight: 400;
 // }
+
+@font-face {
+  font-family: 'Bricolage';
+  src:
+    url('/fonts/bricolage-grotesque/BricolageGrotesque.ttf') format('truetype-variations');
+  font-weight: 1 999;
+  font-stretch: 75% 125%;
+  font-display: fallback;
+}

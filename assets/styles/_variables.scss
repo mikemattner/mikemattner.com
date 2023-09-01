@@ -1,6 +1,7 @@
 :root {
     // Typography
-    --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
+    // --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
+    --sans-font-family: 'Bricolage', 'Mona Sans', 'Inter', Helvetica, sans-serif;
     --serif-font-family: Georgia, serif;
     --code-font-family: 'JetBrains Mono', monospace;
 
@@ -27,7 +28,7 @@
     --sizing-xxxl: 3.125rem;
 
     // Utilities - global
-    --max-width: 100rem; //92.3125rem
+    --max-width: 72.3125rem; //92.3125rem
 
     // Utilities - transitions
     --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
@@ -40,22 +41,24 @@
     --transition-slow-ease: all 1.25s cubic-bezier(.62,.16,.13,1.01);
 
     // Color palette
-    --color-dark: hsl(240, 9%, 9%);
-    --color-dark-t: hsla(240, 9%, 9%, 90%);
-    --color-dark-bg-border: hsl(240, 9%, 5%);
+    --color-dark: hsl(300, 71%, 3%); // hsl(240, 9%, 9%);
+    --color-dark-t: hsla(300, 71%, 3%, 90%);
+    --color-dark-bg-border: hsl(300, 71%, 3%);
 
     --color-light: hsl(0, 0%, 94%);
-    --color-light-t: hsla(0, 0%, 94%, 70%);
+    --color-light-t: hsla(0, 0%, 94%, 75%);
     --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 98%);
 
-    --color-primary: hsl(353, 86%, 54%);
-    --color-primary-hover: hsla(353, 86%, 44%, 100%);
-    --color-primary-hover-t: hsla(353, 86%, 54%, 30%);
+    --color-primary: hsl(288, 69%, 54%);//hsl(353, 86%, 54%);
+    --color-primary-hover: hsla(288, 69%, 44%, 100%);
+    --color-primary-hover-t: hsla(288, 69%, 54%, 30%);
+
+    --color-highlight: hsl(64, 89%, 45%);
     
-    --color-middle-gray: hsl(235, 10%, 50%);
-    --color-middle-hover: hsla(235, 10%, 50%, 70%);
-    --color-middle-gray-t: hsla(235, 10%, 50%, 40%);
+    --color-middle-gray: hsl(300, 71%, 9%);
+    --color-middle-hover: hsla(300, 71%, 6%);
+    --color-middle-gray-t: hsla(300, 71%, 9%, 40%);
 
     // Baseline theme colors - dark
     --background-color: var(--color-dark);
