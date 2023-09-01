@@ -14,18 +14,20 @@
         </p>
         <p>
           Outside of work I enjoy spending time with my wife and pets, reading, keeping up with politics, woodworking,
-          home improvement projects, and sipping a fine craft beer.
+          home improvement projects, getting out on the lakes and rivers in the summer, and sipping a fine craft beer.
         </p>
         <h2>This Site</h2>
         <p>
-          I’ve had *something* at this domain since 2005, running through various iterations of content management
-          systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I had a
-          self-hosted WordPress installation.
+          I’ve had <strong>something</strong> at this domain since 2005, running through various iterations of content
+          management systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I
+          had a self-hosted WordPress installation. Prior to the setting up WordPress in 2008, I was using a
+          <a href="https://movabletype.org/">MoveableType</a> implementation.
         </p>
         <p>
-          For professional development reasons in 2019, I made the **JAMstack** switch to learn the approach and that’s
-          where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and use it
-          as a basis to build your own.
+          For professional development reasons in 2019, I made the
+          <abbr title="JavaScript something, something or other.">JAMstack</abbr> switch to learn the approach and
+          that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and
+          use it as a basis to build your own.
         </p>
         <h3>Other Iterations</h3>
         <p>
@@ -98,7 +100,7 @@ useHead({
       grid-column: 1 / -1;
     }
     @media (min-width: 961px) {
-      grid-column: 1 / span 13;
+      grid-column: 11 / span 18;
     }
   }
 
@@ -110,7 +112,6 @@ useHead({
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
-      grid-row: 1 / span 2;
       aspect-ratio: 1 / 1.125;
     }
 
@@ -121,7 +122,8 @@ useHead({
     }
 
     @media (min-width: 961px) {
-      grid-column: 16 / -1;
+      grid-column: 1 / -1;
+      aspect-ratio: 1.35 / 1;
     }
 
     :deep(img) {
@@ -142,6 +144,11 @@ useHead({
       font-family: 'object-fit: cover; object-position: center';
       width: 100%;
       height: 100%;
+
+      @media (min-width: 961px) {
+        -o-object-position: top;
+        object-position: top;
+      }
     }
 
     &:before {

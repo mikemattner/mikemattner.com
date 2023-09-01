@@ -2,6 +2,7 @@
   <header class="base-navigation">
     <div class="base-navigation__container">
       <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
+
       <nav class="base-navigation__main">
         <ul class="navigation-list">
           <li class="navigation-list__item" v-for="item in navigationList" :key="item.title">
@@ -18,6 +19,7 @@
           </li>
         </ul>
       </nav>
+      <!-- <ThemeSwitcher /> -->
     </div>
   </header>
 </template>
@@ -57,6 +59,7 @@ const navigationList: NavigationList[] = [
     justify-content: flex-start;
     align-items: center;
     margin-inline: auto;
+    gap: var(--sizing-xl);
 
     @media (min-width: 511px) {
       padding-top: 4rem;
@@ -93,7 +96,7 @@ const navigationList: NavigationList[] = [
 
     .navigation-list {
       display: flex;
-      gap: 2.5em;
+      gap: var(--sizing-xxl);
       margin: 0;
       padding: 0;
       list-style: none;

@@ -22,7 +22,10 @@
       <div class="home-layout__content">
         <div class="sidebar-area flow">
           <h2>Writing</h2>
-          <p>Some things I've written about over the years on topics like career, personal, and politics.</p>
+          <p>
+            Some things I've written about over the years on topics like my career, my personal updates, and on occasion
+            a little politics.
+          </p>
         </div>
         <div class="content-area flow">
           <ul class="article-list">

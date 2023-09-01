@@ -31,7 +31,6 @@ const props = defineProps({
     height: 3.5rem;
     padding: 0;
     border-radius: 50%;
-    // border: 1px solid var(--color-middle-gray);
     background-color: var(--headline-font-color);
     z-index: 10;
     transition: var(--transition-cubic-slow);
@@ -70,6 +69,7 @@ const props = defineProps({
       }
       .brand-logo__type {
         font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
+        color: var(--headline-font-color);
       }
     }
   }
