@@ -7,6 +7,8 @@
 </template>
 
 <script setup lang="ts">
+import { Post } from 'types/posts';
+
 const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
 });
@@ -17,7 +19,7 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   gap: var(--sizing-md);
-  padding: var(--sizing-xxl) var(--sizing-md);
+  padding: var(--sizing-xxl) 0;
 
   .title {
     font-weight: 700;

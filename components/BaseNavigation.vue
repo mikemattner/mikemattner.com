@@ -44,9 +44,15 @@ const navigationList: NavigationList[] = [
 <style lang="scss" scoped>
 .base-navigation {
   padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--color-primary);
 
   @media (min-width: 716px) {
     grid-area: navigation;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-dark-t);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
   }
 
   @media (max-width: 715px) {
@@ -62,7 +68,6 @@ const navigationList: NavigationList[] = [
     gap: var(--sizing-xl);
 
     @media (min-width: 511px) {
-      padding-top: 4rem;
       justify-content: space-between;
       align-items: center;
       position: sticky;

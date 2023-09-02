@@ -21,7 +21,7 @@
           Outside of work I enjoy spending time with my wife and pets, reading, keeping up with politics, woodworking,
           home improvement projects, getting out on the lakes and rivers in the summer, and sipping a fine craft beer.
         </p>
-        <h2 class="bar-right">This Site</h2>
+        <h3>This Site</h3>
         <p>
           I’ve had <strong>something</strong> at this domain since 2005, running through various iterations of content
           management systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I
@@ -34,7 +34,7 @@
           that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and
           use it as a basis to build your own.
         </p>
-        <h3 class="bar-right">Other Iterations</h3>
+        <h3>Other Iterations</h3>
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
           2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
