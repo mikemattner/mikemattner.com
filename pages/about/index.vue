@@ -1,11 +1,11 @@
 <template>
   <main>
     <article class="about-layout">
-      <BaseImage src="/images/mike-profile-three.jpg" class="profile-image" />
       <div class="sidebar-area flow">
         <h1>About</h1>
         <p class="intro">A summary of my life, career, and this here website.</p>
       </div>
+      <BaseImage src="/images/mike-profile-three.jpg" class="profile-image" />
       <div class="about-content flow">
         <h2 class="bar-right">Just The Highlights</h2>
         <p>
@@ -105,7 +105,7 @@ useHead({
       grid-column: 1 / -1;
     }
     @media (min-width: 961px) {
-      grid-column: 11 / span 18;
+      grid-column: 1 / span 18;
     }
   }
 

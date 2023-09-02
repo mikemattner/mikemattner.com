@@ -80,7 +80,7 @@ const posts = computed(() => {
     margin: var(--sizing-xxxl) 0 0;
 
     @media (min-width: 1053px) {
-      grid-column: 11 / span 18;
+      grid-column: 1 / span 18;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;

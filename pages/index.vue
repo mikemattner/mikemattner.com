@@ -154,12 +154,12 @@ const posts = computed(() => {
   }
 
   .content-area {
-    grid-column: 11 / span 18;
+    grid-column: 1 / span 18;
     margin: var(--sizing-xxxl) 0 0;
   }
 
   .sidebar-area {
-    grid-column: 11 / span 18;
+    grid-column: 1 / span 18;
   }
 
   .button-group {
