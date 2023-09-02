@@ -10,7 +10,7 @@
           </p>
         </div>
         <div class="content-area flow">
-          <ArticleList :posts="posts" />
+          <ArticleList :posts="posts" list-all />
         </div>
       </div>
     </div>

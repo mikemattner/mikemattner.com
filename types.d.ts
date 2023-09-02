@@ -14,10 +14,3 @@ interface NavigationList {
   title: string;
   url: string;
 }
-
-interface Post {
-  _path: string;
-  title: string;
-  date: string;
-  description: string;
-}
