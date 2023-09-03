@@ -19,12 +19,15 @@
           </li>
         </ul>
       </nav>
-      <!-- <ThemeSwitcher /> -->
+      <!-- <ThemeSwitcher v-if="isLargeScreen" /> -->
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
+// import { useMediaQuery } from '@vueuse/core';
+// const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+
 const navigationList: NavigationList[] = [
   {
     title: 'Home',
@@ -50,7 +53,7 @@ const navigationList: NavigationList[] = [
     grid-area: navigation;
     position: sticky;
     top: 0;
-    background-color: var(--color-dark-t);
+    background-color: var(--background-color-t);
     backdrop-filter: blur(10px);
     z-index: 1000;
   }

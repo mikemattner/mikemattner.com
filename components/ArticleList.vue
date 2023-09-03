@@ -31,7 +31,7 @@ const props = defineProps({
 const yearsInPosts = ref<string[]>([]);
 const sortedPosts = ref<SortedPostItem[]>();
 
-const convertDate = (date: string) => {
+const convertDate = (date: string): string => {
   return new Date(date).getFullYear().toString();
 };
 
@@ -63,6 +63,7 @@ const sortIntoYearArray = () => {
 };
 
 onMounted(() => {
+  if (!props.listAll) return;
   getYears();
   sortIntoYearArray();
 });
