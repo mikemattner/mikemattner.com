@@ -4,7 +4,7 @@
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
           <h1>Writing</h1>
-          <p>
+          <p class="intro">
             Some things I've written about over the years on topics like my career, my personal updates, and on occasion
             a little politics.
           </p>
@@ -92,8 +92,21 @@ const posts = computed(() => {
   }
 
   .sidebar-area {
-    grid-column: 1 / span 28;
     font-size: var(--size-step-1);
+
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 28;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  .intro {
+    letter-spacing: 0.01em;
+    font-weight: 300;
+    font-size: var(--size-step-2);
+    line-height: 1.5;
   }
 
   .button-group {

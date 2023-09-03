@@ -6,7 +6,7 @@
           <li>
             <BaseButton
               variant="outline"
-              size="md"
+              size="sm"
               color="primary"
               href="https://github.com/mikemattner"
               class="footer-icon"
@@ -17,7 +17,7 @@
           <li>
             <BaseButton
               variant="outline"
-              size="md"
+              size="sm"
               color="primary"
               href="https://www.linkedin.com/in/mikeamattner/"
               class="footer-icon"
@@ -28,7 +28,7 @@
           <li>
             <BaseButton
               variant="outline"
-              size="md"
+              size="sm"
               color="primary"
               href="https://mastodon.online/@mikemattner"
               rel="me"
@@ -40,7 +40,7 @@
           <li>
             <BaseButton
               variant="outline"
-              size="md"
+              size="sm"
               color="primary"
               href="https://codepen.io/mikemattner/#"
               class="footer-icon"
@@ -122,30 +122,25 @@ const theYear = computed<string>(() => {
     @media (min-width: 716px) {
       flex-direction: row;
       align-items: center;
+      justify-content: center;
     }
 
-    li {
-      width: 100%;
+    @media (max-width: 715px) {
+      li {
+        width: 100%;
+      }
     }
   }
   a.footer-icon {
     line-height: 1;
-    font-size: var(--size-step--1);
     text-decoration: none;
-    width: 100%;
 
     .icon {
-      font-size: var(--size-step-1);
-      // color: var(--color-middle-gray-t);
       transition: var(--transition-fast);
     }
 
-    &:hover {
-      // color: var(--color-primary);
-
-      .icon {
-        // color: var(--color-primary);
-      }
+    @media (max-width: 715px) {
+      width: 100%;
     }
   }
 }

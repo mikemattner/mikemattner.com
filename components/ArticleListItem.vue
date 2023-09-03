@@ -1,13 +1,14 @@
 <template>
   <div class="article-list-item">
-    <NuxtLink :to="post._path" class="title">{{ post.title }}</NuxtLink>
     <time>{{ formatDate(post.date) }}</time>
+    <NuxtLink :to="post._path" class="title">{{ post.title }}</NuxtLink>
     <p class="small-text" v-html="post.description"></p>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Post } from 'types/posts';
+import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
@@ -32,7 +33,6 @@ const props = defineProps({
   time {
     font-size: var(--size-step--2);
     text-transform: uppercase;
-    margin-bottom: var(--sizing-lg);
   }
 }
 </style>
