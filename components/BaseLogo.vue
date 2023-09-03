@@ -2,7 +2,7 @@
   <div class="brand-logo">
     <PrimaryLogo />
     <div v-if="showLabel" class="brand-logo__type">
-      Mike<br class="desktop-only" />
+      Mike<br />
       Mattner
     </div>
   </div>
@@ -37,9 +37,9 @@ const props = defineProps({
     flex: 0 0 3.5rem;
 
     @media (max-width: 510px) {
-      height: 1.5rem;
-      width: 1.5rem;
-      flex: 0 0 1.5rem;
+      height: 3rem;
+      width: 3rem;
+      flex: 0 0 3rem;
     }
 
     .logo-shape {

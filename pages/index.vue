@@ -13,9 +13,9 @@
             an advertising agency.
           </p>
           <p class="intro">
-            In a former life I worked within the entire gamut of skills&mdash;in what was once called digital
-            design&mdash;including video editing, motion graphics, and more traditional graphic design. That set of
-            skills is now deprecated.
+            In a former life I worked within the entire gamut of skills in what was once called digital design including
+            video editing, motion graphics, and more traditional graphic design. That set of skills is now a bit
+            atrophied.
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <div class="content-area flow">
           <ArticleList :posts="posts" />
           <div class="button-group">
-            <BaseButton to="/writing" variant="outline" size="md" color="primary">
+            <BaseButton to="/writing" variant="outline" size="sm" color="primary">
               <span>More Writing</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
@@ -41,8 +41,6 @@
 </template>
 
 <script setup lang="ts">
-import { formatDate } from '../utils/formatDate';
-
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });
