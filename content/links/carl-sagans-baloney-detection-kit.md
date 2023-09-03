@@ -3,10 +3,7 @@ title: 'Carl Sagan’s “Baloney Detection Kit”'
 date: 2018-04-03
 type: link
 description: 'Wherever possible there must be independent confirmation of the “facts.”'
-tag:
-    - Wisdom
-link:
-    - 'https://kottke.org/18/04/carl-sagans-tools-for-critical-thinking-and-detecting-bullshit'
+link: 'https://kottke.org/18/04/carl-sagans-tools-for-critical-thinking-and-detecting-bullshit'
 ---
 > Wherever possible there must be independent confirmation of the “facts.”
 > 

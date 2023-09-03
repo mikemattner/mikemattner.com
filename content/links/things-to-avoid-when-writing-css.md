@@ -3,10 +3,7 @@ title: Things To Avoid When Writing CSS
 date: 2015-10-26
 type: link
 description: 'I do not agree with this take.'
-tag:
-    - Development
-link:
-    - https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.sk52gph80
+link: https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.sk52gph80
 ---
 > Multiple files
 > 
