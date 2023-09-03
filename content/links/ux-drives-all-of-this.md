@@ -3,10 +3,7 @@ title: UX Drives All of This
 date: 2017-05-08
 type: link
 description: 'Web development is getting very complex.'
-tag:
-    - Development
-link:
-    - https://css-tricks.com/ux-drives-all-of-this/
+link: https://css-tricks.com/ux-drives-all-of-this/
 ---
 > Thomas has a point: web development has only gotten more complicated.
 > 

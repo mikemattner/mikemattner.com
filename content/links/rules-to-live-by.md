@@ -3,11 +3,7 @@ title: 'Rules to Live By'
 date: 2018-02-08
 type: link
 description: 'A little prescriptive, but definitely accurate.'
-tag:
-    - Wisdom
-link:
-    - https://kottke.org/18/02/a-list-of-25-principles-of-adult-behavior-by-john-perry-barlow
-linktitle: Via Kottke
+link: https://kottke.org/18/02/a-list-of-25-principles-of-adult-behavior-by-john-perry-barlow
 ---
 These are from John Perry Barlow, but what a fine, fine list this is.
 

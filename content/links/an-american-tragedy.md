@@ -3,10 +3,7 @@ title: An American Tragedy
 date: 2016-11-09
 type: link
 description: 'I am glad 2020 forced this man out of office.'
-tag:
-    - Politics
-link:
-    - http://www.newyorker.com/news/news-desk/an-american-tragedy-donald-trump
+link: http://www.newyorker.com/news/news-desk/an-american-tragedy-donald-trump
 ---
 > All along, Trump seemed like a twisted caricature of every rotten reflex of the radical right. That he has prevailed, that he has won this election, is a crushing blow to the spirit; it is an event that will likely cast the country into a period of economic, political, and social uncertainty that we cannot yet imagine. That the electorate has, in its plurality, decided to live in Trump’s world of vanity, hate, arrogance, untruth, and recklessness, his disdain for democratic norms, is a fact that will lead, inevitably, to all manner of national decline and suffering.
 

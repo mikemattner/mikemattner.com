@@ -3,11 +3,7 @@ title: Front of the Front End
 date: 2022-02-08
 type: link
 description: 'So I think I fit into the front-of-the-front-end paradigm when it comes to my career.'
-tag:
-    - Development
-    - Design
-link:
-    - https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/
+link: https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/
 ---
 
 > [The Great Divide](https://css-tricks.com/the-great-divide/) is real, and I’m pleased that the terms “front-of-the-front-end” and “back-of-the-front-end” have gained traction ever since [I quipped about them on the Shop Talk Show](https://shoptalkshow.com/334/). A few of my clients have actually moved away from a culture of “[we only hire full-stack developers](http://bradfrost.com/blog/post/full-stack-developers/)” and have instead adopted the labels “front-of-the-front-end” and “back-of-the-front-end” to help them better organize their teams and refine their hiring practices. This makes me incredibly happy as these labels provide a much-needed distinction between the types of web development that need to occur in order to build successful web things.
