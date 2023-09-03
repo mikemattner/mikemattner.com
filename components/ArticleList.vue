@@ -1,7 +1,7 @@
 <template>
   <section class="article-list__section">
     <template v-if="!listAll">
-      <ul class="article-list">
+      <ul class="article-list separator">
         <li v-for="post in posts" :key="post.title">
           <ArticleListItem :post="post" />
         </li>
@@ -78,9 +78,11 @@ onMounted(() => {
   padding: 0;
   margin: 0;
 
-  li {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+  &.separator {
+    li {
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
   }
 }
 
