@@ -4,7 +4,6 @@ export interface Post extends ParsedContent {
   title: string;
   date: string;
   description: string;
-  type: string;
   tag: string[];
 }
 

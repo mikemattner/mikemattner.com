@@ -7,7 +7,7 @@
           <p class="intro">Things I found to be interesting.</p>
         </div>
         <div class="content-area flow">
-          <ArticleList :posts="links" list-all />
+          <LinkList :links="links" list-all />
         </div>
       </div>
     </div>
@@ -15,16 +15,16 @@
 </template>
 
 <script setup lang="ts">
-import { formatDate } from '../../utils/formatDate';
+import { Link } from '~/types/links';
 
 useHead({
-  title: 'UX/UI Designer & Developer in Michigan',
+  title: 'Links',
 });
 
 const { data } = await useAsyncData('link-list', () => queryContent('/links').sort({ date: -1 }).find());
 
-const links = computed(() => {
-  return data?.value?.filter((link) => !link.draft);
+const links = computed<Link[]>(() => {
+  return data?.value?.filter((link) => !link.draft) as Link[];
 });
 </script>
 

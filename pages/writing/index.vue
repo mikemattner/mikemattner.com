@@ -18,16 +18,16 @@
 </template>
 
 <script setup lang="ts">
-import { formatDate } from '../../utils/formatDate';
+import { Post } from 'types/posts';
 
 useHead({
-  title: 'UX/UI Designer & Developer in Michigan',
+  title: 'Writing',
 });
 
 const { data } = await useAsyncData('writing-list', () => queryContent('/writing').sort({ date: -1 }).find());
 
-const posts = computed(() => {
-  return data?.value?.filter((post) => post.type === 'entry').filter((post) => !post.draft);
+const posts = computed<Post[]>(() => {
+  return data?.value?.filter((post) => post.type === 'entry').filter((post) => !post.draft) as Post[];
 });
 </script>
 
@@ -80,7 +80,7 @@ const posts = computed(() => {
     margin: var(--sizing-xxxl) 0 0;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 18;
+      grid-column: 1 / span 28;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
