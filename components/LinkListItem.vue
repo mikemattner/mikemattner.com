@@ -1,26 +1,26 @@
 <template>
-  <div class="article-list-item">
-    <NuxtLink :to="post._path" class="article-list-item__link">
-      <div class="article-list-item__title flow">
-        <h3 class="small-heading">{{ post.title }}</h3>
-        <p class="small-text" v-html="post.description"></p>
+  <div class="link-list-item">
+    <NuxtLink :to="link._path" class="link-list-item__link">
+      <div class="link-list-item__title flow">
+        <h3 class="small-heading">{{ link.title }}</h3>
+        <p class="small-text" v-html="link.description"></p>
       </div>
-      <time>{{ formatDate(post.date) }}</time>
+      <time>{{ formatDate(link.date) }}</time>
     </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Post } from 'types/posts';
+import { Link } from 'types/links';
 import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
-  post: { type: Object as PropType<Post>, required: true },
+  link: { type: Object as PropType<Link>, required: true },
 });
 </script>
 
 <style lang="scss" scoped>
-.article-list-item {
+.link-list-item {
   display: flex;
   flex-direction: column;
   gap: var(--sizing-md);

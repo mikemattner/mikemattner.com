@@ -90,12 +90,15 @@ const attributes = computed(() => {
   --button-outline-text: var(--headline-font-color);
 
   --button-primary: var(--color-primary);
-  --button-primary-outline: inset 0 0 0 2px var(--color-primary);
+  --button-primary-outline: inset 0 0 0 2px var(--color-primary), 5px 5px 0 0 var(--color-primary);
+  --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
+
   --button-primary-hover: var(--color-primary);
   --button-primary-solid-hover: var(--color-primary-hover);
 
   --button-secondary: var(--color-middle-gray);
-  --button-secondary-outline: inset 0 0 0 2px var(--color-middle-gray);
+  --button-secondary-outline: inset 0 0 0 2px var(--color-middle-gray), 5px 5px 0 0 var(--color-middle-gray);
+  --button-secondary-outline-hover: inset 0 0 0 2px var(--color-middle-gray), 0 0 0 0 var(--color-middle-gray);
   --button-secondary-hover: var(--color-middle-hover);
   --button-secondary-solid-hover: var(--color-middle-hover);
 }
@@ -110,9 +113,9 @@ const attributes = computed(() => {
   text-align: center;
   text-decoration: none;
   transition: var(--transition);
-  border-radius: var(--sizing-sm);
+  // border-radius: var(--sizing-sm);
 
-  &:focus {
+  &:focus-visible {
     outline: 0;
     box-shadow: var(--button-focus-shadow);
   }
@@ -206,13 +209,14 @@ const attributes = computed(() => {
     color: var(--button-outline-color-text);
     box-shadow: var(--button-outline-color);
 
-    &:focus {
+    &:focus-visible {
       box-shadow: var(--button-focus-shadow), var(--button-outline-color);
     }
 
     &:hover:not(:disabled) {
       color: var(--button-outline-color-text-hover);
       background-color: var(--button-outline-background-color-hover);
+      box-shadow: var(--button-outline-hover-color-color);
     }
     --button-loader-color: var(--button-outline-color-text);
   }
@@ -256,6 +260,7 @@ const attributes = computed(() => {
     --button-outline-color-text: var(--button-outline-text);
     --button-outline-color-text-hover: var(--button-solid-text);
     --button-outline-color: var(--button-primary-outline);
+    --button-outline-hover-color: var(--button-primary-outline-hover);
   }
 
   &.button--secondary {
@@ -268,6 +273,7 @@ const attributes = computed(() => {
     --button-outline-color-text: var(--button-outline-text);
     --button-outline-color-text-hover: var(--button-solid-text);
     --button-outline-color: var(--button-secondary-outline);
+    --button-outline-hover-color: var(--button-secondary-outline-hover);
   }
 
   @keyframes loadAnimate {

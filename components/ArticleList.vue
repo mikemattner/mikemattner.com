@@ -10,7 +10,7 @@
     <template v-else>
       <div v-for="(item, index) in sortedPosts" :key="index" class="layout year-group">
         <h3 class="year-header bar-right">{{ item.year }}</h3>
-        <ul class="article-list">
+        <ul class="article-list separator">
           <li v-for="post in item.posts" :key="post.title">
             <ArticleListItem :post="post" />
           </li>
@@ -80,14 +80,13 @@ onMounted(() => {
 
   &.separator {
     li {
-      border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
     }
   }
 }
 
 .year-header {
-  margin: var(--sizing-xxxl) 0 var(--sizing-lg);
+  margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
 
   // @media (min-width: 716px) {
   //   position: sticky;
