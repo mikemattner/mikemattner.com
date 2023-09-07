@@ -29,6 +29,7 @@
 
     // Utilities - global
     --max-width: 72.3125rem; //92.3125rem
+    --max-width-nav: 92.3125rem; //92.3125rem
 
     // Utilities - transitions
     --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
@@ -49,6 +50,7 @@
     --color-light-t: hsla(0, 0%, 94%, 75%);
     --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 98%);
+    --color-light-border-t: hsla(0, 0%, 94%, 25%);
 
     --color-primary: hsl(288, 69%, 54%);//hsl(353, 86%, 54%);
     --color-primary-hover: hsla(288, 69%, 44%, 100%);

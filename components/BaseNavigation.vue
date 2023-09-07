@@ -47,15 +47,15 @@ const navigationList: NavigationList[] = [
 <style lang="scss" scoped>
 .base-navigation {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-light-border-t);
 
   @media (min-width: 716px) {
     grid-area: navigation;
     position: sticky;
-    top: 0;
-    background-color: var(--background-color-t);
-    backdrop-filter: blur(10px);
+    top: var(--sizing-xl);
     z-index: 1000;
+    padding: var(--sizing-xl);
+    border: none;
   }
 
   @media (max-width: 715px) {
@@ -81,6 +81,15 @@ const navigationList: NavigationList[] = [
       flex-direction: column;
       justify-content: center;
       gap: var(--sizing-xl);
+    }
+
+    @media (min-width: 716px) {
+      background-color: var(--background-color-t);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--color-light-border-t);
+      border-radius: var(--sizing-sm);
+      padding: 1.5rem 2rem;
+      max-width: var(--max-width-nav);
     }
   }
 
