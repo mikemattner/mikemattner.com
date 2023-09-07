@@ -114,7 +114,7 @@ const theYear = computed<string>(() => {
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--sizing-lg);
     list-style: none;
     padding: 0;
     margin: 0;
