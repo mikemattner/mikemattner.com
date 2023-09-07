@@ -3,7 +3,7 @@
     <div class="home-layout">
       <div class="home-layout__hero">
         <div class="home-greeting flow">
-          <h1 class="main-lede">Hello! My name is Mike Mattner.</h1>
+          <h1 class="main-lede">Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</h1>
           <p class="intro">
             I&rsquo;m a designer <em>&amp;</em> UI developer from Michigan. I am currently working at AccuLynx as a Sr.
             UI Engineer.
@@ -30,7 +30,7 @@
         <div class="content-area flow">
           <ArticleList :posts="posts" />
           <div class="button-group">
-            <BaseButton to="/writing" variant="outline" size="sm" color="primary">
+            <BaseButton to="/writing" variant="outline" size="md" color="primary">
               <span>More Writing</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
@@ -118,9 +118,6 @@ const posts = computed(() => {
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
-    display: grid;
-    grid-auto-rows: auto;
-    gap: var(--sizing-md);
   }
 
   .home-greeting {
