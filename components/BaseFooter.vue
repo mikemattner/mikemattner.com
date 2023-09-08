@@ -117,12 +117,12 @@ const theYear = computed<string>(() => {
     gap: var(--sizing-lg);
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 
     @media (min-width: 716px) {
-      flex-direction: row;
+      display: grid;
       align-items: center;
-      justify-content: center;
+      grid-template-columns: repeat(4, 170px);
     }
 
     @media (max-width: 715px) {
@@ -134,13 +134,10 @@ const theYear = computed<string>(() => {
   a.footer-icon {
     line-height: 1;
     text-decoration: none;
+    width: 100%;
 
     .icon {
       transition: var(--transition-fast);
-    }
-
-    @media (max-width: 715px) {
-      width: 100%;
     }
   }
 }
