@@ -3,7 +3,10 @@
     <div class="home-layout">
       <div class="home-layout__hero">
         <div class="home-greeting flow">
-          <h1 class="main-lede">Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</h1>
+          <h1 class="main-lede">
+            <ProfileImage image="/images/mike-profile-three.jpg" is-circle class="profile-image" />
+            <span>Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</span>
+          </h1>
           <p class="intro">
             I&rsquo;m a designer <em>&amp;</em> UI developer from Michigan. I am currently working at AccuLynx as a Sr.
             UI Engineer.
@@ -79,6 +82,7 @@ const posts = computed(() => {
       grid-template-columns: repeat(28, 1fr);
       margin-block-start: 8rem;
       margin-block-end: 8rem;
+      gap: var(--sizing-xxl) 0;
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
@@ -113,11 +117,19 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    font-variation-settings: 'wdth' 80;
+    font-variation-settings: 'wdth' 100;
     font-size: clamp(40px, 8vw, 95px);
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-lg);
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   .home-greeting {
@@ -133,7 +145,6 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-column: 1 / -1;
-      grid-row: 1 / span 3;
       align-self: center;
     }
     @media (max-width: 1052px) {
@@ -162,6 +173,19 @@ const posts = computed(() => {
     display: flex;
     align-items: center;
     gap: var(--sizing-md);
+  }
+
+  .profile-image {
+    aspect-ratio: 1;
+    width: 20%;
+    display: inline-flex;
+
+    @media (max-width: 715px) {
+      width: 150px;
+    }
+    @media (max-width: 500px) {
+      width: 120px;
+    }
   }
 }
 </style>
