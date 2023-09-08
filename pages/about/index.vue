@@ -5,7 +5,7 @@
         <h1>About</h1>
         <p class="intro">A summary of my life, career, and this here website.</p>
       </div>
-      <BaseImage src="/images/mike-profile-three.jpg" class="profile-image" />
+      <ProfileImage image="/images/mike-profile-three.jpg" class="profile-image" />
       <div class="about-content flow">
         <h2 class="bar-right">Just The Highlights</h2>
         <p>
@@ -130,9 +130,6 @@ useHead({
   }
 
   .profile-image {
-    z-index: 1;
-    overflow: hidden;
-    border-radius: 10px;
     aspect-ratio: 1;
 
     @media (min-width: 501px) {
@@ -149,59 +146,6 @@ useHead({
     @media (min-width: 961px) {
       grid-column: 1 / -1;
       aspect-ratio: 1.35 / 1;
-    }
-
-    :deep(img) {
-      mix-blend-mode: multiply;
-      z-index: 2;
-      position: relative;
-      opacity: 0.8;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      -o-object-fit: cover;
-      object-fit: cover;
-      -o-object-position: center;
-      object-position: center;
-      font-family: 'object-fit: cover; object-position: center';
-      width: 100%;
-      height: 100%;
-
-      @media (min-width: 961px) {
-        -o-object-position: top;
-        object-position: top;
-      }
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background: var(--gradient-1);
-      mix-blend-mode: normal;
-      opacity: 0.8;
-      z-index: 3;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background-color: var(--image-background);
-      mix-blend-mode: screen;
-      opacity: 0.8;
-      z-index: 1;
     }
   }
 }
