@@ -19,14 +19,14 @@
           </li>
         </ul>
       </nav>
-      <!-- <ThemeSwitcher v-if="isLargeScreen" /> -->
+      <ThemeSwitcher v-if="isLargeScreen" />
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-// import { useMediaQuery } from '@vueuse/core';
-// const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+import { useMediaQuery } from '@vueuse/core';
+const isLargeScreen = useMediaQuery('(min-width: 1024px)');
 
 const navigationList: NavigationList[] = [
   {
@@ -52,9 +52,9 @@ const navigationList: NavigationList[] = [
   @media (min-width: 716px) {
     grid-area: navigation;
     position: sticky;
-    top: var(--sizing-xl);
+    top: var(--sizing-md);
     z-index: 1000;
-    padding: var(--sizing-xl);
+    padding: var(--sizing-md);
     border: none;
   }
 

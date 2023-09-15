@@ -15,7 +15,7 @@
           </div>
         </aside>
         <header class="article-header">
-          <h1 v-html="data.title"></h1>
+          <h1 class="article-title" v-html="data.title"></h1>
         </header>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
@@ -112,6 +112,10 @@ useHead({
       grid-column: 6 / span 18;
       grid-row: 2;
     }
+  }
+
+  .article-title {
+    font-size: clamp(40px, 8vw, 95px);
   }
 
   .article-meta {

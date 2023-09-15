@@ -27,14 +27,14 @@ const props = defineProps({
   gap: 0.5rem;
 
   &__image {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     padding: 0;
     border-radius: 50%;
     background-color: var(--headline-font-color);
     z-index: 10;
     transition: var(--transition-cubic-slow);
-    flex: 0 0 3.5rem;
+    flex: 0 0 2.5rem;
 
     @media (max-width: 510px) {
       height: 3rem;
@@ -49,16 +49,19 @@ const props = defineProps({
   }
 
   &__type {
-    font-size: var(--size-step-1);
+    font-size: var(--size-step-0);
     transition: all 0.125s ease-in-out;
     line-height: 1;
     font-variation-settings: 'ital' 10, 'wdth' 75, 'wght' 700;
     letter-spacing: 0.0125em;
     transition: var(--transition-cubic-slow);
+    color: var(--headline-font-color);
   }
 
   @media (min-width: 511px) {
     &:hover {
+      color: var(--headline-font-color);
+
       .brand-logo__image {
         // border: 2px solid var(--color-primary);
         // background-color: var(--color-primary);
@@ -68,7 +71,7 @@ const props = defineProps({
         // }
       }
       .brand-logo__type {
-        font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
+        // font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
         color: var(--headline-font-color);
       }
     }

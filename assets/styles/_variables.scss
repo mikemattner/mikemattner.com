@@ -56,7 +56,8 @@
     --color-primary-hover: hsla(288, 69%, 44%, 100%);
     --color-primary-hover-t: hsla(288, 69%, 54%, 30%);
 
-    --color-highlight: hsl(64, 89%, 45%);
+    --color-yellow-dark: hsl(64, 66%, 45%);
+    --color-yellow-light: hsl(64, 89%, 45%);
     
     --color-middle-gray: hsl(300, 71%, 9%);
     --color-middle-hover: hsla(300, 71%, 6%);
@@ -81,6 +82,7 @@ html.light {
     --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 68%) 54.62%, hsla(0, 0%, 98%, 100%) 79.18% );
     --image-background: var(--color-light-bg);
     --background-color-t: var(--color-light-t);
+    --color-highlight: var(--color-yellow-dark);
 }
   
 html.dark {
@@ -92,4 +94,5 @@ html.dark {
     --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
+    --color-highlight: var(--color-yellow-light);
 }

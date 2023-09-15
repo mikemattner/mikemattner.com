@@ -28,7 +28,7 @@ body {
 
     @media (max-width: 715px) {
         grid-template-rows: auto minmax(600px, 1fr) auto;
-        margin: 0.5rem;
+        margin: 0;
         overflow: hidden;
     }
 }
@@ -47,7 +47,7 @@ a {
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
     text-decoration-style: wavy;
-    transition: var(--transition-fast);
+    transition: var(--transition);
   
     &:hover {
         text-decoration-color: var(--color-highlight);

@@ -15,16 +15,20 @@
           </div>
         </aside>
         <header class="article-header">
-          <h1 v-html="data.title"></h1>
+          <h1 class="article-title" v-html="data.title"></h1>
         </header>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
+          <div v-if="data.link" class="article-link">
+            <BaseButton :href="data.link" variant="outline" size="md" color="primary">
+              Read More <Icon name="ri:external-link-fill" />
+            </BaseButton>
+          </div>
           <template #empty>
             <h1>No Content</h1>
             <p>No content found.</p>
           </template>
         </ContentRenderer>
-        <ArticleNavigation class="prev-next" />
       </article>
     </template>
   </main>
@@ -114,6 +118,30 @@ useHead({
     }
   }
 
+  .article-title {
+    font-size: clamp(40px, 8vw, 95px);
+  }
+  .article-link {
+    padding-bottom: 3rem;
+    grid-column: 3 / span 4;
+    grid-row: 3;
+
+    @media (max-width: 988px) {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+    }
+
+    @media (min-width: 989px) {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+    }
+
+    @media (min-width: 1324px) {
+      grid-column: 6 / span 18;
+      grid-row: 3;
+    }
+  }
+
   .article-meta {
     border-top: 1px solid var(--border-color);
     padding: var(--sizing-md) 0;
@@ -155,23 +183,6 @@ useHead({
       grid-column: 1 / span 6;
       grid-row: 2;
       border-bottom: 1px solid var(--border-color);
-    }
-  }
-
-  .prev-next {
-    @media (max-width: 988px) {
-      grid-column: 1 / span 6;
-      grid-row: 4;
-    }
-
-    @media (min-width: 989px) {
-      grid-column: 1 / span 6;
-      grid-row: 4;
-    }
-
-    @media (min-width: 1324px) {
-      grid-column: 1 / span 28;
-      grid-row: 3;
     }
   }
 }
