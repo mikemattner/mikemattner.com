@@ -40,9 +40,11 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
   color: var(--font-color);
   transition: var(--transition);
   overflow: hidden;
+  backdrop-filter: invert(80%);
 
   &:hover {
     background-color: var(--color-middle-gray);
+    backdrop-filter: invert(80%);
   }
 
   &__toggle {
