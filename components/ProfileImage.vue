@@ -1,6 +1,6 @@
 <template>
   <div class="profile-image">
-    <BaseImage :src="image" class="profile-image__image" :class="{ 'is-circle': isCircle }" />
+    <BaseImage :src="image" class="profile-image__image" :class="{ 'is-circle': isCircle, 'is-blob': isBlob }" />
   </div>
 </template>
 
@@ -8,6 +8,7 @@
 const props = defineProps({
   image: { type: String, required: true },
   isCircle: { type: Boolean, default: false },
+  isBlob: { type: Boolean, default: false },
 });
 </script>
 
@@ -21,6 +22,10 @@ const props = defineProps({
 
   &.is-circle {
     border-radius: 50%;
+  }
+
+  &.is-blob {
+    mask-image: url(/images/blob.svg);
   }
 
   :deep(img) {

@@ -32,7 +32,11 @@ const props = defineProps({
     text-decoration: none;
     color: inherit;
     padding: var(--sizing-xxl) var(--sizing-lg);
-    transition: var(--transition-cubic-med);
+    transition: var(--transition);
+
+    h3 {
+      transition: var(--transition);
+    }
 
     @media (min-width: 768px) {
       display: grid;
@@ -40,9 +44,12 @@ const props = defineProps({
     }
 
     &:hover {
-      color: inherit;
-      background-color: #000;
-      transform: scale(1.025);
+      background-color: var(--background-color-t);
+      color: var(--color-primary);
+
+      h3 {
+        color: var(--color-primary);
+      }
     }
   }
 

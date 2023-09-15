@@ -113,7 +113,6 @@ const attributes = computed(() => {
   text-align: center;
   text-decoration: none;
   transition: var(--transition);
-  // border-radius: var(--sizing-sm);
 
   &:focus-visible {
     outline: 0;
@@ -216,7 +215,7 @@ const attributes = computed(() => {
     &:hover:not(:disabled) {
       color: var(--button-outline-color-text-hover);
       background-color: var(--button-outline-background-color-hover);
-      box-shadow: var(--button-outline-hover-color-color);
+      box-shadow: var(--button-outline-hover-color);
     }
     --button-loader-color: var(--button-outline-color-text);
   }

@@ -4,12 +4,12 @@
       <div class="home-layout__hero">
         <div class="home-greeting flow">
           <h1 class="main-lede">
-            <ProfileImage image="/images/mike-profile-three.jpg" is-circle class="profile-image" />
+            <ProfileImage image="/images/mike-profile-three.jpg" is-blob class="profile-image" />
             <span>Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</span>
           </h1>
           <p class="intro">
-            I&rsquo;m a designer <em>&amp;</em> UI developer from Michigan. I am currently working at AccuLynx as a Sr.
-            UI Engineer.
+            I&rsquo;m a <strong>UI designer <em>&amp;</em> developer</strong> from Michigan. I am currently working at
+            AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
             I&rsquo;ve previously worked as digital designer and manager of creatives, as well as a UX/UI developer at
