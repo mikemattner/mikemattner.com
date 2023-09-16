@@ -4,6 +4,8 @@ date: 2017-06-09
 type: link
 description: 'Fun ways to make a boxy, grid-based medium a bit more exciting.'
 link: https://css-tricks.com/creating-non-rectangular-headers/
+tag:
+    - Development
 ---
 I love techniques that allow designers and developers to “break” the boxed in nature of web design in a general sense. As a micro trend, non-rectangular headers have become one of my favorite techniques to accomplish this ask.
 

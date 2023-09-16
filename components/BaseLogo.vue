@@ -1,10 +1,7 @@
 <template>
   <div class="brand-logo">
     <PrimaryLogo />
-    <div v-if="showLabel" class="brand-logo__type">
-      Mike<br />
-      Mattner
-    </div>
+    <div v-if="showLabel" class="brand-logo__type">Mike Mattner</div>
   </div>
 </template>
 
@@ -27,19 +24,19 @@ const props = defineProps({
   gap: 0.5rem;
 
   &__image {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     border-radius: 50%;
     background-color: var(--headline-font-color);
     z-index: 10;
     transition: var(--transition-cubic-slow);
-    flex: 0 0 2.5rem;
+    flex: 0 0 2rem;
 
     @media (max-width: 510px) {
-      height: 3rem;
-      width: 3rem;
-      flex: 0 0 3rem;
+      height: 1.75rem;
+      width: 1.75rem;
+      flex: 0 0 1.75rem;
     }
 
     .logo-shape {
@@ -49,11 +46,12 @@ const props = defineProps({
   }
 
   &__type {
-    font-size: var(--size-step-0);
+    font-size: var(--size-step-1);
     transition: all 0.125s ease-in-out;
     line-height: 1;
-    font-variation-settings: 'ital' 10, 'wdth' 75, 'wght' 700;
+    font-variation-settings: 'wdth' 65, 'wght' 400;
     letter-spacing: 0.0125em;
+    text-transform: uppercase;
     transition: var(--transition-cubic-slow);
     color: var(--headline-font-color);
   }
@@ -64,15 +62,16 @@ const props = defineProps({
 
       .brand-logo__image {
         // border: 2px solid var(--color-primary);
-        // background-color: var(--color-primary);
+        background-color: var(--color-primary);
         transform: rotate(720deg);
         // .logo-shape {
-        //   fill: var(--color-primary);
+        //   fill: var(--color-highlight);
         // }
       }
       .brand-logo__type {
         // font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
-        color: var(--headline-font-color);
+        // color: var(--headline-font-color);
+        color: var(--color-primary);
       }
     }
   }
