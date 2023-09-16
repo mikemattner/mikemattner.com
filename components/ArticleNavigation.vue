@@ -1,13 +1,13 @@
 <template>
   <div class="article-navigation">
     <div v-if="prev" class="prev-article">
-      <h2 class="h4-heading">Previous article</h2>
+      <h2 class="h4-heading">Previous {{ label }}</h2>
       <NuxtLink :to="prev._path" :title="prev.title" class="prev-button" variant="link" size="md" color="primary">
         {{ prev.title }}
       </NuxtLink>
     </div>
     <div v-if="next" class="next-article">
-      <h2 class="h4-heading">Next article</h2>
+      <h2 class="h4-heading">Next {{ label }}</h2>
       <NuxtLink :to="next._path" :title="next.title" class="next-button" variant="link" size="md" color="primary">
         {{ next.title }}
       </NuxtLink>
@@ -18,7 +18,23 @@
 <script setup lang="ts">
 const { path } = useRoute();
 
-const [prev, next] = await queryContent('/writing')
+type ContentType = 'writing' | 'links';
+
+const props = defineProps({
+  content: { type: String as PropType<ContentType>, default: 'writing' },
+});
+
+const query = computed<string>(() => {
+  if (props.content === 'links') return '/links';
+  return '/writing';
+});
+
+const label = computed<string>(() => {
+  if (props.content === 'links') return 'link';
+  return 'article';
+});
+
+const [prev, next] = await queryContent(query.value)
   .only(['_path', 'title'])
   .sort({ date: 1 })
   .findSurround({ _path: path });

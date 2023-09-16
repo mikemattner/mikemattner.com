@@ -29,6 +29,7 @@
             <p>No content found.</p>
           </template>
         </ContentRenderer>
+        <ArticleNavigation class="prev-next" content="links" />
       </article>
     </template>
   </main>
@@ -139,6 +140,23 @@ useHead({
     @media (min-width: 1324px) {
       grid-column: 6 / span 18;
       grid-row: 3;
+    }
+  }
+
+  .prev-next {
+    @media (max-width: 988px) {
+      grid-column: 1 / span 6;
+      grid-row: 5;
+    }
+
+    @media (min-width: 989px) {
+      grid-column: 1 / span 6;
+      grid-row: 5;
+    }
+
+    @media (min-width: 1324px) {
+      grid-column: 1 / span 28;
+      grid-row: 4;
     }
   }
 

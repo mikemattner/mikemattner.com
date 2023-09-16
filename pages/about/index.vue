@@ -5,7 +5,7 @@
         <h1>About</h1>
         <p class="intro">A summary of my life, career, and this here website.</p>
       </div>
-      <ProfileImage image="/images/mike-profile-three.jpg" class="profile-image" />
+      <ProfileImage image="/images/mike-profile-about.webp" class="profile-image" />
       <div class="about-content flow">
         <h2 class="bar-right">Just The Highlights</h2>
         <p>
@@ -130,22 +130,22 @@ useHead({
   }
 
   .profile-image {
-    aspect-ratio: 1;
+    aspect-ratio: 2 / 1;
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
-      aspect-ratio: 1 / 1.125;
+      aspect-ratio: 2 / 1;
     }
 
     @media (min-width: 768px) {
       grid-column: 1 / -1;
-      aspect-ratio: 1 / 1.125;
+      aspect-ratio: 2 / 1;
       align-self: self-start;
     }
 
     @media (min-width: 961px) {
       grid-column: 1 / -1;
-      aspect-ratio: 1.35 / 1;
+      aspect-ratio: 2 / 1;
     }
   }
 }

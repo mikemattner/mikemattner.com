@@ -41,8 +41,8 @@ const props = defineProps({
     margin: auto;
     -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: center;
-    object-position: center;
+    -o-object-position: top;
+    object-position: top;
     font-family: 'object-fit: cover; object-position: center';
     width: 100%;
     height: 100%;
