@@ -4,6 +4,8 @@ date: 2017-05-30
 type: link
 description: 'Conversational skills seem lacking. This might help.'
 link: http://kottke.org/17/05/10-ways-to-have-a-better-conversation
+tag:
+    - Wisdom
 ---
 
 I think in our tech heavy world we really don’t do the vast majority of what’s being suggested here–I struggle personally with 1, 6, 7, and 8–and connection with our fellow humans is a struggle as a result.

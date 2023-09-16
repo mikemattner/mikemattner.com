@@ -4,6 +4,8 @@ date: 2016-01-28
 type: link
 description: 'We should all learn the medium we work with.'
 link: http://pi.co/erik-spiekermann/
+tag:
+    - Development
 ---
 When I mentor anyone that hasn’t done much work in anything other than print design, I always ask that they study and learn to code so that they can understand some of the constraints that exist in the medium. Erik Spiekermann adds another very compelling reason to my list. Communication.
 

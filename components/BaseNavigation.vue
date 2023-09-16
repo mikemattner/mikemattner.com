@@ -25,8 +25,13 @@
 </template>
 
 <script setup lang="ts">
-import { useMediaQuery } from '@vueuse/core';
-const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+import { useBreakpoints } from '@vueuse/core';
+
+const breakpoints = useBreakpoints({
+  tablet: 640,
+});
+
+const isLargeScreen = breakpoints.greater('tablet');
 
 const navigationList: NavigationList[] = [
   {
@@ -112,7 +117,8 @@ const navigationList: NavigationList[] = [
     }
 
     .navigation-list {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(80px, 1fr));
       gap: var(--sizing-xxl);
       margin: 0;
       padding: 0;
@@ -124,14 +130,6 @@ const navigationList: NavigationList[] = [
         align-items: center;
         margin: 0;
         padding: 0;
-
-        @media (min-width: 511px) and (max-width: 715px) {
-          justify-content: flex-end;
-        }
-
-        @media (min-width: 716px) {
-          justify-content: flex-end;
-        }
 
         &-link {
           text-decoration: none;

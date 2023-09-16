@@ -4,7 +4,7 @@
       <div class="home-layout__hero">
         <div class="home-greeting flow">
           <h1 class="main-lede">
-            <ProfileImage image="/images/mike-profile-three.jpg" is-blob class="profile-image" />
+            <ProfileImage image="/images/mike-apples.webp" is-blob class="profile-image" />
             <span>Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</span>
           </h1>
           <p class="intro">
@@ -183,8 +183,8 @@ const posts = computed(() => {
     @media (max-width: 715px) {
       width: 150px;
     }
-    @media (max-width: 500px) {
-      width: 120px;
+    @media (max-width: 510px) {
+      width: 100%;
     }
   }
 }

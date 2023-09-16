@@ -4,6 +4,8 @@ date: 2016-12-06
 type: link
 description: 'The fact that liberalism has become rote is central to our problem.'
 link: https://niskanencenter.org/blog/revitalizing-liberalism-age-brexit-trump/
+tag:
+    - Politics
 ---
 > Hayek is saying that his big book restating some “old truths” was necessary in 1959 because making the case for liberalism is a Sisyphean task. If the old truths are not updated for each new age, they will slip from our grasp and lose our allegiance. The terms in which those truths have been couched will become hollow, potted mottoes, will fail to galvanize, inspire, and move us. The old truths will remain truths, but they’ll be dismissed and neglected as mere dogma, noise. And the liberal, open society will again face a crisis of faith.
 > 

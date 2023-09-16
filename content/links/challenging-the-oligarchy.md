@@ -4,6 +4,8 @@ date: 2015-12-05
 type: link
 description: 'Income inequality is an increasingly difficult problem to pin down.'
 link: http://www.nybooks.com/articles/2015/12/17/robert-reich-challenging-oligarchy/
+tag:
+    - Politics
 ---
 Income inequality is an increasingly difficult problem to pin down, but it appears it is not what it seems. See Paul Krugman’s review of *Saving Capitalism: For the Many, Not the Few* by Robert B. Reich.
 
