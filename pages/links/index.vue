@@ -101,7 +101,7 @@ const links = computed<Link[]>(() => {
 
   .intro {
     letter-spacing: 0.01em;
-    font-weight: 300;
+    font-weight: 100;
     font-size: var(--size-step-2);
     line-height: 1.5;
   }
