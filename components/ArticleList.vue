@@ -1,7 +1,7 @@
 <template>
   <section class="article-list__section">
     <template v-if="!listAll">
-      <ul class="article-list separator">
+      <ul class="article-list">
         <li v-for="post in posts" :key="post.title">
           <ArticleListItem :post="post" />
         </li>
@@ -10,7 +10,7 @@
     <template v-else>
       <div v-for="(item, index) in sortedPosts" :key="index" class="layout year-group">
         <h3 class="year-header bar-right">{{ item.year }}</h3>
-        <ul class="article-list separator">
+        <ul class="article-list">
           <li v-for="post in item.posts" :key="post.title">
             <ArticleListItem :post="post" />
           </li>
@@ -77,11 +77,19 @@ onMounted(() => {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: var(--sizing-lg);
 
-  &.separator {
-    li {
-      border-bottom: 1px solid var(--border-color);
-    }
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 766px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 499px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

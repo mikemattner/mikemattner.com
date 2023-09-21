@@ -24,11 +24,19 @@ const props = defineProps({
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: var(--sizing-lg);
 
-  &.separator {
-    li {
-      border-bottom: 1px solid var(--border-color);
-    }
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 766px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 499px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
