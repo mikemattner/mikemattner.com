@@ -83,6 +83,8 @@ html.light {
     --image-background: var(--color-light-bg);
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
+    --block-quote-bg: var(--background-color);
+    --code-bg: hsl(300, 71%, 5%);
 }
   
 html.dark {
@@ -95,4 +97,6 @@ html.dark {
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-yellow-light);
+    --block-quote-bg: hsl(300, 71%, 5%);
+    --code-bg: hsl(300, 71%, 5%);
 }

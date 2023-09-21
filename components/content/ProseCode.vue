@@ -64,8 +64,9 @@ const languageText = computed(() => (props.language ? languageMap[props.language
 <style lang="scss" scoped>
 .code-container {
   position: relative;
-  font-size: 1rem;
-  background-color: #000;
+  font-size: var(--size-step--1);
+  border-left: 4px solid var(--color-highlight);
+  background-color: var(--code-bg);
   padding: 0;
   border-radius: var(--sizing-sm);
   overflow-x: auto;
