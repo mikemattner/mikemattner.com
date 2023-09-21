@@ -1,11 +1,11 @@
 <template>
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
+      <time><Icon name="ri:file-list-2-line" /> {{ formatDate(post.date) }}</time>
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
       </div>
-      <time>{{ formatDate(post.date) }}</time>
     </NuxtLink>
   </div>
 </template>
@@ -21,11 +21,10 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .article-list-item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sizing-md);
+  height: 100%;
 
   &__link {
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--sizing-md);
@@ -33,19 +32,16 @@ const props = defineProps({
     color: inherit;
     padding: var(--sizing-xxl) var(--sizing-lg);
     transition: var(--transition);
+    background-color: var(--block-quote-bg);
+    border-radius: var(--sizing-sm);
 
     h3 {
       transition: var(--transition);
     }
 
-    @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-    }
-
     &:hover {
       background-color: var(--background-color-t);
-      color: var(--color-primary);
+      color: var(--font-color);
 
       h3 {
         color: var(--color-primary);
@@ -58,11 +54,12 @@ const props = defineProps({
   }
 
   time {
-    font-size: var(--size-step--1);
-
-    @media (min-width: 768px) {
-      text-align: right;
-    }
+    font-size: var(--size-step--2);
+    text-transform: uppercase;
+    margin-bottom: var(--sizing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
   }
 }
 </style>
