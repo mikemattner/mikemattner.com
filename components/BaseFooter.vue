@@ -126,6 +126,8 @@ const theYear = computed<string>(() => {
     }
 
     @media (max-width: 715px) {
+      width: 100%;
+
       li {
         width: 100%;
       }
