@@ -2,18 +2,18 @@
   <main class="home-page">
     <div class="home-layout">
       <div class="home-layout__hero">
+        <h1 class="main-lede">
+          <ProfileImage image="/images/mike-apples.webp" is-blob class="profile-image" />
+          <span class="introduction">Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</span>
+        </h1>
         <div class="home-greeting flow">
-          <h1 class="main-lede">
-            <ProfileImage image="/images/mike-apples.webp" is-blob class="profile-image" />
-            <span>Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</span>
-          </h1>
           <p class="intro">
-            I&rsquo;m a <strong>UI designer <em>&amp;</em> developer</strong> from Michigan. I am currently working at
-            AccuLynx as a Sr. UI Engineer.
+            I&rsquo;m a <strong>UI designer &amp; developer</strong> from Michigan. I am currently working at AccuLynx
+            as a Sr. UI Engineer.
           </p>
           <p class="intro">
-            I&rsquo;ve previously worked as digital designer and manager of creatives, as well as a UX/UI developer at
-            an advertising agency.
+            I&rsquo;ve previously worked as <strong>digital designer</strong> and manager of creatives, as well as a
+            UX/UI developer at an advertising agency.
           </p>
           <p class="intro">
             In a former life I worked within the entire gamut of skills in what was once called digital design including
@@ -116,22 +116,6 @@ const posts = computed(() => {
     }
   }
 
-  .main-lede {
-    font-variation-settings: 'wdth' 100;
-    font-size: clamp(40px, 8vw, 95px);
-    line-height: 1;
-    letter-spacing: 0.025em;
-    color: var(--headline-font-color);
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-lg);
-
-    @media (max-width: 500px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
   .home-greeting {
     z-index: 2;
     align-self: center;
@@ -144,7 +128,7 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 1 / -1;
+      grid-column: 3 / -3;
       align-self: center;
     }
     @media (max-width: 1052px) {
@@ -153,7 +137,7 @@ const posts = computed(() => {
 
     .intro {
       letter-spacing: 0.01em;
-      font-weight: 300;
+      font-weight: 100;
       font-size: var(--size-step-2);
       line-height: 1.5;
     }
@@ -175,16 +159,53 @@ const posts = computed(() => {
     gap: var(--sizing-md);
   }
 
+  .main-lede {
+    font-variation-settings: 'wdth' 100;
+    font-size: clamp(40px, 8vw, 95px);
+    line-height: 1;
+    letter-spacing: 0.025em;
+    color: var(--headline-font-color);
+    align-items: center;
+    gap: var(--sizing-lg);
+    display: grid;
+    grid-template-columns: subgrid;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 1053px) {
+      grid-column: 1 / -1;
+      align-self: center;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  .introduction {
+    @media (min-width: 1053px) {
+      grid-column: 7 / -1;
+      align-self: center;
+      grid-row: 1 / span 3;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
+    }
+  }
   .profile-image {
     aspect-ratio: 1;
-    width: 20%;
+    width: 100%;
     display: inline-flex;
 
-    @media (max-width: 715px) {
-      width: 150px;
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 6;
+      align-self: center;
+      grid-row: 1 / span 3;
     }
-    @media (max-width: 510px) {
-      width: 100%;
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
     }
   }
 }

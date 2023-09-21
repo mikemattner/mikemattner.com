@@ -4,10 +4,7 @@
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
           <h1>Writing</h1>
-          <p class="intro">
-            Some things I've written about over the years on topics like my career, my personal updates, and on occasion
-            a little politics.
-          </p>
+          <p class="intro">Some things I've written about over the years on several unrelated topics.</p>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" list-all />
@@ -104,7 +101,7 @@ const posts = computed<Post[]>(() => {
 
   .intro {
     letter-spacing: 0.01em;
-    font-weight: 300;
+    font-weight: 100;
     font-size: var(--size-step-2);
     line-height: 1.5;
   }
