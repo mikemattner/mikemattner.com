@@ -68,12 +68,12 @@ useHead({
     gap: var(--sizing-md);
   }
 
-  @media (max-width: 1323px) {
+  @media (max-width: 1000px) {
     gap: var(--sizing-xl);
     grid-template-columns: repeat(6, 1fr);
   }
 
-  @media (min-width: 1324px) {
+  @media (min-width: 1001px) {
     display: grid;
     row-gap: var(--sizing-xxl);
     grid-template-columns: repeat(28, 1fr);
@@ -94,7 +94,7 @@ useHead({
       grid-row: 1;
     }
 
-    @media (min-width: 1324px) {
+    @media (min-width: 1001px) {
       grid-column: 1 / -1;
       grid-row: 1;
     }
@@ -113,7 +113,7 @@ useHead({
       grid-row: 3;
     }
 
-    @media (min-width: 1324px) {
+    @media (min-width: 1001px) {
       grid-column: 6 / span 18;
       grid-row: 2;
     }
@@ -137,7 +137,7 @@ useHead({
       grid-row: 4;
     }
 
-    @media (min-width: 1324px) {
+    @media (min-width: 1001px) {
       grid-column: 6 / span 18;
       grid-row: 3;
     }
@@ -154,7 +154,7 @@ useHead({
       grid-row: 5;
     }
 
-    @media (min-width: 1324px) {
+    @media (min-width: 1001px) {
       grid-column: 1 / span 28;
       grid-row: 4;
     }
@@ -168,12 +168,12 @@ useHead({
     grid-column: 1 / span 4;
     grid-row: 2;
 
-    @media (min-width: 1324px) {
+    @media (min-width: 1001px) {
       grid-column: 1 / span 4;
       grid-row: 2;
     }
 
-    @media (max-width: 1323px) {
+    @media (max-width: 1000px) {
       grid-column: 1 / span 6;
       grid-row: 2;
       display: grid;

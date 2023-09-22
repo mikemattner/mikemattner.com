@@ -103,7 +103,7 @@ const links = computed<Link[]>(() => {
     letter-spacing: 0.01em;
     font-weight: 100;
     font-size: var(--size-step-2);
-    line-height: 1.5;
+    line-height: 1.3;
   }
 
   .button-group {

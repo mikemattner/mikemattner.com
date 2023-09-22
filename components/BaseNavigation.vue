@@ -3,7 +3,7 @@
     <div class="base-navigation__container">
       <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
 
-      <nav class="base-navigation__main">
+      <nav class="base-navigation__controls">
         <ul class="navigation-list">
           <li class="navigation-list__item" v-for="item in navigationList" :key="item.title">
             <NuxtLink
@@ -18,21 +18,13 @@
             </NuxtLink>
           </li>
         </ul>
+        <ThemeSwitcher />
       </nav>
-      <ThemeSwitcher v-if="isLargeScreen" />
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import { useBreakpoints } from '@vueuse/core';
-
-const breakpoints = useBreakpoints({
-  tablet: 640,
-});
-
-const isLargeScreen = breakpoints.greater('tablet');
-
 const navigationList: NavigationList[] = [
   {
     title: 'Writing',
@@ -75,14 +67,14 @@ const navigationList: NavigationList[] = [
     margin-inline: auto;
     gap: var(--sizing-xl);
 
-    @media (min-width: 511px) {
+    @media (min-width: 651px) {
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
     }
 
-    @media (max-width: 510px) {
+    @media (max-width: 650px) {
       flex-direction: column;
       justify-content: center;
       gap: var(--sizing-xl);
@@ -106,45 +98,62 @@ const navigationList: NavigationList[] = [
     align-items: center;
   }
 
-  &__main {
+  &__controls {
+    display: grid;
+    align-items: stretch;
+    justify-items: end;
+    gap: var(--sizing-xxl);
+    grid-template-columns: repeat(3, minmax(80px, 1fr)) auto;
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+
+    @media (min-width: 716px) {
+      margin-left: auto;
+      justify-content: space-between;
+    }
+
+    .theme-toggle {
+      align-self: self-end;
+    }
+  }
+
+  .navigation-list {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / span 3;
+    gap: var(--sizing-xxl);
+    margin: 0;
+    padding: 0;
+    list-style: none;
     font-size: var(--size-step--1);
     text-transform: uppercase;
     font-variation-settings: 'wdth' 90;
     letter-spacing: 0.1em;
 
-    @media (min-width: 716px) {
-      margin-left: auto;
-    }
-
-    .navigation-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(80px, 1fr));
-      gap: var(--sizing-xxl);
+    &__item {
       margin: 0;
       padding: 0;
-      list-style: none;
 
-      &__item {
+      &-link {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0;
-        padding: 0;
-
-        &-link {
-          text-decoration: none;
-        }
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
       }
     }
+  }
 
-    .router-link-active,
-    .active-path {
-      font-weight: 700;
-      color: var(--color-primary);
+  .router-link-active,
+  .active-path {
+    font-weight: 700;
+    color: var(--color-primary);
 
-      &:hover {
-        color: var(--color-highlight);
-      }
+    &:hover {
+      color: var(--color-highlight);
     }
   }
 }
