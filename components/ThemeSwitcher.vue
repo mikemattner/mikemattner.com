@@ -38,7 +38,7 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 
   color: var(--font-color);
 
-  background: var(--block-quote-bg);
+  background: transparent;
   border: 0;
   padding: 0;
 

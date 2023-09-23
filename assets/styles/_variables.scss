@@ -1,6 +1,5 @@
 :root {
     // Typography
-    // --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
     --sans-font-family: 'Bricolage', 'Mona Sans', 'Inter', Helvetica, sans-serif;
     --serif-font-family: Georgia, serif;
     --code-font-family: 'JetBrains Mono', monospace;
@@ -42,16 +41,19 @@
     --transition-slow-ease: all 1.25s cubic-bezier(.62,.16,.13,1.01);
 
     // Color palette
-    --color-dark: hsl(300, 71%, 3%); // hsl(240, 9%, 9%);
+    --color-dark-hsl: 300, 71%, 3%;
+    --color-dark: hsl(300, 71%, 3%);
     --color-dark-t: hsla(300, 71%, 3%, 80%);
     --color-dark-bg-border: hsl(300, 71%, 3%);
 
+    --color-light-hsl: 0, 0%, 94%;
     --color-light: hsl(0, 0%, 94%);
     --color-light-t: hsla(0, 0%, 94%, 75%);
     --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 98%);
     --color-light-border-t: hsla(0, 0%, 94%, 25%);
 
+    --color-primary-hsl: 288, 69%, 54%;
     --color-primary: hsl(288, 69%, 54%);//hsl(353, 86%, 54%);
     --color-primary-hover: hsla(288, 69%, 44%, 100%);
     --color-primary-hover-t: hsla(288, 69%, 54%, 30%);
@@ -63,14 +65,23 @@
     --color-middle-hover: hsla(300, 71%, 6%);
     --color-middle-gray-t: hsla(300, 71%, 9%, 40%);
 
+    --color-white-hsl: 0, 0%, 100%;
+    --color-black-hsl: 0, 0%, 0%;
+
     // Baseline theme colors - dark
     --background-color: var(--color-dark);
-    --background-border-color: var(--color-dark-bg-border);
     --font-color: var(--color-light-t);
     --headline-font-color: var(--color-light);
+    --background-border-color: var(--color-dark-bg-border);
     --border-color: hsl(240, 9%, 16%);
     --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
     --image-background: var(--color-primary);
+    --background-color-t: var(--color-dark-t);
+    --color-highlight: var(--color-yellow-light);
+    --block-quote-bg: hsl(300, 71%, 6%);
+    --code-bg: hsl(300, 71%, 4%);
+    --nav-item-background-color: hsla(var(--color-white-hsl), 0.1);
+    --nav-item-background-hover-color: hsla(var(--color-white-hsl), 0.3);
 }
 
 html.light {
@@ -83,8 +94,9 @@ html.light {
     --image-background: var(--color-light-bg);
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
-    --block-quote-bg: var(--background-color);
-    --code-bg: hsl(300, 71%, 5%);
+    --block-quote-bg: hsla(var(--color-white-hsl), 0.5);
+    --code-bg: hsla(var(--color-black-hsl), 0.75);
+    --box-shadow: 0 0 30px hsla(var(--color-black-hsl), 0.3);
 }
   
 html.dark {
@@ -97,6 +109,7 @@ html.dark {
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-yellow-light);
-    --block-quote-bg: hsl(300, 71%, 6%);
-    --code-bg: hsl(300, 71%, 4%);
+    --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
+    --code-bg: hsla(var(--color-black-hsl), 0.5);
+    --box-shadow: 0 0 30px hsla(var(--color-black-hsl), 0.3);
 }
