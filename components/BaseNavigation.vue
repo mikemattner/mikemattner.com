@@ -27,13 +27,17 @@
 <script setup lang="ts">
 const navigationList: NavigationList[] = [
   {
+    title: 'Home',
+    url: '/',
+  },
+  {
     title: 'Writing',
     url: '/writing',
   },
-  {
-    title: 'Links',
-    url: '/links',
-  },
+  // {
+  //   title: 'Links',
+  //   url: '/links',
+  // },
   {
     title: 'About',
     url: '/about',
@@ -77,16 +81,15 @@ const navigationList: NavigationList[] = [
     @media (max-width: 650px) {
       flex-direction: column;
       justify-content: center;
-      gap: var(--sizing-xl);
     }
 
     @media (min-width: 716px) {
       background-color: var(--background-color-t);
       backdrop-filter: blur(10px);
       border: 1px solid var(--color-light-border-t);
-      border-radius: var(--sizing-sm);
       padding: 1.5rem 2rem;
       max-width: var(--max-width-nav);
+      gap: var(--sizing-xxxl);
     }
   }
 
@@ -100,19 +103,11 @@ const navigationList: NavigationList[] = [
 
   &__controls {
     display: grid;
-    align-items: stretch;
-    justify-items: end;
+    align-items: center;
+    justify-items: start;
     gap: var(--sizing-xxl);
-    grid-template-columns: repeat(3, minmax(80px, 1fr)) auto;
-
-    @media (max-width: 650px) {
-      width: 100%;
-    }
-
-    @media (min-width: 716px) {
-      margin-left: auto;
-      justify-content: space-between;
-    }
+    grid-template-columns: 2fr auto;
+    flex-grow: 1;
 
     .theme-toggle {
       align-self: self-end;
@@ -121,9 +116,9 @@ const navigationList: NavigationList[] = [
 
   .navigation-list {
     display: grid;
-    grid-template-columns: subgrid;
-    grid-column: 1 / span 3;
-    gap: var(--sizing-xxl);
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
+    grid-column: 1;
+    gap: var(--sizing-xl);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -140,17 +135,17 @@ const navigationList: NavigationList[] = [
         display: flex;
         justify-content: center;
         align-items: center;
-        text-decoration: none;
         width: 100%;
         height: 100%;
+        text-decoration-color: transparent;
       }
     }
   }
 
   .router-link-active,
   .active-path {
-    font-weight: 700;
-    color: var(--color-primary);
+    font-weight: 900;
+    text-decoration-color: var(--color-highlight);
 
     &:hover {
       color: var(--color-highlight);

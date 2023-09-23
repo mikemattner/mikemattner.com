@@ -95,12 +95,5 @@ onMounted(() => {
 
 .year-header {
   margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
-
-  // @media (min-width: 716px) {
-  //   position: sticky;
-  //   top: 0;
-  //   background-color: var(--color-dark-t);
-  //   backdrop-filter: blur(10px);
-  // }
 }
 </style>
