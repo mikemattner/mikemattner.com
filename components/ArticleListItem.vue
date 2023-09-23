@@ -1,7 +1,7 @@
 <template>
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
-      <time><Icon name="ri:file-list-2-line" /> {{ formatDate(post.date) }}</time>
+      <time><Icon :name="icon" /> {{ formatDate(post.date) }}</time>
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
@@ -16,6 +16,11 @@ import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
+});
+
+const icon = computed<string>(() => {
+  if (props.post.type === 'link') return 'ri:external-link-line';
+  return 'ri:file-list-2-line';
 });
 </script>
 
@@ -34,14 +39,16 @@ const props = defineProps({
     transition: var(--transition);
     background-color: var(--block-quote-bg);
     border-radius: var(--sizing-sm);
+    box-shadow: 0 0 0 hsla(var(--color-black-hsl), 0);
 
     h3 {
       transition: var(--transition);
     }
 
     &:hover {
-      background-color: var(--background-color-t);
       color: var(--font-color);
+      transform: scale(1.05);
+      box-shadow: var(--box-shadow);
 
       h3 {
         color: var(--color-primary);
@@ -60,6 +67,7 @@ const props = defineProps({
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
+    color: var(--color-highlight);
   }
 }
 </style>

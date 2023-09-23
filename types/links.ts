@@ -7,3 +7,12 @@ export interface Link extends ParsedContent {
   tag: string[];
   link: string;
 }
+
+export interface SortedLinkItem {
+  year: string;
+  links: Link[];
+}
+
+export interface SortedLinks {
+  [key: string]: SortedLinkItem;
+}

@@ -188,7 +188,7 @@ useHead({
   display: inline-block;
   padding: 3px;
   background-color: var(--color-primary);
-  color: var(--color-dark);
+  color: hsl(var(--color-white-hsl));
   line-height: 1;
   text-decoration: none;
   margin-left: 2px;
