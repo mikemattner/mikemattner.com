@@ -24,6 +24,11 @@
             <p>No content found.</p>
           </template>
         </ContentRenderer>
+        <div v-if="data.link" class="article-link">
+          <BaseButton :href="data.link" variant="outline" size="md" color="primary">
+            Read More <Icon name="ri:external-link-fill" />
+          </BaseButton>
+        </div>
         <ArticleNavigation class="prev-next" />
       </article>
     </template>
@@ -162,7 +167,11 @@ useHead({
     }
   }
 
-  .prev-next {
+  .article-link {
+    padding-bottom: 2rem;
+    grid-column: 3 / span 4;
+    grid-row: 3;
+
     @media (max-width: 988px) {
       grid-column: 1 / span 6;
       grid-row: 4;
@@ -174,8 +183,25 @@ useHead({
     }
 
     @media (min-width: 1001px) {
-      grid-column: 1 / span 28;
+      grid-column: 6 / span 18;
       grid-row: 3;
+    }
+  }
+
+  .prev-next {
+    @media (max-width: 988px) {
+      grid-column: 1 / span 6;
+      grid-row: 5;
+    }
+
+    @media (min-width: 989px) {
+      grid-column: 1 / span 6;
+      grid-row: 5;
+    }
+
+    @media (min-width: 1001px) {
+      grid-column: 1 / span 28;
+      grid-row: 4;
     }
   }
 }
@@ -187,7 +213,7 @@ useHead({
 :deep(sup a) {
   display: inline-block;
   padding: 3px;
-  background-color: var(--color-primary);
+  background-color: hsla(var(--color-primary-hsl), 0.75);
   color: hsl(var(--color-white-hsl));
   line-height: 1;
   text-decoration: none;
@@ -197,6 +223,7 @@ useHead({
   border-radius: 2px;
 
   &:hover {
+    color: hsl(var(--color-white-hsl));
     background-color: var(--color-primary);
   }
 }

@@ -41,7 +41,7 @@ main {
     }
 }
   
-a {
+a:not(.button--link) {
     color: var(--headline-font-color);
     text-decoration-color: var(--color-primary);
     text-decoration-thickness: 1px;
