@@ -62,7 +62,7 @@
     --color-yellow-light: hsl(64, 89%, 45%);
     
     --color-middle-gray: hsl(300, 71%, 9%);
-    --color-middle-hover: hsla(300, 71%, 6%);
+    --color-middle-hover: hsla(300, 71%, 9%);
     --color-middle-gray-t: hsla(300, 71%, 9%, 40%);
 
     --color-white-hsl: 0, 0%, 100%;
@@ -78,10 +78,9 @@
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-yellow-light);
-    --block-quote-bg: hsl(300, 71%, 6%);
-    --code-bg: hsl(300, 71%, 4%);
-    --nav-item-background-color: hsla(var(--color-white-hsl), 0.1);
-    --nav-item-background-hover-color: hsla(var(--color-white-hsl), 0.3);
+    --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
+    --code-bg: hsla(var(--color-black-hsl), 0.5);
+    --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
 }
 
 html.light {
@@ -96,7 +95,7 @@ html.light {
     --color-highlight: var(--color-primary);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.5);
     --code-bg: hsla(var(--color-black-hsl), 0.75);
-    --box-shadow: 0 0 30px hsla(var(--color-black-hsl), 0.3);
+    --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
 }
   
 html.dark {
@@ -111,5 +110,5 @@ html.dark {
     --color-highlight: var(--color-yellow-light);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.5);
-    --box-shadow: 0 0 30px hsla(var(--color-black-hsl), 0.3);
+    --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
 }

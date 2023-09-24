@@ -20,6 +20,11 @@
             video editing, motion graphics, and more traditional graphic design. That set of skills is now a bit
             atrophied.
           </p>
+          <div class="button-group">
+            <BaseButton to="/about" variant="link" size="md" color="primary">
+              <span>Read more about me</span> <Icon name="ri:arrow-right-line" />
+            </BaseButton>
+          </div>
         </div>
       </div>
       <div class="home-layout__content">

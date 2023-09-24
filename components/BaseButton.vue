@@ -111,7 +111,6 @@ const attributes = computed(() => {
   font-family: var(--sans-font-family);
   line-height: 1;
   text-align: center;
-  text-decoration: none;
   transition: var(--transition);
 
   &:focus-visible {
@@ -194,6 +193,7 @@ const attributes = computed(() => {
   &.button--text {
     background-color: transparent;
     color: var(--button-outline-color-text);
+    text-decoration: none;
 
     &:hover:not(:disabled) {
       color: var(--button-outline-color-text-hover);
@@ -207,6 +207,7 @@ const attributes = computed(() => {
     background-color: var(--button-outline-background-color);
     color: var(--button-outline-color-text);
     box-shadow: var(--button-outline-color);
+    text-decoration: none;
 
     &:focus-visible {
       box-shadow: var(--button-focus-shadow), var(--button-outline-color);
@@ -223,6 +224,7 @@ const attributes = computed(() => {
   &.button--solid {
     background-color: var(--button-solid-background-color);
     color: var(--button-solid-color-text);
+    text-decoration: none;
 
     &:hover:not(:disabled) {
       color: var(--button-solid-color-text);
@@ -233,17 +235,17 @@ const attributes = computed(() => {
 
   &.button--link {
     background-color: transparent;
-    color: var(--button-outline-color-text);
     padding: 0;
-    text-decoration: underline 0.2ex var(--color-primary);
-    text-underline-offset: 0.3ex;
-    text-decoration-skip-ink: auto;
-    transition: var(--transition-fast);
+    color: var(--headline-font-color);
+    text-decoration-color: var(--color-primary);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-style: wavy;
+    transition: var(--transition);
 
-    &:hover:not(:disabled) {
-      color: var(--button-outline-color-text);
-      background-color: transparent;
-      text-underline-offset: 0.4ex;
+    &:hover {
+      text-decoration-color: var(--color-highlight);
+      color: var(--color-highlight);
     }
 
     --button-loader-color: var(--button-outline-color-text);
