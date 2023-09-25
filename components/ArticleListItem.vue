@@ -6,6 +6,7 @@
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
       </div>
+      <div class="article-list-item__read-more"><span>Read more</span> <Icon name="ri:arrow-right-line" /></div>
     </NuxtLink>
   </div>
 </template>
@@ -45,6 +46,19 @@ const icon = computed<string>(() => {
       transition: var(--transition);
     }
 
+    .article-list-item__read-more {
+      font-size: var(--size-step--1);
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: var(--sizing-sm);
+      color: var(--color-primary);
+
+      svg {
+        transition: var(--transition-cubic);
+      }
+    }
+
     &:hover {
       color: var(--font-color);
       transform: scale(1.05);
@@ -52,6 +66,12 @@ const icon = computed<string>(() => {
 
       h3 {
         color: var(--color-primary);
+      }
+
+      .article-list-item__read-more {
+        svg {
+          transform: translateX(var(--sizing-sm)) scale(1.1);
+        }
       }
     }
   }
@@ -62,12 +82,17 @@ const icon = computed<string>(() => {
 
   time {
     font-size: var(--size-step--2);
-    text-transform: uppercase;
-    margin-bottom: var(--sizing-lg);
+    font-family: var(--code-font-family);
+    margin-bottom: var(--sizing-md);
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
     color: var(--color-highlight);
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 }
 </style>

@@ -5,7 +5,7 @@
         <aside class="article-meta">
           <div class="article-meta-block">
             <h4 class="eyebrow">Posted</h4>
-            <p>{{ formatDate(data.date) }}</p>
+            <time>{{ formatDate(data.date) }}</time>
           </div>
           <div class="article-meta-block">
             <h4 class="eyebrow">Topic</h4>
@@ -25,9 +25,12 @@
           </template>
         </ContentRenderer>
         <div v-if="data.link" class="article-link">
-          <BaseButton :href="data.link" variant="outline" size="md" color="primary">
-            Read More <Icon name="ri:external-link-fill" />
-          </BaseButton>
+          <div class="link-icon">
+            <Icon name="ri:external-link-line" />
+          </div>
+          <div class="text">
+            Read more at <a :href="data.link">{{ data.link }}</a>
+          </div>
         </div>
         <ArticleNavigation class="prev-next" />
       </article>
@@ -103,13 +106,13 @@ useHead({
     grid-column: 3 / span 4;
     grid-row: 2;
 
-    @media (max-width: 988px) {
+    @media (max-width: 767px) {
       grid-column: 1 / span 6;
       grid-row: 3;
     }
 
-    @media (min-width: 989px) {
-      grid-column: 1 / span 6;
+    @media (min-width: 768px) {
+      grid-column: 2 / span 4;
       grid-row: 3;
     }
 
@@ -127,7 +130,6 @@ useHead({
     border-top: 1px solid var(--border-color);
     padding: var(--sizing-md) 0;
     font-size: var(--size-step--1);
-    font-weight: 700;
     grid-column: 1 / span 4;
     grid-row: 2;
 
@@ -150,10 +152,15 @@ useHead({
       }
     }
 
+    time {
+      font-family: var(--code-font-family);
+    }
+
     .tag-list {
       margin: 0;
       padding: 0;
       list-style: none;
+      font-family: var(--code-font-family);
     }
 
     @media (min-width: 989px) {
@@ -168,17 +175,36 @@ useHead({
   }
 
   .article-link {
-    padding-bottom: 2rem;
+    padding: 0;
     grid-column: 3 / span 4;
     grid-row: 3;
+    display: flex;
+    align-items: stretch;
+    background-color: var(--block-quote-bg);
+    border-radius: 0 var(--sizing-sm) var(--sizing-sm) 0;
 
-    @media (max-width: 988px) {
+    .link-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0.5rem;
+      font-size: var(--size-step-1);
+      background-color: var(--color-primary);
+      color: var(--color-light);
+    }
+
+    .text {
+      padding: 1rem 1.5rem;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 767px) {
       grid-column: 1 / span 6;
       grid-row: 4;
     }
 
-    @media (min-width: 989px) {
-      grid-column: 1 / span 6;
+    @media (min-width: 768px) {
+      grid-column: 2 / span 4;
       grid-row: 4;
     }
 
