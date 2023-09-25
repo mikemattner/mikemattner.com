@@ -42,12 +42,15 @@ const [prev, next] = await queryContent(query.value)
 
 <style lang="scss" scoped>
 .article-navigation {
-  align-items: center;
-  justify-content: space-between;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--border-color);
   margin-block-start: 4rem;
+
+  @media (min-width: 500px) {
+    align-items: center;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .prev-article {
@@ -56,17 +59,25 @@ const [prev, next] = await queryContent(query.value)
   flex-direction: column;
   justify-content: flex-start;
   align-self: self-start;
-  height: 100%;
   padding: var(--sizing-xxxl) var(--sizing-md);
+
+  @media (min-width: 500px) {
+    height: 100%;
+  }
 }
 .next-article {
   grid-column: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  height: 100%;
+  align-items: flex-start;
   padding: var(--sizing-xxxl) var(--sizing-md);
-  border-left: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  @media (min-width: 500px) {
+    border-top: none;
+    border-left: 1px solid var(--border-color);
+    height: 100%;
+    text-align: right;
+    align-items: flex-end;
+  }
 }
 </style>

@@ -1,3 +1,6 @@
+// * {
+//     outline: 0.5px solid red;
+// }
 body {
     background: var(--background-border-color);
     color: var(--font-color);
@@ -10,9 +13,9 @@ body {
 
 .app-layout {
     min-height: 100vh;
-    border-radius: 10px;
     display: grid;
     margin-inline: auto;
+    grid-template-rows: auto minmax(600px, 1fr) auto;
 
     @media (min-width: 716px) {
         grid-template-areas: 
@@ -27,7 +30,6 @@ body {
     }
 
     @media (max-width: 715px) {
-        grid-template-rows: auto minmax(600px, 1fr) auto;
         margin: 0;
         overflow: hidden;
     }
