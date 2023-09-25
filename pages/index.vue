@@ -53,10 +53,7 @@ useHead({
 const { data } = await useAsyncData('writing-short', () => queryContent('/writing').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value
-    ?.filter((post) => post.type === 'entry')
-    .filter((post) => !post.draft)
-    .slice(0, 3);
+  return data?.value?.filter((post) => !post.draft).slice(0, 3);
 });
 </script>
 
