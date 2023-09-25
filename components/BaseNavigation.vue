@@ -88,7 +88,7 @@ const navigationList: NavigationList[] = [
       background-color: var(--background-color-t);
       backdrop-filter: blur(10px);
       border: 1px solid var(--color-light-border-t);
-      padding: 1.5rem 2rem;
+      padding: 1rem;
       max-width: var(--max-width-nav);
       gap: var(--sizing-xxxl);
     }
