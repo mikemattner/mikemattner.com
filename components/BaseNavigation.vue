@@ -127,14 +127,12 @@ const navigationList: NavigationList[] = [
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--sizing-md);
   }
 
   .navigation-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(80px, 1fr));
-    grid-column: 1;
-    gap: var(--sizing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-xxl);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -154,13 +152,13 @@ const navigationList: NavigationList[] = [
         width: 100%;
         height: 100%;
         text-decoration-color: transparent;
+        padding: 0.5rem 0.25rem;
       }
     }
   }
 
   .router-link-active,
   .active-path {
-    font-weight: 900;
     text-decoration-color: var(--color-highlight);
 
     &:hover {
