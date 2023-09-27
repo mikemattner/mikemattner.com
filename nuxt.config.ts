@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/styles/app.scss'],
-  modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon', 'nuxt-module-feed'],
+  modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon'],
   content: {
     highlight: {
       theme: 'material-ocean',
@@ -38,13 +38,9 @@ export default defineNuxtConfig({
       anchorLinks: false,
     },
   },
-  feed: {
-    sources: [
-      {
-        path: '/feed.xml', // The route to your feed.
-        type: 'rss2', // Can be: rss2, atom1, json1
-        cacheTime: 60 * 15, // How long should the feed be cached
-      },
-    ],
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml', 'rss.xml'],
+    },
   },
 });

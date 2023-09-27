@@ -36,7 +36,7 @@ const icon = computed<string>(() => {
     gap: var(--sizing-md);
     text-decoration: none;
     color: inherit;
-    padding: var(--sizing-xxl) var(--sizing-lg);
+    padding: var(--sizing-lg);
     transition: var(--transition);
     background-color: var(--block-quote-bg);
     border-radius: var(--sizing-sm);
