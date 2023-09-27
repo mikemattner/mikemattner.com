@@ -19,7 +19,10 @@
             </NuxtLink>
           </li>
         </ul>
-        <ThemeSwitcher />
+        <div class="base-navigation__sub-controls">
+          <RssButton />
+          <ThemeSwitcher />
+        </div>
       </nav>
     </div>
   </header>
@@ -85,10 +88,10 @@ const navigationList: NavigationList[] = [
     }
 
     @media (min-width: 716px) {
-      background-color: var(--background-color-t);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--color-light-border-t);
-      padding: 1rem;
+      // background-color: var(--background-color-t);
+      // backdrop-filter: blur(10px);
+      // border: 1px solid var(--color-light-border-t);
+      // padding: 1rem;
       max-width: var(--max-width-nav);
       gap: var(--sizing-xxxl);
     }
@@ -103,16 +106,28 @@ const navigationList: NavigationList[] = [
   }
 
   &__controls {
-    display: grid;
+    // display: grid;
+    display: flex;
     align-items: center;
-    justify-items: start;
+    justify-content: space-between;
     gap: var(--sizing-xxl);
     grid-template-columns: 2fr auto;
     flex-grow: 1;
 
-    .theme-toggle {
-      align-self: self-end;
+    @media (max-width: 650px) {
+      width: 100%;
     }
+
+    // .theme-toggle {
+    //   align-self: self-end;
+    // }
+  }
+
+  &__sub-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sizing-md);
   }
 
   .navigation-list {
