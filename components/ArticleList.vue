@@ -78,7 +78,7 @@ onMounted(() => {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--sizing-lg);
+  gap: var(--sizing-xl);
 
   @media (min-width: 767px) {
     grid-template-columns: repeat(3, 1fr);

@@ -18,6 +18,8 @@
     "sass-loader": "^13.2.0"
   },
   "dependencies": {
-    "@vueuse/nuxt": "^9.13.0"
+    "@vueuse/nuxt": "^9.13.0",
+    "rss": "^1.2.2",
+    "sitemap": "^7.1.1"
   }
 }
