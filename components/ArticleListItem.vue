@@ -83,7 +83,6 @@ const icon = computed<string>(() => {
   time {
     font-size: var(--size-step--2);
     font-family: var(--code-font-family);
-    margin-bottom: var(--sizing-md);
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);

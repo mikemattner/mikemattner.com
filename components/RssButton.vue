@@ -9,10 +9,10 @@
 <style lang="scss" scoped>
 .rss-button {
   --size: 2.5rem;
-  --icon-fill: var(--font-color);
-  --icon-fill-hover: var(--color-primary);
+  --icon-fill: var(--color-light);
+  --icon-fill-hover: var(--color-light);
 
-  color: var(--font-color);
+  color: var(--icon-fill);
 
   background: transparent;
   border: 0;
@@ -34,6 +34,7 @@
 
   &:hover,
   &:focus-visible {
+    transform: scale(1.2);
     color: var(--icon-fill-hover);
   }
 }

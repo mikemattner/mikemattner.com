@@ -28,7 +28,7 @@ const props = defineProps({
     height: 2rem;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--headline-font-color);
+    background-color: var(--color-light);
     z-index: 10;
     transition: var(--transition-cubic-slow);
     flex: 0 0 2rem;
@@ -40,7 +40,7 @@ const props = defineProps({
     }
 
     .logo-shape {
-      fill: var(--background-color);
+      fill: var(--color-dark);
       transition: var(--transition-cubic-slow);
     }
   }
@@ -53,26 +53,26 @@ const props = defineProps({
     letter-spacing: 0.0125em;
     text-transform: uppercase;
     transition: var(--transition-cubic-slow);
-    color: var(--headline-font-color);
+    color: var(--color-light);
   }
 
   @media (min-width: 511px) {
     &:hover {
-      color: var(--headline-font-color);
+      color: var(--color-light);
 
       .brand-logo__image {
         // border: 2px solid var(--color-primary);
-        background-color: var(--color-primary);
+        // background-color: var(--color-primary);
         transform: rotate(720deg);
         // .logo-shape {
         //   fill: var(--color-highlight);
         // }
       }
-      .brand-logo__type {
-        // font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
-        // color: var(--headline-font-color);
-        color: var(--color-primary);
-      }
+      // .brand-logo__type {
+      //   // font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
+      //   // color: var(--headline-font-color);
+      //   // color: var(--color-primary);
+      // }
     }
   }
   @media (max-width: 510px) {
