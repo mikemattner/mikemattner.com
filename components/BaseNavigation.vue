@@ -53,6 +53,7 @@ const navigationList: NavigationList[] = [
 .base-navigation {
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--color-light-border-t);
+  mix-blend-mode: difference;
 
   @media (min-width: 716px) {
     grid-area: navigation;
@@ -92,7 +93,7 @@ const navigationList: NavigationList[] = [
       // backdrop-filter: blur(10px);
       // border: 1px solid var(--color-light-border-t);
       // padding: 1rem;
-      max-width: var(--max-width-nav);
+      max-width: var(--max-width);
       gap: var(--sizing-xxxl);
     }
   }
@@ -137,9 +138,7 @@ const navigationList: NavigationList[] = [
     padding: 0;
     list-style: none;
     font-size: var(--size-step--1);
-    text-transform: uppercase;
-    font-variation-settings: 'wdth' 90;
-    letter-spacing: 0.1em;
+    font-family: var(--code-font-family);
 
     &__item {
       margin: 0;
@@ -153,17 +152,18 @@ const navigationList: NavigationList[] = [
         height: 100%;
         text-decoration-color: transparent;
         padding: 0.5rem 0.25rem;
+        color: var(--color-light);
+
+        &:hover {
+          text-decoration-color: var(--color-light);
+        }
       }
     }
   }
 
   .router-link-active,
   .active-path {
-    text-decoration-color: var(--color-highlight);
-
-    &:hover {
-      color: var(--color-highlight);
-    }
+    text-decoration-color: var(--color-light);
   }
 }
 </style>

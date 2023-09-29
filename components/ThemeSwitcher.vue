@@ -33,9 +33,9 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 <style lang="scss" scoped>
 .theme-toggle {
   --size: 2.5rem;
-  --icon-fill: var(--font-color);
-  --icon-fill-hover: var(--color-primary);
-
+  --icon-fill: var(--color-light);
+  --icon-fill-hover: var(--color-light);
+  transition: var(--transition-cubic);
   color: var(--font-color);
 
   background: transparent;
@@ -81,6 +81,7 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 
   &:hover,
   &:focus-visible {
+    transform: scale(1.2);
     .moon,
     .sun {
       fill: var(--icon-fill-hover);
