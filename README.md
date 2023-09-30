@@ -32,7 +32,7 @@ Round three of framework based blogging. Remix icons from [icones.js.org](https:
 - [ ] Refine post slug design
 - [ ] Create a generalized notebook content type for scraps of info/links/quotes
 - [ ] Image handling
-- [ ] Integrate [Decap CMS](https://decapcms.org/docs/nuxt/)
+- [x] Integrate [Decap CMS](https://decapcms.org/docs/nuxt/)
 
 ### Package Updates
 
