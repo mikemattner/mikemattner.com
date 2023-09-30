@@ -50,6 +50,7 @@
 <script setup lang="ts">
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
+  script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
 });
 
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
