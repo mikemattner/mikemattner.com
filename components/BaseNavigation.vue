@@ -8,7 +8,7 @@
           <li class="navigation-list__item" v-for="item in navigationList" :key="item.title">
             <NuxtLink
               class="navigation-list__item-link"
-              :class="{ 'active-path': pathIsWriting && item.title === 'Writing' }"
+              :class="{ 'active-path': pathIsWriting && item.title === 'Blog' }"
               variant="text"
               size="xs"
               color="secondary"
@@ -31,7 +31,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 const route = useRoute();
-const pathIsWriting = computed<boolean>(() => route.matched[0].name === 'writing-slug');
+const pathIsWriting = computed<boolean>(() => route.matched[0].name === 'blog-slug');
 
 const navigationList: NavigationList[] = [
   {

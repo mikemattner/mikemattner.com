@@ -18,7 +18,7 @@
 <script setup lang="ts">
 const { path } = useRoute();
 
-type ContentType = 'writing' | 'links';
+type ContentType = 'blog' | 'links';
 
 const props = defineProps({
   content: { type: String as PropType<ContentType>, default: 'writing' },
@@ -26,7 +26,7 @@ const props = defineProps({
 
 const query = computed<string>(() => {
   if (props.content === 'links') return '/links';
-  return '/writing';
+  return '/blog';
 });
 
 const label = computed<string>(() => {

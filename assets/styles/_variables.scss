@@ -84,7 +84,7 @@
 }
 
 html.light {
-    --background-color: #fff;
+    --background-color: var(--background-border-color);
     --font-color: var(--color-dark-t);
     --headline-font-color: var(--color-dark);
     --background-border-color: var(--color-light-bg-border);

@@ -125,7 +125,7 @@ useHead({
   .intro {
     letter-spacing: 0.01em;
     font-weight: 300;
-    font-size: var(--size-step-2);
+    font-size: var(--size-step-1);
     line-height: 1.3;
   }
 

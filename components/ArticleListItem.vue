@@ -64,10 +64,6 @@ const icon = computed<string>(() => {
       transform: scale(1.05);
       box-shadow: var(--box-shadow);
 
-      h3 {
-        color: var(--color-primary);
-      }
-
       .article-list-item__read-more {
         svg {
           transform: translateX(var(--sizing-sm)) scale(1.1);
