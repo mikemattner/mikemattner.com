@@ -21,7 +21,7 @@ useHead({
   title: 'Writing',
 });
 
-const { data } = await useAsyncData('writing-list', () => queryContent('/writing').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog-list', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed<Post[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Post[];

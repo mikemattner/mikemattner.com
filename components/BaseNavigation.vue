@@ -39,8 +39,8 @@ const navigationList: NavigationList[] = [
     url: '/',
   },
   {
-    title: 'Writing',
-    url: '/writing',
+    title: 'Blog',
+    url: '/blog',
   },
   {
     title: 'About',

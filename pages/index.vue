@@ -29,14 +29,13 @@
       </div>
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2 class="bar-right">Writing</h2>
-          <p>Some things I've written about over the years on several unrelated topics.</p>
+          <h2 class="bar-right">On the Blog</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
           <div class="button-group">
-            <BaseButton to="/writing" variant="outline" size="md" color="primary">
-              <span>More Writing</span> <Icon name="ri:arrow-right-line" />
+            <BaseButton to="/blog" variant="outline" size="md" color="primary">
+              <span>Archives</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
@@ -50,7 +49,7 @@ useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });
 
-const { data } = await useAsyncData('writing-short', () => queryContent('/writing').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
   return data?.value?.filter((post) => !post.draft).slice(0, 3);
