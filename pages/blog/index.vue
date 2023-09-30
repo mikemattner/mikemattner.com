@@ -3,8 +3,7 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Writing</h1>
-          <p class="intro">Some things I've written about over the years on several unrelated topics.</p>
+          <h1>Yearly Blog Archives</h1>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" list-all />
@@ -21,7 +20,7 @@ useHead({
   title: 'Writing',
 });
 
-const { data } = await useAsyncData('writing-list', () => queryContent('/writing').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog-list', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed<Post[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Post[];
@@ -74,17 +73,13 @@ const posts = computed<Post[]>(() => {
   }
 
   .content-area {
-    margin: var(--sizing-xxxl) 0 0;
+    margin: 0;
 
     @media (min-width: 1053px) {
       grid-column: 1 / span 28;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
-    }
-
-    @media (max-width: 499px) {
-      padding-top: 2rem;
     }
   }
 

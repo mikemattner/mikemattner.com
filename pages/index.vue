@@ -8,12 +8,15 @@
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
-            I&rsquo;m a <strong>UI designer &amp; developer</strong> from Michigan. I am currently working at AccuLynx
-            as a Sr. UI Engineer.
+            I&rsquo;m a
+            <strong>
+              UI designer<Icon name="ri:layout-2-line" /> &amp; developer<Icon name="ri:javascript-line" />
+            </strong>
+            from Michigan currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
-            I&rsquo;ve previously worked as <strong>digital designer</strong> and manager of creatives, as well as a
-            UX/UI developer at an advertising agency.
+            I&rsquo;ve previously worked as <strong>digital designer<Icon name="ri:brush-line" /></strong> and manager
+            of creatives, as well as a UX/UI developer at an advertising agency.
           </p>
           <p class="intro">
             In a former life I worked within the entire gamut of skills in what was once called digital design including
@@ -22,21 +25,20 @@
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="link" size="md" color="primary">
-              <span>Read more about me</span> <Icon name="ri:arrow-right-line" />
+              <span>Read more ( if you feel like it )</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
       </div>
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2 class="bar-right">Writing</h2>
-          <p>Some things I've written about over the years on several unrelated topics.</p>
+          <h2 class="bar-right">On the Blog</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
           <div class="button-group">
-            <BaseButton to="/writing" variant="outline" size="md" color="primary">
-              <span>More Writing</span> <Icon name="ri:arrow-right-line" />
+            <BaseButton to="/blog" variant="outline" size="md" color="primary">
+              <span>Read the Archives</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
@@ -50,7 +52,7 @@ useHead({
   title: 'UX/UI Designer & Developer in Michigan',
 });
 
-const { data } = await useAsyncData('writing-short', () => queryContent('/writing').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
   return data?.value?.filter((post) => !post.draft).slice(0, 3);
@@ -120,6 +122,19 @@ const posts = computed(() => {
     align-self: center;
     font-size: var(--size-step-1);
     line-height: 1.5;
+
+    svg {
+      fill: var(--color-highlight);
+      color: var(--color-highlight);
+      display: inline-flex;
+      width: 1em;
+      height: 1em;
+      border-radius: 2em 1.4em;
+      vertical-align: middle;
+      margin: -0.1em 0.2em 0 0.1em;
+      transform: scale(1.15);
+      transition: transform 0.2s ease-in-out;
+    }
 
     p {
       --flow-space: 0.75em;
