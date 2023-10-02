@@ -22,6 +22,7 @@ const props = defineProps({
   transition: var(--transition);
   padding: 0;
   gap: 0.5rem;
+  z-index: 1000;
 
   &__image {
     width: 2rem;
