@@ -15,7 +15,7 @@
             from Michigan currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
-            I&rsquo;ve previously worked as <strong>digital designer<Icon name="ri:brush-line" /></strong> and manager
+            I&rsquo;ve previously worked as a <strong>digital designer<Icon name="ri:brush-line" /></strong> and manager
             of creatives, as well as a UX/UI developer at an advertising agency.
           </p>
           <p class="intro">
