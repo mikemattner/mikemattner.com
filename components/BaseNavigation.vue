@@ -3,7 +3,7 @@
     <div class="base-navigation__container">
       <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
 
-      <BaseNavigationButton :nav-open="navOpen" @toggle="toggleNav" />
+      <BaseNavigationButton :nav-open="navOpen" @toggle="toggle" />
 
       <nav class="base-navigation__controls" :class="{ active: navOpen }">
         <ul class="navigation-list">
@@ -17,7 +17,7 @@
               active-class="active-path"
               :to="item.url"
             >
-              {{ item.title }}
+              <span @click="toggle()">{{ item.title }}</span>
             </NuxtLink>
           </li>
         </ul>
@@ -32,6 +32,10 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+import { useMediaQuery } from '@vueuse/core';
+import { useNavigationState } from '@/composables/useNavigationState';
+
+const isMobile = useMediaQuery('(max-width: 715px)');
 const route = useRoute();
 const pathIsWriting = computed<boolean>(() => route.matched[0].name === 'blog-slug');
 
@@ -50,10 +54,12 @@ const navigationList: NavigationList[] = [
   },
 ];
 
-const navOpen = ref<boolean>(false);
+const { navOpen, toggleNav } = useNavigationState();
 
-const toggleNav = () => {
-  navOpen.value = !navOpen.value;
+const toggle = () => {
+  if (isMobile.value) {
+    toggleNav();
+  }
 };
 </script>
 
@@ -133,7 +139,7 @@ const toggleNav = () => {
       flex-direction: column;
       align-items: flex-end;
       justify-content: flex-start;
-      font-size: var(--size-step-1);
+      font-size: var(--size-step-4);
       gap: var(--sizing-sm);
     }
 
