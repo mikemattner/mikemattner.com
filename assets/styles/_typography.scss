@@ -9,24 +9,19 @@ h3 {
 
 .maximal-heading {
   font-size: var(--size-step-7);
-  font-weight: 900;
 }
 
 .very-large-heading {
   font-size: var(--size-step-6);
-  font-weight: 900;
 }
 
 .large-heading {
   font-size: var(--size-step-5);
-  font-weight: 900;
 }
 
 h1,
 .h1-heading {
   font-size: var(--size-step-4);
-  // font-weight: 400;
-  // font-family: var(--serif-font-family);
 }
 
 h2,
@@ -82,6 +77,10 @@ h4,
       left: calc(-3rem + (var(--sizing-md) * -1 ));
     }
   }
+}
+
+.code-font {
+  font-family: var(--code-font-family);
 }
 
 ul,
@@ -177,4 +176,8 @@ code {
 
 em {
   font-variation-settings: 'ital' 10;
+}
+
+strong {
+  font-weight: 900;
 }

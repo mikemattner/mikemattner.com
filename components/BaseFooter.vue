@@ -125,7 +125,7 @@ const theYear = computed<string>(() => {
       grid-template-columns: repeat(4, 170px);
     }
 
-    @media (max-width: 789px) and (min-width: 716px) {
+    @media (max-width: 800px) and (min-width: 716px) {
       display: grid;
       align-items: center;
       grid-template-columns: repeat(2, 170px);

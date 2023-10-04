@@ -43,15 +43,15 @@
     // Color palette
     --color-dark-hsl: 300, 71%, 3%;
     --color-dark: hsl(300, 71%, 3%);
-    --color-dark-t: hsla(300, 71%, 3%, 80%);
+    --color-dark-t: hsla(300, 71%, 3%, 90%);
     --color-dark-bg-border: hsl(300, 71%, 3%);
 
     --color-light-hsl: 0, 0%, 94%;
     --color-light: hsl(0, 0%, 94%);
-    --color-light-t: hsla(0, 0%, 94%, 75%);
+    --color-light-t: hsla(0, 0%, 94%, 90%);
     --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 98%);
-    --color-light-border-t: hsla(0, 0%, 94%, 25%);
+    --color-light-border-t: hsla(0, 0%, 94%, 55%);
 
     --color-primary-hsl: 288, 69%, 54%;
     --color-primary: hsl(288, 69%, 54%);//hsl(353, 86%, 54%);
@@ -80,7 +80,11 @@
     --color-highlight: var(--color-yellow-light);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.5);
+    --font-weight: 100;
+
     --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
+    --box-shadow-short: 0 1px 1px hsla(var(--color-black-hsl), 0.08), 0 2px 2px hsla(var(--color-black-hsl), 0.08), 0 4px 4px hsla(var(--color-black-hsl), 0.08), 0 6px 8px hsla(var(--color-black-hsl), 0.08), 0 8px 16px hsla(var(--color-black-hsl), 0.08);
+    --box-shadow-long: 0 2px 1px hsla(var(--color-black-hsl), 0.08), 0 4px 2px hsla(var(--color-black-hsl), 0.08), 0 8px 4px hsla(var(--color-black-hsl), 0.08), 0 16px 8px hsla(var(--color-black-hsl), 0.08), 0 32px 16px hsla(var(--color-black-hsl), 0.08);
 }
 
 html.light {
@@ -95,7 +99,8 @@ html.light {
     --color-highlight: var(--color-primary);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.5);
     --code-bg: hsla(var(--color-black-hsl), 0.95);
-    --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
+    --box-shadow: var(--box-shadow-short);
+    --font-weight: 300;
 }
   
 html.dark {
@@ -110,5 +115,6 @@ html.dark {
     --color-highlight: var(--color-yellow-light);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.5);
-    --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
+    --box-shadow: var(--box-shadow-short);
+    --font-weight: 300;
 }
