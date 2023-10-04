@@ -8,7 +8,7 @@ body {
     font-size: var(--size-step-0);
     line-height: 1.75;
     font-kerning: normal;
-    font-weight: 300;
+    font-weight: var(--font-weight);
 
     &.no--scroll {
         overflow-y: hidden;
