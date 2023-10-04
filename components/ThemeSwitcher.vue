@@ -42,6 +42,10 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
   border: 0;
   padding: 0;
 
+  @media (max-width: 715px) {
+    --size: 3.5rem;
+  }
+
   inline-size: var(--size);
   block-size: var(--size);
   aspect-ratio: 1;
