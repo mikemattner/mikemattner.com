@@ -9,6 +9,12 @@ body {
     line-height: 1.75;
     font-kerning: normal;
     font-weight: 300;
+
+    &.no--scroll {
+        overflow-y: hidden;
+        position: fixed;
+        width: 100%;
+    }
 }
 
 .app-layout {

@@ -12,6 +12,10 @@
   --icon-fill: var(--color-light);
   --icon-fill-hover: var(--color-light);
 
+  @media (max-width: 715px) {
+    font-size: var(--size-step-1);
+  }
+
   color: var(--icon-fill);
 
   background: transparent;
