@@ -83,7 +83,7 @@ const toggle = () => {
       padding: 0;
 
       @media (max-width: 715px) {
-        transform: translateY(-20px);
+        transform: translateX(20px);
         transition: var(--transition-cubic);
         opacity: 0;
       }
@@ -118,7 +118,7 @@ const toggle = () => {
 
     @media (max-width: 715px) {
       justify-content: flex-end;
-      transform: translateY(-20px);
+      transform: translateX(20px);
       transition: var(--transition-cubic);
       opacity: 0;
     }
@@ -142,18 +142,18 @@ const toggle = () => {
       bottom: 0;
       width: 100%;
       background-color: var(--background-color-t);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(30px);
       flex-direction: column;
       align-items: flex-end;
       justify-content: flex-start;
       transition: all 0.125s 0.5s ease-in-out, clip-path 0.75s;
-      transform: translateY(-50vh);
+      transform: translateX(50vh);
       clip-path: circle(25% at 150% -50%);
       opacity: 0;
       visibility: hidden;
 
       &.active {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
         visibility: visible;
         transition: var(--transition), clip-path 0.75s;
@@ -161,7 +161,7 @@ const toggle = () => {
 
         .navigation-list__item {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateX(0);
 
           &:nth-child(1) {
             transition: all 0.25s 0.375s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -176,7 +176,7 @@ const toggle = () => {
 
         .base-navigation__sub-controls {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateX(0);
           transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }

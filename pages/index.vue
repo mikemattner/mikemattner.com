@@ -4,24 +4,24 @@
       <div class="home-layout__hero">
         <h1 class="main-lede">
           <ProfileImage image="/images/mike-apples.webp" is-blob class="profile-image" />
-          <span class="introduction">Hello! My name is <NuxtLink to="/about">Mike Mattner</NuxtLink>.</span>
+          <span class="introduction">Hello! My name is Mike Mattner.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
             I&rsquo;m a
-            <strong>
-              UI designer<Icon name="ri:layout-2-line" /> &amp; developer<Icon name="ri:javascript-line" />
-            </strong>
-            from Michigan currently working at AccuLynx as a Sr. UI Engineer.
+            <strong>UI designer<Icon name="ri:layout-bottom-2-line" /></strong> &amp;
+            <strong>developer<Icon name="ri:terminal-box-line" /></strong>
+            from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
-            I&rsquo;ve previously worked as a <strong>digital designer<Icon name="ri:brush-line" /></strong> and manager
-            of creatives, as well as a UX/UI developer at an advertising agency.
+            I previously worked at an advertising agency as a
+            <strong>digital designer<Icon name="ri:brush-line" /></strong> and manager of creatives before switching to
+            a UX/UI developer role.
           </p>
           <p class="intro">
-            In a former life I worked within the entire gamut of skills in what was once called digital design including
-            video editing, motion graphics, and more traditional graphic design. That set of skills is now a bit
-            atrophied.
+            In a former life I worked with the entire gamut of skills in what was once called
+            <strong>digital media<Icon name="ri:flashlight-line" /></strong> including video editing, motion graphics,
+            interactive CDs, <strong>et cetera <Icon name="ri:loop-right-line" /></strong>.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="link" size="md" color="primary">
@@ -130,11 +130,17 @@ const posts = computed(() => {
       display: inline-flex;
       width: 1em;
       height: 1em;
-      border-radius: 2em 1.4em;
       vertical-align: middle;
       margin: -0.1em 0.2em 0 0.1em;
       transform: scale(1.15);
-      transition: transform 0.2s ease-in-out;
+      transition: var(--transition);
+    }
+
+    strong:hover {
+      svg {
+        transform: scale(1.35);
+        transition: var(--transition-cubic);
+      }
     }
 
     p {
@@ -181,7 +187,6 @@ const posts = computed(() => {
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
     align-items: center;
-    gap: var(--sizing-lg);
     display: grid;
     grid-template-columns: subgrid;
 
@@ -189,6 +194,7 @@ const posts = computed(() => {
       flex-direction: column;
       align-items: flex-start;
       margin-bottom: var(--sizing-xxl);
+      gap: var(--sizing-lg);
     }
 
     @media (min-width: 1053px) {
@@ -204,12 +210,11 @@ const posts = computed(() => {
     @media (min-width: 1053px) {
       grid-column: 8 / -1;
       align-self: center;
-      grid-row: 1 / span 4;
     }
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
     }
-    @media (max-width: 715px) {
+    @media (max-width: 515px) {
       grid-column: 1 / span 4;
     }
   }
@@ -221,12 +226,11 @@ const posts = computed(() => {
     @media (min-width: 1053px) {
       grid-column: 1 / span 7;
       align-self: center;
-      grid-row: 1 / span 4;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 1;
     }
-    @media (max-width: 715px) {
+    @media (max-width: 515px) {
       grid-column: 1 / span 4;
     }
   }

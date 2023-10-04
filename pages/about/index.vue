@@ -30,7 +30,7 @@
         </p>
         <p>
           For professional development reasons in 2019, I made the
-          <abbr title="JavaScript something, something or other.">JAMstack</abbr> switch to learn the approach and
+          <abbr title="JavaScript something, something or other.">JAMStack</abbr> switch to learn the approach and
           that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and
           use it as a basis to build your own.
         </p>
@@ -65,6 +65,64 @@
             >
           </li>
         </ul>
+      </div>
+      <div class="timeline-content flow">
+        <h2 class="h3-heading">A Brief Timeline</h2>
+        <ol class="timeline small-text">
+          <li class="flow">
+            <h3 class="small-heading">1985</h3>
+            <p>Born in a small town in Michigan.</p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">1995</h3>
+            <p>
+              My dad brings home our first computer, an old 386 loaded with all kinds of software and games. I
+              discovered
+              <a href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> was on this computer&mdash;also loaded with a
+              bunch of games. I spent the entire summer playing games and learning just what the hell was going on with
+              this thing. Around this time I started playing around with Geocities. Oh yeah.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">1998</h3>
+            <p>
+              By this time I started a fan/guild/add-ons website for
+              <a href="https://en.wikipedia.org/wiki/Star_Wars_Jedi_Knight:_Dark_Forces_II?useskin=vector"
+                >Star Wars Jedi Knight: Dark Forces II</a
+              >
+              that I called Yoda's Add-ons. My love for the web was cemented here.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2003</h3>
+            <p>I graduated from High School and headed to Florida to study digital media.</p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2004</h3>
+            <p>
+              After four hurricanes and many sleepless nights, I graduated from college in an accelerated program with a
+              degree in digital media in hand. That was a whirlwind.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2006</h3>
+            <p>
+              I land my first professional full-time role for a local company that focused on Corvettes. Right before
+              the economic crisis of 2008. Goodie.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2013</h3>
+            <p>
+              I left that Corvette company after a wonderful 6 years, and joined an advertising agency in town. The work
+              there was focused on selling appliances and sales education for those appliances.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2021</h3>
+            <p>Land my current job during a global pandemic. What a weird time, but what a great move.</p>
+          </li>
+        </ol>
       </div>
     </article>
   </main>
@@ -146,6 +204,42 @@ useHead({
     @media (min-width: 961px) {
       grid-column: 1 / -1;
       aspect-ratio: 2 / 1;
+    }
+  }
+
+  .timeline-content {
+    @media (min-width: 501px) {
+      grid-column: 1 / span 4;
+    }
+    @media (min-width: 768px) {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 961px) {
+      grid-column: 21 / -1;
+    }
+  }
+
+  .timeline {
+    list-style: none;
+
+    li {
+      position: relative;
+      padding: 0.5em 0 2em;
+      padding-left: 2em;
+      border-left: 1px solid var(--border-color);
+
+      &:after {
+        width: 1em;
+        height: 1em;
+        display: block;
+        top: 0.75em;
+        position: absolute;
+        left: -0.53em;
+        border-radius: 10em;
+        content: '';
+        border: 1px solid var(--border-color);
+        background: var(--background-color);
+      }
     }
   }
 }

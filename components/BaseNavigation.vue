@@ -12,7 +12,7 @@
 <style lang="scss" scoped>
 .base-navigation {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--color-light-border-t);
+  border-bottom: 1px solid var(--border-color);
 
   @media (min-width: 716px) {
     grid-area: navigation;

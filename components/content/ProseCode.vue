@@ -72,6 +72,7 @@ const languageText = computed(() => (props.language ? languageMap[props.language
   overflow-x: auto;
   margin-block-start: 1.5rem;
   margin-block-end: 1.5rem;
+  box-shadow: var(--box-shadow-short);
 
   @media (min-width: 989px) {
     margin-left: calc(var(--sizing-xl) * -1);

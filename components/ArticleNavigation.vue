@@ -1,13 +1,13 @@
 <template>
   <div class="article-navigation">
     <div v-if="prev" class="prev-article">
-      <h2 class="h4-heading">Previous {{ label }}</h2>
+      <h2 class="small-text code-font">Previous {{ label }}</h2>
       <NuxtLink :to="prev._path" :title="prev.title" class="prev-button" variant="link" size="md" color="primary">
         {{ prev.title }}
       </NuxtLink>
     </div>
     <div v-if="next" class="next-article">
-      <h2 class="h4-heading">Next {{ label }}</h2>
+      <h2 class="small-text code-font">Next {{ label }}</h2>
       <NuxtLink :to="next._path" :title="next.title" class="next-button" variant="link" size="md" color="primary">
         {{ next.title }}
       </NuxtLink>
@@ -30,8 +30,8 @@ const query = computed<string>(() => {
 });
 
 const label = computed<string>(() => {
-  if (props.content === 'links') return 'link';
-  return 'article';
+  if (props.content === 'links') return 'Link';
+  return 'Article';
 });
 
 const [prev, next] = await queryContent(query.value)
