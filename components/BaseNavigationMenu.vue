@@ -142,7 +142,7 @@ const toggle = () => {
       bottom: 0;
       width: 100%;
       background-color: var(--background-color-t);
-      backdrop-filter: blur(30px);
+      backdrop-filter: blur(10px);
       flex-direction: column;
       align-items: flex-end;
       justify-content: flex-start;
