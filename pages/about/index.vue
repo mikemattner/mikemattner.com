@@ -204,6 +204,7 @@ useHead({
     @media (min-width: 961px) {
       grid-column: 1 / -1;
       aspect-ratio: 2 / 1;
+      margin-bottom: var(--sizing-xxxl);
     }
   }
 
@@ -228,11 +229,11 @@ useHead({
       padding-left: 2em;
       border-left: 1px solid var(--border-color);
 
-      &:after {
+      &:before {
         width: 1em;
         height: 1em;
         display: block;
-        top: 0.75em;
+        top: 0.7em;
         position: absolute;
         left: -0.53em;
         border-radius: 10em;
