@@ -25,7 +25,7 @@
         <p>
           I’ve had <strong>something</strong> at this domain since 2005, running through various iterations of content
           management systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I
-          had a self-hosted WordPress installation. Prior to the setting up WordPress in 2008, I was using a
+          had a self-hosted WordPress installation. Prior to setting up WordPress in 2008, I was using a
           <a href="https://movabletype.org/">MoveableType</a> implementation.
         </p>
         <p>
