@@ -66,6 +66,7 @@ a:not(.button--link) {
 ol:not([class]) {
     list-style: none;
     counter-reset: section;
+    padding: 0;
 
     li {
         padding-left: 2em;
