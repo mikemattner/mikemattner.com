@@ -1,5 +1,5 @@
 ---
-title: Micro Trend&#58; Non-Rectangular Headers
+title: 'Micro Trend: Non-Rectangular Headers'
 date: 2017-06-09
 type: link
 description: 'Fun ways to make a boxy, grid-based medium a bit more exciting.'
