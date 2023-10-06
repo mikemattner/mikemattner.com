@@ -68,16 +68,16 @@ h4,
     background-color: var(--color-primary);
   }
 
-  @media (min-width: 1300px) {
-    &:before {
-      content: '';
-      height: 1px;
-      width: 3rem;
-      background-color: var(--color-primary);
-      position: absolute;
-      left: calc(-3rem + (var(--sizing-md) * -1 ));
-    }
-  }
+  // @media (min-width: 1300px) {
+  //   &:before {
+  //     content: '';
+  //     height: 1px;
+  //     width: 3rem;
+  //     background-color: var(--color-primary);
+  //     position: absolute;
+  //     left: calc(-3rem + (var(--sizing-md) * -1 ));
+  //   }
+  // }
 }
 
 .code-font {

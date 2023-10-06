@@ -15,6 +15,10 @@
           </div>
         </aside>
         <header class="article-header">
+          <ul class="breadcrumb-trail">
+            <li><NuxtLink to="/">Home</NuxtLink></li>
+            <li><NuxtLink to="/blog">Blog</NuxtLink></li>
+          </ul>
           <h1 class="article-title" v-html="data.title"></h1>
         </header>
         <ContentRenderer :value="data">
@@ -122,6 +126,31 @@ useHead({
     }
   }
 
+  .breadcrumb-trail {
+    margin: 0 0 var(--sizing-md);
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: var(--sizing-lg);
+    align-items: center;
+    font-size: var(--size-step--1);
+    font-family: var(--code-font-family);
+
+    li {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--sizing-lg);
+
+      &:after {
+        content: '›';
+        line-height: 1;
+        opacity: 0.5;
+      }
+    }
+  }
   .article-title {
     font-size: clamp(40px, 8vw, 95px);
   }
