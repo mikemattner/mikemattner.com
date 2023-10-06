@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   });
 
   const docs = await serverQueryContent(event).sort({ date: -1 }).where({ _partial: false }).find();
-  const blogPosts = docs.filter((doc) => doc?._path?.includes('/writing'));
+  const blogPosts = docs.filter((doc) => doc?._path?.includes('/blog'));
 
   for (const doc of blogPosts) {
     feed.item({

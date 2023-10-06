@@ -62,4 +62,27 @@ a:not(.button--link) {
         color: var(--color-highlight);
     }
 }
+
+ol:not([class]) {
+    list-style: none;
+    counter-reset: section;
+
+    li {
+        padding-left: 2em;
+        position: relative;
+
+        &:before {
+            color: var(--color-highlight);
+            counter-increment: section;
+            content: counter(section);
+            font-family: var(--code-font-family);
+            font-size: 80%;
+            left: 0;
+            letter-spacing: 0;
+            margin-right: 1em;
+            position: absolute;
+            top: .24em;
+        }
+    }
+}
   
