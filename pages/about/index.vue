@@ -5,7 +5,7 @@
         <h1>About</h1>
         <p class="intro">A summary of my life, career, and this here website.</p>
       </div>
-      <ProfileImage image="/images/mike-profile-about.webp" class="profile-image" />
+      <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
       <div class="about-content flow">
         <h2 class="bar-right">Just The Highlights</h2>
         <p>
@@ -104,7 +104,7 @@
             <p>Born in a small town in Michigan.</p>
           </li>
           <li class="flow">
-            <h3 class="small-heading">1995</h3>
+            <h3 class="small-heading">1996</h3>
             <p>
               My dad brings home our first computer, an old 386 loaded with all kinds of software and games. I
               discovered
@@ -114,13 +114,15 @@
             </p>
           </li>
           <li class="flow">
-            <h3 class="small-heading">1998</h3>
+            <h3 class="small-heading">1999</h3>
             <p>
               By this time I started a fan/guild/add-ons website for
               <a href="https://en.wikipedia.org/wiki/Star_Wars_Jedi_Knight:_Dark_Forces_II?useskin=vector"
                 >Star Wars Jedi Knight: Dark Forces II</a
               >
-              that I called Yoda's Add-ons. My love for the web was cemented here.
+              that I called
+              <a href="https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/">Yoda's Add-ons</a>.
+              My love for the web was cemented here.
             </p>
           </li>
           <li class="flow">
@@ -137,20 +139,24 @@
           <li class="flow">
             <h3 class="small-heading">2006</h3>
             <p>
-              I land my first professional full-time role for a local company that focused on Corvettes. Right before
-              the economic crisis of 2008. Goodie.
+              I land my first professional full-time role for a local company that focused on Corvette parts and
+              accessories&mdash;right before the economic crisis of 2008. Goodie.
             </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2013</h3>
             <p>
-              I left that Corvette company after a wonderful 6 years, and joined an advertising agency in town. The work
-              there was focused on selling appliances and sales education for those appliances.
+              I left that company after a wonderful six and a half years, and joined an advertising agency in town. The
+              work there for me was focused on selling appliances and sales education for selling those appliances.
             </p>
           </li>
           <li class="flow">
+            <h3 class="small-heading">2020</h3>
+            <p>Global pandemic hits and life gets much weirder and a little more scary.</p>
+          </li>
+          <li class="flow">
             <h3 class="small-heading">2021</h3>
-            <p>Land my current job during a global pandemic. What a weird time, but what a great move.</p>
+            <p>Land my current job during that global pandemic. What a weird time, but what a great move.</p>
           </li>
         </ol>
       </div>
@@ -218,22 +224,22 @@ useHead({
   }
 
   .profile-image {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2 / 1.5;
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 2 / 1.5;
     }
 
     @media (min-width: 768px) {
       grid-column: 1 / -1;
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 2 / 1.5;
       align-self: self-start;
     }
 
     @media (min-width: 961px) {
-      grid-column: 1 / -1;
-      aspect-ratio: 2 / 1;
+      grid-column: 1 / 19;
+      aspect-ratio: 2 / 1.5;
       margin-bottom: var(--sizing-xxxl);
     }
   }
@@ -278,6 +284,7 @@ useHead({
     }
     @media (min-width: 961px) {
       grid-column: 21 / -1;
+      grid-row: 2 / span 2;
     }
   }
 
@@ -298,10 +305,18 @@ useHead({
         top: 0.7em;
         position: absolute;
         left: -0.53em;
-        border-radius: 10px 2px 10px 2px;
+        border-radius: 50em;
         content: '';
-        border: 1px solid var(--border-color);
+        border: 2px solid var(--border-color);
         background: var(--background-color);
+        transition: var(--transition-cubic);
+      }
+
+      &:hover {
+        &:before {
+          border-color: var(--color-highlight);
+          background: var(--color-highlight);
+        }
       }
     }
   }
