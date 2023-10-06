@@ -3,7 +3,7 @@
     <div class="home-layout">
       <div class="home-layout__hero">
         <h1 class="main-lede">
-          <ProfileImage image="/images/mike-apples.webp" is-blob class="profile-image" />
+          <ProfileImage image="/images/pro-profile.jpg" is-blob class="profile-image" />
           <span class="introduction">Hello! My name is Mike Mattner.</span>
         </h1>
         <div class="home-greeting flow">
