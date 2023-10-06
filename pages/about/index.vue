@@ -40,27 +40,57 @@
           2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
           everything back to 2005 and styles weren't saved with the pages until about 2010.
         </p>
-        <ul>
-          <li><a href="https://v1.mikemattner.com/" target="_blank">2021-2022</a></li>
+        <ul class="former-site-iterations">
           <li>
-            <a href="https://web.archive.org/web/20210622133707/https://mikemattner.com/" target="_blank">2021</a>
-          </li>
-          <li>
-            <a href="https://web.archive.org/web/20200510231840/https://mikemattner.com/" target="_blank">2020</a>
-          </li>
-          <li>
-            <a href="https://web.archive.org/web/20171118135502/http://mikemattner.com/" target="_blank">2017-2019</a>
-          </li>
-          <li>
-            <a href="https://web.archive.org/web/20160401174705/http://www.mikemattner.com/" target="_blank">2016</a>
-          </li>
-          <li>
-            <a href="https://web.archive.org/web/20130514053042/http://www.mikemattner.com/" target="_blank"
-              >2013-2015</a
+            <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
+              ><span class="small-text">Image Coming Soon</span><span>2021-2022</span></a
             >
           </li>
           <li>
-            <a href="https://web.archive.org/web/20100412072243/http://www.mikemattner.com/" target="_blank"
+            <a
+              href="https://web.archive.org/web/20210622133707/https://mikemattner.com/"
+              class="iteration-link"
+              target="_blank"
+              ><span class="small-text">Image Coming Soon</span><span>2021</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.archive.org/web/20200510231840/https://mikemattner.com/"
+              class="iteration-link"
+              target="_blank"
+              ><span class="small-text">Image Coming Soon</span><span>2020</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.archive.org/web/20171118135502/http://mikemattner.com/"
+              class="iteration-link"
+              target="_blank"
+              ><span class="small-text">Image Coming Soon</span><span>2017-2019</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.archive.org/web/20160401174705/http://www.mikemattner.com/"
+              class="iteration-link"
+              target="_blank"
+              ><span class="small-text">Image Coming Soon</span><span>2016</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.archive.org/web/20130514053042/http://www.mikemattner.com/"
+              class="iteration-link"
+              target="_blank"
+              ><span class="small-text">Image Coming Soon</span><span>2013-2015</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://web.archive.org/web/20100412072243/http://www.mikemattner.com/"
+              class="iteration-link"
+              target="_blank"
               >2010-2012</a
             >
           </li>
@@ -204,6 +234,38 @@ useHead({
     @media (min-width: 961px) {
       grid-column: 1 / -1;
       aspect-ratio: 2 / 1;
+      margin-bottom: var(--sizing-xxxl);
+    }
+  }
+
+  .former-site-iterations {
+    margin: var(--sizing-xxl) 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--sizing-md);
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .iteration-link {
+      font-family: var(--code-font-family);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--sizing-sm);
+      margin: 0;
+      padding: var(--sizing-sm);
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      aspect-ratio: 1;
+
+      &:hover {
+        background-color: var(--block-quote-bg);
+      }
     }
   }
 
@@ -221,6 +283,7 @@ useHead({
 
   .timeline {
     list-style: none;
+    margin-top: var(--sizing-xxl);
 
     li {
       position: relative;
@@ -228,14 +291,14 @@ useHead({
       padding-left: 2em;
       border-left: 1px solid var(--border-color);
 
-      &:after {
+      &:before {
         width: 1em;
         height: 1em;
         display: block;
-        top: 0.75em;
+        top: 0.7em;
         position: absolute;
         left: -0.53em;
-        border-radius: 10em;
+        border-radius: 10px 2px 10px 2px;
         content: '';
         border: 1px solid var(--border-color);
         background: var(--background-color);

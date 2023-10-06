@@ -8,6 +8,21 @@ export default defineEventHandler(async (event) => {
     hostname: 'https://mikemattner.com',
   });
 
+  sitemap.write({
+    url: '/',
+    changefreq: 'monthly',
+  });
+
+  sitemap.write({
+    url: '/blog',
+    changefreq: 'monthly',
+  });
+
+  sitemap.write({
+    url: '/about',
+    changefreq: 'monthly',
+  });
+
   for (const doc of docs) {
     sitemap.write({
       url: doc._path,
