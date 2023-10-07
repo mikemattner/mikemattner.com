@@ -6,8 +6,7 @@ description: 'Working on the front of the front end.'
 tag:
     - Design
     - Development
-link:
-    - http://bradfrost.com/blog/post/frontend-design/
+link: http://bradfrost.com/blog/post/frontend-design/
 ---
 > Somewhere between design – a world of personas, pixels, and polish – and engineering – a world of logic, loops, and linux – lies frontend design. Frontend design involves creating the HTML, CSS, and presentational JavaScript code that makes up a user interface.
 > 

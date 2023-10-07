@@ -38,11 +38,8 @@ const icon = computed<string>(() => {
     color: inherit;
     padding: var(--sizing-lg);
     transition: var(--transition);
-    border: 1px solid var(--border-color);
-    // background-color: var(--block-quote-bg);
-    // border-radius: var(--sizing-lg) var(--sizing-xs) var(--sizing-lg) var(--sizing-xs);
-    // box-shadow: var(--box-shadow-short);
-    // box-shadow: 0 0 0 hsla(var(--color-black-hsl), 0);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 0 0 var(--border-color);
 
     h3 {
       transition: var(--transition);
@@ -64,7 +61,7 @@ const icon = computed<string>(() => {
     &:hover {
       color: var(--font-color);
       transform: scale(1.05);
-      // box-shadow: var(--box-shadow-long);
+      box-shadow: 5px 5px 0 0 var(--border-color);
 
       .article-list-item__read-more {
         svg {
