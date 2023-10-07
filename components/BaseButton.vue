@@ -83,25 +83,6 @@ const attributes = computed(() => {
 </script>
 
 <style lang="scss">
-:root {
-  --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
-  --button-solid-text: var(--color-light);
-  --button-solid-text-dark: var(--color-dark);
-  --button-outline-text: var(--headline-font-color);
-
-  --button-primary: var(--color-primary);
-  --button-primary-outline: inset 0 0 0 2px var(--color-primary), 5px 5px 0 0 var(--color-primary);
-  --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
-
-  --button-primary-hover: var(--color-primary);
-  --button-primary-solid-hover: var(--color-primary-hover);
-
-  --button-secondary: var(--color-middle-gray);
-  --button-secondary-outline: inset 0 0 0 2px var(--color-middle-gray), 5px 5px 0 0 var(--color-middle-gray);
-  --button-secondary-outline-hover: inset 0 0 0 2px var(--color-middle-gray), 0 0 0 0 var(--color-middle-gray);
-  --button-secondary-hover: var(--color-middle-hover);
-  --button-secondary-solid-hover: var(--color-middle-hover);
-}
 .button {
   -webkit-appearance: none;
   appearance: none;

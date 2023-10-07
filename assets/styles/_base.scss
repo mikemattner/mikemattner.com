@@ -86,4 +86,9 @@ ol:not([class]) {
         }
     }
 }
+
+code {
+    font-size: var(--size-step--1);
+    display: inline-flex;
+}
   

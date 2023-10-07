@@ -16,7 +16,7 @@ const props = defineProps({
 .profile-image__image {
   z-index: 1;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: var(--sizing-sm);
   width: 100%;
   height: 100%;
 
