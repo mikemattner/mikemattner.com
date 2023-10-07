@@ -140,23 +140,46 @@
             <h3 class="small-heading">2006</h3>
             <p>
               I land my first professional full-time role for a local company that focused on Corvette parts and
-              accessories&mdash;right before the economic crisis of 2008. Goodie.
+              accessories&mdash;right before the economic crisis of 2008. Goodie. While there I used just about every
+              skill I learned in college, including video editing and motion graphics, graphic design, and my primary
+              work of web development.
             </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2013</h3>
             <p>
               I left that company after a wonderful six and a half years, and joined an advertising agency in town. The
-              work there for me was focused on selling appliances and sales education for selling those appliances.
+              work there for me in the beginning was focused on sales education for selling appliances.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2016</h3>
+            <p>
+              I get a promotion to lead a team of hybrid designers/developers to work on that sales education material
+              and several studio related web projects&mdash;mostly WordPress marketing sites.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2019</h3>
+            <p>
+              I switch gears to full time development and get absorbed into the larger agency's development team as the
+              two branches of the agency fully integrate together. My work shifts to working on the client's marketing
+              websites.
             </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2020</h3>
-            <p>Global pandemic hits and life gets much weirder and a little more scary.</p>
+            <p>
+              Global pandemic hits and life gets much weirder and a little more scary. I also start on a team focused on
+              creating Adobe Experience Manager components for the primary client's marketing sites.
+            </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2021</h3>
-            <p>Land my current job during that global pandemic. What a weird time, but what a great move.</p>
+            <p>
+              I leave the agency after eight and a half years to start my current job during that global pandemic. What
+              a weird time, but what a great move. The work is focused on software development as a UI engineer.
+            </p>
           </li>
         </ol>
       </div>
