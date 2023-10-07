@@ -43,7 +43,7 @@
         <ul class="former-site-iterations">
           <li>
             <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
-              ><span class="small-text">Image Coming Soon</span><span>2021-2022</span></a
+              ><span class="small-text">Nuxt</span><span>2021-2022</span></a
             >
           </li>
           <li>
@@ -51,7 +51,7 @@
               href="https://web.archive.org/web/20210622133707/https://mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Image Coming Soon</span><span>2021</span></a
+              ><span class="small-text">Nuxt</span><span>2021</span></a
             >
           </li>
           <li>
@@ -59,7 +59,7 @@
               href="https://web.archive.org/web/20200510231840/https://mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Image Coming Soon</span><span>2020</span></a
+              ><span class="small-text">Nuxt</span><span>2020</span></a
             >
           </li>
           <li>
@@ -67,7 +67,7 @@
               href="https://web.archive.org/web/20171118135502/http://mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Image Coming Soon</span><span>2017-2019</span></a
+              ><span class="small-text">WordPress</span><span>2017-2019</span></a
             >
           </li>
           <li>
@@ -75,7 +75,7 @@
               href="https://web.archive.org/web/20160401174705/http://www.mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Image Coming Soon</span><span>2016</span></a
+              ><span class="small-text">WordPress</span><span>2016</span></a
             >
           </li>
           <li>
@@ -83,7 +83,7 @@
               href="https://web.archive.org/web/20130514053042/http://www.mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Image Coming Soon</span><span>2013-2015</span></a
+              ><span class="small-text">WordPress</span><span>2013-2015</span></a
             >
           </li>
           <li>
@@ -91,7 +91,7 @@
               href="https://web.archive.org/web/20100412072243/http://www.mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              >2010-2012</a
+              ><span class="small-text">WordPress</span><span>2010-2012</span></a
             >
           </li>
         </ul>
@@ -305,17 +305,17 @@ useHead({
         top: 0.7em;
         position: absolute;
         left: -0.53em;
-        border-radius: 50em;
         content: '';
         border: 2px solid var(--border-color);
         background: var(--background-color);
         transition: var(--transition-cubic);
+        box-shadow: 2px 2px 0 0 var(--border-color);
       }
 
       &:hover {
         &:before {
-          border-color: var(--color-highlight);
-          background: var(--color-highlight);
+          border-color: var(--color-primary);
+          box-shadow: 0 0 0 0 var(--color-primary);
         }
       }
     }
