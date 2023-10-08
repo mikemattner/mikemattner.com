@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/styles/app.scss'],
-  modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon'],
+  modules: ['@nuxt/content', '@vueuse/nuxt', 'nuxt-svgo', 'nuxt-icon'],
   content: {
     highlight: {
       theme: 'material-theme-ocean',
