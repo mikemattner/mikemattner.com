@@ -36,14 +36,13 @@ Round three of framework based blogging. Remix icons from [icones.js.org](https:
 
 ### Package Updates
 
-- [ ] Update Nuxt to latest (incompatibilities currently exist that need to be solved)
-- [ ] Update Nuxt Content to latest
+- [X] Update Nuxt to latest (incompatibilities currently exist that need to be solved)
+- [X] Update Nuxt Content to latest
 
 ### Basic Elements of SEO/Social
 
 - [x] RSS Feed
 - [x] Sitemap
-- [ ] Robots.txt
 
 ## Content v2 Minimal Starter
 

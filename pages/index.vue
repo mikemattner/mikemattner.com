@@ -48,6 +48,8 @@
 </template>
 
 <script setup lang="ts">
+import { Post } from '../types/posts';
+
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
   script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
@@ -56,7 +58,7 @@ useHead({
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 3);
+  return data?.value?.filter((post) => !post.draft).slice(0, 3) as Post[];
 });
 </script>
 
@@ -181,7 +183,6 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    font-variation-settings: 'wdth' 100;
     font-size: clamp(40px, 8vw, 95px);
     line-height: 1;
     letter-spacing: 0.025em;
