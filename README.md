@@ -26,10 +26,10 @@ Round three of framework based blogging. Remix icons from [icones.js.org](https:
 - [x] Get writing integrated
 - [x] Article page design
 - [x] About page
-- [ ] About page design
+- [x] About page design
 - [ ] Projects page and content type
 - [x] Rename Writing to Blog (generalize it with links being integrated)
-- [ ] Refine post slug design
+- [x] Refine post slug design
 - [ ] Create a generalized notebook content type for scraps of info/links/quotes
 - [ ] Image handling
 - [x] Integrate [Decap CMS](https://decapcms.org/docs/nuxt/)
