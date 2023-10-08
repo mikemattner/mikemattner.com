@@ -17,7 +17,7 @@
 import { Post } from 'types/posts';
 
 useHead({
-  title: 'Writing',
+  title: 'Blog',
 });
 
 const { data } = await useAsyncData('blog-list', () => queryContent('/blog').sort({ date: -1 }).find());
