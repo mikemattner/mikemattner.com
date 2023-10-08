@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from 'types/posts';
+import { Post } from '../types/posts';
 import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({

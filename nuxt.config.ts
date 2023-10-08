@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge', 'nuxt-svgo', 'nuxt-icon'],
   content: {
     highlight: {
-      theme: 'material-ocean',
+      theme: 'material-theme-ocean',
       preload: ['vue'],
     },
     markdown: {
