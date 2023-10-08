@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from 'types/posts';
+import { Post } from '../../types/posts';
 
 useHead({
   title: 'Blog',

@@ -24,7 +24,7 @@ const props = defineProps({
   gap: 0.5rem;
   z-index: 1000;
 
-  &__image {
+  svg {
     width: 2rem;
     height: 2rem;
     padding: 0;
@@ -40,7 +40,7 @@ const props = defineProps({
       flex: 0 0 1.75rem;
     }
 
-    .logo-shape {
+    path {
       fill: var(--color-dark);
       transition: var(--transition-cubic-slow);
     }
@@ -61,24 +61,9 @@ const props = defineProps({
     &:hover {
       color: var(--color-light);
 
-      .brand-logo__image {
-        // border: 2px solid var(--color-primary);
-        // background-color: var(--color-primary);
+      svg {
         transform: rotate(720deg);
-        // .logo-shape {
-        //   fill: var(--color-highlight);
-        // }
       }
-      // .brand-logo__type {
-      //   // font-variation-settings: 'ital' 0, 'wdth' 125, 'wght' 300;
-      //   // color: var(--headline-font-color);
-      //   // color: var(--color-primary);
-      // }
-    }
-  }
-  @media (max-width: 510px) {
-    .desktop-only {
-      display: none;
     }
   }
 }

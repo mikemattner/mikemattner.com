@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post, SortedPostItem, SortedPosts } from 'types/posts';
+import { Post, SortedPostItem, SortedPosts } from '../types/posts';
 
 const props = defineProps({
   posts: { type: Array as PropType<Post[]>, required: true },
