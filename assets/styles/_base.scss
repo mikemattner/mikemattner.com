@@ -87,8 +87,12 @@ ol:not([class]) {
     }
 }
 
-code {
+code:not(pre code) {
     font-size: var(--size-step--1);
     display: inline-flex;
+    background-color: var(--block-quote-bg);
+    padding: var(--sizing-xs) var(--sizing-sm);
+    border-radius: var(--sizing-sm);
+    color: var(--headline-font-color);
 }
   
