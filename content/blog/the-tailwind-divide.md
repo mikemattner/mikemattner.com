@@ -7,7 +7,7 @@ description: I don't want to claim to be anti-Tailwind, because I really do find
 link: https://joshcollinsworth.com/blog/tailwind-is-smart-steering
 type: link
 tag:
-  - development
+  - Development
 ---
 Tailwind for me and my process is not as useful as writing the necessary `css`. It could be the `script`, `template`, and `style` blocks way of writing Vue SFCs that drives a lot of this, but my brain wasn't built for pure utility class usage.
 
