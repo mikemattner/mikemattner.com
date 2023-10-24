@@ -119,7 +119,7 @@ html.light {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.5);
     --code-bg: hsla(var(--color-black-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 300;
+    --font-weight: 100;
 }
   
 html.dark {
@@ -135,5 +135,5 @@ html.dark {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.5);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 300;
+    --font-weight: 100;
 }
