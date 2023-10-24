@@ -57,6 +57,7 @@ const [prev, next] = await queryContent(query.value)
 .next-button {
   line-height: 1.2;
   margin-top: var(--sizing-md);
+  font-weight: 900;
 }
 
 .prev-article {
