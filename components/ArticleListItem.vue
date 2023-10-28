@@ -36,15 +36,17 @@ const icon = computed<string>(() => {
     gap: var(--sizing-md);
     text-decoration: none;
     color: inherit;
-    padding: var(--sizing-lg);
     transition: var(--transition);
     border: 2px solid var(--border-color);
-    box-shadow: 0 0 0 0 var(--border-color);
+    box-shadow: 5px 5px 0 0 var(--border-color);
 
     h3 {
       transition: var(--transition);
     }
 
+    .article-list-item__title {
+      padding: var(--sizing-lg) var(--sizing-lg) 0;
+    }
     .article-list-item__read-more {
       font-size: var(--size-step--1);
       margin-top: auto;
@@ -52,6 +54,7 @@ const icon = computed<string>(() => {
       align-items: center;
       gap: var(--sizing-sm);
       color: var(--color-primary);
+      padding: 0 var(--sizing-lg) var(--sizing-lg);
 
       svg {
         transition: var(--transition-cubic);
@@ -60,8 +63,7 @@ const icon = computed<string>(() => {
 
     &:hover {
       color: var(--font-color);
-      transform: scale(1.05);
-      box-shadow: 5px 5px 0 0 var(--border-color);
+      box-shadow: 0 0 0 0 var(--border-color);
 
       .article-list-item__read-more {
         svg {
@@ -82,6 +84,8 @@ const icon = computed<string>(() => {
     align-items: center;
     gap: var(--sizing-sm);
     color: var(--color-highlight);
+    padding: var(--sizing-lg);
+    background-color: var(--border-color);
 
     svg {
       width: 1.25rem;
