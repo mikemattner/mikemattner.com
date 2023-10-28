@@ -272,7 +272,7 @@ useHead({
     padding: 0;
     list-style: none;
     display: grid;
-    gap: var(--sizing-md);
+    gap: var(--sizing-lg);
     grid-template-columns: repeat(2, 1fr);
 
     @media (min-width: 768px) {
@@ -291,9 +291,11 @@ useHead({
       text-decoration: none;
       border: 1px solid var(--border-color);
       aspect-ratio: 1;
+      box-shadow: 5px 5px 0 0 var(--border-color);
 
       &:hover {
         background-color: var(--block-quote-bg);
+        box-shadow: 0 0 0 0 var(--border-color);
       }
     }
   }
