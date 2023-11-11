@@ -9,7 +9,7 @@
     </template>
     <template v-else>
       <div v-for="(item, index) in sortedPosts" :key="index" class="layout year-group">
-        <h3 class="year-header small-heading bar-right">{{ item.year }}</h3>
+        <h3 class="year-header">{{ item.year }}</h3>
         <ul class="article-list">
           <li v-for="post in item.posts" :key="post.title">
             <ArticleListItem :post="post" />
