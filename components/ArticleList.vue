@@ -28,21 +28,16 @@ const props = defineProps({
   listAll: { type: Boolean, default: false },
 });
 
-const yearsInPosts = ref<string[]>([]);
-const sortedPosts = ref<SortedPostItem[]>();
-
 const convertDate = (date: string): string => {
   return new Date(date).getFullYear().toString();
 };
 
-const getYears = () => {
-  yearsInPosts.value = [...new Set(props.posts.map((item) => convertDate(item.date)))];
-};
+const sortedPosts = computed<SortedPostItem[]>(() => {
+  const yearsInPosts = [...new Set(props.posts.map((item) => convertDate(item.date)))];
 
-const sortIntoYearArray = () => {
   const sortedArray: SortedPosts = {};
 
-  yearsInPosts.value.forEach((item, index) => {
+  yearsInPosts.forEach((item, index) => {
     sortedArray[item] = { year: item, posts: [] };
   });
 
@@ -59,13 +54,7 @@ const sortIntoYearArray = () => {
       return sortedArray[key];
     });
 
-  sortedPosts.value = ordered;
-};
-
-onMounted(() => {
-  if (!props.listAll) return;
-  getYears();
-  sortIntoYearArray();
+  return ordered;
 });
 </script>
 
