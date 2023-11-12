@@ -8,8 +8,11 @@
       </ul>
     </template>
     <template v-else>
-      <div v-for="(item, index) in sortedPosts" :key="index" class="layout year-group">
-        <h3 class="year-header">{{ item.year }}</h3>
+      <div v-for="(item, index) in sortedPosts" :key="index" class="year-group">
+        <header class="year-group__header">
+          <h3 class="year-header">{{ item.year }}</h3>
+          <div class="year-header__article-count">{{ item.posts.length }} Items</div>
+        </header>
         <ul class="article-list">
           <li v-for="post in item.posts" :key="post.title">
             <ArticleListItem :post="post" />
@@ -82,7 +85,19 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   }
 }
 
-.year-header {
+.year-group__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: var(--sizing-xl);
   margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
+}
+
+.year-header {
+  line-height: 1;
+}
+
+.year-header__article-count {
+  font-size: var(--size-step--1);
 }
 </style>
