@@ -176,12 +176,15 @@ const toggle = () => {
           &:nth-child(3) {
             transition: all 0.25s 0.625s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
+          &:nth-child(4) {
+            transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
         }
 
         .base-navigation__sub-controls {
           opacity: 1;
           transform: translateX(0);
-          transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 0.25s 0.875s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }
     }
