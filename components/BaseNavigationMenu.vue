@@ -46,6 +46,10 @@ const navigationList: NavigationList[] = [
     title: 'About',
     url: '/about',
   },
+  {
+    title: '/Uses',
+    url: '/uses',
+  },
 ];
 
 const { navOpen, toggleNav } = useNavigationState();

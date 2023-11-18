@@ -2,7 +2,7 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1>About</h1>
+        <h1><small>Let Me Tell You</small> About the Author</h1>
         <p class="intro">A summary of my life, career, and this here website.</p>
       </div>
       <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
