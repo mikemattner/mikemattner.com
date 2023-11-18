@@ -5,6 +5,13 @@ h3 {
   line-height: 1.1;
   text-wrap: balance;
   color: var(--headline-font-color);
+
+  small {
+    display: block;
+    font-size: var(--size-step--1);
+    font-family: var(--code-font-family);
+    font-weight: 400;
+  }
 }
 
 .maximal-heading {

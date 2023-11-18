@@ -3,7 +3,12 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Yearly Blog Archives</h1>
+          <h1><small>Blog Archives</small> Yearly Listing</h1>
+          <p>
+            I used to do this more, and varied the topics more widely. This is a small selection of the things I care
+            enough to write about&mdash;keeping the old when appropriate.
+          </p>
+          <hr />
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" list-all />
@@ -54,13 +59,12 @@ const posts = computed<Post[]>(() => {
     }
 
     hr {
-      grid-column: 1 / span 4;
-      margin-block-start: 2rem;
+      margin-block-start: 3rem;
       margin-block-end: 3rem;
     }
 
     p {
-      max-width: 70ch;
+      max-width: 50ch;
     }
   }
 
