@@ -47,7 +47,7 @@ const navigationList: NavigationList[] = [
     url: '/about',
   },
   {
-    title: '/Uses',
+    title: 'Uses',
     url: '/uses',
   },
 ];

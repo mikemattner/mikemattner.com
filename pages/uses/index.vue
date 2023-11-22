@@ -2,7 +2,7 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1>/Uses</h1>
+        <h1><small>Mike</small> Uses</h1>
         <p class="intro">A less than comprehensive look at the tools I use. Because this is what people do now.</p>
         <hr />
       </div>

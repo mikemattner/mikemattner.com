@@ -4,6 +4,7 @@
       <div class="sidebar-area flow">
         <h1><small>Let Me Tell You</small> About the Author</h1>
         <p class="intro">A summary of my life, career, and this here website.</p>
+        <hr />
       </div>
       <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
       <div class="about-content flow">
