@@ -2,8 +2,9 @@
   <main class="home-page">
     <div class="home-layout">
       <div class="home-layout__hero">
+        <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
+
         <h1 class="main-lede">
-          <ProfileImage image="/images/pro-profile.jpg" is-blob class="profile-image" />
           <span class="introduction">Hello! My name is Mike Mattner.</span>
         </h1>
         <div class="home-greeting flow">
@@ -32,7 +33,7 @@
       </div>
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2 class="bar-right">On the Blog</h2>
+          <h2><small>Recent Posts</small> On the Blog</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
@@ -151,7 +152,7 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 3 / -3;
+      grid-column: 8 / -1;
       align-self: center;
     }
     @media (max-width: 1052px) {
@@ -200,10 +201,12 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-column: 1 / -1;
+      grid-row: 1;
       align-self: center;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
+      grid-row: 1;
     }
   }
 
@@ -225,11 +228,13 @@ const posts = computed(() => {
     display: inline-flex;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 7;
-      align-self: center;
+      grid-column: 1 / span 6;
+      grid-row: 1 / span 2;
+      aspect-ratio: 1 / 2;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 1;
+      grid-row: 1;
     }
     @media (max-width: 515px) {
       grid-column: 1 / span 4;
