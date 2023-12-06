@@ -133,6 +133,7 @@ useHead({
     display: flex;
     gap: var(--sizing-lg);
     align-items: center;
+    justify-content: center;
     font-size: var(--size-step--1);
     font-family: var(--code-font-family);
 
@@ -153,6 +154,7 @@ useHead({
   }
   .article-title {
     font-size: clamp(40px, 8vw, 95px);
+    text-align: center;
   }
 
   .article-meta {
