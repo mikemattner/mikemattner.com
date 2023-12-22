@@ -7,6 +7,7 @@
         <ul class="sub-menu">
           <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/about/uses">Uses</NuxtLink></li>
+          <li><NuxtLink to="/about/resume">Resume</NuxtLink></li>
         </ul>
         <hr />
       </div>
@@ -41,7 +42,6 @@
           <li>Todoist (been using since they launched)</li>
         </ul>
       </div>
-      <div class="timeline-content flow"></div>
     </article>
   </main>
 </template>

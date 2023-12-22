@@ -11,6 +11,7 @@ h3 {
     font-size: var(--size-step--1);
     font-family: var(--code-font-family);
     font-weight: 400;
+    margin: var(--sizing-md) 0;
   }
 }
 
@@ -233,6 +234,10 @@ ul.sub-menu {
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
+
+    a.router-link-active {
+      font-weight: 900;
+    }
 
     &:after {
       content: '/';
