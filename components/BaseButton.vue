@@ -206,10 +206,12 @@ const attributes = computed(() => {
     background-color: var(--button-solid-background-color);
     color: var(--button-solid-color-text);
     text-decoration: none;
+    box-shadow: var(--button-solid-shadow);
 
     &:hover:not(:disabled) {
       color: var(--button-solid-color-text);
       background-color: var(--button-solid-background-color-hover);
+      box-shadow: var(--button-solid-shadow-hover);
     }
     --button-loader-color: var(--button-solid-color-text);
   }
@@ -236,24 +238,28 @@ const attributes = computed(() => {
     --button-solid-background-color: var(--button-primary);
     --button-solid-background-color-hover: var(--button-primary-solid-hover);
     --button-solid-color-text: var(--button-solid-text);
+    --button-solid-shadow: var(--button-primary-solid);
+    --button-solid-shadow-hover: var(--button-primary-solid-hover);
 
     --button-outline-background-color: transparent;
     --button-outline-background-color-hover: var(--button-primary-hover);
     --button-outline-color-text: var(--button-outline-text);
-    --button-outline-color-text-hover: var(--button-solid-text);
+    --button-outline-color-text-hover: var(--button-outline-text-hover);
     --button-outline-color: var(--button-primary-outline);
     --button-outline-hover-color: var(--button-primary-outline-hover);
   }
 
   &.button--secondary {
     --button-solid-background-color: var(--button-secondary);
-    --button-solid-background-color-hover: var(--button-secondary-solid-hover);
+    --button-solid-background-color-hover: var(--button-secondary-bg-hover);
     --button-solid-color-text: var(--button-solid-text);
+    --button-solid-shadow: var(--button-secondary-solid);
+    --button-solid-shadow-hover: var(--button-secondary-solid-hover);
 
     --button-outline-background-color: transparent;
     --button-outline-background-color-hover: var(--button-secondary-hover);
     --button-outline-color-text: var(--button-outline-text);
-    --button-outline-color-text-hover: var(--button-solid-text);
+    --button-outline-color-text-hover: var(--button-outline-text);
     --button-outline-color: var(--button-secondary-outline);
     --button-outline-hover-color: var(--button-secondary-outline-hover);
   }

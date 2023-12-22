@@ -42,22 +42,27 @@
 
     // Button variables
     --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
-    --button-solid-text: var(--color-light);
+    --button-solid-text: var(--headline-font-color);
     --button-solid-text-dark: var(--color-dark);
     --button-outline-text: var(--headline-font-color);
+    --button-outline-text-hover: var(--color-light);
 
     --button-primary: var(--color-primary);
     --button-primary-outline: inset 0 0 0 2px var(--color-primary), 5px 5px 0 0 var(--color-primary);
     --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
+    --button-primary-solid: 5px 5px 0 0 var(--color-primary);
+    --button-primary-solid-hover: 0 0 0 0 var(--color-primary);
 
     --button-primary-hover: var(--color-primary);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: var(--color-middle-gray);
-    --button-secondary-outline: inset 0 0 0 2px var(--color-middle-gray), 5px 5px 0 0 var(--color-middle-gray);
-    --button-secondary-outline-hover: inset 0 0 0 2px var(--color-middle-gray), 0 0 0 0 var(--color-middle-gray);
-    --button-secondary-hover: var(--color-middle-hover);
-    --button-secondary-solid-hover: var(--color-middle-hover);
+    --button-secondary: var(--border-color);
+    --button-secondary-bg-hover: var(--border-color);
+    --button-secondary-outline: inset 0 0 0 2px var(--border-color), 5px 5px 0 0 var(--border-color);
+    --button-secondary-outline-hover: inset 0 0 0 2px var(--border-color), 0 0 0 0 var(--border-color);
+    --button-secondary-hover: var(--border-color);
+    --button-secondary-solid: 5px 5px 0 0 var(--border-color);
+    --button-secondary-solid-hover: 0 0 0 0 var(--border-color);
 
     // Color palette
     --color-dark-hsl: 300, 71%, 3%;
@@ -68,7 +73,7 @@
     --color-light-hsl: 0, 0%, 94%;
     --color-light: hsl(0, 0%, 94%);
     --color-light-t: hsla(0, 0%, 94%, 70%);
-    --color-light-bg-border: hsl(0, 0%, 90%);
+    --color-light-bg-border: hsl(0, 0%, 98%);
     --color-light-bg: hsl(0, 0%, 98%);
     --color-light-border-t: hsla(0, 0%, 94%, 55%);
 
@@ -80,8 +85,8 @@
     --color-yellow-dark: hsl(64, 66%, 45%);
     --color-yellow-light: hsl(64, 89%, 45%);
     
-    --color-middle-gray: hsl(300, 71%, 9%);
-    --color-middle-hover: hsla(300, 71%, 9%);
+    --color-middle-gray: hsl(300, 71%, 20%);
+    --color-middle-hover: hsl(300, 71%, 20%);
     --color-middle-gray-t: hsla(300, 71%, 9%, 40%);
 
     --color-white-hsl: 0, 0%, 100%;
@@ -108,22 +113,25 @@
 
 html.light {
     --background-color: var(--background-border-color);
+    --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-primary-hsl), 0.35) 0%, var(--background-color) 100%);
     --font-color: var(--color-dark-t);
     --headline-font-color: var(--color-dark);
     --background-border-color: var(--color-light-bg-border);
-    --border-color: hsl(240, 9%, 9%, 25%);
-    --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 68%) 54.62%, hsla(0, 0%, 98%, 100%) 79.18% );
-    --image-background: var(--color-light-bg);
+    --border-color: hsl(240, 9%, 69%);
+    --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 38%) 54.62%, hsla(0, 0%, 98%, 70%) 79.18% );
+    --image-background: var(--color-primary);
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.5);
     --code-bg: hsla(var(--color-black-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
     --font-weight: 100;
+    --blog-card-date-color: var(--font-color);
 }
   
 html.dark {
     --background-color: var(--color-dark);
+    --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-primary-hsl), 0.10) 0%, var(--background-color) 100%);
     --font-color: var(--color-light-t);
     --headline-font-color: var(--color-light);
     --background-border-color: var(--color-dark-bg-border);
@@ -136,4 +144,5 @@ html.dark {
     --code-bg: hsla(var(--color-black-hsl), 0.5);
     --box-shadow: var(--box-shadow-short);
     --font-weight: 100;
+    --blog-card-date-color: var(--color-yellow-light);
 }

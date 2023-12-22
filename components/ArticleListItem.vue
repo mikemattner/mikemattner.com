@@ -83,7 +83,7 @@ const icon = computed<string>(() => {
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
-    color: var(--color-highlight);
+    color: var(--blog-card-date-color);
     padding: var(--sizing-lg);
     background-color: var(--border-color);
 
