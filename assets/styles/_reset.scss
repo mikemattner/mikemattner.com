@@ -70,3 +70,17 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+sub, sup { 
+  font-size: .65em;
+}
+sub {
+  vertical-align: sub;
+}
+sup {
+  // vertical-align: super;
+  line-height: 0.5em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em; 
+}
