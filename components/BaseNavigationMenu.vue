@@ -79,7 +79,7 @@ const toggle = () => {
 
     @media (max-width: 715px) {
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       justify-content: flex-start;
       font-size: var(--size-step-4);
       gap: var(--sizing-sm);
@@ -124,10 +124,12 @@ const toggle = () => {
     mix-blend-mode: difference;
 
     @media (max-width: 715px) {
-      justify-content: flex-end;
-      transform: translateX(20px);
+      justify-content: center;
       transition: var(--transition-cubic);
       opacity: 0;
+      width: 100%;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
   }
 
@@ -151,7 +153,7 @@ const toggle = () => {
       background-color: var(--background-color-t);
       backdrop-filter: blur(10px);
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       justify-content: flex-start;
       transition: all 0.125s 0.5s ease-in-out, clip-path 0.75s;
       transform: translateX(50vh);
@@ -163,7 +165,7 @@ const toggle = () => {
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
-        transition: var(--transition), clip-path 0.75s;
+        transition: all 0.125s ease-in-out, clip-path 0.75s;
         clip-path: circle(100%);
 
         .navigation-list__item {
@@ -186,7 +188,6 @@ const toggle = () => {
 
         .base-navigation__sub-controls {
           opacity: 1;
-          transform: translateX(0);
           transition: all 0.25s 0.875s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       }
