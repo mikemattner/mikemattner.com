@@ -1,8 +1,8 @@
 <template>
   <section class="article-list__section">
     <template v-if="!listAll">
-      <ul class="article-list">
-        <li v-for="post in posts" :key="post.title">
+      <ul class="article-list" :class="{ 'initial-feature': showInitialFeature }">
+        <li v-for="post in posts" :key="post.title" class="article-list__item">
           <ArticleListItem :post="post" />
         </li>
       </ul>
@@ -14,7 +14,7 @@
           <div class="year-header__article-count">{{ item.posts.length }} Items</div>
         </header>
         <ul class="article-list">
-          <li v-for="post in item.posts" :key="post.title">
+          <li v-for="post in item.posts" :key="post.title" class="article-list__item">
             <ArticleListItem :post="post" />
           </li>
         </ul>
@@ -29,6 +29,7 @@ import { Post, SortedPostItem, SortedPosts } from '../types/posts';
 const props = defineProps({
   posts: { type: Array as PropType<Post[]>, required: true },
   listAll: { type: Boolean, default: false },
+  showInitialFeature: { type: Boolean, default: false },
 });
 
 const convertDate = (date: string): string => {
@@ -82,6 +83,20 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
 
   @media (max-width: 499px) {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  &.initial-feature {
+    @media (min-width: 767px) {
+      .article-list__item:first-child {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    @media (max-width: 766px) {
+      .article-list__item:first-child {
+        grid-column: 1 / span 2;
+      }
+    }
   }
 }
 
