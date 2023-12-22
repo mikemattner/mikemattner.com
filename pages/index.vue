@@ -192,13 +192,6 @@ const posts = computed(() => {
     display: grid;
     grid-template-columns: subgrid;
 
-    @media (max-width: 500px) {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: var(--sizing-xxl);
-      gap: var(--sizing-lg);
-    }
-
     @media (min-width: 1053px) {
       grid-column: 1 / -1;
       grid-row: 1;
@@ -207,6 +200,11 @@ const posts = computed(() => {
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
       grid-row: 1;
+    }
+
+    @media (max-width: 499px) {
+      margin: var(--sizing-xxl) 0;
+      gap: var(--sizing-lg);
     }
   }
 
@@ -218,7 +216,7 @@ const posts = computed(() => {
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
     }
-    @media (max-width: 515px) {
+    @media (max-width: 499px) {
       grid-column: 1 / span 4;
     }
   }
@@ -236,7 +234,7 @@ const posts = computed(() => {
       grid-column: 1 / span 1;
       grid-row: 1;
     }
-    @media (max-width: 515px) {
+    @media (max-width: 499px) {
       grid-column: 1 / span 4;
     }
   }
