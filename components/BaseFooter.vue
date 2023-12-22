@@ -7,7 +7,7 @@
             <BaseButton
               variant="outline"
               size="sm"
-              color="primary"
+              color="secondary"
               href="https://github.com/mikemattner"
               class="footer-icon"
             >
@@ -18,7 +18,7 @@
             <BaseButton
               variant="outline"
               size="sm"
-              color="primary"
+              color="secondary"
               href="https://www.linkedin.com/in/mikeamattner/"
               class="footer-icon"
             >
@@ -29,7 +29,7 @@
             <BaseButton
               variant="outline"
               size="sm"
-              color="primary"
+              color="secondary"
               href="https://mastodon.online/@mikemattner"
               rel="me"
               class="footer-icon"
@@ -41,18 +41,13 @@
             <BaseButton
               variant="outline"
               size="sm"
-              color="primary"
+              color="secondary"
               href="https://codepen.io/mikemattner/#"
               class="footer-icon"
             >
               <Icon name="ri:codepen-fill" /> Codepen
             </BaseButton>
           </li>
-          <!-- <li>
-            <a href="https://mikemattner.com/feed" title="RSS Feed" class="footer-icon">
-              <Icon name="ri:rss-fill" />
-            </a>
-          </li> -->
         </ul>
         <p class="copyright-line">Copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
       </div>

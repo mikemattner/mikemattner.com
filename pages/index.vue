@@ -25,7 +25,7 @@
             interactive CDs, <strong>et cetera <Icon name="ri:loop-right-line" /></strong>.
           </p>
           <div class="button-group">
-            <BaseButton to="/about" variant="link" size="md" color="primary">
+            <BaseButton to="/about" variant="outline" size="md" color="primary">
               <span>Read more ( if you feel like it )</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
@@ -127,18 +127,6 @@ const posts = computed(() => {
     font-size: var(--size-step-1);
     line-height: 1.5;
 
-    svg {
-      fill: var(--color-highlight);
-      color: var(--color-highlight);
-      display: inline-flex;
-      width: 1em;
-      height: 1em;
-      vertical-align: middle;
-      margin: -0.1em 0.2em 0 0.1em;
-      transform: scale(1.15);
-      transition: var(--transition);
-    }
-
     strong:hover {
       svg {
         transform: scale(1.35);
@@ -164,6 +152,18 @@ const posts = computed(() => {
       font-weight: 100;
       font-size: var(--size-step-2);
       line-height: 1.3;
+
+      svg {
+        fill: var(--color-highlight);
+        color: var(--color-highlight);
+        display: inline-flex;
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        margin: -0.1em 0.2em 0 0.1em;
+        transform: scale(1.15);
+        transition: var(--transition);
+      }
     }
   }
 

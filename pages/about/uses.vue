@@ -2,8 +2,12 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1><small>Mike</small> Uses</h1>
-        <p class="intro">A less than comprehensive look at the tools I use. Because this is what people do now.</p>
+        <h1>Uses</h1>
+        <p class="intro">A less than comprehensive look at the tools I use.</p>
+        <ul class="sub-menu">
+          <li><NuxtLink to="/about">About</NuxtLink></li>
+          <li><NuxtLink to="/about/uses">Uses</NuxtLink></li>
+        </ul>
         <hr />
       </div>
       <div class="about-content flow">
@@ -90,6 +94,10 @@ useHead({
     }
     @media (min-width: 961px) {
       grid-column: 1 / span 28;
+    }
+
+    h1 {
+      margin-block-start: 0;
     }
 
     hr {

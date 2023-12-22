@@ -2,8 +2,13 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1><small>Let Me Tell You</small> About the Author</h1>
-        <p class="intro">A summary of my life, career, and this here website.</p>
+        <h1>About the Author</h1>
+        <p class="intro">Hello there! Here's a not exhaustive summary of my life, career, and this website.</p>
+
+        <ul class="sub-menu">
+          <li><NuxtLink to="/about">About</NuxtLink></li>
+          <li><NuxtLink to="/about/uses">Uses</NuxtLink></li>
+        </ul>
         <hr />
       </div>
       <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
@@ -39,12 +44,13 @@
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
           2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
-          everything back to 2005 and styles weren't saved with the pages until about 2010.
+          everything back to 2005 and styles weren't saved with the pages until about 2010. Additionally, my versioning
+          of the Nuxt iterations is a little wonky.
         </p>
         <ul class="former-site-iterations">
           <li>
             <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
-              ><span class="small-text">Nuxt</span><span>2021-2022</span></a
+              ><span class="small-text">Nuxt 2 V2</span><span>2021-2022</span></a
             >
           </li>
           <li>
@@ -52,7 +58,7 @@
               href="https://web.archive.org/web/20210622133707/https://mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Nuxt</span><span>2021</span></a
+              ><span class="small-text">Nuxt 2 V1</span><span>2021</span></a
             >
           </li>
           <li>
@@ -60,7 +66,7 @@
               href="https://web.archive.org/web/20200510231840/https://mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Nuxt</span><span>2020</span></a
+              ><span class="small-text">Vue</span><span>2020</span></a
             >
           </li>
           <li>
