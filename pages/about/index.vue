@@ -8,6 +8,7 @@
         <ul class="sub-menu">
           <li><NuxtLink to="/about">About</NuxtLink></li>
           <li><NuxtLink to="/about/uses">Uses</NuxtLink></li>
+          <li><NuxtLink to="/about/resume">Resume</NuxtLink></li>
         </ul>
         <hr />
       </div>

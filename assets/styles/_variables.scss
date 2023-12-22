@@ -125,7 +125,7 @@ html.light {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.5);
     --code-bg: hsla(var(--color-black-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 100;
+    --font-weight: 300;
     --blog-card-date-color: var(--font-color);
 }
   
@@ -143,6 +143,6 @@ html.dark {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.5);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 100;
+    --font-weight: 300;
     --blog-card-date-color: var(--color-yellow-light);
 }
