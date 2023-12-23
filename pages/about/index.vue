@@ -3,7 +3,7 @@
     <article class="about-layout">
       <div class="sidebar-area flow">
         <h1>About the Author</h1>
-        <p class="intro">Hello there! Here's a not exhaustive summary of my life, career, and this website.</p>
+        <p class="intro">Hello there! Here's a non exhaustive summary of my life, career, and this website.</p>
 
         <ul class="sub-menu">
           <li><NuxtLink to="/about">About</NuxtLink></li>
@@ -14,39 +14,44 @@
       </div>
       <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
       <div class="about-content flow">
-        <h2 class="bar-right">Just The Highlights</h2>
+        <h2>Just The Highlights</h2>
         <p>
-          I was born and raised in southwest Michigan in a largely idyllic lakeside community. I attended college and
-          lived in Florida for a few years before I made my way back to Michigan to enjoy the wonderful lakes and summer
-          experience. I've lived here ever since.
+          I was born and raised in southwest Michigan &mdash; a largely rural place with extremely small town vibes. I
+          left shortly after graduating from high school to attend college in Florida, but I was ultimately drawn back
+          to Michigan by the allure of the lakes and the wonderful summer experience. I&rsquo;ve been here ever since. I
+          am currently residing in a beautiful lakeside community that offers plenty of access to the water and other
+          outdoor spaces.
         </p>
         <p>
-          I started my career in web design and development in 2006 and have been honing my craft little-by-little since
-          then. However, I really got my start in tinkering on the web in 1998. What a time to be on the internet!
+          My journey in web design and development began in 1998, and since then, I have been steadily refining my skill
+          set. Professionally, I got my first gig in 2006. At that time I was largely working on LAMP stack projects
+          while juggling all of the design work. That first gig was more of a digital media specialist role &mdash; with
+          about seventy percent of the work being focused on web design and development &mdash; that had me producing
+          whatever video, animation work, or print assets were required.
         </p>
         <p>
-          Outside of work I enjoy spending time with my wife and pets, reading, keeping up with politics, woodworking,
-          home improvement projects, getting out on the lakes and rivers in the summer, and sipping a fine craft beer.
+          I began to expand my development skill set in 2016, focusing more on front end frameworks and component driven
+          design systems, and less on content management systems.
+        </p>
+        <p>
+          In my personal time, I enjoy being with my family, reading, staying updated on politics, dabbling in
+          woodworking, working on home projects, and spending time outdoors near lakes and rivers in the summer. I also
+          appreciate a good quality beer.
         </p>
         <h3>This Site</h3>
         <p>
-          I’ve had <strong>something</strong> at this domain since 2005, running through various iterations of content
-          management systems with my content focused on a personal portfolio or blog. Prior to the switch to Vue/Nuxt I
-          had a self-hosted WordPress installation. Prior to setting up WordPress in 2008, I was using a
-          <a href="https://movabletype.org/">MoveableType</a> implementation.
-        </p>
-        <p>
-          For professional development reasons in 2019, I made the
-          <abbr title="JavaScript something, something or other.">JAMStack</abbr> switch to learn the approach and
-          that’s where it stands today. This site is available publicly on my GitHub, and you’re welcome to fork it and
-          use it as a basis to build your own.
+          I&rsquo;ve had <strong>something</strong> at this domain since 2005, evolving through various iterations of
+          content management systems, initially focusing on being a personal portfolio or blog. Before transitioning to
+          Vue/Nuxt, I had a self-hosted WordPress installation. In the stone age of 2007, I was using a
+          <a href="https://movabletype.org/">MoveableType</a> implementation, but the initial version was some
+          self-rolled monstrosity with a questionable design (if I could ever dig it up, I would, I swear).
         </p>
         <h3>Other Iterations</h3>
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
           2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
-          everything back to 2005 and styles weren't saved with the pages until about 2010. Additionally, my versioning
-          of the Nuxt iterations is a little wonky.
+          everything back to 2005. Styles weren't saved with the pages until about 2010. Additionally, my versioning of
+          the Nuxt iterations is a little wonky.
         </p>
         <ul class="former-site-iterations">
           <li>

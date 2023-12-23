@@ -221,7 +221,7 @@ const posts = computed(() => {
     }
   }
   .profile-image {
-    aspect-ratio: 1;
+    aspect-ratio: 2 / 1.5;
     width: 100%;
     display: inline-flex;
 
