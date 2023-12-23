@@ -11,22 +11,59 @@
         </ul>
         <hr />
       </div>
+      <ProfileImage image="/images/desk.png" class="desk-image" />
       <div class="about-content flow">
         <h2 class="h3-heading">Desk</h2>
         <ul>
-          <li>Birch butcher block counter top stained with a dark walnut butcher block sealer</li>
+          <li>
+            <a
+              href="https://www.homedepot.com/p/Hampton-Bay-4-ft-L-x-25-in-D-Unfinished-Birch-Butcher-Block-Countertop-in-With-Standard-Edge-birch-4ft-x-25in/319222041"
+            >
+              Birch butcher block counter top stained with a dark walnut butcher block sealer
+            </a>
+          </li>
           <li><a href="https://www.amazon.com/gp/product/B071KGDGNK/">VIVO Electric Stand Up Desk Frame</a></li>
         </ul>
+
+        <h2 class="h3-heading">Desk Accessories</h2>
+        <ul>
+          <li>
+            <a
+              href="https://ugmonk.com/collections/the-gather-collection/products/gather-zigzag-tray-walnut?variant=42414409121942"
+            >
+              Gather Wood Zigzag Tray, Walnut
+            </a>
+          </li>
+          <li>
+            <a href="https://www.upliftdesk.com/e7-led-desk-lamp-with-clamp-by-uplift-desk/">
+              LED Desk Lamp E7 with Clamp, Black
+            </a>
+          </li>
+        </ul>
+
         <h2 class="h3-heading">Mac Setup</h2>
         <ul>
           <li>
             <a href="https://www.apple.com/macbook-pro/">MacBook Pro 16"</a> M2 Pro/M3 Pro &mdash; loving that Space
             Black 😃
           </li>
-          <li>2017 Space Gray Magic Keyboard (discontinued)</li>
-          <li>2017 Space Gray Magic Mouse (discontinued)</li>
-          <li>2x LG - 24" IPS LED 4K UHD (24UD58-B) monitors</li>
+          <li>2017 Space Gray Magic Keyboard 2</li>
+          <li>2017 Space Gray Magic Mouse 2</li>
+          <li>
+            <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html">
+              2023 MX Master 3s for Mac, Space Gray
+            </a>
+          </li>
+          <li><del>2014 iPad Air 2</del></li>
+          <li><a href="https://www.apple.com/ipad-air/">iPad Air 5th Generation</a></li>
+          <li><a href="https://www.apple.com/airpods-pro/">AirPods Pro 2</a></li>
+          <li>
+            <a href="https://www.lg.com/us/monitors/lg-24ud58-b-4k-uhd-led-monitor">
+              2x LG - 24" IPS LED 4K UHD (24UD58-B) monitors
+            </a>
+          </li>
         </ul>
+
         <h2 class="h3-heading">Software</h2>
         <ul>
           <li>VS Code</li>
@@ -113,7 +150,7 @@ useHead({
     max-width: 50ch;
   }
 
-  .profile-image {
+  .desk-image {
     aspect-ratio: 2 / 1.5;
 
     @media (min-width: 501px) {
@@ -128,8 +165,8 @@ useHead({
     }
 
     @media (min-width: 961px) {
-      grid-column: 1 / 19;
-      aspect-ratio: 2 / 1.5;
+      grid-column: 1 / -1;
+      aspect-ratio: 2 / 1;
       margin-bottom: var(--sizing-xxxl);
     }
   }
