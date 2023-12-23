@@ -12,72 +12,99 @@
         <hr />
       </div>
       <ProfileImage image="/images/desk.png" class="desk-image" />
-      <div class="about-content flow">
-        <h2 class="h3-heading">Desk</h2>
-        <ul>
-          <li>
-            <a
-              href="https://www.homedepot.com/p/Hampton-Bay-4-ft-L-x-25-in-D-Unfinished-Birch-Butcher-Block-Countertop-in-With-Standard-Edge-birch-4ft-x-25in/319222041"
-            >
-              Birch butcher block counter top stained with a dark walnut butcher block sealer
-            </a>
-          </li>
-          <li><a href="https://www.amazon.com/gp/product/B071KGDGNK/">VIVO Electric Stand Up Desk Frame</a></li>
-        </ul>
+      <div class="about-content">
+        <h2 class="h4-heading section-header">Desk</h2>
+        <div class="section-content columns flow">
+          <h3 class="small-heading">Hardware</h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.homedepot.com/p/Hampton-Bay-4-ft-L-x-25-in-D-Unfinished-Birch-Butcher-Block-Countertop-in-With-Standard-Edge-birch-4ft-x-25in/319222041"
+              >
+                Birch butcher block counter top stained with a dark walnut butcher block sealer
+              </a>
+            </li>
+            <li><a href="https://www.amazon.com/gp/product/B071KGDGNK/">VIVO Electric Stand Up Desk Frame</a></li>
+          </ul>
 
-        <h2 class="h3-heading">Desk Accessories</h2>
-        <ul>
-          <li>
-            <a
-              href="https://ugmonk.com/collections/the-gather-collection/products/gather-zigzag-tray-walnut?variant=42414409121942"
-            >
-              Gather Wood Zigzag Tray, Walnut
-            </a>
-          </li>
-          <li>
-            <a href="https://www.upliftdesk.com/e7-led-desk-lamp-with-clamp-by-uplift-desk/">
-              LED Desk Lamp E7 with Clamp, Black
-            </a>
-          </li>
-        </ul>
+          <h3 class="small-heading">Accessories</h3>
+          <ul>
+            <li>
+              <a
+                href="https://ugmonk.com/collections/the-gather-collection/products/gather-zigzag-tray-walnut?variant=42414409121942"
+              >
+                Gather Wood Zigzag Tray, Walnut
+              </a>
+            </li>
+            <li>
+              <a href="https://www.upliftdesk.com/e7-led-desk-lamp-with-clamp-by-uplift-desk/">
+                LED Desk Lamp E7 with Clamp, Black
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-content">
+        <h2 class="h4-heading section-header">Setup</h2>
+        <div class="section-content columns flow">
+          <h3 class="small-heading">Laptop</h3>
+          <ul>
+            <li>
+              <a href="https://www.apple.com/macbook-pro/">MacBook Pro 16"</a> M2 Pro/M3 Pro &mdash; loving that Space
+              Black 😃
+            </li>
+          </ul>
 
-        <h2 class="h3-heading">Mac Setup</h2>
-        <ul>
-          <li>
-            <a href="https://www.apple.com/macbook-pro/">MacBook Pro 16"</a> M2 Pro/M3 Pro &mdash; loving that Space
-            Black 😃
-          </li>
-          <li>2017 Space Gray Magic Keyboard 2</li>
-          <li>2017 Space Gray Magic Mouse 2</li>
-          <li>
-            <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html">
-              2023 MX Master 3s for Mac, Space Gray
-            </a>
-          </li>
-          <li><del>2014 iPad Air 2</del></li>
-          <li><a href="https://www.apple.com/ipad-air/">iPad Air 5th Generation</a></li>
-          <li><a href="https://www.apple.com/airpods-pro/">AirPods Pro 2</a></li>
-          <li>
-            <a href="https://www.lg.com/us/monitors/lg-24ud58-b-4k-uhd-led-monitor">
-              2x LG - 24" IPS LED 4K UHD (24UD58-B) monitors
-            </a>
-          </li>
-        </ul>
+          <h3 class="small-heading">Accessories</h3>
+          <ul>
+            <li>2017 Space Gray Magic Keyboard 2</li>
+            <li>2017 Space Gray Magic Mouse 2</li>
+            <li>
+              <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html">
+                2023 MX Master 3s for Mac, Space Gray
+              </a>
+            </li>
+            <li>
+              <a href="https://www.lg.com/us/monitors/lg-24ud58-b-4k-uhd-led-monitor">
+                2x LG - 24" IPS LED 4K UHD (24UD58-B) monitors
+              </a>
+            </li>
+          </ul>
 
-        <h2 class="h3-heading">Software</h2>
-        <ul>
-          <li>VS Code</li>
-          <li>Sublime Text 4</li>
-          <li>Sublime Merge</li>
-          <li>iTerm 2</li>
-          <li>Parallels w/Windows 11</li>
-          <li>Figma</li>
-          <li>Linearity Curve</li>
-          <li>Pixelmator Pro</li>
-          <li>Raycast</li>
-          <li>Spotify</li>
-          <li>Todoist (been using since they launched)</li>
-        </ul>
+          <h3 class="small-heading">Fun Stuff</h3>
+          <ul>
+            <li><del>2014 iPad Air 2</del></li>
+            <li><a href="https://www.apple.com/ipad-air/">iPad Air 5th Generation</a></li>
+            <li><a href="https://www.apple.com/airpods-pro/">AirPods Pro 2</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-content">
+        <h2 class="h4-heading section-header">Software</h2>
+        <div class="section-content columns flow">
+          <h3 class="small-heading">Development</h3>
+          <ul>
+            <li>VS Code</li>
+            <li>Sublime Text 4</li>
+            <li>Sublime Merge</li>
+            <li>iTerm 2</li>
+            <li>Parallels w/Windows 11</li>
+          </ul>
+
+          <h3 class="small-heading">Design</h3>
+          <ul>
+            <li>Figma</li>
+            <li>Linearity Curve</li>
+            <li>Pixelmator Pro</li>
+          </ul>
+
+          <h3 class="small-heading">Productivity</h3>
+          <ul>
+            <li>Raycast</li>
+            <li>Spotify</li>
+            <li>Todoist (been using since they launched)</li>
+          </ul>
+        </div>
       </div>
     </article>
   </main>
@@ -118,7 +145,30 @@ useHead({
       grid-column: 1 / -1;
     }
     @media (min-width: 961px) {
-      grid-column: 1 / span 18;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: subgrid;
+      align-items: baseline;
+    }
+  }
+
+  .section-header {
+    @media (min-width: 961px) {
+      grid-column: 1 / span 6;
+    }
+
+    @media (max-width: 960px) {
+      margin: var(--sizing-xxl) 0 var(--sizing-lg);
+    }
+  }
+
+  .section-content {
+    p {
+      max-width: 65ch;
+    }
+
+    @media (min-width: 961px) {
+      grid-column: 8 / -1;
     }
   }
 
