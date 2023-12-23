@@ -23,6 +23,16 @@ export default defineEventHandler(async (event) => {
     changefreq: 'monthly',
   });
 
+  sitemap.write({
+    url: '/about/uses',
+    changefreq: 'monthly',
+  });
+
+  sitemap.write({
+    url: '/about/resume',
+    changefreq: 'monthly',
+  });
+
   for (const doc of docs) {
     sitemap.write({
       url: doc._path,

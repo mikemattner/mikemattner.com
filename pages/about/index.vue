@@ -51,7 +51,7 @@
         <ul class="former-site-iterations">
           <li>
             <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
-              ><span class="small-text">Nuxt 2 V2</span><span>2021-2022</span></a
+              ><span class="small-text">Nuxt 2 V1</span><span>2021-2022</span></a
             >
           </li>
           <li>
@@ -59,7 +59,7 @@
               href="https://web.archive.org/web/20210622133707/https://mikemattner.com/"
               class="iteration-link"
               target="_blank"
-              ><span class="small-text">Nuxt 2 V1</span><span>2021</span></a
+              ><span class="small-text">Nuxt 2</span><span>2021</span></a
             >
           </li>
           <li>
