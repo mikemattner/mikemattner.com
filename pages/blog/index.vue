@@ -6,7 +6,7 @@
           <h1><small>Blog Archives</small> Yearly Listing</h1>
           <p>
             I used to do this more, and varied the topics more widely. This is a small selection of the things I care
-            enough to write about&mdash;keeping the old when appropriate.
+            enough to have kept and written about over the years.
           </p>
           <hr />
         </div>
