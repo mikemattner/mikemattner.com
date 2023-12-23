@@ -13,15 +13,14 @@
         </ul>
         <hr />
       </div>
-      <div class="about-content flow">
+      <div class="about-content">
         <h2 class="h4-heading section-header">Skill Set</h2>
         <div class="section-content columns flow">
           <h3 class="small-heading">UX &amp; UI Design</h3>
           <p>
-            I have been working with Adobe products since 2003, focusing specifically on Photoshop and InDesign, to
-            design user interfaces for the web and short form documents. I have been working with Figma since 2018,
-            designing several landing pages for a fortune 500 company, as well as several products for various
-            organizations.
+            I&rsquo;ve been working with Adobe Creative Suite (and some former Macromedia products) since 2003, focusing
+            specifically on Photoshop and InDesign. I switched to Figma in 2018, designing several landing pages and a
+            handful of apps for various organizations.
           </p>
 
           <h3 class="small-heading">Front End Development</h3>
@@ -32,17 +31,18 @@
           </p>
         </div>
       </div>
-      <div class="about-content flow">
+      <div class="about-content">
         <h2 class="h4-heading section-header">Experience</h2>
         <div class="section-content flow">
-          <h3 class="small-heading">AccuLynx <small>Senior UI Engineer, 2021 &mdash; Present</small></h3>
+          <h3 class="small-heading">Senior UI Engineer <small>AccuLynx, 2021 &mdash; Present</small></h3>
           <p>
             I focus primarily on building out the UI for the features my team is responsible for, working in conjunction
-            with the team's designer to create a the best UX possible. When not working on features I spend time
-            refactoring old code, squashing bugs, and occasionally working on the internal custom component library.
+            with the team's designer to create the best UX possible. When not working on features I spend time
+            refactoring old code, squashing bugs, and occasionally working on the internal custom component library with
+            the other UI engineers in the organization.
           </p>
 
-          <h3 class="small-heading">Aisle Rocket <small>Senior UX/UI Developer, 2019 &mdash; 2021</small></h3>
+          <h3 class="small-heading">Senior UX/UI Developer <small>Aisle Rocket, 2019 &mdash; 2021</small></h3>
           <p>
             In my work on the technology team I focused primarily on experience development across multiple brands,
             working in concert with the design team to identify consistent, component-based builds. I developed landing
@@ -50,7 +50,7 @@
             tools using Figma.
           </p>
 
-          <h3 class="small-heading">Aisle Rocket <small>Associate Creative Director, 2016 &mdash; 2019</small></h3>
+          <h3 class="small-heading">Associate Creative Director <small>Aisle Rocket, 2016 &mdash; 2019</small></h3>
           <p>
             Creative direction and strategy leading a small team of digital designers and hybrid designer/developers.
             Worked with teams cross agency and across locations. Managed the workloads of team members with the
@@ -58,7 +58,7 @@
             for all clients.
           </p>
 
-          <h3 class="small-heading">Aisle Rocket <small>Senior Digital Designer, 2013 &mdash; 2016</small></h3>
+          <h3 class="small-heading">Senior Digital Designer <small>Aisle Rocket, 2013 &mdash; 2016</small></h3>
           <p>
             Art direction for digital and interactive sales training materials for Whirlpool and Maytag brands; work on
             all interactive projects for studio clients including web development, email marketing, and interactive
@@ -66,7 +66,7 @@
             Maytag brands using the Adobe Digital Publishing Suite in the transition away from printed assets.
           </p>
 
-          <h3 class="small-heading">Corvette Central <small>Graphic/Web Technician, 2006 &mdash; 2013</small></h3>
+          <h3 class="small-heading">Graphic/Web Technician <small>Corvette Central, 2006 &mdash; 2013</small></h3>
           <p>
             Maintained, developed, and optimized the company&rsquo;s web sites with a focus on usability and search
             engine optimization; assisted in the development of catalogs and other marketing materials; art directed,
@@ -76,13 +76,26 @@
           </p>
         </div>
       </div>
-      <div class="about-content flow">
+      <div class="about-content">
+        <h2 class="h4-heading section-header">Education</h2>
+        <div class="section-content columns flow">
+          <h3 class="small-heading">A.S. Digital Media <small>Full Sail University, 2003 &mdash; 2004</small></h3>
+          <p>
+            Rigorous schedule that focused on: graphic design, game design, interface design, digital publishing, web
+            design and development, video capture and editing, motion graphics, 3D modeling/skinning, and project
+            management. Worked on major monthly projects throughout the course of the program in team and solo
+            environments.
+          </p>
+        </div>
+      </div>
+      <div class="about-content">
         <h2 class="h4-heading section-header">Summary</h2>
         <div class="section-content columns flow">
           <h3 class="small-heading">Technology</h3>
           <ul>
             <li>HTML/CSS/Scss</li>
             <li>JavaScript</li>
+            <li>TypeScript</li>
             <li>Vue/Nuxt</li>
           </ul>
 
@@ -142,6 +155,7 @@ const experienceLength = computed<string>(() => {
       grid-column: 1 / -1;
       display: grid;
       grid-template-columns: subgrid;
+      align-items: baseline;
     }
   }
 
@@ -149,11 +163,19 @@ const experienceLength = computed<string>(() => {
     @media (min-width: 961px) {
       grid-column: 1 / span 6;
     }
+
+    @media (max-width: 960px) {
+      margin: var(--sizing-xxl) 0 var(--sizing-lg);
+    }
   }
 
   .section-content {
+    p {
+      max-width: 65ch;
+    }
+
     @media (min-width: 961px) {
-      grid-column: 8 / span 18;
+      grid-column: 8 / -1;
     }
   }
 
@@ -183,106 +205,6 @@ const experienceLength = computed<string>(() => {
     font-size: var(--size-step-1);
     line-height: 1.3;
     max-width: 50ch;
-  }
-
-  .profile-image {
-    aspect-ratio: 2 / 1.5;
-
-    @media (min-width: 501px) {
-      grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1.5;
-    }
-
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-      aspect-ratio: 2 / 1.5;
-      align-self: self-start;
-    }
-
-    @media (min-width: 961px) {
-      grid-column: 1 / 19;
-      aspect-ratio: 2 / 1.5;
-      margin-bottom: var(--sizing-xxxl);
-    }
-  }
-
-  .former-site-iterations {
-    margin: var(--sizing-xxl) 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: var(--sizing-lg);
-    grid-template-columns: repeat(2, 1fr);
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .iteration-link {
-      font-family: var(--code-font-family);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: var(--sizing-sm);
-      margin: 0;
-      padding: var(--sizing-sm);
-      text-decoration: none;
-      border: 1px solid var(--border-color);
-      aspect-ratio: 1;
-      box-shadow: 5px 5px 0 0 var(--border-color);
-
-      &:hover {
-        background-color: var(--block-quote-bg);
-        box-shadow: 0 0 0 0 var(--border-color);
-      }
-    }
-  }
-
-  .timeline-content {
-    @media (min-width: 501px) {
-      grid-column: 1 / span 4;
-    }
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-    }
-    @media (min-width: 961px) {
-      grid-column: 21 / -1;
-      grid-row: 2 / span 2;
-    }
-  }
-
-  .timeline {
-    list-style: none;
-    margin-top: var(--sizing-xxl);
-
-    li {
-      position: relative;
-      padding: 0.5em 0 2em;
-      padding-left: 2em;
-      border-left: 1px solid var(--border-color);
-
-      &:before {
-        width: 1em;
-        height: 1em;
-        display: block;
-        top: 0.7em;
-        position: absolute;
-        left: -0.53em;
-        content: '';
-        border: 2px solid var(--border-color);
-        background: var(--background-color);
-        transition: var(--transition-cubic);
-        box-shadow: 2px 2px 0 0 var(--border-color);
-      }
-
-      &:hover {
-        &:before {
-          border-color: var(--color-primary);
-          box-shadow: 0 0 0 0 var(--color-primary);
-        }
-      }
-    }
   }
 }
 </style>

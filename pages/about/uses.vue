@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 useHead({
-  title: '/Uses',
+  title: 'Uses',
 });
 </script>
 
@@ -131,85 +131,6 @@ useHead({
       grid-column: 1 / 19;
       aspect-ratio: 2 / 1.5;
       margin-bottom: var(--sizing-xxxl);
-    }
-  }
-
-  .former-site-iterations {
-    margin: var(--sizing-xxl) 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: var(--sizing-lg);
-    grid-template-columns: repeat(2, 1fr);
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .iteration-link {
-      font-family: var(--code-font-family);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: var(--sizing-sm);
-      margin: 0;
-      padding: var(--sizing-sm);
-      text-decoration: none;
-      border: 1px solid var(--border-color);
-      aspect-ratio: 1;
-      box-shadow: 5px 5px 0 0 var(--border-color);
-
-      &:hover {
-        background-color: var(--block-quote-bg);
-        box-shadow: 0 0 0 0 var(--border-color);
-      }
-    }
-  }
-
-  .timeline-content {
-    @media (min-width: 501px) {
-      grid-column: 1 / span 4;
-    }
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-    }
-    @media (min-width: 961px) {
-      grid-column: 21 / -1;
-      grid-row: 2 / span 2;
-    }
-  }
-
-  .timeline {
-    list-style: none;
-    margin-top: var(--sizing-xxl);
-
-    li {
-      position: relative;
-      padding: 0.5em 0 2em;
-      padding-left: 2em;
-      border-left: 1px solid var(--border-color);
-
-      &:before {
-        width: 1em;
-        height: 1em;
-        display: block;
-        top: 0.7em;
-        position: absolute;
-        left: -0.53em;
-        content: '';
-        border: 2px solid var(--border-color);
-        background: var(--background-color);
-        transition: var(--transition-cubic);
-        box-shadow: 2px 2px 0 0 var(--border-color);
-      }
-
-      &:hover {
-        &:before {
-          border-color: var(--color-primary);
-          box-shadow: 0 0 0 0 var(--color-primary);
-        }
-      }
     }
   }
 }
