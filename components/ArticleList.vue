@@ -1,7 +1,7 @@
 <template>
   <section class="article-list__section">
     <template v-if="!listAll">
-      <ul class="article-list" :class="{ 'initial-feature': showInitialFeature }">
+      <ul class="article-list summary-list">
         <li v-for="post in posts" :key="post.title" class="article-list__item">
           <ArticleListItem :post="post" />
         </li>
@@ -29,7 +29,6 @@ import { Post, SortedPostItem, SortedPosts } from '../types/posts';
 const props = defineProps({
   posts: { type: Array as PropType<Post[]>, required: true },
   listAll: { type: Boolean, default: false },
-  showInitialFeature: { type: Boolean, default: false },
 });
 
 const convertDate = (date: string): string => {
@@ -73,29 +72,30 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   display: grid;
   gap: var(--sizing-xl);
 
-  @media (min-width: 767px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 766px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 499px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  &.initial-feature {
+  &.summary-list {
     @media (min-width: 767px) {
-      .article-list__item:first-child {
-        grid-column: 1 / span 2;
-      }
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @media (max-width: 766px) {
-      .article-list__item:first-child {
-        grid-column: 1 / span 2;
-      }
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 499px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.year-group {
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    gap: var(--sizing-xxl) 0;
+    margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
+
+    .article-list {
+      grid-column: 8 / -1;
     }
   }
 }
@@ -106,6 +106,13 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   justify-content: flex-start;
   gap: var(--sizing-xl);
   margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
+
+  @media (min-width: 768px) {
+    grid-column: 1 / span 6;
+    margin: 0;
+    flex-direction: column;
+    gap: var(--sizing-sm);
+  }
 }
 
 .year-header {
