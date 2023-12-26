@@ -14,6 +14,7 @@ body {
     font-kerning: normal;
     font-weight: var(--font-weight);
     text-wrap: pretty;
+    // animation: gradient 0.5s var(--cubic-bezier) infinite alternate;
 
     &.no--scroll {
         overflow-y: hidden;
@@ -21,6 +22,17 @@ body {
         width: 100%;
     }
 }
+
+// @keyframes gradient {
+//     0% {
+//         background-position: center -1000px;
+//         background-size: 2000px 2000px;
+//     }
+//     100% {
+//         background-position: center -1200px;
+//         background-size: 2400px 2400px;
+//     }
+// }
 
 .app-layout {
     min-height: 100vh;

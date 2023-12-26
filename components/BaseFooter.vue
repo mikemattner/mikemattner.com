@@ -1,11 +1,11 @@
 <template>
   <footer class="base-footer">
     <div class="base-footer__layout">
-      <div class="copyright-area copyright-block flow">
+      <div class="copyright-area copyright-block">
         <ul class="social-icons">
           <li>
             <BaseButton
-              variant="outline"
+              variant="text"
               size="sm"
               color="secondary"
               href="https://github.com/mikemattner"
@@ -16,7 +16,7 @@
           </li>
           <li>
             <BaseButton
-              variant="outline"
+              variant="text"
               size="sm"
               color="secondary"
               href="https://www.linkedin.com/in/mikeamattner/"
@@ -27,7 +27,7 @@
           </li>
           <li>
             <BaseButton
-              variant="outline"
+              variant="text"
               size="sm"
               color="secondary"
               href="https://mastodon.online/@mikemattner"
@@ -39,7 +39,7 @@
           </li>
           <li>
             <BaseButton
-              variant="outline"
+              variant="text"
               size="sm"
               color="secondary"
               href="https://codepen.io/mikemattner/#"
@@ -49,7 +49,7 @@
             </BaseButton>
           </li>
         </ul>
-        <p class="copyright-line">Copyright &copy; 2006 &ndash; {{ theYear }} Mike Mattner.</p>
+        <p class="copyright-line">&copy; 2006 &ndash; {{ theYear }} Mike Mattner</p>
       </div>
     </div>
   </footer>
@@ -76,32 +76,36 @@ const theYear = computed<string>(() => {
   }
 
   &__layout {
-    max-width: var(--max-width);
+    max-width: var(--max-width-nav);
     margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 
     .copyright-area {
-      max-width: 85ch;
       width: 100%;
       font-size: var(--size-step--1);
       display: flex;
-      flex-direction: column;
       gap: var(--sizing-md);
 
-      .theme-switcher {
-        display: flex;
+      @media (min-width: 801px) {
         align-items: center;
-        gap: var(--sizing-md);
+        justify-content: space-between;
+      }
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+        text-align: center;
       }
     }
 
     .copyright-line {
       font-size: var(--size-step--2);
-      margin-block-start: 1.75rem;
       text-indent: 0;
+
+      @media (max-width: 800px) {
+        margin-block-start: var(--sizing-lg);
+      }
     }
   }
 
@@ -114,19 +118,20 @@ const theYear = computed<string>(() => {
     padding: 0;
     margin: 0 auto;
 
-    @media (min-width: 790px) {
+    @media (min-width: 801px) {
       display: grid;
       align-items: center;
-      grid-template-columns: repeat(4, 170px);
+      grid-template-columns: repeat(4, 140px);
+      margin: 0;
     }
 
-    @media (max-width: 800px) and (min-width: 716px) {
+    @media (max-width: 800px) and (min-width: 451px) {
       display: grid;
       align-items: center;
-      grid-template-columns: repeat(2, 170px);
+      grid-template-columns: repeat(2, 140px);
     }
 
-    @media (max-width: 715px) {
+    @media (max-width: 450px) {
       width: 100%;
 
       li {
@@ -141,6 +146,8 @@ const theYear = computed<string>(() => {
 
     .icon {
       transition: var(--transition-fast);
+      width: 1.25rem;
+      height: 1.25rem;
     }
   }
 }

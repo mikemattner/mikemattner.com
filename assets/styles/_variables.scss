@@ -28,7 +28,7 @@
 
     // Utilities - global
     --max-width: 72.3125rem; //92.3125rem
-    --max-width-nav: 82.3125rem; //92.3125rem
+    --max-width-nav: 92.3125rem; //92.3125rem
 
     // Utilities - transitions
     --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
@@ -39,6 +39,7 @@
     --transition-cubic-slow: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --transition-slow: all 1.25s cubic-bezier(0.68, 0, 0.265, 1.55);
     --transition-slow-ease: all 1.25s cubic-bezier(.62,.16,.13,1.01);
+    --cubic-bezier: cubic-bezier(.62,.16,.13,1.01);
 
     // Button variables
     --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
