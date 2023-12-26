@@ -56,7 +56,7 @@
       // backdrop-filter: blur(10px);
       // border: 1px solid var(--color-light-border-t);
       // padding: 1rem;
-      max-width: var(--max-width);
+      max-width: var(--max-width-nav);
       gap: var(--sizing-xxxl);
     }
   }

@@ -74,7 +74,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
 
   &.summary-list {
     @media (min-width: 767px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @media (max-width: 766px) {

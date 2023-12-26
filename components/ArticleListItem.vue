@@ -45,7 +45,7 @@ const icon = computed<string>(() => {
     }
 
     .article-list-item__title {
-      padding: var(--sizing-lg) var(--sizing-lg) 0;
+      padding: var(--sizing-xxl) var(--sizing-xxl) 0;
     }
     .article-list-item__read-more {
       font-size: var(--size-step--1);
@@ -54,7 +54,7 @@ const icon = computed<string>(() => {
       align-items: center;
       gap: var(--sizing-sm);
       color: var(--color-primary);
-      padding: 0 var(--sizing-lg) var(--sizing-lg);
+      padding: 0 var(--sizing-xxl) var(--sizing-xxl);
 
       svg {
         transition: var(--transition-cubic);
@@ -84,7 +84,7 @@ const icon = computed<string>(() => {
     align-items: center;
     gap: var(--sizing-sm);
     color: var(--blog-card-date-color);
-    padding: var(--sizing-lg);
+    padding: var(--sizing-lg) var(--sizing-xxl);
     background-color: var(--border-color);
 
     svg {
