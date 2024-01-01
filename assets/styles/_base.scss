@@ -4,8 +4,8 @@
 body {
     background: var(--background-color);
     background-image: var(--background-image);
-    background-size: 2000px 2000px;
-    background-position: center -1000px;
+    background-size: 3000px 3000px;
+    background-position: center -1500px;
     background-repeat: no-repeat;
     color: var(--font-color);
     font-family: var(--sans-font-family);
@@ -70,13 +70,13 @@ a:not(.button--link) {
     color: var(--headline-font-color);
     text-decoration-color: var(--color-primary);
     text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-    text-decoration-style: wavy;
+    text-underline-offset: 4px;
+    text-decoration-style: solid;
     transition: var(--transition);
   
     &:hover {
-        text-decoration-color: var(--color-highlight);
-        color: var(--color-highlight);
+        text-underline-offset: 2px;
+        color: var(--color-primary);
     }
 }
 
