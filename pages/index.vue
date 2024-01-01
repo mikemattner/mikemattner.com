@@ -5,7 +5,7 @@
         <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
 
         <h1 class="main-lede">
-          <span class="introduction">Hello! My name is Mike Mattner.</span>
+          <span class="introduction">Hi! My name&rsquo;s Mike Mattner.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -224,6 +224,8 @@ const posts = computed(() => {
     aspect-ratio: 2 / 1.5;
     width: 100%;
     display: inline-flex;
+    border-radius: 0 50px 0 50px;
+    overflow: hidden;
 
     @media (min-width: 1053px) {
       grid-column: 1 / span 6;

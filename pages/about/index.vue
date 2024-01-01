@@ -2,8 +2,8 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1>About the Author</h1>
-        <p class="intro">Hello there! Here's a non exhaustive summary of my life, career, and this website.</p>
+        <h1>Hi, I&rsquo;m Mike!</h1>
+        <p class="intro">Here's a non exhaustive summary of my life, career, and this website.</p>
 
         <ul class="sub-menu">
           <li><NuxtLink to="/about">About</NuxtLink></li>
@@ -261,6 +261,8 @@ useHead({
 
   .profile-image {
     aspect-ratio: 2 / 1.5;
+    border-radius: 0 50px 0 50px;
+    overflow: hidden;
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
