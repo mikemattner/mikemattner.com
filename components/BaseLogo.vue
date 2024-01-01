@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import PrimaryLogo from '~/assets/images/logo.svg';
+// import PrimaryLogo from '~/assets/images/MM_Logo.svg';
 
 const props = defineProps({
   showLabel: { type: Boolean, default: false },

@@ -33,7 +33,7 @@
       </div>
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2><small>Recent Posts</small> On the Blog</h2>
+          <h2>On the Blog</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
