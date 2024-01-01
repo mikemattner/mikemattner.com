@@ -5,7 +5,7 @@
         <ul class="social-icons">
           <li>
             <BaseButton
-              variant="text"
+              variant="link"
               size="sm"
               color="secondary"
               href="https://github.com/mikemattner"
@@ -16,7 +16,7 @@
           </li>
           <li>
             <BaseButton
-              variant="text"
+              variant="link"
               size="sm"
               color="secondary"
               href="https://www.linkedin.com/in/mikeamattner/"
@@ -27,7 +27,7 @@
           </li>
           <li>
             <BaseButton
-              variant="text"
+              variant="link"
               size="sm"
               color="secondary"
               href="https://mastodon.online/@mikemattner"
@@ -39,7 +39,7 @@
           </li>
           <li>
             <BaseButton
-              variant="text"
+              variant="link"
               size="sm"
               color="secondary"
               href="https://codepen.io/mikemattner/#"
@@ -69,6 +69,7 @@ const theYear = computed<string>(() => {
 
   @media (min-width: 716px) {
     grid-area: footer;
+    padding: 1rem var(--sizing-xl);
   }
 
   @media (max-width: 715px) {
@@ -116,23 +117,33 @@ const theYear = computed<string>(() => {
     gap: var(--sizing-lg);
     list-style: none;
     padding: 0;
-    margin: 0 auto;
+
+    li {
+      display: flex;
+      align-items: center;
+    }
 
     @media (min-width: 801px) {
-      display: grid;
+      flex-direction: row;
       align-items: center;
-      grid-template-columns: repeat(4, 140px);
-      margin: 0;
+      justify-content: flex-start;
+      gap: var(--sizing-xxxl);
+      // display: grid;
+      // align-items: center;
+      // grid-template-columns: repeat(4, 1fr);
+      // margin: 0;
     }
 
     @media (max-width: 800px) and (min-width: 451px) {
       display: grid;
       align-items: center;
       grid-template-columns: repeat(2, 140px);
+      margin: 0 auto;
     }
 
     @media (max-width: 450px) {
       width: 100%;
+      margin: 0 auto;
 
       li {
         width: 100%;
@@ -142,7 +153,7 @@ const theYear = computed<string>(() => {
   a.footer-icon {
     line-height: 1;
     text-decoration: none;
-    width: 100%;
+    // width: 100%;
 
     .icon {
       transition: var(--transition-fast);

@@ -3,7 +3,7 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1><small>Blog Archives</small> Yearly Listing</h1>
+          <h1>Yearly Archives</h1>
           <p>
             I used to do this more, and varied the topics more widely. This is a small selection of the things I care
             enough to have kept and written about over the years.
@@ -64,7 +64,7 @@ const posts = computed<Post[]>(() => {
     }
 
     p {
-      max-width: 50ch;
+      max-width: 65ch;
     }
   }
 

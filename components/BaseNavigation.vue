@@ -19,7 +19,7 @@
     position: sticky;
     top: var(--sizing-md);
     z-index: 1000;
-    padding: var(--sizing-md);
+    padding: var(--sizing-md) var(--sizing-xl);
     border: none;
     mix-blend-mode: difference;
   }
@@ -27,7 +27,7 @@
   @media (max-width: 715px) {
     padding: 1rem;
     flex-direction: column;
-    background: var(--background-border-color);
+    // background: var(--background-border-color);
   }
 
   &__container {
@@ -46,7 +46,7 @@
 
     @media (max-width: 715px) {
       justify-content: space-between;
-      background: var(--background-border-color);
+      // background: var(--background-border-color);
       // flex-direction: column;
       // justify-content: center;
     }
