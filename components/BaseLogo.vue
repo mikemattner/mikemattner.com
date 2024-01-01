@@ -52,11 +52,11 @@ const props = defineProps({
   }
 
   &__type {
-    font-size: var(--size-step-1);
+    font-size: var(--size-step-0);
     transition: all 0.125s ease-in-out;
     line-height: 1;
-    font-variation-settings: 'wdth' 65, 'wght' 400;
-    letter-spacing: 0.0125em;
+    font-variation-settings: 'wdth' 100, 'wght' 800;
+    letter-spacing: -0.0125em;
     text-transform: uppercase;
     transition: var(--transition-cubic-slow);
     color: var(--color-light);
