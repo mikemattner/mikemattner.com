@@ -28,10 +28,9 @@ const props = defineProps({
   }
 
   :deep(img) {
-    mix-blend-mode: multiply;
-    z-index: 2;
+    z-index: 1;
     position: relative;
-    opacity: 0.8;
+    opacity: 1;
     position: absolute;
     left: 0;
     right: 0;
@@ -45,6 +44,8 @@ const props = defineProps({
     font-family: 'object-fit: cover; object-position: center';
     width: 100%;
     height: 100%;
+    filter: grayscale(100%) invert(5%) sepia(8%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
+    transition: var(--transition-cubic);
 
     @media (min-width: 961px) {
       -o-object-position: top;
@@ -61,9 +62,10 @@ const props = defineProps({
     bottom: 0;
     margin: auto;
     background: var(--gradient-1);
-    mix-blend-mode: normal;
+    mix-blend-mode: multiply;
     opacity: 0.8;
     z-index: 3;
+    transition: var(--transition-cubic);
   }
 
   &:after {
@@ -75,9 +77,21 @@ const props = defineProps({
     bottom: 0;
     margin: auto;
     background-color: var(--image-background);
-    mix-blend-mode: color;
+    mix-blend-mode: darken;
     opacity: 1;
-    z-index: 1;
+    z-index: 2;
+    transition: var(--transition-cubic);
   }
+
+  // &:hover {
+  //   &:after,
+  //   &:before {
+  //     opacity: 0;
+  //   }
+
+  //   :deep(img) {
+  //     filter: none;
+  //   }
+  // }
 }
 </style>

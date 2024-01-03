@@ -309,6 +309,7 @@ useHead({
       aspect-ratio: 1;
       box-shadow: 5px 5px 0 0 var(--border-color);
       font-variation-settings: 'wdth' 100, 'wght' 800;
+      line-height: 1;
 
       .year {
         font-family: var(--code-font-family);

@@ -45,25 +45,27 @@ const icon = computed<string>(() => {
     }
 
     .article-list-item__title {
-      padding: var(--sizing-xxl) var(--sizing-xxl) 0;
+      padding: var(--sizing-xxl);
     }
     .article-list-item__read-more {
-      font-size: var(--size-step--1);
+      font-family: var(--code-font-family);
+      font-size: var(--size-step--2);
+      text-transform: uppercase;
       margin-top: auto;
       display: flex;
       align-items: center;
       gap: var(--sizing-sm);
-      color: var(--color-primary);
       padding: 0 var(--sizing-xxl) var(--sizing-xxl);
 
       svg {
-        transition: var(--transition-cubic);
+        transition: transform 0.125s var(--cubic-bezier);
       }
     }
 
     &:hover {
       color: var(--font-color);
       box-shadow: 0 0 0 0 var(--border-color);
+      background-color: var(--block-quote-bg);
 
       .article-list-item__read-more {
         svg {
