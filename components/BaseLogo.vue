@@ -60,6 +60,10 @@ const props = defineProps({
     text-transform: uppercase;
     transition: var(--transition-cubic-slow);
     color: var(--color-light);
+
+    @media (max-width: 715px) {
+      font-size: var(--size-step-1);
+    }
   }
 
   @media (min-width: 511px) {

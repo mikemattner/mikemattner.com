@@ -2,11 +2,11 @@
   <main class="home-page">
     <div class="home-layout">
       <div class="home-layout__hero">
-        <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
+        <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
 
         <h1 class="main-lede">
           <span class="introduction">
-            Hello! My name&rsquo;s
+            <span class="introduction-hello">Hello! My name&rsquo;s</span>
             <span class="introduction-name">Mike Mattner.</span>
           </span>
         </h1>
@@ -29,14 +29,14 @@
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
-              <span>Read about Mike</span> <Icon name="ri:account-circle-fill" />
+              <span>Read more about me</span> <Icon name="ri:account-pin-circle-fill" />
             </BaseButton>
             <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
-              <span>Uses</span> <Icon name="ri:macbook-fill" />
+              <span>Uses</span> <Icon name="ri:command-fill" />
             </BaseButton>
-            <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
+            <!-- <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
               <span>Resume</span> <Icon name="ri:file-list-2-fill" />
-            </BaseButton>
+            </BaseButton> -->
           </div>
         </div>
       </div>
@@ -203,11 +203,6 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    font-size: clamp(40px, 10vw, 115px);
-    font-variation-settings: 'wdth' 75, 'wght' 800;
-    line-height: 98%;
-    letter-spacing: 0.025em;
-    color: var(--headline-font-color);
     align-items: center;
     display: grid;
     grid-template-columns: subgrid;
@@ -228,13 +223,16 @@ const posts = computed(() => {
     }
   }
 
-  .introduction-name {
-    font-size: clamp(40px, 12vw, 145px);
-    font-variation-settings: 'wdth' 75, 'wght' 800, 'ital' 10;
-  }
-
   .introduction {
+    font-size: clamp(30px, 8vw, 95px);
+    font-variation-settings: 'wdth' 85, 'wght' 900;
+    line-height: 105%;
+    letter-spacing: 0.025em;
     text-transform: uppercase;
+    color: var(--headline-font-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sizing-lg);
 
     @media (min-width: 1053px) {
       grid-column: 8 / -1;
@@ -245,6 +243,12 @@ const posts = computed(() => {
     }
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
+    }
+
+    .introduction-name {
+      font-size: clamp(50px, 12vw, 145px);
+      font-variation-settings: 'wdth' 75, 'wght' 800, 'ital' 10;
+      text-transform: uppercase;
     }
   }
 
