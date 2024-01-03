@@ -4,7 +4,7 @@
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
           <h1>Yearly Archives</h1>
-          <p>
+          <p class="intro">
             I used to do this more, and varied the topics more widely. This is a small selection of the things I care
             enough to have kept and written about over the years.
           </p>
@@ -100,9 +100,11 @@ const posts = computed<Post[]>(() => {
 
   .intro {
     letter-spacing: 0.01em;
-    font-weight: 100;
-    font-size: var(--size-step-2);
-    line-height: 1.3;
+    font-weight: 300;
+    font-size: var(--size-step-1);
+    line-height: 1.4;
+    max-width: 65ch;
+    text-wrap: pretty;
   }
 
   .button-group {
