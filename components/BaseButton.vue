@@ -93,6 +93,8 @@ const attributes = computed(() => {
   line-height: 1;
   text-align: center;
   transition: var(--transition);
+  font-variation-settings: 'wdth' 95, 'wght' 800;
+  letter-spacing: 0.025em;
 
   &:focus-visible {
     outline: 0;
@@ -118,7 +120,7 @@ const attributes = computed(() => {
 
   &.button--md {
     font-size: var(--size-step-0);
-    padding: var(--sizing-md) var(--sizing-xxl);
+    padding: var(--sizing-lg) var(--sizing-xxl);
   }
 
   &.button--narrow {

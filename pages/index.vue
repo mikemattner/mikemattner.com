@@ -5,7 +5,10 @@
         <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
 
         <h1 class="main-lede">
-          <span class="introduction">Hi! My name&rsquo;s <span class="introduction-name">Mike Mattner.</span></span>
+          <span class="introduction">
+            Hello! My name&rsquo;s
+            <span class="introduction-name">Mike Mattner.</span>
+          </span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -22,24 +25,31 @@
           <p class="intro">
             In a former life I worked with the entire gamut of skills in what was once called
             <strong>digital media<Icon name="ri:flashlight-line" /></strong> including video editing, motion graphics,
-            interactive CDs, <strong>et cetera <Icon name="ri:loop-right-line" /></strong>.
+            interactive CDs, <strong>et cetera<Icon name="ri:loop-right-line" /></strong>.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
-              <span>Read more ( if you feel like it )</span> <Icon name="ri:arrow-right-line" />
+              <span>Read about Mike</span> <Icon name="ri:account-circle-fill" />
+            </BaseButton>
+            <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
+              <span>Uses</span> <Icon name="ri:macbook-fill" />
+            </BaseButton>
+            <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
+              <span>Resume</span> <Icon name="ri:file-list-2-fill" />
             </BaseButton>
           </div>
         </div>
       </div>
+      <hr />
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2>On the Blog</h2>
+          <h2 class="h4-heading">Recently Posted</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
           <div class="button-group">
             <BaseButton to="/blog" variant="outline" size="md" color="primary">
-              <span>Read the Archives</span> <Icon name="ri:arrow-right-line" />
+              <span>Read the archives</span> <Icon name="ri:arrow-right-line" />
             </BaseButton>
           </div>
         </div>
@@ -71,9 +81,8 @@ const posts = computed(() => {
   }
 
   hr {
-    grid-column: 1 / span 4;
-    margin-block-start: 3rem;
-    margin-block-end: 3rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
   }
 }
 .home-layout {
@@ -106,12 +115,12 @@ const posts = computed(() => {
   &__content {
     max-width: var(--max-width);
     margin-inline: auto;
-    margin-block-start: 8rem;
+    margin-block-start: 4rem;
     margin-block-end: 4rem;
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 10rem;
+      margin-block-start: 6rem;
       margin-block-end: 10rem;
       display: grid;
     }
@@ -162,7 +171,7 @@ const posts = computed(() => {
         width: 1em;
         height: 1em;
         vertical-align: middle;
-        margin: -0.1em 0.2em 0 0.1em;
+        margin: -0.1em 0.2em 0 0.25em;
         transform: scale(1.15);
         transition: var(--transition);
       }
@@ -182,13 +191,21 @@ const posts = computed(() => {
     --flow-space: 2.5em;
     display: flex;
     align-items: center;
-    gap: var(--sizing-md);
+    gap: var(--sizing-xl);
+
+    @media (max-width: 499px) {
+      flex-direction: column;
+
+      .button {
+        width: 100%;
+      }
+    }
   }
 
   .main-lede {
-    font-size: clamp(40px, 10vw, 125px);
+    font-size: clamp(40px, 10vw, 115px);
     font-variation-settings: 'wdth' 75, 'wght' 800;
-    line-height: 85%;
+    line-height: 98%;
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
     align-items: center;
@@ -209,6 +226,11 @@ const posts = computed(() => {
       margin: var(--sizing-xxl) 0;
       gap: var(--sizing-lg);
     }
+  }
+
+  .introduction-name {
+    font-size: clamp(40px, 12vw, 145px);
+    font-variation-settings: 'wdth' 75, 'wght' 800, 'ital' 10;
   }
 
   .introduction {
