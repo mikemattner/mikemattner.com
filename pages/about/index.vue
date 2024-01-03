@@ -12,7 +12,7 @@
         </ul>
         <hr />
       </div>
-      <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
+      <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
       <div class="about-content flow">
         <h2>Just The Highlights</h2>
         <p>
