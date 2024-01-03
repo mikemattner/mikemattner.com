@@ -13,19 +13,19 @@
         <div class="home-greeting flow">
           <p class="intro">
             I&rsquo;m a
-            <strong>UI designer<Icon name="ri:layout-bottom-2-line" /></strong> and
-            <strong>developer<Icon name="ri:terminal-box-line" /></strong>
+            <strong>UI designer<Icon name="ri:layout-masonry-fill" /></strong> and
+            <strong>UI developer<Icon name="ri:terminal-box-fill" /></strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
             I previously worked at an advertising agency as a
-            <strong>digital designer<Icon name="ri:brush-line" /></strong> and manager of creatives before switching to
-            a UX/UI developer role.
+            <strong>digital designer<Icon name="ri:contrast-drop-2-fill" /></strong> and manager of creatives before
+            switching to a UX/UI developer role.
           </p>
           <p class="intro">
             In a former life I worked with the entire gamut of skills in what was once called
-            <strong>digital media<Icon name="ri:flashlight-line" /></strong> including video editing, motion graphics,
-            interactive CDs, <strong>et cetera<Icon name="ri:loop-right-line" /></strong>.
+            <strong>digital media<Icon name="ri:dvd-fill" /></strong> including video editing, motion graphics,
+            interactive CDs, <strong>et cetera<Icon name="ri:apps-fill" /></strong>.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
@@ -34,9 +34,9 @@
             <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
             </BaseButton>
-            <!-- <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
-              <span>Resume</span> <Icon name="ri:file-list-2-fill" />
-            </BaseButton> -->
+            <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
+              <span>Resume</span> <Icon name="ri:article-fill" />
+            </BaseButton>
           </div>
         </div>
       </div>
@@ -224,9 +224,9 @@ const posts = computed(() => {
   }
 
   .introduction {
-    font-size: clamp(30px, 8vw, 95px);
+    font-size: clamp(25px, 6vw, 75px);
     font-variation-settings: 'wdth' 85, 'wght' 900;
-    line-height: 105%;
+    line-height: 120%;
     letter-spacing: 0.025em;
     text-transform: uppercase;
     color: var(--headline-font-color);
@@ -246,7 +246,7 @@ const posts = computed(() => {
     }
 
     .introduction-hello {
-      font-variation-settings: 'wdth' 85, 'wght' 300;
+      font-variation-settings: 'wdth' 95, 'wght' 300;
     }
 
     .introduction-name {
