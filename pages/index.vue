@@ -6,14 +6,14 @@
 
         <h1 class="main-lede">
           <span class="introduction">
-            <span class="introduction-hello">Hello! My name&rsquo;s</span>
+            <span class="introduction-hello">Hello! <span class="introduction-salutation">My name&rsquo;s</span></span>
             <span class="introduction-name">Mike Mattner.</span>
           </span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
             I&rsquo;m a
-            <strong>UI designer<Icon name="ri:layout-bottom-2-line" /></strong> &amp;
+            <strong>UI designer<Icon name="ri:layout-bottom-2-line" /></strong> and
             <strong>developer<Icon name="ri:terminal-box-line" /></strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
@@ -49,7 +49,7 @@
           <ArticleList :posts="posts" />
           <div class="button-group">
             <BaseButton to="/blog" variant="outline" size="md" color="primary">
-              <span>Read the archives</span> <Icon name="ri:arrow-right-line" />
+              <span>Read the archives</span> <Icon name="ri:arrow-right-fill" />
             </BaseButton>
           </div>
         </div>
@@ -87,7 +87,7 @@ const posts = computed(() => {
 }
 .home-layout {
   &__hero {
-    margin-block-start: 4rem;
+    margin-block-start: 2rem;
     margin-block-end: 4rem;
     max-width: var(--max-width);
     margin-inline: auto;
@@ -245,10 +245,18 @@ const posts = computed(() => {
       grid-column: 1 / span 4;
     }
 
+    .introduction-hello {
+      font-variation-settings: 'wdth' 85, 'wght' 300;
+    }
+
     .introduction-name {
       font-size: clamp(50px, 12vw, 145px);
       font-variation-settings: 'wdth' 75, 'wght' 800, 'ital' 10;
       text-transform: uppercase;
+    }
+
+    .introduction-salutation {
+      font-variation-settings: 'wdth' 85, 'wght' 300;
     }
   }
 

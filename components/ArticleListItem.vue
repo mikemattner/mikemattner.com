@@ -6,7 +6,7 @@
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
       </div>
-      <div class="article-list-item__read-more"><span>Read more</span> <Icon name="ri:arrow-right-line" /></div>
+      <div class="article-list-item__read-more"><span>Read more</span> <Icon name="ri:arrow-right-fill" /></div>
     </NuxtLink>
   </div>
 </template>

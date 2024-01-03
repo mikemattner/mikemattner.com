@@ -55,6 +55,9 @@
     --color-blue: hsl(240, 91%, 54%);
     --color-blue-hsl: 240, 91%, 54%;
 
+    --color-dark-blue: hsl(240, 36%, 4%);
+    --color-dark-blue-hsl: 240, 36%, 4%;
+
     --color-pink: hsl(288, 69%, 54%);
     --color-pink-hsl: 288, 69%, 54%;
 
@@ -138,7 +141,7 @@ html.light {
     --font-color: hsla(var(--color-black-hsl), 0.7);
     --headline-font-color: hsla(var(--color-black-hsl), 0.9);
     --background-border-color: var(--color-light-bg-border);
-    --border-color: hsla(var(--color-black-hsl), 0.2); //hsl(240, 9%, 69%)
+    --border-color: hsla(var(--color-dark-blue-hsl), 0.1); //hsl(240, 9%, 69%)
     --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 38%) 54.62%, hsla(0, 0%, 98%, 70%) 79.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-light-t);
@@ -156,7 +159,7 @@ html.dark {
     --font-color: var(--color-dark-font-color);
     --headline-font-color: var(--color-light);
     --background-border-color: var(--color-dark-bg-border);
-    --border-color: hsla(var(--color-white-hsl), 0.1); //hsl(240, 9%, 20%)
+    --border-color: hsla(var(--color-white-hsl), 0.075); //hsl(240, 9%, 20%)
     --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
