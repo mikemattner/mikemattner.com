@@ -196,8 +196,9 @@ useHead({
     letter-spacing: 0.01em;
     font-weight: 300;
     font-size: var(--size-step-1);
-    line-height: 1.3;
-    max-width: 50ch;
+    line-height: 1.4;
+    max-width: 65ch;
+    text-wrap: pretty;
   }
 
   .desk-image {

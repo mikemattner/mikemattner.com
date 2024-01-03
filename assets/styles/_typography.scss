@@ -4,10 +4,12 @@ h3 {
   line-height: 1.1;
   text-wrap: balance;
   color: var(--headline-font-color);
-  // font-variation-settings: 'wdth' 95, 'wght' 900;
   font-variation-settings: 'wdth' 100, 'wght' 800;
-  // text-transform: uppercase;
   letter-spacing: 0.0125em;
+  // text-transform: uppercase;
+  // font-variation-settings: 'wdth' 75, 'wght' 800;
+  // line-height: 95%;
+  // letter-spacing: 0.025em;
 
   small {
     display: block;
