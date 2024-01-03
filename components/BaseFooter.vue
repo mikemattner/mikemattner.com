@@ -19,10 +19,10 @@
               variant="link"
               size="sm"
               color="secondary"
-              href="https://www.linkedin.com/in/mikeamattner/"
+              href="https://codepen.io/mikemattner/#"
               class="footer-icon"
             >
-              <Icon name="ri:linkedin-box-fill" /> LinkedIn
+              <Icon name="ri:codepen-fill" /> Codepen
             </BaseButton>
           </li>
           <li>
@@ -42,14 +42,14 @@
               variant="link"
               size="sm"
               color="secondary"
-              href="https://codepen.io/mikemattner/#"
+              href="https://www.linkedin.com/in/mikeamattner/"
               class="footer-icon"
             >
-              <Icon name="ri:codepen-fill" /> Codepen
+              <Icon name="ri:linkedin-box-fill" /> LinkedIn
             </BaseButton>
           </li>
         </ul>
-        <p class="copyright-line">&copy; 2006 &ndash; {{ theYear }} Mike Mattner</p>
+        <p class="copyright-line">&copy; {{ theYear }} Mike Mattner</p>
       </div>
     </div>
   </footer>
@@ -101,7 +101,7 @@ const theYear = computed<string>(() => {
     }
 
     .copyright-line {
-      font-size: var(--size-step--2);
+      font-size: var(--size-step--1);
       text-indent: 0;
 
       @media (max-width: 800px) {
@@ -127,33 +127,25 @@ const theYear = computed<string>(() => {
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      gap: var(--sizing-xxxl);
-      // display: grid;
-      // align-items: center;
-      // grid-template-columns: repeat(4, 1fr);
-      // margin: 0;
+      gap: var(--sizing-xl);
     }
 
-    @media (max-width: 800px) and (min-width: 451px) {
+    @media (max-width: 800px) {
       display: grid;
       align-items: center;
       grid-template-columns: repeat(2, 140px);
       margin: 0 auto;
-    }
-
-    @media (max-width: 450px) {
-      width: 100%;
-      margin: 0 auto;
+      text-align: center;
 
       li {
         width: 100%;
+        justify-content: center;
       }
     }
   }
   a.footer-icon {
     line-height: 1;
     text-decoration: none;
-    // width: 100%;
 
     .icon {
       transition: var(--transition-fast);

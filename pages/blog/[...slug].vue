@@ -4,11 +4,11 @@
       <article class="article-layout">
         <aside class="article-meta">
           <div class="article-meta-block">
-            <h4 class="eyebrow">Posted</h4>
+            <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
             <time>{{ formatDate(data.date) }}</time>
           </div>
           <div class="article-meta-block">
-            <h4 class="eyebrow">Topic</h4>
+            <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
             <ul class="tag-list">
               <li v-for="tag in data.tag" :key="tag">{{ tag }}</li>
             </ul>
@@ -151,7 +151,18 @@ useHead({
       gap: var(--sizing-xl);
     }
 
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--sizing-sm);
+      margin-block-end: var(--sizing-sm);
+    }
+
     &-block {
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
       @media (min-width: 989px) {
         margin-block-end: 1.5rem;
       }
