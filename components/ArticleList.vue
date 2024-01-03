@@ -73,15 +73,11 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   gap: var(--sizing-xl);
 
   &.summary-list {
-    @media (min-width: 767px) {
+    @media (min-width: 901px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 766px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 499px) {
+    @media (max-width: 900px) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
