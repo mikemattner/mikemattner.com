@@ -5,7 +5,7 @@
         <ProfileImage image="/images/pro-profile.jpg" class="profile-image" />
 
         <h1 class="main-lede">
-          <span class="introduction">Hi! My name&rsquo;s Mike Mattner.</span>
+          <span class="introduction">Hi! My name&rsquo;s <span class="introduction-name">Mike Mattner.</span></span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -149,9 +149,11 @@ const posts = computed(() => {
 
     .intro {
       letter-spacing: 0.01em;
-      font-weight: 100;
-      font-size: var(--size-step-2);
-      line-height: 1.3;
+      font-weight: 300;
+      font-size: var(--size-step-1);
+      line-height: 1.4;
+      max-width: 65ch;
+      text-wrap: pretty;
 
       svg {
         fill: var(--color-highlight);
@@ -184,8 +186,9 @@ const posts = computed(() => {
   }
 
   .main-lede {
-    font-size: clamp(40px, 8vw, 95px);
-    line-height: 1;
+    font-size: clamp(40px, 10vw, 125px);
+    font-variation-settings: 'wdth' 75, 'wght' 800;
+    line-height: 85%;
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
     align-items: center;
@@ -209,6 +212,8 @@ const posts = computed(() => {
   }
 
   .introduction {
+    text-transform: uppercase;
+
     @media (min-width: 1053px) {
       grid-column: 8 / -1;
       align-self: center;
@@ -220,6 +225,7 @@ const posts = computed(() => {
       grid-column: 1 / span 4;
     }
   }
+
   .profile-image {
     aspect-ratio: 2 / 1.5;
     width: 100%;
@@ -235,9 +241,11 @@ const posts = computed(() => {
     @media (max-width: 1052px) {
       grid-column: 1 / span 1;
       grid-row: 1;
+      aspect-ratio: 1;
     }
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
+      aspect-ratio: 2 / 1.5;
     }
   }
 }

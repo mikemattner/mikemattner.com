@@ -55,7 +55,7 @@ const props = defineProps({
     font-size: var(--size-step-0);
     transition: all 0.125s ease-in-out;
     line-height: 1;
-    font-variation-settings: 'wdth' 100, 'wght' 800;
+    font-variation-settings: 'wdth' 85, 'wght' 800, 'ital' 10;
     letter-spacing: -0.0125em;
     text-transform: uppercase;
     transition: var(--transition-cubic-slow);
