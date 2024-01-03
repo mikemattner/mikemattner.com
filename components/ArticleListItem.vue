@@ -1,7 +1,15 @@
 <template>
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
-      <time><Icon :name="icon" /> {{ formatDate(post.date) }}</time>
+      <header class="article-list-item__header">
+        <div class="article-list-item__tags">
+          <Icon name="ri:chat-thread-fill" />
+          <ul class="tag-list">
+            <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
+          </ul>
+        </div>
+        <time><Icon :name="icon" /> {{ formatDate(post.date) }}</time>
+      </header>
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
@@ -20,8 +28,11 @@ const props = defineProps({
 });
 
 const icon = computed<string>(() => {
-  if (props.post.type === 'link') return 'ri:external-link-line';
-  return 'ri:file-list-2-line';
+  // TODO: determine if I ever really want to distinguish
+  //       between post types with an indicator at all.
+  // if (props.post.type === 'link') return 'ri:external-link-line';
+  // return 'ri:file-list-2-line';
+  return 'ri:calendar-fill';
 });
 </script>
 
@@ -79,19 +90,63 @@ const icon = computed<string>(() => {
     max-width: 70ch;
   }
 
-  time {
+  &__header {
     font-size: var(--size-step--2);
     font-family: var(--code-font-family);
     display: flex;
     align-items: center;
-    gap: var(--sizing-sm);
+    justify-content: space-between;
+    gap: var(--sizing-xxl);
     color: var(--blog-card-date-color);
     padding: var(--sizing-lg) var(--sizing-xxl);
     background-color: var(--border-color);
+  }
+
+  time {
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+  .tag-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
+
+    li {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: var(--sizing-sm);
+
+      &:before {
+        content: '/';
+        line-height: 1;
+        opacity: 0.5;
+      }
+
+      &:first-child:before {
+        display: none;
+      }
     }
   }
 }

@@ -177,6 +177,30 @@ useHead({
       padding: 0;
       list-style: none;
       font-family: var(--code-font-family);
+
+      @media (max-width: 988px) {
+        display: flex;
+        align-items: center;
+        gap: var(--sizing-sm);
+
+        li {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          gap: var(--sizing-sm);
+
+          &:before {
+            content: '/';
+            line-height: 1;
+            opacity: 0.5;
+          }
+
+          &:first-child:before {
+            display: none;
+          }
+        }
+      }
     }
 
     @media (min-width: 989px) {
