@@ -11,7 +11,7 @@
         </ul>
         <hr />
       </div>
-      <ProfileImage image="/images/desk.png" class="desk-image" />
+      <PrimaryImage src="/images/desk.png" has-overlay class="desk-image" />
       <div class="about-content">
         <h2 class="h4-heading section-header">Desk</h2>
         <div class="section-content columns flow">

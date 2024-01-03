@@ -3,10 +3,10 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Yearly Archives</h1>
+          <h1>Blog Archives</h1>
           <p class="intro">
-            I used to do this more, and varied the topics more widely. This is a small selection of the things I care
-            enough to have kept and written about over the years.
+            I used to write more, link to more things, and vary the topics more widely. This is a small selection of the
+            things I have written about over the years with a few new items, too.
           </p>
           <hr />
         </div>
