@@ -6,7 +6,7 @@
 
         <h1 class="main-lede">
           <span class="introduction">
-            <span class="introduction-hello">Hello! <span class="introduction-salutation">My name&rsquo;s</span></span>
+            <span class="introduction-hello">Hello! <span class="introduction-salutation">My name is</span></span>
             <span class="introduction-name">Mike Mattner.</span>
           </span>
         </h1>
@@ -256,7 +256,7 @@ const posts = computed(() => {
     }
 
     .introduction-salutation {
-      font-variation-settings: 'wdth' 85, 'wght' 300;
+      font-variation-settings: 'wdth' 95, 'wght' 300;
     }
   }
 
