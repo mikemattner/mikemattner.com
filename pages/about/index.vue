@@ -12,7 +12,9 @@
         </ul>
         <hr />
       </div>
-      <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
+      <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
+        <template v-slot:caption>Photographed while visiting Austin, Texas.</template>
+      </PrimaryImage>
       <div class="about-content flow">
         <h2>Just The Highlights</h2>
         <p>
@@ -49,14 +51,17 @@
         <h3>Other Iterations</h3>
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
-          2. The rest of these are internet archive representations. And to be quite honest, they didn't capture
-          everything back to 2005. Styles weren't saved with the pages until about 2010. Additionally, my versioning of
-          the Nuxt iterations is a little wonky.
+          2. The rest of these are internet archive representations. You can see some of the evolution of my design
+          style even if it is incomplete.
+        </p>
+        <p>
+          Unfortunately, they didn't capture everything going back to 2005. Styles weren't saved with the pages until
+          about 2010. Additionally, my versioning of the Nuxt iterations is a little wonky.
         </p>
         <ul class="former-site-iterations">
           <li>
             <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
-              ><span class="small-text">Nuxt 2 V1</span><span class="year">2021-2022</span></a
+              ><span class="small-text">Nuxt 2</span><span class="year">2021-2022</span></a
             >
           </li>
           <li>
@@ -110,7 +115,7 @@
         </ul>
       </div>
       <div class="timeline-content flow">
-        <h2 class="h3-heading">A Brief Timeline</h2>
+        <h2 class="h4-heading">A Brief Timeline</h2>
         <ol class="timeline small-text">
           <li class="flow">
             <h3 class="small-heading">1985</h3>
@@ -357,13 +362,13 @@ useHead({
         border: 2px solid var(--border-color);
         background: var(--background-color);
         transition: var(--transition-cubic);
-        box-shadow: 2px 2px 0 0 var(--border-color);
+        // box-shadow: 2px 2px 0 0 var(--border-color);
       }
 
       &:hover {
         &:before {
           border-color: var(--color-primary);
-          box-shadow: 0 0 0 0 var(--color-primary);
+          // box-shadow: 0 0 0 0 var(--color-primary);
         }
       }
     }

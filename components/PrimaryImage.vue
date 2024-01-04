@@ -5,7 +5,11 @@
       class="primary-image__image"
       v-bind="{ ...attributes }"
       :class="{ 'has-overlay': hasOverlay, 'has-hover': hasHover }"
-    />
+    >
+      <template v-slot:caption>
+        <slot name="caption"></slot>
+      </template>
+    </BaseImage>
   </div>
 </template>
 
@@ -22,6 +26,11 @@ const attributes = computed(() => {
     alt: props.alt,
   };
 });
+
+const slots = useSlots();
+const hasSlot = (name: string) => {
+  return !!slots[name];
+};
 </script>
 
 <style lang="scss" scoped>
@@ -54,6 +63,17 @@ const attributes = computed(() => {
       -o-object-position: top;
       object-position: top;
     }
+  }
+
+  :deep(figcaption) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    text-align: left;
+    color: hsl(var(--color-white-hsl));
+    font-size: var(--size-step--2);
+    font-variation-settings: 'ital' 10;
   }
 
   &.has-overlay {

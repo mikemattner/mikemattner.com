@@ -1,7 +1,9 @@
 <template>
   <figure class="static-image">
     <img :src="`${src}`" :alt="alt" :width="width" :height="height" />
-    <figcaption v-if="caption" v-html="caption"></figcaption>
+    <figcaption v-if="hasSlot('caption')">
+      <slot name="caption"></slot>
+    </figcaption>
   </figure>
 </template>
 
@@ -26,12 +28,12 @@ const props = defineProps({
     type: String,
     required: false,
   },
-  caption: {
-    default: '',
-    type: String,
-    required: false,
-  },
 });
+
+const slots = useSlots();
+const hasSlot = (name: string) => {
+  return !!slots[name];
+};
 </script>
 
 <style lang="scss" scoped>

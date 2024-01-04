@@ -6,7 +6,7 @@
 
         <h1 class="main-lede">
           <span class="introduction">
-            <span class="introduction-hello">Hello! <span class="introduction-salutation">My name is</span></span>
+            <span class="introduction-hello">Hi there, my name is</span>
             <span class="introduction-name">Mike Mattner.</span>
           </span>
         </h1>
@@ -228,7 +228,7 @@ const posts = computed(() => {
     font-variation-settings: 'wdth' 85, 'wght' 900;
     line-height: 120%;
     letter-spacing: 0.025em;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     color: var(--headline-font-color);
     display: flex;
     flex-direction: column;
@@ -246,17 +246,17 @@ const posts = computed(() => {
     }
 
     .introduction-hello {
-      font-variation-settings: 'wdth' 95, 'wght' 300;
+      font-variation-settings: 'wdth' 95, 'wght' 800;
     }
 
     .introduction-name {
       font-size: clamp(50px, 12vw, 145px);
-      font-variation-settings: 'wdth' 75, 'wght' 800, 'ital' 10;
+      font-variation-settings: 'wdth' 75, 'wght' 800;
       text-transform: uppercase;
     }
 
     .introduction-salutation {
-      font-variation-settings: 'wdth' 95, 'wght' 300;
+      font-variation-settings: 'wdth' 95, 'wght' 800;
     }
   }
 
