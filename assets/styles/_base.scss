@@ -59,7 +59,7 @@ body {
 }
 
 main {
-    padding: 2rem;
+    padding: 2rem var(--sizing-xl);
 
     @media (max-width: 715px) {
         padding: 1rem;

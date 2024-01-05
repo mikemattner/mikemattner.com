@@ -137,7 +137,7 @@
 
 html.light {
     --background-color: var(--color-light-bg);
-    --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-light-background-gradient-hsl), 0.15) 0%, var(--background-color) 100%);
+    --background-image: radial-gradient(47.1% 39.7%,hsla(var(--color-light-background-gradient-hsl),0.15) 0%, hsla(var(--color-primary-hsl), 0.1) 50%,var(--background-color) 100%);
     --font-color: hsla(var(--color-black-hsl), 0.7);
     --headline-font-color: hsla(var(--color-black-hsl), 0.9);
     --background-border-color: var(--color-light-bg-border);
