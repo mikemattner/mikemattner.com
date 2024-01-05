@@ -75,7 +75,7 @@ const posts = computed(() => {
 
 <style lang="scss" scoped>
 .home-page {
-  padding: 0 2rem;
+  padding: 0 var(--sizing-xl);
   @media (max-width: 715px) {
     padding: 1rem;
   }
