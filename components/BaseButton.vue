@@ -95,6 +95,7 @@ const attributes = computed(() => {
   transition: var(--transition);
   font-variation-settings: 'wdth' 95, 'wght' 800;
   letter-spacing: 0.025em;
+  border-radius: 7px;
 
   &:focus-visible {
     outline: 0;

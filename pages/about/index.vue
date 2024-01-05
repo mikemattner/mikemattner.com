@@ -268,7 +268,7 @@ useHead({
 
   .profile-image {
     aspect-ratio: 2 / 1.5;
-    border-radius: 0 50px 0 50px;
+    border-radius: 7px 50px 7px 50px;
     overflow: hidden;
 
     @media (min-width: 501px) {
@@ -315,6 +315,7 @@ useHead({
       box-shadow: 5px 5px 0 0 var(--border-color);
       font-variation-settings: 'wdth' 100, 'wght' 800;
       line-height: 1;
+      border-radius: 7px;
 
       .year {
         font-family: var(--code-font-family);
@@ -363,6 +364,7 @@ useHead({
         background: var(--background-color);
         transition: var(--transition-cubic);
         // box-shadow: 2px 2px 0 0 var(--border-color);
+        border-radius: 3px;
       }
 
       &:hover {

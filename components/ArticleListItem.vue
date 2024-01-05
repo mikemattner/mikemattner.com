@@ -50,6 +50,8 @@ const icon = computed<string>(() => {
     transition: var(--transition);
     border: 2px solid var(--border-color);
     box-shadow: 5px 5px 0 0 var(--border-color);
+    border-radius: 7px;
+    overflow: hidden;
 
     h3 {
       transition: var(--transition);

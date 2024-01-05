@@ -84,8 +84,7 @@ const toggle = () => {
       font-size: var(--size-step-4);
       gap: var(--sizing-sm);
       font-family: var(--sans-font-family);
-      font-variation-settings: 'wdth' 75, 'wght' 800;
-      text-transform: uppercase;
+      font-variation-settings: 'wdth' 95, 'wght' 800;
     }
 
     &__item {
