@@ -67,8 +67,8 @@ const hasSlot = (name: string) => {
 
   :deep(figcaption) {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: var(--sizing-sm);
+    right: var(--sizing-sm);
     z-index: 4;
     text-align: left;
     color: hsl(var(--color-white-hsl));

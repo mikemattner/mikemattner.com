@@ -264,7 +264,7 @@ const posts = computed(() => {
     aspect-ratio: 2 / 1.5;
     width: 100%;
     display: inline-flex;
-    border-radius: 0 50px 0 50px;
+    border-radius: 7px 50px 7px 50px;
     overflow: hidden;
 
     @media (min-width: 1053px) {
