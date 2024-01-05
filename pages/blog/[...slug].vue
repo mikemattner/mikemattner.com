@@ -110,12 +110,12 @@ useHead({
     grid-column: 3 / span 4;
     grid-row: 2;
 
-    @media (max-width: 799px) {
+    @media (max-width: 899px) {
       grid-column: 1 / span 6;
       grid-row: 3;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
       grid-column: 2 / span 4;
       grid-row: 3;
     }
