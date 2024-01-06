@@ -191,7 +191,7 @@ const featuredImage = computed<string>(() => {
 .article-list-item__link {
   @container (width >= 600px) {
     display: grid;
-    grid-template-columns: 0.5fr 2fr;
+    grid-template-columns: 200px 1fr;
   }
 }
 
@@ -210,6 +210,7 @@ const featuredImage = computed<string>(() => {
 
 .article-list-item__feature-image {
   @container (width >= 600px) {
+    aspect-ratio: 1;
     height: 100%;
   }
   @container (width <= 599px) {
