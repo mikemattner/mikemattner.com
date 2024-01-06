@@ -7,6 +7,8 @@ export interface Post extends ParsedContent {
   tag: string[];
   type: string;
   link: string;
+  image: string;
+  caption?: string;
 }
 
 export interface SortedPostItem {

@@ -6,6 +6,8 @@ description: Anyone who knows me closely is quite aware of my love for Michigan
   immensely.
 link: https://mgoblue.com/news/2024/1/1/football-wolverines-topple-tide-in-ot-at-rose-bowl-to-secure-national-title-game-bid
 type: entry
+image: /images/feature/corum-two.jpg
+caption: Credit to Patrick Barron
 tag:
   - Football
   - Wolverines
