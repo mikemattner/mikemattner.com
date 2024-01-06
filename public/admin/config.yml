@@ -18,7 +18,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
       - { label: 'Type', name: 'type', widget: 'select', options: ['entry', 'link'], default: ['entry'] }
       - { label: 'Tag', name: 'tag', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
