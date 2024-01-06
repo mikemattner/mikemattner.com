@@ -10,6 +10,11 @@
         </div>
         <time><Icon :name="icon" /> {{ formatDate(post.date) }}</time>
       </header>
+      <div class="article-list-item__feature">
+        <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image">
+          <template v-if="post.caption" v-slot:caption>{{ post.caption }}</template>
+        </PrimaryImage>
+      </div>
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
@@ -34,6 +39,11 @@ const icon = computed<string>(() => {
   // return 'ri:file-list-2-line';
   return 'ri:calendar-fill';
 });
+
+const featuredImage = computed<string>(() => {
+  if (!props.post.image) return '/images/feature/default-two.jpg';
+  return props.post.image;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -44,7 +54,6 @@ const icon = computed<string>(() => {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--sizing-md);
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
@@ -85,6 +94,27 @@ const icon = computed<string>(() => {
           transform: translateX(var(--sizing-sm)) scale(1.1);
         }
       }
+
+      .article-list-item__feature-image {
+        :deep(img) {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  &__feature {
+    padding: 0;
+  }
+
+  &__feature-image {
+    width: 100%;
+    display: inline-flex;
+    border-radius: 7px;
+    overflow: hidden;
+
+    :deep(img) {
+      transition: var(--transition);
     }
   }
 
@@ -150,6 +180,62 @@ const icon = computed<string>(() => {
         display: none;
       }
     }
+  }
+}
+</style>
+
+<style scoped>
+.article-list-item {
+  container: article / inline-size;
+}
+.article-list-item__link {
+  @container (width >= 600px) {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+  }
+}
+
+.article-list-item__feature {
+  @container (width >= 600px) {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    display: flex;
+    align-items: center;
+    padding: var(--sizing-md);
+  }
+  @container (width <= 599px) {
+    padding: var(--sizing-lg) var(--sizing-lg) 0;
+  }
+}
+
+.article-list-item__feature-image {
+  @container (width >= 600px) {
+    height: 100%;
+  }
+  @container (width <= 599px) {
+    aspect-ratio: 2 / 0.75;
+  }
+}
+.article-list-item__header {
+  @container (width >= 600px) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+}
+
+.article-list-item__title {
+  @container (width >= 600px) {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+}
+
+.article-list-item__read-more {
+  @container (width >= 600px) {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
   }
 }
 </style>

@@ -4,6 +4,7 @@ date: 2016-11-09
 type: link
 description: 'I am glad 2020 forced this man out of office.'
 link: http://www.newyorker.com/news/news-desk/an-american-tragedy-donald-trump
+image: /images/feature/default-two.jpg
 tag:
     - Politics
 ---
