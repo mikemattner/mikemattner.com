@@ -8,7 +8,7 @@
             <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
           </ul>
         </div>
-        <time><Icon :name="icon" /> {{ formatDate(post.date) }}</time>
+        <time><Icon name="ri:calendar-fill" /> {{ formatDate(post.date) }}</time>
       </header>
       <div class="article-list-item__feature">
         <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image">
@@ -30,14 +30,6 @@ import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
-});
-
-const icon = computed<string>(() => {
-  // TODO: determine if I ever really want to distinguish
-  //       between post types with an indicator at all.
-  // if (props.post.type === 'link') return 'ri:external-link-line';
-  // return 'ri:file-list-2-line';
-  return 'ri:calendar-fill';
 });
 
 const featuredImage = computed<string>(() => {
@@ -110,11 +102,10 @@ const featuredImage = computed<string>(() => {
   &__feature-image {
     width: 100%;
     display: inline-flex;
-    border-radius: 7px;
     overflow: hidden;
 
     :deep(img) {
-      transition: var(--transition);
+      transition: var(--transition-ease);
     }
   }
 
