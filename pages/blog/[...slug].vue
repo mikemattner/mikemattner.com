@@ -2,6 +2,11 @@
   <main class="article-page">
     <template v-if="data">
       <article class="article-layout">
+        <!-- <div class="article-layout__feature">
+          <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
+            <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
+          </PrimaryImage>
+        </div> -->
         <aside class="article-meta">
           <div class="article-meta-block">
             <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
@@ -43,16 +48,22 @@
 </template>
 
 <script setup lang="ts">
+import { Post } from '~/types/posts';
 import { formatDate } from '~~/utils/formatDate';
 
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne();
+  return queryContent(path).findOne() as Promise<Post>;
 });
 
 const pageTitle = computed<string>(() => {
   return data?.value?.title ? data?.value?.title : 'UX/UI Designer & Developer in Michigan';
+});
+
+const featuredImage = computed<string>(() => {
+  if (!data?.value?.image) return '/images/feature/default-two.jpg';
+  return data?.value?.image;
 });
 
 useHead({
@@ -85,11 +96,72 @@ useHead({
     row-gap: var(--sizing-xxl);
     grid-template-columns: repeat(28, 1fr);
   }
+
+  &__feature {
+    padding: 0;
+    z-index: 1;
+
+    @media (max-width: 988px) {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+
+    @media (min-width: 989px) {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+
+    @media (min-width: 1001px) {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__feature-image {
+    width: 100%;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 7px;
+    position: relative;
+
+    @media (min-width: 1001px) {
+      aspect-ratio: 2 / 0.75;
+    }
+
+    @media (max-width: 1000px) {
+      aspect-ratio: 2 / 1;
+    }
+
+    @media (max-width: 500px) {
+      aspect-ratio: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: var(--background-color);
+      mix-blend-mode: hard-light;
+      opacity: 0.5;
+      z-index: 3;
+      transition: var(--transition-cubic);
+    }
+
+    :deep(img) {
+      transition: var(--transition-ease);
+    }
+  }
+
   .article-header {
     padding-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 2;
 
     @media (max-width: 988px) {
       grid-column: 1 / span 6;
