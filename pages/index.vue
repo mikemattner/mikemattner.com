@@ -69,7 +69,7 @@ useHead({
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 6) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
 });
 </script>
 
@@ -180,7 +180,7 @@ const posts = computed(() => {
 
   .content-area {
     grid-column: 1 / span 28;
-    margin: var(--sizing-xxxl) 0 0;
+    margin: var(--sizing-xl) 0 0;
   }
 
   .sidebar-area {

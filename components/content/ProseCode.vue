@@ -17,7 +17,7 @@
           variant="text"
           size="xs"
         >
-          <Icon name="ri:file-copy-line" />
+          <Icon name="ri:file-copy-line" /> Copy
         </BaseButton>
       </div>
     </header>
@@ -96,7 +96,6 @@ const languageText = computed(() => (props.language ? languageMap[props.language
   gap: var(--sizing-md);
   .copy-button {
     color: var(--color-light);
-    font-size: var(--size-step-0);
   }
 }
 :slotted(pre) {
