@@ -4,6 +4,8 @@ date: 2016-02-16
 type: link
 description: 'I do not totally agree with this take.'
 link: https://medium.com/@joshuantaylor/designers-shouldn-t-code-they-should-study-business-dc3e7e203d39#.qxr3crveo
+caption: Found on Unsplash
+image: /images/feature/city.jpg
 tag:
     - Development
 ---

@@ -4,6 +4,8 @@ date: 2017-06-09
 type: link
 description: 'Fun ways to make a boxy, grid-based medium a bit more exciting.'
 link: https://css-tricks.com/creating-non-rectangular-headers/
+caption: Found on Unsplash
+image: /images/feature/default-two.jpg
 tag:
     - Development
 ---

@@ -4,6 +4,8 @@ date: 2016-12-06
 type: link
 description: 'The fact that liberalism has become rote is central to our problem.'
 link: https://niskanencenter.org/blog/revitalizing-liberalism-age-brexit-trump/
+caption: Found on Unsplash
+image: /images/feature/library-of-congress.jpg
 tag:
     - Politics
 ---

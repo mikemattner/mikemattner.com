@@ -5,6 +5,8 @@ type: link
 description: As a professional I have made the switch and wow oh wow is it an amazing
   collaborative tool.
 link: https://medium.com/@tomjohndesign/you-are-going-to-switch-to-figma-351dc05c9a33
+caption: Found on Unsplash
+image: /images/feature/figma.jpg
 tag:
     - Development
 ---

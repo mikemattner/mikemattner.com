@@ -4,6 +4,8 @@ title: Built With Nuxt
 date: 2019-05-02
 description: Building my personal site with a more modern development experience.
 type: entry
+caption: Found on Unsplash
+image: /images/feature/built.jpg
 tag:
   - Development
 ---

@@ -4,6 +4,8 @@ date: 2023-09-30T17:18:17.282Z
 description: Hoping that Decap CMS works out ok so that I'm not constantly
   updating blog posts locally.
 type: entry
+image: /images/feature/testing-decap.jpg
+caption: Found on Unsplash
 tag:
   - Development
 ---
