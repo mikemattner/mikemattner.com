@@ -4,7 +4,8 @@ date: 2017-05-30
 type: link
 description: 'Conversational skills seem lacking. This might help.'
 link: http://kottke.org/17/05/10-ways-to-have-a-better-conversation
-image: /images/feature/default-one.jpg
+caption: Found on Unsplash
+image: /images/feature/conversation.jpg
 tag:
     - Wisdom
 ---

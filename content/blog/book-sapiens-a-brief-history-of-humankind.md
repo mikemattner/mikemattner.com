@@ -4,6 +4,8 @@ date: 2018-08-28
 type: link
 description: 'A book discussing a murky period in human history, and provides a very interesting backdrop to our development.'
 link: 'http://www.amazon.com/exec/obidos/ASIN/B00ICN066A/ref=nosim/0sil8'
+caption: Found on Unsplash
+image: /images/feature/default-two.jpg
 tag:
     - Learning
 ---

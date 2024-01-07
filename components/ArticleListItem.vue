@@ -11,9 +11,7 @@
         <time><Icon name="ri:calendar-fill" /> {{ formatDate(post.date) }}</time>
       </header>
       <div class="article-list-item__feature">
-        <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image">
-          <template v-if="post.caption" v-slot:caption>{{ post.caption }}</template>
-        </PrimaryImage>
+        <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
       </div>
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>

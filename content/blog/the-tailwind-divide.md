@@ -5,6 +5,8 @@ description: I don't want to claim to be anti-Tailwind, because I really do find
   utilitiy classes to be useful in some circumstances, but looking at the giant
   block of classes on Tailwind-based sites is mind numbing.
 link: https://joshcollinsworth.com/blog/tailwind-is-smart-steering
+caption: Found on Unsplash
+image: /images/feature/tailwind.jpg
 type: link
 tag:
   - Development

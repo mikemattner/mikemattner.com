@@ -4,6 +4,8 @@ date: 2017-09-12
 type: link
 description: 'Noise makes it very difficult to test either practical or academic theories about the way that financial or economic markets work.'
 link: 'http://www.e-m-h.org/Blac86.pdf'
+caption: Found on Unsplash
+image: /images/feature/noise.jpg
 tag:
     - Wisdom
 ---

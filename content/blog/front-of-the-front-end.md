@@ -4,6 +4,8 @@ date: 2022-02-08
 type: link
 description: 'So I think I fit into the front-of-the-front-end paradigm when it comes to my career.'
 link: https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/
+image: /images/feature/front-end.jpg
+caption: Found on Unsplash
 tag:
     - Development
 ---

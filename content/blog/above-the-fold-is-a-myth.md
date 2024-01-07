@@ -4,7 +4,8 @@ date: 2017-08-04
 type: link
 description: 'You probably didn&rsquo;t scroll all the way down here, did you?'
 link: http://abovethefold.fyi/
-image: /images/feature/default-one.jpg
+caption: Found on Unsplash
+image: /images/feature/typewriter.jpg
 tag:
     - Development
 ---
