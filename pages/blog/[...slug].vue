@@ -1,12 +1,12 @@
 <template>
   <main class="article-page">
     <template v-if="data">
+      <div class="article-layout__feature">
+        <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
+          <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
+        </PrimaryImage>
+      </div>
       <article class="article-layout">
-        <!-- <div class="article-layout__feature">
-          <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
-            <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
-          </PrimaryImage>
-        </div> -->
         <aside class="article-meta">
           <div class="article-meta-block">
             <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
@@ -26,6 +26,7 @@
           </ul>
           <h1 class="article-title" v-html="data.title"></h1>
         </header>
+        <p class="article-description" v-html="data.description"></p>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
           <template #empty>
@@ -98,23 +99,10 @@ useHead({
   }
 
   &__feature {
-    padding: 0;
+    padding: 2rem 0 0;
     z-index: 1;
-
-    @media (max-width: 988px) {
-      grid-column: 1 / span 6;
-      grid-row: 1;
-    }
-
-    @media (min-width: 989px) {
-      grid-column: 1 / span 6;
-      grid-row: 1;
-    }
-
-    @media (min-width: 1001px) {
-      grid-column: 1 / -1;
-      grid-row: 1;
-    }
+    max-width: var(--max-width-nav);
+    margin-inline: auto;
   }
 
   &__feature-image {
@@ -125,30 +113,15 @@ useHead({
     position: relative;
 
     @media (min-width: 1001px) {
-      aspect-ratio: 2 / 0.75;
+      aspect-ratio: 2 / 0.675;
     }
 
     @media (max-width: 1000px) {
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 2 / 0.75;
     }
 
     @media (max-width: 500px) {
       aspect-ratio: 1;
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background: var(--background-color);
-      mix-blend-mode: hard-light;
-      opacity: 0.5;
-      z-index: 3;
-      transition: var(--transition-cubic);
     }
 
     :deep(img) {
@@ -157,7 +130,7 @@ useHead({
   }
 
   .article-header {
-    padding-top: 4rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,7 +153,34 @@ useHead({
   }
   .article-body {
     grid-column: 3 / span 4;
-    grid-row: 2;
+    grid-row: 4;
+
+    @media (max-width: 899px) {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+    }
+
+    @media (min-width: 900px) {
+      grid-column: 2 / span 4;
+      grid-row: 4;
+    }
+
+    @media (min-width: 1001px) {
+      grid-column: 6 / span 18;
+      grid-row: 3;
+    }
+  }
+
+  .article-title {
+    font-size: clamp(40px, 8vw, 95px);
+    text-align: center;
+  }
+
+  .article-description {
+    position: relative;
+    font-size: var(--size-step-1);
+    grid-column: 3 / span 4;
+    grid-row: 3;
 
     @media (max-width: 899px) {
       grid-column: 1 / span 6;
@@ -196,15 +196,21 @@ useHead({
       grid-column: 6 / span 18;
       grid-row: 2;
     }
-  }
 
-  .article-title {
-    font-size: clamp(40px, 8vw, 95px);
-    text-align: center;
+    padding-bottom: var(--sizing-xxl);
+
+    &:after {
+      content: '';
+      height: 1px;
+      background-color: var(--border-color);
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   .article-meta {
-    border-top: 1px solid var(--border-color);
     padding: var(--sizing-md) 0;
     font-size: var(--size-step--1);
     grid-column: 1 / span 4;
@@ -212,7 +218,7 @@ useHead({
 
     @media (min-width: 1001px) {
       grid-column: 1 / span 4;
-      grid-row: 2;
+      grid-row: 2 / span 4;
     }
 
     @media (max-width: 1000px) {
@@ -221,6 +227,8 @@ useHead({
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--sizing-xl);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .eyebrow {
@@ -235,7 +243,7 @@ useHead({
         width: 1.5em;
         height: 1.5em;
       }
-      @media (min-width: 989px) {
+      @media (min-width: 1001px) {
         margin-block-end: 1.5rem;
       }
     }
@@ -250,7 +258,7 @@ useHead({
       list-style: none;
       font-family: var(--code-font-family);
 
-      @media (max-width: 988px) {
+      @media (max-width: 1000px) {
         display: flex;
         align-items: center;
         gap: var(--sizing-sm);
@@ -282,14 +290,13 @@ useHead({
     @media (max-width: 988px) {
       grid-column: 1 / span 6;
       grid-row: 2;
-      border-bottom: 1px solid var(--border-color);
     }
   }
 
   .article-link {
     padding: 0;
     grid-column: 3 / span 4;
-    grid-row: 3;
+    grid-row: 5;
     display: flex;
     align-items: stretch;
     background-color: var(--block-quote-bg);
@@ -312,34 +319,34 @@ useHead({
 
     @media (max-width: 767px) {
       grid-column: 1 / span 6;
-      grid-row: 4;
+      grid-row: 5;
     }
 
     @media (min-width: 768px) {
       grid-column: 2 / span 4;
-      grid-row: 4;
+      grid-row: 5;
     }
 
     @media (min-width: 1001px) {
       grid-column: 6 / span 18;
-      grid-row: 3;
+      grid-row: 4;
     }
   }
 
   .prev-next {
     @media (max-width: 988px) {
       grid-column: 1 / span 6;
-      grid-row: 5;
+      grid-row: 6;
     }
 
     @media (min-width: 989px) {
       grid-column: 1 / span 6;
-      grid-row: 5;
+      grid-row: 6;
     }
 
     @media (min-width: 1001px) {
       grid-column: 1 / span 28;
-      grid-row: 4;
+      grid-row: 5;
     }
   }
 }
