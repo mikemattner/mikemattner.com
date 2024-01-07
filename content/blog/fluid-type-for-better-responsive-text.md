@@ -3,6 +3,8 @@ title: 'Fluid Type for Better Responsive Text'
 date: 2018-06-06
 type: entry
 description: 'On creating a fully responsive site that scales just about every element based on browser width.'
+caption: Found on Unsplash
+image: /images/feature/type.jpg
 tag:
     - Development
     - Design

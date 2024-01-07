@@ -4,6 +4,8 @@ date: 2018-02-08
 type: link
 description: 'A little prescriptive, but definitely accurate.'
 link: https://kottke.org/18/02/a-list-of-25-principles-of-adult-behavior-by-john-perry-barlow
+caption: Found on Unsplash
+image: /images/feature/rules.jpg
 tag:
     - Wisdom
 ---

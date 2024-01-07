@@ -3,6 +3,8 @@ title: Sorting Content For Archives
 date: 2021-12-27
 type: entry
 description: Organizing Nuxt&rsquo;s built-in content with array sorting.
+caption: Found on Unsplash
+image: /images/feature/sorting.jpg
 tag:
 - Development
 

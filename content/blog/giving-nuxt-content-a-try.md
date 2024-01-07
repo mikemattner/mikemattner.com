@@ -3,6 +3,8 @@ title: Giving Nuxt Content a Try
 date: 2020-12-09
 type: entry
 description: 'I&rsquo;m now taking advantage of Nuxt&rsquo;s built-in content handling features.'
+caption: Found on Unsplash
+image: /images/feature/code.jpg
 tag:
     - Development
 ---

@@ -3,6 +3,8 @@ title: Use GitHub API for Projects
 date: 2022-01-23
 type: entry
 description: Looking for a way to pull in projects from GitHub, I grabbed all repos with the GitHub API and sorted by what I needed.
+caption: Found on Unsplash
+image: /images/feature/git.jpg
 tag:
 - Development
 ---

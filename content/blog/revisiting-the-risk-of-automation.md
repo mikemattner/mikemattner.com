@@ -4,6 +4,8 @@ date: 2017-07-19
 type: link
 description: 'I&rsquo;m certain a UBI is needed in the future, but this study claims automating jobs away might not happen as soon as suggested.'
 link: http://www.sciencedirect.com/science/article/pii/S0165176517302811
+caption: Found on Unsplash
+image: /images/feature/automation.jpg
 tag:
     - Politics
 ---

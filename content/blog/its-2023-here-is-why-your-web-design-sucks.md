@@ -6,7 +6,8 @@ description: Web design and development certainly wasn't taken seriously for a
   of the same reasons as the original author.
 link: https://heather-buchel.com/blog/2023/10/why-your-web-design-sucks/
 type: link
-image: /images/feature/default-two.jpg
+image: /images/feature/default-three.jpg
+caption: Found on Unsplash
 tag:
   - Design
   - Development

@@ -121,7 +121,7 @@ useHead({
     }
 
     @media (max-width: 500px) {
-      aspect-ratio: 1;
+      aspect-ratio: 2 / 1;
     }
 
     :deep(img) {

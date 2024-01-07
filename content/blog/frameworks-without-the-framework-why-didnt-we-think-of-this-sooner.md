@@ -4,6 +4,8 @@ date: 2016-12-02
 type: link
 description: 'Web development is complex, and tools to solve problems might be overcomplicating things.'
 link: https://svelte.technology/blog/frameworks-without-the-framework/
+caption: Found on Unsplash
+image: /images/feature/framework.jpg
 tag:
     - Development
 ---

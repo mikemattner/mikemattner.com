@@ -5,6 +5,8 @@ type: entry
 description:
   This has been a bit of a wild two years. Life disrupted and changed,
   friends lost. It has been hard to keep up with tech.
+caption: Found on Unsplash
+image: /images/feature/change.jpg
 tag:
   - Personal
 ---
