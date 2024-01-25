@@ -132,6 +132,7 @@ const featuredImage = computed<string>(() => {
     svg {
       width: 1.25rem;
       height: 1.25rem;
+      flex-shrink: 0;
     }
   }
 
@@ -143,6 +144,7 @@ const featuredImage = computed<string>(() => {
     svg {
       width: 1.25rem;
       height: 1.25rem;
+      flex-shrink: 0;
     }
   }
   .tag-list {
@@ -151,14 +153,14 @@ const featuredImage = computed<string>(() => {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: var(--sizing-sm);
+    gap: var(--sizing-xs);
 
     li {
       padding: 0;
       margin: 0;
       display: flex;
       align-items: center;
-      gap: var(--sizing-sm);
+      gap: var(--sizing-xs);
 
       &:before {
         content: '/';
