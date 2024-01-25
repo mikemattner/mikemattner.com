@@ -1,11 +1,18 @@
 <template>
   <main class="article-page">
     <template v-if="data">
-      <div class="article-layout__feature">
+      <header class="article-layout__feature">
         <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
           <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
         </PrimaryImage>
-      </div>
+        <div class="article-header">
+          <ul class="breadcrumb-trail flex--justify-center">
+            <li><NuxtLink to="/">Home</NuxtLink></li>
+            <li><NuxtLink to="/blog">Blog</NuxtLink></li>
+          </ul>
+          <h1 class="article-title" v-html="data.title"></h1>
+        </div>
+      </header>
       <article class="article-layout">
         <aside class="article-meta">
           <div class="article-meta-block">
@@ -19,13 +26,6 @@
             </ul>
           </div>
         </aside>
-        <header class="article-header">
-          <ul class="breadcrumb-trail flex--justify-center">
-            <li><NuxtLink to="/">Home</NuxtLink></li>
-            <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-          </ul>
-          <h1 class="article-title" v-html="data.title"></h1>
-        </header>
         <p class="article-description" v-html="data.description"></p>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
@@ -99,10 +99,40 @@ useHead({
   }
 
   &__feature {
-    padding: 2rem 0 0;
+    padding: 1rem 0 0;
     z-index: 1;
     max-width: var(--max-width-nav);
     margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    .article-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      grid-column: 1;
+      grid-row: 1;
+      text-align: center;
+      padding: var(--sizing-lg);
+
+      .article-title {
+        font-size: clamp(40px, 8vw, 95px);
+        text-align: center;
+        color: var(--color-light);
+      }
+
+      .breadcrumb-trail {
+        a {
+          color: var(--color-light);
+        }
+
+        li:after {
+          color: var(--color-light);
+        }
+      }
+    }
   }
 
   &__feature-image {
@@ -111,46 +141,50 @@ useHead({
     overflow: hidden;
     border-radius: 7px;
     position: relative;
+    grid-column: 1;
+    grid-row: 1;
 
     @media (min-width: 1001px) {
       aspect-ratio: 2 / 0.675;
     }
 
     @media (max-width: 1000px) {
-      aspect-ratio: 2 / 0.75;
+      aspect-ratio: 2 / 1;
     }
 
     @media (max-width: 500px) {
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 1 / 1;
     }
 
     :deep(img) {
       transition: var(--transition-ease);
+      opacity: 0.25;
     }
   }
 
-  .article-header {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
+  // TODO: determine if I want to come back to this
+  // .article-header {
+  //   padding-top: 2rem;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   z-index: 2;
 
-    @media (max-width: 988px) {
-      grid-column: 1 / span 6;
-      grid-row: 1;
-    }
+  //   @media (max-width: 988px) {
+  //     grid-column: 1 / span 6;
+  //     grid-row: 1;
+  //   }
 
-    @media (min-width: 989px) {
-      grid-column: 1 / span 6;
-      grid-row: 1;
-    }
+  //   @media (min-width: 989px) {
+  //     grid-column: 1 / span 6;
+  //     grid-row: 1;
+  //   }
 
-    @media (min-width: 1001px) {
-      grid-column: 1 / -1;
-      grid-row: 1;
-    }
-  }
+  //   @media (min-width: 1001px) {
+  //     grid-column: 1 / -1;
+  //     grid-row: 1;
+  //   }
+  // }
   .article-body {
     grid-column: 3 / span 4;
     grid-row: 4;
@@ -171,10 +205,10 @@ useHead({
     }
   }
 
-  .article-title {
-    font-size: clamp(40px, 8vw, 95px);
-    text-align: center;
-  }
+  // .article-title {
+  //   font-size: clamp(40px, 8vw, 95px);
+  //   text-align: center;
+  // }
 
   .article-description {
     position: relative;

@@ -18,6 +18,12 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap',
         },
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'Mike Mattner',
+          href: 'https://mikemattner.com/rss.xml',
+        },
       ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
