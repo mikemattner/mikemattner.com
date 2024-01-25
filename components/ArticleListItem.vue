@@ -104,6 +104,7 @@ const featuredImage = computed<string>(() => {
 
     :deep(img) {
       transition: var(--transition-ease);
+      opacity: 0.25;
     }
   }
 

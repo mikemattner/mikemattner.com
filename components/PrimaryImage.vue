@@ -78,7 +78,7 @@ const hasSlot = (name: string) => {
 
   &.has-overlay {
     :deep(img) {
-      filter: grayscale(100%) invert(5%) sepia(8%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
+      filter: grayscale(100%) invert(5%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
     }
 
     &:before {
