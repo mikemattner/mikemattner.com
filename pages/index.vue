@@ -91,6 +91,8 @@ const posts = computed(() => {
     margin-block-end: 4rem;
     max-width: var(--max-width);
     margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
@@ -105,10 +107,6 @@ const posts = computed(() => {
 
     @media (max-width: 715px) {
       margin-inline: auto;
-    }
-
-    @media (min-width: 500px) {
-      display: grid;
     }
   }
 
@@ -218,8 +216,9 @@ const posts = computed(() => {
     }
 
     @media (max-width: 499px) {
-      margin: var(--sizing-xxl) 0;
+      margin: 0;
       gap: var(--sizing-lg);
+      grid-row: 1;
     }
   }
 
@@ -280,6 +279,7 @@ const posts = computed(() => {
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
       aspect-ratio: 2 / 1.5;
+      grid-row: 2;
     }
   }
 
