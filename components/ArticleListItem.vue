@@ -105,6 +105,15 @@ const featuredImage = computed<string>(() => {
       .article-list-item__feature-image {
         :deep(img) {
           transform: scale(1.2);
+          opacity: 1;
+          filter: none;
+        }
+
+        :deep(.primary-image__image) {
+          &::after,
+          &::before {
+            opacity: 0;
+          }
         }
       }
 
@@ -134,6 +143,13 @@ const featuredImage = computed<string>(() => {
       transition: var(--transition-ease);
       opacity: 0.25;
       overflow: hidden;
+    }
+
+    :deep(.primary-image__image) {
+      &::after,
+      &::before {
+        transition: var(--transition-ease);
+      }
     }
   }
 
