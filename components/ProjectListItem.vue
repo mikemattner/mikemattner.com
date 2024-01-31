@@ -1,7 +1,7 @@
 <template>
   <div class="project-list-item">
     <header class="project-list-item__header">
-      <time><Icon name="ri:calendar-fill" /> {{ listYear(project.year) }}</time>
+      <time><Icon name="ri:apps-2-fill" /> {{ listYear(project.year) }}</time>
       <div class="project-list-item__actions">
         <BaseButton :href="`${project.url}/watchers`" target="_blank" size="xs" color="secondary" variant="text">
           <Icon name="ri:eye-fill" /> <span>{{ project.watchers }}</span>
@@ -66,8 +66,8 @@ const props = defineProps({
     }
 
     svg {
-      width: 1.25rem;
-      height: 1.25rem;
+      // width: 1.25rem;
+      // height: 1.25rem;
       flex-shrink: 0;
     }
 

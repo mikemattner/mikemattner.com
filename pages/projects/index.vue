@@ -7,7 +7,12 @@
         <hr />
       </div>
       <div class="project-content flow">
-        <h2 class="h4-heading">Github Projects</h2>
+        <h2 class="h4-heading project-heading">
+          <span>Github Projects</span>
+          <a href="https://github.com/mikemattner?tab=repositories" class="external-link" target="_blank"
+            ><Icon name="ri:external-link-fill"
+          /></a>
+        </h2>
         <p>
           A truncated list of repos of note at my GitHub profile. Some of these are actively maintained, while the rest
           have been left to languish.
@@ -110,6 +115,17 @@ const sortedProjects = computed(() => {
 
     p {
       max-width: 65ch;
+    }
+  }
+
+  .project-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-lg);
+
+    .external-link {
+      display: flex;
+      align-items: center;
     }
   }
 
