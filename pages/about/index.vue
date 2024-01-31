@@ -281,24 +281,24 @@ useHead({
   }
 
   .profile-image {
-    aspect-ratio: 2 / 1.5;
+    aspect-ratio: 2 / 1.25;
     border-radius: 7px 50px 7px 50px;
     overflow: hidden;
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1.5;
+      aspect-ratio: 2 / 1;
     }
 
     @media (min-width: 768px) {
       grid-column: 1 / -1;
-      aspect-ratio: 2 / 1.5;
+      aspect-ratio: 2 / 0.75;
       align-self: self-start;
     }
 
     @media (min-width: 860px) {
       grid-column: 1 / -1;
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 2 / 0.75;
       margin-bottom: var(--sizing-xxxl);
     }
   }
