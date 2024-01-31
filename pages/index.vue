@@ -5,7 +5,7 @@
         <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
 
         <h1 class="main-lede">
-          <span class="introduction">Hi there, my name is Mike Mattner.</span>
+          <span class="introduction">Hi there, my name is Mike&nbsp;Mattner.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
