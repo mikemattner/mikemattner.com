@@ -33,10 +33,12 @@ const isMobile = useMediaQuery('(max-width: 715px)');
 const route = useRoute();
 const pathIsWriting = computed<boolean>(() => route.matched[0].name === 'blog-slug');
 const pathIsAbout = computed<boolean>(() => route.matched[0].path.includes('about'));
+const pathIsProjects = computed<boolean>(() => route.matched[0].path.includes('projects'));
 
 const showActiveSubPath = (item: NavigationList): boolean => {
   if (item.title === 'Blog') return pathIsWriting.value;
   if (item.title === 'About') return pathIsAbout.value;
+  if (item.title === 'Projects') return pathIsProjects.value;
   return false;
 };
 
@@ -48,6 +50,10 @@ const navigationList: NavigationList[] = [
   {
     title: 'Blog',
     url: '/blog',
+  },
+  {
+    title: 'Projects',
+    url: '/projects',
   },
   {
     title: 'About',
