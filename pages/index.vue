@@ -5,10 +5,7 @@
         <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
 
         <h1 class="main-lede">
-          <span class="introduction">
-            <span class="introduction-hello">Hi there, my name</span>
-            <span class="introduction-name">is Mike Mattner.</span>
-          </span>
+          <span class="introduction">Hi there, my name is Mike&nbsp;Mattner.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -223,14 +220,15 @@ const posts = computed(() => {
   }
 
   .introduction {
-    font-size: clamp(30px, 6vw, 75px);
+    // font-size: clamp(30px, 6vw, 75px);
     // font-variation-settings: 'wdth' 85, 'wght' 900;
-    line-height: 95%;
-    letter-spacing: 0.025em;
-    color: var(--headline-font-color);
-    display: flex;
-    flex-direction: column;
-    gap: var(--sizing-lg);
+    // line-height: 95%;
+    // letter-spacing: 0.025em;
+    // color: var(--headline-font-color);
+    // display: flex;
+    // flex-direction: column;
+    // gap: var(--sizing-lg);
+    text-wrap: balance;
 
     @media (min-width: 1053px) {
       grid-column: 8 / -1;
@@ -243,9 +241,9 @@ const posts = computed(() => {
       grid-column: 1 / span 4;
     }
 
-    .introduction-hello {
-      // font-variation-settings: 'wdth' 95, 'wght' 800;
-    }
+    // .introduction-hello {
+    //   // font-variation-settings: 'wdth' 95, 'wght' 800;
+    // }
 
     // .introduction-name {
     //   // font-size: clamp(40px, 8vw, 110px);
@@ -253,9 +251,9 @@ const posts = computed(() => {
     //   // text-transform: uppercase;
     // }
 
-    .introduction-salutation {
-      font-variation-settings: 'wdth' 95, 'wght' 800;
-    }
+    // .introduction-salutation {
+    //   font-variation-settings: 'wdth' 95, 'wght' 800;
+    // }
   }
 
   .profile-image {
