@@ -6,8 +6,8 @@
 
         <h1 class="main-lede">
           <span class="introduction">
-            <span class="introduction-hello">Hi there, my name is</span>
-            <span class="introduction-name">Mike Mattner.</span>
+            <span class="introduction-hello">Hi there, my name</span>
+            <span class="introduction-name">is Mike Mattner.</span>
           </span>
         </h1>
         <div class="home-greeting flow">
@@ -96,8 +96,8 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 8rem;
-      margin-block-end: 8rem;
+      margin-block-start: 6rem;
+      margin-block-end: 6rem;
       gap: var(--sizing-xxl) 0;
     }
     @media (max-width: 1052px) {
@@ -118,8 +118,8 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 6rem;
-      margin-block-end: 10rem;
+      margin-block-start: 4rem;
+      margin-block-end: 8rem;
       display: grid;
     }
 
@@ -223,11 +223,10 @@ const posts = computed(() => {
   }
 
   .introduction {
-    font-size: clamp(25px, 6vw, 75px);
-    font-variation-settings: 'wdth' 85, 'wght' 900;
-    line-height: 120%;
+    font-size: clamp(30px, 6vw, 75px);
+    // font-variation-settings: 'wdth' 85, 'wght' 900;
+    line-height: 95%;
     letter-spacing: 0.025em;
-    // text-transform: uppercase;
     color: var(--headline-font-color);
     display: flex;
     flex-direction: column;
@@ -245,14 +244,14 @@ const posts = computed(() => {
     }
 
     .introduction-hello {
-      font-variation-settings: 'wdth' 95, 'wght' 800;
+      // font-variation-settings: 'wdth' 95, 'wght' 800;
     }
 
-    .introduction-name {
-      font-size: clamp(50px, 12vw, 145px);
-      font-variation-settings: 'wdth' 75, 'wght' 800;
-      text-transform: uppercase;
-    }
+    // .introduction-name {
+    //   // font-size: clamp(40px, 8vw, 110px);
+    //   // font-variation-settings: 'wdth' 75, 'wght' 800;
+    //   // text-transform: uppercase;
+    // }
 
     .introduction-salutation {
       font-variation-settings: 'wdth' 95, 'wght' 800;
