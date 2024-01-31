@@ -111,7 +111,7 @@ const attributes = computed(() => {
 
   &.button--xs {
     font-size: var(--size-step--1);
-    padding: var(--sizing-sm);
+    padding: var(--sizing-sm) var(--sizing-md);
   }
 
   &.button--sm {

@@ -43,7 +43,7 @@
       <hr />
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2 class="h4-heading">Recently Posted</h2>
+          <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
@@ -91,6 +91,8 @@ const posts = computed(() => {
     margin-block-end: 4rem;
     max-width: var(--max-width);
     margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
@@ -105,10 +107,6 @@ const posts = computed(() => {
 
     @media (max-width: 715px) {
       margin-inline: auto;
-    }
-
-    @media (min-width: 500px) {
-      display: grid;
     }
   }
 
@@ -218,8 +216,9 @@ const posts = computed(() => {
     }
 
     @media (max-width: 499px) {
-      margin: var(--sizing-xxl) 0;
+      margin: 0;
       gap: var(--sizing-lg);
+      grid-row: 1;
     }
   }
 
@@ -280,7 +279,12 @@ const posts = computed(() => {
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
       aspect-ratio: 2 / 1.5;
+      grid-row: 2;
     }
+  }
+
+  .recently-posted-header {
+    margin-block-end: var(--sizing-lg);
   }
 }
 </style>

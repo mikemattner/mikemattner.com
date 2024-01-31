@@ -252,7 +252,7 @@ useHead({
     @media (min-width: 768px) {
       grid-column: 1 / -1;
     }
-    @media (min-width: 961px) {
+    @media (min-width: 860px) {
       grid-column: 1 / span 18;
       grid-row: 3;
     }
@@ -265,7 +265,7 @@ useHead({
     @media (min-width: 768px) {
       grid-column: 1 / -1;
     }
-    @media (min-width: 961px) {
+    @media (min-width: 860px) {
       grid-column: 1 / span 28;
       padding-bottom: var(--sizing-xxxl);
     }
@@ -296,7 +296,7 @@ useHead({
       align-self: self-start;
     }
 
-    @media (min-width: 961px) {
+    @media (min-width: 860px) {
       grid-column: 1 / -1;
       aspect-ratio: 2 / 1;
       margin-bottom: var(--sizing-xxxl);
@@ -350,7 +350,7 @@ useHead({
     @media (min-width: 768px) {
       grid-column: 1 / -1;
     }
-    @media (min-width: 961px) {
+    @media (min-width: 860px) {
       grid-column: 21 / -1;
       grid-row: 3;
     }
