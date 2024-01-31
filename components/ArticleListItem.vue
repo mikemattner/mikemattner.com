@@ -50,14 +50,16 @@ const featuredImage = computed<string>(() => {
     // border: 2px solid var(--border-color);
     // box-shadow: 5px 5px 0 0 var(--border-color);
     border-radius: 7px;
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
 
     h3 {
       transition: var(--transition);
     }
 
     .article-list-item__title {
-      padding: var(--sizing-lg) var(--sizing-lg) var(--sizing-xxl);
+      padding: var(--sizing-lg) 0 var(--sizing-xxl);
+      z-index: 2;
     }
     .article-list-item__read-more {
       font-family: var(--code-font-family);
@@ -67,17 +69,32 @@ const featuredImage = computed<string>(() => {
       display: flex;
       align-items: center;
       gap: var(--sizing-sm);
-      padding: 0 var(--sizing-lg) var(--sizing-lg);
+      padding: 0 0 var(--sizing-lg);
+      z-index: 2;
 
       svg {
         transition: transform 0.125s var(--cubic-bezier);
       }
     }
 
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 7px;
+      background-color: var(--block-quote-bg);
+      transition: all 0.125s var(--cubic-bezier);
+      opacity: 0;
+      z-index: 1;
+    }
+
     &:hover {
       color: var(--font-color);
       // box-shadow: 0 0 0 0 var(--border-color);
-      background-color: var(--block-quote-bg);
+      // background-color: var(--block-quote-bg);
 
       .article-list-item__read-more {
         svg {
@@ -90,11 +107,20 @@ const featuredImage = computed<string>(() => {
           transform: scale(1.2);
         }
       }
+
+      &::after {
+        top: calc(var(--sizing-lg) * -1);
+        bottom: calc(var(--sizing-lg) * -1);
+        left: calc(var(--sizing-lg) * -1);
+        right: calc(var(--sizing-lg) * -1);
+        opacity: 1;
+      }
     }
   }
 
   &__feature {
     padding: 0;
+    z-index: 2;
   }
 
   &__feature-image {
@@ -123,7 +149,8 @@ const featuredImage = computed<string>(() => {
     justify-content: space-between;
     gap: var(--sizing-xxl);
     color: var(--blog-card-date-color);
-    padding: var(--sizing-lg);
+    padding: 0 0 var(--sizing-lg) 0;
+    z-index: 2;
     // background-color: var(--border-color);
   }
 
@@ -196,10 +223,10 @@ const featuredImage = computed<string>(() => {
     grid-row: 1 / span 3;
     display: flex;
     align-items: center;
-    padding: var(--sizing-md);
+    padding-right: var(--sizing-xl);
   }
   @container (width <= 599px) {
-    padding: var(--sizing-lg) var(--sizing-lg) 0;
+    /* padding: var(--sizing-lg) var(--sizing-lg) 0; */
   }
 }
 
@@ -216,6 +243,7 @@ const featuredImage = computed<string>(() => {
   @container (width >= 600px) {
     grid-column: 2 / -1;
     grid-row: 1;
+    padding: var(--sizing-lg) 0;
   }
 }
 

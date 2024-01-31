@@ -70,7 +70,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--sizing-xl);
+  gap: var(--sizing-xxl);
 
   &.summary-list {
     @media (min-width: 901px) {

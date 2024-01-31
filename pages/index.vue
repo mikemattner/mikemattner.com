@@ -43,7 +43,7 @@
       <hr />
       <div class="home-layout__content">
         <div class="sidebar-area flow">
-          <h2 class="h4-heading">Recently Posted</h2>
+          <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
         </div>
         <div class="content-area flow">
           <ArticleList :posts="posts" />
@@ -281,6 +281,10 @@ const posts = computed(() => {
       grid-column: 1 / span 4;
       aspect-ratio: 2 / 1.5;
     }
+  }
+
+  .recently-posted-header {
+    margin-block-end: var(--sizing-lg);
   }
 }
 </style>
