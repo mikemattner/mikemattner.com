@@ -6,3 +6,7 @@ export const formatDate = (date: string) => {
     timeZone: 'UTC',
   });
 };
+
+export const listYear = (date: string) => {
+  return new Date(date).getFullYear().toString();
+};

@@ -14,3 +14,23 @@ interface NavigationList {
   title: string;
   url: string;
 }
+
+interface ProjectItem {
+  name: string;
+  description: string;
+  url: string;
+  topics: Array<string>;
+  stars: string;
+  watchers: string;
+  year: string;
+}
+
+interface GithubRepos {
+  name: string;
+  description: string;
+  html_url: string;
+  stargazers_count: string;
+  watchers_count: string;
+  pushed_at: string;
+  topics: Array<string>;
+}
