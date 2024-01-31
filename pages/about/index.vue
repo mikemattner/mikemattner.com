@@ -3,7 +3,12 @@
     <article class="about-layout">
       <div class="sidebar-area flow">
         <h1>Hi, I&rsquo;m Mike!</h1>
-        <p class="intro">Here's a non exhaustive summary of my life, career, and this website.</p>
+        <p class="intro">
+          I&rsquo;m a <strong>UI designer</strong> and
+          <strong>UI developer</strong>
+          from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a non exhaustive summary of my life,
+          career, and this website.
+        </p>
 
         <ul class="sub-menu">
           <li><NuxtLink to="/about">About</NuxtLink></li>
@@ -12,7 +17,7 @@
         </ul>
         <hr />
       </div>
-      <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
+      <PrimaryImage src="/images/about-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
         <template v-slot:caption>Photographed while visiting Austin, Texas.</template>
       </PrimaryImage>
       <div class="about-content flow">
@@ -42,13 +47,22 @@
         </p>
         <h3>This Site</h3>
         <p>
+          <strong>mikemattner.com</strong> is a <a href="https://nuxt.com">Nuxt</a> based website using
+          <a href="https://content.nuxt.com/">Nuxt Content</a> to manage markdown content for the blog, hosted at
+          <a href="https://netlify.com">Netlify</a>. I used some combination of
+          <a href="https://www.figma.com/">Figma</a> and <a href="https://code.visualstudio.com/">VSCode</a> to design
+          and develop the site, and <a href="https://www.pixelmator.com/pro/">Pixelmator Pro</a> to cut up any assets.
+          Type is set in <a href="https://github.com/mona-sans">Mona Sans</a>, a variable font, and code is set in
+          <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a>, my choice of font in my code editor.
+        </p>
+        <h3>Other Iterations</h3>
+        <p>
           I&rsquo;ve had <strong>something</strong> at this domain since 2005, evolving through various iterations of
           content management systems, initially focusing on being a personal portfolio or blog. Before transitioning to
           Vue/Nuxt, I had a self-hosted WordPress installation. In the stone age of 2007, I was using a
           <a href="https://movabletype.org/">MoveableType</a> implementation, but the initial version was some
           self-rolled monstrosity with a questionable design (if I could ever dig it up, I would, I swear).
         </p>
-        <h3>Other Iterations</h3>
         <p>
           Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
           2. The rest of these are internet archive representations. You can see some of the evolution of my design
@@ -124,11 +138,11 @@
           <li class="flow">
             <h3 class="small-heading">1996</h3>
             <p>
-              My dad brings home our first computer, an old 386 loaded with all kinds of software and games. I
-              discovered
+              My dad brings home our first computer, an old computer loaded with all kinds of software and games. I
+              discovered that
               <a href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> was on this computer&mdash;also loaded with a
-              bunch of games. I spent the entire summer playing games and learning just what the hell was going on with
-              this thing. Around this time I started playing around with Geocities. Oh yeah.
+              bunch of games. I spent the entire summer playing games and learning just what in the hell was going on
+              with this thing. Around this time I started playing around with Geocities. Oh yeah.
             </p>
           </li>
           <li class="flow">
@@ -145,29 +159,28 @@
           </li>
           <li class="flow">
             <h3 class="small-heading">2003</h3>
-            <p>I graduated from High School and headed to Florida to study digital media.</p>
+            <p>I graduated from High School and moved to Florida to study digital media.</p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2004</h3>
             <p>
               After four hurricanes and many sleepless nights, I graduated from college in an accelerated program with a
-              degree in digital media in hand. That was a whirlwind.
+              degree in digital media in hand.
             </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2006</h3>
             <p>
               I land my first professional full-time role for a local company that focused on Corvette parts and
-              accessories&mdash;right before the economic crisis of 2008. Goodie. While there I used just about every
-              skill I learned in college, including video editing and motion graphics, graphic design, and my primary
-              work of web development.
+              accessories. While there I used just about every skill I learned in college, including video editing and
+              motion graphics, graphic design, and my primary work of web development.
             </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2013</h3>
             <p>
-              I left that company after a wonderful six and a half years, and joined an advertising agency in town. The
-              work there for me in the beginning was focused on sales education for selling appliances.
+              I left that company after six and a half years to join an advertising agency in town. The work there was
+              initially focused on sales education for selling appliances.
             </p>
           </li>
           <li class="flow">
@@ -188,8 +201,8 @@
           <li class="flow">
             <h3 class="small-heading">2020</h3>
             <p>
-              Global pandemic hits and life gets much weirder and a little more scary. I also start on a team focused on
-              creating Adobe Experience Manager components for the primary client's marketing sites.
+              A global pandemic hits and life gets much weirder. I also start on a team focused on creating Adobe
+              Experience Manager components for the primary client's marketing sites.
             </p>
           </li>
           <li class="flow">
@@ -241,6 +254,7 @@ useHead({
     }
     @media (min-width: 961px) {
       grid-column: 1 / span 18;
+      grid-row: 3;
     }
   }
 
@@ -283,8 +297,8 @@ useHead({
     }
 
     @media (min-width: 961px) {
-      grid-column: 1 / 19;
-      aspect-ratio: 2 / 1.5;
+      grid-column: 1 / -1;
+      aspect-ratio: 2 / 1;
       margin-bottom: var(--sizing-xxxl);
     }
   }
@@ -338,7 +352,7 @@ useHead({
     }
     @media (min-width: 961px) {
       grid-column: 21 / -1;
-      grid-row: 2 / span 2;
+      grid-row: 3;
     }
   }
 
