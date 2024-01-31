@@ -118,7 +118,7 @@ useHead({
       padding: var(--sizing-lg);
 
       .article-title {
-        font-size: clamp(40px, 8vw, 95px);
+        font-size: clamp(30px, 8vw, 75px);
         text-align: center;
         color: var(--color-light);
       }
@@ -149,7 +149,7 @@ useHead({
     }
 
     @media (max-width: 1000px) {
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 2 / 1.25;
     }
 
     @media (max-width: 500px) {
