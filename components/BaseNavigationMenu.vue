@@ -144,7 +144,7 @@ const toggle = () => {
   &__controls {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: var(--sizing-xxl);
     grid-template-columns: 2fr auto;
     flex-grow: 1;
