@@ -1,7 +1,21 @@
 <template>
   <main>
     <article class="projects-layout">
-      <pre>{{ sortedProjects }}</pre>
+      <div class="sidebar-area flow">
+        <h1>Projects</h1>
+        <p class="intro">Just dumping any and all projects here.</p>
+        <hr />
+      </div>
+      <div class="project-content flow">
+        <h2 class="h4-heading">Github Projects</h2>
+        <p>
+          A truncated list of repos of note at my GitHub profile. Some of these are actively maintained, while the rest
+          have been left to languish.
+        </p>
+        <div class="github-grid">
+          <ProjectListItem v-for="project in sortedProjects" :project="project" :key="project.name" />
+        </div>
+      </div>
     </article>
   </main>
 </template>
@@ -21,7 +35,7 @@ const {
 const targetProjects = [
   {
     name: 'mikemattner.com',
-    title: 'This Site!',
+    title: 'This Website',
   },
   {
     name: 'numbers',
@@ -91,15 +105,23 @@ const sortedProjects = computed(() => {
     margin-block-end: 6rem;
   }
 
-  .about-content {
-    @media (min-width: 501px) {
-      grid-column: 1 / span 4;
+  .project-content {
+    grid-column: 1 / -1;
+
+    p {
+      max-width: 65ch;
     }
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-    }
-    @media (min-width: 961px) {
-      grid-column: 1 / span 18;
+  }
+
+  .github-grid {
+    display: grid;
+    gap: var(--sizing-xxl);
+    grid-template-columns: 1fr;
+    grid-column: 1 / -1;
+    margin-block-start: var(--sizing-xxl);
+
+    @media (min-width: 650px) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -123,116 +145,6 @@ const sortedProjects = computed(() => {
     line-height: 1.4;
     max-width: 65ch;
     text-wrap: pretty;
-  }
-
-  .profile-image {
-    aspect-ratio: 2 / 1.5;
-    border-radius: 7px 50px 7px 50px;
-    overflow: hidden;
-
-    @media (min-width: 501px) {
-      grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1.5;
-    }
-
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-      aspect-ratio: 2 / 1.5;
-      align-self: self-start;
-    }
-
-    @media (min-width: 961px) {
-      grid-column: 1 / 19;
-      aspect-ratio: 2 / 1.5;
-      margin-bottom: var(--sizing-xxxl);
-    }
-  }
-
-  .former-site-iterations {
-    margin: var(--sizing-xxl) 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: var(--sizing-lg);
-    grid-template-columns: repeat(2, 1fr);
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .iteration-link {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: var(--sizing-sm);
-      margin: 0;
-      padding: var(--sizing-sm);
-      text-decoration: none;
-      border: 1px solid var(--border-color);
-      aspect-ratio: 1;
-      box-shadow: 5px 5px 0 0 var(--border-color);
-      font-variation-settings: 'wdth' 100, 'wght' 800;
-      line-height: 1;
-      border-radius: 7px;
-
-      .year {
-        font-family: var(--code-font-family);
-        font-weight: 400;
-      }
-
-      &:hover {
-        background-color: var(--block-quote-bg);
-        box-shadow: 0 0 0 0 var(--border-color);
-      }
-    }
-  }
-
-  .timeline-content {
-    @media (min-width: 501px) {
-      grid-column: 1 / span 4;
-    }
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-    }
-    @media (min-width: 961px) {
-      grid-column: 21 / -1;
-      grid-row: 2 / span 2;
-    }
-  }
-
-  .timeline {
-    list-style: none;
-    margin-top: var(--sizing-xxl);
-
-    li {
-      position: relative;
-      padding: 0.5em 0 2em;
-      padding-left: 2em;
-      border-left: 1px solid var(--border-color);
-
-      &:before {
-        width: 1em;
-        height: 1em;
-        display: block;
-        top: 0.7em;
-        position: absolute;
-        left: -0.53em;
-        content: '';
-        border: 2px solid var(--border-color);
-        background: var(--background-color);
-        transition: var(--transition-cubic);
-        // box-shadow: 2px 2px 0 0 var(--border-color);
-        border-radius: 3px;
-      }
-
-      &:hover {
-        &:before {
-          border-color: var(--color-primary);
-          // box-shadow: 0 0 0 0 var(--color-primary);
-        }
-      }
-    }
   }
 }
 </style>

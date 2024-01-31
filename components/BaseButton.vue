@@ -209,12 +209,10 @@ const attributes = computed(() => {
     background-color: var(--button-solid-background-color);
     color: var(--button-solid-color-text);
     text-decoration: none;
-    box-shadow: var(--button-solid-shadow);
 
     &:hover:not(:disabled) {
       color: var(--button-solid-color-text);
       background-color: var(--button-solid-background-color-hover);
-      box-shadow: var(--button-solid-shadow-hover);
     }
     --button-loader-color: var(--button-solid-color-text);
   }

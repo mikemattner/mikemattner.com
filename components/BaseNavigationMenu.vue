@@ -158,8 +158,8 @@ const toggle = () => {
       right: 0;
       bottom: 0;
       width: 100%;
-      background-color: var(--background-color-t);
-      backdrop-filter: blur(10px);
+      background-color: var(--background-color);
+      // backdrop-filter: blur(10px);
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
