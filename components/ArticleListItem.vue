@@ -140,7 +140,7 @@ const featuredImage = computed<string>(() => {
     transition: var(--transition-ease);
 
     :deep(img) {
-      transition: var(--transition-ease);
+      transition: transform 0.25s var(--cubic-bezier);
       opacity: 0.25;
       overflow: hidden;
     }
@@ -148,7 +148,7 @@ const featuredImage = computed<string>(() => {
     :deep(.primary-image__image) {
       &::after,
       &::before {
-        transition: var(--transition-ease);
+        transition: opacity 0.25s ease-in-out;
       }
     }
   }
