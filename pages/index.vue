@@ -10,13 +10,13 @@
         <div class="home-greeting flow">
           <p class="intro">
             I&rsquo;m Mike, a
-            <strong>UI designer<Icon name="ri:layout-masonry-fill" /></strong> and
-            <strong>UI developer<Icon name="ri:terminal-box-fill" /></strong>
+            <strong>UI designer</strong> and
+            <strong>UI developer</strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
-            In a former life I worked as a <strong>digital designer<Icon name="ri:dvd-fill" /></strong> using a wide
-            range of skills including video editing, motion graphics, interactive CDs, et cetera.
+            In a former life I worked as a <strong>digital designer</strong> using a wide range of skills including
+            video editing, motion graphics, interactive CDs, et cetera.
           </p>
           <!-- <p class="intro">
             I previously worked at an advertising agency as a
@@ -29,7 +29,7 @@
           </p> -->
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
-              <span>Read more about me</span> <Icon name="ri:account-pin-circle-fill" />
+              <span>Read more about me</span> <Icon name="ri:emotion-fill" />
             </BaseButton>
             <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
