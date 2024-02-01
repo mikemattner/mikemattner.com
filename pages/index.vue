@@ -4,26 +4,29 @@
       <div class="home-layout__hero">
         <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
 
-        <h1 class="main-lede">
-          <span class="introduction">Hi there, my name is Mike&nbsp;Mattner.</span>
+        <h1 class="main-lede very-large-heading">
+          <span class="introduction">Hey there</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
-            I&rsquo;m a
+            I&rsquo;m Mike, a
             <strong>UI designer<Icon name="ri:layout-masonry-fill" /></strong> and
             <strong>UI developer<Icon name="ri:terminal-box-fill" /></strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
+            In a former life I worked as a <strong>digital designer<Icon name="ri:dvd-fill" /></strong> using a wide
+            range of skills including video editing, motion graphics, interactive CDs, et cetera.
+          </p>
+          <!-- <p class="intro">
             I previously worked at an advertising agency as a
             <strong>digital designer<Icon name="ri:contrast-drop-2-fill" /></strong> and manager of creatives before
             switching to a UX/UI developer role.
-          </p>
-          <p class="intro">
-            In a former life I worked with the entire gamut of skills in what was once called
-            <strong>digital media<Icon name="ri:dvd-fill" /></strong> including video editing, motion graphics,
-            interactive CDs, <strong>et cetera<Icon name="ri:apps-fill" /></strong>.
-          </p>
+          </p> -->
+          <!-- <p class="intro">
+            In a former life I worked as a <strong>digital media<Icon name="ri:dvd-fill" /></strong> specialist using a
+            wide range of skills including video editing, motion graphics, interactive CDs, et cetera.
+          </p> -->
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
               <span>Read more about me</span> <Icon name="ri:account-pin-circle-fill" />
@@ -144,8 +147,9 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 8 / -1;
-      align-self: center;
+      grid-column: 11 / -1;
+      align-self: start;
+      grid-row: 2;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -205,7 +209,8 @@ const posts = computed(() => {
     @media (min-width: 1053px) {
       grid-column: 1 / -1;
       grid-row: 1;
-      align-self: center;
+      align-self: end;
+      z-index: 1;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -264,7 +269,7 @@ const posts = computed(() => {
     overflow: hidden;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 6;
+      grid-column: 1 / span 9;
       grid-row: 1 / span 2;
       aspect-ratio: 1 / 2;
     }
