@@ -85,7 +85,9 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 
   &:hover,
   &:focus-visible {
-    transform: scale(1.2);
+    @media (min-width: 716px) {
+      transform: scale(1.2);
+    }
     .moon,
     .sun {
       fill: var(--icon-fill-hover);
