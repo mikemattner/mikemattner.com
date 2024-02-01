@@ -13,6 +13,7 @@
   --icon-fill-hover: var(--color-light);
 
   @media (max-width: 715px) {
+    --size: 3.5rem;
     font-size: var(--size-step-1);
   }
 
@@ -38,7 +39,10 @@
 
   &:hover,
   &:focus-visible {
-    transform: scale(1.2);
+    @media (min-width: 716px) {
+      transform: scale(1.2);
+    }
+
     color: var(--icon-fill-hover);
   }
 }

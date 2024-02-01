@@ -80,7 +80,7 @@ const toggle = () => {
     padding: 0;
     list-style: none;
     font-size: var(--size-step--1);
-    font-family: var(--code-font-family);
+    // font-family: var(--code-font-family);
     mix-blend-mode: difference;
 
     @media (max-width: 715px) {
@@ -89,8 +89,8 @@ const toggle = () => {
       justify-content: flex-start;
       font-size: var(--size-step-4);
       gap: var(--sizing-sm);
-      font-family: var(--sans-font-family);
-      font-variation-settings: 'wdth' 95, 'wght' 800;
+      // font-family: var(--sans-font-family);
+      // font-variation-settings: 'wdth' 95, 'wght' 800;
     }
 
     &__item {
@@ -136,8 +136,7 @@ const toggle = () => {
       transition: var(--transition-cubic);
       opacity: 0;
       width: 100%;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
+      margin-top: auto;
     }
   }
 
