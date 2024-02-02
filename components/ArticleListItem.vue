@@ -106,10 +106,12 @@ const featuredImage = computed<string>(() => {
         :deep(img) {
           transform: scale(1.2);
           opacity: 1;
-          filter: none;
         }
 
-        :deep(.primary-image__image) {
+        :deep(.primary-image__image.has-overlay) {
+          img {
+            filter: none;
+          }
           &::after,
           &::before {
             opacity: 0;
@@ -145,7 +147,11 @@ const featuredImage = computed<string>(() => {
       overflow: hidden;
     }
 
-    :deep(.primary-image__image) {
+    :deep(.primary-image__image.has-overlay) {
+      img {
+        filter: blur(3px);
+      }
+
       &::after,
       &::before {
         transition: opacity 0.25s ease-in-out;

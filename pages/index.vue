@@ -29,7 +29,7 @@
           </p> -->
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
-              <span>Read more about me</span> <Icon name="ri:emotion-fill" />
+              <span>Read more about me</span>
             </BaseButton>
             <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
@@ -69,7 +69,7 @@ useHead({
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
 });
 </script>
 

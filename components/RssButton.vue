@@ -14,7 +14,6 @@
 
   @media (max-width: 715px) {
     --size: 3.5rem;
-    font-size: var(--size-step-1);
   }
 
   color: var(--icon-fill);
@@ -22,6 +21,7 @@
   background: transparent;
   border: 0;
   padding: 0;
+  font-size: var(--size-step-0);
 
   inline-size: var(--size);
   block-size: var(--size);
