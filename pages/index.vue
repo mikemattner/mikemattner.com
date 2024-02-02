@@ -16,7 +16,7 @@
           </p>
           <p class="intro">
             In a former life I worked as a <strong>digital designer</strong> using a wide range of skills including
-            video editing, the creation of motion graphics and interactive CDs, et cetera.
+            video editing, the creation of motion graphics, the development of interactive CDs, et cetera.
           </p>
           <!-- <p class="intro">
             I previously worked at an advertising agency as a
