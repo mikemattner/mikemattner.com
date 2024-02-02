@@ -96,8 +96,11 @@
           <h3 class="small-heading">Design</h3>
           <ul>
             <li>Figma</li>
-            <li>Linearity Curve</li>
-            <li>Pixelmator Pro</li>
+            <li>Affinity Publisher 2</li>
+            <li>Affinity Designer 2</li>
+            <li>Affinity Photo 2</li>
+            <li><del>Linearity Curve</del></li>
+            <li><del>Pixelmator Pro</del></li>
           </ul>
 
           <h3 class="small-heading">Productivity</h3>

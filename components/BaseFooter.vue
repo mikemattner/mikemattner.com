@@ -2,6 +2,7 @@
   <footer class="base-footer">
     <div class="base-footer__layout">
       <div class="copyright-area copyright-block">
+        <p class="copyright-line">&copy; {{ theYear }} Mike Mattner</p>
         <ul class="social-icons">
           <li>
             <BaseButton
@@ -49,7 +50,10 @@
             </BaseButton>
           </li>
         </ul>
-        <p class="copyright-line">&copy; {{ theYear }} Mike Mattner</p>
+        <div class="base-footer__sub-controls">
+          <RssButton />
+          <ThemeSwitcher />
+        </div>
       </div>
     </div>
   </footer>
@@ -110,6 +114,20 @@ const theYear = computed<string>(() => {
     }
   }
 
+  &__sub-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    mix-blend-mode: difference;
+
+    @media (max-width: 800px) {
+      justify-content: center;
+      transition: var(--transition-cubic);
+      width: 100%;
+      margin-top: auto;
+    }
+  }
+
   .social-icons {
     display: flex;
     align-items: stretch;
@@ -128,6 +146,9 @@ const theYear = computed<string>(() => {
       align-items: center;
       justify-content: flex-start;
       gap: var(--sizing-xl);
+      margin-left: auto;
+      border-right: 1px solid var(--border-color);
+      padding-right: var(--sizing-lg);
     }
 
     @media (max-width: 800px) {

@@ -48,6 +48,8 @@ const targetProjects = [
   {
     name: 'mikemattner.com',
     title: 'This Website',
+    description:
+      'The repo that runs this website. Uses Nuxt 3, Nuxt Content, Decap CMS, and a sprinkling of TypeScript.',
   },
   {
     name: 'numbers',
@@ -81,14 +83,21 @@ const sortedProjects = computed(() => {
           return item.title;
         })
         .toString();
+      const description = targetProjects
+        .filter((item) => item.name === proj.name)
+        .map((item) => {
+          return item.description;
+        })
+        .toString();
       const obj: ProjectItem = {
         name: title,
-        description: proj.description,
+        description: description ? description : proj.description,
         url: proj.html_url,
         topics: proj.topics,
         stars: proj.stargazers_count,
         watchers: proj.watchers_count,
         year: proj.pushed_at,
+        language: proj.language,
       };
       return obj;
     })
