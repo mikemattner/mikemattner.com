@@ -1,16 +1,5 @@
 <template>
   <div class="project-list-item">
-    <header class="project-list-item__header">
-      <time><Icon name="ri:apps-2-fill" /> {{ listYear(project.year) }}</time>
-      <div class="project-list-item__actions">
-        <BaseButton :href="`${project.url}/watchers`" target="_blank" size="xs" color="secondary" variant="text">
-          <Icon name="ri:eye-fill" /> <span>{{ project.watchers }}</span>
-        </BaseButton>
-        <BaseButton :href="`${project.url}/stargazers`" target="_blank" size="xs" color="secondary" variant="text">
-          <Icon name="ri:star-fill" /> <span>{{ project.stars }}</span>
-        </BaseButton>
-      </div>
-    </header>
     <div class="project-list-item__info flow">
       <h3 class="small-heading">
         <a :href="project.url" target="_blank">{{ project.name }}</a>
@@ -29,6 +18,18 @@
       >
         {{ item }}
       </BaseButton>
+    </div>
+    <div class="project-list-item__meta">
+      <time><Icon name="ri:calendar-fill" /> {{ listYear(project.year) }}</time>
+      <div class="language-item"><Icon name="ri:code-box-fill" /> {{ project.language }}</div>
+      <div class="project-list-item__actions">
+        <BaseButton :href="`${project.url}/watchers`" target="_blank" size="xs" color="secondary" variant="text">
+          <Icon name="ri:eye-fill" /> <span>{{ project.watchers }}</span>
+        </BaseButton>
+        <BaseButton :href="`${project.url}/stargazers`" target="_blank" size="xs" color="secondary" variant="text">
+          <Icon name="ri:star-fill" /> <span>{{ project.stars }}</span>
+        </BaseButton>
+      </div>
     </div>
   </div>
 </template>
@@ -49,8 +50,9 @@ const props = defineProps({
   padding: var(--sizing-lg);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
-  &__header {
+  &__meta {
     font-size: var(--size-step--2);
     font-family: var(--code-font-family);
     display: flex;
@@ -58,7 +60,7 @@ const props = defineProps({
     justify-content: space-between;
     gap: var(--sizing-xxl);
     color: var(--blog-card-date-color);
-    padding: 0;
+    padding: 0 0 0;
 
     .button {
       font-size: var(--size-step--2);
@@ -76,6 +78,13 @@ const props = defineProps({
       align-items: center;
       gap: var(--sizing-sm);
     }
+
+    .language-item {
+      display: flex;
+      align-items: center;
+      gap: var(--sizing-sm);
+      margin-right: auto;
+    }
   }
 
   &__actions {
@@ -86,7 +95,7 @@ const props = defineProps({
   }
 
   &__info {
-    padding: var(--sizing-xxl) 0;
+    padding: var(--sizing-md) 0 0 0;
   }
 
   &__tags {
@@ -94,6 +103,7 @@ const props = defineProps({
     align-items: center;
     gap: var(--sizing-sm);
     margin-top: auto;
+    padding: var(--sizing-xl) 0 var(--sizing-lg);
 
     .button {
       font-size: var(--size-step--2);

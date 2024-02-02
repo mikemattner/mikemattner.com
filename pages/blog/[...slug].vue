@@ -160,6 +160,12 @@ useHead({
       transition: var(--transition-ease);
       opacity: 0.25;
     }
+
+    :deep(.primary-image__image.has-overlay) {
+      img {
+        filter: blur(5px);
+      }
+    }
   }
 
   // TODO: determine if I want to come back to this

@@ -17,10 +17,10 @@
         </NuxtLink>
       </li>
     </ul>
-    <div class="base-navigation__sub-controls">
+    <!-- <div class="base-navigation__sub-controls">
       <RssButton />
       <ThemeSwitcher />
-    </div>
+    </div> -->
   </nav>
 </template>
 

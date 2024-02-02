@@ -23,6 +23,7 @@ interface ProjectItem {
   stars: string;
   watchers: string;
   year: string;
+  language: string;
 }
 
 interface GithubRepos {
@@ -33,4 +34,6 @@ interface GithubRepos {
   watchers_count: string;
   pushed_at: string;
   topics: Array<string>;
+  created_at: string;
+  language: string;
 }
