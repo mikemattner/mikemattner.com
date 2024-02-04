@@ -20,7 +20,9 @@
       </BaseButton>
     </div>
     <div class="project-list-item__meta">
-      <time><Icon name="ri:calendar-fill" /> {{ listYear(project.year) }}</time>
+      <time v-tooltip="`Updated ${formatDate(project.updated)}.`"
+        ><Icon name="ri:calendar-fill" /> {{ listYear(project.year) }}</time
+      >
       <div class="language-item"><Icon name="ri:code-box-fill" /> {{ project.language }}</div>
       <div class="project-list-item__actions">
         <BaseButton :href="`${project.url}/watchers`" target="_blank" size="xs" color="secondary" variant="text">
@@ -35,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { listYear } from '../utils/formatDate';
+import { listYear, formatDate } from '../utils/formatDate';
 
 const props = defineProps({
   project: { type: Object as PropType<ProjectItem>, required: true },

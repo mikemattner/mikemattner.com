@@ -90,18 +90,19 @@ const sortedProjects = computed(() => {
         })
         .toString();
       const obj: ProjectItem = {
-        name: title,
+        name: proj.name,
         description: description ? description : proj.description,
         url: proj.html_url,
         topics: proj.topics,
         stars: proj.stargazers_count,
         watchers: proj.watchers_count,
-        year: proj.pushed_at,
+        year: proj.created_at,
+        updated: proj.pushed_at,
         language: proj.language,
       };
       return obj;
     })
-    .sort((a, b) => new Date(b.year).getTime() - new Date(a.year).getTime());
+    .sort((a, b) => new Date(b.updated).getTime() - new Date(a.updated).getTime());
 });
 </script>
 
