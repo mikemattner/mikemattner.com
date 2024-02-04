@@ -25,10 +25,24 @@
       >
       <div class="language-item"><Icon name="ri:code-box-fill" /> {{ project.language }}</div>
       <div class="project-list-item__actions">
-        <BaseButton :href="`${project.url}/watchers`" target="_blank" size="xs" color="secondary" variant="text">
+        <BaseButton
+          :href="`${project.url}/watchers`"
+          v-tooltip="`${project.watchers} watchers`"
+          target="_blank"
+          size="xs"
+          color="secondary"
+          variant="text"
+        >
           <Icon name="ri:eye-fill" /> <span>{{ project.watchers }}</span>
         </BaseButton>
-        <BaseButton :href="`${project.url}/stargazers`" target="_blank" size="xs" color="secondary" variant="text">
+        <BaseButton
+          :href="`${project.url}/stargazers`"
+          v-tooltip="`${project.stars} stargazers`"
+          target="_blank"
+          size="xs"
+          color="secondary"
+          variant="text"
+        >
           <Icon name="ri:star-fill" /> <span>{{ project.stars }}</span>
         </BaseButton>
       </div>
