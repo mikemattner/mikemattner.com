@@ -1,27 +1,26 @@
 <template>
   <div class="note-list-item">
-    <div :to="note._path" class="note-list-item__link">
-      <div class="note-list-item__body">
-        <ContentRenderer :value="note">
-          <ContentRendererMarkdown class="flow" :value="note" />
-          <template #empty>
-            <p>No content found.</p>
-          </template>
-        </ContentRenderer>
+    <div class="note-list-item__header">
+      <time>
+        <Icon name="ri:calendar-fill" />
+        <NuxtLink :to="note._path">{{ date }}</NuxtLink>
+      </time>
+      <div class="note-list-item__tags">
+        <Icon name="ri:chat-thread-fill" />
+        <ul class="tag-list">
+          <li v-for="tag in note.tag" :key="tag">
+            <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
+          </li>
+        </ul>
       </div>
-      <div class="note-list-item__header">
-        <NuxtLink :to="note._path">
-          <time><Icon name="ri:calendar-fill" /> {{ date }}</time>
-        </NuxtLink>
-        <div class="note-list-item__tags">
-          <Icon name="ri:chat-thread-fill" />
-          <ul class="tag-list">
-            <li v-for="tag in note.tag" :key="tag">
-              <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
-            </li>
-          </ul>
-        </div>
-      </div>
+    </div>
+    <div class="note-list-item__body">
+      <ContentRenderer :value="note">
+        <ContentRendererMarkdown class="flow" :value="note" />
+        <template #empty>
+          <p>No content found.</p>
+        </template>
+      </ContentRenderer>
     </div>
   </div>
 </template>
@@ -40,42 +39,38 @@ const date = computed<string>(() => formatDate(props.note.date));
 <style lang="scss" scoped>
 .note-list-item {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  // border-bottom: 1px solid var(--border-color);
+  border-radius: 7px;
+  position: relative;
+  padding: 0 0 var(--sizing-xxxl) 0;
+  max-width: 65ch;
 
-  &__link {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
+  h3 {
     transition: var(--transition);
-    border-bottom: 1px solid var(--border-color);
-    border-radius: 7px;
-    position: relative;
-    padding: var(--sizing-xxl) 0;
+  }
 
-    h3 {
-      transition: var(--transition);
-    }
+  .note-list-item__body {
+    padding: 0;
+    z-index: 2;
+  }
+  .note-list-item__read-more {
+    font-family: var(--code-font-family);
+    font-size: var(--size-step--2);
+    text-transform: uppercase;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
+    padding: 0 0 var(--sizing-lg);
+    z-index: 2;
 
-    .note-list-item__body {
-      padding: 0 0 var(--sizing-lg) 0;
-      z-index: 2;
-      max-width: 65ch;
-    }
-    .note-list-item__read-more {
-      font-family: var(--code-font-family);
-      font-size: var(--size-step--2);
-      text-transform: uppercase;
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: var(--sizing-sm);
-      padding: 0 0 var(--sizing-lg);
-      z-index: 2;
-
-      svg {
-        transition: transform 0.125s var(--cubic-bezier);
-      }
+    svg {
+      transition: transform 0.125s var(--cubic-bezier);
     }
   }
 
@@ -90,7 +85,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     align-items: center;
     gap: var(--sizing-xxl);
     color: var(--blog-card-date-color);
-    padding: var(--sizing-lg) 0 0;
+    padding: 0 0 var(--sizing-xxl) 0;
     z-index: 2;
   }
 
