@@ -61,7 +61,6 @@ const date = computed<string>(() => formatDate(props.note.date));
       padding: 0 0 var(--sizing-lg) 0;
       z-index: 2;
       max-width: 65ch;
-      font-size: var(--size-step--1);
     }
     .note-list-item__read-more {
       font-family: var(--code-font-family);
