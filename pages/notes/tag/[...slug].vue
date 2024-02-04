@@ -3,12 +3,12 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Posts tagged &lsquo;{{ tagName }}&rsquo;</h1>
-          <p class="intro">Every post I've tagged with &lsquo;{{ tagName }}.&rsquo;</p>
+          <h1>Notes tagged &lsquo;{{ tagName }}&rsquo;</h1>
+          <p class="intro">Every note I've tagged with &lsquo;{{ tagName }}.&rsquo;</p>
           <hr />
         </div>
         <div class="content-area flow">
-          <ArticleList :posts="posts" list-all />
+          <NoteList :notes="notes" list-all />
         </div>
       </div>
     </div>
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '../../../types/posts';
+import { Note } from '../../../types/notes';
 
 const route = useRoute();
 const tagName = computed<string>(() => {
@@ -24,18 +24,18 @@ const tagName = computed<string>(() => {
 });
 
 useHead({
-  title: `Tag: ${tagName.value} - Blog`,
+  title: `Tag: ${tagName.value} - Notes`,
 });
 
-const { data } = await useAsyncData('tag-list', () => {
-  return queryContent('/blog')
+const { data } = await useAsyncData('notes-tag-list', () => {
+  return queryContent('/notes')
     .where({ tag: { $contains: tagName.value } })
     .sort({ date: -1 })
     .find();
 });
 
-const posts = computed<Post[]>(() => {
-  return data?.value?.filter((post) => !post.draft) as Post[];
+const notes = computed<Note[]>(() => {
+  return data?.value?.filter((post) => !post.draft) as Note[];
 });
 </script>
 
