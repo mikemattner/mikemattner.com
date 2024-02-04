@@ -33,18 +33,20 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 <style lang="scss" scoped>
 .theme-toggle {
   --size: 2.5rem;
-  --icon-fill: var(--color-light);
-  --icon-fill-hover: var(--color-light);
-  transition: var(--transition-cubic);
+  --icon-fill: var(--headline-font-color);
+  --icon-fill-hover: var(--headline-font-color);
+  transition: var(--transition);
   color: var(--font-color);
 
   background: transparent;
   border: 0;
   padding: 0;
+  border-radius: 7px;
+  background-color: var(--border-color);
 
-  @media (max-width: 715px) {
-    --size: 3.5rem;
-  }
+  // @media (max-width: 715px) {
+  //   --size: 3.5rem;
+  // }
 
   inline-size: var(--size);
   block-size: var(--size);
@@ -85,9 +87,11 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 
   &:hover,
   &:focus-visible {
-    @media (min-width: 716px) {
-      transform: scale(1.2);
-    }
+    // @media (min-width: 716px) {
+    //   transform: scale(1.2);
+    // }
+    background-color: var(--color-primary);
+
     .moon,
     .sun {
       fill: var(--icon-fill-hover);

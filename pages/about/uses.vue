@@ -101,13 +101,16 @@
             <li>Affinity Photo 2</li>
             <li><del>Linearity Curve</del></li>
             <li><del>Pixelmator Pro</del></li>
+            <li><del>Adobe Photoshop</del></li>
+            <li><del>Adobe Illustrator</del></li>
+            <li><del>Adobe InDesign</del></li>
           </ul>
 
           <h3 class="small-heading">Productivity</h3>
           <ul>
+            <li>Todoist (I've been using this since it launched)</li>
             <li>Raycast</li>
             <li>Spotify</li>
-            <li>Todoist (been using since they launched)</li>
           </ul>
         </div>
       </div>
@@ -208,8 +211,8 @@ useHead({
 
   .desk-image {
     aspect-ratio: 2 / 1.25;
-    border-radius: 7px 50px 7px 50px;
     overflow: hidden;
+    border-radius: 7px;
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;

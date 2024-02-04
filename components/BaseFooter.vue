@@ -118,13 +118,13 @@ const theYear = computed<string>(() => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    mix-blend-mode: difference;
+    gap: var(--sizing-md);
 
     @media (max-width: 800px) {
       justify-content: center;
       transition: var(--transition-cubic);
       width: 100%;
-      margin-top: auto;
+      margin-top: var(--sizing-lg);
     }
   }
 
@@ -147,8 +147,7 @@ const theYear = computed<string>(() => {
       justify-content: flex-start;
       gap: var(--sizing-xl);
       margin-left: auto;
-      border-right: 1px solid var(--border-color);
-      padding-right: var(--sizing-lg);
+      margin-right: var(--sizing-lg);
     }
 
     @media (max-width: 800px) {

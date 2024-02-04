@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vueuse/nuxt": "^9.13.0",
+    "floating-vue": "^5.2.2",
     "rss": "^1.2.2",
     "sitemap": "^7.1.1"
   }

@@ -31,7 +31,9 @@ import { useNavigationState } from '@/composables/useNavigationState.client';
 
 const isMobile = useMediaQuery('(max-width: 715px)');
 const route = useRoute();
-const pathIsWriting = computed<boolean>(() => route.matched[0].name === 'blog-slug');
+const pathIsWriting = computed<boolean>(() => {
+  return route.matched[0].name === 'blog-slug' || route.matched[0].name === 'blog-tag-slug';
+});
 const pathIsAbout = computed<boolean>(() => route.matched[0].path.includes('about'));
 const pathIsProjects = computed<boolean>(() => route.matched[0].path.includes('projects'));
 
