@@ -17,10 +17,6 @@
         </NuxtLink>
       </li>
     </ul>
-    <!-- <div class="base-navigation__sub-controls">
-      <RssButton />
-      <ThemeSwitcher />
-    </div> -->
   </nav>
 </template>
 
@@ -36,11 +32,15 @@ const pathIsWriting = computed<boolean>(() => {
 });
 const pathIsAbout = computed<boolean>(() => route.matched[0].path.includes('about'));
 const pathIsProjects = computed<boolean>(() => route.matched[0].path.includes('projects'));
+const pathIsNotes = computed<boolean>(() => {
+  return route.matched[0].name === 'notes-slug' || route.matched[0].name === 'notes-tag-slug';
+});
 
 const showActiveSubPath = (item: NavigationList): boolean => {
   if (item.title === 'Blog') return pathIsWriting.value;
   if (item.title === 'About') return pathIsAbout.value;
   if (item.title === 'Projects') return pathIsProjects.value;
+  if (item.title === 'Notes') return pathIsNotes.value;
   return false;
 };
 
@@ -52,6 +52,10 @@ const navigationList: NavigationList[] = [
   {
     title: 'Blog',
     url: '/blog',
+  },
+  {
+    title: 'Notes',
+    url: '/notes',
   },
   {
     title: 'Projects',
@@ -82,7 +86,6 @@ const toggle = () => {
     padding: 0;
     list-style: none;
     font-size: var(--size-step--1);
-    // font-family: var(--code-font-family);
     mix-blend-mode: difference;
 
     @media (max-width: 715px) {
@@ -91,8 +94,6 @@ const toggle = () => {
       justify-content: flex-start;
       font-size: var(--size-step-4);
       gap: var(--sizing-sm);
-      // font-family: var(--sans-font-family);
-      // font-variation-settings: 'wdth' 95, 'wght' 800;
     }
 
     &__item {
@@ -127,21 +128,6 @@ const toggle = () => {
     text-decoration-color: var(--color-light);
   }
 
-  &__sub-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    mix-blend-mode: difference;
-
-    @media (max-width: 715px) {
-      justify-content: center;
-      transition: var(--transition-cubic);
-      opacity: 0;
-      width: 100%;
-      margin-top: auto;
-    }
-  }
-
   &__controls {
     display: flex;
     align-items: center;
@@ -160,7 +146,6 @@ const toggle = () => {
       bottom: 0;
       width: 100%;
       background-color: var(--background-color);
-      // backdrop-filter: blur(10px);
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
@@ -193,11 +178,9 @@ const toggle = () => {
           &:nth-child(4) {
             transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
-        }
-
-        .base-navigation__sub-controls {
-          opacity: 1;
-          transition: all 0.25s 0.875s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          &:nth-child(5) {
+            transition: all 0.25s 0.825s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
         }
       }
     }
