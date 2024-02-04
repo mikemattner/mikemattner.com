@@ -22,7 +22,9 @@
           <div class="article-meta-block">
             <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
             <ul class="tag-list">
-              <li v-for="tag in data.tag" :key="tag">{{ tag }}</li>
+              <li v-for="tag in data.tag" :key="tag">
+                <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
+              </li>
             </ul>
           </div>
         </aside>
