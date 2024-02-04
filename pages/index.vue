@@ -5,7 +5,7 @@
         <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
 
         <h1 class="main-lede very-large-heading">
-          <span class="introduction">Hey there</span>
+          <span class="introduction">Hey there.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -31,11 +31,11 @@
             <BaseButton to="/about" variant="outline" size="md" color="primary">
               <span>Read more about me</span>
             </BaseButton>
+            <BaseButton to="/projects" variant="text" size="sm" color="secondary">
+              <span>Projects</span> <Icon name="ri:code-box-fill" />
+            </BaseButton>
             <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
-            </BaseButton>
-            <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
-              <span>Resume</span> <Icon name="ri:article-fill" />
             </BaseButton>
           </div>
         </div>
@@ -49,7 +49,7 @@
           <ArticleList :posts="posts" />
           <div class="button-group">
             <BaseButton to="/blog" variant="outline" size="md" color="primary">
-              <span>Read the archives</span> <Icon name="ri:arrow-right-fill" />
+              <span>Read the archives</span>
             </BaseButton>
           </div>
         </div>
@@ -265,13 +265,14 @@ const posts = computed(() => {
     aspect-ratio: 2 / 1.5;
     width: 100%;
     display: inline-flex;
-    border-radius: 7px 50px 7px 50px;
+    border-radius: 7px;
     overflow: hidden;
 
     @media (min-width: 1053px) {
       grid-column: 1 / span 9;
       grid-row: 1 / span 2;
       aspect-ratio: 1 / 2;
+      border-radius: 7px 50px 7px 50px;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 1;

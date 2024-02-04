@@ -51,9 +51,9 @@
           <a href="https://content.nuxt.com/">Nuxt Content</a> to manage markdown content for the blog, hosted at
           <a href="https://netlify.com">Netlify</a>. I used some combination of
           <a href="https://www.figma.com/">Figma</a> and <a href="https://code.visualstudio.com/">VSCode</a> to design
-          and develop the site, and <a href="https://www.pixelmator.com/pro/">Pixelmator Pro</a> to cut up any assets.
-          Type is set in <a href="https://github.com/mona-sans">Mona Sans</a>, a variable font, and code is set in
-          <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a>, my choice of font in my code editor.
+          and develop the site, and <a href="https://affinity.serif.com/en-us/photo/">Affinity Photo 2</a> to cut up any
+          assets. Type is set in <a href="https://github.com/mona-sans">Mona Sans</a>, a variable font, and code is set
+          in <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a>, my choice of font in my code editor.
         </p>
         <h3>Other Iterations</h3>
         <p>
@@ -282,7 +282,7 @@ useHead({
 
   .profile-image {
     aspect-ratio: 2 / 1.25;
-    border-radius: 7px 50px 7px 50px;
+    border-radius: 7px;
     overflow: hidden;
 
     @media (min-width: 501px) {
@@ -324,7 +324,7 @@ useHead({
       margin: 0;
       padding: var(--sizing-sm);
       text-decoration: none;
-      border: 1px solid var(--border-color);
+      border: 2px solid var(--border-color);
       aspect-ratio: 1;
       box-shadow: 5px 5px 0 0 var(--border-color);
       font-variation-settings: 'wdth' 100, 'wght' 800;

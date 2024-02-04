@@ -23,6 +23,7 @@ interface ProjectItem {
   stars: string;
   watchers: string;
   year: string;
+  updated: string;
   language: string;
 }
 
