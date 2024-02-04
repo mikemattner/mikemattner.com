@@ -149,7 +149,7 @@ const featuredImage = computed<string>(() => {
 
     :deep(.primary-image__image.has-overlay) {
       img {
-        filter: blur(3px);
+        filter: blur(3px) grayscale(100%) invert(5%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
       }
 
       &::after,
