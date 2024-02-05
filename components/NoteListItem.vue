@@ -95,6 +95,8 @@ const date = computed<string>(() => formatDate(props.note.date));
     gap: var(--sizing-sm);
 
     svg {
+      width: 1.25rem;
+      height: 1.25rem;
       flex-shrink: 0;
     }
   }
@@ -105,6 +107,8 @@ const date = computed<string>(() => formatDate(props.note.date));
     gap: var(--sizing-sm);
 
     svg {
+      width: 1.25rem;
+      height: 1.25rem;
       flex-shrink: 0;
     }
   }

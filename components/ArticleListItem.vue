@@ -182,8 +182,8 @@ const featuredImage = computed<string>(() => {
     gap: var(--sizing-sm);
 
     svg {
-      // width: 1.25rem;
-      // height: 1.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
       flex-shrink: 0;
     }
   }
@@ -194,8 +194,8 @@ const featuredImage = computed<string>(() => {
     gap: var(--sizing-sm);
 
     svg {
-      // width: 1.25rem;
-      // height: 1.25rem;
+      width: 1.25rem;
+      height: 1.25rem;
       flex-shrink: 0;
     }
   }
