@@ -30,41 +30,48 @@ const props = defineProps({
   li {
     position: relative;
     padding: 0 0 var(--sizing-xxxl) 2em;
-    border-left: 2px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
 
     &:last-child {
       padding-bottom: 0;
-
-      .note-list-item {
-        padding-bottom: 0;
-      }
     }
 
     &:before {
-      width: 1em;
-      height: 1em;
+      width: 2rem;
+      height: 2rem;
       display: block;
       top: 0;
       position: absolute;
-      left: -0.53em;
+      left: -1.03rem;
       content: '';
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
       background: var(--background-color);
       border-radius: 50%;
       z-index: 2;
+      transition: var(--transition);
     }
 
-    &:after {
-      width: 1.5em;
-      height: 2px;
-      display: block;
-      top: 0.45em;
-      position: absolute;
-      left: 0;
-      content: '';
-      background: var(--border-color);
-      border-radius: 0;
-      z-index: 1;
+    // &:after {
+    //   content: '';
+    //   width: 0.675em;
+    //   height: 1px;
+    //   display: block;
+    //   top: 1rem;
+    //   position: absolute;
+    //   left: 1rem;
+    //   background: var(--border-color);
+    //   border-radius: 0;
+    //   z-index: 1;
+    // }
+
+    &:hover {
+      &:before {
+        border-color: var(--color-primary);
+        // box-shadow: 0 0 0 0 var(--color-primary);
+      }
+      // &:after {
+      //   background: var(--color-primary);
+      // }
     }
   }
 }
