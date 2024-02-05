@@ -45,11 +45,12 @@ const props = defineProps({
       background: var(--color-primary);
       transition: var(--transition-cubic);
       border-radius: 50%;
+      // box-shadow: 0 0 0 0 hsla(var(--color-primary-hsl), 0.2), 0 0 0 0 var(--color-primary);
     }
 
     // &:hover {
     //   &:before {
-    //     background: var(--color-primary);
+    //     box-shadow: 0 0 30px 0 hsla(var(--color-primary-hsl), 0.2), 0 0 10px 0 var(--color-primary);
     //   }
     // }
   }

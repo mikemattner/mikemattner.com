@@ -4,7 +4,6 @@
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
           <h1>Notes</h1>
-          <p class="intro">This is where I post quick, short items of note.</p>
           <hr />
         </div>
         <div class="content-area flow">
