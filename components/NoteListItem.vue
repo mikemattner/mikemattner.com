@@ -2,17 +2,8 @@
   <div class="note-list-item">
     <div class="note-list-item__header">
       <time>
-        <Icon name="ri:calendar-fill" />
         <NuxtLink :to="note._path">{{ date }}</NuxtLink>
       </time>
-      <div class="note-list-item__tags">
-        <Icon name="ri:chat-thread-fill" />
-        <ul class="tag-list">
-          <li v-for="tag in note.tag" :key="tag">
-            <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
-          </li>
-        </ul>
-      </div>
     </div>
     <div class="note-list-item__body">
       <ContentRenderer :value="note">
@@ -21,6 +12,14 @@
           <p>No content found.</p>
         </template>
       </ContentRenderer>
+    </div>
+    <div class="note-list-item__tags">
+      <Icon name="ri:chat-thread-fill" />
+      <ul class="tag-list">
+        <li v-for="tag in note.tag" :key="tag">
+          <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -44,7 +43,7 @@ const date = computed<string>(() => formatDate(props.note.date));
   text-decoration: none;
   color: inherit;
   transition: var(--transition);
-  // border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px dotted var(--border-color);
   border-radius: 7px;
   position: relative;
   padding: 0 0 var(--sizing-xxxl) 0;
@@ -93,6 +92,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
+    font-size: var(--size-step--1);
 
     svg {
       width: 1.25rem;
@@ -105,6 +105,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
+    margin-top: var(--sizing-lg);
 
     svg {
       width: 1.25rem;
@@ -112,20 +113,22 @@ const date = computed<string>(() => formatDate(props.note.date));
       flex-shrink: 0;
     }
   }
+
   .tag-list {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     align-items: center;
-    gap: var(--sizing-xs);
+    gap: var(--sizing-sm);
+    font-size: var(--size-step--1);
 
     li {
       padding: 0;
       margin: 0;
       display: flex;
       align-items: center;
-      gap: var(--sizing-xs);
+      gap: var(--sizing-sm);
 
       &:before {
         content: '/';

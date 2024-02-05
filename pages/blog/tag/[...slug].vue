@@ -27,7 +27,7 @@ useHead({
   title: `Tag: ${tagName.value} - Blog`,
 });
 
-const { data } = await useAsyncData('tag-list', () => {
+const { data } = await useAsyncData(`blog-tag-list-${tagName.value}`, () => {
   return queryContent('/blog')
     .where({ tag: { $contains: tagName.value } })
     .sort({ date: -1 })
