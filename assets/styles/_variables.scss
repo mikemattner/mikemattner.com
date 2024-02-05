@@ -156,7 +156,7 @@ html.light {
   
 html.dark {
     --background-color: var(--color-dark-background);
-    --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-dark-background-gradient-hsl), 0.30) 0%, var(--background-color) 100%);
+    --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-dark-background-gradient-hsl), 0.30) 0%, hsla(var(--color-primary-hsl), 0.1) 50%, var(--background-color) 100%);
     --font-color: var(--color-dark-font-color);
     --headline-font-color: var(--color-light);
     --background-border-color: var(--color-dark-bg-border);

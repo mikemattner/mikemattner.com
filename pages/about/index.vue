@@ -378,7 +378,7 @@ useHead({
         background: var(--background-color);
         transition: var(--transition-cubic);
         // box-shadow: 2px 2px 0 0 var(--border-color);
-        border-radius: 3px;
+        border-radius: 50%;
       }
 
       &:hover {
