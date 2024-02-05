@@ -1,7 +1,7 @@
 <template>
   <section class="note-list__section">
     <ul class="note-list">
-      <li v-for="note in notes" :key="note.title" class="note-list__item">
+      <li v-for="note in notes" :key="note.title" class="note-list__list-item">
         <NoteListItem :note="note" />
       </li>
     </ul>
@@ -29,9 +29,16 @@ const props = defineProps({
 
   li {
     position: relative;
-    padding: 0 0 var(--sizing-xxxl);
-    padding-left: 2em;
-    border-left: 1px solid var(--border-color);
+    padding: 0 0 var(--sizing-xxxl) 2em;
+    border-left: 2px solid var(--border-color);
+
+    &:last-child {
+      padding-bottom: 0;
+
+      .note-list-item {
+        padding-bottom: 0;
+      }
+    }
 
     &:before {
       width: 1em;
@@ -41,18 +48,24 @@ const props = defineProps({
       position: absolute;
       left: -0.53em;
       content: '';
-      // border: 2px solid var(--border-color);
-      background: var(--color-primary);
-      transition: var(--transition-cubic);
+      border: 2px solid var(--border-color);
+      background: var(--background-color);
       border-radius: 50%;
-      // box-shadow: 0 0 0 0 hsla(var(--color-primary-hsl), 0.2), 0 0 0 0 var(--color-primary);
+      z-index: 2;
     }
 
-    // &:hover {
-    //   &:before {
-    //     box-shadow: 0 0 30px 0 hsla(var(--color-primary-hsl), 0.2), 0 0 10px 0 var(--color-primary);
-    //   }
-    // }
+    &:after {
+      width: 1.5em;
+      height: 2px;
+      display: block;
+      top: 0.45em;
+      position: absolute;
+      left: 0;
+      content: '';
+      background: var(--border-color);
+      border-radius: 0;
+      z-index: 1;
+    }
   }
 }
 </style>
