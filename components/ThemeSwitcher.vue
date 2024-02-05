@@ -65,9 +65,9 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
     stroke-linecap: round;
   }
 
-  @media (hover: none) {
-    --size: 30px;
-  }
+  // @media (hover: none) {
+  //   --size: 30px;
+  // }
 
   .sun-and-moon {
     transform-origin: center center;
