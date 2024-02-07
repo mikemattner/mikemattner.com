@@ -103,7 +103,7 @@ useHead({
   &__feature {
     padding: 1rem 0 0;
     z-index: 1;
-    max-width: var(--max-width-nav);
+    max-width: var(--max-width);
     margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr;
