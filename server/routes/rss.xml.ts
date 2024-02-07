@@ -9,9 +9,9 @@ export default defineEventHandler(async (event) => {
   });
 
   const docs = await serverQueryContent(event).sort({ date: -1 }).where({ _partial: false }).find();
-  const blogPosts = docs.filter((doc) => doc?._path?.includes('/blog'));
+  // const blogPosts = docs.filter((doc) => doc?._path?.includes('/blog'));
 
-  for (const doc of blogPosts) {
+  for (const doc of docs) {
     feed.item({
       title: doc.title ?? '-',
       url: `https://mikemattner.com${doc._path}`,

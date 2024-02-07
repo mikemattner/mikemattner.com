@@ -2,9 +2,9 @@
   <main class="article-page">
     <template v-if="data">
       <header class="article-layout__feature">
-        <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
+        <!-- <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
           <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
-        </PrimaryImage>
+        </PrimaryImage> -->
         <div class="article-header">
           <ul class="breadcrumb-trail flex--justify-center">
             <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -122,18 +122,18 @@ useHead({
       .article-title {
         font-size: clamp(30px, 8vw, 75px);
         text-align: center;
-        color: var(--color-light);
+        // color: var(--color-light);
       }
 
-      .breadcrumb-trail {
-        a {
-          color: var(--color-light);
-        }
+      // .breadcrumb-trail {
+      //   a {
+      //     color: var(--color-light);
+      //   }
 
-        li:after {
-          color: var(--color-light);
-        }
-      }
+      //   li:after {
+      //     color: var(--color-light);
+      //   }
+      // }
     }
   }
 
