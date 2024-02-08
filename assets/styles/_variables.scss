@@ -134,6 +134,7 @@
     --box-shadow: var(--box-shadow-short);
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
+    --color-gradient: var(--color-dark-background-gradient-hsl);
 }
 
 html.light {
@@ -152,6 +153,7 @@ html.light {
     --box-shadow: var(--box-shadow-short);
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
+    --color-gradient: var(--color-light-background-gradient-hsl);
 }
   
 html.dark {
@@ -170,4 +172,5 @@ html.dark {
     --box-shadow: var(--box-shadow-short);
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
+    --color-gradient: var(--color-dark-background-gradient-hsl);
 }

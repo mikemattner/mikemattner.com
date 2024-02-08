@@ -1,7 +1,7 @@
 <template>
   <section class="article-list__section">
     <template v-if="!listAll">
-      <ul class="article-list summary-list">
+      <ul class="article-list">
         <li v-for="post in posts" :key="post.title" class="article-list__item">
           <ArticleListItem :post="post" />
         </li>
