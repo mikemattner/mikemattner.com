@@ -42,14 +42,21 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <div class="sidebar-area flow">
+        <div class="half-posts flow">
           <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
-        </div>
-        <div class="content-area flow">
           <ArticleList :posts="posts" />
           <div class="button-group">
             <BaseButton to="/blog" variant="outline" size="md" color="primary">
-              <span>Read the archives</span>
+              <span>Blog archives</span>
+            </BaseButton>
+          </div>
+        </div>
+        <div class="half-notes flow">
+          <h2 class="h4-heading recently-posted-header">Recently Noted</h2>
+          <NoteList :notes="notes" small />
+          <div class="button-group">
+            <BaseButton to="/notes" variant="outline" size="md" color="primary">
+              <span>Note archives</span>
             </BaseButton>
           </div>
         </div>
@@ -60,6 +67,7 @@
 
 <script setup lang="ts">
 import { Post } from '../types/posts';
+import { Note } from '../types/notes';
 
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
@@ -67,9 +75,14 @@ useHead({
 });
 
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
+const { data: noteData } = await useAsyncData('notes-short', () => queryContent('/notes').sort({ date: -1 }).find());
 
 const posts = computed(() => {
   return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
+});
+
+const notes = computed(() => {
+  return noteData?.value?.filter((note) => !note.draft).slice(0, 1) as Note[];
 });
 </script>
 
@@ -123,8 +136,15 @@ const posts = computed(() => {
       display: grid;
     }
 
+    @media (max-width: 1052px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sizing-xxl) var(--sizing-xxl);
+      display: grid;
+    }
+
     @media (max-width: 715px) {
       margin-inline: auto;
+      display: block;
     }
   }
 
@@ -287,7 +307,33 @@ const posts = computed(() => {
   }
 
   .recently-posted-header {
-    margin-block-end: var(--sizing-lg);
+    margin-block-end: var(--sizing-xxxl);
+  }
+
+  .half-posts {
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 13;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 2;
+      margin-block-end: var(--sizing-xxxl);
+    }
+    @media (max-width: 499px) {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  .half-notes {
+    @media (min-width: 1053px) {
+      grid-column: 16 / span 13;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 3 / span 2;
+      margin-block-start: var(--sizing-xxxl);
+    }
+    @media (max-width: 499px) {
+      grid-column: 1 / span 4;
+    }
   }
 }
 </style>
