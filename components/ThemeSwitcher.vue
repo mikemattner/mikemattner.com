@@ -1,5 +1,13 @@
 <template>
-  <button @click="next()" class="theme-toggle" :class="{ 'is-dark': mode === 'dark' }" title="Toggle theme">
+  <BaseButton
+    @click="next()"
+    class="theme-toggle"
+    :class="{ 'is-dark': mode === 'dark' }"
+    title="Toggle theme"
+    variant="solid"
+    size="sm"
+    color="secondary"
+  >
     <svg class="sun-and-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
       <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
       <g class="sun-beams" stroke="currentColor">
@@ -17,7 +25,7 @@
         <circle cx="24" cy="10" r="6" fill="black" />
       </mask>
     </svg>
-  </button>
+  </BaseButton>
 </template>
 
 <script setup lang="ts">
@@ -38,28 +46,28 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
   transition: var(--transition);
   color: var(--font-color);
 
-  background: transparent;
-  border: 0;
-  padding: 0;
-  border-radius: 7px;
-  background-color: var(--border-color);
+  // background: transparent;
+  // border: 0;
+  // padding: 0;
+  // border-radius: 7px;
+  // background-color: var(--border-color);
 
-  // @media (max-width: 715px) {
-  //   --size: 3.5rem;
-  // }
+  // // @media (max-width: 715px) {
+  // //   --size: 3.5rem;
+  // // }
 
-  inline-size: var(--size);
-  block-size: var(--size);
-  aspect-ratio: 1;
-  border-radius: var(--sizing-sm);
+  // inline-size: var(--size);
+  // block-size: var(--size);
+  // aspect-ratio: 1;
+  // border-radius: var(--sizing-sm);
 
-  cursor: pointer;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  outline-offset: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // cursor: pointer;
+  // touch-action: manipulation;
+  // -webkit-tap-highlight-color: transparent;
+  // outline-offset: 5px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 
   svg {
     stroke-linecap: round;

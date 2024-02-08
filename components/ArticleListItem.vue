@@ -10,9 +10,9 @@
         </div>
         <time><Icon name="ri:calendar-fill" /> {{ formatDate(post.date) }}</time>
       </header>
-      <div class="article-list-item__feature">
+      <!-- <div class="article-list-item__feature">
         <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
-      </div>
+      </div> -->
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
@@ -58,7 +58,7 @@ const featuredImage = computed<string>(() => {
     }
 
     .article-list-item__title {
-      padding: var(--sizing-lg) 0 var(--sizing-xxl);
+      padding: 0 0 var(--sizing-xl);
       z-index: 2;
     }
     .article-list-item__read-more {
@@ -69,7 +69,7 @@ const featuredImage = computed<string>(() => {
       display: flex;
       align-items: center;
       gap: var(--sizing-sm);
-      padding: 0 0 var(--sizing-lg);
+      padding: 0;
       z-index: 2;
 
       svg {
@@ -226,62 +226,59 @@ const featuredImage = computed<string>(() => {
     }
   }
 }
-</style>
+// .article-list-item {
+//   container: article / inline-size;
+// }
+// .article-list-item__link {
+//   @container (width >= 600px) {
+//     display: grid;
+//     grid-template-columns: 200px 1fr;
+//   }
+// }
 
-<style scoped>
-.article-list-item {
-  container: article / inline-size;
-}
-.article-list-item__link {
-  @container (width >= 600px) {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-  }
-}
+// .article-list-item__feature {
+//   @container (width >= 600px) {
+//     grid-column: 1;
+//     grid-row: 1 / span 3;
+//     display: flex;
+//     align-items: center;
+//     padding-right: var(--sizing-xl);
+//   }
+//   @container (width <= 599px) {
+//     /* padding: var(--sizing-lg) var(--sizing-lg) 0; */
+//   }
+// }
 
-.article-list-item__feature {
-  @container (width >= 600px) {
-    grid-column: 1;
-    grid-row: 1 / span 3;
-    display: flex;
-    align-items: center;
-    padding-right: var(--sizing-xl);
-  }
-  @container (width <= 599px) {
-    /* padding: var(--sizing-lg) var(--sizing-lg) 0; */
-  }
-}
+// .article-list-item__feature-image {
+//   @container (width >= 600px) {
+//     aspect-ratio: 1;
+//     height: 100%;
+//   }
+//   @container (width <= 599px) {
+//     aspect-ratio: 2 / 0.75;
+//   }
+// }
+// .article-list-item__header {
+//   @container (width >= 600px) {
+//     grid-column: 2 / -1;
+//     grid-row: 1;
+//     padding: var(--sizing-lg) 0;
+//   }
+// }
 
-.article-list-item__feature-image {
-  @container (width >= 600px) {
-    aspect-ratio: 1;
-    height: 100%;
-  }
-  @container (width <= 599px) {
-    aspect-ratio: 2 / 0.75;
-  }
-}
-.article-list-item__header {
-  @container (width >= 600px) {
-    grid-column: 2 / -1;
-    grid-row: 1;
-    padding: var(--sizing-lg) 0;
-  }
-}
+// .article-list-item__title {
+//   @container (width >= 600px) {
+//     grid-column: 2;
+//     grid-row: 2;
+//     align-self: start;
+//   }
+// }
 
-.article-list-item__title {
-  @container (width >= 600px) {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: start;
-  }
-}
-
-.article-list-item__read-more {
-  @container (width >= 600px) {
-    grid-column: 2;
-    grid-row: 3;
-    align-self: end;
-  }
-}
+// .article-list-item__read-more {
+//   @container (width >= 600px) {
+//     grid-column: 2;
+//     grid-row: 3;
+//     align-self: end;
+//   }
+// }
 </style>

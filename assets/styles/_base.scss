@@ -39,6 +39,8 @@ body {
     display: grid;
     margin-inline: auto;
     grid-template-rows: auto minmax(600px, 1fr) auto;
+    // position: relative;
+    // z-index: 2;
 
     @media (min-width: 716px) {
         grid-template-areas: 
