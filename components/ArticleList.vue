@@ -70,11 +70,12 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--sizing-xxl);
+  gap: var(--sizing-xxxl);
 
   &.summary-list {
     @media (min-width: 901px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: var(--sizing-xxxl);
     }
 
     @media (max-width: 900px) {
