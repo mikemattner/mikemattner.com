@@ -27,17 +27,12 @@ Round three of framework based blogging. Remix icons from [icones.js.org](https:
 - [x] Article page design
 - [x] About page
 - [x] About page design
-- [ ] Projects page and content type
+- [x] Projects page and content type
 - [x] Rename Writing to Blog (generalize it with links being integrated)
 - [x] Refine post slug design
-- [ ] Create a generalized notebook content type for scraps of info/links/quotes
+- [x] Create a generalized notebook content type for scraps of info/links/quotes
 - [ ] Image handling
 - [x] Integrate [Decap CMS](https://decapcms.org/docs/nuxt/)
-
-### Package Updates
-
-- [X] Update Nuxt to latest (incompatibilities currently exist that need to be solved)
-- [X] Update Nuxt Content to latest
 
 ### Basic Elements of SEO/Social
 
