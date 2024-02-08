@@ -1,5 +1,5 @@
 <template>
-  <div class="note-list-item">
+  <div class="note-list-item" :class="{ 'is-small': small }">
     <div class="note-list-item__header">
       <time>
         <NuxtLink :to="note._path">{{ date }}</NuxtLink>
@@ -30,6 +30,7 @@ import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
   note: { type: Object as PropType<Note>, required: true },
+  small: { type: Boolean, default: false },
 });
 
 const date = computed<string>(() => formatDate(props.note.date));
@@ -121,7 +122,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
-    font-size: var(--size-step--1);
+    font-size: var(--size-step--2);
 
     li {
       padding: 0;
@@ -140,6 +141,11 @@ const date = computed<string>(() => formatDate(props.note.date));
         display: none;
       }
     }
+  }
+
+  &.is-small {
+    font-size: var(--size-step--1);
+    border-bottom: none;
   }
 }
 </style>
