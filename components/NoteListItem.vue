@@ -1,8 +1,16 @@
 <template>
-  <div class="note-list-item" :class="{ 'is-small': small }">
+  <div class="note-list-item">
     <div class="note-list-item__header">
+      <div class="note-list-item__tags">
+        <Icon name="ri:chat-thread-fill" />
+        <ul class="tag-list">
+          <li v-for="tag in note.tag" :key="tag">
+            <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
       <time>
-        <NuxtLink :to="note._path">{{ date }}</NuxtLink>
+        <Icon name="ri:calendar-fill" /> <NuxtLink :to="note._path">{{ date }}</NuxtLink>
       </time>
     </div>
     <div class="note-list-item__body">
@@ -13,14 +21,6 @@
         </template>
       </ContentRenderer>
     </div>
-    <div class="note-list-item__tags">
-      <Icon name="ri:chat-thread-fill" />
-      <ul class="tag-list">
-        <li v-for="tag in note.tag" :key="tag">
-          <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
@@ -30,7 +30,6 @@ import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
   note: { type: Object as PropType<Note>, required: true },
-  small: { type: Boolean, default: false },
 });
 
 const date = computed<string>(() => formatDate(props.note.date));
@@ -93,7 +92,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
-    font-size: var(--size-step--1);
+    font-size: var(--size-step--2);
 
     svg {
       width: 1.25rem;
@@ -106,7 +105,6 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
-    margin-top: var(--sizing-lg);
 
     svg {
       width: 1.25rem;
@@ -141,11 +139,6 @@ const date = computed<string>(() => formatDate(props.note.date));
         display: none;
       }
     }
-  }
-
-  &.is-small {
-    font-size: var(--size-step--1);
-    border-bottom: none;
   }
 }
 </style>

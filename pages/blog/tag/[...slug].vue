@@ -3,8 +3,8 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Posts tagged &lsquo;{{ tagName }}&rsquo;</h1>
-          <p class="intro">Every post I've tagged with &lsquo;{{ tagName }}.&rsquo;</p>
+          <h1><small>Posts tagged</small> &lsquo;{{ tagName }}&rsquo;</h1>
+          <p class="intro">{{ postCount }}</p>
           <hr />
         </div>
         <div class="content-area flow">
@@ -36,6 +36,12 @@ const { data } = await useAsyncData(`blog-tag-list-${tagName.value}`, () => {
 
 const posts = computed<Post[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Post[];
+});
+
+const postCount = computed<string>(() => {
+  if (posts.value.length < 1) return 'No posts tagged.';
+  if (posts.value.length == 1) return '1 lonely post.';
+  return `${posts.value.length} total posts.`;
 });
 </script>
 
