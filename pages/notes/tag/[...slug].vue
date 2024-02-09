@@ -3,8 +3,8 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Notes tagged &lsquo;{{ tagName }}&rsquo;</h1>
-          <p class="intro">Every note I've tagged with &lsquo;{{ tagName }}.&rsquo;</p>
+          <h1><small>Notes tagged</small> &lsquo;{{ tagName }}&rsquo;</h1>
+          <p class="intro">{{ noteCount }}</p>
           <hr />
         </div>
         <div class="content-area flow">
@@ -36,6 +36,14 @@ const { data } = await useAsyncData(`notes-tag-list-${tagName.value}`, () => {
 
 const notes = computed<Note[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Note[];
+});
+
+// const noteCount = computed<number>(() => notes.value.length);
+
+const noteCount = computed<string>(() => {
+  if (notes.value.length < 1) return 'No notes tagged.';
+  if (notes.value.length == 1) return '1 lonely note.';
+  return `${notes.value.length} total notes.`;
 });
 </script>
 
