@@ -43,19 +43,13 @@
       <hr />
       <div class="home-layout__content">
         <div class="half-posts flow">
-          <h2 class="eyebrow recently-posted-header">Recently Posted</h2>
+          <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
           <ArticleList :posts="posts" />
           <div class="button-group">
             <BaseButton to="/blog" variant="outline" size="md" color="primary">
               <span>Blog archives</span>
             </BaseButton>
-          </div>
-        </div>
-        <div class="half-notes flow">
-          <h2 class="eyebrow recently-posted-header">Recently Noted</h2>
-          <NoteList :notes="notes" small />
-          <div class="button-group">
-            <BaseButton to="/notes" variant="outline" size="md" color="primary">
+            <BaseButton to="/notes" variant="text" size="sm" color="secondary">
               <span>Note archives</span>
             </BaseButton>
           </div>
@@ -315,48 +309,7 @@ const notes = computed(() => {
   }
 
   .half-posts {
-    position: relative;
-
-    @media (min-width: 1053px) {
-      grid-column: 1 / span 13;
-      &::after {
-        right: calc(var(--sizing-xxxl) * -1);
-      }
-    }
-    @media (max-width: 1052px) {
-      grid-column: 1 / span 2;
-      margin-block-end: var(--sizing-xxxl);
-      &::after {
-        right: calc(var(--sizing-lg) * -1);
-      }
-    }
-    @media (min-width: 500px) {
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background-color: var(--border-color);
-      }
-    }
-    @media (max-width: 499px) {
-      grid-column: 1 / span 4;
-    }
-  }
-
-  .half-notes {
-    @media (min-width: 1053px) {
-      grid-column: 16 / span 13;
-    }
-    @media (max-width: 1052px) {
-      grid-column: 3 / span 2;
-      align-self: start;
-    }
-    @media (max-width: 499px) {
-      grid-column: 1 / span 4;
-      margin-block-start: var(--sizing-xxxl);
-    }
+    grid-column: 1 / -1;
   }
 }
 </style>

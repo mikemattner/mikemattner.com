@@ -37,54 +37,50 @@ const toggle = () => {
   }
 
   &-button {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
     width: 32px;
-    height: 20px;
+    height: 24px;
     cursor: pointer;
     outline: none;
+    position: relative;
     span {
+      position: absolute;
       height: 2px;
-      background-color: var(--color-light);
-      transition: var(--transition-cubic);
-      border-radius: var(--sizing-xs);
       width: 32px;
+
+      background-color: var(--color-light);
+      border-radius: var(--sizing-xs);
       display: block;
+
+      &:nth-child(1) {
+        top: 0;
+        transition: top 0.25s var(--cubic-bezier) 0.25s, transform 0.25s var(--cubic-bezier) 0.1s;
+      }
       &:nth-child(2) {
-        width: 22px;
+        top: 11px;
+        opacity: 1;
+        transition: opacity 0.25s var(--cubic-bezier) 0.25s;
+      }
+      &:nth-child(3) {
+        top: 22px;
+        transition: top 0.25s var(--cubic-bezier) 0.25s, transform 0.25s var(--cubic-bezier) 0.1s;
       }
     }
-    &:hover {
-      span {
-        &:nth-child(2) {
-          width: 32px;
-        }
-      }
-    }
-    &:active {
-      span {
-        &:nth-child(2) {
-          width: 32px;
-        }
-      }
-    }
+
     &.active {
-      justify-content: center;
       span {
-        height: 2px;
         &:nth-child(1) {
-          transform: rotate(45deg) translateY(50%);
+          top: 11px;
+          transition: top 0.25s var(--cubic-bezier) 0.1s, transform 0.25s var(--cubic-bezier) 0.25s;
+          transform: rotate(45deg);
         }
         &:nth-child(2) {
           opacity: 0;
           width: 32px;
-          transform: rotate(90deg);
-          display: none;
         }
         &:nth-child(3) {
-          transform: rotate(-45deg) translateY(-50%);
+          top: 11px;
+          transition: top 0.1s var(--cubic-bezier) 0.25s, transform 0.25s var(--cubic-bezier) 0.25s;
+          transform: rotate(-45deg);
         }
       }
     }
