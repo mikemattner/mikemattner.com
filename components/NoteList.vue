@@ -2,7 +2,7 @@
   <section class="note-list__section">
     <ul class="note-list">
       <li v-for="note in notes" :key="note.title" class="note-list__list-item">
-        <NoteListItem :small="small" :note="note" />
+        <NoteListItem :note="note" />
       </li>
     </ul>
   </section>

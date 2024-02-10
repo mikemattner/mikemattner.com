@@ -53,16 +53,16 @@ const toggle = () => {
 
       &:nth-child(1) {
         top: 0;
-        transition: top 0.25s var(--cubic-bezier) 0.25s, transform 0.25s var(--cubic-bezier) 0.1s;
+        transition: top 0.125s var(--cubic-bezier) 0.125s, transform 0.125s var(--cubic-bezier) 0.1s;
       }
       &:nth-child(2) {
         top: 11px;
         opacity: 1;
-        transition: opacity 0.25s var(--cubic-bezier) 0.25s;
+        transition: opacity 0.125s var(--cubic-bezier) 0.125s;
       }
       &:nth-child(3) {
         top: 22px;
-        transition: top 0.25s var(--cubic-bezier) 0.25s, transform 0.25s var(--cubic-bezier) 0.1s;
+        transition: top 0.125s var(--cubic-bezier) 0.125s, transform 0.125s var(--cubic-bezier) 0.1s;
       }
     }
 
@@ -70,7 +70,7 @@ const toggle = () => {
       span {
         &:nth-child(1) {
           top: 11px;
-          transition: top 0.25s var(--cubic-bezier) 0.1s, transform 0.25s var(--cubic-bezier) 0.25s;
+          transition: top 0.125s var(--cubic-bezier) 0.1s, transform 0.125s var(--cubic-bezier) 0.125s;
           transform: rotate(45deg);
         }
         &:nth-child(2) {
@@ -79,7 +79,7 @@ const toggle = () => {
         }
         &:nth-child(3) {
           top: 11px;
-          transition: top 0.1s var(--cubic-bezier) 0.25s, transform 0.25s var(--cubic-bezier) 0.25s;
+          transition: top 0.1s var(--cubic-bezier) 0.125s, transform 0.125s var(--cubic-bezier) 0.125s;
           transform: rotate(-45deg);
         }
       }
