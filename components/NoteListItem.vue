@@ -1,6 +1,9 @@
 <template>
   <div class="note-list-item">
     <div class="note-list-item__header">
+      <time>
+        <Icon name="ri:calendar-fill" /> <NuxtLink :to="note._path">{{ date }}</NuxtLink>
+      </time>
       <div class="note-list-item__tags">
         <Icon name="ri:chat-thread-fill" />
         <ul class="tag-list">
@@ -9,9 +12,6 @@
           </li>
         </ul>
       </div>
-      <time>
-        <Icon name="ri:calendar-fill" /> <NuxtLink :to="note._path">{{ date }}</NuxtLink>
-      </time>
     </div>
     <div class="note-list-item__body">
       <ContentRenderer :value="note">

@@ -2,13 +2,13 @@
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
       <header class="article-list-item__header">
+        <time><Icon name="ri:calendar-fill" /> {{ formatDate(post.date) }}</time>
         <div class="article-list-item__tags">
           <Icon name="ri:chat-thread-fill" />
           <ul class="tag-list">
             <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
           </ul>
         </div>
-        <time><Icon name="ri:calendar-fill" /> {{ formatDate(post.date) }}</time>
       </header>
       <!-- <div class="article-list-item__feature">
         <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
