@@ -2,9 +2,7 @@
   <header class="base-navigation">
     <div class="base-navigation__container">
       <NuxtLink to="/" class="brand-link"><BaseLogo show-label /></NuxtLink>
-      <ClientOnly>
-        <BaseNavigationMenu />
-      </ClientOnly>
+      <BaseNavigationMenu />
     </div>
   </header>
 </template>
