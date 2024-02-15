@@ -56,6 +56,8 @@ const props = defineProps({
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--color-light);
+    font-variation-settings: 'wdth' 100, 'wght' 300;
+    transition: var(--transition-cubic-slow);
 
     @media (max-width: 715px) {
       font-size: var(--size-step-1);
@@ -70,6 +72,10 @@ const props = defineProps({
       //   transform: rotate(720deg);
       //   // transform: scale(1.1);
       // }
+
+      .brand-logo__type {
+        font-variation-settings: 'wdth' 100, 'wght' 800;
+      }
     }
   }
 }

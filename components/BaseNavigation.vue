@@ -67,9 +67,9 @@
     z-index: 1001;
     text-decoration-color: transparent;
 
-    &:hover {
-      text-decoration-color: var(--color-light);
-    }
+    // &:hover {
+    //   text-decoration-color: var(--color-light);
+    // }
   }
 }
 </style>
