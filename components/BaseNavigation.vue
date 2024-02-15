@@ -60,13 +60,16 @@
   }
 
   .brand-link {
-    text-decoration: none;
-    text-underline-offset: 0;
     line-height: 1;
     display: flex;
     align-items: center;
     mix-blend-mode: difference;
     z-index: 1001;
+    text-decoration-color: transparent;
+
+    &:hover {
+      text-decoration-color: var(--color-light);
+    }
   }
 }
 </style>
