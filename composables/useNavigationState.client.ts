@@ -1,8 +1,12 @@
-import { readonly } from 'vue';
+import { readonly, onMounted } from 'vue';
 export const useNavigationOpen = () => useState<boolean>('navOpen', () => false);
 
 export const useNavigationState = () => {
-  const body: HTMLElement = window.document.body;
+  let body: HTMLElement;
+
+  onMounted(() => {
+    body = window.document.body;
+  });
 
   const toggleNav = () => {
     useNavigationOpen().value = !useNavigationOpen().value;
