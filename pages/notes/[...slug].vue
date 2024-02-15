@@ -15,14 +15,14 @@
             <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
             <time>{{ formatDate(data.date) }}</time>
           </div>
-          <div class="article-meta-block">
+          <!-- <div class="article-meta-block">
             <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
             <ul class="tag-list">
               <li v-for="tag in data.tag" :key="tag">
                 <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
               </li>
             </ul>
-          </div>
+          </div> -->
         </aside>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />

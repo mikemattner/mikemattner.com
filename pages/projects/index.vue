@@ -2,8 +2,7 @@
   <main>
     <article class="projects-layout">
       <div class="sidebar-area flow">
-        <h1>Projects</h1>
-        <p class="intro">Just dumping any and all projects here.</p>
+        <h1><small>Small / Random</small> Projects</h1>
         <hr />
       </div>
       <div class="project-content flow">

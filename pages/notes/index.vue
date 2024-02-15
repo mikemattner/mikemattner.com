@@ -3,7 +3,7 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1>Notes</h1>
+          <h1><small>Random / Short</small> Notes</h1>
           <hr />
         </div>
         <div class="content-area flow">
