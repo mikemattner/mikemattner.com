@@ -285,7 +285,7 @@ const notes = computed(() => {
     @media (min-width: 1053px) {
       grid-column: 1 / span 9;
       grid-row: 1 / span 2;
-      aspect-ratio: 1 / 2;
+      aspect-ratio: 1 / 1.75;
       border-radius: 7px 50px 7px 50px;
     }
     @media (max-width: 1052px) {

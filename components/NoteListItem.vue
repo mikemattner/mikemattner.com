@@ -4,14 +4,14 @@
       <time>
         <Icon name="ri:calendar-fill" /> <NuxtLink :to="note._path">{{ date }}</NuxtLink>
       </time>
-      <div class="note-list-item__tags">
+      <!-- <div class="note-list-item__tags">
         <Icon name="ri:chat-thread-fill" />
         <ul class="tag-list">
           <li v-for="tag in note.tag" :key="tag">
             <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <div class="note-list-item__body">
       <ContentRenderer :value="note">
