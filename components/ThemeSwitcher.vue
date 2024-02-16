@@ -4,7 +4,7 @@
     class="theme-toggle"
     :class="{ 'is-dark': mode === 'dark' }"
     title="Toggle theme"
-    variant="solid"
+    variant="text"
     size="sm"
     color="secondary"
   >
