@@ -211,7 +211,7 @@ const attributes = computed(() => {
     text-decoration: none;
 
     &:hover:not(:disabled) {
-      color: var(--button-solid-color-text);
+      color: var(--button-solid-color-text-hover);
       background-color: var(--button-solid-background-color-hover);
     }
     --button-loader-color: var(--button-solid-color-text);
@@ -239,6 +239,7 @@ const attributes = computed(() => {
     --button-solid-background-color: var(--button-primary);
     --button-solid-background-color-hover: var(--button-primary-solid-hover);
     --button-solid-color-text: var(--button-solid-text);
+    --button-solid-color-text-hover: var(--button-solid-text-hover);
     --button-solid-shadow: var(--button-primary-solid);
     --button-solid-shadow-hover: var(--button-primary-solid-hover);
 
@@ -254,6 +255,7 @@ const attributes = computed(() => {
     --button-solid-background-color: var(--button-secondary);
     --button-solid-background-color-hover: var(--button-secondary-bg-hover);
     --button-solid-color-text: var(--button-solid-text);
+    --button-solid-color-text-hover: var(--button-solid-text-hover);
     --button-solid-shadow: var(--button-secondary-solid);
     --button-solid-shadow-hover: var(--button-secondary-solid-hover);
 
