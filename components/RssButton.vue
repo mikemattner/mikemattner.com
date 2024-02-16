@@ -22,6 +22,8 @@
   // border: 0;
   // padding: 0;
   font-size: var(--size-step-0);
+  fill: var(--icon-fill);
+  color: var(--icon-fill);
   // border-radius: 7px;
   // background-color: var(--border-color);
 
@@ -39,13 +41,14 @@
   // align-items: center;
   // justify-content: center;
 
-  // &:hover,
-  // &:focus-visible {
-  //   // @media (min-width: 716px) {
-  //   //   transform: scale(1.2);
-  //   // }
-  //   background-color: var(--color-primary);
-  //   color: var(--icon-fill-hover);
-  // }
+  &:hover:not(:disabled),
+  &:focus-visible {
+    // @media (min-width: 716px) {
+    //   transform: scale(1.2);
+    // }
+    // background-color: var(--color-primary);
+    color: var(--icon-fill-hover);
+    fill: var(--icon-fill);
+  }
 }
 </style>
