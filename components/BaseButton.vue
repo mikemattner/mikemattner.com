@@ -260,7 +260,7 @@ const attributes = computed(() => {
     --button-outline-background-color: transparent;
     --button-outline-background-color-hover: var(--button-secondary-hover);
     --button-outline-color-text: var(--button-outline-text);
-    --button-outline-color-text-hover: var(--button-outline-text);
+    --button-outline-color-text-hover: var(--button-outline-text-hover);
     --button-outline-color: var(--button-secondary-outline);
     --button-outline-hover-color: var(--button-secondary-outline-hover);
   }
