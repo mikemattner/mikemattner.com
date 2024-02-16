@@ -58,7 +58,8 @@ const featuredImage = computed<string>(() => {
     }
 
     .article-list-item__title {
-      padding: 0 0 var(--sizing-xl);
+      // padding: 0 0 var(--sizing-xl);
+      padding: 0;
       z-index: 2;
     }
     .article-list-item__read-more {
@@ -80,10 +81,10 @@ const featuredImage = computed<string>(() => {
     &::after {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      top: 20px;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
       border-radius: 7px;
       background-color: var(--block-quote-bg);
       transition: all 0.125s var(--cubic-bezier);
