@@ -1,5 +1,5 @@
 <template>
-  <BaseButton href="/rss.xml" class="rss-button" title="RSS Feed" variant="solid" size="sm" color="secondary">
+  <BaseButton href="/rss.xml" class="rss-button" title="RSS Feed" variant="text" size="sm" color="secondary">
     <Icon name="ri:rss-fill" />
   </BaseButton>
 </template>
