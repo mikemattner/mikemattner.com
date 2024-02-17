@@ -10,3 +10,7 @@ export const formatDate = (date: string) => {
 export const listYear = (date: string) => {
   return new Date(date).getFullYear().toString();
 };
+
+export const convertDate = (date: string): string => {
+  return new Date(date).getFullYear().toString();
+};

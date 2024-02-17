@@ -1,11 +1,6 @@
 <template>
   <div class="primary-image">
-    <BaseImage
-      :src="src"
-      class="primary-image__image"
-      v-bind="{ ...attributes }"
-      :class="{ 'has-overlay': hasOverlay, 'has-hover': hasHover }"
-    >
+    <BaseImage :src="src" class="primary-image__image" v-bind="{ ...attributes }" :class="classes">
       <template v-slot:caption>
         <slot name="caption"></slot>
       </template>
@@ -24,6 +19,13 @@ const props = defineProps({
 const attributes = computed(() => {
   return {
     alt: props.alt,
+  };
+});
+
+const classes = computed(() => {
+  return {
+    'has-overlay': props.hasOverlay,
+    'has-hover': props.hasHover,
   };
 });
 

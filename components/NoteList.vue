@@ -1,18 +1,55 @@
 <template>
   <section class="note-list__section">
-    <ul class="note-list">
+    <!-- <ul class="note-list">
       <li v-for="note in notes" :key="note.title" class="note-list__list-item">
         <NoteListItem :note="note" />
       </li>
-    </ul>
+    </ul> -->
+    <div v-for="(item, index) in sortedNotes" :key="index" class="year-group">
+      <header class="year-group__header">
+        <h3 class="year-header">{{ item.year }}</h3>
+        <div class="year-header__article-count">{{ item.notes.length }} Items</div>
+      </header>
+      <ul class="note-list">
+        <li v-for="note in item.notes" :key="note.title" class="article-list__item">
+          <NoteListItem :note="note" />
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { Note } from '../types/notes';
+import { Note, SortedNoteItem, SortedNotes } from '../types/notes';
+import { convertDate } from '../utils/formatDate';
 
 const props = defineProps({
   notes: { type: Array as PropType<Note[]>, required: true },
+});
+
+const sortedNotes = computed<SortedNoteItem[]>(() => {
+  const yearsInNotes = [...new Set(props.notes.map((item) => convertDate(item.date)))];
+
+  const sortedArray: SortedNotes = {};
+
+  yearsInNotes.forEach((item, index) => {
+    sortedArray[item] = { year: item, notes: [] };
+  });
+
+  props.notes.forEach((item, index) => {
+    const year = convertDate(item.date);
+
+    sortedArray[year].notes.push(item);
+  });
+
+  const ordered = Object.keys(sortedArray)
+    .sort()
+    .reverse()
+    .map((key) => {
+      return sortedArray[key];
+    });
+
+  return ordered;
 });
 </script>
 
@@ -30,50 +67,46 @@ const props = defineProps({
   li {
     position: relative;
     padding: 0 0 var(--sizing-xxxl) 0;
-    // padding: 0 0 var(--sizing-xxxl) 2em;
-    // border-left: 1px solid var(--border-color);
 
     &:last-child {
       padding-bottom: 0;
     }
-
-    // &:before {
-    //   width: 2rem;
-    //   height: 2rem;
-    //   display: block;
-    //   top: 0;
-    //   position: absolute;
-    //   left: -1.03rem;
-    //   content: '';
-    //   border: 1px solid var(--border-color);
-    //   background: var(--background-color);
-    //   border-radius: 50%;
-    //   z-index: 2;
-    //   transition: var(--transition);
-    // }
-
-    // &:after {
-    //   content: '';
-    //   width: 0.675em;
-    //   height: 1px;
-    //   display: block;
-    //   top: 1rem;
-    //   position: absolute;
-    //   left: 1rem;
-    //   background: var(--border-color);
-    //   border-radius: 0;
-    //   z-index: 1;
-    // }
-
-    // &:hover {
-    //   &:before {
-    //     border-color: var(--color-primary);
-    //     // box-shadow: 0 0 0 0 var(--color-primary);
-    //   }
-    //   // &:after {
-    //   //   background: var(--color-primary);
-    //   // }
-    // }
   }
+}
+
+.year-group {
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    gap: var(--sizing-xxl) 0;
+    margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
+
+    .note-list {
+      grid-column: 9 / -1;
+    }
+  }
+}
+
+.year-group__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: var(--sizing-xl);
+  margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
+
+  @media (min-width: 768px) {
+    grid-column: 1 / span 6;
+    margin: 0;
+    flex-direction: column;
+    gap: var(--sizing-sm);
+  }
+}
+
+.year-header {
+  line-height: 1;
+}
+
+.year-header__article-count {
+  font-size: var(--size-step--1);
 }
 </style>

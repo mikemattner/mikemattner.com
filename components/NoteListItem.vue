@@ -47,7 +47,6 @@ const date = computed<string>(() => formatDate(props.note.date));
   border-radius: 7px;
   position: relative;
   padding: 0 0 var(--sizing-xxxl) 0;
-  max-width: 65ch;
 
   h3 {
     transition: var(--transition);

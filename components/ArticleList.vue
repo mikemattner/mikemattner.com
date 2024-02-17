@@ -25,15 +25,12 @@
 
 <script setup lang="ts">
 import { Post, SortedPostItem, SortedPosts } from '../types/posts';
+import { convertDate } from '../utils/formatDate';
 
 const props = defineProps({
   posts: { type: Array as PropType<Post[]>, required: true },
   listAll: { type: Boolean, default: false },
 });
-
-const convertDate = (date: string): string => {
-  return new Date(date).getFullYear().toString();
-};
 
 const sortedPosts = computed<SortedPostItem[]>(() => {
   const yearsInPosts = [...new Set(props.posts.map((item) => convertDate(item.date)))];
