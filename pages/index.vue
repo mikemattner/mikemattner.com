@@ -2,7 +2,14 @@
   <main class="home-page">
     <div class="home-layout">
       <div class="home-layout__hero">
-        <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image" />
+        <div class="profile-image">
+          <PrimaryImage
+            src="/images/pro-profile.jpg"
+            alt="Portrait shot of Mike."
+            has-overlay
+            class="profile-image-photo"
+          />
+        </div>
 
         <h1 class="main-lede very-large-heading">
           <span class="introduction">Hey there.</span>
@@ -10,13 +17,13 @@
         <div class="home-greeting flow">
           <p class="intro">
             I&rsquo;m Mike, a
-            <strong>UI designer</strong> and
-            <strong>UI developer</strong>
+            <strong>designer</strong> and
+            <strong>developer</strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
             In a former life I worked as a <strong>digital designer</strong> using a wide range of skills including
-            video editing, the creation of motion graphics, the development of interactive CDs, et cetera.
+            video editing, motion graphics, print design, et cetera.
           </p>
           <!-- <p class="intro">
             I previously worked at an advertising agency as a
@@ -282,11 +289,25 @@ const notes = computed(() => {
     border-radius: 7px;
     overflow: hidden;
 
+    .profile-image-photo {
+      width: 100%;
+      height: 100%;
+    }
+
     @media (min-width: 1053px) {
       grid-column: 1 / span 9;
       grid-row: 1 / span 2;
       aspect-ratio: 1 / 1.75;
-      border-radius: 7px 50px 7px 50px;
+      // border-radius: 7px 50px 7px 50px;
+      border-radius: 20px;
+      transform: skewX(-12deg);
+
+      .profile-image-photo {
+        width: 200%;
+        aspect-ratio: 1;
+        transform: skewX(12deg) translateX(-50%);
+        margin-left: 50%;
+      }
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 1;

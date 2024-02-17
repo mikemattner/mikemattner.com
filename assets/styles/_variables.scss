@@ -67,7 +67,8 @@
 
     // Dark backgrounds, border, gradient
     --color-dark-hsl: 353, 86%, 3%;
-    --color-dark: hsl(353, 86%, 3%);
+    --color-dark: hsl(351, 100%, 3%);
+    --color-dark-50-hsl: 240, 36%, 20%;
     --color-dark-t: hsla(353, 86%, 3%, 70%);
     --color-dark-bg-border: hsl(353, 86%, 3%);
     --color-dark-background: hsl(240, 36%, 4%);
@@ -91,7 +92,7 @@
 
     // Button variables
     --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
-    --button-solid-text: var(--headline-font-color);
+    --button-solid-text: var(--color-light);
     --button-solid-text-hover: var(--color-light);
     --button-solid-text-dark: var(--color-dark);
     --button-outline-text: var(--headline-font-color);
@@ -106,11 +107,11 @@
     --button-primary-hover: var(--color-primary);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: var(--border-color);
+    --button-secondary: hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-bg-hover: var(--color-primary);
-    --button-secondary-outline: inset 0 0 0 2px var(--border-color), 5px 5px 0 0 var(--border-color);
-    --button-secondary-outline-hover: inset 0 0 0 2px var(--border-color), 0 0 0 0 var(--border-color);
-    --button-secondary-hover: var(--border-color);
+    --button-secondary-outline: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 5px 5px 0 0 hsla(var(--color-dark-50-hsl),0.5);
+    --button-secondary-outline-hover: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
+    --button-secondary-hover: hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-solid: 5px 5px 0 0 var(--border-color);
     --button-secondary-solid-hover: 0 0 0 0 var(--border-color);
 

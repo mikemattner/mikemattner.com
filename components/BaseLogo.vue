@@ -22,7 +22,7 @@ const props = defineProps({
   overflow: hidden;
   transition: var(--transition);
   padding: 0;
-  gap: 0.5rem;
+  gap: var(--sizing-sm);
   z-index: 1000;
 
   svg {
@@ -56,7 +56,7 @@ const props = defineProps({
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--color-light);
-    font-variation-settings: 'wdth' 100, 'wght' 300;
+    font-variation-settings: 'wdth' 100, 'wght' 800;
     transition: var(--transition-cubic-slow);
 
     @media (max-width: 715px) {
@@ -73,9 +73,9 @@ const props = defineProps({
       //   // transform: scale(1.1);
       // }
 
-      .brand-logo__type {
-        font-variation-settings: 'wdth' 100, 'wght' 800;
-      }
+      // .brand-logo__type {
+      //   font-variation-settings: 'wdth' 100, 'wght' 300;
+      // }
     }
   }
 }
