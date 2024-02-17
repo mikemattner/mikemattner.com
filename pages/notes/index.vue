@@ -64,14 +64,6 @@ const notes = computed<Note[]>(() => {
     }
   }
 
-  .writing-title {
-    color: var(--color-primary);
-    z-index: 2;
-    position: relative;
-    font-size: clamp(var(--size-step-6), 10vw, 120px);
-    line-height: 1;
-  }
-
   .content-area {
     margin: 0;
 

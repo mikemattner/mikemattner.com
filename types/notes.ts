@@ -8,7 +8,7 @@ export interface Note extends ParsedContent {
 
 export interface SortedNoteItem {
   year: string;
-  links: Note[];
+  notes: Note[];
 }
 
 export interface SortedNotes {

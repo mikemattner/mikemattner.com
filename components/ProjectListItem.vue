@@ -67,6 +67,7 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: var(--box-shadow-long);
 
   &__meta {
     font-size: var(--size-step--2);
