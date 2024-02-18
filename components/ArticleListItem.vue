@@ -30,10 +30,10 @@ const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
 });
 
-const featuredImage = computed<string>(() => {
-  if (!props.post.image) return '/images/feature/default-two.jpg';
-  return props.post.image;
-});
+// const featuredImage = computed<string>(() => {
+//   if (!props.post.image) return '/images/feature/default-two.jpg';
+//   return props.post.image;
+// });
 </script>
 
 <style lang="scss" scoped>
@@ -90,6 +90,7 @@ const featuredImage = computed<string>(() => {
       transition: all 0.125s var(--cubic-bezier);
       opacity: 0;
       z-index: 1;
+      box-shadow: var(--box-shadow-long);
     }
 
     &:hover {
