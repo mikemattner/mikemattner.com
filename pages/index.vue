@@ -25,15 +25,6 @@
             In a former life I worked as a <strong>digital designer</strong> using a wide range of skills including
             video editing, motion graphics, print design, et cetera.
           </p>
-          <!-- <p class="intro">
-            I previously worked at an advertising agency as a
-            <strong>digital designer<Icon name="ri:contrast-drop-2-fill" /></strong> and manager of creatives before
-            switching to a UX/UI developer role.
-          </p> -->
-          <!-- <p class="intro">
-            In a former life I worked as a <strong>digital media<Icon name="ri:dvd-fill" /></strong> specialist using a
-            wide range of skills including video editing, motion graphics, interactive CDs, et cetera.
-          </p> -->
           <div class="button-group">
             <BaseButton to="/about" variant="outline" size="md" color="primary">
               <span>Read more about me</span>
@@ -48,18 +39,16 @@
         </div>
       </div>
       <hr />
-      <div class="home-layout__content">
-        <div class="half-posts flow">
-          <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
-          <ArticleList :posts="posts" />
-          <div class="button-group">
-            <BaseButton to="/blog" variant="outline" size="md" color="primary">
-              <span>Blog archives</span>
-            </BaseButton>
-            <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
-              <span>Note archives</span>
-            </BaseButton>
-          </div>
+      <div class="home-layout__content flow">
+        <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
+        <ArticleList class="recently-posted-articles" :posts="posts" />
+        <div class="button-group recently-posted-archives">
+          <BaseButton to="/blog" variant="outline" size="md" color="primary">
+            <span>Blog archives</span>
+          </BaseButton>
+          <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
+            <span>Note archives</span>
+          </BaseButton>
         </div>
       </div>
     </div>
@@ -68,7 +57,6 @@
 
 <script setup lang="ts">
 import { Post } from '../types/posts';
-import { Note } from '../types/notes';
 
 useHead({
   title: 'UX/UI Designer & Developer in Michigan',
@@ -76,14 +64,9 @@ useHead({
 });
 
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
-const { data: noteData } = await useAsyncData('notes-short', () => queryContent('/notes').sort({ date: -1 }).find());
 
 const posts = computed(() => {
   return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
-});
-
-const notes = computed(() => {
-  return noteData?.value?.filter((note) => !note.draft).slice(0, 1) as Note[];
 });
 </script>
 
@@ -129,21 +112,17 @@ const notes = computed(() => {
     margin-inline: auto;
     margin-block-start: 4rem;
     margin-block-end: 4rem;
+    display: grid;
 
-    @media (min-width: 1053px) {
+    @media (min-width: 716px) {
       grid-template-columns: repeat(28, 1fr);
       margin-block-start: 4rem;
       margin-block-end: 8rem;
-      display: grid;
-    }
-
-    @media (max-width: 1052px) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--sizing-xxl) var(--sizing-xxl);
-      display: grid;
     }
 
     @media (max-width: 715px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sizing-xxl) var(--sizing-xxl);
       margin-inline: auto;
       display: block;
     }
@@ -246,14 +225,6 @@ const notes = computed(() => {
   }
 
   .introduction {
-    // font-size: clamp(30px, 6vw, 75px);
-    // font-variation-settings: 'wdth' 85, 'wght' 900;
-    // line-height: 95%;
-    // letter-spacing: 0.025em;
-    // color: var(--headline-font-color);
-    // display: flex;
-    // flex-direction: column;
-    // gap: var(--sizing-lg);
     text-wrap: balance;
 
     @media (min-width: 1053px) {
@@ -266,20 +237,6 @@ const notes = computed(() => {
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
     }
-
-    // .introduction-hello {
-    //   // font-variation-settings: 'wdth' 95, 'wght' 800;
-    // }
-
-    // .introduction-name {
-    //   // font-size: clamp(40px, 8vw, 110px);
-    //   // font-variation-settings: 'wdth' 75, 'wght' 800;
-    //   // text-transform: uppercase;
-    // }
-
-    // .introduction-salutation {
-    //   font-variation-settings: 'wdth' 95, 'wght' 800;
-    // }
   }
 
   .profile-image {
@@ -322,10 +279,36 @@ const notes = computed(() => {
   }
 
   .recently-posted-header {
-    margin-block-end: var(--sizing-xxxl);
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    @media (min-width: 716px) {
+      grid-row: 1;
+      grid-column: 1 / 9;
+    }
 
     @media (max-width: 715px) {
-      margin-block-end: var(--sizing-xl);
+      margin-block-end: var(--sizing-xxl);
+    }
+  }
+
+  .recently-posted-articles {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    @media (min-width: 716px) {
+      grid-row: 1;
+      grid-column: 11 / -1;
+    }
+  }
+
+  .recently-posted-archives {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    @media (min-width: 716px) {
+      grid-row: 2;
+      grid-column: 11 / -1;
     }
   }
 
