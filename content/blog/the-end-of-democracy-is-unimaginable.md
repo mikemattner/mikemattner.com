@@ -18,9 +18,17 @@ For me it is the near rejection of the seriousness of the efforts of Republicans
 
 > It is now clear that Republicans are both willing and able to overturn electoral results that don’t go their way. Officials who protected the electoral process in 2020 have been removed and replaced by partisans who assert that the election was stolen. The handful of elected representatives who have unequivocally condemned Trump’s assaults on democracy are being forced out, or have chosen to resign. It therefore seems highly likely that the Republican candidate will be declared victorious in 2024, whatever the voters might say. Given that assurance, it is even more probable that this candidate will be Donald Trump. [^1]
 
+::PullText
+  I find the media's reporting of the two parties just as disturbing. They are not the same.
+::
+
 Democrats are under the impression that we are playing by the same rules, and political norms will be followed. Republicans, on the other hand, have decided without hesitation to remake the game and to find legal avenues for the deterioration of those norms. I don't think they have much of a goal in mind other than power and the retention of the moneyed classes ability to generate outlandish wealth, but they're willing to use--successfully at that--methods that seemed so impossible just a few decades ago.
 
 >One possibility, which seemed very real until 2021, was that a large group of decent Republicans would recoil from attempts to overthrow democracy, and defect either to a third party or to support for Democrats. If even a quarter of Republicans had moved in this way, Trump and Trumpism would be finished. In reality, though, the number of elected Republicans who have made such moves, at either national or state level, can comfortably be counted on two hands.
+
+::PullText{direction=left}
+  The state GOP ran a long-serving local Republican [representative](https://www.politico.com/news/2022/04/05/gop-rep-fred-upton-to-retire-00023009) right out of office.
+::
 
 Living in a conservative area, my hope was that our local group of Republican representatives for the state and at the national level would have either loudly condemned the actions that took place, or shifted support to something more sane. But living here has proven that the influence of conservative media and the motivation for reelection was too much to overcome. A story that is playing out nationally. It is weird to live in a place that would rather see the nebulous idea of you not exist at all because of an incorrect idea of what you stand for.
 

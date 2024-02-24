@@ -214,8 +214,8 @@ useHead({
 
   .article-link {
     padding: 0;
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: auto 1fr;
     background-color: var(--block-quote-bg);
     border-radius: 0 var(--sizing-sm) var(--sizing-sm) 0;
 
@@ -246,8 +246,8 @@ useHead({
 
     .text {
       padding: 1rem 1.5rem;
-      line-height: 1.3;
       font-size: var(--size-step--1);
+      align-self: center;
     }
   }
 
