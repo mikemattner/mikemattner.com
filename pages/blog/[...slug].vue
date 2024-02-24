@@ -2,9 +2,6 @@
   <main class="article-page">
     <template v-if="data">
       <header class="article-layout__feature">
-        <!-- <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image">
-          <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
-        </PrimaryImage> -->
         <div class="article-header">
           <ul class="breadcrumb-trail flex--justify-center">
             <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -28,7 +25,6 @@
             </ul>
           </div>
         </aside>
-        <!-- <p class="article-description" v-html="data.description"></p> -->
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
           <template #empty>
@@ -123,152 +119,39 @@ useHead({
       .article-title {
         font-size: clamp(30px, 8vw, 75px);
         text-align: center;
-        // color: var(--color-light);
-      }
-
-      // .breadcrumb-trail {
-      //   a {
-      //     color: var(--color-light);
-      //   }
-
-      //   li:after {
-      //     color: var(--color-light);
-      //   }
-      // }
-    }
-  }
-
-  &__feature-image {
-    width: 100%;
-    display: inline-flex;
-    overflow: hidden;
-    border-radius: 7px;
-    position: relative;
-    grid-column: 1;
-    grid-row: 1;
-
-    @media (min-width: 1001px) {
-      aspect-ratio: 2 / 0.675;
-    }
-
-    @media (max-width: 1000px) {
-      aspect-ratio: 2 / 1.25;
-    }
-
-    @media (max-width: 500px) {
-      aspect-ratio: 1 / 1;
-    }
-
-    :deep(img) {
-      transition: var(--transition-ease);
-      opacity: 0.25;
-    }
-
-    :deep(.primary-image__image.has-overlay) {
-      img {
-        filter: blur(5px);
       }
     }
   }
 
-  // TODO: determine if I want to come back to this
-  // .article-header {
-  //   padding-top: 2rem;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   z-index: 2;
-
-  //   @media (max-width: 988px) {
-  //     grid-column: 1 / span 6;
-  //     grid-row: 1;
-  //   }
-
-  //   @media (min-width: 989px) {
-  //     grid-column: 1 / span 6;
-  //     grid-row: 1;
-  //   }
-
-  //   @media (min-width: 1001px) {
-  //     grid-column: 1 / -1;
-  //     grid-row: 1;
-  //   }
-  // }
   .article-body {
-    grid-column: 3 / span 4;
-    grid-row: 4;
-
     @media (max-width: 899px) {
-      grid-column: 1 / span 6;
-      grid-row: 4;
+      grid-column: 1 / -1;
+      grid-row: 2;
     }
 
     @media (min-width: 900px) {
       grid-column: 2 / span 4;
-      grid-row: 4;
-    }
-
-    @media (min-width: 1001px) {
-      // grid-column: 1 / -1;
-      grid-column: 6 / span 18;
       grid-row: 2;
-      // display: grid;
-      // grid-template-columns: subgrid;
-
-      // & > * {
-      //   grid-column: 6 / span 18;
-      // }
-    }
-  }
-
-  .article-description {
-    position: relative;
-    font-size: var(--size-step-1);
-    grid-column: 3 / span 4;
-    grid-row: 3;
-
-    @media (max-width: 899px) {
-      grid-column: 1 / span 6;
-      grid-row: 3;
-    }
-
-    @media (min-width: 900px) {
-      grid-column: 2 / span 4;
-      grid-row: 3;
     }
 
     @media (min-width: 1001px) {
       grid-column: 6 / span 18;
-      grid-row: 2;
-    }
-
-    padding-bottom: var(--sizing-xxl);
-
-    &:after {
-      content: '';
-      height: 1px;
-      background-color: var(--border-color);
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      grid-row: 1;
     }
   }
 
   .article-meta {
     padding: var(--sizing-md) 0;
     font-size: var(--size-step--1);
-    grid-column: 1 / span 4;
-    grid-row: 2;
+    grid-column: 1 / -1;
+    grid-row: 1;
 
     @media (min-width: 1001px) {
       grid-column: 1 / span 4;
-      grid-row: 2 / span 4;
+      grid-row: 1 / span 4;
     }
 
     @media (max-width: 1000px) {
-      grid-column: 1 / span 6;
-      grid-row: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--sizing-xl);
@@ -327,25 +210,29 @@ useHead({
         }
       }
     }
-
-    @media (min-width: 989px) {
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 988px) {
-      grid-column: 1 / span 6;
-      grid-row: 2;
-    }
   }
 
   .article-link {
     padding: 0;
-    grid-column: 3 / span 4;
-    grid-row: 5;
     display: flex;
     align-items: stretch;
     background-color: var(--block-quote-bg);
     border-radius: 0 var(--sizing-sm) var(--sizing-sm) 0;
+
+    @media (max-width: 899px) {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+    }
+
+    @media (min-width: 900px) {
+      grid-column: 2 / span 4;
+      grid-row: 4;
+    }
+
+    @media (min-width: 1001px) {
+      grid-column: 6 / span 18;
+      grid-row: 3;
+    }
 
     .link-icon {
       display: flex;
@@ -360,38 +247,16 @@ useHead({
     .text {
       padding: 1rem 1.5rem;
       line-height: 1.3;
-    }
-
-    @media (max-width: 767px) {
-      grid-column: 1 / span 6;
-      grid-row: 5;
-    }
-
-    @media (min-width: 768px) {
-      grid-column: 2 / span 4;
-      grid-row: 5;
-    }
-
-    @media (min-width: 1001px) {
-      grid-column: 6 / span 18;
-      grid-row: 3;
+      font-size: var(--size-step--1);
     }
   }
 
   .prev-next {
-    @media (max-width: 988px) {
-      grid-column: 1 / span 6;
-      grid-row: 6;
-    }
-
-    @media (min-width: 989px) {
-      grid-column: 1 / span 6;
-      grid-row: 6;
-    }
+    grid-row: 5;
+    grid-column: 1 / -1;
 
     @media (min-width: 1001px) {
-      grid-column: 1 / span 28;
-      grid-row: 5;
+      grid-row: 4;
     }
   }
 }
