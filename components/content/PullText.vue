@@ -24,6 +24,12 @@ const classes = computed(() => {
 <style lang="scss" scoped>
 .pull-text {
   font-size: var(--size-step--1);
+  font-variation-settings: 'wdth' 100, 'wght' 300, 'ital' 10;
+  color: var(--pull-text-color);
+
+  p {
+    opacity: 0.75;
+  }
 
   @media (max-width: 1000px) {
     margin: var(--sizing-xl) 0;
@@ -36,6 +42,7 @@ const classes = computed(() => {
     margin: 0;
     margin-top: 1.75em;
     text-wrap: balance;
+    grid-row: span 2;
 
     &--left {
       text-align: right;
@@ -55,6 +62,8 @@ const classes = computed(() => {
       }
 
       &.pull-text--left {
+        padding-right: var(--sizing-lg);
+
         &::before {
           width: 25%;
           margin-left: 75%;
@@ -62,6 +71,8 @@ const classes = computed(() => {
       }
 
       &.pull-text--right {
+        padding-left: var(--sizing-lg);
+
         &::before {
           width: 25%;
           margin-right: 75%;
