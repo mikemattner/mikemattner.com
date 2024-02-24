@@ -35,7 +35,11 @@ This returns a flat array of articles that by default you can dump right into yo
 
 ## My Solution
 
-If you take a look at my [AllArticles](https://github.com/mikemattner/mikemattner.com/blob/master/components/organisms/AllArticles.vue) list component, you can see the methods I'm using to sort the article data into an object of years and their corresponding posts array. Even if it runs a little deeper than one might like for data like this, it allows me to display and organize the list using their respective years.
+::InfoMessage
+I've adjusted my approach slightly from what is demonstrated below. I pretty naively set a property rather than creating a computed getter to accomplish this.
+::
+
+If you take a look at my [AllArticles](https://github.com/mikemattner/mikemattner.com/blob/legacyv1/components/organisms/AllArticles.vue) list component, you can see the methods I'm using to sort the article data into an object of years and their corresponding posts array. Even if it runs a little deeper than one might like for data like this, it allows me to display and organize the list using their respective years.
 
 ```javascript
 methods: {

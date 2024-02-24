@@ -9,6 +9,10 @@ tag:
     - Development
     - Design
 ---
+::InfoMessage{type=warning}
+**2/24/2024** – _This is now deprecated. I started using a [different tool](https://utopia.fyi) to create a type system._
+::
+
 I’ve been playing around with fluid type for a while and happened upon a pen by…I don’t remember who. I forked it a while ago, but in essence we’re simply attempting to scale type based on viewport size.
 
 In the instance highlighted here, let’s say we want a bold header in a hero space to essentially always have that bold feel no matter what screen size we're using ([codepen example](https://codepen.io/mikemattner/pen/vrKoGO)).
@@ -36,7 +40,6 @@ html {
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script> -->
-
 
 Not a bad solution, but if you’re not careful that can scale infinitely and in a way that is just a bit too in your face. My suggestion is to set–at the very least–an upper bound to that scaling. I’ve done something similar on this very site.
 

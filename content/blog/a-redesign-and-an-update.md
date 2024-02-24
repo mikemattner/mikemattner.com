@@ -13,4 +13,8 @@ There's no question about it, I sat on this site for a year kind of waiting for 
 
 I am now in the process of building out the content for writing content and I'm looking to bring links back, but as more of a top level category/page rather than an integration of my blogish content. One of the last pieces I'll probably bring back is my project list combined with some of my previous portfolio pieces&mdash;as dated as those might be by that time.
 
+::InfoMessage
+Hey there! I'm also adding some new content components to add additional context in my writing.
+::
+
 As with most of these sorts of build outs these days, I'm doing this out in the open! Hopefully I stick with it for a change!

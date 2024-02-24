@@ -38,9 +38,13 @@ This year's semi-final was different for Michigan. It was being played in the Ro
 
 All of that to say, the nostalgia hit pretty hard when Alabama was stuffed on 4th-and-goal to end over time and send Michigan to the national championship game. For years Michigan has lost a game like the one that was played on Monday, January 1, 2024. But players like Corum, McCarthy, Sainristil, and Barret proved to be more resilient than my nerves. And thank god they were the ones playing the game instead of me--just a fan at home.
 
-I just wanted to write about this, get my feelings out there. One of the hobbies I just don't discuss online, but takes up so much of my attention, and it happens to be going really well for the first time in 17 years. 
+I just wanted to write about this, get my feelings out there. One of the hobbies I just don't discuss online, but takes up so much of my attention, and it happens to be going really well for the first time in 17 years.
 
-I wanted to embrace it. I wanted to remember it. I don't want to take this era for granted while I'm living in it. 
+::PullQuote
+I've got one question&hellip;who's got it better than us? *Nobody!*
+::
+
+I wanted to embrace it. I wanted to remember it. I don't want to take this era for granted while I'm living in it.
 
 One more game to go, and while I would love to see a national championship win, I'm content to watch one more game no matter the results before the core of this team becomes something new. The culture of the team here and now is something I just can't help but embrace.
 
