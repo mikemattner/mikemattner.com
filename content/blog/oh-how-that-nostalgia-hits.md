@@ -20,6 +20,10 @@ What I failed to appreciate while first getting into the Wolverines was the hist
 
 At the end of the Lloyd Carr era I was entering adulthood with quite a large obsession still brewing. Any Michigan fan knows the era that came next, and it was awful as a fan. Two coaching staffs that produced terrible to mediocre results and years of pain against bitter rivals Ohio State.
 
+::PullText
+  The post Carr era was such a long walk in the wilderness, I wish I would have appreciated Carr a little more.
+::
+
 Once Jim Harbaugh was hired, the general mood around the program was that things might finally settle into a more respectable place and for the most part they did. You could expect eight to eleven wins a year, a bowl appearance, and generally decent football--but it wasn't elite, and that was fine if not a little annoying heading into the weird COVID year that was college football.
 
 Post the disaster that was college football being played in 2020, Harbaugh made some changes in the program that would lead to three years of some of the best Michigan football I have had a chance to enjoy in my lifetime.
