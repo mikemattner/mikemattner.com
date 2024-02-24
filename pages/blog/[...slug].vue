@@ -28,7 +28,7 @@
             </ul>
           </div>
         </aside>
-        <p class="article-description" v-html="data.description"></p>
+        <!-- <p class="article-description" v-html="data.description"></p> -->
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
           <template #empty>
@@ -74,7 +74,7 @@ useHead({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .article-page {
   // padding-left: 0;
   // padding-right: 0;
@@ -84,6 +84,7 @@ useHead({
   max-width: var(--max-width);
   margin-inline: auto;
   display: grid;
+  position: relative;
 
   @media (max-width: 881px) {
     gap: var(--sizing-md);
@@ -208,14 +209,15 @@ useHead({
     }
 
     @media (min-width: 1001px) {
-      grid-column: 1 / -1;
-      grid-row: 3;
-      display: grid;
-      grid-template-columns: subgrid;
+      // grid-column: 1 / -1;
+      grid-column: 6 / span 18;
+      grid-row: 2;
+      // display: grid;
+      // grid-template-columns: subgrid;
 
-      & > * {
-        grid-column: 6 / span 18;
-      }
+      // & > * {
+      //   grid-column: 6 / span 18;
+      // }
     }
   }
 
@@ -372,7 +374,7 @@ useHead({
 
     @media (min-width: 1001px) {
       grid-column: 6 / span 18;
-      grid-row: 4;
+      grid-row: 3;
     }
   }
 
