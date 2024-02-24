@@ -10,7 +10,9 @@ tag:
   - Development
 ---
 
-**12/31/2020** – _This is now deprecated as far as my approach to importing content is concerned. I'm still largely storing page data in yaml files. Can I also comment on 2020 as a whole? Because, no thanks, I don't want to do that again._
+::InfoMessage{type=warning}
+**2/24/2024** – _This is now deprecated as far as my approach to importing content is concerned, but this was viable before fully embracing the Nuxt Content module._
+::
 
 ## Introduction
 

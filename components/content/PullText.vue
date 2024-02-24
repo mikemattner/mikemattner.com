@@ -10,14 +10,14 @@ const props = defineProps({
     type: String as PropType<'left' | 'right'>,
     default: 'right',
   },
-  type: {
+  size: {
     type: String as PropType<'long' | 'short'>,
     default: 'short',
   },
 });
 
 const classes = computed(() => {
-  return [`pull-text--${props.direction}`, `pull-text--${props.type}`];
+  return [`pull-text--${props.direction}`, `pull-text--${props.size}`];
 });
 </script>
 
@@ -47,10 +47,14 @@ const classes = computed(() => {
     &--left {
       text-align: right;
       grid-column: 1 / span 4;
+      position: absolute;
+      left: 0;
     }
 
     &--right {
       grid-column: 25 / span 4;
+      position: absolute;
+      right: 0;
     }
 
     &--short {
@@ -62,8 +66,6 @@ const classes = computed(() => {
       }
 
       &.pull-text--left {
-        padding-right: var(--sizing-lg);
-
         &::before {
           width: 25%;
           margin-left: 75%;
@@ -71,8 +73,6 @@ const classes = computed(() => {
       }
 
       &.pull-text--right {
-        padding-left: var(--sizing-lg);
-
         &::before {
           width: 25%;
           margin-right: 75%;

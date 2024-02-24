@@ -103,7 +103,7 @@ ol {
   padding-inline-start: 1em;
 }
 
-blockquote {
+blockquote:not(.pull-quote) {
   // More traditional
   position: relative;
   padding: 2rem;

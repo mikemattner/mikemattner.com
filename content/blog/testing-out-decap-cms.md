@@ -9,6 +9,10 @@ caption: Found on Unsplash
 tag:
   - Development
 ---
+::InfoMessage{type=success}
+**2/24/2024** – Hey, so it turns out this is a pretty good CMS for my purposes.
+::
+
 So, this post will be short as it is mostly a test for Decap CMS. The CMS itself is fairly plain and simplistic, seems easy to setup and configure, and I have yet to get it running locally. Which is maybe fine.
 
 Let's see how this shakes out!
