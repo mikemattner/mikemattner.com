@@ -120,6 +120,7 @@
 
     // Box shadows
     --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
+    --box-shadow-light: 0 1px 1px hsla(var(--color-black-hsl), 0.08), 0 2px 2px hsla(var(--color-black-hsl), 0.02), 0 4px 4px hsla(var(--color-black-hsl), 0.04), 0 6px 8px hsla(var(--color-black-hsl), 0.04), 0 8px 16px hsla(var(--color-black-hsl), 0.02);
     --box-shadow-short: 0 1px 1px hsla(var(--color-black-hsl), 0.08), 0 2px 2px hsla(var(--color-black-hsl), 0.08), 0 4px 4px hsla(var(--color-black-hsl), 0.08), 0 6px 8px hsla(var(--color-black-hsl), 0.08), 0 8px 16px hsla(var(--color-black-hsl), 0.08);
     --box-shadow-long: 0 2px 1px hsla(var(--color-black-hsl), 0.08), 0 4px 2px hsla(var(--color-black-hsl), 0.08), 0 8px 4px hsla(var(--color-black-hsl), 0.08), 0 16px 8px hsla(var(--color-black-hsl), 0.08), 0 32px 16px hsla(var(--color-black-hsl), 0.08);
 

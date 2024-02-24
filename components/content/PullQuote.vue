@@ -24,10 +24,10 @@ const hasSlot = (name: string) => {
   line-height: 1.4;
   display: grid;
   color: var(--headline-font-color);
+  background-color: hsla(var(--color-blue-hsl), 5%);
+  border-radius: 7px;
   padding: var(--sizing-xl) var(--sizing-lg);
   position: relative;
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
 
   @media (min-width: 989px) {
     margin-left: calc(var(--sizing-xl) * -1);
@@ -48,7 +48,7 @@ const hasSlot = (name: string) => {
 
   &::before {
     content: '“';
-    color: var(--color-primary);
+    color: var(--color-blue);
     grid-area: mark;
     align-self: start;
     justify-self: start;

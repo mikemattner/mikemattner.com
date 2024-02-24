@@ -8,6 +8,9 @@ image: /images/feature/git.jpg
 tag:
 - Development
 ---
+::InfoMessage{type=warning}
+**2/24/2024** – _My approach has shifted slightly, but the below could still be helpful_
+::
 
 I was looking for a way to highlight projects from GitHub,[^1] and while those are not expansive or complex, my plan is to use this year as a springboard for more. The API provides a way to grab publicly available information for display, and I figured I would see if I could make that work for my situation.
 
