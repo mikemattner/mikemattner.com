@@ -105,16 +105,6 @@ useHead({
         text-align: center;
         color: var(--color-light);
       }
-
-      .breadcrumb-trail {
-        a {
-          color: var(--color-light);
-        }
-
-        li:after {
-          color: var(--color-light);
-        }
-      }
     }
   }
   .article-body {
@@ -222,20 +212,21 @@ useHead({
 }
 :deep(.footnotes) {
   font-size: var(--size-step--1);
-  border-top: 1px solid var(--border-color);
   margin-top: var(--sizing-xxxl);
 }
 :deep(sup a) {
   display: inline-block;
   padding: 3px;
-  background-color: hsla(var(--color-primary-hsl), 0.75);
-  color: hsl(var(--color-white-hsl));
+  background-color: var(--border-color);
+  color: var(--headline-font-color);
   line-height: 1;
   text-decoration: none;
-  margin-left: 2px;
+  margin-left: 3px;
   font-weight: 700;
   transition: var(--transition);
   border-radius: 2px;
+  top: -2px;
+  position: relative;
 
   &:hover {
     color: hsl(var(--color-white-hsl));

@@ -74,6 +74,7 @@
     --color-dark-background: hsl(240, 36%, 4%);
     --color-dark-background-gradient-hsl: 240, 36%, 30%;
     --color-dark-font-color: hsl(343, 13%, 70%);
+    --color-dark-pull-color: hsla(343, 13%, 70%, 75%);
 
     // Light background, border, gradient
     --color-light-hsl: 0, 0%, 94%;
@@ -83,6 +84,7 @@
     --color-light-bg: hsl(0, 0%, 97%);
     --color-light-border-t: hsla(0, 0%, 94%, 55%);
     --color-light-background-gradient-hsl: 240, 96%, 55%;
+    --color-light-pull-color: hsla(var(--color-black-hsl), 0.5);
 
     // Primary colors
     --color-primary-hsl: 353, 86%, 54%;
@@ -99,7 +101,7 @@
     --button-outline-text-hover: var(--color-light);
 
     --button-primary: var(--color-primary);
-    --button-primary-outline: inset 0 0 0 2px var(--color-primary), 5px 5px 0 0 var(--color-primary);
+    --button-primary-outline: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
     --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
     --button-primary-solid: 5px 5px 0 0 var(--color-primary);
     --button-primary-solid-hover: 0 0 0 0 var(--color-primary);
@@ -109,7 +111,7 @@
 
     --button-secondary: hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-bg-hover: var(--color-primary);
-    --button-secondary-outline: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 5px 5px 0 0 hsla(var(--color-dark-50-hsl),0.5);
+    --button-secondary-outline: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-outline-hover: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-hover: hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-solid: 5px 5px 0 0 var(--border-color);
@@ -137,6 +139,7 @@
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-dark-background-gradient-hsl);
+    --pull-text-color: var(--color-dark-pull-color);
 }
 
 html.light {
@@ -156,6 +159,7 @@ html.light {
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-light-background-gradient-hsl);
+    --pull-text-color: var(--color-light-pull-color);
 }
   
 html.dark {
@@ -175,4 +179,5 @@ html.dark {
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-dark-background-gradient-hsl);
+    --pull-text-color: var(--color-dark-pull-color);
 }

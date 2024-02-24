@@ -326,7 +326,7 @@ useHead({
       text-decoration: none;
       border: 2px solid var(--border-color);
       aspect-ratio: 1;
-      box-shadow: 5px 5px 0 0 var(--border-color);
+      // box-shadow: 5px 5px 0 0 var(--border-color);
       font-variation-settings: 'wdth' 100, 'wght' 800;
       line-height: 1;
       border-radius: 7px;
@@ -338,7 +338,7 @@ useHead({
 
       &:hover {
         background-color: var(--block-quote-bg);
-        box-shadow: 0 0 0 0 var(--border-color);
+        // box-shadow: 0 0 0 0 var(--border-color);
       }
     }
   }

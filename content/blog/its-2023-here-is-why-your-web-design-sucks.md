@@ -30,4 +30,8 @@ I spent a good chunk of my career in various, let's say lone wolf, roles trying 
 
 This isn't even covering some of the other more misogynistic reasons Heather outlines for why the discipline was largely sidelined by other engineers to begin with, but the above are some of the things I found frustrating over the years.
 
+::PullText
+  And she is likely quite right.
+::
+
 The article hits close to home for a good chunk of my early career journey. Part of the blame is on me for my inexperience and not effectively communicating why some of these needs and ideas were important, but it also wasn't without someone up the chain wanting to ignore my concerns in favor of speed.

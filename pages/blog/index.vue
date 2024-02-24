@@ -46,7 +46,7 @@ const posts = computed<Post[]>(() => {
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--sizing-xxl) var(--sizing-xxl);
+      gap: 0 var(--sizing-xxl);
     }
 
     @media (min-width: 768px) {

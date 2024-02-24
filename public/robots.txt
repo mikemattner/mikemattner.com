@@ -1,0 +1,62 @@
+# Block Adsbot, which must be named explicitly according to Google.
+User-agent: AdsBot-Google
+Disallow: /
+
+# Block anthropic-ai scraper [AI Data Scraper]
+User-agent: anthropic-ai
+Disallow: /
+
+# Block Bingbot crawler [Search Engine Crawler]
+User-agent: bingbot
+Disallow: /
+
+# Block ByteSpider from ByteDance (TikTok)
+User-agent: Bytespider
+Disallow: /
+
+# Block Common Crawl scraper, which other services use [AI Data Scraper]
+User-agent: CCBot
+Disallow: /
+
+# Block ChatGPT User plugins [AI Assistant]
+User-agent: ChatGPT-User
+Disallow: /
+
+# Blocks cohere-ai assistant [AI Assistant]
+User-agent: cohere-ai
+Disallow: /
+
+# Block Meta's scraper [AI Data Scraper]
+User-agent: FacebookBot
+Disallow: /
+
+# Block GoogleBot crawler [Search Engine Crawler]
+User-agent: Googlebot
+Disallow: /
+
+# Block Bard and VertexAI scrapers from Google [AI Data Scraper]
+User-agent: Google-Extended
+Disallow: /
+
+# Block ChatGPT scraper [AI Data Scraper]
+User-agent: GPTBot
+Disallow: /
+
+# Block webz.io scrapers [AI Data Scraper]
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+# Block Twitterbot
+User-agent: Twitterbot
+Disallow: /
+
+# Block WhatsApp
+User-agent: WhatsApp
+Disallow: /
+
+# Block all crawlers
+User-agent: *
+Disallow: /

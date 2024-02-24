@@ -2,16 +2,15 @@
   <div class="note-list-item">
     <div class="note-list-item__header">
       <time>
-        <Icon name="ri:calendar-fill" /> <NuxtLink :to="note._path">{{ date }}</NuxtLink>
+        <NuxtLink :to="note._path">{{ date }}</NuxtLink>
       </time>
-      <!-- <div class="note-list-item__tags">
-        <Icon name="ri:chat-thread-fill" />
+      <div class="note-list-item__tags">
         <ul class="tag-list">
           <li v-for="tag in note.tag" :key="tag">
             <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
           </li>
         </ul>
-      </div> -->
+      </div>
     </div>
     <div class="note-list-item__body">
       <ContentRenderer :value="note">
@@ -56,21 +55,6 @@ const date = computed<string>(() => formatDate(props.note.date));
     padding: 0;
     z-index: 2;
   }
-  .note-list-item__read-more {
-    font-family: var(--code-font-family);
-    font-size: var(--size-step--2);
-    text-transform: uppercase;
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-sm);
-    padding: 0 0 var(--sizing-lg);
-    z-index: 2;
-
-    svg {
-      transition: transform 0.125s var(--cubic-bezier);
-    }
-  }
 
   p {
     max-width: 70ch;
@@ -81,7 +65,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     font-family: var(--code-font-family);
     display: flex;
     align-items: center;
-    gap: var(--sizing-xxl);
+    gap: var(--sizing-lg);
     color: var(--blog-card-date-color);
     padding: 0 0 var(--sizing-xxl) 0;
     z-index: 2;
@@ -90,13 +74,19 @@ const date = computed<string>(() => formatDate(props.note.date));
   time {
     display: flex;
     align-items: center;
-    gap: var(--sizing-sm);
+    gap: var(--sizing-lg);
     font-size: var(--size-step--2);
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
       flex-shrink: 0;
+    }
+
+    &:after {
+      content: '•';
+      line-height: 1;
+      opacity: 0.5;
     }
   }
 
@@ -126,18 +116,41 @@ const date = computed<string>(() => formatDate(props.note.date));
       margin: 0;
       display: flex;
       align-items: center;
-      gap: var(--sizing-sm);
+      gap: 1px;
 
-      &:before {
-        content: '/';
+      &:after {
+        content: ',';
         line-height: 1;
         opacity: 0.5;
       }
 
-      &:first-child:before {
+      &:last-child:after {
         display: none;
       }
     }
+  }
+}
+:deep(.footnotes) {
+  font-size: var(--size-step--1);
+  margin-top: var(--sizing-xxxl);
+}
+:deep(sup a) {
+  display: inline-block;
+  padding: 3px;
+  background-color: var(--border-color);
+  color: var(--headline-font-color);
+  line-height: 1;
+  text-decoration: none;
+  margin-left: 3px;
+  font-weight: 700;
+  transition: var(--transition);
+  border-radius: 2px;
+  top: -2px;
+  position: relative;
+
+  &:hover {
+    color: hsl(var(--color-white-hsl));
+    background-color: var(--color-primary);
   }
 }
 </style>
