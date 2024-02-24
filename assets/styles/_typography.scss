@@ -14,8 +14,8 @@ h3 {
   small {
     display: block;
     font-size: var(--size-step--1);
-    font-family: var(--code-font-family);
-    font-weight: 400;
+    // font-family: var(--code-font-family);
+    font-variation-settings: 'wdth' 100, 'wght' 300;
     margin: var(--sizing-md) 0;
     // text-transform: uppercase;
   }

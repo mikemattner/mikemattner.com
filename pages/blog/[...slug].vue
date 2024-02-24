@@ -74,7 +74,7 @@ useHead({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .article-page {
   // padding-left: 0;
   // padding-right: 0;
@@ -208,15 +208,16 @@ useHead({
     }
 
     @media (min-width: 1001px) {
-      grid-column: 6 / span 18;
+      grid-column: 1 / -1;
       grid-row: 3;
+      display: grid;
+      grid-template-columns: subgrid;
+
+      & > * {
+        grid-column: 6 / span 18;
+      }
     }
   }
-
-  // .article-title {
-  //   font-size: clamp(40px, 8vw, 95px);
-  //   text-align: center;
-  // }
 
   .article-description {
     position: relative;
@@ -394,20 +395,21 @@ useHead({
 }
 :deep(.footnotes) {
   font-size: var(--size-step--1);
-  border-top: 1px solid var(--border-color);
   margin-top: var(--sizing-xxxl);
 }
 :deep(sup a) {
   display: inline-block;
   padding: 3px;
-  background-color: hsla(var(--color-primary-hsl), 0.75);
-  color: hsl(var(--color-white-hsl));
+  background-color: var(--border-color);
+  color: var(--headline-font-color);
   line-height: 1;
   text-decoration: none;
-  margin-left: 2px;
+  margin-left: 3px;
   font-weight: 700;
   transition: var(--transition);
   border-radius: 2px;
+  top: -2px;
+  position: relative;
 
   &:hover {
     color: hsl(var(--color-white-hsl));

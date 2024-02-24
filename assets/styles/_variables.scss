@@ -99,7 +99,7 @@
     --button-outline-text-hover: var(--color-light);
 
     --button-primary: var(--color-primary);
-    --button-primary-outline: inset 0 0 0 2px var(--color-primary), 5px 5px 0 0 var(--color-primary);
+    --button-primary-outline: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
     --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
     --button-primary-solid: 5px 5px 0 0 var(--color-primary);
     --button-primary-solid-hover: 0 0 0 0 var(--color-primary);
@@ -109,7 +109,7 @@
 
     --button-secondary: hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-bg-hover: var(--color-primary);
-    --button-secondary-outline: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 5px 5px 0 0 hsla(var(--color-dark-50-hsl),0.5);
+    --button-secondary-outline: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-outline-hover: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-hover: hsla(var(--color-dark-50-hsl),0.5);
     --button-secondary-solid: 5px 5px 0 0 var(--border-color);

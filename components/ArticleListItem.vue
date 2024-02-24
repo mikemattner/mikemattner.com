@@ -2,9 +2,8 @@
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
       <header class="article-list-item__header">
-        <time><Icon name="ri:calendar-fill" /> {{ formatDate(post.date) }}</time>
+        <time>{{ formatDate(post.date) }}</time>
         <div class="article-list-item__tags">
-          <Icon name="ri:chat-thread-fill" />
           <ul class="tag-list">
             <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
           </ul>
@@ -170,23 +169,27 @@ const props = defineProps({
     font-family: var(--code-font-family);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--sizing-xxl);
+    gap: var(--sizing-lg);
     color: var(--blog-card-date-color);
     padding: 0 0 var(--sizing-lg) 0;
     z-index: 2;
-    // background-color: var(--border-color);
   }
 
   time {
     display: flex;
     align-items: center;
-    gap: var(--sizing-sm);
+    gap: var(--sizing-lg);
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
       flex-shrink: 0;
+    }
+
+    &:after {
+      content: '•';
+      line-height: 1;
+      opacity: 0.5;
     }
   }
 
@@ -207,22 +210,22 @@ const props = defineProps({
     list-style: none;
     display: flex;
     align-items: center;
-    gap: var(--sizing-xs);
+    gap: var(--sizing-sm);
 
     li {
       padding: 0;
       margin: 0;
       display: flex;
       align-items: center;
-      gap: var(--sizing-xs);
+      gap: 1px;
 
-      &:before {
-        content: '/';
+      &:after {
+        content: ',';
         line-height: 1;
         opacity: 0.5;
       }
 
-      &:first-child:before {
+      &:last-child:after {
         display: none;
       }
     }

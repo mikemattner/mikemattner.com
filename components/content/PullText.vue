@@ -1,0 +1,86 @@
+<template>
+  <div class="pull-text" :class="classes">
+    <ContentSlot />
+  </div>
+</template>
+
+<script setup lang="ts">
+const props = defineProps({
+  direction: {
+    type: String as PropType<'left' | 'right'>,
+    default: 'right',
+  },
+  type: {
+    type: String as PropType<'long' | 'regular'>,
+    default: 'regular',
+  },
+});
+
+const classes = computed(() => {
+  return [`pull-text--${props.direction}`, `pull-text--${props.type}`];
+});
+</script>
+
+<style lang="scss" scoped>
+.pull-text {
+  font-size: var(--size-step--1);
+
+  @media (max-width: 1000px) {
+    margin: var(--sizing-xl) 0;
+    padding: var(--sizing-md) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @media (min-width: 1001px) {
+    margin: 0;
+    margin-top: 1.75em;
+    text-wrap: balance;
+
+    &::before {
+      content: '';
+      border-top: 2px solid var(--border-color);
+      display: block;
+      margin-bottom: var(--sizing-lg);
+    }
+
+    &--left {
+      margin-left: 0;
+      text-align: right;
+      grid-column: 1 / span 4;
+
+      &::before {
+        width: 25%;
+        margin-left: 75%;
+      }
+    }
+
+    &--right {
+      grid-column: 25 / span 4;
+
+      &::before {
+        width: 25%;
+        margin-right: 75%;
+      }
+    }
+
+    &--long {
+      padding: var(--sizing-lg) 0;
+
+      &::before {
+        display: none;
+      }
+
+      &.pull-text--left {
+        border-right: 2px solid var(--border-color);
+        padding-right: var(--sizing-lg);
+      }
+
+      &.pull-text--right {
+        border-left: 2px solid var(--border-color);
+        padding-left: var(--sizing-lg);
+      }
+    }
+  }
+}
+</style>
