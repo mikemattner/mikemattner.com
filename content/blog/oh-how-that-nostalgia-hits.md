@@ -18,11 +18,11 @@ My obsession with college football and offense grew while I played football in s
 
 What I failed to appreciate while first getting into the Wolverines was the historical success the team had enjoyed. It wasn't necessarily elite success, but it was relatively well sustained.
 
-::PullText
-  The post Carr era was such a long walk in the wilderness.
-::
-
 At the end of the Lloyd Carr era I was entering adulthood with quite a large obsession still brewing. Any Michigan fan knows the era that came next, and it was awful as a fan. Two coaching staffs that produced terrible to mediocre results and years of pain against bitter rivals Ohio State.
+
+::PullText
+  The post Carr era was such a long walk in the wilderness, I wish I would have appreciated Carr a little more.
+::
 
 Once Jim Harbaugh was hired, the general mood around the program was that things might finally settle into a more respectable place and for the most part they did. You could expect eight to eleven wins a year, a bowl appearance, and generally decent football--but it wasn't elite, and that was fine if not a little annoying heading into the weird COVID year that was college football.
 

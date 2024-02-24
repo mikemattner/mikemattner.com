@@ -11,8 +11,8 @@ const props = defineProps({
     default: 'right',
   },
   type: {
-    type: String as PropType<'long' | 'regular'>,
-    default: 'regular',
+    type: String as PropType<'long' | 'short'>,
+    default: 'short',
   },
 });
 
@@ -37,30 +37,35 @@ const classes = computed(() => {
     margin-top: 1.75em;
     text-wrap: balance;
 
-    &::before {
-      content: '';
-      border-top: 2px solid var(--border-color);
-      display: block;
-      margin-bottom: var(--sizing-lg);
-    }
-
     &--left {
-      margin-left: 0;
       text-align: right;
       grid-column: 1 / span 4;
-
-      &::before {
-        width: 25%;
-        margin-left: 75%;
-      }
     }
 
     &--right {
       grid-column: 25 / span 4;
+    }
 
+    &--short {
       &::before {
-        width: 25%;
-        margin-right: 75%;
+        content: '';
+        border-top: 2px solid var(--border-color);
+        display: block;
+        margin-bottom: var(--sizing-lg);
+      }
+
+      &.pull-text--left {
+        &::before {
+          width: 25%;
+          margin-left: 75%;
+        }
+      }
+
+      &.pull-text--right {
+        &::before {
+          width: 25%;
+          margin-right: 75%;
+        }
       }
     }
 

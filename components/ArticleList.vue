@@ -109,6 +109,12 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
     flex-direction: column;
     gap: var(--sizing-sm);
   }
+
+  @media (max-width: 1052px) {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
 .year-header {
