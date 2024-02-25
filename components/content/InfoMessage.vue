@@ -48,19 +48,21 @@ const icon = computed(() => {
 
   display: grid;
   grid-template: 'icon body' 'icon body' 1fr / auto 1fr;
-  column-gap: var(--sizing-lg);
+  column-gap: var(--sizing-md);
   position: relative;
-  padding: var(--sizing-lg);
+  padding: var(--sizing-lg) var(--sizing-md);
   border-left: 4px solid var(--message-color);
   font-size: var(--size-step-0);
   background-color: var(--message-color-bg);
   border-radius: var(--sizing-sm);
-  line-height: 1.4;
+  line-height: 1.5;
   color: var(--headline-font-color);
 
   @media (min-width: 989px) {
     margin-left: calc(var(--sizing-xl) * -1);
     margin-right: calc(var(--sizing-xl) * -1);
+    padding: var(--sizing-lg) var(--sizing-lg) var(--sizing-lg) var(--sizing-md);
+    column-gap: var(--sizing-lg);
   }
 
   &__content {
@@ -75,6 +77,11 @@ const icon = computed(() => {
     grid-area: icon;
     align-self: start;
     justify-self: start;
+    line-height: 1;
+
+    @media (min-width: 989px) {
+      font-size: 1.25em;
+    }
   }
 }
 </style>

@@ -13,6 +13,7 @@ One of the primary reasons I exited the WordPress space for my personal portfoli
 At the same time as all of this was going on, I was also diving head first into the world of [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/) at work. Going with a solution like this for a personal project seemed like such a natural path towards professional development, and a safe solution for ditching WordPress. No offense to WordPress&mdash;it can be great and I miss the writing experience&mdash;but I just couldn't continue to fix a constant hack that probably shouldn't have been happening.
 
 ## How to Handle Content
+
 Quite frankly, one of the most difficult decisions I made was to just jettison everything from a content perspective and to start fresh (although, you'll see on the site some of that old content back in action). I think I'd been posting periodically since about 2006 on this very domain. That is a LONG time, and a lot of SEO potential I just scrapped.
 
 As I found myself more interested in this development direction, and the notion of static site generators, I figured a simple markdown implementation would suit me just fine.
@@ -113,3 +114,7 @@ Pretty damn easy if you ask me.
 I tried to use Forestry previously for writing content (missing the writing experience of WordPress and all), but I never could get that workflow to stick. Right now I'm happily typing away in VS Code, which suites me just fine.
 
 We'll see how long I can maintain enthusiasm.
+
+::InfoMessage{type="success"}
+I could not be happier with the Nuxt Content module, and Nuxt in general. Give it a try!
+::
