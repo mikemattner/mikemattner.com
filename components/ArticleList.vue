@@ -110,10 +110,8 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
     gap: var(--sizing-sm);
   }
 
-  @media (max-width: 1052px) {
-    &:first-child {
-      margin-top: 0;
-    }
+  @media (max-width: 767px) {
+    margin-top: var(--sizing-xxxl);
   }
 }
 
