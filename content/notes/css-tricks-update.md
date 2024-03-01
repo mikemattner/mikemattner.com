@@ -11,6 +11,6 @@ A little to the party on reading [Chris Coyier's take](https://chriscoyier.net/2
 >
 > ...
 >
-> I’d call that a big swing, anyway. **I’ll just take it back please and thank you**. But I feel like I made the case OK that it’s not completely crazy.
+> I’d call that a big swing, anyway. ***I’ll just take it back please and thank you***. But I feel like I made the case OK that it’s not completely crazy.
 
 Man, that would have been something.
