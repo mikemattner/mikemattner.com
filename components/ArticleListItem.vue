@@ -46,11 +46,11 @@ const props = defineProps({
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
-    // border: 2px solid var(--border-color);
-    // box-shadow: 5px 5px 0 0 var(--border-color);
     border-radius: 7px;
-    // overflow: hidden;
+    overflow: hidden;
     position: relative;
+    background-color: var(--block-quote-bg);
+    padding: var(--sizing-lg);
 
     h3 {
       transition: var(--transition);
@@ -94,7 +94,7 @@ const props = defineProps({
 
     &:hover {
       color: var(--font-color);
-      // box-shadow: 0 0 0 0 var(--border-color);
+      box-shadow: inset 0 0 0 1px var(--button-secondary);
       // background-color: var(--block-quote-bg);
 
       .article-list-item__read-more {
@@ -120,13 +120,13 @@ const props = defineProps({
         }
       }
 
-      &::after {
-        top: calc(var(--sizing-lg) * -1);
-        bottom: calc(var(--sizing-lg) * -1);
-        left: calc(var(--sizing-lg) * -1);
-        right: calc(var(--sizing-lg) * -1);
-        opacity: 1;
-      }
+      // &::after {
+      //   top: calc(var(--sizing-lg) * -1);
+      //   bottom: calc(var(--sizing-lg) * -1);
+      //   left: calc(var(--sizing-lg) * -1);
+      //   right: calc(var(--sizing-lg) * -1);
+      //   opacity: 1;
+      // }
     }
   }
 
