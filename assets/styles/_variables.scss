@@ -110,13 +110,13 @@
     --button-primary-hover: var(--color-primary);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: hsla(var(--color-dark-50-hsl),0.5);
+    --button-secondary: color-mix(in hsl longer hue, var(--color-dark-background) 80%, white);
     --button-secondary-bg-hover: var(--color-primary);
-    --button-secondary-outline: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
-    --button-secondary-outline-hover: inset 0 0 0 2px hsla(var(--color-dark-50-hsl),0.5), 0 0 0 0 hsla(var(--color-dark-50-hsl),0.5);
-    --button-secondary-hover: hsla(var(--color-dark-50-hsl),0.5);
-    --button-secondary-solid: 5px 5px 0 0 var(--border-color);
-    --button-secondary-solid-hover: 0 0 0 0 var(--border-color);
+    --button-secondary-outline: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
+    --button-secondary-outline-hover: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
+    --button-secondary-hover: var(--button-secondary);
+    --button-secondary-solid: 5px 5px 0 0 var(--button-secondary);
+    --button-secondary-solid-hover: 0 0 0 0 var(--color-primary);
 
     // Box shadows
     --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
