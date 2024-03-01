@@ -29,10 +29,10 @@
             <BaseButton to="/about" variant="outline" size="md" color="primary">
               <span>Read more about me</span>
             </BaseButton>
-            <BaseButton to="/projects" variant="solid" size="sm" color="secondary">
+            <BaseButton to="/projects" variant="text" size="sm" color="secondary">
               <span>Projects</span> <Icon name="ri:code-box-fill" />
             </BaseButton>
-            <BaseButton to="/about/uses" variant="solid" size="sm" color="secondary">
+            <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
             </BaseButton>
           </div>
@@ -46,7 +46,7 @@
           <BaseButton to="/blog" variant="outline" size="md" color="primary">
             <span>Blog archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
+          <BaseButton to="/notes" variant="text" size="sm" color="secondary">
             <span>Note archives</span>
           </BaseButton>
         </div>
