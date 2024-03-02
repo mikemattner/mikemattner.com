@@ -9,8 +9,8 @@
 <style lang="scss" scoped>
 .rss-button {
   --size: 2.5rem;
-  --icon-fill: var(--headline-font-color);
-  --icon-fill-hover: var(--headline-font-color);
+  --icon-fill: var(--button-outline-color-text);
+  --icon-fill-hover: var(--button-outline-color-text-hover);
 
   // @media (max-width: 715px) {
   //   --size: 3.5rem;

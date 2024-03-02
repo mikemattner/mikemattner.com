@@ -93,7 +93,7 @@ const hasSlot = (name: string) => {
       margin: auto;
       background: var(--gradient-1);
       mix-blend-mode: multiply;
-      opacity: 0.5;
+      opacity: 0.75;
       z-index: 3;
       transition: var(--transition-cubic);
     }
@@ -107,7 +107,7 @@ const hasSlot = (name: string) => {
       bottom: 0;
       margin: auto;
       background-color: var(--image-background);
-      mix-blend-mode: darken;
+      mix-blend-mode: color-dodge;
       opacity: 1;
       z-index: 2;
       transition: var(--transition-cubic);
