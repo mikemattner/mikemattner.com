@@ -88,10 +88,9 @@
     --color-light-pull-color: hsla(var(--color-black-hsl), 0.5);
 
     // Primary colors
-    --color-primary-hsl: 353, 86%, 54%;
-    --color-primary: hsl(353, 86%, 54%);
-    --color-primary-hover: hsla(353, 86%, 44%, 100%);
-    --color-primary-hover-t: hsla(353, 86%, 54%, 30%);
+    --color-primary-hsl: var(--color-blue-hsl);
+    --color-primary: var(--color-blue);
+    --color-primary-hover: color-mix(in hsl longer hue, var(--color-primary) 50%, black);
 
     // Button variables
     --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
@@ -104,19 +103,14 @@
     --button-primary: var(--color-primary);
     --button-primary-outline: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
     --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
-    --button-primary-solid: 5px 5px 0 0 var(--color-primary);
-    --button-primary-solid-hover: 0 0 0 0 var(--color-primary);
-
     --button-primary-hover: var(--color-primary);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: color-mix(in hsl longer hue, var(--color-dark-background) 80%, white);
+    --button-secondary: color-mix(in hsl shorter hue, var(--color-primary) 50%, black);
     --button-secondary-bg-hover: var(--color-primary);
     --button-secondary-outline: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
     --button-secondary-outline-hover: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
     --button-secondary-hover: var(--button-secondary);
-    --button-secondary-solid: 5px 5px 0 0 var(--button-secondary);
-    --button-secondary-solid-hover: 0 0 0 0 var(--color-primary);
 
     // Box shadows
     --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
@@ -131,7 +125,7 @@
     --headline-font-color: var(--color-light);
     --background-border-color: var(--color-dark-bg-border);
     --border-color: hsla(var(--color-white-hsl), 0.1); //hsl(240, 9%, 20%)
-    --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
+    --gradient-1: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 40%) 3.84%,hsla(var(--color-blue-hsl), 48%) 34.62%, hsla(var(--color-green-hsl), 50%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);
@@ -151,7 +145,7 @@ html.light {
     --headline-font-color: hsla(var(--color-black-hsl), 0.9);
     --background-border-color: var(--color-light-bg-border);
     --border-color: hsla(var(--color-dark-blue-hsl), 0.1); //hsl(240, 9%, 69%)
-    --gradient-1: linear-gradient(160.41deg,hsla(0, 0%, 98%, 0) 3.84%,hsla(0, 0%, 98%, 38%) 54.62%, hsla(0, 0%, 98%, 70%) 79.18% );
+    --gradient-1: linear-gradient(160.41deg,hsla(var(--color-blue-hsl), 10%) 3.84%,hsla(var(--color-blue-hsl), 38%) 34.62%, hsla(var(--color-green-hsl), 10%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
@@ -171,7 +165,7 @@ html.dark {
     --headline-font-color: var(--color-light);
     --background-border-color: var(--color-dark-bg-border);
     --border-color: hsla(var(--color-white-hsl), 0.075); //hsl(240, 9%, 20%)
-    --gradient-1: linear-gradient(160.41deg,hsla(240, 9%, 9%, 0) 3.84%,hsla(240, 9%, 9%, 68%) 54.62%, hsla(240, 9%, 9%, 100%) 79.18% );
+    --gradient-1: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 40%) 3.84%,hsla(var(--color-blue-hsl), 48%) 34.62%, hsla(var(--color-green-hsl), 50%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);

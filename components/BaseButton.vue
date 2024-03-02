@@ -240,8 +240,6 @@ const attributes = computed(() => {
     --button-solid-background-color-hover: var(--button-primary-solid-hover);
     --button-solid-color-text: var(--button-solid-text);
     --button-solid-color-text-hover: var(--button-solid-text-hover);
-    --button-solid-shadow: var(--button-primary-solid);
-    --button-solid-shadow-hover: var(--button-primary-solid-hover);
 
     --button-outline-background-color: transparent;
     --button-outline-background-color-hover: var(--button-primary-hover);
@@ -256,8 +254,6 @@ const attributes = computed(() => {
     --button-solid-background-color-hover: var(--button-secondary-bg-hover);
     --button-solid-color-text: var(--button-solid-text);
     --button-solid-color-text-hover: var(--button-solid-text-hover);
-    --button-solid-shadow: var(--button-secondary-solid);
-    --button-solid-shadow-hover: var(--button-secondary-solid-hover);
 
     --button-outline-background-color: transparent;
     --button-outline-background-color-hover: var(--button-secondary-hover);

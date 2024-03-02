@@ -94,7 +94,7 @@ const props = defineProps({
 
     &:hover {
       color: var(--font-color);
-      box-shadow: inset 0 0 0 1px var(--button-secondary);
+      box-shadow: inset 0 0 0 1px var(--color-primary);
       // background-color: var(--block-quote-bg);
 
       .article-list-item__read-more {
