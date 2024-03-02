@@ -26,13 +26,13 @@
             video editing, motion graphics, print design, et cetera.
           </p>
           <div class="button-group">
-            <BaseButton to="/about" variant="outline" size="md" color="primary">
+            <BaseButton to="/about" variant="solid" size="md" color="primary">
               <span>Read more about me</span>
             </BaseButton>
-            <BaseButton to="/projects" variant="text" size="sm" color="secondary">
+            <BaseButton to="/projects" variant="outline" size="sm" color="secondary">
               <span>Projects</span> <Icon name="ri:code-box-fill" />
             </BaseButton>
-            <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
+            <BaseButton to="/about/uses" variant="outline" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
             </BaseButton>
           </div>
@@ -43,10 +43,10 @@
         <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
-          <BaseButton to="/blog" variant="outline" size="md" color="primary">
+          <BaseButton to="/blog" variant="solid" size="md" color="primary">
             <span>Blog archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="text" size="sm" color="secondary">
+          <BaseButton to="/notes" variant="outline" size="sm" color="secondary">
             <span>Note archives</span>
           </BaseButton>
         </div>
@@ -66,7 +66,7 @@ useHead({
 const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 3) as Post[];
 });
 </script>
 

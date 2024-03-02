@@ -41,8 +41,8 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 <style lang="scss" scoped>
 .theme-toggle {
   --size: 2.5rem;
-  --icon-fill: var(--headline-font-color);
-  --icon-fill-hover: var(--headline-font-color);
+  --icon-fill: var(--button-outline-color-text);
+  --icon-fill-hover: var(--button-outline-color-text-hover);
   transition: var(--transition);
   color: var(--font-color);
 
