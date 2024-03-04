@@ -90,7 +90,7 @@
     // Primary colors
     --color-primary-hsl: var(--color-blue-hsl);
     --color-primary: var(--color-blue);
-    --color-primary-hover: color-mix(in hsl longer hue, var(--color-primary) 50%, black);
+    --color-primary-hover: color-mix(in hsl longer hue, var(--color-primary) 80%, black);
 
     // Button variables
     --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
@@ -106,7 +106,7 @@
     --button-primary-hover: var(--color-primary);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: color-mix(in hsl shorter hue, var(--color-primary) 50%, black);
+    --button-secondary: color-mix(in hsl longer hue, var(--color-primary) 50%, black);
     --button-secondary-bg-hover: var(--color-primary);
     --button-secondary-outline: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
     --button-secondary-outline-hover: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
