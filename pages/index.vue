@@ -95,11 +95,11 @@ const posts = computed(() => {
       grid-template-columns: repeat(28, 1fr);
       margin-block-start: 6rem;
       margin-block-end: 6rem;
-      gap: var(--sizing-xxl) 0;
+      gap: var(--sizing-md) 0;
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--sizing-xxl) var(--sizing-xxl);
+      gap: var(--sizing-xl) var(--sizing-xl);
     }
 
     @media (max-width: 715px) {
@@ -233,6 +233,7 @@ const posts = computed(() => {
     }
     @media (max-width: 1052px) {
       grid-column: 2 / span 3;
+      align-self: end;
     }
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
