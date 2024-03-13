@@ -104,6 +104,7 @@ const sortedNotes = computed<SortedNoteItem[]>(() => {
 
 .year-header {
   line-height: 1;
+  font-size: var(--size-step-0);
 }
 
 .year-header__article-count {
