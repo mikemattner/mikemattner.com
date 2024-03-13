@@ -29,21 +29,21 @@
             <BaseButton to="/about" variant="solid" size="md" color="primary">
               <span>Read more about me</span>
             </BaseButton>
-            <BaseButton to="/projects" variant="outline" size="sm" color="secondary">
+            <!-- <BaseButton to="/projects" variant="outline" size="sm" color="secondary">
               <span>Projects</span> <Icon name="ri:code-box-fill" />
             </BaseButton>
             <BaseButton to="/about/uses" variant="outline" size="sm" color="secondary">
               <span>Uses</span> <Icon name="ri:command-fill" />
-            </BaseButton>
+            </BaseButton> -->
           </div>
         </div>
       </div>
       <hr />
-      <div class="home-layout__content flow">
-        <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
+      <div class="home-layout__content">
+        <h2 class="small-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
-          <BaseButton to="/blog" variant="solid" size="md" color="primary">
+          <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog archives</span>
           </BaseButton>
           <BaseButton to="/notes" variant="outline" size="sm" color="secondary">
@@ -306,10 +306,12 @@ const posts = computed(() => {
   .recently-posted-archives {
     grid-column: 1 / -1;
     grid-row: 3;
+    margin-top: var(--sizing-xxl);
 
     @media (min-width: 716px) {
       grid-row: 2;
       grid-column: 11 / -1;
+      margin-top: var(--sizing-xxxl);
     }
   }
 

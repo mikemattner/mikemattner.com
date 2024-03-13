@@ -53,29 +53,89 @@
     --color-green: hsl(115, 74%, 40%);
     --color-green-hsl: 115, 74%, 40%;
 
+    // Primary Blue Tints & Shades ------------------------
     --color-blue: hsl(227, 86%, 50%);
     --color-blue-hsl: 227, 86%, 50%;
 
+    // Shades
+    --color-blue-shade-10: hsl(227, 86%, 45%);
+    --color-blue-shade-10-hsl: 227, 86%, 45%;
+
+    --color-blue-shade-20: hsl(227, 86%, 40%);
+    --color-blue-shade-20-hsl: 227, 86%, 40%;
+
+    --color-blue-shade-30: hsl(227, 86%, 35%);
+    --color-blue-shade-30-hsl: 227, 86%, 35%;
+
+    --color-blue-shade-40: hsl(227, 86%, 30%);
+    --color-blue-shade-40-hsl: 227, 86%, 30%;
+
+    --color-blue-shade-50: hsl(227, 86%, 25%);
+    --color-blue-shade-50-hsl: 227, 86%, 25%;
+
+    --color-blue-shade-60: hsl(227, 86%, 20%);
+    --color-blue-shade-60-hsl: 227, 86%, 20%;
+
+    --color-blue-shade-70: hsl(227, 86%, 15%);
+    --color-blue-shade-70-hsl: 227, 86%, 15%;
+
+    --color-blue-shade-80: hsl(227, 86%, 10%);
+    --color-blue-shade-80-hsl: 227, 86%, 10%;
+
+    --color-blue-shade-90: hsl(227, 86%, 5%);
+    --color-blue-shade-90-hsl: 227, 86%, 5%;
+
+    // Tints
+    --color-blue-tint-10: hsl(227, 86%, 55%);
+    --color-blue-tint-10-hsl: 227, 86%, 55%;
+
+    --color-blue-tint-20: hsl(227, 86%, 60%);
+    --color-blue-tint-20-hsl: 227, 86%, 60%;
+
+    --color-blue-tint-30: hsl(227, 86%, 65%);
+    --color-blue-tint-30-hsl: 227, 86%, 65%;
+
+    --color-blue-tint-40: hsl(227, 86%, 70%);
+    --color-blue-tint-40-hsl: 227, 86%, 70%;
+
+    --color-blue-tint-50: hsl(227, 86%, 75%);
+    --color-blue-tint-50-hsl: 227, 86%, 75%;
+
+    --color-blue-tint-60: hsl(227, 86%, 80%);
+    --color-blue-tint-60-hsl: 227, 86%, 80%;
+
+    --color-blue-tint-70: hsl(227, 86%, 85%);
+    --color-blue-tint-70-hsl: 227, 86%, 85%;
+
+    --color-blue-tint-80: hsl(227, 86%, 90%);
+    --color-blue-tint-80-hsl: 227, 86%, 90%;
+
+    --color-blue-tint-90: hsl(227, 86%, 95%);
+    --color-blue-tint-90-hsl: 227, 86%, 95%;
+
+    // Dark Blue ------------------------
     --color-dark-blue: hsl(240, 36%, 4%);
     --color-dark-blue-hsl: 240, 36%, 4%;
 
+    // Pink ------------------------
     --color-pink: hsl(288, 69%, 54%);
     --color-pink-hsl: 288, 69%, 54%;
 
+    // The basics
     --color-white-hsl: 0, 0%, 100%;
     --color-black-hsl: 0, 0%, 0%;
 
     // Dark backgrounds, border, gradient
-    --color-dark-hsl: 353, 86%, 3%;
-    --color-dark: hsl(351, 100%, 3%);
+    --color-dark-hsl: var(--color-blue-shade-90-hsl);
+    --color-dark: var(--color-blue-shade-90);
     --color-dark-50-hsl: 240, 36%, 20%;
     --color-dark-70-hsl: 240, 36%, 60%;
     --color-dark-t: hsla(353, 86%, 3%, 70%);
     --color-dark-bg-border: hsl(353, 86%, 3%);
     --color-dark-background: hsl(240, 36%, 4%);
     --color-dark-background-gradient-hsl: 240, 36%, 30%;
-    --color-dark-font-color: hsl(343, 13%, 70%);
-    --color-dark-pull-color: hsla(343, 13%, 70%, 75%);
+    --color-dark-font-color: hsla(var(--color-blue-tint-90-hsl), 75%);
+    --color-dark-pull-color: hsla(var(--color-blue-tint-90-hsl), 65%);
 
     // Light background, border, gradient
     --color-light-hsl: 0, 0%, 94%;
@@ -90,7 +150,7 @@
     // Primary colors
     --color-primary-hsl: var(--color-blue-hsl);
     --color-primary: var(--color-blue);
-    --color-primary-hover: color-mix(in hsl longer hue, var(--color-primary) 80%, black);
+    --color-primary-hover: var(--color-blue-shade-50);
 
     // Button variables
     --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
@@ -106,11 +166,11 @@
     --button-primary-hover: var(--color-primary);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: color-mix(in hsl longer hue, var(--color-primary) 50%, black);
+    --button-secondary: var(--color-blue-shade-50);
     --button-secondary-bg-hover: var(--color-primary);
     --button-secondary-outline: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
-    --button-secondary-outline-hover: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
-    --button-secondary-hover: var(--button-secondary);
+    --button-secondary-outline-hover: inset 0 0 0 2px var(--color-primary-hover), 0 0 0 0 var(--color-primary-hover);
+    --button-secondary-hover: var(--color-primary-hover);
 
     // Box shadows
     --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
@@ -119,6 +179,8 @@
     --box-shadow-long: 0 2px 1px hsla(var(--color-black-hsl), 0.08), 0 4px 2px hsla(var(--color-black-hsl), 0.08), 0 8px 4px hsla(var(--color-black-hsl), 0.08), 0 16px 8px hsla(var(--color-black-hsl), 0.08), 0 32px 16px hsla(var(--color-black-hsl), 0.08);
 
     // Baseline theme colors - dark
+    --color-primary-hsl: var(--color-blue-tint-10-hsl);
+    --color-primary: var(--color-blue-tint-10);
     --background-color: var(--color-dark-background);
     --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-dark-background-gradient-hsl), 0.20) 0%, var(--background-color) 100%);
     --font-color: var(--color-dark-font-color);
@@ -139,10 +201,11 @@
 }
 
 html.light {
+    --button-secondary: var(--color-blue-tint-30);
     --background-color: var(--color-light-bg);
     --background-image: radial-gradient(47.1% 39.7%,hsla(var(--color-light-background-gradient-hsl),0.15) 0%, hsla(var(--color-primary-hsl), 0.1) 50%,var(--background-color) 100%);
-    --font-color: hsla(var(--color-black-hsl), 0.7);
-    --headline-font-color: hsla(var(--color-black-hsl), 0.9);
+    --font-color: hsla(var(--color-dark-hsl), 0.8);
+    --headline-font-color: var(--color-dark);
     --background-border-color: var(--color-light-bg-border);
     --border-color: hsla(var(--color-dark-blue-hsl), 0.1); //hsl(240, 9%, 69%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-blue-hsl), 10%) 3.84%,hsla(var(--color-blue-hsl), 38%) 34.62%, hsla(var(--color-green-hsl), 10%) 69.18% );
@@ -150,7 +213,7 @@ html.light {
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.95);
-    --code-bg: hsla(var(--color-black-hsl), 0.95);
+    --code-bg: hsla(var(--color-dark-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);
@@ -159,6 +222,8 @@ html.light {
 }
   
 html.dark {
+    --color-primary-hsl: var(--color-blue-tint-10-hsl);
+    --color-primary: var(--color-blue-tint-10);
     --background-color: var(--color-dark-background);
     --background-image: radial-gradient(47.1% 39.7%, hsla(var(--color-dark-background-gradient-hsl), 0.30) 0%, hsla(var(--color-primary-hsl), 0.1) 50%, var(--background-color) 100%);
     --font-color: var(--color-dark-font-color);
@@ -170,7 +235,7 @@ html.dark {
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
-    --code-bg: hsla(var(--color-black-hsl), 0.5);
+    --code-bg: hsla(var(--color-black-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
     --font-weight: 300;
     --blog-card-date-color: var(--font-color);

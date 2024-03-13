@@ -67,19 +67,10 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--sizing-xxxl);
+  gap: var(--sizing-xxl);
 
   &.summary-list {
     grid-template-columns: repeat(1, 1fr);
-
-    // @media (min-width: 901px) {
-    //   grid-template-columns: repeat(2, 1fr);
-    //   gap: var(--sizing-xxxl);
-    // }
-
-    // @media (max-width: 900px) {
-    //   grid-template-columns: repeat(1, 1fr);
-    // }
   }
 }
 
@@ -91,7 +82,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
     margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
 
     .article-list {
-      grid-column: 11 / -1;
+      grid-column: 7 / -1;
     }
   }
 }
@@ -117,6 +108,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
 
 .year-header {
   line-height: 1;
+  font-size: var(--size-step-0);
 }
 
 .year-header__article-count {
