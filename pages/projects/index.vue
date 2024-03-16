@@ -13,7 +13,7 @@
             class="external-link"
             target="_blank"
             size="xs"
-            color="secondary"
+            color="primary"
             variant="solid"
           >
             <span>View All</span> <Icon name="ri:external-link-fill" />

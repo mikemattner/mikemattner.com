@@ -12,29 +12,30 @@
         </div>
 
         <h1 class="main-lede very-large-heading">
-          <span class="introduction">Hey there.</span>
+          <span class="introduction">Hey there,</span>
+          <span class="introduction-row-two">I'm Mike.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
-            I&rsquo;m Mike, a
+            I&rsquo;m a
             <strong>designer</strong> and
             <strong>developer</strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p class="intro">
-            In a former life I worked as a <strong>digital designer</strong> using a wide range of skills including
-            video editing, motion graphics, print design, et cetera.
+            In a former life I worked as a <strong>digital designer</strong>&mdash;basically a catch-all for video
+            editing, motion graphics, print design, et cetera. Now I mostly create in code.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
               <span>Read more about me</span>
             </BaseButton>
-            <!-- <BaseButton to="/projects" variant="outline" size="sm" color="secondary">
+            <BaseButton to="/projects" variant="outline" size="sm" color="primary">
               <span>Projects</span> <Icon name="ri:code-box-fill" />
             </BaseButton>
-            <BaseButton to="/about/uses" variant="outline" size="sm" color="secondary">
+            <BaseButton to="/about/uses" variant="outline" size="sm" color="primary">
               <span>Uses</span> <Icon name="ri:command-fill" />
-            </BaseButton> -->
+            </BaseButton>
           </div>
         </div>
       </div>
@@ -46,7 +47,7 @@
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="outline" size="sm" color="secondary">
+          <BaseButton to="/notes" variant="outline" size="sm" color="primary">
             <span>Note archives</span>
           </BaseButton>
         </div>
@@ -205,6 +206,7 @@ const posts = computed(() => {
     align-items: center;
     display: grid;
     grid-template-columns: subgrid;
+    line-height: 1;
 
     @media (min-width: 1053px) {
       grid-column: 1 / -1;
@@ -219,8 +221,9 @@ const posts = computed(() => {
 
     @media (max-width: 499px) {
       margin: 0;
-      gap: var(--sizing-lg);
+      gap: 0;
       grid-row: 1;
+      line-height: 1.1;
     }
   }
 
@@ -228,7 +231,23 @@ const posts = computed(() => {
     text-wrap: balance;
 
     @media (min-width: 1053px) {
-      grid-column: 8 / -1;
+      grid-column: 9 / -1;
+      align-self: center;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 2 / span 3;
+      align-self: end;
+    }
+    @media (max-width: 499px) {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  .introduction-row-two {
+    text-wrap: balance;
+
+    @media (min-width: 1053px) {
+      grid-column: 11 / -1;
       align-self: center;
     }
     @media (max-width: 1052px) {
@@ -299,7 +318,7 @@ const posts = computed(() => {
 
     @media (min-width: 716px) {
       grid-row: 1;
-      grid-column: 11 / -1;
+      grid-column: 9 / -1;
     }
   }
 
@@ -310,7 +329,7 @@ const posts = computed(() => {
 
     @media (min-width: 716px) {
       grid-row: 2;
-      grid-column: 11 / -1;
+      grid-column: 9 / -1;
       margin-top: var(--sizing-xxxl);
     }
   }
