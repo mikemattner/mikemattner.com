@@ -13,7 +13,7 @@
         :href="`https://github.com/topics/${item}`"
         target="_blank"
         size="xs"
-        color="secondary"
+        color="primary"
         variant="solid"
       >
         {{ item }}
@@ -30,7 +30,7 @@
           v-tooltip="`${project.watchers} watchers`"
           target="_blank"
           size="xs"
-          color="secondary"
+          color="primary"
           variant="text"
         >
           <Icon name="ri:eye-fill" /> <span>{{ project.watchers }}</span>
@@ -40,7 +40,7 @@
           v-tooltip="`${project.stars} stargazers`"
           target="_blank"
           size="xs"
-          color="secondary"
+          color="primary"
           variant="text"
         >
           <Icon name="ri:star-fill" /> <span>{{ project.stars }}</span>

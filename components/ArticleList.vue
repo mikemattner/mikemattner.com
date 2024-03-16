@@ -82,7 +82,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
     margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
 
     .article-list {
-      grid-column: 7 / -1;
+      grid-column: 9 / -1;
     }
   }
 }

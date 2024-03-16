@@ -9,6 +9,7 @@
           </ul>
           <h1 class="article-title" v-html="data.title"></h1>
         </div>
+        <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image" />
       </header>
       <article class="article-layout">
         <aside class="article-meta">
@@ -120,6 +121,26 @@ useHead({
         font-size: clamp(30px, 8vw, 75px);
         text-align: center;
       }
+    }
+  }
+
+  &__feature-image {
+    width: 100%;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 7px;
+    transition: var(--transition-ease);
+    margin: var(--sizing-xl) 0 var(--sizing-xxxl);
+    aspect-ratio: 3 / 1;
+
+    @media (max-width: 899px) {
+      aspect-ratio: 2 / 1;
+    }
+
+    :deep(img) {
+      transition: transform 0.25s var(--cubic-bezier);
+      // opacity: 0.25;
+      overflow: hidden;
     }
   }
 

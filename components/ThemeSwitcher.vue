@@ -6,7 +6,7 @@
     title="Toggle theme"
     variant="text"
     size="sm"
-    color="secondary"
+    color="primary"
   >
     <svg class="sun-and-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
       <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
