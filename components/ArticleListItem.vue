@@ -1,6 +1,9 @@
 <template>
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
+      <div class="article-list-item__feature">
+        <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
+      </div>
       <header class="article-list-item__header">
         <time>{{ formatDate(post.date) }}</time>
         <div class="article-list-item__tags">
@@ -9,9 +12,6 @@
           </ul>
         </div>
       </header>
-      <!-- <div class="article-list-item__feature">
-        <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
-      </div> -->
       <div class="article-list-item__title flow">
         <h3 class="small-heading">{{ post.title }}</h3>
         <p class="small-text" v-html="post.description"></p>
@@ -29,10 +29,10 @@ const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
 });
 
-// const featuredImage = computed<string>(() => {
-//   if (!props.post.image) return '/images/feature/default-two.jpg';
-//   return props.post.image;
-// });
+const featuredImage = computed<string>(() => {
+  if (!props.post.image) return '/images/feature/default-two.jpg';
+  return props.post.image;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -106,27 +106,8 @@ const props = defineProps({
       .article-list-item__feature-image {
         :deep(img) {
           transform: scale(1.2);
-          opacity: 1;
-        }
-
-        :deep(.primary-image__image.has-overlay) {
-          img {
-            filter: none;
-          }
-          &::after,
-          &::before {
-            opacity: 0;
-          }
         }
       }
-
-      // &::after {
-      //   top: calc(var(--sizing-lg) * -1);
-      //   bottom: calc(var(--sizing-lg) * -1);
-      //   left: calc(var(--sizing-lg) * -1);
-      //   right: calc(var(--sizing-lg) * -1);
-      //   opacity: 1;
-      // }
     }
   }
 
@@ -144,14 +125,14 @@ const props = defineProps({
 
     :deep(img) {
       transition: transform 0.25s var(--cubic-bezier);
-      opacity: 0.25;
+      // opacity: 0.25;
       overflow: hidden;
     }
 
     :deep(.primary-image__image.has-overlay) {
-      // img {
-      //   filter: blur(3px) grayscale(100%) invert(5%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
-      // }
+      img {
+        filter: grayscale(100%) invert(5%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
+      }
 
       &::after,
       &::before {
@@ -231,53 +212,53 @@ const props = defineProps({
     }
   }
 }
-// .article-list-item {
-//   container: article / inline-size;
-// }
-// .article-list-item__link {
-//   @container (width >= 600px) {
-//     display: grid;
-//     grid-template-columns: 200px 1fr;
-//   }
-// }
+.article-list-item {
+  container: article / inline-size;
+}
+.article-list-item__link {
+  @container (width >= 600px) {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+  }
+}
 
-// .article-list-item__feature {
-//   @container (width >= 600px) {
-//     grid-column: 1;
-//     grid-row: 1 / span 3;
-//     display: flex;
-//     align-items: center;
-//     padding-right: var(--sizing-xl);
-//   }
-//   @container (width <= 599px) {
-//     /* padding: var(--sizing-lg) var(--sizing-lg) 0; */
-//   }
-// }
+.article-list-item__feature {
+  @container (width >= 600px) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items: center;
+    padding-left: var(--sizing-xl);
+  }
+  @container (width <= 599px) {
+    padding: 0 0 var(--sizing-md) 0;
+  }
+}
 
-// .article-list-item__feature-image {
-//   @container (width >= 600px) {
-//     aspect-ratio: 1;
-//     height: 100%;
-//   }
-//   @container (width <= 599px) {
-//     aspect-ratio: 2 / 0.75;
-//   }
-// }
-// .article-list-item__header {
-//   @container (width >= 600px) {
-//     grid-column: 2 / -1;
-//     grid-row: 1;
-//     padding: var(--sizing-lg) 0;
-//   }
-// }
+.article-list-item__feature-image {
+  @container (width >= 600px) {
+    aspect-ratio: 1;
+    height: 100%;
+  }
+  @container (width <= 599px) {
+    aspect-ratio: 2 / 0.75;
+  }
+}
+.article-list-item__header {
+  @container (width >= 600px) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 0 0 var(--sizing-lg) 0;
+  }
+}
 
-// .article-list-item__title {
-//   @container (width >= 600px) {
-//     grid-column: 2;
-//     grid-row: 2;
-//     align-self: start;
-//   }
-// }
+.article-list-item__title {
+  @container (width >= 600px) {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
+}
 
 // .article-list-item__read-more {
 //   @container (width >= 600px) {
