@@ -2,6 +2,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c59c68ee-fcf6-4d6e-af5d-9263f36ac533/deploy-status)](https://app.netlify.com/sites/lucid-torvalds-5270b3/deploys)
 
+> [!NOTE]
+> You are welcome to fork this repo to start your own blog, but please don't duplicate content or design. Use it as a basis for understanding how you might build a blog with Nuxt.
+
 Round three of framework based blogging. Remix icons from [icones.js.org](https://icones.js.org/collection/all).
 
 ## ToDos
