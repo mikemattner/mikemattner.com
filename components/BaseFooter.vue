@@ -4,63 +4,72 @@
       <div class="base-footer__copyright">
         <p>&copy; {{ theYear }} Mike Mattner</p>
       </div>
-      <ul class="navigation-list">
-        <li v-for="item in navigationList" :key="item.title">
-          <BaseButton class="navigation-list__item-link" variant="link" size="sm" color="secondary" :to="item.url">
-            {{ item.title }}
-          </BaseButton>
-        </li>
-      </ul>
-      <ul class="social-icons">
-        <li>
-          <BaseButton
-            class="footer-icon"
-            variant="link"
-            size="sm"
-            color="secondary"
-            href="https://github.com/mikemattner"
-          >
-            <Icon name="ri:github-fill" /> Github
-          </BaseButton>
-        </li>
-        <li>
-          <BaseButton
-            class="footer-icon"
-            variant="link"
-            size="sm"
-            color="secondary"
-            href="https://codepen.io/mikemattner/#"
-          >
-            <Icon name="ri:codepen-fill" /> Codepen
-          </BaseButton>
-        </li>
-        <li>
-          <BaseButton
-            class="footer-icon"
-            variant="link"
-            size="sm"
-            color="secondary"
-            href="https://mastodon.online/@mikemattner"
-            rel="me"
-          >
-            <Icon name="ri:mastodon-fill" /> Mastodon
-          </BaseButton>
-        </li>
-        <li>
-          <BaseButton
-            class="footer-icon"
-            variant="link"
-            size="sm"
-            color="secondary"
-            href="https://www.linkedin.com/in/mikeamattner/"
-          >
-            <Icon name="ri:linkedin-box-fill" /> LinkedIn
-          </BaseButton>
-        </li>
-      </ul>
+      <nav class="base-footer__navigation">
+        <h2 class="small-text">Navigation</h2>
+        <ul class="navigation-list">
+          <li v-for="item in navigationList" :key="item.title">
+            <BaseButton class="navigation-list__item-link" variant="link" size="sm" color="secondary" :to="item.url">
+              {{ item.title }}
+            </BaseButton>
+          </li>
+        </ul>
+      </nav>
+      <div class="base-footer__social">
+        <h2 class="small-text">Get in Touch</h2>
+        <ul class="social-icons">
+          <li>
+            <BaseButton
+              class="footer-icon"
+              variant="link"
+              size="sm"
+              color="secondary"
+              href="https://github.com/mikemattner"
+            >
+              <Icon name="ri:github-fill" /> Github
+            </BaseButton>
+          </li>
+          <li>
+            <BaseButton
+              class="footer-icon"
+              variant="link"
+              size="sm"
+              color="secondary"
+              href="https://codepen.io/mikemattner/#"
+            >
+              <Icon name="ri:codepen-fill" /> Codepen
+            </BaseButton>
+          </li>
+          <li>
+            <BaseButton
+              class="footer-icon"
+              variant="link"
+              size="sm"
+              color="secondary"
+              href="https://mastodon.online/@mikemattner"
+              rel="me"
+            >
+              <Icon name="ri:mastodon-fill" /> Mastodon
+            </BaseButton>
+          </li>
+          <li>
+            <BaseButton
+              class="footer-icon"
+              variant="link"
+              size="sm"
+              color="secondary"
+              href="https://www.linkedin.com/in/mikeamattner/"
+            >
+              <Icon name="ri:linkedin-box-fill" /> LinkedIn
+            </BaseButton>
+          </li>
+        </ul>
+      </div>
       <div class="base-footer__sub-controls">
-        <RssButton />
-        <ThemeSwitcher />
+        <h2 class="small-text">RSS &amp; Theme</h2>
+        <div class="controls">
+          <RssButton />
+          <ThemeSwitcher />
+        </div>
       </div>
     </div>
   </footer>
@@ -115,35 +124,76 @@ const theYear = computed<string>(() => {
     line-height: 1;
 
     @media (max-width: 875px) {
-      grid-column: 3;
-      grid-row: 1;
-      text-align: right;
+      padding-top: var(--sizing-lg);
+      grid-column: 1;
+      grid-row: 2;
     }
 
     @media (max-width: 525px) {
       padding-top: var(--sizing-lg);
       grid-column: 1 / -1;
-      grid-row: 2;
+      grid-row: 3;
       text-align: center;
     }
   }
 
   &__sub-controls {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--sizing-md);
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--sizing-lg);
 
     @media (max-width: 875px) {
       grid-column: 3;
-      grid-row: 2;
+      grid-row: 1;
     }
 
     @media (max-width: 525px) {
+      padding-top: var(--sizing-xl);
       grid-column: 1 / -1;
-      grid-row: 3;
+      grid-row: 2;
       justify-content: center;
+      align-items: center;
     }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sizing-lg);
+
+    @media (max-width: 875px) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    @media (max-width: 525px) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sizing-lg);
+
+    @media (max-width: 875px) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    @media (max-width: 525px) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--sizing-md);
   }
 
   .navigation-list {
@@ -162,16 +212,6 @@ const theYear = computed<string>(() => {
       a.navigation-list__item-link {
         text-decoration: none;
       }
-    }
-
-    @media (max-width: 875px) {
-      grid-column: 1;
-      grid-row: 1 / span 2;
-    }
-
-    @media (max-width: 525px) {
-      grid-column: 1;
-      grid-row: 1;
     }
   }
 
@@ -198,16 +238,6 @@ const theYear = computed<string>(() => {
           height: 1.25rem;
         }
       }
-    }
-
-    @media (max-width: 875px) {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
-
-    @media (max-width: 525px) {
-      grid-column: 2;
-      grid-row: 1;
     }
   }
 }
