@@ -93,7 +93,7 @@ const attributes = computed(() => {
   line-height: 1;
   text-align: center;
   transition: var(--transition);
-  font-variation-settings: 'wdth' 95, 'wght' 800;
+  font-variation-settings: 'wdth' 100, 'wght' 300;
   letter-spacing: 0.025em;
   border-radius: 7px;
 

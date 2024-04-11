@@ -14,7 +14,7 @@
 
   @media (min-width: 716px) {
     grid-area: navigation;
-    position: sticky;
+    // position: sticky;
     top: var(--sizing-md);
     z-index: 1000;
     padding: var(--sizing-md) var(--sizing-xl);
@@ -38,7 +38,7 @@
     @media (min-width: 716px) {
       justify-content: space-between;
       align-items: center;
-      position: sticky;
+      // position: sticky;
       top: 0;
     }
 

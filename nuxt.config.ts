@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'UX/UI Designer & Developer in Michigan',
+          content: 'Designer & Developer in Michigan',
         },
       ],
       link: [
