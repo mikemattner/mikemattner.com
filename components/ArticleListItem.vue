@@ -4,19 +4,20 @@
       <div class="article-list-item__feature">
         <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
       </div>
-      <header class="article-list-item__header">
-        <time>{{ formatDate(post.date) }}</time>
-        <div class="article-list-item__tags">
-          <ul class="tag-list">
-            <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
-          </ul>
+      <div class="article-list-item__body">
+        <header class="article-list-item__header">
+          <time>{{ formatDate(post.date) }}</time>
+          <div class="article-list-item__tags">
+            <ul class="tag-list">
+              <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
+            </ul>
+          </div>
+        </header>
+        <div class="article-list-item__title flow">
+          <h3 class="h4-heading">{{ post.title }}</h3>
+          <p v-html="post.description"></p>
         </div>
-      </header>
-      <div class="article-list-item__title flow">
-        <h3 class="small-heading">{{ post.title }}</h3>
-        <p class="small-text" v-html="post.description"></p>
       </div>
-      <!-- <div class="article-list-item__read-more"><span>Read more</span> <Icon name="ri:arrow-right-fill" /></div> -->
     </NuxtLink>
   </div>
 </template>
@@ -50,7 +51,7 @@ const featuredImage = computed<string>(() => {
     overflow: hidden;
     position: relative;
     background-color: var(--block-quote-bg);
-    padding: var(--sizing-lg);
+    padding: var(--sizing-xxl);
 
     h3 {
       transition: var(--transition);
@@ -212,6 +213,7 @@ const featuredImage = computed<string>(() => {
     }
   }
 }
+
 .article-list-item {
   container: article / inline-size;
 }
@@ -225,7 +227,7 @@ const featuredImage = computed<string>(() => {
 .article-list-item__feature {
   @container (width >= 600px) {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1;
     display: flex;
     align-items: center;
     padding-left: var(--sizing-xl);
@@ -244,21 +246,33 @@ const featuredImage = computed<string>(() => {
     aspect-ratio: 2 / 0.75;
   }
 }
-.article-list-item__header {
+
+.article-list-item__body {
   @container (width >= 600px) {
-    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 1;
     grid-row: 1;
     padding: 0 0 var(--sizing-lg) 0;
   }
 }
 
-.article-list-item__title {
-  @container (width >= 600px) {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-  }
-}
+// .article-list-item__header {
+//   @container (width >= 600px) {
+//     grid-column: 1 / -1;
+//     grid-row: 1;
+//     padding: 0 0 var(--sizing-lg) 0;
+//   }
+// }
+
+// .article-list-item__title {
+//   @container (width >= 600px) {
+//     grid-column: 1;
+//     grid-row: 2;
+//     align-self: start;
+//   }
+// }
 
 // .article-list-item__read-more {
 //   @container (width >= 600px) {

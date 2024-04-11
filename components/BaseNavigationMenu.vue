@@ -7,9 +7,6 @@
         <NuxtLink
           class="navigation-list__item-link"
           :class="{ 'active-path': showActiveSubPath(item) }"
-          variant="text"
-          size="xs"
-          color="secondary"
           active-class="active-path"
           :to="item.url"
         >
@@ -24,6 +21,7 @@
 import { useRoute } from 'vue-router';
 import { useMediaQuery } from '@vueuse/core';
 import { useNavigationState } from '@/composables/useNavigationState.client';
+import { navigationList } from '@/data/navigationList';
 
 const isMobile = useMediaQuery('(max-width: 715px)');
 const route = useRoute();
@@ -43,29 +41,6 @@ const showActiveSubPath = (item: NavigationList): boolean => {
   if (item.title === 'Notes') return pathIsNotes.value;
   return false;
 };
-
-const navigationList: NavigationList[] = [
-  {
-    title: 'Home',
-    url: '/',
-  },
-  {
-    title: 'Blog',
-    url: '/blog',
-  },
-  {
-    title: 'Notes',
-    url: '/notes',
-  },
-  {
-    title: 'Projects',
-    url: '/projects',
-  },
-  {
-    title: 'About',
-    url: '/about',
-  },
-];
 
 const { navOpen, toggleNav } = useNavigationState();
 
