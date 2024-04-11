@@ -28,13 +28,7 @@
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
-              <span>Read more about me</span>
-            </BaseButton>
-            <BaseButton to="/projects" variant="outline" size="sm" color="primary">
-              <span>Projects</span> <Icon name="ri:code-box-fill" />
-            </BaseButton>
-            <BaseButton to="/about/uses" variant="outline" size="sm" color="primary">
-              <span>Uses</span> <Icon name="ri:command-fill" />
+              <span>Read More</span>
             </BaseButton>
           </div>
         </div>
@@ -44,11 +38,11 @@
         <h2 class="small-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
-          <BaseButton to="/blog" variant="solid" size="sm" color="primary">
-            <span>Blog archives</span>
+          <BaseButton to="/blog" variant="solid" size="md" color="primary">
+            <span>Blog Archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="outline" size="sm" color="primary">
-            <span>Note archives</span>
+          <BaseButton to="/notes" variant="outline" size="md" color="primary">
+            <span>Note Archives</span>
           </BaseButton>
         </div>
       </div>
@@ -60,7 +54,7 @@
 import { Post } from '../types/posts';
 
 useHead({
-  title: 'UX/UI Designer & Developer in Michigan',
+  title: 'Designer & Developer in Michigan',
   script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
 });
 
