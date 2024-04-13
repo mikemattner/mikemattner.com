@@ -1,5 +1,5 @@
 <template>
-  <BaseButton href="/rss.xml" class="rss-button" title="RSS Feed" variant="text" size="sm" color="primary">
+  <BaseButton href="/rss.xml" class="rss-button" title="RSS Feed" variant="link" size="sm" color="primary">
     <Icon name="ri:rss-fill" />
   </BaseButton>
 </template>
@@ -10,7 +10,7 @@
 .rss-button {
   --size: 2.5rem;
   --icon-fill: var(--button-outline-color-text);
-  --icon-fill-hover: var(--button-outline-color-text-hover);
+  --icon-fill-hover: var(--color-highlight);
 
   // @media (max-width: 715px) {
   //   --size: 3.5rem;

@@ -115,8 +115,11 @@ ul:not([class]) {
         position: relative;
 
         &:before {
-            background-color: var(--color-highlight);
+            // color: var(--color-highlight);
+            // font-size: var(--size-step--1);
+            // content: '\21E8';
             content: '';
+            background-color: var(--color-highlight);
             width: 8px;
             height: 8px;
             border-radius: 50%;

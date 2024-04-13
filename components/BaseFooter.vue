@@ -2,10 +2,10 @@
   <footer class="base-footer">
     <div class="base-footer__layout">
       <div class="base-footer__copyright">
-        <p>&copy; {{ theYear }} Mike Mattner</p>
+        <p>&copy; {{ theYear }} Mike Mattner. All rights reserved. A personal website proudly made in Michigan.</p>
       </div>
       <nav class="base-footer__navigation">
-        <h2 class="small-text">Navigation</h2>
+        <h2 class="small-text">Explore</h2>
         <ul class="navigation-list">
           <li v-for="item in navigationList" :key="item.title">
             <BaseButton class="navigation-list__item-link" variant="link" size="sm" color="secondary" :to="item.url">
@@ -64,8 +64,12 @@
           </li>
         </ul>
       </div>
+      <div class="shameless-branding">
+        <LinedLogo />
+        <p>Mike is a designer and developer.</p>
+        <p>Reach me at hello @ mikemattner.com</p>
+      </div>
       <div class="base-footer__sub-controls">
-        <h2 class="small-text">RSS &amp; Theme</h2>
         <div class="controls">
           <RssButton />
           <ThemeSwitcher />
@@ -77,6 +81,7 @@
 
 <script setup lang="ts">
 import { navigationList } from '@/data/navigationList';
+import LinedLogo from '~/assets/images/logo-lined.svg';
 
 const date = ref<Date>(new Date());
 const theYear = computed<string>(() => {
@@ -86,11 +91,11 @@ const theYear = computed<string>(() => {
 
 <style lang="scss" scoped>
 .base-footer {
-  border-top: 1px solid var(--border-color);
+  background-color: var(--background-border-color);
 
   @media (min-width: 716px) {
     grid-area: footer;
-    padding: 2rem var(--sizing-xl) 3rem;
+    padding: 2.5rem var(--sizing-xl) 3rem;
   }
 
   @media (max-width: 715px) {
@@ -102,58 +107,80 @@ const theYear = computed<string>(() => {
     margin-inline: auto;
     display: grid;
     gap: var(--sizing-md);
-    grid-template-columns: 250px 200px 200px 1fr;
+    grid-template-columns: 1fr 250px 200px;
     align-items: start;
 
     @media (max-width: 875px) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 150px 120px;
       grid-template-rows: auto 1fr;
       gap: var(--sizing-lg) var(--sizing-md);
     }
 
-    @media (max-width: 525px) {
+    @media (max-width: 597px) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
       gap: var(--sizing-lg) var(--sizing-md);
     }
   }
 
+  .shameless-branding {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--size-step--1);
+    grid-column: 1;
+    grid-row: 1;
+
+    svg {
+      color: var(--color-primary);
+      fill: var(--color-primary);
+      width: 8.5rem;
+      height: 8.5rem;
+    }
+
+    @media (max-width: 597px) {
+      display: none;
+    }
+  }
+
   &__copyright {
     width: 100%;
-    font-size: var(--size-step--1);
-    line-height: 1;
+    font-size: var(--size-step--2);
+    padding-top: var(--sizing-xl);
+    margin-top: var(--sizing-xl);
+
+    grid-column: 1 / -1;
+    grid-row: 2;
 
     @media (max-width: 875px) {
-      padding-top: var(--sizing-lg);
-      grid-column: 1;
+      grid-column: 1 / -1;
       grid-row: 2;
     }
 
-    @media (max-width: 525px) {
-      padding-top: var(--sizing-lg);
+    @media (max-width: 597px) {
+      padding-top: 0;
+      margin-top: var(--sizing-lg);
       grid-column: 1 / -1;
-      grid-row: 3;
+      grid-row: 2;
       text-align: center;
     }
   }
 
   &__sub-controls {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--sizing-lg);
+    align-items: center;
+    gap: var(--sizing-xl);
+    grid-column: 1 / -1;
+    grid-row: 3;
 
-    @media (max-width: 875px) {
-      grid-column: 3;
-      grid-row: 1;
-    }
+    // @media (max-width: 875px) {
+    //   grid-column: 1 / -1;
+    //   grid-column: 3;
+    // }
 
-    @media (max-width: 525px) {
-      padding-top: var(--sizing-xl);
-      grid-column: 1 / -1;
-      grid-row: 2;
+    @media (max-width: 597px) {
+      // grid-column: 1 / -1;
+      // grid-row: 3;
       justify-content: center;
-      align-items: center;
     }
   }
 
@@ -161,13 +188,14 @@ const theYear = computed<string>(() => {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
+    grid-column: 2;
 
     @media (max-width: 875px) {
-      grid-column: 1;
+      grid-column: 2;
       grid-row: 1;
     }
 
-    @media (max-width: 525px) {
+    @media (max-width: 597px) {
       grid-column: 1;
       grid-row: 1;
     }
@@ -177,13 +205,14 @@ const theYear = computed<string>(() => {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
+    grid-column: 3;
 
     @media (max-width: 875px) {
-      grid-column: 2;
+      grid-column: 3;
       grid-row: 1;
     }
 
-    @media (max-width: 525px) {
+    @media (max-width: 597px) {
       grid-column: 2;
       grid-row: 1;
     }
@@ -192,8 +221,7 @@ const theYear = computed<string>(() => {
   .controls {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: var(--sizing-md);
+    gap: var(--sizing-lg);
   }
 
   .navigation-list {
