@@ -218,9 +218,12 @@ const featuredImage = computed<string>(() => {
   container: article / inline-size;
 }
 .article-list-item__link {
+  padding: var(--sizing-lg);
+
   @container (width >= 600px) {
     display: grid;
     grid-template-columns: 1fr 200px;
+    padding: var(--sizing-xxl);
   }
 }
 
@@ -254,7 +257,7 @@ const featuredImage = computed<string>(() => {
     justify-content: center;
     grid-column: 1;
     grid-row: 1;
-    padding: 0 0 var(--sizing-lg) 0;
+    padding: 0;
   }
 }
 
