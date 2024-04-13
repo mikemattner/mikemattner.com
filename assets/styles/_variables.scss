@@ -131,7 +131,7 @@
     --color-dark-50-hsl: 240, 36%, 20%;
     --color-dark-70-hsl: 240, 36%, 60%;
     --color-dark-t: hsla(353, 86%, 3%, 70%);
-    --color-dark-bg-border: hsl(353, 86%, 3%);
+    --color-dark-bg-border: hsl(240, 36%, 7%);
     --color-dark-background: hsl(240, 36%, 4%);
     --color-dark-background-gradient-hsl: 240, 36%, 30%;
     --color-dark-font-color: hsla(var(--color-blue-tint-90-hsl), 75%);
@@ -141,7 +141,7 @@
     --color-light-hsl: 0, 0%, 94%;
     --color-light: hsl(0, 0%, 94%);
     --color-light-t: hsla(0, 0%, 94%, 70%);
-    --color-light-bg-border: hsl(0, 0%, 98%);
+    --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 97%);
     --color-light-border-t: hsla(0, 0%, 94%, 55%);
     --color-light-background-gradient-hsl: 240, 96%, 55%;
@@ -203,7 +203,7 @@
 html.light {
     --button-secondary: var(--color-blue-tint-30);
     --background-color: var(--color-light-bg);
-    --background-image: radial-gradient(47.1% 39.7%,hsla(var(--color-blue-tint-50-hsl),0.5) 0%, hsla(var(--color-primary-hsl), 0.1) 50%,var(--background-color) 100%);
+    --background-image: radial-gradient(47.1% 39.7%,hsla(var(--color-blue-tint-50-hsl),0.25) 0%, hsla(var(--color-primary-hsl), 0.1) 50%,var(--background-color) 100%);
     --font-color: hsla(var(--color-dark-hsl), 0.8);
     --headline-font-color: var(--color-dark);
     --background-border-color: var(--color-light-bg-border);

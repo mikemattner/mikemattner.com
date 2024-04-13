@@ -129,7 +129,7 @@
         </ul>
       </div>
       <div class="timeline-content flow">
-        <h2 class="h4-heading">A Brief Timeline</h2>
+        <h2 class="h4-heading">A Timeline of My Life</h2>
         <ol class="timeline small-text">
           <li class="flow">
             <h3 class="small-heading">1985</h3>
@@ -157,7 +157,7 @@
               My love for the web was cemented here.
             </p>
           </li>
-          <li class="flow">
+          <!-- <li class="flow">
             <h3 class="small-heading">2003</h3>
             <p>I graduated from High School and moved to Florida to study digital media.</p>
           </li>
@@ -167,7 +167,7 @@
               After four hurricanes and many sleepless nights, I graduated from college in an accelerated program with a
               degree in digital media in hand.
             </p>
-          </li>
+          </li> -->
           <li class="flow">
             <h3 class="small-heading">2006</h3>
             <p>
@@ -179,8 +179,8 @@
           <li class="flow">
             <h3 class="small-heading">2013</h3>
             <p>
-              I left that company after six and a half years to join an advertising agency in town. The work there was
-              initially focused on sales education for selling appliances.
+              I join an advertising agency in town. The work there was initially focused on creating sales education
+              material for selling appliances.
             </p>
           </li>
           <li class="flow">
@@ -201,16 +201,13 @@
           <li class="flow">
             <h3 class="small-heading">2020</h3>
             <p>
-              A global pandemic hits and life gets much weirder. I also start on a team focused on creating Adobe
+              A global pandemic hits and life gets a little weird. I start on a team focused on creating Adobe
               Experience Manager components for the primary client's marketing sites.
             </p>
           </li>
           <li class="flow">
             <h3 class="small-heading">2021</h3>
-            <p>
-              I leave the agency after eight and a half years to start my current job during that global pandemic. What
-              a weird time, but what a great move. The work is focused on software development as a UI engineer.
-            </p>
+            <p>I start my current role focused on software development as a UI engineer.</p>
           </li>
         </ol>
       </div>

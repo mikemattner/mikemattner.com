@@ -4,7 +4,7 @@
     class="theme-toggle"
     :class="{ 'is-dark': mode === 'dark' }"
     title="Toggle theme"
-    variant="text"
+    variant="link"
     size="sm"
     color="primary"
   >
@@ -42,7 +42,7 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
 .theme-toggle {
   --size: 2.5rem;
   --icon-fill: var(--button-outline-color-text);
-  --icon-fill-hover: var(--button-outline-color-text-hover);
+  --icon-fill-hover: var(--color-highlight);
   transition: var(--transition);
   color: var(--font-color);
 
@@ -98,7 +98,7 @@ const { next } = useCycleList(['dark', 'light'], { initialValue: mode });
     // @media (min-width: 716px) {
     //   transform: scale(1.2);
     // }
-    background-color: var(--color-primary);
+    // background-color: var(--color-primary);
 
     .moon,
     .sun {
