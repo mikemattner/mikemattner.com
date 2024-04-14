@@ -11,7 +11,7 @@
           />
         </div>
 
-        <h1 class="main-lede very-large-heading">
+        <h1 class="main-lede large-heading">
           <span class="introduction">Hey there,</span>
           <span class="introduction-row-two">I'm Mike.</span>
         </h1>
@@ -182,7 +182,7 @@ const posts = computed(() => {
   }
 
   .button-group {
-    --flow-space: 2.5em;
+    --flow-space: 1.5em;
     display: flex;
     align-items: center;
     gap: var(--sizing-xl);
@@ -266,17 +266,23 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 2 / span 7;
+      grid-column: 4 / span 5;
       grid-row: 1 / span 2;
       aspect-ratio: 1 / 1.75;
-      border-radius: 20px;
+      border-radius: 7px;
       transform: skewX(-12deg);
+      transition: var(--transition-cubic);
+      box-shadow: 10px 10px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
 
       .profile-image-photo {
         width: 200%;
         aspect-ratio: 1;
         transform: skewX(12deg) translateX(-50%);
         margin-left: 50%;
+      }
+
+      &:hover {
+        box-shadow: 20px 20px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
       }
     }
     @media (max-width: 1052px) {
