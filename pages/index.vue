@@ -272,7 +272,7 @@ const posts = computed(() => {
       border-radius: 7px;
       transform: skewX(-12deg);
       transition: var(--transition-cubic);
-      box-shadow: 10px 10px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
+      // box-shadow: 10px 10px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
 
       .profile-image-photo {
         width: 200%;
@@ -281,9 +281,9 @@ const posts = computed(() => {
         margin-left: 50%;
       }
 
-      &:hover {
-        box-shadow: 20px 20px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
-      }
+      // &:hover {
+      //   box-shadow: 20px 20px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
+      // }
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 1;
