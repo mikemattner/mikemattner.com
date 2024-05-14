@@ -66,10 +66,8 @@
       </div>
       <div class="shameless-branding">
         <!-- <LinedLogo /> -->
-        <p>
-          Mike is a designer and developer.<br />
-          Reach me at hello @ mikemattner.com
-        </p>
+        <p>Mike is a designer and developer.</p>
+        <p>Reach me at hello @ mikemattner.com</p>
       </div>
       <div class="base-footer__sub-controls">
         <div class="controls">
@@ -132,6 +130,8 @@ const theYear = computed<string>(() => {
     font-size: var(--size-step-1);
     grid-column: 1;
     grid-row: 1;
+    line-height: 1;
+    font-weight: 800;
 
     // svg {
     //   color: var(--color-primary);
