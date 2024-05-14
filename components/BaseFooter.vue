@@ -65,11 +65,9 @@
         </ul>
       </div>
       <div class="shameless-branding">
-        <LinedLogo />
-        <p>
-          Mike is a designer and developer.<br />
-          Reach me at hello @ mikemattner.com
-        </p>
+        <!-- <LinedLogo /> -->
+        <p>Mike is a designer and developer.</p>
+        <p>Reach me at hello @ mikemattner.com</p>
       </div>
       <div class="base-footer__sub-controls">
         <div class="controls">
@@ -129,16 +127,18 @@ const theYear = computed<string>(() => {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
-    font-size: var(--size-step--1);
+    font-size: var(--size-step-1);
     grid-column: 1;
     grid-row: 1;
+    line-height: 1;
+    font-weight: 800;
 
-    svg {
-      color: var(--color-primary);
-      fill: var(--color-primary);
-      width: 8.5rem;
-      height: 8.5rem;
-    }
+    // svg {
+    //   color: var(--color-primary);
+    //   fill: var(--color-primary);
+    //   width: 8.5rem;
+    //   height: 8.5rem;
+    // }
 
     @media (max-width: 597px) {
       display: none;
@@ -162,7 +162,7 @@ const theYear = computed<string>(() => {
       margin-top: var(--sizing-lg);
       grid-column: 1 / -1;
       grid-row: 2;
-      text-align: center;
+      // text-align: center;
     }
   }
 
