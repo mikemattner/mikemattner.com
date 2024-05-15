@@ -48,13 +48,13 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '~/types/posts';
+import type { Post } from '~/types/posts';
 import { formatDate } from '~~/utils/formatDate';
 
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne() as Promise<Post>;
+  return queryContent<Post>(path).findOne() as Promise<Post>;
 });
 
 const pageTitle = computed<string>(() => {

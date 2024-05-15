@@ -37,13 +37,13 @@
 </template>
 
 <script setup lang="ts">
-import { Note } from '~/types/notes';
+import type { Note } from '~/types/notes';
 import { formatDate } from '~~/utils/formatDate';
 
 const { path } = useRoute();
 
 const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne() as Promise<Note>;
+  return queryContent<Note>(path).findOne() as Promise<Note>;
 });
 
 const pageTitle = computed<string>(() => {

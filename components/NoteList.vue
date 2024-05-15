@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Note, SortedNoteItem, SortedNotes } from '../types/notes';
+import type { Note, SortedNoteItem, SortedNotes } from '../types/notes';
 import { convertDate } from '../utils/formatDate';
 
 const props = defineProps({

@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post, SortedPostItem, SortedPosts } from '../types/posts';
+import type { Post, SortedPostItem, SortedPosts } from '../types/posts';
 import { convertDate } from '../utils/formatDate';
 
 const props = defineProps({

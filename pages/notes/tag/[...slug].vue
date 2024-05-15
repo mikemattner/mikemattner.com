@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { Note } from '../../../types/notes';
+import type { Note } from '../../../types/notes';
 
 const route = useRoute();
 const tagName = computed<string>(() => {
@@ -28,7 +28,7 @@ useHead({
 });
 
 const { data } = await useAsyncData(`notes-tag-list-${tagName.value}`, () => {
-  return queryContent('/notes')
+  return queryContent<Note>('/notes')
     .where({ tag: { $contains: tagName.value } })
     .sort({ date: -1 })
     .find();
@@ -37,8 +37,6 @@ const { data } = await useAsyncData(`notes-tag-list-${tagName.value}`, () => {
 const notes = computed<Note[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Note[];
 });
-
-// const noteCount = computed<number>(() => notes.value.length);
 
 const noteCount = computed<string>(() => {
   if (notes.value.length < 1) return 'No notes tagged.';

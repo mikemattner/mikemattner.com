@@ -15,13 +15,13 @@
 </template>
 
 <script setup lang="ts">
-import { Note } from '../../types/notes';
+import type { Note } from '../../types/notes';
 
 useHead({
   title: 'Notes',
 });
 
-const { data } = await useAsyncData('notes-list', () => queryContent('/notes').sort({ date: -1 }).find());
+const { data } = await useAsyncData('notes-list', () => queryContent<Note>('/notes').sort({ date: -1 }).find());
 
 const notes = computed<Note[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Note[];
