@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '../types/posts';
+import type { Post } from '../types/posts';
 import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({
@@ -222,18 +222,19 @@ const featuredImage = computed<string>(() => {
 
   @container (width >= 600px) {
     display: grid;
-    grid-template-columns: 1fr 200px;
+    // grid-template-columns: 1fr 200px;
+    grid-template-columns: 200px 1fr;
+    gap: var(--sizing-xxl);
     padding: var(--sizing-xxl);
   }
 }
 
 .article-list-item__feature {
   @container (width >= 600px) {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
     display: flex;
     align-items: center;
-    padding-left: var(--sizing-xl);
   }
   @container (width <= 599px) {
     padding: 0 0 var(--sizing-md) 0;
@@ -255,7 +256,7 @@ const featuredImage = computed<string>(() => {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
     padding: 0;
   }

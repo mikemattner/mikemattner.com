@@ -19,13 +19,13 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '../../types/posts';
+import type { Post } from '../../types/posts';
 
 useHead({
   title: 'Blog',
 });
 
-const { data } = await useAsyncData('blog-list', () => queryContent('/blog').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog-list', () => queryContent<Post>('/blog').sort({ date: -1 }).find());
 
 const posts = computed<Post[]>(() => {
   return data?.value?.filter((post) => !post.draft) as Post[];

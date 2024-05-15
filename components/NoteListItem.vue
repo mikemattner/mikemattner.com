@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { Note } from '../types/notes';
+import type { Note } from '../types/notes';
 import { formatDate } from '../utils/formatDate';
 
 const props = defineProps({

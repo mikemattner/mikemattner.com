@@ -9,6 +9,8 @@ export interface Post extends ParsedContent {
   link: string;
   image: string;
   caption?: string;
+  draft?: boolean;
+  _path: string;
 }
 
 export interface SortedPostItem {

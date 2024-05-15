@@ -6,26 +6,32 @@
         <hr />
       </div>
       <div class="project-content flow">
-        <header class="project-heading">
-          <h2 class="h4-heading">Github Projects</h2>
-          <BaseButton
-            href="https://github.com/mikemattner?tab=repositories"
-            class="external-link"
-            target="_blank"
-            size="xs"
-            color="primary"
-            variant="solid"
-          >
-            <span>View All</span> <Icon name="ri:external-link-fill" />
-          </BaseButton>
-        </header>
-        <p>
-          A truncated list of repos of note at my GitHub profile. Some of these are actively maintained, while the rest
-          have been left to languish.
-        </p>
-        <div class="github-grid">
-          <ProjectListItem v-for="project in sortedProjects" :project="project" :key="project.name" />
+        <div v-if="pending" class="loading">
+          <BaseLoader />
+          <p>Loading</p>
         </div>
+        <template v-if="!pending && !error">
+          <header class="project-heading">
+            <h2 class="h4-heading">Github Projects</h2>
+            <BaseButton
+              href="https://github.com/mikemattner?tab=repositories"
+              class="external-link"
+              target="_blank"
+              size="xs"
+              color="primary"
+              variant="solid"
+            >
+              <span>View All</span> <Icon name="ri:external-link-fill" />
+            </BaseButton>
+          </header>
+          <p>
+            A truncated list of repos of note at my GitHub profile. Some of these are actively maintained, while the
+            rest have been left to languish.
+          </p>
+          <div class="github-grid">
+            <ProjectListItem v-for="project in sortedProjects" :project="project" :key="project.name" />
+          </div>
+        </template>
       </div>
     </article>
   </main>
@@ -40,8 +46,11 @@ const {
   data: projects,
   pending,
   error,
-  refresh,
-} = await useAsyncData<Array<GithubRepos>>('mountains', () => $fetch('https://api.github.com/users/mikemattner/repos'));
+} = await useAsyncData<Array<GithubRepos>>(
+  'mountains',
+  () => $fetch('https://api.github.com/users/mikemattner/repos'),
+  { lazy: true }
+);
 
 const targetProjects = [
   {
@@ -150,6 +159,16 @@ const sortedProjects = computed(() => {
       width: 1rem;
       height: 1rem;
     }
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1 / -1;
+    min-height: 400px;
+    font-size: var(--size-step--2);
+    text-transform: uppercase;
   }
 
   .github-grid {

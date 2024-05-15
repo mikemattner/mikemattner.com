@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '../../../types/posts';
+import type { Post } from '../../../types/posts';
 
 const route = useRoute();
 const tagName = computed<string>(() => {
@@ -28,7 +28,7 @@ useHead({
 });
 
 const { data } = await useAsyncData(`blog-tag-list-${tagName.value}`, () => {
-  return queryContent('/blog')
+  return queryContent<Post>('/blog')
     .where({ tag: { $contains: tagName.value } })
     .sort({ date: -1 })
     .find();
