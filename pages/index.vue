@@ -51,14 +51,14 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '../types/posts';
+import type { Post } from '../types/posts';
 
 useHead({
   title: 'Designer & Developer in Michigan',
   script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
 });
 
-const { data } = await useAsyncData('blog-short', () => queryContent('/blog').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog-short', () => queryContent<Post>('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
   return data?.value?.filter((post) => !post.draft).slice(0, 3) as Post[];

@@ -7,8 +7,8 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.8.5",
-    "nuxt": "^3.7.4",
+    "@nuxt/content": "^2.12.1",
+    "nuxt": "^3.11.2",
     "nuxt-icon": "^0.3.2",
     "nuxt-svgo": "^3.5.5",
     "prettier": "^2.8.4",
@@ -16,6 +16,7 @@
     "sass-loader": "^13.2.0"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^9.13.0",
     "floating-vue": "^5.2.2",
     "rss": "^1.2.2",

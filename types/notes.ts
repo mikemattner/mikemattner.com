@@ -4,6 +4,8 @@ export interface Note extends ParsedContent {
   title: string;
   date: string;
   tag: string[];
+  draft?: boolean;
+  _path: string;
 }
 
 export interface SortedNoteItem {

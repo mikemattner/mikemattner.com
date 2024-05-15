@@ -75,8 +75,7 @@
 
           <h3 class="small-heading">Fun Stuff</h3>
           <ul>
-            <li><del>2014 iPad Air 2</del></li>
-            <li><a href="https://www.apple.com/ipad-air/">iPad Air 5th Generation</a></li>
+            <li><a href="https://www.apple.com/ipad-air/">iPad Air 5th Generation</a> <del>2014 iPad Air 2</del></li>
             <li><a href="https://www.apple.com/airpods-pro/">AirPods Pro 2</a></li>
           </ul>
         </div>
