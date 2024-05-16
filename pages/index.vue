@@ -4,16 +4,15 @@
       <div class="home-layout__hero">
         <div class="profile-image">
           <PrimaryImage
-            src="/images/pro-profile.jpg"
+            src="/images/home-profile.png"
             alt="Portrait shot of Mike."
             has-overlay
             class="profile-image-photo"
           />
         </div>
 
-        <h1 class="main-lede large-heading">
-          <span class="introduction">Hey there,</span>
-          <span class="introduction-row-two">I'm Mike.</span>
+        <h1 class="main-lede very-large-heading">
+          <span class="introduction">Hey there, I'm Mike.</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -90,7 +89,7 @@ const posts = computed(() => {
       grid-template-columns: repeat(28, 1fr);
       margin-block-start: 6rem;
       margin-block-end: 6rem;
-      gap: var(--sizing-md) 0;
+      gap: var(--sizing-xxl) 0;
     }
     @media (max-width: 1052px) {
       grid-template-columns: repeat(4, 1fr);
@@ -142,7 +141,7 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 11 / -1;
+      grid-column: 13 / -1;
       align-self: start;
       grid-row: 2;
     }
@@ -201,23 +200,31 @@ const posts = computed(() => {
     display: grid;
     grid-template-columns: subgrid;
     line-height: 1;
+    grid-row: 1;
+    z-index: 2;
 
     @media (min-width: 1053px) {
       grid-column: 1 / -1;
-      grid-row: 1;
       align-self: end;
+      grid-row: 1 / span 2;
+      align-self: center;
       z-index: 1;
+      mix-blend-mode: difference;
+      color: hsl(var(--color-white-hsl));
     }
     @media (max-width: 1052px) {
-      grid-column: 1 / span 4;
+      grid-column: 1 / -1;
+      mix-blend-mode: difference;
+      color: hsl(var(--color-white-hsl));
       grid-row: 1;
     }
 
     @media (max-width: 499px) {
       margin: 0;
       gap: 0;
-      grid-row: 1;
       line-height: 1.1;
+      color: var(--headline-font-color);
+      mix-blend-mode: normal;
     }
   }
 
@@ -225,11 +232,11 @@ const posts = computed(() => {
     text-wrap: balance;
 
     @media (min-width: 1053px) {
-      grid-column: 11 / -1;
+      grid-column: 2 / span 9;
       align-self: center;
     }
     @media (max-width: 1052px) {
-      grid-column: 2 / span 3;
+      grid-column: 1 / span 3;
       align-self: end;
     }
     @media (max-width: 499px) {
@@ -237,64 +244,82 @@ const posts = computed(() => {
     }
   }
 
-  .introduction-row-two {
-    text-wrap: balance;
+  // .introduction-row-two {
+  //   text-wrap: balance;
 
-    @media (min-width: 1053px) {
-      grid-column: 11 / -1;
-      align-self: center;
-    }
-    @media (max-width: 1052px) {
-      grid-column: 2 / span 3;
-      align-self: end;
-    }
-    @media (max-width: 499px) {
-      grid-column: 1 / span 4;
-    }
-  }
+  //   @media (min-width: 1053px) {
+  //     grid-column: 11 / -1;
+  //     align-self: center;
+  //   }
+  //   @media (max-width: 1052px) {
+  //     grid-column: 2 / span 3;
+  //     align-self: end;
+  //   }
+  //   @media (max-width: 499px) {
+  //     grid-column: 1 / span 4;
+  //   }
+  // }
 
   .profile-image {
-    aspect-ratio: 2 / 1.5;
-    width: 100%;
-    display: inline-flex;
+    aspect-ratio: 2 / 1.25;
     border-radius: 7px;
     overflow: hidden;
+    z-index: 1;
+
+    @media (max-width: 1052px) {
+      grid-column: 1 / -1;
+      aspect-ratio: 1 / 0.5;
+      align-self: self-start;
+      grid-row: 1;
+    }
+
+    @media (min-width: 1053px) {
+      grid-column: 1 / -1;
+      aspect-ratio: 2 / 0.75;
+      grid-row: 1;
+    }
+
+    @media (max-width: 499px) {
+      grid-column: 1 / span 4;
+      aspect-ratio: 2 / 1;
+      grid-row: 2;
+    }
 
     .profile-image-photo {
       width: 100%;
       height: 100%;
     }
 
-    @media (min-width: 1053px) {
-      grid-column: 4 / span 5;
-      grid-row: 1 / span 2;
-      aspect-ratio: 1 / 1.75;
-      border-radius: 7px;
-      transform: skewX(-12deg);
-      transition: var(--transition-cubic);
-      // box-shadow: 10px 10px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
+    // @media (min-width: 1053px) {
+    //   grid-column: 1 / -1;
+    //   grid-row: 1;
+    //   aspect-ratio: 1 / 1.75;
+    //   border-radius: 7px;
+    //   // transform: skewX(-12deg);
+    //   // transition: var(--transition-cubic);
+    //   // box-shadow: 10px 10px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
 
-      .profile-image-photo {
-        width: 200%;
-        aspect-ratio: 1;
-        transform: skewX(12deg) translateX(-50%);
-        margin-left: 50%;
-      }
+    //   // .profile-image-photo {
+    //   //   width: 200%;
+    //   //   aspect-ratio: 1;
+    //   //   transform: skewX(12deg) translateX(-50%);
+    //   //   margin-left: 50%;
+    //   // }
 
-      // &:hover {
-      //   box-shadow: 20px 20px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
-      // }
-    }
-    @media (max-width: 1052px) {
-      grid-column: 1 / span 1;
-      grid-row: 1;
-      aspect-ratio: 1;
-    }
-    @media (max-width: 499px) {
-      grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1.5;
-      grid-row: 2;
-    }
+    //   // &:hover {
+    //   //   box-shadow: 20px 20px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
+    //   // }
+    // }
+    // @media (max-width: 1052px) {
+    //   grid-column: 1 / span 1;
+    //   grid-row: 1;
+    //   aspect-ratio: 1;
+    // }
+    // @media (max-width: 499px) {
+    //   grid-column: 1 / span 4;
+    //   aspect-ratio: 2 / 1.5;
+    //   grid-row: 2;
+    // }
   }
 
   .recently-posted-header {
