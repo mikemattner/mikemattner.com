@@ -4,7 +4,7 @@
       <div class="home-layout__hero">
         <div class="profile-image">
           <PrimaryImage
-            src="/images/home-profile.png"
+            src="/images/pro-profile.jpg"
             alt="Portrait shot of Mike."
             has-overlay
             class="profile-image-photo"
@@ -21,7 +21,7 @@
             <strong>developer</strong>
             from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
-          <p class="intro">
+          <p>
             In a former life I worked as a <strong>digital designer</strong>&mdash;basically a catch-all for video
             editing, motion graphics, print design, et cetera. Now I mostly create in code.
           </p>
@@ -125,8 +125,6 @@ const posts = computed(() => {
   .home-greeting {
     z-index: 2;
     align-self: center;
-    font-size: var(--size-step-1);
-    line-height: 1.5;
 
     strong:hover {
       svg {
@@ -207,15 +205,11 @@ const posts = computed(() => {
       grid-column: 1 / -1;
       align-self: end;
       grid-row: 1 / span 2;
-      align-self: center;
+      align-self: start;
       z-index: 1;
-      mix-blend-mode: difference;
-      color: hsl(var(--color-white-hsl));
     }
     @media (max-width: 1052px) {
       grid-column: 1 / -1;
-      mix-blend-mode: difference;
-      color: hsl(var(--color-white-hsl));
       grid-row: 1;
     }
 
@@ -223,8 +217,6 @@ const posts = computed(() => {
       margin: 0;
       gap: 0;
       line-height: 1.1;
-      color: var(--headline-font-color);
-      mix-blend-mode: normal;
     }
   }
 
@@ -244,22 +236,6 @@ const posts = computed(() => {
     }
   }
 
-  // .introduction-row-two {
-  //   text-wrap: balance;
-
-  //   @media (min-width: 1053px) {
-  //     grid-column: 11 / -1;
-  //     align-self: center;
-  //   }
-  //   @media (max-width: 1052px) {
-  //     grid-column: 2 / span 3;
-  //     align-self: end;
-  //   }
-  //   @media (max-width: 499px) {
-  //     grid-column: 1 / span 4;
-  //   }
-  // }
-
   .profile-image {
     aspect-ratio: 2 / 1.25;
     border-radius: 7px;
@@ -274,8 +250,8 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 1 / -1;
-      aspect-ratio: 2 / 0.75;
+      grid-column: 13 / -1;
+      aspect-ratio: 2 / 1.5;
       grid-row: 1;
     }
 
@@ -289,37 +265,6 @@ const posts = computed(() => {
       width: 100%;
       height: 100%;
     }
-
-    // @media (min-width: 1053px) {
-    //   grid-column: 1 / -1;
-    //   grid-row: 1;
-    //   aspect-ratio: 1 / 1.75;
-    //   border-radius: 7px;
-    //   // transform: skewX(-12deg);
-    //   // transition: var(--transition-cubic);
-    //   // box-shadow: 10px 10px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
-
-    //   // .profile-image-photo {
-    //   //   width: 200%;
-    //   //   aspect-ratio: 1;
-    //   //   transform: skewX(12deg) translateX(-50%);
-    //   //   margin-left: 50%;
-    //   // }
-
-    //   // &:hover {
-    //   //   box-shadow: 20px 20px 0 0 hsla(var(--color-blue-shade-40-hsl), 0.5);
-    //   // }
-    // }
-    // @media (max-width: 1052px) {
-    //   grid-column: 1 / span 1;
-    //   grid-row: 1;
-    //   aspect-ratio: 1;
-    // }
-    // @media (max-width: 499px) {
-    //   grid-column: 1 / span 4;
-    //   aspect-ratio: 2 / 1.5;
-    //   grid-row: 2;
-    // }
   }
 
   .recently-posted-header {
