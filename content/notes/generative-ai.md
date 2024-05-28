@@ -1,6 +1,8 @@
 ---
 title: Generative AI
 date: 2024-05-28T12:00:00.000Z
+tag:
+  - Development
 ---
 ::PullQuote
 Generative AI is like the ultimate idea guy’s idea! Imagine… if all they needed to create a business, software or art was their great idea, and a computer. No need to engage (or pay) any of those annoying makers who keep talking about limitations, scope, standards, artistic integrity etc. etc.
