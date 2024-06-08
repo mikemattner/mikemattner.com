@@ -42,8 +42,8 @@ const icon = computed(() => {
   }
 
   &--warning {
-    --message-color: var(--color-primary);
-    --message-color-bg: hsla(var(--color-primary-hsl), 10%);
+    --message-color: var(--color-red);
+    --message-color-bg: hsla(var(--color-red-hsl), 10%);
   }
 
   display: grid;

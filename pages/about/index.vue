@@ -17,7 +17,7 @@
         </ul>
         <hr />
       </div>
-      <PrimaryImage src="/images/about-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
+      <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
         <template v-slot:caption>Photographed while visiting Austin, Texas.</template>
       </PrimaryImage>
       <div class="about-content flow">
@@ -128,7 +128,7 @@
           </li>
         </ul>
       </div>
-      <div class="timeline-content flow">
+      <!-- <div class="timeline-content flow">
         <h2 class="h4-heading">A Timeline of My Life</h2>
         <ol class="timeline small-text">
           <li class="flow">
@@ -157,17 +157,6 @@
               My love for the web was cemented here.
             </p>
           </li>
-          <!-- <li class="flow">
-            <h3 class="small-heading">2003</h3>
-            <p>I graduated from High School and moved to Florida to study digital media.</p>
-          </li>
-          <li class="flow">
-            <h3 class="small-heading">2004</h3>
-            <p>
-              After four hurricanes and many sleepless nights, I graduated from college in an accelerated program with a
-              degree in digital media in hand.
-            </p>
-          </li> -->
           <li class="flow">
             <h3 class="small-heading">2006</h3>
             <p>
@@ -210,7 +199,7 @@
             <p>I start my current role focused on software development as a UI engineer.</p>
           </li>
         </ol>
-      </div>
+      </div> -->
     </article>
   </main>
 </template>
@@ -250,8 +239,8 @@ useHead({
       grid-column: 1 / -1;
     }
     @media (min-width: 860px) {
-      grid-column: 1 / span 18;
-      grid-row: 3;
+      grid-column: 1 / span 17;
+      grid-row: 2;
     }
   }
 
@@ -278,7 +267,7 @@ useHead({
   }
 
   .profile-image {
-    aspect-ratio: 2 / 1.25;
+    aspect-ratio: 1 / 1.25;
     border-radius: 7px;
     overflow: hidden;
 
@@ -294,8 +283,8 @@ useHead({
     }
 
     @media (min-width: 860px) {
-      grid-column: 1 / -1;
-      aspect-ratio: 2 / 0.75;
+      grid-column: 19 / -1;
+      aspect-ratio: 1 / 1.5;
       margin-bottom: var(--sizing-xxxl);
     }
   }
