@@ -9,7 +9,7 @@
           </ul>
           <h1 class="article-title" v-html="data.title"></h1>
         </div>
-        <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image" />
+        <!-- <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image" /> -->
       </header>
       <article class="article-layout">
         <aside class="article-meta">

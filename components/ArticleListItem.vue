@@ -1,9 +1,9 @@
 <template>
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
-      <div class="article-list-item__feature">
+      <!-- <div class="article-list-item__feature">
         <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
-      </div>
+      </div> -->
       <div class="article-list-item__body">
         <header class="article-list-item__header">
           <time>{{ formatDate(post.date) }}</time>
@@ -256,7 +256,7 @@ const featuredImage = computed<string>(() => {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: 2;
+    grid-column: 1 / -1;
     grid-row: 1;
     padding: 0;
   }
