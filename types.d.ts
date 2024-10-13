@@ -37,4 +37,5 @@ interface GithubRepos {
   topics: Array<string>;
   created_at: string;
   language: string;
+  updated_at: string;
 }

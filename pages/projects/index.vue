@@ -85,12 +85,6 @@ const sortedProjects = computed(() => {
       });
     })
     .map((proj) => {
-      const title = targetProjects
-        .filter((item) => item.name === proj.name)
-        .map((item) => {
-          return item.title;
-        })
-        .toString();
       const description = targetProjects
         .filter((item) => item.name === proj.name)
         .map((item) => {

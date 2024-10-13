@@ -28,28 +28,17 @@ const props = defineProps({
 });
 
 const sortedNotes = computed<SortedNoteItem[]>(() => {
-  const yearsInNotes = [...new Set(props.notes.map((item) => convertDate(item.date)))];
-
   const sortedArray: SortedNotes = {};
 
-  yearsInNotes.forEach((item, index) => {
-    sortedArray[item] = { year: item, notes: [] };
-  });
-
-  props.notes.forEach((item, index) => {
+  props.notes.forEach((item) => {
     const year = convertDate(item.date);
-
+    if (!sortedArray[year]) {
+      sortedArray[year] = { year, notes: [] };
+    }
     sortedArray[year].notes.push(item);
   });
 
-  const ordered = Object.keys(sortedArray)
-    .sort()
-    .reverse()
-    .map((key) => {
-      return sortedArray[key];
-    });
-
-  return ordered;
+  return Object.values(sortedArray).sort().reverse();
 });
 </script>
 
