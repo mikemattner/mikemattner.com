@@ -33,28 +33,17 @@ const props = defineProps({
 });
 
 const sortedPosts = computed<SortedPostItem[]>(() => {
-  const yearsInPosts = [...new Set(props.posts.map((item) => convertDate(item.date)))];
-
   const sortedArray: SortedPosts = {};
 
-  yearsInPosts.forEach((item, index) => {
-    sortedArray[item] = { year: item, posts: [] };
-  });
-
-  props.posts.forEach((item, index) => {
+  props.posts.forEach((item) => {
     const year = convertDate(item.date);
-
+    if (!sortedArray[year]) {
+      sortedArray[year] = { year, posts: [] };
+    }
     sortedArray[year].posts.push(item);
   });
 
-  const ordered = Object.keys(sortedArray)
-    .sort()
-    .reverse()
-    .map((key) => {
-      return sortedArray[key];
-    });
-
-  return ordered;
+  return Object.values(sortedArray).sort().reverse();
 });
 </script>
 
