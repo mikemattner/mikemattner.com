@@ -12,7 +12,7 @@
         </div>
 
         <h1 class="main-lede very-large-heading">
-          <span class="introduction">Hey there, I'm Mike.</span>
+          <span class="introduction">Hey there</span>
         </h1>
         <div class="home-greeting flow">
           <p class="intro">
@@ -224,7 +224,7 @@ const posts = computed(() => {
     text-wrap: balance;
 
     @media (min-width: 1053px) {
-      grid-column: 2 / span 9;
+      grid-column: 1 / -1;
       align-self: center;
     }
     @media (max-width: 1052px) {
