@@ -131,7 +131,7 @@ const theYear = computed<string>(() => {
     grid-column: 1;
     grid-row: 1;
     line-height: 1;
-    font-weight: 800;
+    font-weight: 600;
 
     // svg {
     //   color: var(--color-primary);
