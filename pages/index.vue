@@ -10,11 +10,10 @@
             class="profile-image-photo"
           />
         </div>
-
-        <h1 class="main-lede very-large-heading">
-          <span class="introduction">Hey there</span>
-        </h1>
         <div class="home-greeting flow">
+          <h1 class="main-lede very-large-heading">
+            Hey there
+          </h1>
           <p class="intro">
             I&rsquo;m a
             <strong>designer</strong> and
@@ -140,8 +139,8 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-column: 13 / -1;
-      align-self: start;
-      grid-row: 2;
+      align-self: center;
+      grid-row: 1;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -195,43 +194,27 @@ const posts = computed(() => {
 
   .main-lede {
     align-items: center;
-    display: grid;
-    grid-template-columns: subgrid;
     line-height: 1;
     grid-row: 1;
+    text-wrap: balance;
     z-index: 2;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / -1;
-      align-self: end;
-      grid-row: 1 / span 2;
-      align-self: start;
+      grid-row: 1;
+      grid-column: 13 / -1;
+      align-self: center;
       z-index: 1;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / -1;
       grid-row: 1;
+      align-self: end;
     }
 
     @media (max-width: 499px) {
       margin: 0;
       gap: 0;
       line-height: 1.1;
-    }
-  }
-
-  .introduction {
-    text-wrap: balance;
-
-    @media (min-width: 1053px) {
-      grid-column: 1 / -1;
-      align-self: center;
-    }
-    @media (max-width: 1052px) {
-      grid-column: 1 / span 3;
-      align-self: end;
-    }
-    @media (max-width: 499px) {
       grid-column: 1 / span 4;
     }
   }
@@ -242,16 +225,16 @@ const posts = computed(() => {
     overflow: hidden;
     z-index: 1;
 
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 11;
+      aspect-ratio: 1 / 1.25;
+      grid-row: 1;
+    }
+
     @media (max-width: 1052px) {
       grid-column: 1 / -1;
       aspect-ratio: 1 / 0.5;
       align-self: self-start;
-      grid-row: 1;
-    }
-
-    @media (min-width: 1053px) {
-      grid-column: 13 / -1;
-      aspect-ratio: 2 / 1.5;
       grid-row: 1;
     }
 
