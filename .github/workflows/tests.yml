@@ -1,4 +1,4 @@
-name: Run Unit Tests and Lint Files
+name: Build and Run Unit Tests
 on:
   push:
     branches: [ "main" ]
@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18.17.1"
-      - name: Test
+      - name: Build and Run Tests
         run: |
               npm ci
               npm run build
