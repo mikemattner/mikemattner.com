@@ -11,9 +11,7 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h1 class="main-lede very-large-heading">
-            Hey there
-          </h1>
+          <h1 class="main-lede very-large-heading">Hey there</h1>
           <p class="intro">
             I&rsquo;m a
             <strong>designer</strong> and
@@ -241,7 +239,7 @@ const posts = computed(() => {
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
       aspect-ratio: 2 / 1;
-      grid-row: 2;
+      grid-row: 1;
     }
 
     .profile-image-photo {
