@@ -12,6 +12,11 @@ on:
 jobs: 
   unit-test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+      
     permissions:
       checks: write
       pull-requests: write
@@ -19,15 +24,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3      
+        uses: actions/checkout@v4      
       
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: ${{ matrix.node-version }}
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
          path: ~/.npm
          key: npm-${{ hashFiles("package-lock.json") }}
