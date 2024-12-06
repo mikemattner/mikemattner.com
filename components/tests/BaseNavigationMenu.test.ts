@@ -1,5 +1,5 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime';
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, vi, type MockedFunction } from 'vitest';
 import BaseNavigationMenu from '@/components/BaseNavigationMenu.vue';
 import { useNavigationState } from '@/composables/useNavigationState.client';
 import { navigationList } from '@/data/navigationList';
@@ -11,12 +11,12 @@ vi.mock('@/composables/useNavigationState.client', () => ({
 
 describe('BaseNavigationMenu.vue', () => {
   let navOpen;
-  let toggleNav: Function;
+  let toggleNav: MockedFunction<() => {}>;
 
   beforeEach(() => {
     navOpen = ref(false);
     toggleNav = vi.fn();
-    useNavigationState.mockReturnValue({ navOpen, toggleNav });
+    (useNavigationState as MockedFunction<typeof useNavigationState>).mockReturnValue({ navOpen, toggleNav });
   });
 
   it('renders correctly', async () => {
