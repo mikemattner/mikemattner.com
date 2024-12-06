@@ -45,6 +45,17 @@
               variant="link"
               size="sm"
               color="secondary"
+              href="https://www.linkedin.com/in/mikeamattner/"
+            >
+              <Icon name="ri:linkedin-box-fill" /> LinkedIn
+            </BaseButton>
+          </li>
+          <li>
+            <BaseButton
+              class="footer-icon"
+              variant="link"
+              size="sm"
+              color="secondary"
               href="https://mastodon.online/@mikemattner"
               rel="me"
             >
@@ -61,17 +72,6 @@
               rel="me"
             >
               <Icon name="ri:bluesky-fill" /> Bluesky
-            </BaseButton>
-          </li>
-          <li>
-            <BaseButton
-              class="footer-icon"
-              variant="link"
-              size="sm"
-              color="secondary"
-              href="https://www.linkedin.com/in/mikeamattner/"
-            >
-              <Icon name="ri:linkedin-box-fill" /> LinkedIn
             </BaseButton>
           </li>
         </ul>
