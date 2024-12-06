@@ -28,6 +28,7 @@ const hasSlot = (name: string) => {
   border-radius: 7px;
   padding: var(--sizing-xl) var(--sizing-lg);
   position: relative;
+  text-wrap: pretty;
 
   @media (min-width: 989px) {
     margin-left: calc(var(--sizing-xl) * -1);

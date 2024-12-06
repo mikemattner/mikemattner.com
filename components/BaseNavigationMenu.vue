@@ -60,7 +60,7 @@ const toggle = () => {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: var(--size-step--1);
+    font-size: var(--size-step-0);
     mix-blend-mode: difference;
 
     @media (max-width: 715px) {

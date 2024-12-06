@@ -26,7 +26,7 @@ describe('BaseImage.vue', () => {
   it('renders figcaption when caption slot is provided', async () => {
     const wrapper = await mountSuspended(BaseImage, {
       props: { src: 'image.jpg' },
-      slots: { caption: '<span>Caption text</span>' },
+      slots: { caption: 'Caption text' },
     });
     const figcaption = wrapper.find('figcaption');
     expect(figcaption.exists()).toBe(true);

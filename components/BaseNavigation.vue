@@ -12,20 +12,24 @@
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-color);
 
+  @media (max-width: 715px) {
+    padding: 1rem;
+    flex-direction: column;
+    // background: var(--background-border-color);
+  }
+
   @media (min-width: 716px) {
     grid-area: navigation;
     // position: sticky;
     top: var(--sizing-md);
     z-index: 1000;
-    padding: var(--sizing-md) var(--sizing-xl);
+    padding: var(--sizing-xl);
     border: none;
     mix-blend-mode: difference;
   }
 
-  @media (max-width: 715px) {
-    padding: 1rem;
-    flex-direction: column;
-    // background: var(--background-border-color);
+  @media (min-width: 90rem) {
+    padding: var(--sizing-xxl) var(--sizing-xxxl);
   }
 
   &__container {
