@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18.17.1"
+          node-version: "18.20.4"
       - name: Build and Run Tests
         run: |
               npm ci

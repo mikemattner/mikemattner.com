@@ -52,13 +52,12 @@ const model = computed({
     text-align: left;
     display: flex;
     align-items: center;
-    position: relative;
     font-size: var(--size-step--1);
 
     &:after {
       content: '';
       position: absolute;
-      left: -28px;
+      left: 4px;
       top: 50%;
       background: white;
       width: 3px;
@@ -75,7 +74,10 @@ const model = computed({
     border-radius: 3px;
     background: var(--block-quote-bg);
     font-weight: 700;
-    padding: 8px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
     outline: none;
     transition: all 0.25s ease-in-out;
     -webkit-appearance: none;

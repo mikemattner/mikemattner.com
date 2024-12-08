@@ -26,6 +26,15 @@ describe('BasePanel.vue', () => {
     expect(content.text()).toBe('Panel Content');
   });
 
+  it('renders footer slot content', async () => {
+    const wrapper = await mountSuspended(BasePanel, {
+      slots: { footer: '<div>Footer Content</div>' },
+    });
+    const content = wrapper.find('.base-panel__footer');
+    expect(content.exists()).toBe(true);
+    expect(content.text()).toBe('Footer Content');
+  });
+
   it('toggles panel content visibility on header click', async () => {
     const wrapper = await mountSuspended(BasePanel);
     const header = wrapper.find('.base-panel__header');

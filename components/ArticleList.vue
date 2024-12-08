@@ -158,11 +158,11 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   gap: var(--sizing-xl);
   margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
 
-  @media (min-width: 768px) {
-    margin: 0;
-    flex-direction: column;
-    gap: var(--sizing-sm);
-  }
+  // @media (min-width: 768px) {
+  //   margin: 0;
+  //   flex-direction: column;
+  //   gap: var(--sizing-sm);
+  // }
 
   @media (max-width: 767px) {
     margin-top: var(--sizing-xxxl);

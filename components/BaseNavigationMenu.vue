@@ -124,7 +124,7 @@ const toggle = () => {
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      transition: all 0.125s 0.5s ease-in-out, clip-path 0.75s;
+      transition: all 0.125s 0.25s ease-in-out, clip-path 0.75s;
       transform: translateX(50vh);
       clip-path: circle(25% at 150% -50%);
       opacity: 0;
@@ -142,19 +142,19 @@ const toggle = () => {
           transform: translateX(0);
 
           &:nth-child(1) {
-            transition: all 0.25s 0.375s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.125s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
           &:nth-child(2) {
-            transition: all 0.25s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.125s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
           &:nth-child(3) {
-            transition: all 0.25s 0.625s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.125s 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
           &:nth-child(4) {
-            transition: all 0.25s 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.125s 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
           &:nth-child(5) {
-            transition: all 0.25s 0.825s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.125s 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           }
         }
       }
