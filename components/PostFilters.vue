@@ -1,79 +1,68 @@
 <template>
   <aside class="post-filters">
-    <BaseButton v-if="isMobile" size="xs" @click="openFilterBody()">
-      <template v-if="!openFilters">
-        Filter Posts
-        <span v-if="hasFilters">({{ filterCount }})</span>
-        <Icon name="ri:filter-2-line" />
-      </template>
-      <template v-else>
-        Close Post Filters
-        <span v-if="hasFilters">({{ filterCount }})</span>
-        <Icon name="ri:close-fill" />
-      </template>
+    <BaseButton v-if="showOpenFiltersButton" size="sm" @click="openFilterBody()">
+      {{ openFiltersButtonText }}
+      <span v-if="hasFilters">({{ filterCount }})</span>
+      <Icon :name="openFiltersButtonIcon" />
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
-      <TransitionGroup name="fade">
-        <div class="clear-filters" key="clear-button">
-          <BaseButton :variant="clearButtonVariant" size="xs" :disabled="!hasFilters" @click="clearAllFilters">
-            {{ clearFilterText }}
-            <Icon v-if="hasFilters" name="ri:close-fill" />
-          </BaseButton>
-        </div>
-        <div key="filters">
-          <h3 class="filter-header">Filter by Year</h3>
-          <ul class="filter-list">
-            <li v-for="year in years" :key="year">
+      <BasePanel>
+        <template #header>{{ filtersPanelTitle }}</template>
+        <div class="clear-filters">
+          <template v-if="!hasFilters">No Filters Selected</template>
+          <template v-else>
+            <BaseButton size="xs" @click="clearAllFilters">
+              {{ clearFilterText }}
+              <Icon name="ri:close-fill" />
+            </BaseButton>
+
+            <div v-if="filterList.length > 0" class="filtered-items">
               <BaseButton
-                :variant="yearButtonVariant(year)"
+                v-for="filter in filterList"
+                variant="outline"
                 size="xs"
-                :has-icon="isYearCurrentlyFiltered(year)"
-                :disabled="!yearExistsInSortedPosts(year)"
-                @click="handleYearFilter(year)"
+                has-icon
+                @click="handleAllFilterRemoval(filter)"
               >
-                {{ year }}
-                <Icon v-if="isYearCurrentlyFiltered(year)" name="ri:close-fill" />
+                {{ filter }}
+                <Icon name="ri:close-fill" />
               </BaseButton>
-            </li>
-          </ul>
-          <h3 class="filter-header">Filter by Tag</h3>
-          <ul class="filter-list">
-            <li v-for="tag in tags" :key="tag">
-              <BaseButton
-                :variant="tagButtonVariant(tag)"
-                size="xs"
-                :has-icon="isTagCurrentlyFiltered(tag)"
-                :disabled="!tagExistsInSortedPosts(tag)"
-                @click="handleTagFilter(tag)"
-              >
-                {{ tag }}
-                <Icon v-if="isTagCurrentlyFiltered(tag)" name="ri:close-fill" />
-              </BaseButton>
-            </li>
-          </ul>
+            </div>
+          </template>
         </div>
-      </TransitionGroup>
+      </BasePanel>
+      <BasePanel>
+        <template #header>Filter by Tag</template>
+        <ul class="filter-list">
+          <li v-for="tag in tags" :key="tag">
+            <BaseCheckbox :id="`year-${tag}`" :name="`year-${tag}`" :value="tag" v-model="tagFilter">
+              {{ tag }}
+            </BaseCheckbox>
+          </li>
+        </ul>
+      </BasePanel>
+      <BasePanel>
+        <template #header>Filter by Year</template>
+        <ul class="filter-list">
+          <li v-for="year in years" :key="year">
+            <BaseCheckbox :id="`year-${year}`" :name="`year-${year}`" :value="year" v-model="yearFilter">
+              {{ year }}
+            </BaseCheckbox>
+          </li>
+        </ul>
+      </BasePanel>
     </div>
   </aside>
 </template>
 
 <script setup lang="ts">
 import type { Post, SortedPostItem } from '../types/posts';
+import type { Note, SortedNoteItem } from '../types/notes';
 import { useMediaQuery } from '@vueuse/core';
 
-const isMobile = useMediaQuery('(max-width: 979px)');
-
-watch(isMobile, () => {
-  if (isMobile.value) {
-    openFilters.value = false;
-  } else {
-    openFilters.value = true;
-  }
-});
-
 const props = defineProps({
-  posts: { type: Array as PropType<Post[]>, required: true },
-  sortedPosts: { type: Array as PropType<SortedPostItem[]>, required: true },
+  posts: { type: Array as PropType<Post[] | Note[]>, required: true },
+  sortedPosts: { type: Array as PropType<SortedPostItem[] | SortedNoteItem[]>, required: true },
   years: { type: Array<string>, required: true },
   yearFilter: { type: Array<string>, required: true },
   tags: { type: Array<string>, required: true },
@@ -82,24 +71,75 @@ const props = defineProps({
 
 const emit = defineEmits(['update:yearFilter', 'update:tagFilter']);
 
+const isMobile = useMediaQuery('(max-width: 979px)');
+
+const showOpenFiltersButton = ref<boolean>(false);
+const openFilters = ref<boolean>(false);
+const openFilterBody = () => {
+  openFilters.value = !openFilters.value;
+};
+
+nextTick(() => {
+  if (isMobile.value) {
+    openFilters.value = false;
+    showOpenFiltersButton.value = true;
+  }
+});
+
+onMounted(() => {
+  watch(
+    isMobile,
+    (value) => {
+      if (value) {
+        openFilters.value = false;
+        showOpenFiltersButton.value = true;
+      } else {
+        openFilters.value = true;
+        showOpenFiltersButton.value = false;
+      }
+    },
+    { immediate: true }
+  );
+});
+
 const filterCount = computed<number>(() => {
   return yearFilter.value.length + tagFilter.value.length;
 });
 
+const filterList = computed<Array<string>>(() => {
+  return [...yearFilter.value, ...tagFilter.value].sort((a, b) => a.localeCompare(b));
+});
+
+const handleAllFilterRemoval = (filter: string) => {
+  if (yearFilter.value.includes(filter)) {
+    yearFilter.value.splice(yearFilter.value.indexOf(filter), 1);
+    return;
+  }
+  if (tagFilter.value.includes(filter)) {
+    tagFilter.value.splice(tagFilter.value.indexOf(filter), 1);
+    return;
+  }
+};
+
 const clearFilterText = computed<string>(() => {
   if (filterCount.value == 0) return 'No Filters';
-  if (filterCount.value > 5) return 'Clear 5+ Filters';
+  if (filterCount.value > 3) return 'Clear 3+ Filters';
   return filterCount.value > 1 ? `Clear ${filterCount.value} Filters` : 'Clear Filter';
 });
 
-const clearButtonVariant = computed<'outline' | 'text'>(() => {
-  return filterCount.value > 0 ? 'outline' : 'text';
+const filtersPanelTitle = computed<string>(() => {
+  if (filterCount.value == 0) return 'No Filters Selected';
+  if (filterCount.value > 3) return '3+ Filters Selected';
+  return filterCount.value > 1 ? `${filterCount.value} Filters Selected` : '1 Filter Selected';
 });
 
-const openFilters = ref<boolean>(true);
-const openFilterBody = () => {
-  openFilters.value = !openFilters.value;
-};
+const openFiltersButtonText = computed<string>(() => {
+  return openFilters.value ? 'Close Post Filters' : 'Filter Posts';
+});
+
+const openFiltersButtonIcon = computed<string>(() => {
+  return openFilters.value ? 'ri:close-fill' : 'ri:equalizer-line';
+});
 
 const yearFilter = computed<Array<string>>({
   get() {
@@ -109,18 +149,6 @@ const yearFilter = computed<Array<string>>({
     emit('update:yearFilter', value);
   },
 });
-
-const handleYearFilter = (year: string) => {
-  if (yearFilter.value.includes(year)) {
-    yearFilter.value.splice(yearFilter.value.indexOf(year), 1);
-    return;
-  }
-  if (yearFilter.value.length === props.years.length) {
-    yearFilter.value = [];
-    return;
-  }
-  yearFilter.value.push(year);
-};
 
 const yearExistsInSortedPosts = (year: string) => {
   // if (!tagFilter.value.length) return true;
@@ -135,26 +163,9 @@ watch(
       yearFilter.value = [];
       return;
     }
-    // tagFilter.value.forEach((filter) => {
-    //   if (
-    //     !sortedPosts.value.some((item) =>
-    //       item.posts.some((post) => tagFilter.value.some((tag) => post.tag.includes(filter)))
-    //     )
-    //   ) {
-    //     tagFilter.value.splice(tagFilter.value.indexOf(filter), 1);
-    //   }
-    // });
   },
   { deep: true }
 );
-
-const isYearCurrentlyFiltered = (year: string) => {
-  return yearFilter.value.includes(year);
-};
-
-const yearButtonVariant = (year: string) => {
-  return yearFilter.value.includes(year) ? 'solid' : 'outline';
-};
 
 const tagFilter = computed<Array<string>>({
   get() {
@@ -164,18 +175,6 @@ const tagFilter = computed<Array<string>>({
     emit('update:tagFilter', value);
   },
 });
-
-const handleTagFilter = (tag: string) => {
-  if (tagFilter.value.includes(tag)) {
-    tagFilter.value.splice(tagFilter.value.indexOf(tag), 1);
-    return;
-  }
-  if (tagFilter.value.length === props.tags.length) {
-    tagFilter.value = [];
-    return;
-  }
-  tagFilter.value.push(tag);
-};
 
 const tagExistsInSortedPosts = (tag: string) => {
   // if (!yearFilter.value.length) return true;
@@ -191,22 +190,9 @@ watch(
       tagFilter.value = [];
       return;
     }
-    // yearFilter.value.forEach((filter) => {
-    //   if (!sortedPosts.value.filter((item) => item.year === filter)[0].posts.length) {
-    //     yearFilter.value.splice(yearFilter.value.indexOf(filter), 1);
-    //   }
-    // });
   },
   { deep: true }
 );
-
-const isTagCurrentlyFiltered = (tag: string) => {
-  return tagFilter.value.includes(tag);
-};
-
-const tagButtonVariant = (tag: string) => {
-  return tagFilter.value.includes(tag) ? 'solid' : 'outline';
-};
 
 const hasFilters = computed<boolean>(() => {
   return yearFilter.value.length > 0 || tagFilter.value.length > 0;
@@ -221,10 +207,6 @@ const clearAllFilters = () => {
 <style lang="scss" scoped>
 .post-filters {
   .filters-body {
-    // background-color: var(--filter-bg);
-    // padding: 0 var(--sizing-xl);
-    // box-shadow: var(--box-shadow-long);
-    // border-radius: 7px;
     margin-top: 0;
     opacity: 0;
     visibility: hidden;
@@ -236,7 +218,17 @@ const clearAllFilters = () => {
       visibility: visible;
       max-height: 150vh;
       margin-top: var(--sizing-xl);
-      //   padding: var(--sizing-xl);
+    }
+
+    @media (max-width: 979px) {
+      background-color: var(--filter-bg);
+      padding: 0 var(--sizing-xl);
+      box-shadow: var(--box-shadow-long);
+      border-radius: 7px;
+
+      &.is-active {
+        padding: var(--sizing-xl);
+      }
     }
   }
 
@@ -249,7 +241,7 @@ const clearAllFilters = () => {
       display: flex;
       flex-wrap: wrap;
       gap: var(--sizing-md);
-      margin: var(--sizing-lg) 0;
+      padding: var(--sizing-lg) 0;
     }
 
     li {
@@ -257,7 +249,7 @@ const clearAllFilters = () => {
       margin: 0;
 
       @media (min-width: 980px) {
-        margin: var(--sizing-md) 0 0;
+        margin: 0 0 var(--sizing-md);
       }
     }
   }
@@ -275,6 +267,14 @@ const clearAllFilters = () => {
 
 .clear-filters {
   margin-bottom: var(--sizing-xxl);
+  font-size: var(--size-step--1);
+}
+
+.filtered-items {
+  display: flex;
+  gap: var(--sizing-md);
+  margin-top: var(--sizing-md);
+  flex-wrap: wrap;
 }
 
 .fade-move, /* apply transition to moving elements */
