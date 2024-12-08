@@ -7,6 +7,8 @@
             <li><NuxtLink to="/">Home</NuxtLink></li>
             <li><NuxtLink to="/notes">Notes</NuxtLink></li>
           </ul>
+          <h1 class="article-title" v-html="data.title"></h1>
+          <hr />
         </div>
       </header>
       <article class="article-layout">
@@ -15,14 +17,14 @@
             <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
             <time>{{ formatDate(data.date) }}</time>
           </div>
-          <!-- <div class="article-meta-block">
+          <div class="article-meta-block">
             <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
             <ul class="tag-list">
               <li v-for="tag in data.tag" :key="tag">
                 <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
               </li>
             </ul>
-          </div> -->
+          </div>
         </aside>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
@@ -90,20 +92,27 @@ useHead({
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
+    @media (min-width: 768px) {
+      margin-block-start: 6rem;
+    }
+
     .article-header {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
       z-index: 2;
       grid-column: 1;
       grid-row: 1;
-      text-align: center;
       padding: var(--sizing-lg);
 
       .article-title {
         font-size: clamp(30px, 8vw, 75px);
-        text-align: center;
         color: var(--color-light);
+      }
+
+      hr {
+        margin-block-start: 2.5em;
       }
     }
   }
