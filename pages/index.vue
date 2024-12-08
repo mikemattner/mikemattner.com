@@ -57,7 +57,7 @@ useHead({
 const { data } = await useAsyncData('blog-short', () => queryContent<Post>('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 3) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
 });
 </script>
 
@@ -251,14 +251,10 @@ const posts = computed(() => {
   .recently-posted-header {
     grid-column: 1 / -1;
     grid-row: 1;
+    margin-block-end: var(--sizing-xxl);
 
     @media (min-width: 768px) {
-      grid-row: 1;
-      grid-column: 1 / 9;
-    }
-
-    @media (max-width: 767px) {
-      margin-block-end: var(--sizing-xxl);
+      grid-column: 1 / -1;
     }
   }
 
@@ -267,8 +263,7 @@ const posts = computed(() => {
     grid-row: 2;
 
     @media (min-width: 768px) {
-      grid-row: 1;
-      grid-column: 9 / -1;
+      grid-column: 1 / -1;
     }
   }
 
@@ -278,9 +273,11 @@ const posts = computed(() => {
     margin-top: var(--sizing-xxl);
 
     @media (min-width: 768px) {
-      grid-row: 2;
-      grid-column: 9 / -1;
+      grid-row: 3;
+      grid-column: 1 / -1;
       margin-top: var(--sizing-xxxl);
+      display: flex;
+      justify-content: flex-end;
     }
   }
 

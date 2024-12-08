@@ -25,6 +25,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hasIcon: {
+    type: Boolean,
+    default: false,
+  },
   color: {
     type: String as PropType<ButtonColor>,
     default: 'primary',
@@ -60,6 +64,7 @@ const classes = computed(() => {
     'button--link': props.variant === 'link',
     'button--primary': props.color === 'primary',
     'button--secondary': props.color === 'secondary',
+    'button--has-icon': props.hasIcon,
   };
 });
 
@@ -142,6 +147,11 @@ const attributes = computed(() => {
 
     &.is--loading {
       opacity: 0;
+    }
+  }
+  &--has-icon {
+    .button--content {
+      justify-content: space-between;
     }
   }
   &--loader {
