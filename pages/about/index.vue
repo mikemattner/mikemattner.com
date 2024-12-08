@@ -72,61 +72,69 @@
           Unfortunately, they didn't capture everything going back to 2005. Styles weren't saved with the pages until
           about 2010. Additionally, my versioning of the Nuxt iterations is a little wonky.
         </p>
-        <ul class="former-site-iterations">
-          <li>
-            <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
-              ><span class="small-text">Nuxt 2</span><span class="year">2021-2022</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://web.archive.org/web/20210622133707/https://mikemattner.com/"
-              class="iteration-link"
-              target="_blank"
-              ><span class="small-text">Nuxt 2</span><span class="year">2021</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://web.archive.org/web/20200510231840/https://mikemattner.com/"
-              class="iteration-link"
-              target="_blank"
-              ><span class="small-text">Vue</span><span class="year">2020</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://web.archive.org/web/20171118135502/http://mikemattner.com/"
-              class="iteration-link"
-              target="_blank"
-              ><span class="small-text">WordPress</span><span class="year">2017-2019</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://web.archive.org/web/20160401174705/http://www.mikemattner.com/"
-              class="iteration-link"
-              target="_blank"
-              ><span class="small-text">WordPress</span><span class="year">2016</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://web.archive.org/web/20130514053042/http://www.mikemattner.com/"
-              class="iteration-link"
-              target="_blank"
-              ><span class="small-text">WordPress</span><span class="year">2013-2015</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://web.archive.org/web/20100412072243/http://www.mikemattner.com/"
-              class="iteration-link"
-              target="_blank"
-              ><span class="small-text">WordPress</span><span class="year">2010-2012</span></a
-            >
-          </li>
-        </ul>
+        <BasePanel>
+          <template #header> Nuxt / Vue </template>
+          <ul class="former-site-iterations">
+            <li>
+              <a href="https://v1.mikemattner.com/" class="iteration-link" target="_blank"
+                ><span class="small-text">Nuxt 2</span><span class="year">2021-2022</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://web.archive.org/web/20210622133707/https://mikemattner.com/"
+                class="iteration-link"
+                target="_blank"
+                ><span class="small-text">Nuxt 2</span><span class="year">2021</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://web.archive.org/web/20200510231840/https://mikemattner.com/"
+                class="iteration-link"
+                target="_blank"
+                ><span class="small-text">Vue</span><span class="year">2020</span></a
+              >
+            </li>
+          </ul>
+        </BasePanel>
+        <BasePanel>
+          <template #header> WordPress </template>
+          <ul class="former-site-iterations">
+            <li>
+              <a
+                href="https://web.archive.org/web/20171118135502/http://mikemattner.com/"
+                class="iteration-link"
+                target="_blank"
+                ><span class="small-text">WordPress</span><span class="year">2017-2019</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://web.archive.org/web/20160401174705/http://www.mikemattner.com/"
+                class="iteration-link"
+                target="_blank"
+                ><span class="small-text">WordPress</span><span class="year">2016</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://web.archive.org/web/20130514053042/http://www.mikemattner.com/"
+                class="iteration-link"
+                target="_blank"
+                ><span class="small-text">WordPress</span><span class="year">2013-2015</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://web.archive.org/web/20100412072243/http://www.mikemattner.com/"
+                class="iteration-link"
+                target="_blank"
+                ><span class="small-text">WordPress</span><span class="year">2010-2012</span></a
+              >
+            </li>
+          </ul>
+        </BasePanel>
       </div>
       <!-- <div class="timeline-content flow">
         <h2 class="h4-heading">A Timeline of My Life</h2>
@@ -267,18 +275,16 @@ useHead({
   }
 
   .profile-image {
-    aspect-ratio: 1 / 1.25;
+    aspect-ratio: 1 / 0.75;
     border-radius: 7px;
     overflow: hidden;
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1;
     }
 
     @media (min-width: 768px) {
       grid-column: 1 / -1;
-      aspect-ratio: 2 / 0.75;
       align-self: self-start;
     }
 
@@ -290,8 +296,8 @@ useHead({
   }
 
   .former-site-iterations {
-    margin: var(--sizing-xxl) 0;
-    padding: 0;
+    margin: 0;
+    padding: 0 var(--sizing-md) var(--sizing-xl);
     list-style: none;
     display: grid;
     gap: var(--sizing-lg);

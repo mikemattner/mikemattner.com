@@ -2,34 +2,34 @@
   <aside class="post-filters">
     <BaseButton v-if="showOpenFiltersButton" size="sm" @click="openFilterBody()">
       {{ openFiltersButtonText }}
-      <span v-if="hasFilters">({{ filterCount }})</span>
+      <span v-if="hasFilters">{{ filterCountText }}</span>
       <Icon :name="openFiltersButtonIcon" />
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
-      <BasePanel>
+      <BasePanel has-border>
         <template #header>{{ filtersPanelTitle }}</template>
         <div class="clear-filters">
-          <template v-if="!hasFilters">No Filters Selected</template>
-          <template v-else>
-            <BaseButton size="xs" @click="clearAllFilters">
-              {{ clearFilterText }}
+          <TransitionGroup name="fade" class="filtered-items" tag="div">
+            <BaseButton
+              v-for="filter in filterList"
+              variant="outline"
+              size="xs"
+              has-icon
+              :key="filter"
+              @click="handleFilterRemove(filter)"
+            >
+              {{ filter }}
               <Icon name="ri:close-fill" />
             </BaseButton>
-
-            <div v-if="filterList.length > 0" class="filtered-items">
-              <BaseButton
-                v-for="filter in filterList"
-                variant="outline"
-                size="xs"
-                has-icon
-                @click="handleAllFilterRemoval(filter)"
-              >
-                {{ filter }}
-                <Icon name="ri:close-fill" />
-              </BaseButton>
-            </div>
-          </template>
+            <p v-if="!hasFilters" key="noFilterText">No Filters Selected</p>
+          </TransitionGroup>
         </div>
+        <template #footer>
+          <BaseButton size="xs" :disabled="!hasFilters" class="clear-button" @click="clearAllFilters">
+            {{ clearFilterText }}
+            <Icon v-if="hasFilters" name="ri:close-fill" />
+          </BaseButton>
+        </template>
       </BasePanel>
       <BasePanel>
         <template #header>Filter by Tag</template>
@@ -106,11 +106,16 @@ const filterCount = computed<number>(() => {
   return yearFilter.value.length + tagFilter.value.length;
 });
 
+const filterCountText = computed<string>(() => {
+  if (filterCount.value > 3) return '(3+)';
+  return `(${filterCount.value})`;
+});
+
 const filterList = computed<Array<string>>(() => {
   return [...yearFilter.value, ...tagFilter.value].sort((a, b) => a.localeCompare(b));
 });
 
-const handleAllFilterRemoval = (filter: string) => {
+const handleFilterRemove = (filter: string) => {
   if (yearFilter.value.includes(filter)) {
     yearFilter.value.splice(yearFilter.value.indexOf(filter), 1);
     return;
@@ -134,7 +139,9 @@ const filtersPanelTitle = computed<string>(() => {
 });
 
 const openFiltersButtonText = computed<string>(() => {
-  return openFilters.value ? 'Close Post Filters' : 'Filter Posts';
+  let postType = 'Post';
+  if (props.sortedPosts[0].hasOwnProperty('notes')) postType = 'Note';
+  return openFilters.value ? `Close ${postType} Filters` : `Filter ${postType}s`;
 });
 
 const openFiltersButtonIcon = computed<string>(() => {
@@ -238,18 +245,17 @@ const clearAllFilters = () => {
 
   ul.filter-list {
     list-style: none;
-    padding: 0;
+    padding: 0 var(--sizing-md) var(--sizing-md);
     margin: 0;
 
     @media (max-width: 979px) {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--sizing-md);
-      padding: var(--sizing-lg) 0;
     }
 
     li {
-      padding: 0;
+      padding: var(--sizing-sm) 0;
       margin: 0;
 
       @media (min-width: 980px) {
@@ -270,18 +276,32 @@ const clearAllFilters = () => {
 }
 
 .clear-filters {
-  margin-bottom: var(--sizing-xxl);
+  padding: var(--sizing-md);
   font-size: var(--size-step--1);
+}
+
+.clear-button {
+  @media (max-width: 979px) {
+    order: -1;
+  }
 }
 
 .filtered-items {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--sizing-md);
-  margin-top: var(--sizing-md);
-  flex-wrap: wrap;
+  padding: 0;
+  position: relative;
+
+  @media (max-width: 979px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sizing-md);
+  }
 }
 
-.fade-move, /* apply transition to moving elements */
+.fade-move,
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.5s ease;
@@ -291,10 +311,11 @@ const clearAllFilters = () => {
 .fade-leave-to {
   opacity: 0;
   transform: translateX(30px);
+  @media (max-width: 979px) {
+    transform: translateY(30px);
+  }
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .fade-leave-active {
   position: absolute;
 }

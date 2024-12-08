@@ -13,14 +13,11 @@
         <div class="home-greeting flow">
           <h1 class="main-lede very-large-heading">Hey there</h1>
           <p class="intro">
-            I&rsquo;m a
-            <strong>designer</strong> and
-            <strong>developer</strong>
-            from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
+            I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
           </p>
           <p>
-            In a former life I worked as a <strong>digital designer</strong>&mdash;basically a catch-all for video
-            editing, motion graphics, print design, et cetera. Now I mostly create in code.
+            In a former life I worked as a digital designer&mdash;basically a catch-all for video editing, motion
+            graphics, print design, et cetera. Now I mostly create in code.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
@@ -218,7 +215,7 @@ const posts = computed(() => {
   }
 
   .profile-image {
-    aspect-ratio: 2 / 1.25;
+    aspect-ratio: 1 / 0.75;
     border-radius: 7px;
     overflow: hidden;
     z-index: 1;
@@ -231,14 +228,12 @@ const posts = computed(() => {
 
     @media (max-width: 1052px) {
       grid-column: 1 / -1;
-      aspect-ratio: 1 / 0.5;
       align-self: self-start;
       grid-row: 1;
     }
 
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
-      aspect-ratio: 2 / 1;
       grid-row: 1;
     }
 
