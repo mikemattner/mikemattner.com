@@ -8,8 +8,8 @@
             <li><NuxtLink to="/blog">Blog</NuxtLink></li>
           </ul>
           <h1 class="article-title" v-html="data.title"></h1>
+          <hr />
         </div>
-        <!-- <PrimaryImage :src="featuredImage" has-overlay class="article-layout__feature-image" /> -->
       </header>
       <article class="article-layout">
         <aside class="article-meta">
@@ -107,19 +107,30 @@ useHead({
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
+    @media (min-width: 768px) {
+      margin-block-start: 6rem;
+    }
+
     .article-header {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
       z-index: 2;
       grid-column: 1;
       grid-row: 1;
-      text-align: center;
-      padding: var(--sizing-lg);
+      padding: var(--sizing-lg) 0 var(--sizing-xxxl);
 
       .article-title {
         font-size: clamp(30px, 8vw, 75px);
-        text-align: center;
+      }
+
+      hr {
+        margin-block-start: 2.5em;
+
+        @media (max-width: 1000px) {
+          display: none;
+        }
       }
     }
   }
