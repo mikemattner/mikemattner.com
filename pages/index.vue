@@ -11,10 +11,8 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h1 class="main-lede very-large-heading">Hey there</h1>
-          <p class="intro">
-            I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
-          </p>
+          <h1 class="main-lede very-large-heading"><small>An Introduction</small> Hey there</h1>
+          <p>I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.</p>
           <p>
             In a former life I worked as a digital designer&mdash;basically a catch-all for video editing, motion
             graphics, print design, et cetera. Now I mostly create in code.

@@ -205,7 +205,7 @@ ul.breadcrumb-trail {
   gap: var(--sizing-lg);
   align-items: center;
   font-size: var(--size-step--1);
-  font-family: var(--code-font-family);
+  font-variation-settings: 'wdth' 100, 'wght' 300;
 
   li {
     margin: 0;
