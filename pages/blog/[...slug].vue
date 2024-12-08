@@ -127,6 +127,10 @@ useHead({
 
       hr {
         margin-block-start: 2.5em;
+
+        @media (max-width: 1000px) {
+          display: none;
+        }
       }
     }
   }
