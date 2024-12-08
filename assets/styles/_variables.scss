@@ -198,6 +198,7 @@
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-dark-background-gradient-hsl);
     --pull-text-color: var(--color-dark-pull-color);
+    --filter-bg: hsla(var(--color-dark-hsl), 0.95);
 }
 
 html.light {
@@ -219,6 +220,7 @@ html.light {
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-light-background-gradient-hsl);
     --pull-text-color: var(--color-light-pull-color);
+    --filter-bg: hsla(var(--color-white-hsl), 0.95);
 }
   
 html.dark {
@@ -241,4 +243,5 @@ html.dark {
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-dark-background-gradient-hsl);
     --pull-text-color: var(--color-dark-pull-color);
+    --filter-bg: hsla(var(--color-dark-hsl), 0.95);
 }

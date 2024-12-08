@@ -68,4 +68,11 @@ describe('BaseButton.vue', () => {
     expect(wrapper.element.tagName).toBe('A');
     expect(wrapper.attributes('href')).toBe('/');
   });
+
+  it('renders correctly with icon', async () => {
+    const wrapper = await mountSuspended(BaseButton, {
+      props: { hasIcon: true },
+    });
+    expect(wrapper.classes()).toContain('button--has-icon');
+  });
 });
