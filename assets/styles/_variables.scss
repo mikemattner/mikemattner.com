@@ -166,7 +166,7 @@
     --button-primary-hover: var(--color-primary-hover);
     --button-primary-solid-hover: var(--color-primary-hover);
 
-    --button-secondary: var(--color-blue-shade-60);
+    --button-secondary: var(--border-color);
     --button-secondary-bg-hover: var(--color-primary);
     --button-secondary-outline: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
     --button-secondary-outline-hover: inset 0 0 0 2px var(--color-primary-hover), 0 0 0 0 var(--color-primary-hover);
@@ -202,7 +202,6 @@
 }
 
 html.light {
-    --button-secondary: var(--color-blue-tint-30);
     --background-color: var(--color-light-bg);
     --background-image: radial-gradient(47.1% 39.7%,hsla(var(--color-blue-tint-50-hsl),0.25) 0%, hsla(var(--color-primary-hsl), 0.1) 50%,var(--background-color) 100%);
     --font-color: hsla(var(--color-dark-hsl), 0.8);
