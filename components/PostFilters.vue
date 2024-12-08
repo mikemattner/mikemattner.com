@@ -206,6 +206,10 @@ const clearAllFilters = () => {
 
 <style lang="scss" scoped>
 .post-filters {
+  @media (min-width: 980px) {
+    position: sticky;
+    top: 50px;
+  }
   .filters-body {
     margin-top: 0;
     opacity: 0;
