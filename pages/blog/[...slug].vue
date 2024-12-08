@@ -8,6 +8,19 @@
             <li><NuxtLink to="/blog">Blog</NuxtLink></li>
           </ul>
           <h1 class="article-title" v-html="data.title"></h1>
+          <div v-if="data.link" class="article-link">
+            <BaseButton
+              v-tooltip="`Read more at: ${data.link}`"
+              :href="data.link"
+              target="_blank"
+              size="sm"
+              color="secondary"
+              variant="outline"
+            >
+              <Icon name="ri:external-link-line" />
+              Read More
+            </BaseButton>
+          </div>
           <hr />
         </div>
       </header>
@@ -33,14 +46,6 @@
             <p>No content found.</p>
           </template>
         </ContentRenderer>
-        <div v-if="data.link" class="article-link">
-          <div class="link-icon">
-            <Icon name="ri:external-link-line" />
-          </div>
-          <div class="text">
-            Read more at <a :href="data.link">{{ data.link }}</a>
-          </div>
-        </div>
         <ArticleNavigation class="prev-next" />
       </article>
     </template>
@@ -123,6 +128,10 @@ useHead({
 
       .article-title {
         font-size: clamp(30px, 8vw, 75px);
+      }
+
+      .article-link {
+        margin-block-start: var(--sizing-lg);
       }
 
       hr {
@@ -244,51 +253,12 @@ useHead({
     }
   }
 
-  .article-link {
-    padding: 0;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    background-color: var(--block-quote-bg);
-    border-radius: 0 var(--sizing-sm) var(--sizing-sm) 0;
-
-    @media (max-width: 899px) {
-      grid-column: 1 / span 6;
-      grid-row: 4;
-    }
-
-    @media (min-width: 900px) {
-      grid-column: 2 / span 4;
-      grid-row: 4;
-    }
-
-    @media (min-width: 1001px) {
-      grid-column: 6 / span 18;
-      grid-row: 3;
-    }
-
-    .link-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 0.5rem;
-      font-size: var(--size-step-1);
-      background-color: var(--color-primary);
-      color: var(--color-light);
-    }
-
-    .text {
-      padding: 1rem 1.5rem;
-      font-size: var(--size-step--1);
-      align-self: center;
-    }
-  }
-
   .prev-next {
-    grid-row: 5;
+    grid-row: 3;
     grid-column: 1 / -1;
 
     @media (min-width: 1001px) {
-      grid-row: 4;
+      grid-row: 2;
     }
   }
 }

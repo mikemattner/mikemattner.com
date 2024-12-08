@@ -262,7 +262,7 @@ const attributes = computed(() => {
   &.button--secondary {
     --button-solid-background-color: var(--button-secondary);
     --button-solid-background-color-hover: var(--button-secondary-bg-hover);
-    --button-solid-color-text: var(--button-solid-text);
+    --button-solid-color-text: var(--font-color);
     --button-solid-color-text-hover: var(--button-solid-text-hover);
 
     --button-outline-background-color: transparent;

@@ -11,7 +11,7 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h1 class="main-lede very-large-heading"><small>An Introduction</small> Hey there</h1>
+          <h1 class="main-lede very-large-heading"><small>A Quick Introduction</small> Hey there!</h1>
           <p>I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.</p>
           <p>
             In a former life I worked as a digital designer&mdash;basically a catch-all for video editing, motion
@@ -32,7 +32,7 @@
           <BaseButton to="/blog" variant="solid" size="md" color="primary">
             <span>Blog Archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="outline" size="md" color="primary">
+          <BaseButton to="/notes" variant="outline" size="md" color="secondary">
             <span>Note Archives</span>
           </BaseButton>
         </div>
@@ -219,7 +219,7 @@ const posts = computed(() => {
     z-index: 1;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 11;
+      grid-column: 1 / span 10;
       aspect-ratio: 1 / 1.25;
       grid-row: 1;
     }
@@ -270,7 +270,6 @@ const posts = computed(() => {
       grid-column: 1 / -1;
       margin-top: var(--sizing-xxxl);
       display: flex;
-      justify-content: flex-end;
     }
   }
 
