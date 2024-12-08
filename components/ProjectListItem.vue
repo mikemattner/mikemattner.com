@@ -13,7 +13,7 @@
         :href="`https://github.com/topics/${item}`"
         target="_blank"
         size="xs"
-        color="primary"
+        color="secondary"
         variant="solid"
       >
         {{ item }}
