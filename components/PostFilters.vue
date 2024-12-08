@@ -13,26 +13,31 @@
             <BaseButton
               v-for="filter in filterList"
               variant="outline"
+              color="secondary"
               size="xs"
               has-icon
               :key="filter"
               @click="handleFilterRemove(filter)"
             >
-              {{ filter }}
               <Icon name="ri:close-fill" />
+              {{ filter }}
             </BaseButton>
             <p v-if="!hasFilters" key="noFilterText">No Filters Selected</p>
           </TransitionGroup>
         </div>
         <template #footer>
           <BaseButton size="xs" :disabled="!hasFilters" class="clear-button" @click="clearAllFilters">
-            {{ clearFilterText }}
             <Icon v-if="hasFilters" name="ri:close-fill" />
+            {{ clearFilterText }}
           </BaseButton>
         </template>
       </BasePanel>
       <BasePanel>
-        <template #header>Filter by Tag</template>
+        <template #header>
+          <div class="filter-panel-headers">
+            Filter by Tag<span v-if="hasTagFilters"> {{ tagFilterCountText }}</span>
+          </div>
+        </template>
         <ul class="filter-list">
           <li v-for="tag in tags" :key="tag">
             <BaseCheckbox :id="`year-${tag}`" :name="`year-${tag}`" :value="tag" v-model="tagFilter">
@@ -42,7 +47,11 @@
         </ul>
       </BasePanel>
       <BasePanel>
-        <template #header>Filter by Year</template>
+        <template #header>
+          <div class="filter-panel-headers">
+            Filter by Year<span v-if="hasYearFilters"> {{ yearFilterCountText }}</span>
+          </div>
+        </template>
         <ul class="filter-list">
           <li v-for="year in years" :key="year">
             <BaseCheckbox :id="`year-${year}`" :name="`year-${year}`" :value="year" v-model="yearFilter">
@@ -157,11 +166,14 @@ const yearFilter = computed<Array<string>>({
   },
 });
 
-const yearExistsInSortedPosts = (year: string) => {
-  // if (!tagFilter.value.length) return true;
-  // return sortedPosts.value.some((item) => item.year === year);
-  return true;
-};
+const yearFilterCountText = computed<string>(() => {
+  if (yearFilter.value.length > 3) return '(3+)';
+  return `(${yearFilter.value.length})`;
+});
+
+const hasYearFilters = computed<boolean>(() => {
+  return yearFilter.value.length > 0;
+});
 
 watch(
   () => yearFilter.value,
@@ -183,12 +195,14 @@ const tagFilter = computed<Array<string>>({
   },
 });
 
-const tagExistsInSortedPosts = (tag: string) => {
-  // if (!yearFilter.value.length) return true;
-  // if (tagFilter.value.includes(tag)) return true;
-  // return sortedPosts.value.some((item) => item.posts.some((post) => post.tag.includes(tag)));
-  return true;
-};
+const tagFilterCountText = computed<string>(() => {
+  if (tagFilter.value.length > 3) return '(3+)';
+  return `(${tagFilter.value.length})`;
+});
+
+const hasTagFilters = computed<boolean>(() => {
+  return tagFilter.value.length > 0;
+});
 
 watch(
   () => tagFilter.value,
@@ -300,6 +314,12 @@ const clearAllFilters = () => {
     gap: var(--sizing-md);
     overflow-x: auto;
   }
+}
+
+.filter-panel-headers {
+  display: flex;
+  align-items: center;
+  gap: var(--sizing-md);
 }
 
 .fade-move,
