@@ -69,8 +69,8 @@
           style even if it is incomplete.
         </p>
         <p>
-          Unfortunately, they didn't capture everything going back to 2005. Styles weren't saved with the pages until
-          about 2010. Additionally, my versioning of the Nuxt iterations is a little wonky.
+          Sadly, they didn't capture everything going back to 2005. Styles weren't saved with the pages until about
+          2010. Additionally, my versioning of the Nuxt iterations is a little wonky.
         </p>
         <BasePanel>
           <template #header> Nuxt / Vue </template>

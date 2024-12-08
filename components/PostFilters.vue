@@ -296,8 +296,9 @@ const clearAllFilters = () => {
 
   @media (max-width: 979px) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--sizing-md);
+    overflow-x: auto;
   }
 }
 
