@@ -1,9 +1,6 @@
 <template>
   <div class="article-list-item">
     <NuxtLink :to="post._path" class="article-list-item__link">
-      <!-- <div class="article-list-item__feature">
-        <PrimaryImage :src="featuredImage" has-overlay class="article-list-item__feature-image" />
-      </div> -->
       <div class="article-list-item__body">
         <header class="article-list-item__header">
           <time>{{ formatDate(post.date) }}</time>
@@ -14,7 +11,7 @@
           </div>
         </header>
         <div class="article-list-item__title flow">
-          <h3 class="h4-heading">{{ post.title }}</h3>
+          <h3 class="small-heading">{{ post.title }}</h3>
           <p v-html="post.description"></p>
         </div>
       </div>
@@ -218,7 +215,7 @@ const featuredImage = computed<string>(() => {
   container: article / inline-size;
 }
 .article-list-item__link {
-  padding: var(--sizing-lg);
+  padding: var(--sizing-lg) var(--sizing-xl);
 
   @container (width >= 600px) {
     display: grid;
@@ -259,6 +256,7 @@ const featuredImage = computed<string>(() => {
     grid-column: 1 / -1;
     grid-row: 1;
     padding: 0;
+    align-self: start;
   }
 }
 

@@ -1,19 +1,25 @@
 <template>
   <div class="base-panel">
-    <div :class="['base-panel__header', { 'is-open': openPanel }]" @click="openPanelBody">
+    <header :class="['base-panel__header', { 'is-open': openPanel, 'has-border': hasBorder }]" @click="openPanelBody">
       <slot name="header" />
 
       <Icon name="ri:arrow-down-s-line" />
-    </div>
-    <div :class="['base-panel__content', { 'is-active': openPanel }]">
-      <slot name="default" />
-    </div>
+    </header>
+    <section :class="['base-panel__content', { 'is-active': openPanel, 'has-border': hasBorder }]">
+      <div class="base-panel__content--inner">
+        <slot name="default" />
+        <footer v-if="$slots.footer" :class="['base-panel__footer', { 'has-border': hasBorder }]">
+          <slot name="footer" />
+        </footer>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps({
   open: { type: Boolean, default: false },
+  hasBorder: { type: Boolean, default: false },
 });
 
 const openPanel = ref<boolean>(false);
@@ -34,7 +40,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--sizing-lg) 0;
+    padding: var(--sizing-lg) var(--sizing-md);
     font-size: var(--size-step--1);
     font-weight: bold;
     cursor: pointer;
@@ -51,18 +57,43 @@ onMounted(() => {
         transform: rotate(0deg);
       }
     }
+
+    &.has-border {
+      border: 1px solid var(--border-color);
+      border-bottom: 0;
+    }
   }
 
   &__content {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-ease);
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+
+    &--inner {
+      overflow: hidden;
+    }
 
     &.is-active {
       opacity: 1;
       visibility: visible;
-      max-height: 150vh;
+      grid-template-rows: 1fr;
+    }
+
+    &.has-border {
+      border: 1px solid var(--border-color);
+      border-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  &__footer {
+    padding: var(--sizing-md) 0;
+
+    &.has-border {
+      background-color: var(--border-color);
+      padding: var(--sizing-md);
     }
   }
 }
