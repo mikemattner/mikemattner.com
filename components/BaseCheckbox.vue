@@ -1,10 +1,11 @@
 <template>
-  <div class="input-checkbox-field">
+  <label class="input-checkbox-field" :for="id">
     <input class="input-checkbox-field__input" :id="id" :name="name" type="checkbox" :value="value" v-model="model" />
-    <label class="input-checkbox-field__label" :for="id">
+    <span class="input-checkbox-field__control"></span>
+    <span class="input-checkbox-field__label">
       <slot name="default" />
-    </label>
-  </div>
+    </span>
+  </label>
 </template>
 
 <script setup lang="ts">
@@ -41,64 +42,115 @@ const model = computed({
 
 <style scoped lang="scss">
 .input-checkbox-field {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  --hover-color: var(--color-primary-hover);
+  --background-color: var(--background-color);
+  --text-color-white: var(--font-color);
+  --text-color-rest: var(--font-color);
+  --text-color-hover: var(--font-color);
+  --text-color-active: var(--font-color);
+  --ripple-color: hsla(var(--color-blue-hsl), 0.3);
+
+  --transition-duration: 0.25s;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --ripple-duration: 0.7s;
+
+  --control-size: 24px;
+  --control-border: 2px;
+  --focus-ring-size: 4px;
+  --ripple-size: 44px;
+  --checkmark-width: 6px;
+  --checkmark-height: 12px;
+
   position: relative;
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: var(--sizing-md);
+  cursor: pointer;
 
-  &__label {
-    text-align: left;
-    display: flex;
-    align-items: center;
-    font-size: var(--size-step--1);
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-    &:after {
+  &__control {
+    position: relative;
+    width: var(--control-size);
+    height: var(--control-size);
+    min-width: var(--control-size);
+    min-height: var(--control-size);
+    border: var(--control-border) solid var(--color-primary);
+    transition: all var(--transition-duration) var(--transition-timing);
+    border-radius: 7px;
+
+    &::before,
+    &::after {
       content: '';
       position: absolute;
-      left: 4px;
+      transition: transform var(--transition-duration) var(--transition-timing),
+        opacity var(--transition-duration) var(--transition-timing);
+      will-change: transform, opacity;
+    }
+
+    &::before {
       top: 50%;
-      background: white;
-      width: 3px;
-      height: 3px;
-      box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
-      transform: rotate(45deg) translate(-50%, -50%);
+      left: 50%;
+      width: var(--ripple-size);
+      height: var(--ripple-size);
+      background-color: var(--ripple-color);
+      border-radius: 50%;
       opacity: 0;
-      transition: all 0.25s ease-in-out;
+      transform: translate(-50%, -50%) scale(0);
+    }
+
+    &::after {
+      left: 50%;
+      top: 45%;
+      width: var(--checkmark-width);
+      height: var(--checkmark-height);
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+      opacity: 0;
     }
   }
 
-  &__input {
-    border: 1px solid var(--font-color);
-    border-radius: 3px;
-    background: var(--block-quote-bg);
-    font-weight: 700;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    transition: all 0.25s ease-in-out;
-    -webkit-appearance: none;
+  .input-checkbox-field__input:checked ~ .input-checkbox-field__control {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
 
-    &:hover {
-      border-color: var(--color-primary);
-    }
-    &:focus-visible {
-      background: var(--block-quote-bg);
-      border-color: var(--color-primary);
-      box-shadow: 0 0 4px var(--color-primary), var(--box-shadow-short);
+    &::before {
+      animation: ripple 240ms linear;
     }
 
-    &:checked {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
-
-      + label:after {
-        opacity: 1;
-      }
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+      opacity: 1;
     }
+  }
+
+  .input-checkbox-field__input:focus-visible ~ .input-checkbox-field__control {
+    box-shadow: 0 0 0 var(--focus-ring-size) rgba(100, 108, 255, 0.3);
+  }
+
+  &__label {
+    font-size: var(--size-step--1);
+    user-select: none;
+    color: var(--text-color-rest);
+    transition: color var(--transition-duration) var(--transition-timing);
+  }
+}
+
+/* Animations */
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
   }
 }
 </style>
