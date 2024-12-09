@@ -10,6 +10,8 @@ type ButtonVariant = 'solid' | 'outline' | 'text' | 'link';
 
 type ButtonSize = 'md' | 'sm' | 'xs';
 
+type PanelIcon = 'arrow' | 'plus';
+
 interface NavigationList {
   title: string;
   url: string;
