@@ -293,6 +293,14 @@ useHead({
     }
   }
 
+  :deep(.base-panel) {
+    margin-block-start: 2.5rem;
+
+    &:last-child {
+      margin-block-start: 0;
+    }
+  }
+
   .former-site-iterations {
     margin: 0;
     padding: 0 var(--sizing-md) var(--sizing-xl);

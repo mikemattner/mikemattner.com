@@ -1,9 +1,15 @@
 <template>
   <div class="base-panel">
-    <header :class="['base-panel__header', { 'is-open': openPanel, 'has-border': hasBorder }]" @click="openPanelBody">
+    <header
+      :class="[
+        'base-panel__header',
+        { 'is-open': openPanel, 'has-border': hasBorder, 'has-arrow': iconVariant === 'arrow' },
+      ]"
+      @click="openPanelBody"
+    >
       <slot name="header" />
 
-      <Icon name="ri:arrow-down-s-line" />
+      <Icon :name="panelIcon" />
     </header>
     <section :class="['base-panel__content', { 'is-active': openPanel, 'has-border': hasBorder }]">
       <div class="base-panel__content--inner">
@@ -17,9 +23,18 @@
 </template>
 
 <script setup lang="ts">
+import type { PropType } from 'vue';
+
 const props = defineProps({
   open: { type: Boolean, default: false },
   hasBorder: { type: Boolean, default: false },
+  iconVariant: { type: String as PropType<PanelIcon>, default: 'arrow' },
+});
+
+const panelIcon = computed(() => {
+  if (props.iconVariant === 'plus' && openPanel.value) return 'ri:subtract-fill';
+  if (props.iconVariant === 'plus') return 'ri:add-fill';
+  return `ri:arrow-down-s-line`;
 });
 
 const openPanel = ref<boolean>(false);
@@ -49,12 +64,19 @@ onMounted(() => {
     svg {
       transition: var(--transition-cubic);
       font-size: var(--size-step-0);
-      transform: rotate(180deg);
+    }
+
+    &.has-arrow {
+      svg {
+        transform: rotate(-90deg);
+      }
     }
 
     &.is-open {
-      svg {
-        transform: rotate(0deg);
+      &.has-arrow {
+        svg {
+          transform: rotate(0deg);
+        }
       }
     }
 
