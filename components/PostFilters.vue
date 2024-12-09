@@ -19,20 +19,20 @@
               :key="filter"
               @click="handleFilterRemove(filter)"
             >
-              <Icon name="ri:close-fill" />
               {{ filter }}
+              <Icon name="ri:close-fill" />
             </BaseButton>
-            <p v-if="!hasFilters" key="noFilterText">No Filters Selected</p>
+            <p v-if="!hasFilters" class="no-filters-text" key="noFilterText">No Filters Selected</p>
           </TransitionGroup>
         </div>
         <template #footer>
           <BaseButton size="xs" :disabled="!hasFilters" class="clear-button" @click="clearAllFilters">
-            <Icon v-if="hasFilters" name="ri:close-fill" />
             {{ clearFilterText }}
+            <Icon v-if="hasFilters" name="ri:delete-bin-2-line" />
           </BaseButton>
         </template>
       </BasePanel>
-      <BasePanel>
+      <BasePanel icon-variant="plus">
         <template #header>
           <div class="filter-panel-headers">
             Filter by Tag<span v-if="hasTagFilters"> {{ tagFilterCountText }}</span>
@@ -46,7 +46,7 @@
           </li>
         </ul>
       </BasePanel>
-      <BasePanel>
+      <BasePanel icon-variant="plus">
         <template #header>
           <div class="filter-panel-headers">
             Filter by Year<span v-if="hasYearFilters"> {{ yearFilterCountText }}</span>
@@ -261,6 +261,7 @@ const clearAllFilters = () => {
     list-style: none;
     padding: 0 var(--sizing-md) var(--sizing-md);
     margin: 0;
+    font-size: var(--size-step--1);
 
     @media (max-width: 979px) {
       display: grid;
@@ -309,9 +310,11 @@ const clearAllFilters = () => {
   position: relative;
 
   @media (max-width: 979px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--sizing-md);
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // gap: var(--sizing-md);
+    flex-direction: row;
+    flex-wrap: wrap;
     overflow-x: auto;
   }
 }
@@ -320,6 +323,10 @@ const clearAllFilters = () => {
   display: flex;
   align-items: center;
   gap: var(--sizing-md);
+}
+
+.no-filters-text {
+  grid-column: 1 / -1;
 }
 
 .fade-move,

@@ -135,7 +135,6 @@ const model = computed({
   }
 
   &__label {
-    font-size: var(--size-step--1);
     user-select: none;
     color: var(--text-color-rest);
     transition: color var(--transition-duration) var(--transition-timing);
