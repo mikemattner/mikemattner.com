@@ -49,30 +49,15 @@ const featuredImage = computed<string>(() => {
     position: relative;
     background-color: var(--block-quote-bg);
     padding: var(--sizing-xxl);
+    font-size: var(--size-step--1);
 
     h3 {
       transition: var(--transition);
     }
 
     .article-list-item__title {
-      // padding: 0 0 var(--sizing-xl);
       padding: 0;
       z-index: 2;
-    }
-    .article-list-item__read-more {
-      font-family: var(--code-font-family);
-      font-size: var(--size-step--2);
-      text-transform: uppercase;
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: var(--sizing-sm);
-      padding: 0;
-      z-index: 2;
-
-      svg {
-        transition: transform 0.125s var(--cubic-bezier);
-      }
     }
 
     &::after {
@@ -93,50 +78,12 @@ const featuredImage = computed<string>(() => {
     &:hover {
       color: var(--font-color);
       box-shadow: inset 0 0 0 1px var(--color-primary);
-      // background-color: var(--block-quote-bg);
-
-      .article-list-item__read-more {
-        svg {
-          transform: translateX(var(--sizing-sm)) scale(1.1);
-        }
-      }
-
-      .article-list-item__feature-image {
-        :deep(img) {
-          transform: scale(1.2);
-        }
-      }
     }
   }
 
   &__feature {
     padding: 0;
     z-index: 2;
-  }
-
-  &__feature-image {
-    width: 100%;
-    display: inline-flex;
-    overflow: hidden;
-    border-radius: 7px;
-    transition: var(--transition-ease);
-
-    :deep(img) {
-      transition: transform 0.25s var(--cubic-bezier);
-      // opacity: 0.25;
-      overflow: hidden;
-    }
-
-    :deep(.primary-image__image.has-overlay) {
-      img {
-        filter: grayscale(100%) invert(5%) saturate(350%) hue-rotate(351deg) brightness(105%) contrast(95%);
-      }
-
-      &::after,
-      &::before {
-        transition: opacity 0.25s ease-in-out;
-      }
-    }
   }
 
   p {
@@ -238,16 +185,6 @@ const featuredImage = computed<string>(() => {
   }
 }
 
-.article-list-item__feature-image {
-  @container (width >= 600px) {
-    aspect-ratio: 1;
-    height: 100%;
-  }
-  @container (width <= 599px) {
-    aspect-ratio: 2 / 0.75;
-  }
-}
-
 .article-list-item__body {
   @container (width >= 600px) {
     display: flex;
@@ -259,28 +196,4 @@ const featuredImage = computed<string>(() => {
     align-self: start;
   }
 }
-
-// .article-list-item__header {
-//   @container (width >= 600px) {
-//     grid-column: 1 / -1;
-//     grid-row: 1;
-//     padding: 0 0 var(--sizing-lg) 0;
-//   }
-// }
-
-// .article-list-item__title {
-//   @container (width >= 600px) {
-//     grid-column: 1;
-//     grid-row: 2;
-//     align-self: start;
-//   }
-// }
-
-// .article-list-item__read-more {
-//   @container (width >= 600px) {
-//     grid-column: 2;
-//     grid-row: 3;
-//     align-self: end;
-//   }
-// }
 </style>

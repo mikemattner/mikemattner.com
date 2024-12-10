@@ -28,20 +28,20 @@ const props = defineProps({
   svg {
     // width: 2rem;
     // height: 2rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     padding: 0;
     // border-radius: 50%;
     // background-color: var(--color-light);
     z-index: 10;
     transition: var(--transition-cubic-slow);
     // flex: 0 0 2rem;
-    flex: 0 0 2.5rem;
+    flex: 0 0 1.5rem;
 
     @media (max-width: 510px) {
-      height: 1.75rem;
-      width: 1.75rem;
-      flex: 0 0 1.75rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      flex: 0 0 1.5rem;
     }
 
     path {
@@ -56,7 +56,7 @@ const props = defineProps({
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--color-light);
-    font-variation-settings: 'wdth' 100, 'wght' 800;
+    font-variation-settings: 'wdth' 100, 'wght' 300;
     transition: var(--transition-cubic-slow);
 
     @media (max-width: 715px) {
