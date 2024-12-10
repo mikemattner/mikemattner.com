@@ -4,9 +4,9 @@
     class="theme-toggle"
     :class="{ 'is-dark': mode === 'dark' }"
     title="Toggle theme"
-    variant="link"
+    variant="outline"
     size="sm"
-    color="primary"
+    color="secondary"
   >
     <svg class="sun-and-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
       <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
@@ -44,8 +44,8 @@ watchEffect(() => (mode.value = state.value as any));
 .theme-toggle {
   --size: 2.5rem;
   --icon-fill: var(--button-outline-color-text);
-  --icon-fill-hover: var(--color-highlight);
-  transition: var(--transition);
+  --icon-fill-hover: var(--button-outline-text-hover);
+
   color: var(--font-color);
 
   svg {
@@ -60,6 +60,7 @@ watchEffect(() => (mode.value = state.value as any));
     .sun-beams {
       transform-origin: center center;
       fill: var(--icon-fill);
+      transition: var(--transition-cubic);
     }
 
     .sun-beams {

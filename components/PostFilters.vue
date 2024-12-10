@@ -227,10 +227,13 @@ const clearAllFilters = () => {
 
 <style lang="scss" scoped>
 .post-filters {
-  @media (min-width: 980px) {
-    position: sticky;
-    top: 50px;
-  }
+  // TODO: Make this sticky, but respect the bottom of the
+  //       viewport to avoid content running past the bottom
+  //       of the screen.
+  // @media (min-width: 980px) {
+  //   position: sticky;
+  //   top: 50px;
+  // }
   .filters-body {
     margin-top: 0;
     opacity: 0;
