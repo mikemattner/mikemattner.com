@@ -20,9 +20,9 @@ const classes = computed(() => {
   return [`info-message--${props.type}`];
 });
 const icon = computed(() => {
-  if (props.type === 'warning') return 'ri:error-warning-fill';
-  if (props.type === 'success') return 'ri:checkbox-circle-fill';
-  return 'ri:information-2-fill';
+  if (props.type === 'warning') return 'ri:error-warning-line';
+  if (props.type === 'success') return 'ri:checkbox-circle-line';
+  return 'ri:information-2-line';
 });
 </script>
 

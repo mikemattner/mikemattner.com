@@ -58,11 +58,11 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
-.article-page {
-  // padding-left: 0;
-  // padding-right: 0;
-  padding-bottom: 0;
-}
+// .article-page {
+//   // padding-left: 0;
+//   // padding-right: 0;
+//   padding-bottom: 0;
+// }
 .article-layout {
   max-width: var(--max-width);
   margin-inline: auto;
@@ -108,7 +108,6 @@ useHead({
 
       .article-title {
         font-size: clamp(30px, 8vw, 75px);
-        color: var(--color-light);
       }
 
       hr {
@@ -148,7 +147,7 @@ useHead({
 
     @media (min-width: 1001px) {
       grid-column: 1 / span 4;
-      grid-row: 1 / span 4;
+      grid-row: 1;
     }
 
     @media (max-width: 1000px) {

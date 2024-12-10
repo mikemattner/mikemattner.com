@@ -10,15 +10,15 @@
           <h1 class="article-title" v-html="data.title"></h1>
           <div v-if="data.link" class="article-link">
             <BaseButton
-              v-tooltip="`Read more at: ${data.link}`"
+              v-tooltip="data.link"
               :href="data.link"
               target="_blank"
               size="sm"
               color="secondary"
               variant="outline"
             >
+              Read more at {{ baseUrl }}
               <Icon name="ri:external-link-line" />
-              Read More
             </BaseButton>
           </div>
           <hr />
@@ -66,9 +66,12 @@ const pageTitle = computed<string>(() => {
   return data?.value?.title ? data?.value?.title : 'UX/UI Designer & Developer in Michigan';
 });
 
-const featuredImage = computed<string>(() => {
-  if (!data?.value?.image) return '/images/feature/default-two.jpg';
-  return data?.value?.image;
+const baseUrl = computed<string>(() => {
+  if (data?.value?.link) {
+    const { hostname } = new URL(data.value.link);
+    return hostname;
+  }
+  return '';
 });
 
 useHead({
@@ -189,7 +192,7 @@ useHead({
 
     @media (min-width: 1001px) {
       grid-column: 1 / span 4;
-      grid-row: 1 / span 4;
+      grid-row: 1;
     }
 
     @media (max-width: 1000px) {

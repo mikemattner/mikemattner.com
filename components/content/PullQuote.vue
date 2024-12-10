@@ -24,11 +24,15 @@ const hasSlot = (name: string) => {
   line-height: 1.4;
   display: grid;
   color: var(--headline-font-color);
-  background-color: hsla(var(--color-blue-hsl), 8%);
   border-radius: 7px;
   padding: var(--sizing-xl) var(--sizing-lg);
   position: relative;
   text-wrap: pretty;
+  // transition: var(--transition);
+
+  // &:hover {
+  //   background-color: hsla(var(--color-blue-hsl), 8%);
+  // }
 
   @media (min-width: 989px) {
     margin-left: calc(var(--sizing-xl) * -1);

@@ -77,7 +77,6 @@
         </ul>
       </div>
       <div class="shameless-branding">
-        <!-- <LinedLogo /> -->
         <p>Mike is a designer and developer.</p>
         <p>Reach me at hello @ mikemattner.com</p>
       </div>
@@ -93,7 +92,6 @@
 
 <script setup lang="ts">
 import { navigationList } from '@/data/navigationList';
-import LinedLogo from '~/assets/images/logo-lined.svg';
 
 const date = ref<Date>(new Date());
 const theYear = computed<string>(() => {
@@ -143,14 +141,6 @@ const theYear = computed<string>(() => {
     grid-column: 1;
     grid-row: 1;
     line-height: 1;
-    font-weight: 600;
-
-    // svg {
-    //   color: var(--color-primary);
-    //   fill: var(--color-primary);
-    //   width: 8.5rem;
-    //   height: 8.5rem;
-    // }
 
     @media (max-width: 597px) {
       display: none;
