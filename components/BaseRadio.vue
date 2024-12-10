@@ -1,8 +1,16 @@
 <template>
-  <label class="input-checkbox-field" :for="id">
-    <input class="input-checkbox-field__input" :id="id" :name="name" type="checkbox" :value="value" v-model="model" />
-    <span class="input-checkbox-field__control"></span>
-    <span class="input-checkbox-field__label">
+  <label class="input-radio-field" :for="id">
+    <input
+      class="input-radio-field__input"
+      :id="id"
+      :name="name"
+      type="radio"
+      :value="value"
+      :checked="modelValue === value"
+      @change="onChange"
+    />
+    <span class="input-radio-field__control"></span>
+    <span class="input-radio-field__label">
       <slot name="default" />
     </span>
   </label>
@@ -23,25 +31,20 @@ const props = defineProps({
     required: false,
   },
   modelValue: {
-    type: [Array, Boolean],
+    type: [String, Number, Boolean, Object],
     required: false,
   },
 });
 
 const emit = defineEmits(['update:modelValue']);
 
-const model = computed({
-  get() {
-    return props.modelValue;
-  },
-  set(value) {
-    emit('update:modelValue', value);
-  },
-});
+const onChange = () => {
+  emit('update:modelValue', props.value);
+};
 </script>
 
 <style scoped lang="scss">
-.input-checkbox-field {
+.input-radio-field {
   position: relative;
   display: flex;
   align-items: center;
@@ -63,7 +66,7 @@ const model = computed({
     min-height: var(--control-size);
     border: var(--control-border) solid var(--color-primary);
     transition: all var(--transition-duration) var(--transition-timing);
-    border-radius: 7px;
+    border-radius: 50%;
 
     &::before,
     &::after {
@@ -86,18 +89,18 @@ const model = computed({
     }
 
     &::after {
+      top: 50%;
       left: 50%;
-      top: 45%;
-      width: var(--checkmark-width);
-      height: var(--checkmark-height);
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+      width: var(--radio-dot-size);
+      height: var(--radio-dot-size);
+      border-radius: 50%;
+      background-color: var(--color-blue-tint-80);
+      transform: translate(-50%, -50%) scale(0);
       opacity: 0;
     }
   }
 
-  .input-checkbox-field__input:checked ~ .input-checkbox-field__control {
+  .input-radio-field__input:checked ~ .input-radio-field__control {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
 
@@ -106,12 +109,12 @@ const model = computed({
     }
 
     &::after {
-      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+      transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
   }
 
-  .input-checkbox-field__input:focus-visible ~ .input-checkbox-field__control {
+  .input-radio-field__input:focus-visible ~ .input-checkbox-field__control {
     box-shadow: 0 0 0 var(--focus-ring-size) rgba(100, 108, 255, 0.3);
   }
 
