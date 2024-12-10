@@ -11,7 +11,7 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h1 class="main-lede very-large-heading"><small>A Quick Introduction</small> Hey there!</h1>
+          <h1 class="main-lede very-large-heading">Hey There</h1>
           <p>I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.</p>
           <p>
             In a former life I worked as a digital designer&mdash;basically a catch-all for video editing, motion
@@ -131,57 +131,12 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 13 / -1;
+      grid-column: 3 / span 15;
       align-self: center;
       grid-row: 1;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
-    }
-
-    .intro {
-      letter-spacing: 0.01em;
-      font-weight: 300;
-      font-size: var(--size-step-1);
-      line-height: 1.4;
-      max-width: 65ch;
-      text-wrap: pretty;
-
-      svg {
-        fill: var(--color-highlight);
-        color: var(--color-highlight);
-        display: inline-flex;
-        width: 1em;
-        height: 1em;
-        vertical-align: middle;
-        margin: -0.1em 0.2em 0 0.25em;
-        transform: scale(1.15);
-        transition: var(--transition);
-      }
-    }
-  }
-
-  .content-area {
-    grid-column: 1 / span 28;
-    margin: var(--sizing-xl) 0 0;
-  }
-
-  .sidebar-area {
-    grid-column: 1 / span 28;
-  }
-
-  .button-group {
-    --flow-space: 1.5em;
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-xl);
-
-    @media (max-width: 499px) {
-      flex-direction: column;
-
-      .button {
-        width: 100%;
-      }
     }
   }
 
@@ -194,7 +149,7 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-row: 1;
-      grid-column: 13 / -1;
+      grid-column: 2 / span 17;
       align-self: center;
       z-index: 1;
     }
@@ -219,25 +174,51 @@ const posts = computed(() => {
     z-index: 1;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 10;
-      aspect-ratio: 1 / 1.25;
+      grid-column: 19 / span 8;
+      aspect-ratio: 1 / 1.5;
       grid-row: 1;
     }
 
     @media (max-width: 1052px) {
       grid-column: 1 / -1;
       align-self: self-start;
+      aspect-ratio: 1.5 / 1;
       grid-row: 1;
     }
 
     @media (max-width: 499px) {
       grid-column: 1 / span 4;
       grid-row: 1;
+      aspect-ratio: 1.25 / 1;
     }
 
     .profile-image-photo {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .content-area {
+    grid-column: 1 / span 28;
+    margin: var(--sizing-xl) 0 0;
+  }
+
+  .sidebar-area {
+    grid-column: 1 / span 28;
+  }
+
+  .button-group {
+    --flow-space: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-xl);
+
+    @media (max-width: 499px) {
+      flex-direction: column;
+
+      .button {
+        width: 100%;
+      }
     }
   }
 

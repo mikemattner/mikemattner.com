@@ -251,7 +251,7 @@ const clearAllFilters = () => {
     @media (max-width: 979px) {
       background-color: var(--filter-bg);
       padding: 0 var(--sizing-xl);
-      box-shadow: var(--box-shadow-long);
+      box-shadow: var(--box-shadow-short);
       border-radius: 7px;
 
       &.is-active {

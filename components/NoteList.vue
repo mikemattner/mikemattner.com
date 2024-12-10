@@ -101,7 +101,7 @@ const sortedNotes = computed<SortedNoteItem[]>(() => {
     grid-template-columns: repeat(28, 1fr);
 
     .note-group {
-      grid-column: 1 / 23;
+      grid-column: 1 / 20;
     }
     .filters-section {
       grid-column: 24 / -1;
