@@ -8,7 +8,6 @@
 
 <style lang="scss" scoped>
 .rss-button {
-  --size: 2.5rem;
   --icon-fill: var(--button-outline-color-text);
   --icon-fill-hover: var(--button-outline-text-hover);
 
