@@ -1,13 +1,13 @@
 <template>
   <div class="article-navigation">
     <div v-if="prev" class="prev-article">
-      <h2 class="small-text code-font">Previous {{ label }}</h2>
+      <h2 class="small-text font-weight-body">Previous {{ label }}</h2>
       <NuxtLink :to="prev._path" :title="prev.title" class="prev-button" variant="link" size="md" color="primary">
         {{ prev.title }}
       </NuxtLink>
     </div>
     <div v-if="next" class="next-article">
-      <h2 class="small-text code-font">Next {{ label }}</h2>
+      <h2 class="small-text font-weight-body">Next {{ label }}</h2>
       <NuxtLink :to="next._path" :title="next.title" class="next-button" variant="link" size="md" color="primary">
         {{ next.title }}
       </NuxtLink>

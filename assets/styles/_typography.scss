@@ -59,7 +59,6 @@ h4,
 
 .eyebrow {
   font-size: var(--size-step--2);
-  font-family: var(--code-font-family);
   text-transform: uppercase;
   opacity: 0.75;
   font-weight: 300;
@@ -67,6 +66,11 @@ h4,
 
 .small-text {
   font-size: var(--size-step--1);
+}
+
+.font-weight-body {
+  font-weight: var(--font-weight);
+  font-variation-settings: 'wdth' 100, 'wght' var(--font-weight);
 }
 
 .bar-right {
