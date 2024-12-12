@@ -45,6 +45,9 @@ export default defineNuxtConfig({
     markdown: {
       anchorLinks: false,
     },
+    experimental: {
+      search: true,
+    },
   },
   nitro: {
     prerender: {
