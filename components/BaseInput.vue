@@ -83,7 +83,7 @@ const events = computed(() => {
   &__input {
     border: none;
     border: var(--control-border) solid var(--border-color);
-    border-radius: 7px;
+    border-radius: var(--border-radius);
     background: none;
     color: var(--header-color);
     padding: 0.25rem 0.5rem;
