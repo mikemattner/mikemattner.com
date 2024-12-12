@@ -91,7 +91,7 @@ const model = computed({
       width: var(--checkmark-width);
       height: var(--checkmark-height);
       border: solid white;
-      border-width: 0 2px 2px 0;
+      border-width: 0 3px 3px 0;
       transform: translate(-50%, -50%) rotate(45deg) scale(0);
       opacity: 0;
     }
