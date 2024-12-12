@@ -177,15 +177,15 @@ useHead({
       }
     }
 
-    time {
-      font-family: var(--code-font-family);
-    }
+    // time {
+    //   font-family: var(--code-font-family);
+    // }
 
     .tag-list {
       margin: 0;
       padding: 0;
       list-style: none;
-      font-family: var(--code-font-family);
+      // font-family: var(--code-font-family);
 
       @media (max-width: 1000px) {
         display: flex;

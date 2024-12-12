@@ -88,8 +88,6 @@ const posts = computed<Post[]>(() => {
   }
 
   .sidebar-area {
-    font-size: var(--size-step-1);
-
     @media (min-width: 1053px) {
       grid-column: 1 / span 28;
     }
