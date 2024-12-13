@@ -25,7 +25,7 @@
     z-index: 1000;
     padding: var(--sizing-xl);
     border: none;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
   }
 
   @media (min-width: 90rem) {
@@ -59,7 +59,7 @@
       // border: 1px solid var(--color-light-border-t);
       // padding: 1rem;
       max-width: var(--max-width-nav);
-      gap: var(--sizing-xxxl);
+      gap: var(--sizing-xl);
     }
   }
 
@@ -67,13 +67,9 @@
     line-height: 1;
     display: flex;
     align-items: center;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     z-index: 1001;
     text-decoration-color: transparent;
-
-    // &:hover {
-    //   text-decoration-color: var(--color-light);
-    // }
   }
 }
 </style>

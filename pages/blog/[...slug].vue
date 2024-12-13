@@ -151,7 +151,7 @@ useHead({
     width: 100%;
     display: inline-flex;
     overflow: hidden;
-    border-radius: 7px;
+    border-radius: var(--border-radius);
     transition: var(--transition-ease);
     margin: var(--sizing-xl) 0 var(--sizing-xxxl);
     aspect-ratio: 3 / 1;

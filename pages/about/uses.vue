@@ -206,7 +206,7 @@ useHead({
   .desk-image {
     aspect-ratio: 2 / 1.25;
     overflow: hidden;
-    border-radius: 7px;
+    border-radius: var(--border-radius);
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;

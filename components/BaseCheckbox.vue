@@ -63,7 +63,7 @@ const model = computed({
     min-height: var(--control-size);
     border: var(--control-border) solid var(--color-primary);
     transition: all var(--transition-duration) var(--transition-timing);
-    border-radius: 7px;
+    border-radius: var(--border-radius);
 
     &::before,
     &::after {

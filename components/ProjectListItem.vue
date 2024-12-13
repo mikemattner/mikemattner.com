@@ -61,7 +61,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 .project-list-item {
   height: 100%;
-  border-radius: 7px;
+  border-radius: var(--border-radius);
   background-color: var(--block-quote-bg);
   padding: var(--sizing-lg);
   display: flex;

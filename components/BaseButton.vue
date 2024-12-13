@@ -100,7 +100,7 @@ const attributes = computed(() => {
   transition: var(--transition);
   font-variation-settings: 'wdth' 100, 'wght' 300;
   letter-spacing: 0.025em;
-  border-radius: 7px;
+  border-radius: var(--border-radius);
 
   &:focus-visible {
     outline: 0;

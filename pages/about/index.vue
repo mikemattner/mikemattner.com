@@ -274,7 +274,7 @@ useHead({
 
   .profile-image {
     aspect-ratio: 1 / 0.75;
-    border-radius: 7px;
+    border-radius: var(--border-radius);
     overflow: hidden;
 
     @media (min-width: 501px) {
@@ -327,7 +327,7 @@ useHead({
       // box-shadow: 5px 5px 0 0 var(--border-color);
       font-variation-settings: 'wdth' 100, 'wght' 800;
       line-height: 1;
-      border-radius: 7px;
+      border-radius: var(--border-radius);
 
       .year {
         font-family: var(--code-font-family);

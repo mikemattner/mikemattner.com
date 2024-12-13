@@ -252,7 +252,7 @@ const clearAllFilters = () => {
       background-color: var(--filter-bg);
       padding: 0 var(--sizing-xl);
       box-shadow: var(--box-shadow-short);
-      border-radius: 7px;
+      border-radius: var(--border-radius);
 
       &.is-active {
         padding: var(--sizing-xl);
