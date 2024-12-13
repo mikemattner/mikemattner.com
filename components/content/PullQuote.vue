@@ -24,7 +24,7 @@ const hasSlot = (name: string) => {
   line-height: 1.4;
   display: grid;
   color: var(--headline-font-color);
-  border-radius: 7px;
+  border-radius: var(--border-radius);
   padding: var(--sizing-xl) var(--sizing-lg);
   position: relative;
   text-wrap: pretty;

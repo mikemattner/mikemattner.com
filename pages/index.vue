@@ -169,7 +169,7 @@ const posts = computed(() => {
 
   .profile-image {
     aspect-ratio: 1 / 0.75;
-    border-radius: 7px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     z-index: 1;
 

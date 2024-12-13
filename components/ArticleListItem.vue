@@ -44,7 +44,7 @@ const featuredImage = computed<string>(() => {
     text-decoration: none;
     color: inherit;
     transition: var(--transition);
-    border-radius: 7px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     position: relative;
     background-color: var(--block-quote-bg);
@@ -67,7 +67,7 @@ const featuredImage = computed<string>(() => {
       bottom: 20px;
       left: 20px;
       right: 20px;
-      border-radius: 7px;
+      border-radius: var(--border-radius);
       background-color: var(--block-quote-bg);
       transition: all 0.125s var(--cubic-bezier);
       opacity: 0;
