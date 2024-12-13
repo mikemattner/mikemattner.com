@@ -41,7 +41,7 @@
         <li v-for="result in data" :key="result._path" @click="selectOption">
           <NuxtLink class="article-link" :to="result._path">
             {{ result.title }}
-            <span class="description">{{ result.description }}</span>
+            <span class="description" v-html="result.description" />
           </NuxtLink>
         </li>
       </ul>
@@ -90,6 +90,7 @@ const { data, refresh } = await useAsyncData('blog-search', () =>
         { url: { $icontains: searchTerm.value } },
         { body: { $icontains: searchTerm.value } },
         { tag: { $icontains: searchTerm.value } },
+        { category: { $icontains: searchTerm.value } },
       ],
     })
     .limit(10)
@@ -110,12 +111,10 @@ onMounted(() => {
   display: grid;
   gap: var(--sizing-md);
   grid-template-rows: auto 1fr;
-  width: 50vw;
-  min-width: 550px;
   height: 400px;
 
   .search-results {
-    font-size: var(--size-step-0);
+    font-size: var(--size-step--1);
     overflow-y: scroll;
     overflow-x: auto;
   }
@@ -145,7 +144,7 @@ onMounted(() => {
 
     .description {
       display: block;
-      font-size: var(--size-step--1);
+      font-size: var(--size-step--2);
       font-weight: var(--font-weight);
     }
 
