@@ -41,3 +41,23 @@ interface GithubRepos {
   language: string;
   updated_at: string;
 }
+
+interface SearchResults {
+  id: string;
+  score: number;
+  terms: Array<string>;
+  queryTerms: Array<string>;
+  match: {
+    [key: string]: Array<string>;
+  };
+  title: string;
+  content: string;
+  titles: Array<string>;
+}
+
+interface SearchList {
+  id: string;
+  title: string;
+  content?: string;
+  url: string;
+}

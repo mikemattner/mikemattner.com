@@ -15,6 +15,7 @@
       </li>
     </ul>
   </nav>
+  <SearchButton v-if="!isMobile && showSearch" />
 </template>
 
 <script setup lang="ts">
@@ -49,6 +50,22 @@ const toggle = () => {
     toggleNav();
   }
 };
+
+const showSearch = ref(false);
+
+onMounted(() => {
+  if (!isMobile.value) {
+    showSearch.value = true;
+  }
+});
+
+watch(isMobile, () => {
+  if (isMobile.value) {
+    showSearch.value = false;
+  } else {
+    showSearch.value = true;
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -61,7 +78,7 @@ const toggle = () => {
     padding: 0;
     list-style: none;
     font-size: var(--size-step-0);
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
 
     @media (max-width: 715px) {
       flex-direction: column;
@@ -89,10 +106,12 @@ const toggle = () => {
         height: 100%;
         text-decoration-color: transparent;
         padding: 0.5rem 0.25rem;
-        color: var(--color-light);
+        // color: var(--color-light);
+        color: var(--headline-font-color);
 
         &:hover {
-          text-decoration-color: var(--color-light);
+          // text-decoration-color: var(--color-light);
+          text-decoration-color: var(--headline-font-color);
         }
       }
     }
@@ -100,7 +119,8 @@ const toggle = () => {
 
   .router-link-active,
   .active-path {
-    text-decoration-color: var(--color-light);
+    // text-decoration-color: var(--color-light);
+    text-decoration-color: var(--headline-font-color);
   }
 
   &__controls {

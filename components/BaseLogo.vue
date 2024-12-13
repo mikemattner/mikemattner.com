@@ -46,7 +46,8 @@ const props = defineProps({
 
     path {
       // fill: var(--color-dark);
-      fill: var(--color-light);
+      // fill: var(--color-light);
+      fill: var(--headline-font-color);
       transition: var(--transition-cubic-slow);
     }
   }
@@ -55,7 +56,8 @@ const props = defineProps({
     font-size: var(--size-step-1);
     line-height: 1;
     letter-spacing: 0.025em;
-    color: var(--color-light);
+    // color: var(--color-light);
+    color: var(--headline-font-color);
     font-variation-settings: 'wdth' 75, 'wght' 800;
     text-transform: uppercase;
     transition: var(--transition-cubic-slow);
@@ -67,7 +69,8 @@ const props = defineProps({
 
   @media (min-width: 511px) {
     &:hover {
-      color: var(--color-light);
+      // color: var(--color-light);
+      color: var(--headline-font-color);
 
       // svg {
       //   transform: rotate(720deg);
