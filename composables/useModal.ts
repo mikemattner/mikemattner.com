@@ -12,81 +12,96 @@
  *
  * @example
  * import { useModal } from '~/composables/useModal';
+ * import MyComponent from '~/components/MyComponent.vue';
+ * const modal = useModal();
  *
- * modal.openModal(MyComponent, { actions: [
- *  {
+ * modal.openModal(MyComponent, {
+ *  title: 'My Modal',
+ *  showHeader: true,
+ *  showCloseButton: true,
+ *  modalWidth: 'md',
+ *  actions: [
+ *    {
  *     label: 'Save',
  *     callback: (dataFromView) => {
  *       console.log(dataFromView);
  *       modal.close();
- *    },
- *  },
- * ]});
+ *     },
+ *   },
+ *  ]});
  */
 
-import { ref, markRaw } from 'vue';
+import { ref, reactive, markRaw } from 'vue';
 
 export type ModalAction = {
   label: string;
+  variant?: ButtonVariant;
   callback: (props?: unknown) => void;
 };
 
 export type ModalOptions = {
-  title?: string;
+  modalTitle?: string;
   showHeader?: boolean;
   showCloseButton?: boolean;
+  modalWidth?: 'sm' | 'md' | 'lg';
   actions?: ModalAction[];
 };
 
-// Display properties
-const show = ref<boolean>(false);
-const showModal = ref<boolean>(false);
-const showHeader = ref<boolean>(false);
-const showCloseButton = ref<boolean>(false);
-const modalTitle = ref<string>();
+export type ModalState = {
+  open: boolean;
+  showModal: boolean;
+  showHeader: boolean;
+  showCloseButton: boolean;
+  modalTitle: string | undefined;
+  modalWidth: 'sm' | 'md' | 'lg' | undefined;
+  component: Component | object | undefined;
+  callbackActions: ModalAction[] | undefined;
+};
 
-// Component and callback actions
-const component = ref<Component | object>();
-const callbackActions = ref<ModalAction[]>();
+const modalState = reactive<ModalState>({
+  open: false,
+  showModal: false,
+  showHeader: false,
+  showCloseButton: false,
+  modalTitle: undefined,
+  modalWidth: undefined,
+  component: undefined,
+  callbackActions: undefined,
+});
 
 export function useModal() {
   const openModal = (view: object, options?: ModalOptions) => {
-    showHeader.value = options?.showHeader ? options.showHeader : false;
-    modalTitle.value = options?.title ? options.title : undefined;
-    showCloseButton.value = options?.showCloseButton ? options.showCloseButton : false;
-    callbackActions.value = options?.actions ? options.actions : undefined;
-    component.value = markRaw(view);
-    show.value = true;
+    modalState.showHeader = options?.showHeader ? options.showHeader : false;
+    modalState.modalTitle = options?.modalTitle ? options.modalTitle : undefined;
+    modalState.modalWidth = options?.modalWidth ? options.modalWidth : 'md';
+    modalState.showCloseButton = options?.showCloseButton ? options.showCloseButton : false;
+    modalState.callbackActions = options?.actions ? options.actions : undefined;
+    modalState.component = markRaw(view);
+    modalState.open = true;
   };
 
   const close = () => {
-    toggleModal();
+    toggleModalVisibility();
     setTimeout(() => {
-      show.value = false;
+      modalState.open = false;
     }, 150);
     setTimeout(() => {
-      component.value = undefined;
-      callbackActions.value = undefined;
-      showHeader.value = false;
-      showCloseButton.value = false;
-      modalTitle.value = undefined;
+      modalState.component = undefined;
+      modalState.callbackActions = undefined;
+      modalState.showHeader = false;
+      modalState.showCloseButton = false;
+      modalState.modalTitle = undefined;
     }, 200);
   };
 
-  const toggleModal = () => {
-    showModal.value = !showModal.value;
+  const toggleModalVisibility = () => {
+    modalState.showModal = !modalState.showModal;
   };
 
   return {
-    component,
-    show,
-    showHeader,
-    showModal,
+    modalState,
     openModal,
     close,
-    modalTitle,
-    callbackActions,
-    toggleModal,
-    showCloseButton,
+    toggleModalVisibility,
   };
 }

@@ -4,39 +4,42 @@
       id="search"
       ref="searchInput"
       name="search"
+      placeholder="Search"
       clearable
       @clear="closeOrClearSearch"
       @input="search"
       v-model="searchTerm"
-    >
-      Search
-    </BaseInput>
+    />
     <div class="search-results">
-      <!-- <ContentList
-        v-if="searchTerm"
-        :path="`/blog/${searchTerm}`"
-        fields="title, thumbnail, date"
-        :query="{
-          draft: false,
-          sort: [
-            {
-              date: -1,
-            },
-          ],
-        }"
+      <ContentQuery
+        :where="[
+          {
+            $or: [
+              { title: { $icontains: searchTerm } },
+              { description: { $icontains: searchTerm } },
+              { url: { $icontains: searchTerm } },
+              { body: { $icontains: searchTerm } },
+              { tag: { $icontains: searchTerm } },
+              { category: { $icontains: searchTerm } },
+            ],
+          },
+        ]"
       >
-        <template #default="{ list }">
+        <template #default="{ data }">
           <ul class="result-list">
-            <li v-for="result in list" :key="result._path" @click="selectOption">
-              <NuxtLink class="article-link" :to="result._path">{{ result.title }}</NuxtLink>
+            <li v-for="result in data" :key="result._path" @click="selectOption">
+              <NuxtLink class="article-link" :to="result._path">
+                {{ result.title }}
+                <span class="description" v-html="result.description" />
+              </NuxtLink>
             </li>
           </ul>
         </template>
         <template #not-found>
           <p>No articles found.</p>
         </template>
-      </ContentList> -->
-      <p v-if="!data">No results</p>
+      </ContentQuery>
+      <!-- <p v-if="!data">No results</p>
       <ul v-if="data" class="result-list">
         <li v-for="result in data" :key="result._path" @click="selectOption">
           <NuxtLink class="article-link" :to="result._path">
@@ -44,21 +47,51 @@
             <span class="description" v-html="result.description" />
           </NuxtLink>
         </li>
-      </ul>
+      </ul> -->
+      <!-- <p v-if="!data">No results</p>
+      <ul v-if="data" class="result-list">
+        <li v-for="result in data" :key="result._path" @click="selectOption">
+          <NuxtLink class="article-link" :to="result._path">
+            {{ result.title }}
+            <span class="description" v-html="result.description" />
+          </NuxtLink>
+        </li>
+      </ul> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
 import { useModal } from '~/composables/useModal';
 const { close } = useModal();
 
 const searchInput = ref();
 
-const searchTerm = ref<string>();
+const searchTerm = ref<string>('');
+
+const query = reactive<QueryBuilderParams>({
+  path: '/blog',
+  name: 'blog-search',
+  where: [
+    {
+      $or: [
+        { title: { $icontains: searchTerm.value } },
+        { description: { $icontains: searchTerm.value } },
+        { url: { $icontains: searchTerm.value } },
+        { body: { $icontains: searchTerm.value } },
+        { tag: { $icontains: searchTerm.value } },
+        { category: { $icontains: searchTerm.value } },
+      ],
+    },
+  ],
+});
 
 // TODO: figure out how to get better search results
-// const results = await searchContent(searchTerm);
+// const miniSearchOptions = defineMiniSearchOptions({
+//   fields: ['title', 'description', 'body'],
+// });
+// const results = await searchContent(searchTerm, miniSearchOptions);
 // const resultList = computed<Array<SearchList>>(() => {
 //   return results.value?.map((result: SearchResults) => {
 //     return {
@@ -81,20 +114,26 @@ const selectOption = () => {
   close();
 };
 
-const { data, refresh } = await useAsyncData('blog-search', () =>
-  queryContent()
-    .where({
-      $or: [
-        { title: { $icontains: searchTerm.value } },
-        { description: { $icontains: searchTerm.value } },
-        { url: { $icontains: searchTerm.value } },
-        { body: { $icontains: searchTerm.value } },
-        { tag: { $icontains: searchTerm.value } },
-        { category: { $icontains: searchTerm.value } },
-      ],
-    })
-    .limit(10)
-    .find()
+const { data, refresh } = await useAsyncData(
+  'blog-search',
+  () =>
+    queryContent()
+      .where({
+        $or: [
+          { title: { $icontains: searchTerm.value } },
+          { description: { $icontains: searchTerm.value } },
+          { url: { $icontains: searchTerm.value } },
+          { body: { $icontains: searchTerm.value } },
+          { tag: { $icontains: searchTerm.value } },
+          { category: { $icontains: searchTerm.value } },
+        ],
+      })
+      .limit(10)
+      .find(),
+  {
+    watch: [searchTerm],
+    server: false,
+  }
 );
 
 const search = () => {

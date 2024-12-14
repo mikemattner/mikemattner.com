@@ -53,19 +53,19 @@ const toggle = () => {
 
 const showSearch = ref(false);
 
-onMounted(() => {
-  if (!isMobile.value) {
-    showSearch.value = true;
-  }
-});
+// onMounted(() => {
+//   if (!isMobile.value) {
+//     showSearch.value = true;
+//   }
+// });
 
-watch(isMobile, () => {
-  if (isMobile.value) {
-    showSearch.value = false;
-  } else {
-    showSearch.value = true;
-  }
-});
+// watch(isMobile, () => {
+//   if (isMobile.value) {
+//     showSearch.value = false;
+//   } else {
+//     showSearch.value = true;
+//   }
+// });
 </script>
 
 <style lang="scss" scoped>

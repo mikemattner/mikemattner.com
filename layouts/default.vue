@@ -3,14 +3,14 @@
     <BaseNavigation />
     <slot />
     <BaseFooter />
-    <BaseModal v-if="show" />
+    <BaseModal v-if="modalState.open" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { useModal } from '~/composables/useModal';
 
-const { show } = useModal();
+const { modalState } = useModal();
 </script>
 
 <style lang="scss" scoped>
