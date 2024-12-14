@@ -62,7 +62,6 @@ const date = computed<string>(() => formatDate(props.note.date));
 
   &__header {
     font-size: var(--size-step--2);
-    font-family: var(--code-font-family);
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
