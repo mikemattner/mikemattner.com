@@ -1,8 +1,8 @@
 <template>
   <Teleport to="body">
-    <div :class="['modal-overlay', { active: show }]" @click="close">
+    <div :class="['modal-overlay', { active: modalState.open }]" @click="close">
       <div
-        :class="['modal-container', { active: showModal }]"
+        :class="classes"
         role="dialog"
         ref="modal"
         aria-modal="true"
@@ -10,19 +10,21 @@
         aria-describedby="modal-description"
         @click.stop
       >
-        <div v-if="showHeader" class="modal-header">
-          <h2 v-if="modalTitle" class="small-heading">{{ modalTitle }}</h2>
-          <BaseButton v-if="showCloseButton" size="xs" variant="text" class="close-button" @click="close">
+        <div v-if="modalState.showHeader" class="modal-header">
+          <h2 v-if="modalState.modalTitle" class="small-heading">{{ modalState.modalTitle }}</h2>
+          <BaseButton v-if="modalState.showCloseButton" size="xs" variant="text" class="close-button" @click="close">
             <Icon name="ri:close-large-fill" />
           </BaseButton>
         </div>
-        <component :is="component" @vue:mounted="toggleModal" />
-        <div v-if="callbackActions" class="modal-actions">
+        <ClientOnly>
+          <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
+        </ClientOnly>
+        <div v-if="modalState.callbackActions" class="modal-actions">
           <BaseButton
-            v-for="action in callbackActions"
+            v-for="action in modalState.callbackActions"
             size="sm"
-            variant="outline"
-            color="secondary"
+            :variant="action.variant ? action.variant : 'outline'"
+            color="primary"
             @click="action.callback"
           >
             {{ action.label }}
@@ -36,11 +38,25 @@
 <script setup lang="ts">
 import { useModal } from '~/composables/useModal';
 
-const { close, show, component, showHeader, showModal, callbackActions, toggleModal, modalTitle, showCloseButton } =
-  useModal();
+const { close, toggleModalVisibility, modalState } = useModal();
+
+const classes = computed(() => {
+  return [
+    'modal-container',
+    {
+      active: modalState.showModal,
+      'modal-width__sm': modalState.modalWidth === 'sm',
+      'modal-width__md': modalState.modalWidth === 'md',
+      'modal-width__lg': modalState.modalWidth === 'lg',
+      'modal-header': modalState.showHeader && !modalState.callbackActions?.length,
+      'modal-footer': modalState.callbackActions?.length && !modalState.showHeader,
+      'modal-header-footer': modalState.showHeader && modalState.callbackActions?.length,
+    },
+  ];
+});
 
 const handleEscape = (e: KeyboardEvent) => {
-  if (e.key === 'Escape' && show.value) {
+  if (e.key === 'Escape' && modalState.open) {
     close();
   }
 };
@@ -79,17 +95,43 @@ onUnmounted(() => {
 .modal-container {
   background: var(--background-color);
   border-radius: var(--border-radius);
-  padding: var(--sizing-lg);
   position: relative;
   opacity: 0;
   transform: translate(0, 50px);
   transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  width: clamp(550px, 50vw, 800px);
+  box-shadow: var(--box-shadow-long);
+
+  &.modal-header-footer {
+    display: grid;
+    grid-template-rows: auto minmax(0, 50vh) auto;
+  }
+
+  &.modal-header {
+    display: grid;
+    grid-template-rows: auto minmax(0, 50vh);
+  }
+
+  &.modal-footer {
+    display: grid;
+    grid-template-rows: minmax(0, 50vh) auto;
+  }
+
+  &.modal-width__sm {
+    width: clamp(300px, 50vw, 400px);
+  }
+
+  &.modal-width__md {
+    width: clamp(400px, 50vw, 600px);
+  }
+
+  &.modal-width__lg {
+    width: clamp(550px, 50vw, 800px);
+  }
 
   &.active {
     opacity: 1;
     transform: translate(0, 0);
-    transition: all 0.25s 0.125s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
 
@@ -97,14 +139,18 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 var(--sizing-md);
+  padding: var(--sizing-lg);
 }
 .close-button {
   margin-left: auto;
+}
+.modal-content {
+  padding: var(--sizing-lg);
 }
 .modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: var(--sizing-md);
+  padding: var(--sizing-lg);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div :class="classes">
-    <label class="input-text-field__label" :for="id">
+    <label v-if="$slots.default" class="input-text-field__label" :for="id">
       <slot />
     </label>
     <input
@@ -8,6 +8,7 @@
       class="input-text-field__input"
       :id="id"
       :name="name"
+      :placeholder="placeholder"
       :value="modelValue"
       ref="inputRef"
       v-on="events"
@@ -31,6 +32,10 @@ const props = defineProps({
   name: {
     type: String,
     required: true,
+  },
+  placeholder: {
+    type: String,
+    default: '',
   },
   clearable: {
     type: Boolean,
