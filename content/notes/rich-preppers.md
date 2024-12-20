@@ -11,4 +11,4 @@ How do I maintain authority over my security force after the event?
 Rushkoff, Douglas. ["The super-rich ‘preppers’ planning to save themselves from the apocalypse"](https://www.theguardian.com/news/2022/sep/04/super-rich-prepper-bunkers-apocalypse-survival-richest-rushkoff)
 ::
 
-This is definitely an older article, but provides some of the insight into the minds of the insane oligarchs soon to be running this place. Sigh.
+This is definitely an older article, but provides some of the insight into the minds of the super rich.
