@@ -13,7 +13,7 @@
       ref="inputRef"
       v-on="events"
     />
-    <BaseButton v-if="clearable" class="clear" size="xs" variant="text" @click="clear">
+    <BaseButton v-if="clearable && modelValue.length" class="clear" size="xs" variant="text" @click="clear">
       <Icon name="ri:close-large-fill" />
     </BaseButton>
   </div>
@@ -74,6 +74,7 @@ const events = computed(() => {
 
 const clear = () => {
   emit('clear');
+  emit('update:modelValue', '');
   inputRef.value?.focus();
 };
 
@@ -95,7 +96,7 @@ defineExpose({
   position: relative;
 
   &__label {
-    background-color: var(--background-color);
+    background-color: var(--block-quote-bg);
     padding: 0;
     opacity: 1;
     transition: var(--transition-cubic);
@@ -111,8 +112,9 @@ defineExpose({
 
   &__input {
     border: none;
-    border-bottom: var(--control-border) solid var(--border-color);
-    background: none;
+    border: var(--control-border) solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--block-quote-bg);
     color: var(--header-color);
     padding: 0.25rem 0.5rem;
     outline: none;
@@ -153,7 +155,7 @@ defineExpose({
   &--clearable {
     .clear {
       position: absolute;
-      right: 0;
+      right: var(--sizing-sm);
       top: 50%;
       transform: translateY(-50%);
     }

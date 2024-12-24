@@ -48,18 +48,6 @@ export default defineNuxtConfig({
     experimental: {
       search: {
         indexed: true,
-        options: {
-          fields: ['title', 'content'],
-          storeFields: ['title', 'content'],
-          searchOptions: {
-            prefix: true,
-            fuzzy: 0.2,
-            boost: {
-              title: 4,
-              content: 2,
-            },
-          },
-        },
       },
     },
   },

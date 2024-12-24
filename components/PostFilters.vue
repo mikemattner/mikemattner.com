@@ -2,12 +2,14 @@
   <aside class="post-filters">
     <BaseButton v-if="showOpenFiltersButton" size="sm" @click="openFilterBody()">
       {{ openFiltersButtonText }}
-      <span v-if="hasFilters">{{ filterCountText }}</span>
+      <BaseBadge type="light" v-if="hasFilters">{{ filterCount }}</BaseBadge>
       <Icon :name="openFiltersButtonIcon" />
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
       <BasePanel has-border>
-        <template #header>{{ filtersPanelTitle }}</template>
+        <template #header>
+          {{ filtersPanelTitle }}
+        </template>
         <div class="clear-filters">
           <TransitionGroup name="fade" class="filtered-items" tag="div">
             <BaseButton
@@ -35,7 +37,8 @@
       <BasePanel icon-variant="plus">
         <template #header>
           <div class="filter-panel-headers">
-            Filter by Tag<span v-if="hasTagFilters"> {{ tagFilterCountText }}</span>
+            Filter by Tag
+            <BaseBadge type="warning" v-if="hasTagFilters">{{ tagFilterCount }}</BaseBadge>
           </div>
         </template>
         <ul class="filter-list">
@@ -49,7 +52,8 @@
       <BasePanel icon-variant="plus">
         <template #header>
           <div class="filter-panel-headers">
-            Filter by Year<span v-if="hasYearFilters"> {{ yearFilterCountText }}</span>
+            Filter by Year
+            <BaseBadge type="warning" v-if="hasYearFilters">{{ yearFilterCount }}</BaseBadge>
           </div>
         </template>
         <ul class="filter-list">
@@ -115,11 +119,6 @@ const filterCount = computed<number>(() => {
   return yearFilter.value.length + tagFilter.value.length;
 });
 
-const filterCountText = computed<string>(() => {
-  if (filterCount.value > 3) return '(3+)';
-  return `(${filterCount.value})`;
-});
-
 const filterList = computed<Array<string>>(() => {
   return [...yearFilter.value, ...tagFilter.value].sort((a, b) => a.localeCompare(b));
 });
@@ -143,8 +142,7 @@ const clearFilterText = computed<string>(() => {
 
 const filtersPanelTitle = computed<string>(() => {
   if (filterCount.value == 0) return 'No Filters Selected';
-  if (filterCount.value > 3) return '3+ Filters Selected';
-  return filterCount.value > 1 ? `${filterCount.value} Filters Selected` : '1 Filter Selected';
+  return 'Filters Selected';
 });
 
 const openFiltersButtonText = computed<string>(() => {
@@ -166,9 +164,8 @@ const yearFilter = computed<Array<string>>({
   },
 });
 
-const yearFilterCountText = computed<string>(() => {
-  if (yearFilter.value.length > 3) return '(3+)';
-  return `(${yearFilter.value.length})`;
+const yearFilterCount = computed<number>(() => {
+  return yearFilter.value.length;
 });
 
 const hasYearFilters = computed<boolean>(() => {
@@ -195,9 +192,8 @@ const tagFilter = computed<Array<string>>({
   },
 });
 
-const tagFilterCountText = computed<string>(() => {
-  if (tagFilter.value.length > 3) return '(3+)';
-  return `(${tagFilter.value.length})`;
+const tagFilterCount = computed<number>(() => {
+  return tagFilter.value.length;
 });
 
 const hasTagFilters = computed<boolean>(() => {
