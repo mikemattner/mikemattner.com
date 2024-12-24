@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 
-type Severity = 'info' | 'success' | 'warning';
+type Severity = 'info' | 'success' | 'warning' | 'light';
 
 defineProps({
   type: {
@@ -46,6 +46,11 @@ defineProps({
   &--warning {
     --message-color: #fff;
     --message-color-bg: var(--color-red);
+  }
+
+  &--light {
+    --message-color: hsla(var(--color-dark-hsl), 0.8);
+    --message-color-bg: #fff;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <aside class="post-filters">
     <BaseButton v-if="showOpenFiltersButton" size="sm" @click="openFilterBody()">
       {{ openFiltersButtonText }}
-      <span v-if="hasFilters">{{ filterCountText }}</span>
+      <BaseBadge type="light" v-if="hasFilters">{{ filterCount }}</BaseBadge>
       <Icon :name="openFiltersButtonIcon" />
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
@@ -117,11 +117,6 @@ onMounted(() => {
 
 const filterCount = computed<number>(() => {
   return yearFilter.value.length + tagFilter.value.length;
-});
-
-const filterCountText = computed<string>(() => {
-  if (filterCount.value > 3) return '(3+)';
-  return `(${filterCount.value})`;
 });
 
 const filterList = computed<Array<string>>(() => {
