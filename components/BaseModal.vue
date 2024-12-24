@@ -16,9 +16,7 @@
             <Icon name="ri:close-large-fill" />
           </BaseButton>
         </div>
-        <ClientOnly>
-          <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
-        </ClientOnly>
+        <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
         <div v-if="modalState.callbackActions" class="modal-actions">
           <BaseButton
             v-for="action in modalState.callbackActions"
@@ -48,9 +46,9 @@ const classes = computed(() => {
       'modal-width__sm': modalState.modalWidth === 'sm',
       'modal-width__md': modalState.modalWidth === 'md',
       'modal-width__lg': modalState.modalWidth === 'lg',
-      'modal-header': modalState.showHeader && !modalState.callbackActions?.length,
-      'modal-footer': modalState.callbackActions?.length && !modalState.showHeader,
-      'modal-header-footer': modalState.showHeader && modalState.callbackActions?.length,
+      'has-modal-header': modalState.showHeader && !modalState.callbackActions?.length,
+      'has-modal-footer': modalState.callbackActions?.length && !modalState.showHeader,
+      'has-modal-header-footer': modalState.showHeader && modalState.callbackActions?.length,
     },
   ];
 });
@@ -101,19 +99,22 @@ onUnmounted(() => {
   transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   box-shadow: var(--box-shadow-long);
 
-  &.modal-header-footer {
+  &.has-modal-header-footer {
     display: grid;
-    grid-template-rows: auto minmax(0, 50vh) auto;
+    grid-template-rows: auto minmax(1fr, 50vh) auto;
+    grid-template-columns: 1fr;
   }
 
-  &.modal-header {
+  &.has-modal-header {
     display: grid;
-    grid-template-rows: auto minmax(0, 50vh);
+    grid-template-rows: auto minmax(1fr, 50vh);
+    grid-template-columns: 1fr;
   }
 
-  &.modal-footer {
+  &.has-modal-footer {
     display: grid;
-    grid-template-rows: minmax(0, 50vh) auto;
+    grid-template-rows: minmax(1fr, 50vh) auto;
+    grid-template-columns: 1fr;
   }
 
   &.modal-width__sm {
@@ -140,6 +141,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: var(--sizing-lg);
+  border-bottom: 1px solid var(--border-color);
 }
 .close-button {
   margin-left: auto;
