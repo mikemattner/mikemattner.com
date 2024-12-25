@@ -9,7 +9,7 @@
 // import PrimaryLogo from '~/assets/images/logo.svg';
 import PrimaryLogo from '~/assets/images/MM_Logo.svg';
 
-const props = defineProps({
+defineProps({
   showLabel: { type: Boolean, default: false },
 });
 </script>
@@ -58,8 +58,7 @@ const props = defineProps({
     letter-spacing: 0.025em;
     // color: var(--color-light);
     color: var(--headline-font-color);
-    font-variation-settings: 'wdth' 75, 'wght' 800;
-    text-transform: uppercase;
+    font-variation-settings: 'wdth' 100, 'wght' 800;
     transition: var(--transition-cubic-slow);
 
     @media (max-width: 715px) {
