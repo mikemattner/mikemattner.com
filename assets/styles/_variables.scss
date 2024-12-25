@@ -215,6 +215,8 @@
     --color-gradient: var(--color-dark-background-gradient-hsl);
     --pull-text-color: var(--color-dark-pull-color);
     --filter-bg: hsla(var(--color-dark-hsl), 0.95);
+    --pattern-color: var(--color-blue-shade-50);
+    --topographic-pattern: var(--topographic-pattern-dark);
 }
 
 html.light {
@@ -231,11 +233,13 @@ html.light {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.95);
     --code-bg: hsla(var(--color-dark-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 300;
+    --font-weight: 400;
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-light-background-gradient-hsl);
     --pull-text-color: var(--color-light-pull-color);
     --filter-bg: hsla(var(--color-white-hsl), 0.95);
+    --pattern-color: var(--color-blue-tint-50);
+    --topographic-pattern: var(--topographic-pattern-light);
 }
   
 html.dark {
@@ -254,9 +258,11 @@ html.dark {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 300;
+    --font-weight: 400;
     --blog-card-date-color: var(--font-color);
     --color-gradient: var(--color-dark-background-gradient-hsl);
     --pull-text-color: var(--color-dark-pull-color);
     --filter-bg: hsla(var(--color-dark-hsl), 0.95);
+    --pattern-color: var(--color-blue-shade-50);
+    --topographic-pattern: var(--topographic-pattern-dark);
 }
