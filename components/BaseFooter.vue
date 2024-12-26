@@ -78,7 +78,7 @@
       </div>
       <div class="shameless-branding">
         <p>Mike is a designer and developer.</p>
-        <p>Reach me at hello @ mikemattner.com</p>
+        <p>Reach me at me @ mikemattner.com</p>
       </div>
       <div class="base-footer__sub-controls">
         <div class="controls">
@@ -102,6 +102,10 @@ const theYear = computed<string>(() => {
 <style lang="scss" scoped>
 .base-footer {
   background-color: var(--background-border-color);
+  background-image: var(--topographic-pattern);
+  background-size: 600px;
+  background-position: top;
+  background-repeat: repeat-x;
 
   @media (min-width: 716px) {
     grid-area: footer;
@@ -142,8 +146,14 @@ const theYear = computed<string>(() => {
     grid-row: 1;
     line-height: 1;
 
+    p {
+      margin: 0;
+    }
+
     @media (max-width: 597px) {
-      display: none;
+      grid-column: 1 / -1;
+      grid-row: 1;
+      padding-bottom: var(--sizing-lg);
     }
   }
 
@@ -154,6 +164,7 @@ const theYear = computed<string>(() => {
 
     grid-column: 1 / -1;
     grid-row: 2;
+    align-self: end;
 
     @media (max-width: 875px) {
       grid-column: 1 / -1;
@@ -163,8 +174,7 @@ const theYear = computed<string>(() => {
     @media (max-width: 597px) {
       margin-top: var(--sizing-lg);
       grid-column: 1 / -1;
-      grid-row: 2;
-      // text-align: center;
+      grid-row: 3;
     }
   }
 
@@ -183,7 +193,8 @@ const theYear = computed<string>(() => {
     @media (max-width: 597px) {
       // grid-column: 1 / -1;
       // grid-row: 3;
-      justify-content: center;
+      // justify-content: center;
+      grid-row: 4;
     }
   }
 
@@ -192,6 +203,7 @@ const theYear = computed<string>(() => {
     flex-direction: column;
     gap: var(--sizing-lg);
     grid-column: 2;
+    grid-row: 1 / span 2;
 
     @media (max-width: 875px) {
       grid-column: 2;
@@ -200,7 +212,7 @@ const theYear = computed<string>(() => {
 
     @media (max-width: 597px) {
       grid-column: 1;
-      grid-row: 1;
+      grid-row: 2;
     }
   }
 
@@ -209,6 +221,7 @@ const theYear = computed<string>(() => {
     flex-direction: column;
     gap: var(--sizing-lg);
     grid-column: 3;
+    grid-row: 1 / span 2;
 
     @media (max-width: 875px) {
       grid-column: 3;
@@ -217,7 +230,7 @@ const theYear = computed<string>(() => {
 
     @media (max-width: 597px) {
       grid-column: 2;
-      grid-row: 1;
+      grid-row: 2;
     }
   }
 

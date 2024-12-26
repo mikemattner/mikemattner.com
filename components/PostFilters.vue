@@ -6,7 +6,13 @@
       <Icon :name="openFiltersButtonIcon" />
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
-      <BasePanel has-border>
+      <div v-if="showOpenFiltersButton" class="close-container">
+        <BaseButton size="sm" variant="text" class="close-button" @click="openFilterBody()">
+          <Icon name="ri:close-large-fill" />
+        </BaseButton>
+      </div>
+
+      <BasePanel :open="showOpenFiltersButton" has-border>
         <template #header>
           {{ filtersPanelTitle }}
         </template>
@@ -146,13 +152,12 @@ const filtersPanelTitle = computed<string>(() => {
 });
 
 const openFiltersButtonText = computed<string>(() => {
-  let postType = 'Post';
-  if (props.sortedPosts[0].hasOwnProperty('notes')) postType = 'Note';
-  return openFilters.value ? `Close ${postType} Filters` : `Filter ${postType}s`;
+  const postType = props.sortedPosts[0].hasOwnProperty('notes') ? 'Notes' : 'Post';
+  return `Filter ${postType}s`;
 });
 
 const openFiltersButtonIcon = computed<string>(() => {
-  return openFilters.value ? 'ri:close-fill' : 'ri:equalizer-line';
+  return 'ri:equalizer-line';
 });
 
 const yearFilter = computed<Array<string>>({
@@ -232,26 +237,30 @@ const clearAllFilters = () => {
   // }
   .filters-body {
     margin-top: 0;
-    opacity: 0;
-    visibility: hidden;
     transition: var(--transition-cubic-med);
-    max-height: 0;
 
-    &.is-active {
-      opacity: 1;
-      visibility: visible;
-      max-height: 150vh;
+    @media (min-width: 980px) {
       margin-top: var(--sizing-xl);
     }
 
     @media (max-width: 979px) {
-      background-color: var(--filter-bg);
-      padding: 0 var(--sizing-xl);
-      box-shadow: var(--box-shadow-short);
-      border-radius: var(--border-radius);
+      background-color: var(--background-color);
+      padding: var(--sizing-xl);
+      margin-top: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 100000;
+      transform: scale(0);
+      opacity: 0;
+      visibility: hidden;
 
       &.is-active {
-        padding: var(--sizing-xl);
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
       }
     }
   }
@@ -309,9 +318,6 @@ const clearAllFilters = () => {
   position: relative;
 
   @media (max-width: 979px) {
-    // display: grid;
-    // grid-template-columns: repeat(4, 1fr);
-    // gap: var(--sizing-md);
     flex-direction: row;
     flex-wrap: wrap;
     overflow-x: auto;
@@ -345,5 +351,15 @@ const clearAllFilters = () => {
 
 .fade-leave-active {
   position: absolute;
+}
+
+.close-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--sizing-md) 0;
+}
+
+.close-button {
+  margin-right: calc(var(--sizing-md) * -1);
 }
 </style>

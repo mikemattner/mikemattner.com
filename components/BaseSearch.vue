@@ -1,6 +1,6 @@
 <template>
   <div class="base-search">
-    <BaseInput id="search" ref="searchInput" name="search" placeholder="Search" clearable v-model="searchTerm" />
+    <BaseInput id="search" ref="searchInput" name="search" icon="ri:search-line" clearable v-model="searchTerm" />
     <div class="search-results">
       <p v-if="!results.length">No results</p>
       <ul v-if="results" class="result-list">

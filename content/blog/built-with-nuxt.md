@@ -8,6 +8,7 @@ caption: Found on Unsplash
 image: /images/feature/built.jpg
 tag:
   - Development
+  - NuxtJS
 ---
 
 ::InfoMessage{type=warning}

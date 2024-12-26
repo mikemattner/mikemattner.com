@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach, vi, type MockedFunction } from 'vites
 import BaseNavigationMenu from '@/components/BaseNavigationMenu.vue';
 import { useNavigationState } from '@/composables/useNavigationState.client';
 import { navigationList } from '@/data/navigationList';
-import { nextTick } from 'vue';
+import { nextTick, computed } from 'vue';
 
 vi.mock('@/composables/useNavigationState.client', () => ({
   useNavigationState: vi.fn(),
@@ -27,7 +27,10 @@ describe('BaseNavigationMenu.vue', () => {
   it('renders navigation list items', async () => {
     const wrapper = await mountSuspended(BaseNavigationMenu);
     const items = wrapper.findAll('.navigation-list__item');
-    expect(items.length).toBe(navigationList.length);
+    const primaryNavigationList = computed<NavigationList[]>(() => {
+      return navigationList.filter((item) => item.primary);
+    });
+    expect(items.length).toBe(primaryNavigationList.value.length);
   });
 
   // TODO: figure out how to properly trigger these click events
