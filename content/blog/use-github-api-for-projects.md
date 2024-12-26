@@ -7,6 +7,7 @@ caption: Found on Unsplash
 image: /images/feature/git.jpg
 tag:
 - Development
+- NuxtJS
 ---
 ::InfoMessage{type=warning}
 **2/24/2024** – _My approach has shifted slightly, but the below could still be helpful_

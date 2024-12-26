@@ -10,11 +10,19 @@
 import { useModal } from '~/composables/useModal';
 import BaseSearch from './BaseSearch.vue';
 
-const { openModal } = useModal();
+const { openModal, close } = useModal();
 const openSearch = () => {
   openModal(BaseSearch, {
+    modalTitle: 'Search',
     showHeader: true,
     showCloseButton: true,
+    actions: [
+      {
+        label: 'Close',
+        variant: 'solid',
+        callback: close,
+      },
+    ],
   });
 };
 </script>

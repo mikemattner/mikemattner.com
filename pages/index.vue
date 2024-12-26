@@ -11,8 +11,8 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h1 class="main-lede very-large-heading">Hey There</h1>
-          <p>I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.</p>
+          <h1 class="main-lede very-large-heading">Hey there.</h1>
+          <p>I&rsquo;m a designer and developer from Michigan, currently working as a Sr. UI Engineer.</p>
           <p>
             In a former life I worked as a digital designer&mdash;basically a catch-all for video editing, motion
             graphics, print design, et cetera. Now I mostly create in code.
@@ -20,6 +20,14 @@
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
               <span>Read More</span>
+            </BaseButton>
+            <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
+              <Icon name="ri:apps-line" />
+              <span>Mike Uses</span>
+            </BaseButton>
+            <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
+              <Icon name="ri:file-text-line" />
+              <span>The Resume</span>
             </BaseButton>
           </div>
         </div>
@@ -29,10 +37,10 @@
         <h2 class="small-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
-          <BaseButton to="/blog" variant="solid" size="md" color="primary">
+          <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog Archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="outline" size="md" color="secondary">
+          <BaseButton to="/notes" variant="outline" size="sm" color="secondary">
             <span>Note Archives</span>
           </BaseButton>
         </div>

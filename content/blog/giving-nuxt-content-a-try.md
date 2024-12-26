@@ -7,7 +7,12 @@ caption: Found on Unsplash
 image: /images/feature/code.jpg
 tag:
     - Development
+    - NuxtJS
 ---
+::InfoMessage{type=warning}
+**2/24/2024** – _This was my approach prior to the launch of Nuxt 3_
+::
+
 One of the primary reasons I exited the WordPress space for my personal portfolio and blog was because of a series of hacks to my hosted installation. No matter what I tried to do to harden it, there was always some path to exploitation.
 
 At the same time as all of this was going on, I was also diving head first into the world of [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/) at work. Going with a solution like this for a personal project seemed like such a natural path towards professional development, and a safe solution for ditching WordPress. No offense to WordPress&mdash;it can be great and I miss the writing experience&mdash;but I just couldn't continue to fix a constant hack that probably shouldn't have been happening.

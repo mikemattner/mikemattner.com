@@ -151,7 +151,7 @@ onUnmounted(() => {
 }
 .modal-actions {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   gap: var(--sizing-md);
   padding: var(--sizing-lg);
 }
