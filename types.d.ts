@@ -15,6 +15,7 @@ type PanelIcon = 'arrow' | 'plus';
 interface NavigationList {
   title: string;
   url: string;
+  primary: boolean;
 }
 
 interface ProjectItem {

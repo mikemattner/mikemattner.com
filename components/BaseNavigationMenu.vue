@@ -3,7 +3,7 @@
 
   <nav class="base-navigation__controls" :class="{ active: navOpen }">
     <ul class="navigation-list">
-      <li class="navigation-list__item" v-for="item in navigationList" :key="item.title">
+      <li class="navigation-list__item" v-for="item in primaryNavigationList" :key="item.title">
         <NuxtLink
           class="navigation-list__item-link"
           :class="{ 'active-path': showActiveSubPath(item) }"
@@ -33,6 +33,10 @@ const pathIsAbout = computed<boolean>(() => route.matched[0].path.includes('abou
 const pathIsProjects = computed<boolean>(() => route.matched[0].path.includes('projects'));
 const pathIsNotes = computed<boolean>(() => {
   return route.matched[0].name === 'notes-slug' || route.matched[0].name === 'notes-tag-slug';
+});
+
+const primaryNavigationList = computed<NavigationList[]>(() => {
+  return navigationList.filter((item) => item.primary);
 });
 
 const showActiveSubPath = (item: NavigationList): boolean => {

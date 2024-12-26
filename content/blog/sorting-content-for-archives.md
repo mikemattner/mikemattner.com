@@ -7,8 +7,13 @@ caption: Found on Unsplash
 image: /images/feature/sorting.jpg
 tag:
 - Development
+- NuxtJS
 
 ---
+::InfoMessage{type=warning}
+**2/24/2024** – _This was my approach prior to the launch of Nuxt 3_
+::
+
 I keep playing around with how best to display content using Nuxt. I think initially setting this up, I opted to display a long list of articles and roll with it. Over time this will weaken the scannable nature of the archive page.
 
 I'm attempting to rectify this now while the list is short by breaking it down into a year-based archive.

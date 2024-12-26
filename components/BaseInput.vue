@@ -3,6 +3,7 @@
     <label v-if="$slots.default" class="input-text-field__label" :for="id">
       <slot />
     </label>
+    <Icon v-if="icon" class="input-text-field__icon" :name="icon" />
     <input
       autocomplete="off"
       class="input-text-field__input"
@@ -41,6 +42,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  icon: {
+    type: String,
+    default: null,
+  },
 });
 
 const inputRef = ref<HTMLInputElement | null>(null);
@@ -53,6 +58,7 @@ const classes = computed(() => {
     {
       'input-text-field--populated': !!props.modelValue,
       'input-text-field--clearable': props.clearable,
+      'input-text-field--has-icon': !!props.icon,
     },
   ];
 });
@@ -162,6 +168,23 @@ defineExpose({
 
     .input-text-field__input {
       padding-right: 2rem;
+    }
+  }
+
+  &--has-icon {
+    .input-text-field__input {
+      padding-left: 2.5rem;
+    }
+
+    .input-text-field__icon {
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .input-text-field__label {
+      left: 2.5rem;
     }
   }
 }
