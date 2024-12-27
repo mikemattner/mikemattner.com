@@ -12,9 +12,9 @@
       >
         <div v-if="modalState.showHeader" class="modal-header">
           <h2 v-if="modalState.modalTitle" class="small-heading">{{ modalState.modalTitle }}</h2>
-          <Button v-if="modalState.showCloseButton" class="close-button" @click="close">
+          <button v-if="modalState.showCloseButton" class="close-button" @click="close">
             <Icon name="ri:close-large-fill" />
-          </Button>
+          </button>
         </div>
         <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
         <div v-if="modalState.callbackActions" class="modal-actions">
@@ -101,32 +101,54 @@ onUnmounted(() => {
 
   &.has-modal-header-footer {
     display: grid;
-    grid-template-rows: auto minmax(1fr, 50vh) auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
+
+    @media (min-width: 716px) {
+      grid-template-rows: auto 1fr auto;
+    }
   }
 
   &.has-modal-header {
     display: grid;
-    grid-template-rows: auto minmax(1fr, 50vh);
+    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
+
+    @media (min-width: 716px) {
+      grid-template-rows: auto 1fr;
+    }
   }
 
   &.has-modal-footer {
     display: grid;
-    grid-template-rows: minmax(1fr, 50vh) auto;
+    grid-template-rows: 1fr auto;
     grid-template-columns: 1fr;
+
+    @media (min-width: 716px) {
+      grid-template-rows: minmax(1fr, 50vh) auto;
+    }
   }
 
-  &.modal-width__sm {
-    width: clamp(300px, 50vw, 400px);
+  @media (min-width: 716px) {
+    &.modal-width__sm {
+      width: clamp(300px, 50vw, 400px);
+    }
+
+    &.modal-width__md {
+      width: clamp(400px, 50vw, 600px);
+    }
+
+    &.modal-width__lg {
+      width: clamp(550px, 50vw, 800px);
+    }
   }
 
-  &.modal-width__md {
-    width: clamp(400px, 50vw, 600px);
-  }
-
-  &.modal-width__lg {
-    width: clamp(550px, 50vw, 800px);
+  @media (max-width: 715px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   &.active {
@@ -150,6 +172,12 @@ onUnmounted(() => {
   margin: 0;
   margin-left: auto;
   color: var(--headline-font-color);
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 .modal-content {
   padding: var(--sizing-lg);

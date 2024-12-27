@@ -4,13 +4,6 @@
       <time>
         <NuxtLink :to="note._path">{{ date }}</NuxtLink>
       </time>
-      <div class="note-list-item__tags">
-        <ul class="tag-list">
-          <li v-for="tag in note.tag" :key="tag">
-            <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
-          </li>
-        </ul>
-      </div>
     </div>
     <div class="note-list-item__body">
       <ContentRenderer :value="note">
@@ -19,6 +12,13 @@
           <p>No content found.</p>
         </template>
       </ContentRenderer>
+    </div>
+    <div class="note-list-item__tags">
+      <ul class="tag-list">
+        <li v-for="tag in note.tag" :key="tag">
+          <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@ const date = computed<string>(() => formatDate(props.note.date));
   }
 
   &__header {
-    font-size: var(--size-step--2);
+    font-size: var(--size-step--1);
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
@@ -73,18 +73,11 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
-    font-size: var(--size-step--2);
 
     svg {
       width: 1.25rem;
       height: 1.25rem;
       flex-shrink: 0;
-    }
-
-    &:after {
-      content: '•';
-      line-height: 1;
-      opacity: 0.5;
     }
   }
 
@@ -108,6 +101,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     align-items: center;
     gap: var(--sizing-sm);
     font-size: var(--size-step--2);
+    margin-top: var(--sizing-xl);
 
     li {
       padding: 0;
@@ -118,6 +112,12 @@ const date = computed<string>(() => formatDate(props.note.date));
 
       &:after {
         content: ',';
+        line-height: 1;
+        opacity: 0.5;
+      }
+
+      &:before {
+        content: '#';
         line-height: 1;
         opacity: 0.5;
       }

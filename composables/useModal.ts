@@ -31,7 +31,7 @@
  *  ]});
  */
 
-import { ref, reactive, markRaw } from 'vue';
+import { onMounted, reactive, markRaw } from 'vue';
 
 export type ModalAction = {
   label: string;
@@ -70,6 +70,12 @@ const modalState = reactive<ModalState>({
 });
 
 export function useModal() {
+  let body: HTMLElement;
+
+  onMounted(() => {
+    body = window.document.body;
+  });
+
   const openModal = (view: object, options?: ModalOptions) => {
     modalState.showHeader = options?.showHeader ? options.showHeader : false;
     modalState.modalTitle = options?.modalTitle ? options.modalTitle : undefined;
@@ -78,6 +84,7 @@ export function useModal() {
     modalState.callbackActions = options?.actions ? options.actions : undefined;
     modalState.component = markRaw(view);
     modalState.open = true;
+    body.classList.toggle('no--scroll');
   };
 
   const close = () => {
@@ -91,6 +98,7 @@ export function useModal() {
       modalState.showHeader = false;
       modalState.showCloseButton = false;
       modalState.modalTitle = undefined;
+      body.classList.toggle('no--scroll');
     }, 200);
   };
 

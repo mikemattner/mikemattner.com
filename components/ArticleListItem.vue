@@ -3,13 +3,6 @@
     <div class="article-list-item__body">
       <header class="article-list-item__header">
         <time>{{ date }}</time>
-        <div class="article-list-item__tags">
-          <ul class="tag-list">
-            <li v-for="tag in post.tag" :key="tag">
-              <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
-            </li>
-          </ul>
-        </div>
       </header>
       <div class="article-list-item__title flow">
         <h3 class="small-heading">
@@ -18,6 +11,13 @@
           </NuxtLink>
         </h3>
         <p v-html="post.description"></p>
+      </div>
+      <div class="article-list-item__tags">
+        <ul class="tag-list">
+          <li v-for="tag in post.tag" :key="tag">
+            <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -45,13 +45,14 @@ const date = computed<string>(() => formatDate(props.post.date));
   }
 
   &__header {
-    font-size: var(--size-step--2);
+    font-size: var(--size-step--1);
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
     color: var(--blog-card-date-color);
     padding: 0 0 var(--sizing-lg) 0;
     z-index: 2;
+    color: var(--color-primary);
   }
 
   time {
@@ -63,12 +64,6 @@ const date = computed<string>(() => formatDate(props.post.date));
       width: 1.25rem;
       height: 1.25rem;
       flex-shrink: 0;
-    }
-
-    &:after {
-      content: '•';
-      line-height: 1;
-      opacity: 0.5;
     }
   }
 
@@ -90,6 +85,8 @@ const date = computed<string>(() => formatDate(props.post.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
+    font-size: var(--size-step--2);
+    margin-top: var(--sizing-lg);
 
     li {
       padding: 0;
@@ -100,6 +97,12 @@ const date = computed<string>(() => formatDate(props.post.date));
 
       &:after {
         content: ',';
+        line-height: 1;
+        opacity: 0.5;
+      }
+
+      &:before {
+        content: '#';
         line-height: 1;
         opacity: 0.5;
       }
