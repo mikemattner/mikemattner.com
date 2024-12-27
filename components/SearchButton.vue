@@ -16,13 +16,6 @@ const openSearch = () => {
     modalTitle: 'Search',
     showHeader: true,
     showCloseButton: true,
-    actions: [
-      {
-        label: 'Close',
-        variant: 'solid',
-        callback: close,
-      },
-    ],
   });
 };
 </script>

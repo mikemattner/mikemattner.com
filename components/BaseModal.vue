@@ -12,9 +12,9 @@
       >
         <div v-if="modalState.showHeader" class="modal-header">
           <h2 v-if="modalState.modalTitle" class="small-heading">{{ modalState.modalTitle }}</h2>
-          <BaseButton v-if="modalState.showCloseButton" size="xs" variant="text" class="close-button" @click="close">
+          <Button v-if="modalState.showCloseButton" class="close-button" @click="close">
             <Icon name="ri:close-large-fill" />
-          </BaseButton>
+          </Button>
         </div>
         <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
         <div v-if="modalState.callbackActions" class="modal-actions">
@@ -144,7 +144,12 @@ onUnmounted(() => {
   border-bottom: 1px solid var(--border-color);
 }
 .close-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   margin-left: auto;
+  color: var(--headline-font-color);
 }
 .modal-content {
   padding: var(--sizing-lg);
