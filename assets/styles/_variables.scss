@@ -136,6 +136,7 @@
     --color-dark-t: hsla(353, 86%, 3%, 95%);
     --color-dark-bg-border: hsl(240, 36%, 7%);
     --color-dark-background: hsl(240, 36%, 4%);
+    --color-dark-background-hsl: 240, 36%, 4%;
     --color-dark-background-gradient-hsl: 240, 36%, 30%;
     --color-dark-font-color: hsla(var(--color-blue-tint-90-hsl), 75%);
     --color-dark-pull-color: hsla(var(--color-blue-tint-90-hsl), 65%);
@@ -146,6 +147,7 @@
     --color-light-t: hsla(0, 0%, 94%, 90%);
     --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 97%);
+    --color-light-bg-hsl: 0, 0%, 97%;
     --color-light-border-t: hsla(0, 0%, 94%, 55%);
     --color-light-background-gradient-hsl: 240, 96%, 55%;
     --color-light-pull-color: hsla(var(--color-black-hsl), 0.5);
@@ -223,6 +225,7 @@
     --color-menu-bg: var(--color-dark-t);
     --logo-background: var(--headline-font-color);
     --logo-foreground: var(--color-dark);
+    --footer-gradient: var(--color-dark-background-hsl);
 }
 
 html.light {
@@ -250,6 +253,7 @@ html.light {
     --color-menu-bg: var(--color-light-t);
     --logo-background: var(--headline-font-color);
     --logo-foreground: var(--color-light);
+    --footer-gradient: var(--color-light-bg-hsl);
 }
   
 html.dark {
@@ -279,4 +283,5 @@ html.dark {
     --color-menu-bg: var(--color-dark-t);
     --logo-background: var(--headline-font-color);
     --logo-foreground: var(--color-dark);
+    --footer-gradient: var(--color-dark-background-hsl);
 }

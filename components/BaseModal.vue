@@ -174,6 +174,8 @@ onUnmounted(() => {
   color: var(--headline-font-color);
   transition: var(--transition);
   cursor: pointer;
+  font-size: var(--size-step-1);
+  line-height: 1;
 
   &:hover {
     color: var(--color-primary);

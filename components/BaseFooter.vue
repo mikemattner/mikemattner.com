@@ -106,6 +106,19 @@ const theYear = computed<string>(() => {
   background-size: 600px;
   background-position: top;
   background-repeat: repeat-x;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, hsla(var(--footer-gradient), 50%) 0%, hsla(var(--footer-gradient), 0%) 100%);
+    z-index: 1;
+  }
 
   @media (min-width: 716px) {
     grid-area: footer;
@@ -123,6 +136,8 @@ const theYear = computed<string>(() => {
     gap: var(--sizing-md);
     grid-template-columns: 1fr 250px 200px;
     align-items: start;
+    position: relative;
+    z-index: 2;
 
     @media (max-width: 875px) {
       grid-template-columns: 1fr 150px 120px;

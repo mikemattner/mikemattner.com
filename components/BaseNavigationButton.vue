@@ -47,7 +47,7 @@ const toggle = () => {
       height: 2px;
       width: 32px;
 
-      background-color: var(--color-light);
+      background-color: var(--headline-font-color);
       border-radius: var(--sizing-xs);
       display: block;
 

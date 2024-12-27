@@ -2,10 +2,10 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1><small>About</small> Hi, I&rsquo;m Mike!</h1>
+        <h1><small>About the Author</small> Hey there, I&rsquo;m Mike!</h1>
         <p class="intro">
-          I&rsquo;m a designer engineer from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a non
-          exhaustive summary of my life, career, and this website.
+          I&rsquo;m a design engineer from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a
+          non-exhaustive summary of my life, career, and this website.
         </p>
 
         <ul class="sub-menu">

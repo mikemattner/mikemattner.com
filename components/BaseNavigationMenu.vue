@@ -129,6 +129,7 @@ watch(isMobile, () => {
     @media (max-width: 715px) {
       order: 1;
       margin-left: auto;
+      z-index: 1000;
     }
   }
 
