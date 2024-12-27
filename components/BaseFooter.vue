@@ -77,7 +77,7 @@
         </ul>
       </div>
       <div class="shameless-branding">
-        <p>Mike is a designer and developer.</p>
+        <p>Want to say hello?</p>
         <p>Reach me at me @ mikemattner.com</p>
       </div>
       <div class="base-footer__sub-controls">

@@ -4,8 +4,8 @@
       <div class="sidebar-area flow">
         <h1><small>About</small> Hi, I&rsquo;m Mike!</h1>
         <p class="intro">
-          I&rsquo;m a designer and developer from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a
-          non exhaustive summary of my life, career, and this website.
+          I&rsquo;m a designer engineer from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a non
+          exhaustive summary of my life, career, and this website.
         </p>
 
         <ul class="sub-menu">
@@ -15,9 +15,14 @@
         </ul>
         <hr />
       </div>
-      <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
-        <template v-slot:caption>Photographed while visiting Austin, Texas.</template>
-      </PrimaryImage>
+      <div class="profile-group">
+        <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
+          <template v-slot:caption>Photographed while visiting Austin, Texas.</template>
+        </PrimaryImage>
+        <PrimaryImage src="/images/apple-picking.png" alt="Picking apples" has-overlay class="profile-image">
+          <template v-slot:caption>Picking apples in the fall.</template>
+        </PrimaryImage>
+      </div>
       <div class="about-content flow">
         <h2>Just The Highlights</h2>
         <p>
@@ -272,10 +277,27 @@ useHead({
     text-wrap: pretty;
   }
 
+  .profile-group {
+    @media (min-width: 501px) {
+      grid-column: 1 / span 4;
+    }
+
+    @media (min-width: 768px) {
+      grid-column: 1 / -1;
+      align-self: self-start;
+    }
+
+    @media (min-width: 860px) {
+      grid-column: 19 / -1;
+      margin-bottom: var(--sizing-xxxl);
+    }
+  }
+
   .profile-image {
     aspect-ratio: 1 / 0.75;
     border-radius: var(--border-radius);
     overflow: hidden;
+    margin-bottom: var(--sizing-xxxl);
 
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
@@ -289,7 +311,6 @@ useHead({
     @media (min-width: 860px) {
       grid-column: 19 / -1;
       aspect-ratio: 1 / 1.5;
-      margin-bottom: var(--sizing-xxxl);
     }
   }
 
