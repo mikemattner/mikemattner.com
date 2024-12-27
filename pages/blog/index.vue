@@ -3,7 +3,7 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1><small>Yearly</small> Blog Archives</h1>
+          <h1><small>The Yearly</small> Blog Archives</h1>
           <hr />
         </div>
         <div class="content-area flow">

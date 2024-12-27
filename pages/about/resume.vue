@@ -2,7 +2,7 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1><small>Resume</small> Work Experience</h1>
+        <h1><small>Work Experience</small> Resume</h1>
         <p class="intro">
           I'm a UI Engineer with roughly {{ experienceLength }} years of experience building and designing for the web.
         </p>
