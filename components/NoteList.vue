@@ -135,18 +135,12 @@ const sortedNotes = computed<SortedNoteItem[]>(() => {
   align-items: baseline;
   justify-content: flex-start;
   gap: var(--sizing-xl);
-  margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
-
-  // @media (min-width: 768px) {
-  //   margin: 0;
-  //   flex-direction: column;
-  //   gap: var(--sizing-sm);
-  // }
+  margin: var(--sizing-xxxl) 0 var(--sizing-xxxl);
 }
 
 .year-header {
   line-height: 1;
-  font-size: var(--size-step-0);
+  font-size: var(--size-step-2);
 }
 
 .year-header__article-count {

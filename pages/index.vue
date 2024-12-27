@@ -1,6 +1,13 @@
 <template>
   <main class="home-page">
     <div class="home-layout">
+      <h1 class="intro-title">
+        <small>Mike <em>is</em> a</small>
+        <span class="intro-title__design">Designer</span>
+        <span class="intro-title__ampersand">&amp;</span>
+        <span class="intro-title__development">Developer</span>
+      </h1>
+      <hr />
       <div class="home-layout__hero">
         <div class="profile-image">
           <PrimaryImage
@@ -11,11 +18,11 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h1 class="main-lede very-large-heading">Hey there.</h1>
-          <p>I&rsquo;m a designer and developer from Michigan, currently working as a Sr. UI Engineer.</p>
+          <h2 class="main-lede h3-heading">Hey there! I&rsquo;m a web designer and developer from Michigan.</h2>
           <p>
-            In a former life I worked as a digital designer&mdash;basically a catch-all for video editing, motion
-            graphics, print design, et cetera. Now I mostly create in code.
+            I currently working as a Sr. UI Engineer, but in a former life I worked as a digital designer. That was
+            basically a catch-all for video editing, motion graphics, print design, et cetera. Now I mostly create and
+            design in code.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
@@ -34,7 +41,7 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <h2 class="small-heading recently-posted-header">Recently Posted</h2>
+        <h2 class="h3-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
@@ -122,6 +129,60 @@ const posts = computed(() => {
     }
   }
 
+  .intro-title {
+    text-align: center;
+    line-height: 1;
+    grid-row: 1;
+    text-wrap: balance;
+    display: flex;
+    flex-direction: column;
+    margin: var(--sizing-xxxxl) 0;
+
+    &__design {
+      font-size: var(--size-step-8);
+      z-index: 1;
+      letter-spacing: -0.025em;
+      text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
+      font-variation-settings: 'wdth' 75, 'wght' 800;
+      text-transform: uppercase;
+
+      @media (max-width: 893px) {
+        font-size: var(--size-step-6);
+      }
+    }
+
+    &__ampersand {
+      font-size: var(--size-step-6);
+      z-index: 2;
+      margin-top: -0.875em;
+      color: var(--color-blue);
+      text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.05);
+      font-variation-settings: 'wdth' 100, 'wght' 800;
+      background: var(--gradient-1-filled);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media (max-width: 893px) {
+        font-size: var(--size-step-4);
+      }
+    }
+
+    &__development {
+      font-size: var(--size-step-8);
+      z-index: 3;
+      letter-spacing: -0.025em;
+      margin-top: -0.3em;
+      text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
+      font-variation-settings: 'wdth' 75, 'wght' 800;
+      text-transform: uppercase;
+
+      @media (max-width: 893px) {
+        font-size: var(--size-step-6);
+      }
+    }
+  }
+
   .home-greeting {
     z-index: 2;
     align-self: center;
@@ -139,9 +200,9 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 3 / span 15;
+      grid-column: 1 / span 15;
       align-self: center;
-      grid-row: 1;
+      grid-row: 2;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
@@ -154,25 +215,6 @@ const posts = computed(() => {
     grid-row: 1;
     text-wrap: balance;
     z-index: 2;
-
-    @media (min-width: 1053px) {
-      grid-row: 1;
-      grid-column: 2 / span 17;
-      align-self: center;
-      z-index: 1;
-    }
-    @media (max-width: 1052px) {
-      grid-column: 1 / -1;
-      grid-row: 1;
-      align-self: end;
-    }
-
-    @media (max-width: 499px) {
-      margin: 0;
-      gap: 0;
-      line-height: 1.1;
-      grid-column: 1 / span 4;
-    }
   }
 
   .profile-image {
@@ -182,9 +224,9 @@ const posts = computed(() => {
     z-index: 1;
 
     @media (min-width: 1053px) {
-      grid-column: 19 / span 8;
-      aspect-ratio: 1 / 1.5;
-      grid-row: 1;
+      grid-column: 18 / span 11;
+      aspect-ratio: 1 / 1.25;
+      grid-row: 2;
     }
 
     @media (max-width: 1052px) {
@@ -233,7 +275,7 @@ const posts = computed(() => {
   .recently-posted-header {
     grid-column: 1 / -1;
     grid-row: 1;
-    margin-block-end: var(--sizing-xxl);
+    margin-block-end: var(--sizing-xxxl);
 
     @media (min-width: 768px) {
       grid-column: 1 / -1;

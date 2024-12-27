@@ -42,8 +42,7 @@ const date = computed<string>(() => formatDate(props.note.date));
   text-decoration: none;
   color: inherit;
   transition: var(--transition);
-  border-bottom: 2px dotted var(--border-color);
-  border-radius: var(--border-radius);
+  border-bottom: 1px solid var(--border-color);
   position: relative;
   padding: 0 0 var(--sizing-xxxl) 0;
 

@@ -6,16 +6,17 @@
     --code-font-family: 'JetBrains Mono', monospace;
 
     // Type scale: https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,22,1.333,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
-    --size-step--2: clamp(0.64rem, calc(0.59rem + 0.23vw), 0.77rem);
-    --size-step--1: clamp(0.80rem, calc(0.72rem + 0.40vw), 1.03rem);
-    --size-step-0: clamp(1.00rem, calc(0.87rem + 0.65vw), 1.38rem);
-    --size-step-1: clamp(1.25rem, calc(1.05rem + 1.01vw), 1.83rem);
-    --size-step-2: clamp(1.56rem, calc(1.26rem + 1.53vw), 2.44rem);
-    --size-step-3: clamp(1.95rem, calc(1.50rem + 2.27vw), 3.26rem);
-    --size-step-4: clamp(2.44rem, calc(1.78rem + 3.30vw), 4.34rem);
-    --size-step-5: clamp(3.05rem, calc(2.10rem + 4.76vw), 5.79rem);
-    --size-step-6: clamp(3.82rem, calc(2.46rem + 6.78vw), 7.71rem);
-    --size-step-7: clamp(4.77rem, calc(2.85rem + 9.59vw), 10.28rem);
+    --size-step--2: clamp(0.64rem, 0.5935rem + 0.2327vw, 0.7738rem);
+    --size-step--1: clamp(0.8rem, 0.7195rem + 0.4026vw, 1.0315rem);
+    --size-step-0: clamp(1rem, 0.8696rem + 0.6522vw, 1.375rem);
+    --size-step-1: clamp(1.25rem, 1.0473rem + 1.0137vw, 1.8329rem);
+    --size-step-2: clamp(1.5625rem, 1.2562rem + 1.5317vw, 2.4432rem);
+    --size-step-3: clamp(1.9531rem, 1.4997rem + 2.2673vw, 3.2568rem);
+    --size-step-4: clamp(2.4414rem, 1.7806rem + 3.3042vw, 4.3413rem);
+    --size-step-5: clamp(3.0518rem, 2.1004rem + 4.7569vw, 5.787rem);
+    --size-step-6: clamp(3.8147rem, 2.4584rem + 6.7815vw, 7.7141rem);
+    --size-step-7: clamp(4.7684rem, 2.8503rem + 9.5904vw, 10.2829rem);
+    --size-step-8: clamp(5.9605rem, 3.266rem + 13.4723vw, 13.707rem);
 
     // Utilities - sizing
     --sizing-xxs: 0.063rem;
@@ -26,6 +27,7 @@
     --sizing-xl: 1.25rem;
     --sizing-xxl: 1.875rem;
     --sizing-xxxl: 3.125rem;
+    --sizing-xxxxl: 5.125rem;
 
     // Utilities - global
     --max-width: 82.3125rem; //92.3125rem
@@ -131,7 +133,7 @@
     --color-dark: var(--color-blue-shade-90);
     --color-dark-50-hsl: 240, 36%, 20%;
     --color-dark-70-hsl: 240, 36%, 60%;
-    --color-dark-t: hsla(353, 86%, 3%, 70%);
+    --color-dark-t: hsla(353, 86%, 3%, 95%);
     --color-dark-bg-border: hsl(240, 36%, 7%);
     --color-dark-background: hsl(240, 36%, 4%);
     --color-dark-background-gradient-hsl: 240, 36%, 30%;
@@ -141,7 +143,7 @@
     // Light background, border, gradient
     --color-light-hsl: 0, 0%, 94%;
     --color-light: hsl(0, 0%, 94%);
-    --color-light-t: hsla(0, 0%, 94%, 70%);
+    --color-light-t: hsla(0, 0%, 94%, 90%);
     --color-light-bg-border: hsl(0, 0%, 90%);
     --color-light-bg: hsl(0, 0%, 97%);
     --color-light-border-t: hsla(0, 0%, 94%, 55%);
@@ -204,6 +206,7 @@
     --background-border-color: var(--color-dark-bg-border);
     --border-color: hsla(var(--color-white-hsl), 0.1); //hsl(240, 9%, 20%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 40%) 3.84%,hsla(var(--color-blue-hsl), 48%) 34.62%, hsla(var(--color-green-hsl), 50%) 69.18% );
+    --gradient-1-filled: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);
@@ -217,6 +220,9 @@
     --filter-bg: hsla(var(--color-dark-hsl), 0.95);
     --pattern-color: var(--color-blue-shade-50);
     --topographic-pattern: var(--topographic-pattern-dark);
+    --color-menu-bg: var(--color-dark-t);
+    --logo-background: var(--headline-font-color);
+    --logo-foreground: var(--color-dark);
 }
 
 html.light {
@@ -227,6 +233,7 @@ html.light {
     --background-border-color: var(--color-light-bg-border);
     --border-color: hsla(var(--color-dark-blue-hsl), 0.1); //hsl(240, 9%, 69%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-blue-hsl), 10%) 3.84%,hsla(var(--color-blue-hsl), 38%) 34.62%, hsla(var(--color-green-hsl), 10%) 69.18% );
+    --gradient-1-filled: linear-gradient(160.41deg,hsla(var(--color-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
@@ -240,6 +247,9 @@ html.light {
     --filter-bg: hsla(var(--color-white-hsl), 0.95);
     --pattern-color: var(--color-blue-tint-50);
     --topographic-pattern: var(--topographic-pattern-light);
+    --color-menu-bg: var(--color-light-t);
+    --logo-background: var(--headline-font-color);
+    --logo-foreground: var(--color-light);
 }
   
 html.dark {
@@ -252,6 +262,7 @@ html.dark {
     --background-border-color: var(--color-dark-bg-border);
     --border-color: hsla(var(--color-white-hsl), 0.075); //hsl(240, 9%, 20%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 40%) 3.84%,hsla(var(--color-blue-hsl), 48%) 34.62%, hsla(var(--color-green-hsl), 50%) 69.18% );
+    --gradient-1-filled: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);
@@ -265,4 +276,7 @@ html.dark {
     --filter-bg: hsla(var(--color-dark-hsl), 0.95);
     --pattern-color: var(--color-blue-shade-50);
     --topographic-pattern: var(--topographic-pattern-dark);
+    --color-menu-bg: var(--color-dark-t);
+    --logo-background: var(--headline-font-color);
+    --logo-foreground: var(--color-dark);
 }

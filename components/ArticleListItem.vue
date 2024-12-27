@@ -1,21 +1,25 @@
 <template>
   <div class="article-list-item">
-    <NuxtLink :to="post._path" class="article-list-item__link">
-      <div class="article-list-item__body">
-        <header class="article-list-item__header">
-          <time>{{ formatDate(post.date) }}</time>
-          <div class="article-list-item__tags">
-            <ul class="tag-list">
-              <li v-for="tag in post.tag" :key="tag">{{ tag }}</li>
-            </ul>
-          </div>
-        </header>
-        <div class="article-list-item__title flow">
-          <h3 class="small-heading">{{ post.title }}</h3>
-          <p v-html="post.description"></p>
+    <div class="article-list-item__body">
+      <header class="article-list-item__header">
+        <time>{{ date }}</time>
+        <div class="article-list-item__tags">
+          <ul class="tag-list">
+            <li v-for="tag in post.tag" :key="tag">
+              <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
+            </li>
+          </ul>
         </div>
+      </header>
+      <div class="article-list-item__title flow">
+        <h3 class="small-heading">
+          <NuxtLink :to="post._path">
+            {{ post.title }}
+          </NuxtLink>
+        </h3>
+        <p v-html="post.description"></p>
       </div>
-    </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -27,64 +31,14 @@ const props = defineProps({
   post: { type: Object as PropType<Post>, required: true },
 });
 
-const featuredImage = computed<string>(() => {
-  if (!props.post.image) return '/images/feature/default-two.jpg';
-  return props.post.image;
-});
+const date = computed<string>(() => formatDate(props.post.date));
 </script>
 
 <style lang="scss" scoped>
 .article-list-item {
   height: 100%;
-
-  &__link {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    position: relative;
-    background-color: var(--block-quote-bg);
-    padding: var(--sizing-xxl);
-    font-size: var(--size-step--1);
-
-    h3 {
-      transition: var(--transition);
-    }
-
-    .article-list-item__title {
-      padding: 0;
-      z-index: 2;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 20px;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      border-radius: var(--border-radius);
-      background-color: var(--block-quote-bg);
-      transition: all 0.125s var(--cubic-bezier);
-      opacity: 0;
-      z-index: 1;
-      box-shadow: var(--box-shadow-long);
-    }
-
-    &:hover {
-      color: var(--font-color);
-      box-shadow: inset 0 0 0 1px var(--color-primary);
-    }
-  }
-
-  &__feature {
-    padding: 0;
-    z-index: 2;
-  }
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 0 var(--sizing-xxxl) 0;
 
   p {
     max-width: 70ch;
@@ -154,45 +108,6 @@ const featuredImage = computed<string>(() => {
         display: none;
       }
     }
-  }
-}
-
-.article-list-item {
-  container: article / inline-size;
-}
-.article-list-item__link {
-  padding: var(--sizing-lg) var(--sizing-xl);
-
-  @container (width >= 600px) {
-    display: grid;
-    // grid-template-columns: 1fr 200px;
-    grid-template-columns: 200px 1fr;
-    gap: var(--sizing-xxl);
-    padding: var(--sizing-xxl);
-  }
-}
-
-.article-list-item__feature {
-  @container (width >= 600px) {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-  }
-  @container (width <= 599px) {
-    padding: 0 0 var(--sizing-md) 0;
-  }
-}
-
-.article-list-item__body {
-  @container (width >= 600px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    padding: 0;
-    align-self: start;
   }
 }
 </style>

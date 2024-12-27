@@ -39,10 +39,11 @@ const toggle = () => {
 
   &-button {
     width: 32px;
-    height: 24px;
+    height: 20px;
     cursor: pointer;
     outline: none;
     position: relative;
+
     span {
       position: absolute;
       height: 2px;
@@ -57,12 +58,14 @@ const toggle = () => {
         transition: top 0.125s var(--cubic-bezier) 0.125s, transform 0.125s var(--cubic-bezier) 0.1s;
       }
       &:nth-child(2) {
-        top: 11px;
+        top: 9px;
+        left: 0;
+        right: 0;
         opacity: 1;
-        transition: opacity 0.125s var(--cubic-bezier) 0.125s;
+        transition: all 0.125s var(--cubic-bezier) 0.125s;
       }
       &:nth-child(3) {
-        top: 22px;
+        top: 18px;
         transition: top 0.125s var(--cubic-bezier) 0.125s, transform 0.125s var(--cubic-bezier) 0.1s;
       }
     }
@@ -70,16 +73,18 @@ const toggle = () => {
     &.active {
       span {
         &:nth-child(1) {
-          top: 11px;
+          top: 9px;
           transition: top 0.125s var(--cubic-bezier) 0.1s, transform 0.125s var(--cubic-bezier) 0.125s;
           transform: rotate(45deg);
         }
         &:nth-child(2) {
           opacity: 0;
-          width: 32px;
+          left: 100%;
+          right: 100%;
+          width: 0;
         }
         &:nth-child(3) {
-          top: 11px;
+          top: 9px;
           transition: top 0.1s var(--cubic-bezier) 0.125s, transform 0.125s var(--cubic-bezier) 0.125s;
           transform: rotate(-45deg);
         }

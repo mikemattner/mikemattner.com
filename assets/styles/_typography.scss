@@ -6,18 +6,12 @@ h3 {
   color: var(--headline-font-color);
   font-variation-settings: 'wdth' 100, 'wght' 800;
   letter-spacing: 0.0125em;
-  // text-transform: uppercase;
-  // font-variation-settings: 'wdth' 75, 'wght' 800;
-  // line-height: 95%;
-  // letter-spacing: 0.025em;
 
   small {
     display: block;
     font-size: var(--size-step--1);
-    // font-family: var(--code-font-family);
-    font-variation-settings: 'wdth' 100, 'wght' 300;
+    font-variation-settings: 'wdth' 100, 'wght' 400;
     margin: var(--sizing-md) 0;
-    // text-transform: uppercase;
   }
 }
 
