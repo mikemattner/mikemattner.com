@@ -7,9 +7,9 @@
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
       <div v-if="showOpenFiltersButton" class="close-container">
-        <BaseButton size="sm" variant="text" class="close-button" @click="openFilterBody()">
+        <button class="close-button" @click="openFilterBody()">
           <Icon name="ri:close-large-fill" />
-        </BaseButton>
+        </button>
       </div>
 
       <BasePanel :open="showOpenFiltersButton" has-border>
@@ -253,14 +253,16 @@ const clearAllFilters = () => {
       right: 0;
       left: 0;
       z-index: 100000;
-      transform: scale(0);
+      transform: translate(100vw, 0);
+      transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       opacity: 0;
       visibility: hidden;
 
       &.is-active {
         opacity: 1;
         visibility: visible;
-        transform: scale(1);
+        transform: translate(0, 0);
+        transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
     }
   }
@@ -360,6 +362,19 @@ const clearAllFilters = () => {
 }
 
 .close-button {
-  margin-right: calc(var(--sizing-md) * -1);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  color: var(--headline-font-color);
+  transition: var(--transition);
+  cursor: pointer;
+  font-size: var(--size-step-1);
+  line-height: 1;
+
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 </style>
