@@ -129,7 +129,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   grid-template-columns: repeat(1, 1fr);
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   &.summary-list {
@@ -156,13 +156,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   align-items: baseline;
   justify-content: flex-start;
   gap: var(--sizing-xl);
-  margin: var(--sizing-xxxl) 0 var(--sizing-xxl);
-
-  // @media (min-width: 768px) {
-  //   margin: 0;
-  //   flex-direction: column;
-  //   gap: var(--sizing-sm);
-  // }
+  margin: var(--sizing-xxxl) 0 var(--sizing-xxxl);
 
   @media (max-width: 767px) {
     margin-top: var(--sizing-xxxl);
@@ -171,7 +165,7 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
 
 .year-header {
   line-height: 1;
-  font-size: var(--size-step-0);
+  font-size: var(--size-step-2);
 }
 
 .year-header__article-count {

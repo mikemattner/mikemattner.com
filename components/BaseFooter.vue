@@ -252,9 +252,16 @@ const theYear = computed<string>(() => {
     li {
       display: flex;
       align-items: center;
+      height: 1.25rem;
 
       a.navigation-list__item-link {
         text-decoration: none;
+      }
+
+      .icon {
+        transition: var(--transition-fast);
+        width: 1.25rem;
+        height: 1.25rem;
       }
     }
   }
@@ -271,6 +278,7 @@ const theYear = computed<string>(() => {
     li {
       display: flex;
       align-items: center;
+      height: 1.25rem;
 
       a.footer-icon {
         line-height: 1;

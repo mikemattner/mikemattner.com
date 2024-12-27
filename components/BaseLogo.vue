@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-// import PrimaryLogo from '~/assets/images/logo.svg';
-import PrimaryLogo from '~/assets/images/MM_Logo.svg';
+import PrimaryLogo from '~/assets/images/logo.svg';
+// import PrimaryLogo from '~/assets/images/MM_Logo.svg';
 
 defineProps({
   showLabel: { type: Boolean, default: false },
@@ -26,16 +26,13 @@ defineProps({
   z-index: 1000;
 
   svg {
-    // width: 2rem;
-    // height: 2rem;
     width: 2rem;
     height: 2rem;
     padding: 0;
-    // border-radius: 50%;
-    // background-color: var(--color-light);
+    border-radius: 50%;
+    background-color: var(--logo-background);
     z-index: 10;
     transition: var(--transition-cubic-slow);
-    // flex: 0 0 2rem;
     flex: 0 0 2rem;
 
     @media (max-width: 510px) {
@@ -45,40 +42,35 @@ defineProps({
     }
 
     path {
-      // fill: var(--color-dark);
-      // fill: var(--color-light);
-      fill: var(--headline-font-color);
+      fill: var(--logo-foreground);
       transition: var(--transition-cubic-slow);
     }
   }
 
   &__type {
-    font-size: var(--size-step-1);
+    font-size: var(--size-step-0);
     line-height: 1;
     letter-spacing: 0.025em;
-    // color: var(--color-light);
     color: var(--headline-font-color);
     font-variation-settings: 'wdth' 100, 'wght' 800;
     transition: var(--transition-cubic-slow);
 
     @media (max-width: 715px) {
-      font-size: var(--size-step-1);
+      font-size: var(--size-step-0);
     }
   }
 
   @media (min-width: 511px) {
     &:hover {
-      // color: var(--color-light);
       color: var(--headline-font-color);
 
-      // svg {
-      //   transform: rotate(720deg);
-      //   // transform: scale(1.1);
-      // }
+      svg {
+        transform: rotate(720deg);
+      }
 
-      // .brand-logo__type {
-      //   font-variation-settings: 'wdth' 100, 'wght' 300;
-      // }
+      .brand-logo__type {
+        font-variation-settings: 'wdth' 100, 'wght' 400;
+      }
     }
   }
 }

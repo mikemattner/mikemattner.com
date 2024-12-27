@@ -82,13 +82,12 @@ watch(isMobile, () => {
     padding: 0;
     list-style: none;
     font-size: var(--size-step-0);
-    // mix-blend-mode: difference;
 
     @media (max-width: 715px) {
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      font-size: var(--size-step-4);
+      font-size: var(--size-step-3);
       gap: var(--sizing-sm);
     }
 
@@ -110,11 +109,9 @@ watch(isMobile, () => {
         height: 100%;
         text-decoration-color: transparent;
         padding: 0.5rem 0.25rem;
-        // color: var(--color-light);
         color: var(--headline-font-color);
 
         &:hover {
-          // text-decoration-color: var(--color-light);
           text-decoration-color: var(--headline-font-color);
         }
       }
@@ -123,7 +120,6 @@ watch(isMobile, () => {
 
   .router-link-active,
   .active-path {
-    // text-decoration-color: var(--color-light);
     text-decoration-color: var(--headline-font-color);
   }
 
@@ -147,7 +143,7 @@ watch(isMobile, () => {
       background-color: var(--background-color);
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       transition: all 0.125s 0.25s ease-in-out, clip-path 0.75s;
       transform: translateX(50vh);
       clip-path: circle(25% at 150% -50%);
