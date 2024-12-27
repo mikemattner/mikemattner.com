@@ -30,8 +30,6 @@ const toggle = () => {
 <style lang="scss" scoped>
 .navbar__menu {
   z-index: 1000;
-  mix-blend-mode: difference;
-  margin-left: auto;
 
   @media (min-width: 716px) {
     display: none;

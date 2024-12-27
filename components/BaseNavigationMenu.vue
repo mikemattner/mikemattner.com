@@ -1,5 +1,5 @@
 <template>
-  <BaseNavigationButton :nav-open="navOpen" @toggle="toggle" />
+  <BaseNavigationButton class="base-navigation__button" :nav-open="navOpen" @toggle="toggle" />
 
   <nav class="base-navigation__controls" :class="{ active: navOpen }">
     <ul class="navigation-list">
@@ -15,7 +15,7 @@
       </li>
     </ul>
   </nav>
-  <SearchButton v-if="!isMobile && showSearch" />
+  <SearchButton class="base-navigation__search" />
 </template>
 
 <script setup lang="ts">
@@ -121,6 +121,21 @@ watch(isMobile, () => {
   .router-link-active,
   .active-path {
     text-decoration-color: var(--headline-font-color);
+  }
+
+  &__search {
+    margin-left: var(--sizing-xxl);
+
+    @media (max-width: 715px) {
+      order: 1;
+      margin-left: auto;
+    }
+  }
+
+  &__button {
+    @media (max-width: 715px) {
+      order: 2;
+    }
   }
 
   &__controls {

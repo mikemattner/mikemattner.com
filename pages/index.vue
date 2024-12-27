@@ -2,10 +2,11 @@
   <main class="home-page">
     <div class="home-layout">
       <h1 class="intro-title">
-        <small>Mike <em>is</em> a</small>
+        <small>Mike is a</small>
         <span class="intro-title__design">Designer</span>
         <span class="intro-title__ampersand">&amp;</span>
         <span class="intro-title__development">Developer</span>
+        <small>from Michigan</small>
       </h1>
       <hr />
       <div class="home-layout__hero">
@@ -18,11 +19,11 @@
           />
         </div>
         <div class="home-greeting flow">
-          <h2 class="main-lede h3-heading">Hey there! I&rsquo;m a web designer and developer from Michigan.</h2>
+          <h2 class="main-lede h3-heading">Hey there, I&rsquo;m Mike!</h2>
           <p>
-            I currently working as a Sr. UI Engineer, but in a former life I worked as a digital designer. That was
-            basically a catch-all for video editing, motion graphics, print design, et cetera. Now I mostly create and
-            design in code.
+            I currently work as a Sr. UI Engineer, but in a former life I worked as a digital designer. That was
+            basically a catch-all for web design and development, video editing, motion graphics, print design, et
+            cetera. Now I mostly create and design in code and think of myself as a design engineer.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
@@ -147,7 +148,7 @@ const posts = computed(() => {
       text-transform: uppercase;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-6);
+        font-size: var(--size-step-7);
       }
     }
 
@@ -164,7 +165,7 @@ const posts = computed(() => {
       -webkit-text-fill-color: transparent;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-4);
+        font-size: var(--size-step-5);
       }
     }
 
@@ -178,7 +179,7 @@ const posts = computed(() => {
       text-transform: uppercase;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-6);
+        font-size: var(--size-step-7);
       }
     }
   }
@@ -225,7 +226,7 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-column: 18 / span 11;
-      aspect-ratio: 1 / 1.25;
+      aspect-ratio: 1 / 1.125;
       grid-row: 2;
     }
 

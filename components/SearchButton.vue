@@ -1,8 +1,8 @@
 <template>
   <div class="search">
-    <BaseButton variant="text" color="secondary" class="search-button" @click="openSearch">
+    <button class="search-button" @click="openSearch">
       <Icon name="ri:search-line" />
-    </BaseButton>
+    </button>
   </div>
 </template>
 
@@ -23,11 +23,21 @@ const openSearch = () => {
 <style lang="scss" scoped>
 .search {
   &-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
     color: var(--headline-font-color);
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--size-step-0);
 
-    &:hover:not(:disabled) {
-      background-color: var(--border-color);
-      color: var(--headline-font-color);
+    &:hover {
+      color: var(--color-primary);
     }
   }
 }

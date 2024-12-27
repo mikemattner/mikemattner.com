@@ -62,6 +62,13 @@
             <li>2017 Space Gray Magic Keyboard 2</li>
             <li>2017 Space Gray Magic Mouse 2</li>
             <li>
+              <a
+                href="https://www.keychron.com/products/keychron-k17-pro-alice-layout-qmk-via-wireless-custom-mechanical-keyboard?variant=40588287279193"
+              >
+                Keychron K17 Pro, RGB, Gateron Red (Hot Swappable)
+              </a>
+            </li>
+            <li>
               <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html">
                 2023 MX Master 3s for Mac, Space Gray
               </a>
