@@ -3,7 +3,9 @@
     <BaseNavigation />
     <slot />
     <BaseFooter />
-    <BaseModal v-if="modalState.open" />
+    <Teleport to="body">
+      <BaseModal v-if="modalState.open" />
+    </Teleport>
   </div>
 </template>
 

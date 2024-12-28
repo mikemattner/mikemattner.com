@@ -46,7 +46,6 @@
           about seventy percent of the work being focused on web design and development &mdash; that had me producing
           whatever video, animation work, or print assets were required.
         </p>
-        <PullQuote> Translating design into refined user interfaces is the end goal. </PullQuote>
         <p>
           I began to fully expand my development skill set beyond websites in 2016, focusing more on front end
           frameworks and component driven design systems, and less on content management systems.
