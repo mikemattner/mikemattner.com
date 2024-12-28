@@ -1,45 +1,39 @@
 <template>
-  <Teleport to="body">
-    <div :class="['modal-overlay', { active: modalState.open }]" @click="close">
-      <BaseLoader v-if="!modalState.showModal" class="modal-loader" />
-      <div
-        :class="classes"
-        role="dialog"
-        ref="modal"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
-        @click.stop
-      >
-        <div v-if="modalState.showHeader" class="modal-header">
-          <h2 v-if="modalState.modalTitle" class="small-heading">{{ modalState.modalTitle }}</h2>
-          <button v-if="modalState.showCloseButton" class="close-button" @click="close">
-            <Icon name="ri:close-large-fill" />
-          </button>
-        </div>
-        <component
-          v-if="!modalState.modalIsBusy"
-          :is="modalState.component"
-          @vue:mounted="toggleModalVisibility"
-          class="modal-content"
-        />
-        <div v-if="modalState.callbackActions" class="modal-actions">
-          <BaseButton
-            v-for="action in modalState.callbackActions"
-            size="sm"
-            :variant="action.variant ? action.variant : 'outline'"
-            color="primary"
-            @click="action.callback"
-          >
-            {{ action.label }}
-          </BaseButton>
-        </div>
+  <div :class="['modal-overlay', { active: modalState.open }]" @click="close">
+    <BaseLoader v-if="!modalState.showModal" class="modal-loader" />
+    <div
+      :class="classes"
+      role="dialog"
+      ref="modal"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      @click.stop
+    >
+      <div v-if="modalState.showHeader" class="modal-header">
+        <h2 v-if="modalState.modalTitle" class="small-heading">{{ modalState.modalTitle }}</h2>
+        <button v-if="modalState.showCloseButton" class="close-button" @click="close">
+          <Icon name="ri:close-large-fill" />
+        </button>
+      </div>
+      <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
+      <div v-if="modalState.callbackActions" class="modal-actions">
+        <BaseButton
+          v-for="action in modalState.callbackActions"
+          size="sm"
+          :variant="action.variant ? action.variant : 'outline'"
+          color="primary"
+          @click="action.callback"
+        >
+          {{ action.label }}
+        </BaseButton>
       </div>
     </div>
-  </Teleport>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { onMounted, onBeforeUnmount } from 'vue';
 import { useModal } from '~/composables/useModal';
 
 const { close, toggleModalVisibility, modalState } = useModal();
@@ -69,7 +63,7 @@ onMounted(() => {
   document.addEventListener('keydown', handleEscape);
 });
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   document.removeEventListener('keydown', handleEscape);
 });
 </script>

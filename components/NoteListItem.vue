@@ -100,7 +100,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-sm);
-    font-size: var(--size-step--2);
+    font-size: var(--size-step--1);
     margin-top: var(--sizing-xl);
 
     li {
@@ -120,6 +120,7 @@ const date = computed<string>(() => formatDate(props.note.date));
         content: '#';
         line-height: 1;
         opacity: 0.5;
+        margin-right: 3px;
       }
 
       &:last-child:after {

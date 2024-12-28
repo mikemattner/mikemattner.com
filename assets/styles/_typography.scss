@@ -15,6 +15,15 @@ h3 {
   }
 }
 
+.page-header {
+  text-transform: uppercase;
+  font-variation-settings: 'wdth' 75, 'wght' 800;
+
+  small {
+    text-transform: none;
+  }
+}
+
 .maximal-heading {
   font-size: var(--size-step-7);
 }

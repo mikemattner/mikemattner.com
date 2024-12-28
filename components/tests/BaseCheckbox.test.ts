@@ -1,7 +1,6 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime';
 import BaseCheckbox from '@/components/BaseCheckbox.vue';
 import { describe, it, expect } from 'vitest';
-import type { DOMWrapper } from '@vue/test-utils';
 
 describe('BaseCheckbox.vue', () => {
   it('renders correctly with required props', async () => {
