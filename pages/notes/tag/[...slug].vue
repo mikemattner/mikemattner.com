@@ -3,7 +3,7 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1><small>Notes tagged</small> &lsquo;{{ tagName }}&rsquo;</h1>
+          <h1 class="page-header"><small>Notes tagged</small> &lsquo;{{ tagName }}&rsquo;</h1>
           <p class="intro">{{ noteCount }}</p>
           <hr />
         </div>

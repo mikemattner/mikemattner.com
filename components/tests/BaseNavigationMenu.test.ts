@@ -3,29 +3,42 @@ import { describe, it, expect, beforeEach, vi, type MockedFunction } from 'vites
 import BaseNavigationMenu from '@/components/BaseNavigationMenu.vue';
 import { useNavigationState } from '@/composables/useNavigationState.client';
 import { navigationList } from '@/data/navigationList';
-import { nextTick, computed } from 'vue';
+import { nextTick, computed, ref } from 'vue';
+import { useMediaQuery } from '@vueuse/core';
+import { VueWrapper } from '@vue/test-utils';
+import BaseNavigationButton from '../BaseNavigationButton.vue';
 
-vi.mock('@/composables/useNavigationState.client', () => ({
-  useNavigationState: vi.fn(),
-}));
+vi.mock('@/composables/useNavigationState.client');
+vi.mock('@vueuse/core');
 
 describe('BaseNavigationMenu.vue', () => {
   let navOpen;
   let toggleNav: MockedFunction<() => {}>;
+  let wrapper: VueWrapper<InstanceType<typeof BaseNavigationMenu>>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     navOpen = ref(false);
     toggleNav = vi.fn();
-    (useNavigationState as MockedFunction<typeof useNavigationState>).mockReturnValue({ navOpen, toggleNav });
+    (useNavigationState as MockedFunction<typeof useNavigationState>).mockReturnValue({
+      navOpen,
+      toggleNav,
+    });
+    (useMediaQuery as MockedFunction<typeof useMediaQuery>).mockReturnValue(ref(true));
+
+    wrapper = await mountSuspended(BaseNavigationMenu, {
+      global: {
+        components: {
+          BaseNavigationButton,
+        },
+      },
+    });
   });
 
   it('renders correctly', async () => {
-    const wrapper = await mountSuspended(BaseNavigationMenu);
     expect(wrapper.exists()).toBe(true);
   });
 
   it('renders navigation list items', async () => {
-    const wrapper = await mountSuspended(BaseNavigationMenu);
     const items = wrapper.findAll('.navigation-list__item');
     const primaryNavigationList = computed<NavigationList[]>(() => {
       return navigationList.filter((item) => item.primary);
@@ -33,19 +46,15 @@ describe('BaseNavigationMenu.vue', () => {
     expect(items.length).toBe(primaryNavigationList.value.length);
   });
 
-  // TODO: figure out how to properly trigger these click events
-
-  it.skip('calls toggle function when a navigation item is clicked', async () => {
-    const wrapper = await mountSuspended(BaseNavigationMenu);
-    const firstItem = wrapper.find('.navigation-list__item div');
+  it('calls toggle function when a navigation item is clicked', async () => {
+    const firstItem = wrapper.find('.navigation-list__item span');
     await firstItem.trigger('click');
     await nextTick();
     expect(toggleNav).toHaveBeenCalled();
   });
 
-  it.skip('changes navOpen state when toggle function is called', async () => {
-    const wrapper = await mountSuspended(BaseNavigationMenu);
-    const button = wrapper.findComponent({ name: 'BaseNavigationButton' });
+  it('changes navOpen state when toggle function is called', async () => {
+    const button = wrapper.find('.navbar__menu-button');
     await button.trigger('click');
     await nextTick();
     expect(toggleNav).toHaveBeenCalled();

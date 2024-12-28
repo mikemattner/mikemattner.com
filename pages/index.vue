@@ -25,7 +25,6 @@
             basically a catch-all for web design and development, video editing, motion graphics, print design, et
             cetera.
           </p>
-          <PullQuote> Translating design into refined user interfaces is the end goal. </PullQuote>
           <p>
             These days I create and design in code and think of myself as a
             <a href="https://www.trysmudford.com/blog/i-think-im-a-design-engineer/">design engineer</a> more than

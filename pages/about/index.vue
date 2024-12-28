@@ -2,7 +2,7 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1><small>About the Author</small> Hey there, I&rsquo;m Mike!</h1>
+        <h1 class="page-header"><small>About the Author</small> Hey there, I&rsquo;m Mike!</h1>
         <p class="intro">
           I&rsquo;m a design engineer from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a
           non-exhaustive summary of my life, career, and this website.
@@ -46,7 +46,6 @@
           about seventy percent of the work being focused on web design and development &mdash; that had me producing
           whatever video, animation work, or print assets were required.
         </p>
-        <PullQuote> Translating design into refined user interfaces is the end goal. </PullQuote>
         <p>
           I began to fully expand my development skill set beyond websites in 2016, focusing more on front end
           frameworks and component driven design systems, and less on content management systems.
