@@ -15,7 +15,7 @@ tag:
 
 One of the primary reasons I exited the WordPress space for my personal portfolio and blog was because of a series of hacks to my hosted installation. No matter what I tried to do to harden it, there was always some path to exploitation.
 
-At the same time as all of this was going on, I was also diving head first into the world of [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/) at work. Going with a solution like this for a personal project seemed like such a natural path towards professional development, and a safe solution for ditching WordPress. No offense to WordPress&mdash;it can be great and I miss the writing experience&mdash;but I just couldn't continue to fix a constant hack that probably shouldn't have been happening.
+At the same time as all of this was going on, I was also diving head first into the world of [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/) at work. Going with a solution like this for a personal project seemed like such a natural path towards professional development, and a safe solution for ditching WordPress. No offense to WordPress&mdash;it can be great and I miss the writing experience &mdash; but I just couldn't continue to fix a constant hack that probably shouldn't have been happening.
 
 ## How to Handle Content
 

@@ -14,4 +14,4 @@ tag:
 
 Brad Frost hits the nail on the head with [this article](https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/) describing the increasing delineation between back and front end roles in the front end discipline.
 
-I'm finding my particular skill set settling nicely into the front of the front end, while dabbling occasional into writing services in a pair-programming session with a back end dev on the team. Gives us a chance to settle on a mutual data model, but my expertise is in crafting largely presentational concerns.
+I'm finding my particular skill set settling nicely into the front of the front end, while dabbling occasionally into writing services in a pair-programming session with a back end dev on the team. Gives us a chance to settle on a mutual data model, but my expertise is in crafting largely presentational concerns.

@@ -7,6 +7,7 @@
     </BaseButton>
     <div :class="['filters-body', { 'is-active': openFilters }]" key="filterBody">
       <div v-if="showOpenFiltersButton" class="close-container">
+        <h2 class="small-heading">Filter</h2>
         <button class="close-button" @click="openFilterBody()">
           <Icon name="ri:close-large-fill" />
         </button>
@@ -245,7 +246,7 @@ const clearAllFilters = () => {
 
     @media (max-width: 979px) {
       background-color: var(--background-color);
-      padding: var(--sizing-xl);
+      padding: 0 var(--sizing-xl) var(--sizing-xl);
       margin-top: 0;
       position: fixed;
       top: 0;
@@ -254,7 +255,7 @@ const clearAllFilters = () => {
       left: 0;
       z-index: 100000;
       transform: translate(100vw, 0);
-      transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.25s 0s var(--transition-timing);
       opacity: 0;
       visibility: hidden;
 
@@ -262,7 +263,7 @@ const clearAllFilters = () => {
         opacity: 1;
         visibility: visible;
         transform: translate(0, 0);
-        transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.25s 0s var(--transition-timing);
       }
     }
   }
@@ -357,8 +358,9 @@ const clearAllFilters = () => {
 
 .close-container {
   display: flex;
-  justify-content: flex-end;
-  padding: var(--sizing-md) 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sizing-xl) 0;
 }
 
 .close-button {

@@ -11,4 +11,4 @@ Generative AI is like the ultimate idea guy’s idea! Imagine… if all they nee
 [Rach Smith](https://rachsmith.com/ai-is-for-the-idea-guys/)
 ::
 
-The whole write-up is how I have felt (even down to the folks getting my take an some idea they have for an app), but the idea in particular&mdash;that implementation was the only thing getting in the way of their grand vision being successful&mdash;that they can use AI to eliminate this stupid little hindrance has rubbed me the wrong way from the &ldquo;thought leaders&rdquo; in the industry.
+The whole write-up is how I have felt (even down to the folks getting my take an some idea they have for an app), but the idea in particular&mdash;that implementation was the only thing getting in the way of their grand vision being successful &mdash; that they can use AI to eliminate this stupid little hindrance has rubbed me the wrong way from the &ldquo;thought leaders&rdquo; in the industry.
