@@ -2,7 +2,7 @@
   <main>
     <article class="about-layout">
       <div class="sidebar-area flow">
-        <h1><small>What I Work With</small> Uses</h1>
+        <h1 class="page-header"><small>What I Work With</small> Uses</h1>
         <p class="intro">A less than comprehensive look at the tools I use.</p>
         <ul class="sub-menu">
           <li><NuxtLink to="/about">About</NuxtLink></li>

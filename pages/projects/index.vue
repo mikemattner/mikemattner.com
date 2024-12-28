@@ -2,7 +2,7 @@
   <main>
     <article class="projects-layout">
       <div class="sidebar-area flow">
-        <h1><small>Small / Random</small> Projects</h1>
+        <h1 class="page-header"><small>Small / Random</small> Projects</h1>
         <hr />
       </div>
       <div class="project-content flow">

@@ -3,7 +3,7 @@
     <div class="writing-layout">
       <div class="writing-layout__content">
         <div class="sidebar-area flow">
-          <h1><small>Posts tagged</small> &lsquo;{{ tagName }}&rsquo;</h1>
+          <h1 class="page-header"><small>Posts tagged</small> &lsquo;{{ tagName }}&rsquo;</h1>
           <p class="intro">{{ postCount }}</p>
           <hr />
         </div>
