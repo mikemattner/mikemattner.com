@@ -15,7 +15,7 @@
         </ul>
       </nav>
       <div class="base-footer__social">
-        <h2 class="small-text">Get in Touch</h2>
+        <h2 class="small-text">Connect</h2>
         <ul class="social-icons">
           <li>
             <BaseButton
@@ -74,6 +74,11 @@
               <Icon name="ri:bluesky-fill" /> Bluesky
             </BaseButton>
           </li>
+          <li>
+            <BaseButton class="footer-icon" variant="link" size="sm" color="secondary" href="/rss.xml">
+              <Icon name="ri:rss-fill" /> RSS Feed
+            </BaseButton>
+          </li>
         </ul>
       </div>
       <div class="shameless-branding">
@@ -82,7 +87,6 @@
       </div>
       <div class="base-footer__sub-controls">
         <div class="controls">
-          <RssButton />
           <ThemeSwitcher />
         </div>
       </div>
