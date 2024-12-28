@@ -2,13 +2,10 @@
  * A composable function that provides functionality to open and close a modal.
  *
  * @returns {object} An object containing the modal state and functions to control the modal.
- * @property {Ref<object | undefined>} component - The component to be displayed in the modal.
- * @property {Ref<boolean>} show - A boolean indicating whether the modal is visible.
- * @property {Ref<boolean>} showHeader - A boolean indicating whether the modal header is visible.
- * @property {Ref<boolean>} showModal - A boolean indicating whether the modal content is visible.
- * @property {Function} openModal - A function to open the modal with a specified view and optional actions.
+ * @property {ModalState} modalState - The reactive state of the modal.
+ * @property {Function} openModal - A function to open the modal with a specified view and optional options.
  * @property {Function} close - A function to close the modal.
- * @property {Ref<string | undefined>} modalTitle - The title of the modal.
+ * @property {Function} toggleModalVisibility - A function to toggle the visibility of the modal content.
  *
  * @example
  * import { useModal } from '~/composables/useModal';
@@ -16,8 +13,7 @@
  * const modal = useModal();
  *
  * modal.openModal(MyComponent, {
- *  title: 'My Modal',
- *  showHeader: true,
+ *  modalTitle: 'My Modal',
  *  showCloseButton: true,
  *  modalWidth: 'md',
  *  actions: [
@@ -60,6 +56,7 @@ export class ModalState {
   modalTitle: string | undefined = undefined;
   modalWidth: 'sm' | 'md' | 'lg' | undefined = undefined;
   modalIsBusy: boolean = false;
+  modalIsLoading: boolean = false;
   component: Component | object | undefined = undefined;
   callbackActions: ModalAction[] | undefined = undefined;
 
@@ -70,7 +67,7 @@ export class ModalState {
   }
 }
 
-const modalState = reactive<ModalState>(new ModalState());
+const modalState = reactive<ModalState>({ ...new ModalState() });
 
 export function useModal() {
   let body: HTMLElement;
@@ -80,20 +77,20 @@ export function useModal() {
   });
 
   const openModal = (view: object, options?: ModalOptions) => {
-    // Display properties
-    modalState.showHeader = options?.modalTitle || options?.showCloseButton ? true : false;
-    modalState.modalTitle = options?.modalTitle ? options.modalTitle : undefined;
-    modalState.showCloseButton = options?.showCloseButton ? options.showCloseButton : false;
-    modalState.modalWidth = options?.modalWidth ? options.modalWidth : 'md';
+    const optionsState = new ModalState({
+      open: true,
+      showHeader: options?.modalTitle || options?.showCloseButton ? true : false,
+      modalTitle: options?.modalTitle ? options.modalTitle : undefined,
+      showCloseButton: options?.showCloseButton ? options.showCloseButton : false,
+      modalWidth: options?.modalWidth ? options.modalWidth : 'md',
+      callbackActions: options?.actions ? options.actions : undefined,
+      component: markRaw(view),
+      showModal: false,
+      modalIsBusy: false,
+      modalIsLoading: true,
+    });
 
-    // Set the actions to be displayed if any
-    modalState.callbackActions = options?.actions ? options.actions : undefined;
-
-    // Set the component to be displayed in the modal
-    modalState.component = markRaw(view);
-
-    // Open the modal, lock body scroll
-    modalState.open = true;
+    Object.assign(modalState, optionsState);
     body.classList.toggle('no--scroll');
   };
 
@@ -101,19 +98,18 @@ export function useModal() {
     toggleModalVisibility();
     setTimeout(() => {
       modalState.open = false;
+      resetModal();
     }, 150);
-    setTimeout(() => {
-      modalState.component = undefined;
-      modalState.callbackActions = undefined;
-      modalState.showHeader = false;
-      modalState.showCloseButton = false;
-      modalState.modalTitle = undefined;
-      body.classList.toggle('no--scroll');
-    }, 200);
   };
 
   const toggleModalVisibility = () => {
     modalState.showModal = !modalState.showModal;
+    modalState.modalIsLoading = !modalState.modalIsLoading;
+  };
+
+  const resetModal = () => {
+    Object.assign(modalState, new ModalState());
+    body.classList.toggle('no--scroll');
   };
 
   return {

@@ -1,6 +1,6 @@
 <template>
   <div :class="['modal-overlay', { active: modalState.open }]" @click="close">
-    <BaseLoader v-if="!modalState.showModal" class="modal-loader" />
+    <BaseLoader v-if="modalState.modalIsLoading && !modalState.showModal" class="modal-loader" />
     <div
       :class="classes"
       role="dialog"

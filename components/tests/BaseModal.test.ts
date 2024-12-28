@@ -23,6 +23,7 @@ describe('BaseModal.vue', () => {
       modalTitle: '',
       showCloseButton: false,
       modalIsBusy: false,
+      modalIsLoading: false,
       component: markRaw(() => {}),
       callbackActions: [],
       modalWidth: 'md',
@@ -62,13 +63,17 @@ describe('BaseModal.vue', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it('renders the loader when showModal is false', async () => {
+  it('renders the loader when modalIsLoading is true', async () => {
+    modalState.open = true;
+    modalState.modalIsLoading = true;
     modalState.showModal = false;
     await wrapper.vm.$forceUpdate();
     expect(wrapper.findComponent(BaseLoader).exists()).toBe(true);
   });
 
-  it('does not render the loader when showModal is true', async () => {
+  it('does not render the loader when modalIsLoading is false', async () => {
+    modalState.open = true;
+    modalState.modalIsLoading = false;
     modalState.showModal = true;
     await wrapper.vm.$forceUpdate();
     expect(wrapper.findComponent(BaseLoader).exists()).toBe(false);
