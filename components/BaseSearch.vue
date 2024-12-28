@@ -50,7 +50,10 @@ onMounted(() => {
   display: grid;
   gap: var(--sizing-md);
   grid-template-rows: auto 1fr;
-  height: 400px;
+
+  @media (min-width: 716px) {
+    height: 400px;
+  }
 
   .search-results {
     font-size: var(--size-step--1);

@@ -49,7 +49,7 @@ But then I wondered what would happen if I lost everything on this system? I sta
 
 I found one particular [repo](https://github.com/mathiasbynens/dotfiles) by Mathias that I was able to gather some items from, as well as an installation process that could get me started with everything I used. Now all I need to do is navigate to my cloned repo and type:
 
-```bash
+```bash[terminal]
 --- ~ » source boostrap.sh
 ```
 

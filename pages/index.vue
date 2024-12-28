@@ -8,22 +8,28 @@
         <span class="intro-title__development">Developer</span>
         <small>from Michigan</small>
       </h1>
-      <hr />
+      <div class="profile-image-wide">
+        <PrimaryImage
+          src="/images/about-profile.jpg"
+          alt="Portrait shot of Mike."
+          has-overlay
+          class="profile-image-photo"
+        />
+      </div>
       <div class="home-layout__hero">
-        <div class="profile-image">
-          <PrimaryImage
-            src="/images/pro-profile.jpg"
-            alt="Portrait shot of Mike."
-            has-overlay
-            class="profile-image-photo"
-          />
-        </div>
+        <h2 class="main-lede h3-heading">Introduction</h2>
+
         <div class="home-greeting flow">
-          <h2 class="main-lede h3-heading">Hey there, I&rsquo;m Mike!</h2>
           <p>
             I currently work as a Sr. UI Engineer, but in a former life I worked as a digital designer. That was
             basically a catch-all for web design and development, video editing, motion graphics, print design, et
-            cetera. Now I mostly create and design in code and think of myself as a design engineer.
+            cetera.
+          </p>
+          <PullQuote> Translating design into refined user interfaces is the end goal. </PullQuote>
+          <p>
+            These days I create and design in code and think of myself as a
+            <a href="https://www.trysmudford.com/blog/i-think-im-a-design-engineer/">design engineer</a> more than
+            anything else.
           </p>
           <div class="button-group">
             <BaseButton to="/about" variant="solid" size="md" color="primary">
@@ -42,7 +48,7 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <h2 class="h3-heading recently-posted-header">Recently Posted</h2>
+        <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
@@ -68,7 +74,7 @@ useHead({
 const { data } = await useAsyncData('blog-short', () => queryContent<Post>('/blog').sort({ date: -1 }).find());
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
 });
 </script>
 
@@ -95,7 +101,7 @@ const posts = computed(() => {
 
     @media (min-width: 1053px) {
       grid-template-columns: repeat(28, 1fr);
-      margin-block-start: 6rem;
+      margin-block-start: 4rem;
       margin-block-end: 6rem;
       gap: var(--sizing-xxl) 0;
     }
@@ -201,12 +207,13 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 15;
+      grid-column: 13 / span 15;
       align-self: center;
-      grid-row: 2;
+      grid-row: 1;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / span 4;
+      grid-row: 2;
     }
   }
 
@@ -216,6 +223,15 @@ const posts = computed(() => {
     grid-row: 1;
     text-wrap: balance;
     z-index: 2;
+
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 10;
+      grid-row: 1;
+    }
+    @media (max-width: 1052px) {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
   }
 
   .profile-image {
@@ -227,6 +243,39 @@ const posts = computed(() => {
     @media (min-width: 1053px) {
       grid-column: 18 / span 11;
       aspect-ratio: 1 / 1.125;
+      grid-row: 2;
+    }
+
+    @media (max-width: 1052px) {
+      grid-column: 1 / -1;
+      align-self: self-start;
+      aspect-ratio: 1.5 / 1;
+      grid-row: 1;
+    }
+
+    @media (max-width: 499px) {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+      aspect-ratio: 1.25 / 1;
+    }
+
+    .profile-image-photo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .profile-image-wide {
+    aspect-ratio: 1 / 0.75;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin-inline: auto;
+
+    @media (min-width: 1053px) {
+      grid-column: 18 / span 11;
+      aspect-ratio: 1 / 0.375;
       grid-row: 2;
     }
 

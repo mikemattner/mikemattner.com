@@ -1,6 +1,7 @@
 <template>
   <Teleport to="body">
     <div :class="['modal-overlay', { active: modalState.open }]" @click="close">
+      <BaseLoader v-if="!modalState.showModal" class="modal-loader" />
       <div
         :class="classes"
         role="dialog"
@@ -16,7 +17,12 @@
             <Icon name="ri:close-large-fill" />
           </button>
         </div>
-        <component :is="modalState.component" @vue:mounted="toggleModalVisibility" class="modal-content" />
+        <component
+          v-if="!modalState.modalIsBusy"
+          :is="modalState.component"
+          @vue:mounted="toggleModalVisibility"
+          class="modal-content"
+        />
         <div v-if="modalState.callbackActions" class="modal-actions">
           <BaseButton
             v-for="action in modalState.callbackActions"
@@ -149,12 +155,18 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
+    transform: translate(100vw, 0);
+    transition: all 0.25s 0s var(--transition-timing);
   }
 
   &.active {
     opacity: 1;
     transform: translate(0, 0);
     transition: all 0.25s 0s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    @media (max-width: 715px) {
+      transition: all 0.25s 0s var(--transition-timing);
+    }
   }
 }
 
@@ -162,7 +174,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--sizing-lg);
+  padding: var(--sizing-xl) var(--sizing-lg);
   border-bottom: 1px solid var(--border-color);
 }
 .close-button {
@@ -182,12 +194,23 @@ onUnmounted(() => {
   }
 }
 .modal-content {
-  padding: var(--sizing-lg);
+  padding: var(--sizing-xl) var(--sizing-lg);
+
+  @media (min-width: 716px) {
+    max-height: 400px;
+  }
 }
 .modal-actions {
   display: flex;
   align-items: center;
   gap: var(--sizing-md);
-  padding: var(--sizing-lg);
+  padding: var(--sizing-xl) var(--sizing-lg);
+  border-top: 1px solid var(--border-color);
+}
+.modal-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>

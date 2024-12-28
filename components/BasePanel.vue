@@ -114,7 +114,7 @@ onMounted(() => {
     padding: var(--sizing-md) 0;
 
     &.has-border {
-      background-color: var(--border-color);
+      border-top: 1px solid var(--border-color);
       padding: var(--sizing-md);
     }
   }

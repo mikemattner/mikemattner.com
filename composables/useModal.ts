@@ -39,35 +39,38 @@ export type ModalAction = {
   callback: (props?: unknown) => void;
 };
 
-export type ModalOptions = {
-  modalTitle?: string;
-  showHeader?: boolean;
-  showCloseButton?: boolean;
-  modalWidth?: 'sm' | 'md' | 'lg';
-  actions?: ModalAction[];
-};
+export class ModalOptions {
+  modalTitle?: string | undefined = undefined;
+  showCloseButton?: boolean = false;
+  modalWidth?: 'sm' | 'md' | 'lg' | undefined = undefined;
+  actions?: ModalAction[] | undefined = undefined;
 
-export type ModalState = {
-  open: boolean;
-  showModal: boolean;
-  showHeader: boolean;
-  showCloseButton: boolean;
-  modalTitle: string | undefined;
-  modalWidth: 'sm' | 'md' | 'lg' | undefined;
-  component: Component | object | undefined;
-  callbackActions: ModalAction[] | undefined;
-};
+  constructor(modalOptions?: ModalOptions) {
+    if (modalOptions) {
+      Object.assign(this, modalOptions);
+    }
+  }
+}
 
-const modalState = reactive<ModalState>({
-  open: false,
-  showModal: false,
-  showHeader: false,
-  showCloseButton: false,
-  modalTitle: undefined,
-  modalWidth: undefined,
-  component: undefined,
-  callbackActions: undefined,
-});
+export class ModalState {
+  open: boolean = false;
+  showModal: boolean = false;
+  showHeader: boolean = false;
+  showCloseButton: boolean = false;
+  modalTitle: string | undefined = undefined;
+  modalWidth: 'sm' | 'md' | 'lg' | undefined = undefined;
+  modalIsBusy: boolean = false;
+  component: Component | object | undefined = undefined;
+  callbackActions: ModalAction[] | undefined = undefined;
+
+  constructor(modalState?: ModalState) {
+    if (modalState) {
+      Object.assign(this, modalState);
+    }
+  }
+}
+
+const modalState = reactive<ModalState>(new ModalState());
 
 export function useModal() {
   let body: HTMLElement;
@@ -77,12 +80,19 @@ export function useModal() {
   });
 
   const openModal = (view: object, options?: ModalOptions) => {
-    modalState.showHeader = options?.showHeader ? options.showHeader : false;
+    // Display properties
+    modalState.showHeader = options?.modalTitle || options?.showCloseButton ? true : false;
     modalState.modalTitle = options?.modalTitle ? options.modalTitle : undefined;
-    modalState.modalWidth = options?.modalWidth ? options.modalWidth : 'md';
     modalState.showCloseButton = options?.showCloseButton ? options.showCloseButton : false;
+    modalState.modalWidth = options?.modalWidth ? options.modalWidth : 'md';
+
+    // Set the actions to be displayed if any
     modalState.callbackActions = options?.actions ? options.actions : undefined;
+
+    // Set the component to be displayed in the modal
     modalState.component = markRaw(view);
+
+    // Open the modal, lock body scroll
     modalState.open = true;
     body.classList.toggle('no--scroll');
   };
