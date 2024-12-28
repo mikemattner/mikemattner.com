@@ -27,30 +27,49 @@
         <h2>Just The Highlights</h2>
         <p>
           I was born and raised in southwest Michigan &mdash; a largely rural place with extremely small town vibes. I
-          left shortly after graduating from high school to attend college in Florida, but I was ultimately drawn back
-          to Michigan by the allure of the lakes and the wonderful summer experience. I&rsquo;ve been here ever since. I
-          am currently residing in a beautiful lakeside community that offers plenty of access to the water and other
-          outdoor spaces.
+          left shortly after graduating from high school to attend college in Florida, but was ultimately drawn back to
+          Michigan by the allure of the lakes and the wonderful summer experience. I&rsquo;ve been here ever since.
         </p>
         <p>
-          My journey in web design and development began in 1998, and since then, I have been steadily refining my skill
-          set. Professionally, I got my first gig in 2006. At that time I was largely working on LAMP stack projects
+          I am currently residing in a beautiful lakeside community that offers plenty of access to the water and other
+          outdoor spaces, plus a bit of a decent selection of breweries and restaurants.
+        </p>
+        <h3>Professional</h3>
+        <p>
+          My journey in web design and development began with Geocities in 1998 and not too longer after that was a
+          series of Star Wars gaming related sites.
+        </p>
+        <p>
+          That tinkering eventually led to studying digital media, and I&rsquo;ve been steadily refining my skill set
+          since. Professionally, I got my first gig in 2006. At that time I was largely working on LAMP stack projects
           while juggling all of the design work. That first gig was more of a digital media specialist role &mdash; with
           about seventy percent of the work being focused on web design and development &mdash; that had me producing
           whatever video, animation work, or print assets were required.
         </p>
+        <PullQuote> Translating design into refined user interfaces is the end goal. </PullQuote>
         <p>
-          I began to expand my development skill set in 2016, focusing more on front end frameworks and component driven
-          design systems, and less on content management systems.
+          I began to fully expand my development skill set beyond websites in 2016, focusing more on front end
+          frameworks and component driven design systems, and less on content management systems.
         </p>
+        <h3>Personal</h3>
         <p>
-          In my personal time, I enjoy being with my family, reading, staying updated on politics, dabbling in
+          In my personal time, I enjoy being with my wife and pets, reading, staying updated on politics, dabbling in
           woodworking, working on home projects, and spending time outdoors near lakes and rivers in the summer. I also
           appreciate a good quality beer.
         </p>
+        <PullQuote>
+          I've got one question&hellip;who's got it better than us? <em>Nobody!</em>
+          <template v-slot:attribution>Jim Harbaugh</template>
+        </PullQuote>
+        <p>
+          Saturdays in the fall are reserved for college football &mdash; specifically for watching the Michigan
+          Wolverines. I have been a fan since I was a kid, and I have a lot of fond memories of watching games at the
+          Big House. One might say, I am a bit obsessed, but that's a subject to discuss over a beer.
+        </p>
+        <p>Blake, <a href="https://mgoblog.com/content/take-us-home">take us home</a>.</p>
         <h3>This Site</h3>
         <p>
-          <strong>mikemattner.com</strong> is a <a href="https://nuxt.com">Nuxt</a> based website using
+          This is a <a href="https://nuxt.com">Nuxt</a> based website using
           <a href="https://content.nuxt.com/">Nuxt Content</a> to manage markdown content for the blog, hosted at
           <a href="https://netlify.com">Netlify</a>. I used some combination of
           <a href="https://www.figma.com/">Figma</a> and <a href="https://code.visualstudio.com/">VSCode</a> to design

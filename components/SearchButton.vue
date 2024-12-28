@@ -14,7 +14,6 @@ const { openModal, close } = useModal();
 const openSearch = () => {
   openModal(BaseSearch, {
     modalTitle: 'Search',
-    showHeader: true,
     showCloseButton: true,
   });
 };
