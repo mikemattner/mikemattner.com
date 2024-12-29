@@ -34,14 +34,6 @@
             <BaseButton to="/about" variant="solid" size="md" color="primary">
               <span>Read More</span>
             </BaseButton>
-            <BaseButton to="/about/uses" variant="text" size="sm" color="secondary">
-              <Icon name="ri:apps-line" />
-              <span>Mike Uses</span>
-            </BaseButton>
-            <BaseButton to="/about/resume" variant="text" size="sm" color="secondary">
-              <Icon name="ri:file-text-line" />
-              <span>The Resume</span>
-            </BaseButton>
           </div>
         </div>
       </div>

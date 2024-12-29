@@ -14,12 +14,11 @@ import { useColorMode, useCycleList } from '@vueuse/core';
 const mode = useColorMode({
   initialValue: 'dark',
   storageKey: 'mikemattner-com-theme',
+  disableTransition: false,
 });
 const { state, next } = useCycleList(['dark', 'light'], { initialValue: mode });
 
 watchEffect(() => (mode.value = state.value as any));
-
-const darkIcon = computed<boolean>(() => state.value === 'dark');
 
 const isDark = ref<boolean>(true);
 </script>
