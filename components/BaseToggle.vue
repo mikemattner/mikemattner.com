@@ -1,69 +1,105 @@
 <template>
-  <div class="toggle-switch" :class="{ checked: modelValue }" @click="toggle">
+  <label class="toggle-switch" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
+    <input type="checkbox" v-model="model" />
     <slot />
-  </div>
+  </label>
 </template>
 
 <script setup lang="ts">
+import type { PropType } from 'vue';
+
+type Severity = 'primary' | 'success' | 'warning';
+
 const props = defineProps({
   modelValue: {
     required: true,
     type: Boolean,
   },
+  type: {
+    type: String as PropType<Severity>,
+    default: 'primary',
+  },
 });
 
 const emit = defineEmits(['update:modelValue', 'change']);
 
-const toggle = () => {
-  emit('update:modelValue', !props.modelValue);
-  emit('change');
-};
+const model = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(value) {
+    emit('change');
+    emit('update:modelValue', value);
+  },
+});
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .toggle-switch {
-  background: var(--block-quote-bg);
+  --switch-color-bg: var(--color-blue);
+
+  background: var(--toggle-switch-bg);
   border-radius: 0.75em;
   box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08) inset;
   cursor: pointer;
+  display: inline-block;
   flex: none;
   height: 1.5em;
   position: relative;
-  transition: background-color 150ms;
+  transition: var(--transition);
   width: 3em;
-}
 
-.toggle-switch::before {
-  background: var(--headline-font-color);
-  background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
-  border-radius: 0.625em;
-  box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08);
-  content: '';
-  display: block;
-  height: 1.25em;
-  left: 0.125em;
-  position: absolute;
-  top: 0.125em;
-  transition: left 150ms;
-  width: 1.25em;
-  will-change: left;
-}
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  &--primary {
+    --switch-color-bg: var(--color-blue);
+  }
 
-.checked {
-  background-color: var(--color-green);
-}
+  &--success {
+    --switch-color-bg: var(--color-green);
+  }
 
-.checked::before {
-  background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
-  left: 1.625em;
-}
+  &--warning {
+    --switch-color-bg: var(--color-red);
+  }
 
-.toggle-switch:hover {
-  box-shadow: 0.0625em 0.0625em 0.125em rgba(0, 0, 0, 0.12) inset;
-}
+  &::before {
+    background: var(--headline-font-color);
+    background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
+    border-radius: 0.625em;
+    box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08);
+    content: '';
+    display: block;
+    height: 1.25em;
+    left: 0.125em;
+    position: absolute;
+    top: 0.125em;
+    transition: left 150ms;
+    width: 1.25em;
+    will-change: left;
+  }
 
-.toggle-switch:hover::before {
-  background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.0375) 1em);
-  box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.12);
+  &.checked {
+    background-color: var(--switch-color-bg);
+  }
+
+  &.checked::before {
+    background: var(--color-light);
+    background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
+    left: 1.625em;
+  }
+
+  &:hover {
+    box-shadow: 0.0625em 0.0625em 0.125em rgba(0, 0, 0, 0.12) inset;
+  }
+
+  &:hover::before {
+    background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.0375) 1em);
+    box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.12);
+  }
 }
 </style>

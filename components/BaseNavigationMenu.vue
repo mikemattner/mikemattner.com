@@ -15,6 +15,7 @@
       </li>
     </ul>
   </nav>
+  <ThemeSwitcher class="base-navigation__theme-switch" />
   <SearchButton class="base-navigation__search" />
 </template>
 
@@ -127,6 +128,16 @@ watch(isMobile, () => {
     margin-left: var(--sizing-xxl);
 
     @media (max-width: 715px) {
+      order: 2;
+      margin-left: 0;
+      z-index: 1000;
+    }
+  }
+
+  &__theme-switch {
+    margin-left: var(--sizing-xxl);
+
+    @media (max-width: 715px) {
       order: 1;
       margin-left: auto;
       z-index: 1000;
@@ -135,7 +146,7 @@ watch(isMobile, () => {
 
   &__button {
     @media (max-width: 715px) {
-      order: 2;
+      order: 3;
     }
   }
 

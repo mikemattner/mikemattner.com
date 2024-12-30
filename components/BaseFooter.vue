@@ -85,11 +85,11 @@
         <p>Want to say hello?</p>
         <p>Reach me at me @ mikemattner.com</p>
       </div>
-      <div class="base-footer__sub-controls">
+      <!-- <div class="base-footer__sub-controls">
         <div class="controls">
           <ThemeSwitcher />
         </div>
-      </div>
+      </div> -->
     </div>
   </footer>
 </template>
@@ -204,15 +204,11 @@ const theYear = computed<string>(() => {
     grid-column: 1 / -1;
     grid-row: 3;
 
-    // @media (max-width: 875px) {
-    //   grid-column: 1 / -1;
-    //   grid-column: 3;
-    // }
+    // background-color: var(--block-quote-bg);
+    // padding: var(--sizing-md) var(--sizing-lg);
+    // border-radius: var(--border-radius);
 
     @media (max-width: 597px) {
-      // grid-column: 1 / -1;
-      // grid-row: 3;
-      // justify-content: center;
       grid-row: 4;
     }
   }
