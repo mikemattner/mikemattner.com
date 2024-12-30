@@ -39,7 +39,7 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
+        <h2 class="h3-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
@@ -318,7 +318,10 @@ const posts = computed(() => {
     grid-row: 1;
     margin-block-end: var(--sizing-xxxl);
 
-    @media (min-width: 768px) {
+    @media (min-width: 1053px) {
+      grid-column: 1 / span 10;
+    }
+    @media (max-width: 1052px) {
       grid-column: 1 / -1;
     }
   }
@@ -327,8 +330,14 @@ const posts = computed(() => {
     grid-column: 1 / -1;
     grid-row: 2;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1053px) {
+      grid-column: 13 / span 15;
+      align-self: center;
+      grid-row: 1;
+    }
+    @media (max-width: 1052px) {
       grid-column: 1 / -1;
+      grid-row: 2;
     }
   }
 
@@ -337,16 +346,20 @@ const posts = computed(() => {
     grid-row: 3;
     margin-top: var(--sizing-xxl);
 
-    @media (min-width: 768px) {
-      grid-row: 3;
+    @media (min-width: 1053px) {
+      grid-column: 13 / span 15;
+      align-self: center;
+      grid-row: 2;
+    }
+    @media (max-width: 1052px) {
       grid-column: 1 / -1;
+      grid-row: 3;
+    }
+
+    @media (min-width: 768px) {
       margin-top: var(--sizing-xxxl);
       display: flex;
     }
-  }
-
-  .half-posts {
-    grid-column: 1 / -1;
   }
 }
 </style>
