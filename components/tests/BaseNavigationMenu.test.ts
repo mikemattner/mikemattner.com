@@ -30,6 +30,9 @@ describe('BaseNavigationMenu.vue', () => {
         components: {
           BaseNavigationButton,
         },
+        stubs: {
+          ThemeSwitcher: true,
+        },
       },
     });
   });
