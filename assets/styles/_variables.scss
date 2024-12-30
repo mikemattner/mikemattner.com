@@ -226,6 +226,7 @@
     --logo-background: var(--headline-font-color);
     --logo-foreground: var(--color-dark);
     --footer-gradient: var(--color-dark-background-hsl);
+    --toggle-switch-bg: hsla(var(--color-white-hsl), 0.2);
 }
 
 html.light {
@@ -254,6 +255,7 @@ html.light {
     --logo-background: var(--headline-font-color);
     --logo-foreground: var(--color-light);
     --footer-gradient: var(--color-light-bg-hsl);
+    --toggle-switch-bg: hsla(var(--color-white-hsl), 0.95);
 }
   
 html.dark {
@@ -284,4 +286,5 @@ html.dark {
     --logo-background: var(--headline-font-color);
     --logo-foreground: var(--color-dark);
     --footer-gradient: var(--color-dark-background-hsl);
+    --toggle-switch-bg: hsla(var(--color-white-hsl), 0.2);
 }
