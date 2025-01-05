@@ -11,6 +11,7 @@
 .base-navigation {
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-color);
+  font-family: var(--sans-font-family);
 
   @media (max-width: 715px) {
     padding: 1rem;

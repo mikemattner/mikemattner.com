@@ -6,6 +6,7 @@ h3 {
   color: var(--headline-font-color);
   font-variation-settings: 'wdth' 100, 'wght' 800;
   letter-spacing: 0.0125em;
+  font-family: var(--sans-font-family);
 
   small {
     display: block;
@@ -213,6 +214,7 @@ ul.breadcrumb-trail {
   align-items: center;
   font-size: var(--size-step--1);
   font-variation-settings: 'wdth' 100, 'wght' 300;
+  font-family: var(--sans-font-family);
 
   li {
     margin: 0;
@@ -238,7 +240,7 @@ ul.sub-menu {
   gap: var(--sizing-lg);
   align-items: center;
   font-size: var(--size-step--1);
-  font-family: var(--code-font-family);
+  font-family: var(--sans-font-family);
 
   li {
     margin: 0;

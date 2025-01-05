@@ -111,6 +111,7 @@ const theYear = computed<string>(() => {
   background-position: top;
   background-repeat: repeat-x;
   position: relative;
+  font-family: var(--sans-font-family);
 
   &:after {
     content: '';

@@ -229,6 +229,8 @@ const clearAllFilters = () => {
 
 <style lang="scss" scoped>
 .post-filters {
+  font-family: var(--sans-font-family);
+
   // TODO: Make this sticky, but respect the bottom of the
   //       viewport to avoid content running past the bottom
   //       of the screen.

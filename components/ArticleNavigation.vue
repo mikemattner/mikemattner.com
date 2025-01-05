@@ -44,6 +44,7 @@ const [prev, next] = await queryContent(query.value)
 .article-navigation {
   border-top: 1px solid var(--border-color);
   margin-block-start: 4rem;
+  font-family: var(--sans-font-family);
 
   @media (min-width: 500px) {
     align-items: center;

@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap&family=Roboto+Slab:wght@100..900&display=swap',
         },
         {
           rel: 'alternate',
