@@ -36,9 +36,9 @@ defineProps({
     flex: 0 0 2rem;
 
     @media (max-width: 510px) {
-      height: 2rem;
-      width: 2rem;
-      flex: 0 0 2rem;
+      height: 1.25rem;
+      width: 1.25rem;
+      flex: 0 0 1.25rem;
     }
 
     path {

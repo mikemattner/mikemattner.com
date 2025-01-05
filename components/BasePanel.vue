@@ -3,13 +3,18 @@
     <header
       :class="[
         'base-panel__header',
-        { 'is-open': openPanel, 'has-border': hasBorder, 'has-arrow': iconVariant === 'arrow' },
+        {
+          'is-open': openPanel,
+          'has-border': hasBorder,
+          'has-arrow': iconVariant === 'arrow',
+          collapsable: collapsable,
+        },
       ]"
       @click="openPanelBody"
     >
       <slot name="header" />
 
-      <Icon :name="panelIcon" />
+      <Icon v-if="collapsable" :name="panelIcon" />
     </header>
     <section :class="['base-panel__content', { 'is-active': openPanel, 'has-border': hasBorder }]">
       <div class="base-panel__content--inner">
@@ -27,6 +32,7 @@ import type { PropType } from 'vue';
 
 const props = defineProps({
   open: { type: Boolean, default: false },
+  collapsable: { type: Boolean, default: true },
   hasBorder: { type: Boolean, default: false },
   iconVariant: { type: String as PropType<PanelIcon>, default: 'arrow' },
 });
@@ -39,11 +45,12 @@ const panelIcon = computed(() => {
 
 const openPanel = ref<boolean>(false);
 const openPanelBody = () => {
+  if (!props.collapsable) return;
   openPanel.value = !openPanel.value;
 };
 
 onMounted(() => {
-  openPanel.value = props.open;
+  openPanel.value = props.collapsable ? props.open : true;
 });
 </script>
 
@@ -58,12 +65,15 @@ onMounted(() => {
     padding: var(--sizing-lg) var(--sizing-md);
     font-size: var(--size-step--1);
     font-weight: bold;
-    cursor: pointer;
     line-height: 1;
 
     svg {
       transition: var(--transition-cubic);
       font-size: var(--size-step-0);
+    }
+
+    &.collapsable {
+      cursor: pointer;
     }
 
     &.has-arrow {
