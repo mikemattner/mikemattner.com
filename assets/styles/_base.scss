@@ -8,12 +8,19 @@ body {
     background-position: center -1500px, top;
     background-repeat: no-repeat, repeat-x;
     color: var(--font-color);
-    font-family: var(--sans-font-family);
+    font-family: var(--serif-font-family);
     font-size: var(--size-step-0);
     line-height: 1.75;
     font-kerning: normal;
     font-weight: var(--font-weight);
     text-wrap: pretty;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures, contextual;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt","lnum";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt","lnum";
+    font-feature-settings: "kern", "liga", "clig", "calt","lnum";
     // animation: gradient 0.5s var(--cubic-bezier) infinite alternate;
 
     &.no--scroll {

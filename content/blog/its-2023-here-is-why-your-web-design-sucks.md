@@ -28,10 +28,10 @@ I spent a good chunk of my career in various, let's say lone wolf, roles trying 
 >
 > At what point do we stop and realize that we are setting our design teams up for failure?
 
-This isn't even covering some of the other more misogynistic reasons Heather outlines for why the discipline was largely sidelined by other engineers to begin with, but the above are some of the things I found frustrating over the years.
-
 ::PullText
   And she is quite right about the industry being male dominated much like the rest of STEM.
 ::
+
+This isn't even covering some of the other more misogynistic reasons Heather outlines for why the discipline was largely sidelined by other engineers to begin with, but the above are some of the things I found frustrating over the years.
 
 The article hits close to home for a good chunk of my early career journey. Part of the blame is on me for my inexperience and not effectively communicating why some of these needs and ideas were important, but it also wasn't without someone up the chain wanting to ignore my concerns in favor of speed.

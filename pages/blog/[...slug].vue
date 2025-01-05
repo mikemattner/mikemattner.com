@@ -187,6 +187,7 @@ useHead({
   .article-meta {
     padding: var(--sizing-md) 0;
     font-size: var(--size-step--1);
+    font-family: var(--sans-font-family);
     grid-column: 1 / -1;
     grid-row: 1;
 

@@ -2,7 +2,7 @@
     // Typography
     --sans-font-family: 'Mona Sans', 'Inter', Helvetica, sans-serif;
     // --sans-font-family: 'Bricolage', 'Mona Sans', 'Inter', Helvetica, sans-serif;
-    --serif-font-family: Georgia, serif;
+    --serif-font-family: 'Roboto Slab', Georgia, serif;
     --code-font-family: 'JetBrains Mono', monospace;
 
     // Type scale: https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,22,1.333,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
@@ -216,7 +216,7 @@
     --code-bg: hsla(var(--color-black-hsl), 0.5);
     --box-shadow: var(--box-shadow-short);
     --font-weight: 300;
-    --blog-card-date-color: var(--font-color);
+    --blog-card-date-color: hsla(var(--color-white-hsl), 0.5);
     --color-gradient: var(--color-dark-background-gradient-hsl);
     --pull-text-color: var(--color-dark-pull-color);
     --filter-bg: hsla(var(--color-dark-hsl), 0.95);
@@ -244,8 +244,8 @@ html.light {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.95);
     --code-bg: hsla(var(--color-dark-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 400;
-    --blog-card-date-color: var(--font-color);
+    --font-weight: 300;
+    --blog-card-date-color: hsla(var(--color-black-hsl), 0.5);
     --color-gradient: var(--color-light-background-gradient-hsl);
     --pull-text-color: var(--color-light-pull-color);
     --filter-bg: hsla(var(--color-white-hsl), 0.95);
@@ -275,8 +275,8 @@ html.dark {
     --block-quote-bg: hsla(var(--color-white-hsl), 0.03);
     --code-bg: hsla(var(--color-black-hsl), 0.95);
     --box-shadow: var(--box-shadow-short);
-    --font-weight: 400;
-    --blog-card-date-color: var(--font-color);
+    --font-weight: 300;
+    --blog-card-date-color: hsla(var(--color-white-hsl), 0.5);
     --color-gradient: var(--color-dark-background-gradient-hsl);
     --pull-text-color: var(--color-dark-pull-color);
     --filter-bg: hsla(var(--color-dark-hsl), 0.95);

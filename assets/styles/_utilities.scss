@@ -29,3 +29,9 @@
 .flex--align-center {
     align-items: center;
 }
+
+.desktop-only {
+    @media (max-width: 716px) {
+        display: none;
+    }
+}
