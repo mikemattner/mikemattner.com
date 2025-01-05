@@ -27,6 +27,7 @@ export default defineEventHandler(async (event) => {
 
   for (const doc of docs) {
     // TODO: This is a hack to get the content to render correctly. Update to eventually use this.
+    // https://web.archive.org/web/20220802163409/https://journal.maciejpedzi.ch/generating-rss-feeds-for-a-nuxt-content-site
     let content;
     if (doc.body) {
       doc.body.children = doc.body.children.map(recursivelyPatchChildren);
