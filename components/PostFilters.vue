@@ -13,7 +13,7 @@
         </button>
       </div>
 
-      <BasePanel :open="showOpenFiltersButton" has-border>
+      <BasePanel :collapsable="false" has-border>
         <template #header>
           {{ filtersPanelTitle }}
         </template>
@@ -36,7 +36,7 @@
         </div>
         <template #footer>
           <BaseButton size="xs" :disabled="!hasFilters" class="clear-button" @click="clearAllFilters">
-            {{ clearFilterText }}
+            Clear Filters
             <Icon v-if="hasFilters" name="ri:delete-bin-2-line" />
           </BaseButton>
         </template>
@@ -141,19 +141,13 @@ const handleFilterRemove = (filter: string) => {
   }
 };
 
-const clearFilterText = computed<string>(() => {
-  if (filterCount.value == 0) return 'No Filters';
-  if (filterCount.value > 3) return 'Clear 3+ Filters';
-  return filterCount.value > 1 ? `Clear ${filterCount.value} Filters` : 'Clear Filter';
-});
-
 const filtersPanelTitle = computed<string>(() => {
   if (filterCount.value == 0) return 'No Filters Selected';
   return 'Filters Selected';
 });
 
 const openFiltersButtonText = computed<string>(() => {
-  const postType = props.sortedPosts[0].hasOwnProperty('notes') ? 'Notes' : 'Post';
+  const postType = props.sortedPosts[0].hasOwnProperty('notes') ? 'Note' : 'Post';
   return `Filter ${postType}s`;
 });
 
@@ -229,6 +223,8 @@ const clearAllFilters = () => {
 
 <style lang="scss" scoped>
 .post-filters {
+  font-family: var(--sans-font-family);
+
   // TODO: Make this sticky, but respect the bottom of the
   //       viewport to avoid content running past the bottom
   //       of the screen.

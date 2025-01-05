@@ -54,4 +54,16 @@ describe('BasePanel.vue', () => {
     const content = wrapper.find('.base-panel__content');
     expect(content.classes()).toContain('is-active');
   });
+
+  it('panel content shows at all times when collapsable prop is false', async () => {
+    const wrapper = await mountSuspended(BasePanel, {
+      props: { collapsable: false },
+    });
+    const header = wrapper.find('.base-panel__header');
+    const content = wrapper.find('.base-panel__content');
+
+    expect(content.classes()).toContain('is-active');
+    await header.trigger('click');
+    expect(content.classes()).toContain('is-active');
+  });
 });

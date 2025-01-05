@@ -50,6 +50,7 @@ onMounted(() => {
   display: grid;
   gap: var(--sizing-md);
   grid-template-rows: auto 1fr;
+  font-family: var(--sans-font-family);
 
   @media (min-width: 716px) {
     height: 400px;

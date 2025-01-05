@@ -82,14 +82,11 @@
         </ul>
       </div>
       <div class="shameless-branding">
-        <p>Want to say hello?</p>
-        <p>Reach me at me @ mikemattner.com</p>
+        <p>
+          <strong>Want to say hello?</strong><br class="desktop-only" />
+          Reach out to me @ mikemattner.com.
+        </p>
       </div>
-      <!-- <div class="base-footer__sub-controls">
-        <div class="controls">
-          <ThemeSwitcher />
-        </div>
-      </div> -->
     </div>
   </footer>
 </template>
@@ -106,11 +103,12 @@ const theYear = computed<string>(() => {
 <style lang="scss" scoped>
 .base-footer {
   background-color: var(--background-border-color);
-  background-image: var(--topographic-pattern);
-  background-size: 600px;
-  background-position: top;
-  background-repeat: repeat-x;
+  // background-image: var(--topographic-pattern);
+  // background-size: 600px;
+  // background-position: top;
+  // background-repeat: repeat-x;
   position: relative;
+  font-family: var(--sans-font-family);
 
   &:after {
     content: '';
@@ -138,7 +136,7 @@ const theYear = computed<string>(() => {
     margin-inline: auto;
     display: grid;
     gap: var(--sizing-md);
-    grid-template-columns: 1fr 250px 200px;
+    grid-template-columns: 1fr 250px 250px;
     align-items: start;
     position: relative;
     z-index: 2;
@@ -163,7 +161,7 @@ const theYear = computed<string>(() => {
     font-size: var(--size-step-1);
     grid-column: 1;
     grid-row: 1;
-    line-height: 1;
+    line-height: 1.2;
 
     p {
       margin: 0;
@@ -182,7 +180,7 @@ const theYear = computed<string>(() => {
     margin-top: var(--sizing-xl);
 
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 3;
     align-self: end;
 
     @media (max-width: 875px) {
@@ -194,22 +192,6 @@ const theYear = computed<string>(() => {
       margin-top: var(--sizing-lg);
       grid-column: 1 / -1;
       grid-row: 3;
-    }
-  }
-
-  &__sub-controls {
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-xl);
-    grid-column: 1 / -1;
-    grid-row: 3;
-
-    // background-color: var(--block-quote-bg);
-    // padding: var(--sizing-md) var(--sizing-lg);
-    // border-radius: var(--border-radius);
-
-    @media (max-width: 597px) {
-      grid-row: 4;
     }
   }
 

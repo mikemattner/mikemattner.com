@@ -145,5 +145,6 @@ const sortedNotes = computed<SortedNoteItem[]>(() => {
 
 .year-header__article-count {
   font-size: var(--size-step--1);
+  font-family: var(--sans-font-family);
 }
 </style>
