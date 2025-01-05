@@ -17,9 +17,10 @@
         />
       </div>
       <div class="home-layout__hero">
-        <h2 class="main-lede h3-heading">Introduction</h2>
+        <h2 class="main-lede h4-heading">About Mike</h2>
 
         <div class="home-greeting flow">
+          <h3 class="small-heading">Introduction</h3>
           <p>
             I currently work as a Sr. UI Engineer, but in a former life I worked as a digital designer. That was
             basically a catch-all for web design and development, video editing, motion graphics, print design, et
@@ -31,7 +32,7 @@
             anything else.
           </p>
           <div class="button-group">
-            <BaseButton to="/about" variant="solid" size="md" color="primary">
+            <BaseButton to="/about" variant="solid" size="sm" color="primary">
               <span>Read More</span>
             </BaseButton>
           </div>
@@ -39,13 +40,13 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <h2 class="h3-heading recently-posted-header">Recently Posted</h2>
+        <h2 class="h4-heading recently-posted-header">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog Archives</span>
           </BaseButton>
-          <BaseButton to="/notes" variant="outline" size="sm" color="secondary">
+          <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
             <span>Note Archives</span>
           </BaseButton>
         </div>
@@ -198,7 +199,7 @@ const posts = computed(() => {
     }
 
     @media (min-width: 1053px) {
-      grid-column: 13 / span 15;
+      grid-column: 8 / -1;
       align-self: center;
       grid-row: 1;
     }
@@ -216,7 +217,7 @@ const posts = computed(() => {
     z-index: 2;
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 10;
+      grid-column: 1 / span 6;
       grid-row: 1;
     }
     @media (max-width: 1052px) {
@@ -319,7 +320,7 @@ const posts = computed(() => {
     margin-block-end: var(--sizing-xxxl);
 
     @media (min-width: 1053px) {
-      grid-column: 1 / span 10;
+      grid-column: 1 / span 6;
     }
     @media (max-width: 1052px) {
       grid-column: 1 / -1;
@@ -331,7 +332,7 @@ const posts = computed(() => {
     grid-row: 2;
 
     @media (min-width: 1053px) {
-      grid-column: 13 / span 15;
+      grid-column: 8 / -1;
       align-self: center;
       grid-row: 1;
     }
@@ -347,7 +348,7 @@ const posts = computed(() => {
     margin-top: var(--sizing-xxl);
 
     @media (min-width: 1053px) {
-      grid-column: 13 / span 15;
+      grid-column: 8 / -1;
       align-self: center;
       grid-row: 2;
     }

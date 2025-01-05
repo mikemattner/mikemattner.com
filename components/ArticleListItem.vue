@@ -5,7 +5,7 @@
         <time>{{ date }}</time>
       </header>
       <div class="article-list-item__title flow">
-        <h3 class="h4-heading">
+        <h3 class="small-heading">
           <NuxtLink :to="post._path">
             {{ post.title }}
           </NuxtLink>
@@ -53,7 +53,6 @@ const date = computed<string>(() => formatDate(props.post.date));
     color: var(--blog-card-date-color);
     padding: 0 0 var(--sizing-lg) 0;
     z-index: 2;
-    color: var(--color-primary);
   }
 
   time {
@@ -99,13 +98,13 @@ const date = computed<string>(() => formatDate(props.post.date));
       &:after {
         content: ',';
         line-height: 1;
-        opacity: 0.5;
+        color: var(--blog-card-date-color);
       }
 
       &:before {
         content: '#';
         line-height: 1;
-        opacity: 0.5;
+        color: var(--blog-card-date-color);
         margin-right: 3px;
       }
 

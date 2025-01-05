@@ -114,13 +114,13 @@ const date = computed<string>(() => formatDate(props.note.date));
       &:after {
         content: ',';
         line-height: 1;
-        opacity: 0.5;
+        color: var(--blog-card-date-color);
       }
 
       &:before {
         content: '#';
         line-height: 1;
-        opacity: 0.5;
+        color: var(--blog-card-date-color);
         margin-right: 3px;
       }
 
