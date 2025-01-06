@@ -18,6 +18,13 @@ interface NavigationList {
   primary: boolean;
 }
 
+interface SocialList {
+  title: string;
+  url: string;
+  icon: string;
+  rel?: string;
+}
+
 interface ProjectItem {
   name: string;
   description: string;
