@@ -58,15 +58,16 @@ h4,
   font-size: var(--size-step-1);
 }
 
-.small-heading {
+.small-heading,
+.standard-text {
   font-size: var(--size-step-0);
 }
 
 .eyebrow {
   font-size: var(--size-step--2);
   text-transform: uppercase;
-  opacity: 0.75;
   font-weight: 300;
+  color: var(--blog-card-date-color);
 }
 
 .small-text {

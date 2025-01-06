@@ -1,91 +1,33 @@
 <template>
   <footer class="base-footer">
     <div class="base-footer__layout">
-      <div class="base-footer__copyright">
-        <p>&copy; {{ theYear }} Mike Mattner. All rights reserved. A personal website proudly made in Michigan.</p>
+      <div class="base-footer__shameless-branding">
+        <h2 class="small-heading">Want to say hello?</h2>
+        <p>
+          I don&rsquo;t do freelance work anymore, but connect with me on social or reach out to me@mikemattner.com.
+        </p>
       </div>
       <nav class="base-footer__navigation">
-        <h2 class="small-text">Explore</h2>
+        <h2 class="small-heading">Explore</h2>
         <ul class="navigation-list">
           <li v-for="item in navigationList" :key="item.title">
-            <BaseButton class="navigation-list__item-link" variant="link" size="sm" color="secondary" :to="item.url">
+            <BaseButton class="navigation-list__item-link" variant="link" size="md" color="secondary" :to="item.url">
               {{ item.title }}
             </BaseButton>
           </li>
         </ul>
       </nav>
+      <div class="base-footer__copyright">
+        <p>&copy; {{ theYear }} Mike Mattner. All rights reserved. A personal website proudly made in Michigan.</p>
+      </div>
       <div class="base-footer__social">
-        <h2 class="small-text">Connect</h2>
         <ul class="social-icons">
-          <li>
-            <BaseButton
-              class="footer-icon"
-              variant="link"
-              size="sm"
-              color="secondary"
-              href="https://github.com/mikemattner"
-            >
-              <Icon name="ri:github-fill" /> Github
-            </BaseButton>
-          </li>
-          <li>
-            <BaseButton
-              class="footer-icon"
-              variant="link"
-              size="sm"
-              color="secondary"
-              href="https://codepen.io/mikemattner/#"
-            >
-              <Icon name="ri:codepen-fill" /> Codepen
-            </BaseButton>
-          </li>
-          <li>
-            <BaseButton
-              class="footer-icon"
-              variant="link"
-              size="sm"
-              color="secondary"
-              href="https://www.linkedin.com/in/mikeamattner/"
-            >
-              <Icon name="ri:linkedin-box-fill" /> LinkedIn
-            </BaseButton>
-          </li>
-          <li>
-            <BaseButton
-              class="footer-icon"
-              variant="link"
-              size="sm"
-              color="secondary"
-              href="https://mastodon.online/@mikemattner"
-              rel="me"
-            >
-              <Icon name="ri:mastodon-fill" /> Mastodon
-            </BaseButton>
-          </li>
-          <li>
-            <BaseButton
-              class="footer-icon"
-              variant="link"
-              size="sm"
-              color="secondary"
-              href="https://bsky.app/profile/mikemattner.com"
-              rel="me"
-            >
-              <Icon name="ri:bluesky-fill" /> Bluesky
-            </BaseButton>
-          </li>
-          <li>
-            <BaseButton class="footer-icon" variant="link" size="sm" color="secondary" href="/rss.xml">
-              <Icon name="ri:rss-fill" /> RSS Feed
+          <li v-for="item in socialList" :key="item.title">
+            <BaseButton class="footer-icon" variant="link" size="xs" color="secondary" :href="item.url" :rel="item.rel">
+              <Icon :name="item.icon" /> {{ item.title }}
             </BaseButton>
           </li>
         </ul>
-      </div>
-      <div class="shameless-branding">
-        <p>
-          <strong>Want to say hello?</strong><br class="desktop-only" />
-          Reach out to me @ mikemattner.com.
-        </p>
       </div>
     </div>
   </footer>
@@ -93,34 +35,19 @@
 
 <script setup lang="ts">
 import { navigationList } from '@/data/navigationList';
+import { socialList } from '~/data/social';
 
 const date = ref<Date>(new Date());
 const theYear = computed<string>(() => {
-  return date.value.getFullYear().toString();
+  return `2006 – ${date.value.getFullYear().toString()}`;
 });
 </script>
 
 <style lang="scss" scoped>
 .base-footer {
   background-color: var(--background-border-color);
-  // background-image: var(--topographic-pattern);
-  // background-size: 600px;
-  // background-position: top;
-  // background-repeat: repeat-x;
   position: relative;
   font-family: var(--sans-font-family);
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, hsla(var(--footer-gradient), 50%) 0%, hsla(var(--footer-gradient), 0%) 100%);
-    z-index: 1;
-  }
 
   @media (min-width: 716px) {
     grid-area: footer;
@@ -135,33 +62,27 @@ const theYear = computed<string>(() => {
     max-width: var(--max-width);
     margin-inline: auto;
     display: grid;
-    gap: var(--sizing-md);
-    grid-template-columns: 1fr 250px 250px;
+    gap: var(--sizing-xl);
+    grid-template-columns: 1fr 1fr;
     align-items: start;
     position: relative;
     z-index: 2;
 
     @media (max-width: 875px) {
-      grid-template-columns: 1fr 150px 120px;
-      grid-template-rows: auto 1fr;
-      gap: var(--sizing-lg) var(--sizing-md);
+      grid-template-columns: 1fr;
     }
 
     @media (max-width: 597px) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
-      gap: var(--sizing-lg) var(--sizing-md);
+      grid-template-columns: 1fr;
     }
   }
 
-  .shameless-branding {
+  &__shameless-branding {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
-    font-size: var(--size-step-1);
     grid-column: 1;
     grid-row: 1;
-    line-height: 1.2;
 
     p {
       margin: 0;
@@ -174,37 +95,17 @@ const theYear = computed<string>(() => {
     }
   }
 
-  &__copyright {
-    width: 100%;
-    font-size: var(--size-step--2);
-    margin-top: var(--sizing-xl);
-
-    grid-column: 1 / -1;
-    grid-row: 3;
-    align-self: end;
-
-    @media (max-width: 875px) {
-      grid-column: 1 / -1;
-      grid-row: 2;
-    }
-
-    @media (max-width: 597px) {
-      margin-top: var(--sizing-lg);
-      grid-column: 1 / -1;
-      grid-row: 3;
-    }
-  }
-
   &__navigation {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1;
 
     @media (max-width: 875px) {
-      grid-column: 2;
-      grid-row: 1;
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: var(--sizing-xxl);
     }
 
     @media (max-width: 597px) {
@@ -213,34 +114,47 @@ const theYear = computed<string>(() => {
     }
   }
 
+  &__copyright {
+    width: 100%;
+    font-size: var(--size-step--1);
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: end;
+    margin-top: var(--sizing-xxxl);
+
+    @media (max-width: 875px) {
+      grid-column: 1 / -1;
+      grid-row: 4;
+    }
+
+    @media (max-width: 597px) {
+      grid-column: 1 / -1;
+      grid-row: 4;
+    }
+  }
+
   &__social {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
-    grid-column: 3;
-    grid-row: 1 / span 2;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    font-size: var(--size-step--2);
 
     @media (max-width: 875px) {
-      grid-column: 3;
-      grid-row: 1;
+      grid-column: 1;
+      grid-row: 3;
     }
 
     @media (max-width: 597px) {
-      grid-column: 2;
-      grid-row: 2;
+      grid-column: 1;
+      grid-row: 3;
     }
-  }
-
-  .controls {
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-lg);
   }
 
   .navigation-list {
     display: flex;
-    align-items: stretch;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--sizing-lg);
     list-style: none;
     padding: 0;
@@ -265,8 +179,7 @@ const theYear = computed<string>(() => {
 
   .social-icons {
     display: flex;
-    align-items: stretch;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--sizing-lg);
     list-style: none;
     padding: 0;

@@ -58,6 +58,7 @@ const targetProjects = [
     title: 'This Website',
     description:
       'The repo that runs this website. Uses Nuxt 3, Nuxt Content, Decap CMS, and a sprinkling of TypeScript.',
+    language: 'Vue',
   },
   {
     name: 'numbers',
@@ -91,6 +92,12 @@ const sortedProjects = computed(() => {
           return item.description;
         })
         .toString();
+      const language = targetProjects
+        .filter((item) => item.name === proj.name)
+        .map((item) => {
+          return item.language;
+        })
+        .toString();
       const obj: ProjectItem = {
         name: proj.name,
         description: description ? description : proj.description,
@@ -100,7 +107,7 @@ const sortedProjects = computed(() => {
         watchers: proj.watchers_count,
         year: proj.created_at,
         updated: proj.pushed_at,
-        language: proj.language,
+        language: language ? language : proj.language,
       };
       return obj;
     })
