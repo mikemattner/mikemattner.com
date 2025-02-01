@@ -15,8 +15,10 @@
       </li>
     </ul>
   </nav>
-  <ThemeSwitcher class="base-navigation__theme-switch" />
-  <SearchButton class="base-navigation__search" />
+  <div v-if="!isMobile" class="base-navigation__secondary">
+    <ThemeSwitcher class="base-navigation__theme-switch" />
+    <SearchButton class="base-navigation__search" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -124,22 +126,28 @@ watch(isMobile, () => {
     text-decoration-color: var(--headline-font-color);
   }
 
-  &__search {
-    margin-left: var(--sizing-xxl);
+  &__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--sizing-xxl);
 
     @media (max-width: 715px) {
+      gap: var(--sizing-lg);
+      margin-left: auto;
+    }
+  }
+
+  &__search {
+    @media (max-width: 715px) {
       order: 2;
-      margin-left: 0;
       z-index: 1000;
     }
   }
 
   &__theme-switch {
-    margin-left: var(--sizing-xxl);
-
     @media (max-width: 715px) {
       order: 1;
-      margin-left: auto;
       z-index: 1000;
     }
   }
@@ -153,7 +161,7 @@ watch(isMobile, () => {
   &__controls {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     gap: var(--sizing-xxl);
     grid-template-columns: 2fr auto;
     flex-grow: 1;
