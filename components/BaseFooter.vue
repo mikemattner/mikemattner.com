@@ -155,7 +155,7 @@ const theYear = computed<string>(() => {
   .navigation-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--sizing-lg);
+    gap: var(--sizing-xl);
     list-style: none;
     padding: 0;
     margin: 0;
