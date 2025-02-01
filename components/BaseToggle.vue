@@ -1,7 +1,9 @@
 <template>
   <label class="toggle-switch" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
     <input type="checkbox" v-model="model" />
-    <slot />
+    <span class="toggle-button">
+      <slot />
+    </span>
   </label>
 </template>
 
@@ -44,10 +46,10 @@ const model = computed({
   cursor: pointer;
   display: inline-block;
   flex: none;
-  height: 1.5em;
+  height: 1.25em;
   position: relative;
   transition: var(--transition);
-  width: 3em;
+  width: 2.5em;
 
   input {
     opacity: 0;
@@ -67,19 +69,19 @@ const model = computed({
     --switch-color-bg: var(--color-red);
   }
 
-  &::before {
+  .toggle-button {
     background: var(--headline-font-color);
     background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
     border-radius: 0.625em;
     box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.08);
     content: '';
     display: block;
-    height: 1.25em;
+    height: 1em;
     left: 0.125em;
     position: absolute;
     top: 0.125em;
     transition: left 150ms;
-    width: 1.25em;
+    width: 1em;
     will-change: left;
   }
 
@@ -87,17 +89,17 @@ const model = computed({
     background-color: var(--switch-color-bg);
   }
 
-  &.checked::before {
+  &.checked .toggle-button {
     background: var(--color-light);
     background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.05) 1em);
-    left: 1.625em;
+    left: 1.375em;
   }
 
   &:hover {
     box-shadow: 0.0625em 0.0625em 0.125em rgba(0, 0, 0, 0.12) inset;
   }
 
-  &:hover::before {
+  &:hover .toggle-button {
     background-image: radial-gradient(circle at 0.375em 0.375em, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.0375) 1em);
     box-shadow: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.12);
   }
