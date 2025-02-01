@@ -111,7 +111,7 @@ watch(isMobile, () => {
         width: 100%;
         height: 100%;
         text-decoration-color: transparent;
-        padding: 0.5rem 0.25rem;
+        padding: 0.5rem 0;
         color: var(--headline-font-color);
 
         &:hover {
@@ -161,7 +161,7 @@ watch(isMobile, () => {
   &__controls {
     display: flex;
     align-items: center;
-    // justify-content: flex-end;
+    justify-content: center;
     gap: var(--sizing-xxl);
     grid-template-columns: 2fr auto;
     flex-grow: 1;
