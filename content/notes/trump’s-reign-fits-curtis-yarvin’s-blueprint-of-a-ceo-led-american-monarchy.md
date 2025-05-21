@@ -1,5 +1,5 @@
 ---
-title: Trump’s reign fits Curtis Yarvin’s blueprint of a CEO-led American monarchy.
+title: Trump’s reign fits Curtis Yarvin’s blueprint of a CEO-led American monarchy
 date: 2025-05-21T09:12:00.000Z
 tag:
   - Politics
