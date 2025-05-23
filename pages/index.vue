@@ -17,7 +17,7 @@
         />
       </div>
       <div class="home-layout__hero">
-        <h2 class="main-lede">About Mike</h2>
+        <h2 class="main-lede h4-heading">About Mike</h2>
 
         <div class="home-greeting flow">
           <h3 class="small-heading">Introduction</h3>
@@ -40,7 +40,7 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <h2 class="recently-posted-header">Recently Posted</h2>
+        <h2 class="recently-posted-header h4-heading">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
