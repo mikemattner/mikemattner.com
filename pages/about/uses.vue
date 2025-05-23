@@ -11,9 +11,9 @@
         </ul>
         <hr />
       </div>
-      <PrimaryImage src="/images/desk.png" has-overlay class="desk-image">
+      <!-- <PrimaryImage src="/images/desk.png" has-overlay class="desk-image">
         <template v-slot:caption>My desk in a mostly clean state.</template>
-      </PrimaryImage>
+      </PrimaryImage> -->
       <div class="about-content">
         <h2 class="h4-heading section-header">Desk</h2>
         <div class="section-content columns flow">
