@@ -69,6 +69,13 @@
               </a>
             </li>
             <li>
+              <a
+                href="https://www.keychron.com/products/keychron-k4-he-wireless-magnetic-switch-custom-keyboard?variant=42175218024537"
+              >
+                Keychron K4 HE Wireless Magnetic Switch Custom Keyboard, Special Edition Black
+              </a>
+            </li>
+            <li>
               <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html">
                 2023 MX Master 3s for Mac, Space Gray
               </a>
