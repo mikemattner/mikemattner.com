@@ -22,7 +22,7 @@ export const socialList: SocialList[] = [
   },
   {
     title: 'Mastodon',
-    url: 'https://mastodon.social/@mikemattner',
+    url: 'https://mastodon.online/@mikemattner',
     icon: 'ri:mastodon-fill',
     rel: 'me',
   },
