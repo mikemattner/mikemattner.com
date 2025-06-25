@@ -15,5 +15,9 @@ John Pavlovitz [wrote](https://johnpavlovitz.substack.com/p/to-the-people-i-know
 > But as this next chapter of our nation begins, I just want you to know something I feel about you:
 >
 > I am going to hold you responsible
+>
+> ...
+>
+> For likely the third time, you had a chance to reject his vitriol, to condemn his criminality, to prevent his lawlessness, to denounce his bigotry—and you flat-out refused. More than that, you celebrated it. That’s not something I can quietly abide.
 
 Read it all, but yes times 1,000.
