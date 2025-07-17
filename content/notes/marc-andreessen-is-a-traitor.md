@@ -14,4 +14,4 @@ Adam Gurri [writes](https://www.liberalcurrents.com/marc-andreessen-is-a-traitor
 >
 >They have betrayed the society that enriched them, and have put us at serious risk of authoritarianism, ethnic cleansing, lawlessness, and stagnation. They have betrayed the values that made that society great, values which they apparently only ever held superficially because they believed it would make them appear respectable. They can no longer be trusted. When the wheel turns once again, the matter of their treachery must be revisited, and a new arrangement must be reconstructed from the wreckage of the old one.
 
-Just an excellent newsletter article around.
+Just an excellent article around.
