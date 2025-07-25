@@ -76,6 +76,13 @@
               </a>
             </li>
             <li>
+              <a
+                href="https://www.arrayperipherals.com/vector-macropad"
+              >
+                Array Peripherals, Vector Macropad, Black, Tactile Cherry Switches
+              </a>
+            </li>
+            <li>
               <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html">
                 2023 MX Master 3s for Mac, Space Gray
               </a>
