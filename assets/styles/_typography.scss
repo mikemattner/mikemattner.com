@@ -116,7 +116,7 @@ ol {
 blockquote:not(.pull-quote) {
   // More traditional
   position: relative;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 3rem;
   border-left: 4px solid var(--color-primary);
   font-size: var(--size-step-0);
   background-color: var(--block-quote-bg);
@@ -132,16 +132,17 @@ blockquote:not(.pull-quote) {
 
   &::before {
     background-color: var(--color-primary);
-    block-size: 2.5rem;
+    block-size: 3.5rem;
     color: hsl(var(--color-white-hsl));
     content: "“";
     font-family: var(--sans-font-family);
-    inline-size: 1.5rem;
-    inset-inline-start: 0;
+    font-size: 3rem;
     font-weight: 900;
+    inline-size: 2.25rem;
+    inset-inline-start: 0;
     position: absolute;
     text-align: center;
-    font-size: 2rem;
+    top: 0;
   }
 }
 
