@@ -129,6 +129,20 @@ blockquote:not(.pull-quote) {
 
   margin-block-start: 1.5rem;
   margin-block-end: 2.5rem;
+
+  &::before {
+    background-color: var(--color-primary);
+    block-size: 2.5rem;
+    color: hsl(var(--color-white-hsl));
+    content: "“";
+    font-family: var(--sans-font-family);
+    inline-size: 1.5rem;
+    inset-inline-start: 0;
+    font-weight: 900;
+    position: absolute;
+    text-align: center;
+    font-size: 2rem;
+  }
 }
 
 hr {
