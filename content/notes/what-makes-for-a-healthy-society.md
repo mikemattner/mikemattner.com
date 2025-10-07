@@ -3,6 +3,7 @@ title: What Makes for a Healthy Society
 date: 2025-10-07T15:08:00.000-04:00
 tag:
   - Wisdom
+  - Society
 ---
 Via [Kottke](https://kottke.org/25/10/what-makes-for-a-healthy-society), "Malcolm Margolin shared a list of what he thought constituted a healthy society," and a few stood out to me:
 
