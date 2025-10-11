@@ -4,8 +4,7 @@
       <div class="sidebar-area flow">
         <h1 class="page-header"><small>About the Author</small> Hey there, I&rsquo;m Mike!</h1>
         <p class="intro">
-          I&rsquo;m a design engineer from Michigan, currently working at AccuLynx as a Sr. UI Engineer. Here's a
-          non-exhaustive summary of my life, career, and this website.
+          I&rsquo;m a design engineer from Michigan, currently working at AccuLynx as a Sr. UI Engineer.
         </p>
 
         <ul class="sub-menu">
@@ -24,47 +23,40 @@
         </PrimaryImage>
       </div>
       <div class="about-content flow">
-        <h2>Just The Highlights</h2>
+        <h2>Quick Intro</h2>
         <p>
-          I was born and raised in southwest Michigan &mdash; a largely rural place with extremely small town vibes. I
-          left shortly after graduating from high school to attend college in Florida, but was ultimately drawn back to
-          Michigan by the allure of the lakes and the wonderful summer experience. I&rsquo;ve been here ever since.
+          I grew up in southwest Michigan — lots of fields, small-town vibes, and not much else. After high school, I
+          moved to Florida for college, but eventually found my way back home. The lakes, the slower pace, and those
+          unbeatable Michigan summers were too hard to resist.
         </p>
         <p>
-          I am currently residing in a beautiful lakeside community that offers plenty of access to the water and other
-          outdoor spaces, plus a bit of a decent selection of breweries and restaurants.
+          These days I live in a small lakeside town that’s got just the right mix of nature, good beer, and local food
+          spots. It’s not big, but it’s got character — and that counts for a lot.
         </p>
-        <h3>Professional</h3>
+        <h3>How I Got Here</h3>
         <p>
-          My journey in web design and development began with Geocities in 1998 and not too longer after that was a
-          series of Star Wars gaming related sites.
-        </p>
-        <p>
-          That tinkering eventually led to studying digital media, and I&rsquo;ve been steadily refining my skill set
-          since. Professionally, I got my first gig in 2006. At that time I was largely working on LAMP stack projects
-          while juggling all of the design work. That first gig was more of a digital media specialist role &mdash; with
-          about seventy percent of the work being focused on web design and development &mdash; that had me producing
-          whatever video, animation work, or print assets were required.
+          My web journey started in 1998 with Geocities (because of course it did) and a few Star Wars gaming fan sites.
+          That early tinkering turned into studying digital media, and eventually into an actual career.
         </p>
         <p>
-          I began to fully expand my development skill set beyond websites in 2016, focusing more on front end
-          frameworks and component driven design systems, and less on content management systems.
+          I landed my first gig in 2006, doing a little bit of everything — design, dev, video, animation, even print
+          work. Over the years, I’ve shifted more toward front-end frameworks and component-based design systems, and
+          these days I spend most of my time thinking about UI, design systems, and how to make the web feel a little
+          nicer to use.
         </p>
-        <h3>Personal</h3>
+        <h3>When I’m Not Working</h3>
         <p>
-          In my personal time, I enjoy being with my wife and pets, reading, staying updated on politics, dabbling in
-          woodworking, working on home projects, and spending time outdoors near lakes and rivers in the summer. I also
-          appreciate a good quality beer.
+          I’m usually hanging out with my wife and our pets, reading, working on the house, or building something in the
+          garage. In the summer, I’m outside as much as possible — near a lake, a river, or a grill (ideally all three).
+        </p>
+        <p>
+          I’m also a bit of a Michigan football nut. Saturdays in the fall are non-negotiable. If there’s a game on, I’m
+          watching — probably yelling at the TV, maybe celebrating with a beer.
         </p>
         <PullQuote>
           I've got one question&hellip;who's got it better than us? <em>Nobody!</em>
           <template v-slot:attribution>Jim Harbaugh</template>
         </PullQuote>
-        <p>
-          Saturdays in the fall are reserved for college football &mdash; specifically for watching the Michigan
-          Wolverines. I have been a fan since I was a kid, and I have a lot of fond memories of watching games at the
-          Big House. One might say, I am a bit obsessed, but that's a subject to discuss over a beer.
-        </p>
         <p>Blake, <a href="https://mgoblog.com/content/take-us-home">take us home</a>.</p>
         <h3>This Site</h3>
         <p>
@@ -78,20 +70,10 @@
         </p>
         <h3>Other Iterations</h3>
         <p>
-          I&rsquo;ve had <strong>something</strong> at this domain since 2005, evolving through various iterations of
-          content management systems, initially focusing on being a personal portfolio or blog. Before transitioning to
-          Vue/Nuxt, I had a self-hosted WordPress installation. In the stone age of 2007, I was using a
-          <a href="https://movabletype.org/">MoveableType</a> implementation, but the initial version was some
-          self-rolled monstrosity with a questionable design (if I could ever dig it up, I would, I swear).
-        </p>
-        <p>
-          Unfortunately, I really only archived the most recent version of my Nuxt-based site. That was built with Nuxt
-          2. The rest of these are internet archive representations. You can see some of the evolution of my design
-          style even if it is incomplete.
-        </p>
-        <p>
-          Sadly, they didn't capture everything going back to 2005. Styles weren't saved with the pages until about
-          2010. Additionally, my versioning of the Nuxt iterations is a little wonky.
+          I’ve had this domain since 2005, and it’s gone through more versions than I can count — from self-rolled HTML
+          experiments to MoveableType, WordPress, and now Nuxt. Not all of them survived, but a few old ghosts live on
+          in the Internet Archive. It’s been fun watching my own design style evolve (and occasionally cringe at past
+          choices).
         </p>
         <BasePanel>
           <template #header> Nuxt / Vue </template>
