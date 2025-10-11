@@ -54,7 +54,7 @@ defineProps({
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
-    font-variation-settings: 'wdth' 100, 'wght' 700;
+    font-variation-settings: 'wdth' 100, 'wght' 800;
     transition: var(--transition-cubic-slow);
 
     @media (max-width: 715px) {
