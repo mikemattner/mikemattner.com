@@ -30,20 +30,12 @@
     border: none;
   }
 
-  // @media (min-width: 90rem) {
-  //   padding: var(--sizing-xxl) var(--sizing-xxxl);
-  // }
-
   &__container {
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
-    // margin-inline: auto;
     gap: var(--sizing-xl);
 
     @media (min-width: 716px) {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: auto 1fr 1fr;
       max-width: var(--max-width-nav);
       gap: var(--sizing-xl);
     }

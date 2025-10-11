@@ -161,7 +161,6 @@ watch(isMobile, () => {
   &__controls {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: var(--sizing-xxl);
     grid-template-columns: 2fr auto;
     flex-grow: 1;
