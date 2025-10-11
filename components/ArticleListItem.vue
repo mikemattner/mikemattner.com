@@ -9,18 +9,18 @@
         </h3>
         <p v-html="post.description"></p>
       </div>
-      <footer class="article-list-item__footer">
-        <div class="article-list-item__tags">
-          <ul class="tag-list">
-            <li v-for="tag in post.tag" :key="tag">
-              <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
-            </li>
-          </ul>
-        </div>
-        &bull;
-        <time>{{ date }}</time>
-      </footer>
     </div>
+    <footer class="article-list-item__footer">
+      <div class="article-list-item__tags">
+        <ul class="tag-list">
+          <li v-for="tag in post.tag" :key="tag">
+            <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
+          </li>
+        </ul>
+      </div>
+      &bull;
+      <time>{{ date }}</time>
+    </footer>
   </div>
 </template>
 
@@ -38,8 +38,13 @@ const date = computed<string>(() => formatDate(props.post.date));
 <style lang="scss" scoped>
 .article-list-item {
   height: 100%;
-  border-bottom: 1px solid var(--border-color);
-  padding: 0 0 var(--sizing-xxxl) 0;
+  // border-bottom: 1px solid var(--border-color);
+  // padding: 0 0 var(--sizing-xxxl) 0;
+  padding: var(--sizing-lg);
+  background-color: var(--block-quote-bg);
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-rows: 1fr auto;
 
   p {
     max-width: 70ch;
@@ -52,7 +57,7 @@ const date = computed<string>(() => formatDate(props.post.date));
     align-items: center;
     gap: var(--sizing-lg);
     color: var(--blog-card-date-color);
-    padding: 0 0 var(--sizing-lg) 0;
+    padding: 0;
     margin-top: var(--sizing-lg);
     z-index: 2;
   }

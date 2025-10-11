@@ -41,7 +41,7 @@
           </BaseButton>
         </template>
       </BasePanel>
-      <BasePanel icon-variant="plus">
+      <BasePanel>
         <template #header>
           <div class="filter-panel-headers">
             Filter by Tag
@@ -56,7 +56,7 @@
           </li>
         </ul>
       </BasePanel>
-      <BasePanel icon-variant="plus">
+      <BasePanel>
         <template #header>
           <div class="filter-panel-headers">
             Filter by Year

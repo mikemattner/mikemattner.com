@@ -1,0 +1,29 @@
+:root {
+    // Utilities - sizing
+    --sizing-xxs: 0.063rem;
+    --sizing-xs: 0.125rem;
+    --sizing-sm: 0.313rem;
+    --sizing-md: 0.625rem;
+    --sizing-lg: 0.938rem;
+    --sizing-xl: 1.25rem;
+    --sizing-xxl: 1.875rem;
+    --sizing-xxxl: 3.125rem;
+    --sizing-xxxxl: 5.125rem;
+
+    // Utilities - global
+    --max-width: 92.3125rem; //92.3125rem, 82.3125rem
+    --max-width-nav: 156.25rem; //92.3125rem
+    --border-radius: 7px;
+
+    // Utilities - transitions
+    --transition-fast: all 0.125s cubic-bezier(.62,.16,.13,1.01);
+    --transition: all 0.25s cubic-bezier(.62,.16,.13,1.01);
+    --transition-med: all 0.5s cubic-bezier(.62,.16,.13,1.01);
+    --transition-cubic: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cubic-med: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cubic-slow: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-slow: all 1.25s cubic-bezier(0.68, 0, 0.265, 1.55);
+    --transition-slow-ease: all 1.25s cubic-bezier(.62,.16,.13,1.01);
+    --transition-ease: all 0.25s cubic-bezier(.91,.17,.54,.98);
+    --cubic-bezier: cubic-bezier(.62,.16,.13,1.01);
+}

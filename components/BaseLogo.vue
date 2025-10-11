@@ -30,7 +30,8 @@ defineProps({
     height: 2rem;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--logo-background);
+    // background-color: var(--logo-background);
+    border: 1px solid var(--logo-background);
     z-index: 10;
     transition: var(--transition-cubic-slow);
     flex: 0 0 2rem;
@@ -42,7 +43,8 @@ defineProps({
     }
 
     path {
-      fill: var(--logo-foreground);
+      // fill: var(--logo-foreground);
+      fill: var(--logo-background);
       transition: var(--transition-cubic-slow);
     }
   }
@@ -68,9 +70,9 @@ defineProps({
         transform: rotate(720deg);
       }
 
-      .brand-logo__type {
-        font-variation-settings: 'wdth' 100, 'wght' 400;
-      }
+      // .brand-logo__type {
+      //   font-variation-settings: 'wdth' 100, 'wght' 400;
+      // }
     }
   }
 }

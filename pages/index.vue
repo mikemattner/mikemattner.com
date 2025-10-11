@@ -1,33 +1,37 @@
 <template>
   <main class="home-page">
     <div class="home-layout">
-      <h1 class="intro-title">
-        <small>Mike is a</small>
-        <span class="intro-title__design">Designer</span>
-        <span class="intro-title__ampersand">&amp;</span>
-        <span class="intro-title__development">Developer</span>
-        <small>from Michigan</small>
-      </h1>
-      <div class="profile-image-wide">
-        <PrimaryImage
-          src="/images/about-profile.jpg"
-          alt="Portrait shot of Mike."
-          has-overlay
-          class="profile-image-photo"
-        />
+      <div class="home-layout__intro">
+        <h1 class="intro-title">
+          <small class="intro-title__role">Mike is a</small>
+          <span class="intro-title__design">Designer</span>
+          <span class="intro-title__ampersand"><span>&amp;</span></span>
+          <span class="intro-title__development">Developer</span>
+          <small class="intro-title__location">from Michigan</small>
+        </h1>
+        <div class="profile-image-wide">
+          <PrimaryImage
+            src="/images/about-profile.jpg"
+            alt="Portrait shot of Mike."
+            has-overlay
+            class="profile-image-photo"
+          />
+        </div>
       </div>
+      <hr />
       <div class="home-layout__hero">
         <h2 class="main-lede h4-heading">About Mike</h2>
 
         <div class="home-greeting flow">
-          <h3 class="small-heading">Introduction</h3>
+          <h3 class="small-heading">Hey there 👋</h3>
+          <p>I’m Mike — a Senior UI Engineer at AccuLynx.</p>
           <p>
-            I currently work as a Sr. UI Engineer, but in a former life I worked as a digital designer. That was
-            basically a catch-all for web design and development, video editing, motion graphics, print design, et
-            cetera.
+            I’ve been designing and building for the web for over twenty years, evolving from hobby projects into a
+            career focused on thoughtful UI, component-driven design, and clean, maintainable front-end architecture.
           </p>
           <p>
-            These days I create and design in code and think of myself as a
+            These days, I’m all about crafting intuitive, human-centered web experiences that balance form, function,
+            and a bit of personality. I create and design in code and think of myself as a
             <a href="https://www.trysmudford.com/blog/i-think-im-a-design-engineer/">design engineer</a> more than
             anything else.
           </p>
@@ -42,6 +46,8 @@
       <div class="home-layout__content">
         <h2 class="recently-posted-header h4-heading">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
+        <NoteSummaryList class="recently-posted-notes" :notes="notes" />
+
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog Archives</span>
@@ -57,6 +63,7 @@
 
 <script setup lang="ts">
 import type { Post } from '../types/posts';
+import type { Note } from '../types/notes';
 
 useHead({
   title: 'Designer & Developer in Michigan',
@@ -64,9 +71,16 @@ useHead({
 });
 
 const { data } = await useAsyncData('blog-short', () => queryContent<Post>('/blog').sort({ date: -1 }).find());
+const { data: notesData } = await useAsyncData('notes-short', () =>
+  queryContent<Note>('/notes').sort({ date: -1 }).find()
+);
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
+});
+
+const notes = computed(() => {
+  return notesData?.value?.filter((note) => !note.draft).slice(0, 4) as Note[];
 });
 </script>
 
@@ -83,7 +97,8 @@ const posts = computed(() => {
   }
 }
 .home-layout {
-  &__hero {
+  &__hero,
+  &__intro {
     margin-block-start: 2rem;
     margin-block-end: 4rem;
     max-width: var(--max-width);
@@ -91,13 +106,13 @@ const posts = computed(() => {
     display: grid;
     grid-template-columns: 1fr;
 
-    @media (min-width: 1053px) {
+    @media (min-width: 1000px) {
       grid-template-columns: repeat(28, 1fr);
       margin-block-start: 4rem;
       margin-block-end: 6rem;
       gap: var(--sizing-xxl) 0;
     }
-    @media (max-width: 1052px) {
+    @media (max-width: 999px) {
       grid-template-columns: repeat(4, 1fr);
       gap: var(--sizing-xl) var(--sizing-xl);
     }
@@ -129,38 +144,69 @@ const posts = computed(() => {
   }
 
   .intro-title {
-    text-align: center;
     line-height: 1;
     grid-row: 1;
     text-wrap: balance;
     display: flex;
     flex-direction: column;
-    margin: var(--sizing-xxxxl) 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    z-index: 2;
+
+    @media (min-width: 1000px) {
+      grid-row: 1;
+      grid-column: 1 / span 12;
+      margin: var(--sizing-xxxxl) 0;
+    }
+
+    @media (max-width: 999px) {
+      grid-column: 1 / -1;
+      align-self: self-start;
+      grid-row: 1;
+      grid-column: 1 / -1;
+      margin: var(--sizing-xxl) 0;
+    }
+
+    &__role {
+      margin: 0;
+      line-height: 1.2;
+      grid-row: 1;
+      grid-column: 1;
+    }
 
     &__design {
-      font-size: var(--size-step-8);
+      font-size: var(--size-step-7);
       z-index: 1;
-      letter-spacing: -0.025em;
       text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
       font-variation-settings: 'wdth' 75, 'wght' 800;
       text-transform: uppercase;
+      line-height: 0.875;
+      grid-row: 2;
+      grid-column: 1;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-7);
+        font-size: var(--size-step-6);
       }
     }
 
     &__ampersand {
       font-size: var(--size-step-6);
       z-index: 2;
-      margin-top: -0.875em;
       color: var(--color-blue);
       text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.05);
       font-variation-settings: 'wdth' 100, 'wght' 800;
-      background: var(--gradient-1-filled);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      grid-row: 2 / span 2;
+      grid-column: 1;
+      align-self: center;
+
+      span {
+        -webkit-text-fill-color: transparent;
+        background: var(--gradient-1-filled);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
 
       @media (max-width: 893px) {
         font-size: var(--size-step-5);
@@ -168,17 +214,61 @@ const posts = computed(() => {
     }
 
     &__development {
-      font-size: var(--size-step-8);
+      font-size: var(--size-step-7);
       z-index: 3;
       letter-spacing: -0.025em;
-      margin-top: -0.3em;
       text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
       font-variation-settings: 'wdth' 75, 'wght' 800;
       text-transform: uppercase;
+      line-height: 0.75;
+      grid-column: 1;
+      grid-row: 3;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-7);
+        font-size: var(--size-step-6);
       }
+    }
+
+    &__location {
+      margin: 0;
+      line-height: 1.2;
+      grid-row: 4;
+      grid-column: 1;
+    }
+  }
+
+  .profile-image-wide {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: 1000px) {
+      grid-row: 1;
+      grid-column: 13 / -1;
+    }
+
+    @media (max-width: 999px) {
+      grid-column: 1 / -1;
+      align-self: self-start;
+      grid-row: 2;
+      grid-column: 1 / -1;
+      aspect-ratio: 2/1;
+    }
+
+    @media (max-width: 499px) {
+      grid-column: 1 / span 4;
+      grid-row: 2;
+      grid-column: 1 / -1;
+      aspect-ratio: 2/1;
+    }
+
+    .profile-image-photo {
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -198,12 +288,12 @@ const posts = computed(() => {
       max-width: 65ch;
     }
 
-    @media (min-width: 1053px) {
+    @media (min-width: 1000px) {
       grid-column: 8 / -1;
       align-self: center;
       grid-row: 1;
     }
-    @media (max-width: 1052px) {
+    @media (max-width: 999px) {
       grid-column: 1 / span 4;
       grid-row: 2;
     }
@@ -216,87 +306,19 @@ const posts = computed(() => {
     text-wrap: balance;
     z-index: 2;
 
-    @media (min-width: 1053px) {
+    @media (min-width: 1000px) {
       grid-column: 1 / span 6;
       grid-row: 1;
     }
-    @media (max-width: 1052px) {
+    @media (max-width: 999px) {
       grid-column: 1 / span 4;
       grid-row: 1;
-    }
-  }
-
-  .profile-image {
-    aspect-ratio: 1 / 0.75;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    z-index: 1;
-
-    @media (min-width: 1053px) {
-      grid-column: 18 / span 11;
-      aspect-ratio: 1 / 1.125;
-      grid-row: 2;
-    }
-
-    @media (max-width: 1052px) {
-      grid-column: 1 / -1;
-      align-self: self-start;
-      aspect-ratio: 1.5 / 1;
-      grid-row: 1;
-    }
-
-    @media (max-width: 499px) {
-      grid-column: 1 / span 4;
-      grid-row: 1;
-      aspect-ratio: 1.25 / 1;
-    }
-
-    .profile-image-photo {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .profile-image-wide {
-    aspect-ratio: 1 / 0.75;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    z-index: 1;
-    max-width: var(--max-width);
-    margin-inline: auto;
-
-    @media (min-width: 1053px) {
-      grid-column: 18 / span 11;
-      aspect-ratio: 1 / 0.375;
-      grid-row: 2;
-    }
-
-    @media (max-width: 1052px) {
-      grid-column: 1 / -1;
-      align-self: self-start;
-      aspect-ratio: 1.5 / 1;
-      grid-row: 1;
-    }
-
-    @media (max-width: 499px) {
-      grid-column: 1 / span 4;
-      grid-row: 1;
-      aspect-ratio: 1.25 / 1;
-    }
-
-    .profile-image-photo {
-      width: 100%;
-      height: 100%;
     }
   }
 
   .content-area {
     grid-column: 1 / span 28;
     margin: var(--sizing-xl) 0 0;
-  }
-
-  .sidebar-area {
-    grid-column: 1 / span 28;
   }
 
   .button-group {
@@ -318,25 +340,31 @@ const posts = computed(() => {
     grid-column: 1 / -1;
     grid-row: 1;
     margin-block-end: var(--sizing-xxxl);
-
-    @media (min-width: 1053px) {
-      grid-column: 1 / span 6;
-    }
-    @media (max-width: 1052px) {
-      grid-column: 1 / -1;
-    }
   }
 
   .recently-posted-articles {
     grid-column: 1 / -1;
     grid-row: 2;
 
-    @media (min-width: 1053px) {
-      grid-column: 8 / -1;
-      align-self: center;
-      grid-row: 1;
+    @media (min-width: 1000px) {
+      grid-column: 1 / span 19;
+      grid-row: 2;
     }
-    @media (max-width: 1052px) {
+    @media (max-width: 999px) {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+
+  .recently-posted-notes {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    @media (min-width: 1000px) {
+      grid-column: 21 / -1;
+      grid-row: 2;
+    }
+    @media (max-width: 999px) {
       grid-column: 1 / -1;
       grid-row: 2;
     }
@@ -344,17 +372,17 @@ const posts = computed(() => {
 
   .recently-posted-archives {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 4;
     margin-top: var(--sizing-xxl);
 
-    @media (min-width: 1053px) {
-      grid-column: 8 / -1;
-      align-self: center;
-      grid-row: 2;
-    }
-    @media (max-width: 1052px) {
+    @media (min-width: 1000px) {
       grid-column: 1 / -1;
+      align-self: center;
       grid-row: 3;
+    }
+    @media (max-width: 999px) {
+      grid-column: 1 / -1;
+      grid-row: 4;
     }
 
     @media (min-width: 768px) {

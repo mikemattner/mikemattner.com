@@ -1,0 +1,112 @@
+:root {
+    // Colors/palettes
+    --color-red: hsl(353, 86%, 54%);
+    --color-red-hsl: 353, 86%, 54%;
+
+    --color-yellow: hsl(64, 89%, 45%);
+    --color-yellow-hsl: 64, 89%, 45%;
+
+    --color-green: hsl(115, 74%, 40%);
+    --color-green-hsl: 115, 74%, 40%;
+
+    // Primary Blue Tints & Shades ------------------------
+    --color-blue: hsl(227, 86%, 50%);
+    --color-blue-hsl: 227, 86%, 50%;
+
+    // Shades
+    --color-blue-shade-10: hsl(227, 86%, 45%);
+    --color-blue-shade-10-hsl: 227, 86%, 45%;
+
+    --color-blue-shade-20: hsl(227, 86%, 40%);
+    --color-blue-shade-20-hsl: 227, 86%, 40%;
+
+    --color-blue-shade-30: hsl(227, 86%, 35%);
+    --color-blue-shade-30-hsl: 227, 86%, 35%;
+
+    --color-blue-shade-40: hsl(227, 86%, 30%);
+    --color-blue-shade-40-hsl: 227, 86%, 30%;
+
+    --color-blue-shade-50: hsl(227, 86%, 25%);
+    --color-blue-shade-50-hsl: 227, 86%, 25%;
+
+    --color-blue-shade-60: hsl(227, 86%, 20%);
+    --color-blue-shade-60-hsl: 227, 86%, 20%;
+
+    --color-blue-shade-70: hsl(227, 86%, 15%);
+    --color-blue-shade-70-hsl: 227, 86%, 15%;
+
+    --color-blue-shade-80: hsl(227, 86%, 10%);
+    --color-blue-shade-80-hsl: 227, 86%, 10%;
+
+    --color-blue-shade-90: hsl(227, 86%, 5%);
+    --color-blue-shade-90-hsl: 227, 86%, 5%;
+
+    // Tints
+    --color-blue-tint-10: hsl(227, 86%, 55%);
+    --color-blue-tint-10-hsl: 227, 86%, 55%;
+
+    --color-blue-tint-20: hsl(227, 86%, 60%);
+    --color-blue-tint-20-hsl: 227, 86%, 60%;
+
+    --color-blue-tint-30: hsl(227, 86%, 65%);
+    --color-blue-tint-30-hsl: 227, 86%, 65%;
+
+    --color-blue-tint-40: hsl(227, 86%, 70%);
+    --color-blue-tint-40-hsl: 227, 86%, 70%;
+
+    --color-blue-tint-50: hsl(227, 86%, 75%);
+    --color-blue-tint-50-hsl: 227, 86%, 75%;
+
+    --color-blue-tint-60: hsl(227, 86%, 80%);
+    --color-blue-tint-60-hsl: 227, 86%, 80%;
+
+    --color-blue-tint-70: hsl(227, 86%, 85%);
+    --color-blue-tint-70-hsl: 227, 86%, 85%;
+
+    --color-blue-tint-80: hsl(227, 86%, 90%);
+    --color-blue-tint-80-hsl: 227, 86%, 90%;
+
+    --color-blue-tint-90: hsl(227, 86%, 95%);
+    --color-blue-tint-90-hsl: 227, 86%, 95%;
+
+    // Dark Blue ------------------------
+    --color-dark-blue: hsl(240, 36%, 4%);
+    --color-dark-blue-hsl: 240, 36%, 4%;
+
+    // Pink ------------------------
+    --color-pink: hsl(288, 69%, 54%);
+    --color-pink-hsl: 288, 69%, 54%;
+
+    // The basics
+    --color-white-hsl: 0, 0%, 100%;
+    --color-black-hsl: 0, 0%, 0%;
+
+    // Dark backgrounds, border, gradient
+    --color-dark-hsl: var(--color-blue-shade-90-hsl);
+    --color-dark: var(--color-blue-shade-90);
+    --color-dark-50-hsl: 240, 36%, 20%;
+    --color-dark-70-hsl: 240, 36%, 60%;
+    --color-dark-t: hsla(353, 86%, 3%, 95%);
+    --color-dark-bg-border: hsl(240, 36%, 7%);
+    --color-dark-background: hsl(240, 36%, 4%);
+    --color-dark-background-hsl: 240, 36%, 4%;
+    --color-dark-background-gradient-hsl: 240, 36%, 30%;
+    --color-dark-font-color: hsla(var(--color-blue-tint-90-hsl), 75%);
+    --color-dark-pull-color: hsla(var(--color-blue-tint-90-hsl), 65%);
+
+    // Light background, border, gradient
+    --color-light-hsl: 0, 0%, 94%;
+    --color-light: hsl(0, 0%, 94%);
+    --color-light-t: hsla(0, 0%, 94%, 90%);
+    --color-light-bg-border: hsl(0, 0%, 90%);
+    --color-light-bg: hsl(0, 0%, 97%);
+    --color-light-bg-hsl: 0, 0%, 97%;
+    --color-light-border-t: hsla(0, 0%, 94%, 55%);
+    --color-light-background-gradient-hsl: 240, 96%, 55%;
+    --color-light-pull-color: hsla(var(--color-black-hsl), 0.5);
+
+    // Primary colors
+    --color-primary-hsl: var(--color-blue-hsl);
+    --color-primary: var(--color-blue);
+    --color-primary-hover: var(--color-blue-shade-50);
+}
