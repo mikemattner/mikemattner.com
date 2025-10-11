@@ -12,6 +12,9 @@
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-color);
   font-family: var(--sans-font-family);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 715px) {
     padding: 1rem;
@@ -30,21 +33,14 @@
     border: none;
   }
 
-  // @media (min-width: 90rem) {
-  //   padding: var(--sizing-xxl) var(--sizing-xxxl);
-  // }
-
   &__container {
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
-    // margin-inline: auto;
     gap: var(--sizing-xl);
+    width: 100%;
 
     @media (min-width: 716px) {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      max-width: var(--max-width-nav);
+      grid-template-columns: auto 1fr 1fr;
+      max-width: var(--max-width);
       gap: var(--sizing-xl);
     }
 

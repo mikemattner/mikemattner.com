@@ -129,14 +129,14 @@ const sortedPosts = computed<SortedPostItem[]>(() => {
   grid-template-columns: repeat(1, 1fr);
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   &.summary-list {
     grid-template-columns: repeat(1, 1fr);
 
     @media (min-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
