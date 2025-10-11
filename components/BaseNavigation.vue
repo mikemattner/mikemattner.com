@@ -12,6 +12,9 @@
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-color);
   font-family: var(--sans-font-family);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 715px) {
     padding: 1rem;
@@ -32,11 +35,12 @@
 
   &__container {
     gap: var(--sizing-xl);
+    width: 100%;
 
     @media (min-width: 716px) {
       display: grid;
       grid-template-columns: auto 1fr 1fr;
-      max-width: var(--max-width-nav);
+      max-width: var(--max-width);
       gap: var(--sizing-xl);
     }
 
