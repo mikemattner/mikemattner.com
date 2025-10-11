@@ -46,12 +46,11 @@
       <div class="home-layout__content">
         <h2 class="recently-posted-header h4-heading">Recently Posted</h2>
         <ArticleList class="recently-posted-articles" :posts="posts" />
+        <NoteSummaryList class="recently-posted-notes" :notes="notes" />
+
         <div class="button-group recently-posted-archives">
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog Archives</span>
-          </BaseButton>
-          <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
-            <span>Note Archives</span>
           </BaseButton>
         </div>
       </div>
@@ -61,6 +60,7 @@
 
 <script setup lang="ts">
 import type { Post } from '../types/posts';
+import type { Note } from '../types/notes';
 
 useHead({
   title: 'Designer & Developer in Michigan',
@@ -68,9 +68,16 @@ useHead({
 });
 
 const { data } = await useAsyncData('blog-short', () => queryContent<Post>('/blog').sort({ date: -1 }).find());
+const { data: notesData } = await useAsyncData('notes-short', () =>
+  queryContent<Note>('/notes').sort({ date: -1 }).find()
+);
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 2) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
+});
+
+const notes = computed(() => {
+  return notesData?.value?.filter((note) => !note.draft).slice(0, 4) as Note[];
 });
 </script>
 
@@ -181,7 +188,7 @@ const posts = computed(() => {
     }
 
     &__ampersand {
-      font-size: var(--size-step-5);
+      font-size: var(--size-step-6);
       z-index: 2;
       color: var(--color-blue);
       text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.05);
@@ -224,18 +231,6 @@ const posts = computed(() => {
       line-height: 1.2;
       grid-row: 4;
       grid-column: 1;
-    }
-  }
-
-  .profile-image {
-    aspect-ratio: 1 / 0.75;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    z-index: 1;
-
-    .profile-image-photo {
-      width: 100%;
-      height: 100%;
     }
   }
 
@@ -323,10 +318,6 @@ const posts = computed(() => {
     margin: var(--sizing-xl) 0 0;
   }
 
-  .sidebar-area {
-    grid-column: 1 / span 28;
-  }
-
   .button-group {
     --flow-space: 1.5em;
     display: flex;
@@ -346,13 +337,6 @@ const posts = computed(() => {
     grid-column: 1 / -1;
     grid-row: 1;
     margin-block-end: var(--sizing-xxxl);
-
-    @media (min-width: 1000px) {
-      grid-column: 1 / span 6;
-    }
-    @media (max-width: 999px) {
-      grid-column: 1 / -1;
-    }
   }
 
   .recently-posted-articles {
@@ -360,9 +344,22 @@ const posts = computed(() => {
     grid-row: 2;
 
     @media (min-width: 1000px) {
-      grid-column: 8 / -1;
-      align-self: center;
-      grid-row: 1;
+      grid-column: 1 / span 19;
+      grid-row: 2;
+    }
+    @media (max-width: 999px) {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+
+  .recently-posted-notes {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    @media (min-width: 1000px) {
+      grid-column: 21 / -1;
+      grid-row: 2;
     }
     @media (max-width: 999px) {
       grid-column: 1 / -1;
@@ -372,17 +369,17 @@ const posts = computed(() => {
 
   .recently-posted-archives {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 4;
     margin-top: var(--sizing-xxl);
 
     @media (min-width: 1000px) {
-      grid-column: 8 / -1;
+      grid-column: 1 / -1;
       align-self: center;
-      grid-row: 2;
+      grid-row: 3;
     }
     @media (max-width: 999px) {
       grid-column: 1 / -1;
-      grid-row: 3;
+      grid-row: 4;
     }
 
     @media (min-width: 768px) {
