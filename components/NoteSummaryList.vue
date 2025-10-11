@@ -7,9 +7,6 @@
           <NoteListSummaryItem :note="note" />
         </li>
       </ul>
-      <BaseButton to="/notes" variant="solid" size="sm" color="primary">
-        <span>Note Archives</span>
-      </BaseButton>
     </div>
   </section>
 </template>

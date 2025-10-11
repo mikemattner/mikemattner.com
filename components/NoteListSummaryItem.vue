@@ -39,7 +39,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: grid;
     align-items: center;
     gap: var(--sizing-lg);
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     color: var(--blog-card-date-color);
     z-index: 2;
     font-weight: 800;

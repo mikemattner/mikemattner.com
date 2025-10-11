@@ -52,6 +52,9 @@
           <BaseButton to="/blog" variant="solid" size="sm" color="primary">
             <span>Blog Archives</span>
           </BaseButton>
+          <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
+            <span>Note Archives</span>
+          </BaseButton>
         </div>
       </div>
     </div>
