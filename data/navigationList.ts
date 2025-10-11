@@ -2,7 +2,7 @@ export const navigationList: NavigationList[] = [
   {
     title: 'Home',
     url: '/',
-    primary: true,
+    primary: false,
   },
   {
     title: 'Blog',
