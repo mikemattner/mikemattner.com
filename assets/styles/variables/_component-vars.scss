@@ -1,0 +1,42 @@
+:root {
+    // Button variables
+    --button-focus-shadow: 0 0 0 0.1rem var(--color-middle-gray-t);
+    --button-solid-text: var(--color-light);
+    --button-solid-text-hover: var(--color-light);
+    --button-solid-text-dark: var(--color-dark);
+    --button-outline-text: var(--headline-font-color);
+    --button-outline-text-hover: var(--color-light);
+
+    --button-primary: var(--color-primary);
+    --button-primary-outline: inset 0 0 0 2px var(--color-primary), 0 0 0 0 var(--color-primary);
+    --button-primary-outline-hover: inset 0 0 0 2px var(--color-primary-hover), 0 0 0 0 var(--color-primary-hover);
+    --button-primary-hover: var(--color-primary-hover);
+    --button-primary-solid-hover: var(--color-primary-hover);
+
+    --button-secondary: var(--border-color);
+    --button-secondary-bg-hover: var(--color-primary);
+    --button-secondary-outline: inset 0 0 0 2px var(--button-secondary), 0 0 0 0 var(--button-secondary);
+    --button-secondary-outline-hover: inset 0 0 0 2px var(--color-primary-hover), 0 0 0 0 var(--color-primary-hover);
+    --button-secondary-hover: var(--color-primary-hover);
+
+    // Checkbox and Radio Buttons ------------------------
+    --ripple-color: hsla(var(--color-blue-hsl), 0.3);
+
+    --transition-duration: 0.25s;
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    --ripple-duration: 0.7s;
+
+    --control-size: 24px;
+    --control-border: 2px;
+    --focus-ring-size: 4px;
+    --ripple-size: 44px;
+    --checkmark-width: 6px;
+    --checkmark-height: 12px;
+    --radio-dot-size: 12px;
+
+    // Box shadows
+    --box-shadow: 0 3px 30px hsla(var(--color-black-hsl), 0.3), 0 3px 15px hsla(var(--color-black-hsl), 0.1);
+    --box-shadow-light: 0 1px 1px hsla(var(--color-black-hsl), 0.08), 0 2px 2px hsla(var(--color-black-hsl), 0.02), 0 4px 4px hsla(var(--color-black-hsl), 0.04), 0 6px 8px hsla(var(--color-black-hsl), 0.04), 0 8px 16px hsla(var(--color-black-hsl), 0.02);
+    --box-shadow-short: 0 1px 1px hsla(var(--color-black-hsl), 0.08), 0 2px 2px hsla(var(--color-black-hsl), 0.08), 0 4px 4px hsla(var(--color-black-hsl), 0.08), 0 6px 8px hsla(var(--color-black-hsl), 0.08), 0 8px 16px hsla(var(--color-black-hsl), 0.08);
+    --box-shadow-long: 0 2px 1px hsla(var(--color-black-hsl), 0.08), 0 4px 2px hsla(var(--color-black-hsl), 0.08), 0 8px 4px hsla(var(--color-black-hsl), 0.08), 0 16px 8px hsla(var(--color-black-hsl), 0.08), 0 32px 16px hsla(var(--color-black-hsl), 0.08);
+}
