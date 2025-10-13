@@ -1,9 +1,7 @@
 <template>
   <div class="note-list-item">
     <div class="note-list-item__header">
-      <h3 class="small-text">
-        <NuxtLink :to="note._path">{{ note.title }}</NuxtLink>
-      </h3>
+      <NuxtLink :to="note._path" class="small-text">{{ note.title }}</NuxtLink>
       <time class="eyebrow">
         {{ date }}
       </time>
