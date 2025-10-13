@@ -186,7 +186,7 @@ const notes = computed(() => {
       grid-column: 1;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-6);
+        font-size: var(--size-step-7);
       }
     }
 
@@ -209,7 +209,7 @@ const notes = computed(() => {
       }
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-5);
+        font-size: var(--size-step-6);
       }
     }
 
@@ -225,7 +225,7 @@ const notes = computed(() => {
       grid-row: 3;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-6);
+        font-size: var(--size-step-7);
       }
     }
 
@@ -366,7 +366,7 @@ const notes = computed(() => {
     }
     @media (max-width: 999px) {
       grid-column: 1 / -1;
-      grid-row: 2;
+      grid-row: 3;
     }
   }
 
