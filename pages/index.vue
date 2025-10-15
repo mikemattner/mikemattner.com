@@ -178,12 +178,13 @@ const notes = computed(() => {
     &__design {
       font-size: var(--size-step-7);
       z-index: 1;
-      text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
+      // text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
       font-variation-settings: 'wdth' 75, 'wght' 800;
       text-transform: uppercase;
       line-height: 0.875;
       grid-row: 2;
       grid-column: 1;
+      color: var(--color-blue);
 
       @media (max-width: 893px) {
         font-size: var(--size-step-6);
@@ -203,7 +204,7 @@ const notes = computed(() => {
 
       span {
         -webkit-text-fill-color: transparent;
-        background: var(--gradient-1-filled);
+        background: var(--gradient-2-filled);
         -webkit-background-clip: text;
         background-clip: text;
       }
@@ -217,12 +218,13 @@ const notes = computed(() => {
       font-size: var(--size-step-7);
       z-index: 3;
       letter-spacing: -0.025em;
-      text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
+      // text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.5);
       font-variation-settings: 'wdth' 75, 'wght' 800;
       text-transform: uppercase;
       line-height: 0.75;
       grid-column: 1;
       grid-row: 3;
+      color: var(--color-blue);
 
       @media (max-width: 893px) {
         font-size: var(--size-step-6);
