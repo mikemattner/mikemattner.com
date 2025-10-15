@@ -10,6 +10,7 @@
     --border-color: hsla(var(--color-white-hsl), 0.1); //hsl(240, 9%, 20%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 40%) 3.84%,hsla(var(--color-blue-hsl), 48%) 34.62%, hsla(var(--color-green-hsl), 50%) 69.18% );
     --gradient-1-filled: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
+    --gradient-2-filled: linear-gradient(-80deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-shade-40-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);
@@ -39,6 +40,7 @@ html.light {
     --border-color: hsla(var(--color-dark-blue-hsl), 0.1); //hsl(240, 9%, 69%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-blue-hsl), 10%) 3.84%,hsla(var(--color-blue-hsl), 38%) 34.62%, hsla(var(--color-green-hsl), 10%) 69.18% );
     --gradient-1-filled: linear-gradient(160.41deg,hsla(var(--color-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
+    --gradient-2-filled: linear-gradient(-80deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-shade-40-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-light-t);
     --color-highlight: var(--color-primary);
@@ -70,6 +72,7 @@ html.dark {
     --border-color: hsla(var(--color-white-hsl), 0.075); //hsl(240, 9%, 20%)
     --gradient-1: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 40%) 3.84%,hsla(var(--color-blue-hsl), 48%) 34.62%, hsla(var(--color-green-hsl), 50%) 69.18% );
     --gradient-1-filled: linear-gradient(160.41deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
+    --gradient-2-filled: linear-gradient(-80deg,hsla(var(--color-dark-blue-hsl), 100%) 3.84%,hsla(var(--color-blue-shade-40-hsl), 100%) 34.62%, hsla(var(--color-green-hsl), 100%) 69.18% );
     --image-background: var(--color-primary);
     --background-color-t: var(--color-dark-t);
     --color-highlight: var(--color-primary);

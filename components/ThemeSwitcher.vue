@@ -17,11 +17,17 @@ const mode = useColorMode({
 });
 const { state, next } = useCycleList(['dark', 'light'], { initialValue: mode });
 
-watchEffect(() => (mode.value = state.value as any));
+const isDark = ref<boolean>(true);
 
 const iconName = computed(() => (isDark.value ? 'ri:moon-fill' : 'ri:sun-fill'));
 
-const isDark = ref<boolean>(true);
+watchEffect(() => (mode.value = state.value as any));
+
+onMounted(() => {
+  nextTick(() => {
+    isDark.value = mode.value === 'dark';
+  });
+});
 </script>
 
 <style lang="scss" scoped>
