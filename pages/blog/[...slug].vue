@@ -32,11 +32,18 @@
           </div>
           <div class="article-meta-block">
             <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
-            <ul class="tag-list">
-              <li v-for="tag in data.tag" :key="tag">
-                <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
-              </li>
-            </ul>
+            <div class="tag-list">
+              <BaseButton
+                v-for="tag in data.tag"
+                :key="tag"
+                :to="`/blog/tag/${tag}`"
+                size="xs"
+                color="secondary"
+                variant="solid"
+              >
+                {{ tag }}
+              </BaseButton>
+            </div>
           </div>
         </aside>
         <ContentRenderer :value="data">
@@ -226,33 +233,24 @@ useHead({
     // }
 
     .tag-list {
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sizing-md);
+      margin: var(--sizing-md) 0 0;
       padding: 0;
       list-style: none;
-      // font-family: var(--code-font-family);
+
+      .button {
+        font-size: var(--size-step--2);
+        font-family: var(--code-font-family);
+      }
 
       @media (max-width: 1000px) {
-        display: flex;
+        flex-direction: row;
         align-items: center;
         gap: var(--sizing-sm);
-
-        li {
-          padding: 0;
-          margin: 0;
-          display: flex;
-          align-items: center;
-          gap: var(--sizing-sm);
-
-          &:before {
-            content: '/';
-            line-height: 1;
-            opacity: 0.5;
-          }
-
-          &:first-child:before {
-            display: none;
-          }
-        }
+        margin: 0;
       }
     }
   }

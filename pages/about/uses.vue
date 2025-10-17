@@ -11,9 +11,9 @@
         </ul>
         <hr />
       </div>
-      <PrimaryImage src="/images/desktop.jpg" has-overlay class="desk-image">
+      <!-- <PrimaryImage src="/images/desktop.jpg" has-overlay class="desk-image">
         <template v-slot:caption>My desk in a mostly clean state.</template>
-      </PrimaryImage>
+      </PrimaryImage> -->
       <div class="about-content">
         <h2 class="h4-heading section-header">Desk</h2>
         <div class="section-content columns flow">
@@ -76,9 +76,7 @@
               </a>
             </li>
             <li>
-              <a
-                href="https://www.arrayperipherals.com/vector-macropad"
-              >
+              <a href="https://www.arrayperipherals.com/vector-macropad">
                 Array Peripherals, Vector Macropad, Black, Tactile Cherry Switches
               </a>
             </li>

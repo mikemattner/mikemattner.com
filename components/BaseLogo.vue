@@ -19,22 +19,21 @@ defineProps({
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
   transition: var(--transition);
   padding: 0;
   gap: var(--sizing-sm);
   z-index: 1000;
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     padding: 0;
     border-radius: 50%;
-    // background-color: var(--logo-background);
     border: 1px solid var(--logo-background);
     z-index: 10;
-    transition: var(--transition-cubic-slow);
-    flex: 0 0 2rem;
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.25s var(--cubic-bezier),
+      fill 0.25s var(--cubic-bezier), border-color 0.25s var(--cubic-bezier);
+    flex: 0 0 1.5rem;
 
     @media (max-width: 510px) {
       height: 1.25rem;
@@ -43,9 +42,9 @@ defineProps({
     }
 
     path {
-      // fill: var(--logo-foreground);
       fill: var(--logo-background);
-      transition: var(--transition-cubic-slow);
+      transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.25s var(--cubic-bezier),
+        fill 0.25s var(--cubic-bezier);
     }
   }
 
@@ -55,7 +54,8 @@ defineProps({
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
     font-variation-settings: 'wdth' 100, 'wght' 800;
-    transition: var(--transition-cubic-slow);
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.25s var(--cubic-bezier),
+      fill 0.25s var(--cubic-bezier);
 
     @media (max-width: 715px) {
       font-size: var(--size-step-0);
@@ -64,15 +64,18 @@ defineProps({
 
   @media (min-width: 511px) {
     &:hover {
-      color: var(--headline-font-color);
-
       svg {
-        transform: rotate(720deg);
+        transform: rotate(720deg) scale(1.2);
+        border-color: var(--color-primary);
+
+        path {
+          fill: var(--color-primary);
+        }
       }
 
-      // .brand-logo__type {
-      //   font-variation-settings: 'wdth' 100, 'wght' 400;
-      // }
+      .brand-logo__type {
+        color: var(--color-primary);
+      }
     }
   }
 }

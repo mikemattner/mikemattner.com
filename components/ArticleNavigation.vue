@@ -65,7 +65,7 @@ const [prev, next] = await queryContent(query.value)
   grid-column: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
   align-self: self-start;
   padding: var(--sizing-xxxl) var(--sizing-md);
 

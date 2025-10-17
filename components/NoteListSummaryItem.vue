@@ -2,7 +2,7 @@
   <div class="note-list-item">
     <div class="note-list-item__header">
       <NuxtLink :to="note._path" class="small-text">{{ note.title }}</NuxtLink>
-      <time class="eyebrow">
+      <time>
         {{ date }}
       </time>
     </div>
@@ -54,6 +54,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     gap: var(--sizing-lg);
     font-weight: 300;
     justify-content: flex-end;
+    font-size: var(--size-step--2);
 
     @media screen and (max-width: 400px) {
       justify-self: flex-start;

@@ -1,9 +1,11 @@
 <template>
   <BaseToggle v-model="isDark" @change="next()">
-    <div class="theme-toggle">
-      <span class="sr-only">Toggle theme</span>
-      <Icon :name="iconName" />
-    </div>
+    <template #icon>
+      <div class="theme-toggle">
+        <span class="sr-only">Toggle theme</span>
+        <Icon :name="iconName" />
+      </div>
+    </template>
   </BaseToggle>
 </template>
 
