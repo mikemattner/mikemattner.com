@@ -18,9 +18,6 @@
         <PrimaryImage src="/images/pro-profile.jpg" alt="Portrait shot of Mike." has-overlay class="profile-image">
           <template v-slot:caption>Photographed while visiting Austin, Texas.</template>
         </PrimaryImage>
-        <PrimaryImage src="/images/apple-picking.png" alt="Picking apples" has-overlay class="profile-image">
-          <template v-slot:caption>Picking apples in the fall.</template>
-        </PrimaryImage>
       </div>
       <div class="about-content flow">
         <h2>Quick Intro</h2>
@@ -53,10 +50,6 @@
           I’m also a bit of a Michigan football nut. Saturdays in the fall are non-negotiable. If there’s a game on, I’m
           watching — probably yelling at the TV, maybe celebrating with a beer.
         </p>
-        <PullQuote>
-          I've got one question&hellip;who's got it better than us? <em>Nobody!</em>
-          <template v-slot:attribution>Jim Harbaugh</template>
-        </PullQuote>
         <p>Blake, <a href="https://mgoblog.com/content/take-us-home">take us home</a>.</p>
         <h3>This Site</h3>
         <p>
@@ -138,6 +131,76 @@
             </li>
           </ul>
         </BasePanel>
+        <h3>A Timeline of My Life</h3>
+        <ol class="timeline small-text">
+          <li class="flow">
+            <h3 class="small-heading">1985</h3>
+            <p>Born in a small town in Michigan.</p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">1996</h3>
+            <p>
+              My dad brings home our first computer, an old computer loaded with all kinds of software and games. I
+              discovered that
+              <a href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> was on this computer&mdash;also loaded with a
+              bunch of games. I spent the entire summer playing games and learning just what in the hell was going on
+              with this thing. Around this time I started playing around with Geocities. Oh yeah.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">1999</h3>
+            <p>
+              By this time I started a fan/guild/add-ons website for
+              <a href="https://en.wikipedia.org/wiki/Star_Wars_Jedi_Knight:_Dark_Forces_II?useskin=vector"
+                >Star Wars Jedi Knight: Dark Forces II</a
+              >
+              that I called
+              <a href="https://web.archive.org/web/19990202084434/http://www.jediknight.net/yoda/">Yoda's Add-ons</a>.
+              My love for the web was cemented here.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2006</h3>
+            <p>
+              I land my first professional full-time role for a local company that focused on Corvette parts and
+              accessories. While there I used just about every skill I learned in college, including video editing and
+              motion graphics, graphic design, and my primary work of web development.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2013</h3>
+            <p>
+              I join an advertising agency in town. The work there was initially focused on creating sales education
+              material for selling appliances.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2016</h3>
+            <p>
+              I get a promotion to lead a team of hybrid designers/developers to work on that sales education material
+              and several studio related web projects&mdash;mostly WordPress marketing sites.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2019</h3>
+            <p>
+              I switch gears to full time development and get absorbed into the larger agency's development team as the
+              two branches of the agency fully integrate together. My work shifts to working on the client's marketing
+              websites.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2020</h3>
+            <p>
+              A global pandemic hits and life gets a little weird. I start on a team focused on creating Adobe
+              Experience Manager components for the primary client's marketing sites.
+            </p>
+          </li>
+          <li class="flow">
+            <h3 class="small-heading">2021</h3>
+            <p>I start my current role focused on software development as a UI engineer.</p>
+          </li>
+        </ol>
       </div>
       <!-- <div class="timeline-content flow">
         <h2 class="h4-heading">A Timeline of My Life</h2>
@@ -365,12 +428,14 @@ useHead({
   .timeline-content {
     @media (min-width: 501px) {
       grid-column: 1 / span 4;
+      grid-row: 3;
     }
     @media (min-width: 768px) {
       grid-column: 1 / -1;
+      grid-row: 3;
     }
     @media (min-width: 860px) {
-      grid-column: 21 / -1;
+      grid-column: 1 / span 17;
       grid-row: 3;
     }
   }

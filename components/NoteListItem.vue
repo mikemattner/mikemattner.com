@@ -1,10 +1,5 @@
 <template>
   <div class="note-list-item">
-    <div class="note-list-item__header">
-      <time>
-        <NuxtLink :to="note._path">{{ date }}</NuxtLink>
-      </time>
-    </div>
     <div class="note-list-item__body">
       <ContentRenderer :value="note">
         <ContentRendererMarkdown class="flow" :value="note" />
@@ -13,12 +8,23 @@
         </template>
       </ContentRenderer>
     </div>
-    <div class="note-list-item__tags">
-      <ul class="tag-list">
-        <li v-for="tag in note.tag" :key="tag">
-          <NuxtLink :to="`/notes/tag/${tag}`">{{ tag }}</NuxtLink>
-        </li>
-      </ul>
+    <div class="note-list-item__footer">
+      <div class="note-list-item__tags">
+        <BaseButton
+          v-for="tag in note.tag"
+          :key="tag"
+          :to="`/blog/tag/${tag}`"
+          size="xs"
+          color="secondary"
+          variant="solid"
+        >
+          {{ tag }}
+        </BaseButton>
+      </div>
+      &bull;
+      <time>
+        <NuxtLink :to="note._path">{{ date }}</NuxtLink>
+      </time>
     </div>
   </div>
 </template>
@@ -59,14 +65,14 @@ const date = computed<string>(() => formatDate(props.note.date));
     max-width: 70ch;
   }
 
-  &__header {
-    font-size: var(--size-step--1);
+  &__footer {
+    font-size: var(--size-step--2);
     font-family: var(--sans-font-family);
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
     color: var(--blog-card-date-color);
-    padding: 0 0 var(--sizing-xxl) 0;
+    margin-top: var(--sizing-xl);
     z-index: 2;
   }
 
@@ -92,41 +98,10 @@ const date = computed<string>(() => formatDate(props.note.date));
       height: 1.25rem;
       flex-shrink: 0;
     }
-  }
 
-  .tag-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-sm);
-    font-size: var(--size-step--1);
-    margin-top: var(--sizing-xl);
-
-    li {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 1px;
-
-      &:after {
-        content: ',';
-        line-height: 1;
-        color: var(--blog-card-date-color);
-      }
-
-      &:before {
-        content: '#';
-        line-height: 1;
-        color: var(--blog-card-date-color);
-        margin-right: 3px;
-      }
-
-      &:last-child:after {
-        display: none;
-      }
+    .button {
+      font-size: var(--size-step--2);
+      font-family: var(--code-font-family);
     }
   }
 }
