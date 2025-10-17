@@ -1,5 +1,5 @@
 <template>
-  <label class="toggle-switch-container">
+  <label class="toggle-switch-container" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
     <div class="toggle-switch" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
       <input type="checkbox" v-model="model" />
       <span class="toggle-button">
