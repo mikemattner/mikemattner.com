@@ -5,7 +5,7 @@
         <h1 class="intro-title">
           <small class="intro-title__role">Mike is a</small>
           <span class="intro-title__design">Designer</span>
-          <span class="intro-title__ampersand"><span>&amp;</span></span>
+          <span class="intro-title__ampersand">&amp;</span>
           <span class="intro-title__development">Developer</span>
           <small class="intro-title__location">from Michigan</small>
         </h1>
@@ -204,13 +204,6 @@ const notes = computed(() => {
       align-self: center;
       margin-left: 0.0125em;
 
-      // span {
-      //   -webkit-text-fill-color: transparent;
-      //   background: var(--gradient-2-filled);
-      //   -webkit-background-clip: text;
-      //   background-clip: text;
-      // }
-
       @media (max-width: 893px) {
         font-size: var(--size-step-6);
       }
@@ -252,7 +245,7 @@ const notes = computed(() => {
 
     @media (min-width: 1000px) {
       grid-row: 1;
-      grid-column: 13 / -1;
+      grid-column: 10 / -1;
     }
 
     @media (max-width: 999px) {
@@ -267,7 +260,7 @@ const notes = computed(() => {
       grid-column: 1 / span 4;
       grid-row: 2;
       grid-column: 1 / -1;
-      aspect-ratio: 2/1;
+      aspect-ratio: 2/1.5;
     }
 
     .profile-image-photo {
@@ -333,6 +326,7 @@ const notes = computed(() => {
 
     @media (max-width: 499px) {
       flex-direction: column;
+      gap: var(--sizing-lg);
 
       .button {
         width: 100%;
@@ -344,9 +338,15 @@ const notes = computed(() => {
     grid-column: 1 / -1;
     grid-row: 1;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    flex-direction: column;
     gap: var(--sizing-lg);
     margin-bottom: var(--sizing-xxxl);
+
+    @media (min-width: 540px) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   .recently-posted-articles {
