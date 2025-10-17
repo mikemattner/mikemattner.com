@@ -1,8 +1,13 @@
 <template>
-  <label class="toggle-switch" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
-    <input type="checkbox" v-model="model" />
-    <span class="toggle-button">
-      <slot />
+  <label class="toggle-switch-container" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
+    <div class="toggle-switch" :class="[`toggle-switch--${type}`, { checked: modelValue }]">
+      <input type="checkbox" v-model="model" />
+      <span class="toggle-button">
+        <slot name="icon" />
+      </span>
+    </div>
+    <span class="toggle-switch__label">
+      <slot name="default" />
     </span>
   </label>
 </template>
@@ -50,6 +55,19 @@ const model = computed({
   position: relative;
   transition: var(--transition);
   width: 2.5em;
+
+  &-container {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sizing-sm);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__label {
+    font-size: var(--size-step--1);
+    user-select: none;
+  }
 
   input {
     opacity: 0;

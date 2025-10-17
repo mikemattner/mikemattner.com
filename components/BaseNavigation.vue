@@ -39,7 +39,7 @@
 
     @media (min-width: 716px) {
       display: grid;
-      grid-template-columns: auto 1fr 1fr;
+      grid-template-columns: minmax(250px, auto) 1fr 1fr;
       max-width: var(--max-width);
       gap: var(--sizing-xl);
     }

@@ -115,7 +115,8 @@ watch(isMobile, () => {
         color: var(--headline-font-color);
 
         &:hover {
-          text-decoration-color: var(--headline-font-color);
+          color: var(--color-primary);
+          text-decoration-color: var(--color-primary);
         }
       }
     }
@@ -123,7 +124,7 @@ watch(isMobile, () => {
 
   .router-link-active,
   .active-path {
-    text-decoration-color: var(--headline-font-color);
+    text-decoration-color: var(--color-primary);
   }
 
   &__secondary {

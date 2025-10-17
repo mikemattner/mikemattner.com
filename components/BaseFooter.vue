@@ -1,33 +1,39 @@
 <template>
   <footer class="base-footer">
     <div class="base-footer__layout">
-      <div class="base-footer__shameless-branding">
-        <h2 class="small-heading">Want to say hello?</h2>
-        <p>
-          I don&rsquo;t do freelance work anymore, but connect with me on social or reach out to me@mikemattner.com.
-        </p>
+      <div class="base-footer__primary">
+        <div class="base-footer__shameless-branding">
+          <h2 class="small-heading">Want to say hello?</h2>
+          <p>
+            I don&rsquo;t do freelance work anymore, but connect with me on social or reach out to me@mikemattner.com.
+          </p>
+        </div>
+        <nav class="base-footer__navigation">
+          <ul class="navigation-list">
+            <li v-for="item in navigationList" :key="item.title">
+              <BaseButton class="navigation-list__item-link" variant="link" size="md" color="secondary" :to="item.url">
+                {{ item.title }}
+              </BaseButton>
+            </li>
+          </ul>
+          <ul class="social-icons">
+            <li v-for="item in socialList" :key="item.title">
+              <BaseButton
+                class="footer-icon"
+                variant="link"
+                size="xs"
+                color="secondary"
+                :href="item.url"
+                :rel="item.rel"
+              >
+                <Icon :name="item.icon" /> {{ item.title }}
+              </BaseButton>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="base-footer__navigation">
-        <h2 class="small-heading">Explore</h2>
-        <ul class="navigation-list">
-          <li v-for="item in navigationList" :key="item.title">
-            <BaseButton class="navigation-list__item-link" variant="link" size="md" color="secondary" :to="item.url">
-              {{ item.title }}
-            </BaseButton>
-          </li>
-        </ul>
-      </nav>
       <div class="base-footer__copyright">
         <p>&copy; {{ theYear }} Mike Mattner. All rights reserved. A personal website proudly made in Michigan.</p>
-      </div>
-      <div class="base-footer__social">
-        <ul class="social-icons">
-          <li v-for="item in socialList" :key="item.title">
-            <BaseButton class="footer-icon" variant="link" size="xs" color="secondary" :href="item.url" :rel="item.rel">
-              <Icon :name="item.icon" /> {{ item.title }}
-            </BaseButton>
-          </li>
-        </ul>
       </div>
     </div>
   </footer>
@@ -77,21 +83,42 @@ const theYear = computed<string>(() => {
     }
   }
 
+  &__primary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sizing-xxl);
+    grid-column: 1 / -1;
+    padding: var(--sizing-lg) 0;
+    align-items: center;
+    border-top: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+
+    @media (max-width: 875px) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    @media (max-width: 597px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &__shameless-branding {
     display: flex;
     flex-direction: column;
     gap: var(--sizing-lg);
     grid-column: 1;
     grid-row: 1;
+    padding: var(--sizing-xxl) 0;
 
     p {
       margin: 0;
     }
 
-    @media (max-width: 597px) {
+    @media (max-width: 875px) {
       grid-column: 1 / -1;
       grid-row: 1;
-      padding-bottom: var(--sizing-lg);
+      padding: var(--sizing-lg) 0;
     }
   }
 
@@ -105,7 +132,6 @@ const theYear = computed<string>(() => {
     @media (max-width: 875px) {
       grid-column: 1;
       grid-row: 2;
-      margin-top: var(--sizing-xxl);
     }
 
     @media (max-width: 597px) {
@@ -120,16 +146,15 @@ const theYear = computed<string>(() => {
     grid-column: 1 / -1;
     grid-row: 2;
     align-self: end;
-    margin-top: var(--sizing-xxxl);
 
     @media (max-width: 875px) {
       grid-column: 1 / -1;
-      grid-row: 4;
+      grid-row: 2;
     }
 
     @media (max-width: 597px) {
       grid-column: 1 / -1;
-      grid-row: 4;
+      grid-row: 2;
     }
   }
 
@@ -160,6 +185,11 @@ const theYear = computed<string>(() => {
     padding: 0;
     margin: 0;
 
+    @media (max-width: 875px) {
+      border-top: 1px solid var(--color-primary);
+      padding-top: var(--sizing-lg);
+    }
+
     li {
       display: flex;
       align-items: center;
@@ -182,8 +212,9 @@ const theYear = computed<string>(() => {
     flex-wrap: wrap;
     gap: var(--sizing-lg);
     list-style: none;
-    padding: 0;
+    padding: var(--sizing-lg) 0 0 0;
     margin: 0;
+    border-top: 1px solid var(--color-primary);
 
     li {
       display: flex;

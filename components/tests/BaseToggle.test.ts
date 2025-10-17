@@ -4,7 +4,7 @@ import BaseToggle from '../BaseToggle.vue';
 
 type Severity = 'primary' | 'success' | 'warning';
 
-describe('BaseBadge.vue', () => {
+describe('BaseToggle.vue', () => {
   it('renders input correctly', async () => {
     const wrapper = await mountSuspended(BaseToggle, {
       props: {

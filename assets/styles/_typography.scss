@@ -19,9 +19,11 @@ h3 {
 .page-header {
   font-variation-settings: 'wdth' 100, 'wght' 800;
   font-size: var(--size-step-5);
+  color: var(--color-primary);
 
   small {
     text-transform: none;
+    color: var(--headline-font-color);
   }
 }
 
@@ -127,7 +129,7 @@ blockquote:not(.pull-quote) {
   }
 
   margin-block-start: 1.5rem;
-  margin-block-end: 2.5rem;
+  margin-block-end: 1.5rem;
 
   &::before {
     background-color: var(--color-primary);

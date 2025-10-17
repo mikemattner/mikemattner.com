@@ -12,11 +12,16 @@
     </div>
     <footer class="article-list-item__footer">
       <div class="article-list-item__tags">
-        <ul class="tag-list">
-          <li v-for="tag in post.tag" :key="tag">
-            <NuxtLink :to="`/blog/tag/${tag}`">{{ tag }}</NuxtLink>
-          </li>
-        </ul>
+        <BaseButton
+          v-for="tag in post.tag"
+          :key="tag"
+          :to="`/blog/tag/${tag}`"
+          size="xs"
+          color="secondary"
+          variant="solid"
+        >
+          {{ tag }}
+        </BaseButton>
       </div>
       &bull;
       <time>{{ date }}</time>
@@ -38,8 +43,6 @@ const date = computed<string>(() => formatDate(props.post.date));
 <style lang="scss" scoped>
 .article-list-item {
   height: 100%;
-  // border-bottom: 1px solid var(--border-color);
-  // padding: 0 0 var(--sizing-xxxl) 0;
   padding: var(--sizing-lg);
   background-color: var(--block-quote-bg);
   border-radius: var(--border-radius);
@@ -50,8 +53,13 @@ const date = computed<string>(() => formatDate(props.post.date));
     max-width: 70ch;
   }
 
-  &__footer {
+  &__body {
     font-size: var(--size-step--1);
+    padding: var(--sizing-md) 0 0 0;
+  }
+
+  &__footer {
+    font-size: var(--size-step--2);
     font-family: var(--sans-font-family);
     display: flex;
     align-items: center;
@@ -84,39 +92,10 @@ const date = computed<string>(() => formatDate(props.post.date));
       height: 1.25rem;
       flex-shrink: 0;
     }
-  }
-  .tag-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: var(--sizing-sm);
-    font-size: var(--size-step--1);
 
-    li {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 1px;
-
-      &:after {
-        content: ',';
-        line-height: 1;
-        color: var(--blog-card-date-color);
-      }
-
-      &:before {
-        content: '#';
-        line-height: 1;
-        color: var(--blog-card-date-color);
-        margin-right: 3px;
-      }
-
-      &:last-child:after {
-        display: none;
-      }
+    .button {
+      font-size: var(--size-step--2);
+      font-family: var(--code-font-family);
     }
   }
 }

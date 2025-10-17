@@ -44,18 +44,19 @@
       </div>
       <hr />
       <div class="home-layout__content">
-        <h2 class="recently-posted-header h4-heading">Recently Posted</h2>
+        <header class="recently-posted-header">
+          <h2 class="h4-heading">Recently Posted</h2>
+          <div class="button-group">
+            <BaseButton to="/blog" variant="solid" size="xs" color="secondary">
+              <span>Blog Archives</span>
+            </BaseButton>
+            <BaseButton to="/notes" variant="solid" size="xs" color="secondary">
+              <span>Note Archives</span>
+            </BaseButton>
+          </div>
+        </header>
         <ArticleList class="recently-posted-articles" :posts="posts" />
         <NoteSummaryList class="recently-posted-notes" :notes="notes" />
-
-        <div class="button-group recently-posted-archives">
-          <BaseButton to="/blog" variant="solid" size="sm" color="primary">
-            <span>Blog Archives</span>
-          </BaseButton>
-          <BaseButton to="/notes" variant="solid" size="sm" color="secondary">
-            <span>Note Archives</span>
-          </BaseButton>
-        </div>
       </div>
     </div>
   </main>
@@ -76,11 +77,11 @@ const { data: notesData } = await useAsyncData('notes-short', () =>
 );
 
 const posts = computed(() => {
-  return data?.value?.filter((post) => !post.draft).slice(0, 4) as Post[];
+  return data?.value?.filter((post) => !post.draft).slice(0, 6) as Post[];
 });
 
 const notes = computed(() => {
-  return notesData?.value?.filter((note) => !note.draft).slice(0, 4) as Note[];
+  return notesData?.value?.filter((note) => !note.draft).slice(0, 6) as Note[];
 });
 </script>
 
@@ -194,20 +195,21 @@ const notes = computed(() => {
     &__ampersand {
       font-size: var(--size-step-6);
       z-index: 2;
-      color: var(--color-blue);
-      text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.05);
-      font-variation-settings: 'wdth' 100, 'wght' 800;
+      color: var(--headline-font-color);
+      // text-shadow: 0 0 var(--sizing-xl) hsla(var(--color-blue-hsl), 0.05);
+      font-variation-settings: 'wdth' 100, 'wght' 300, 'ital' 10;
       line-height: 1;
       grid-row: 2 / span 2;
       grid-column: 1;
       align-self: center;
+      margin-left: 0.0125em;
 
-      span {
-        -webkit-text-fill-color: transparent;
-        background: var(--gradient-2-filled);
-        -webkit-background-clip: text;
-        background-clip: text;
-      }
+      // span {
+      //   -webkit-text-fill-color: transparent;
+      //   background: var(--gradient-2-filled);
+      //   -webkit-background-clip: text;
+      //   background-clip: text;
+      // }
 
       @media (max-width: 893px) {
         font-size: var(--size-step-6);
@@ -327,7 +329,7 @@ const notes = computed(() => {
     --flow-space: 1.5em;
     display: flex;
     align-items: center;
-    gap: var(--sizing-xl);
+    gap: var(--sizing-sm);
 
     @media (max-width: 499px) {
       flex-direction: column;
@@ -341,7 +343,10 @@ const notes = computed(() => {
   .recently-posted-header {
     grid-column: 1 / -1;
     grid-row: 1;
-    margin-block-end: var(--sizing-xxxl);
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-lg);
+    margin-bottom: var(--sizing-xxxl);
   }
 
   .recently-posted-articles {
@@ -369,27 +374,6 @@ const notes = computed(() => {
     @media (max-width: 999px) {
       grid-column: 1 / -1;
       grid-row: 3;
-    }
-  }
-
-  .recently-posted-archives {
-    grid-column: 1 / -1;
-    grid-row: 4;
-    margin-top: var(--sizing-xxl);
-
-    @media (min-width: 1000px) {
-      grid-column: 1 / -1;
-      align-self: center;
-      grid-row: 3;
-    }
-    @media (max-width: 999px) {
-      grid-column: 1 / -1;
-      grid-row: 4;
-    }
-
-    @media (min-width: 768px) {
-      margin-top: var(--sizing-xxxl);
-      display: flex;
     }
   }
 }
