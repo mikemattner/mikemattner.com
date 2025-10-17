@@ -13,7 +13,7 @@
         <BaseButton
           v-for="tag in note.tag"
           :key="tag"
-          :to="`/blog/tag/${tag}`"
+          :to="`/notes/tag/${tag}`"
           size="xs"
           color="secondary"
           variant="solid"
