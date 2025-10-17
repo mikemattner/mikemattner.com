@@ -147,6 +147,21 @@ code:not(pre code) {
     border-radius: var(--sizing-sm);
     color: var(--headline-font-color);
 }
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
   
 /* Animations */
 @keyframes ripple {
