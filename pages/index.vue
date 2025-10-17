@@ -20,11 +20,11 @@
       </div>
       <hr />
       <div class="home-layout__hero">
-        <h2 class="main-lede h4-heading">About Mike</h2>
+        <h2 class="main-lede h4-heading">Hey there 👋</h2>
 
         <div class="home-greeting flow">
-          <h3 class="small-heading">Hey there 👋</h3>
-          <p>I’m Mike — a Senior UI Engineer at AccuLynx.</p>
+          <h3 class="small-heading">I’m Mike</h3>
+          <p>I’m a Senior UI Engineer at AccuLynx.</p>
           <p>
             I’ve been designing and building for the web for over twenty years, evolving from hobby projects into a
             career focused on thoughtful UI, component-driven design, and clean, maintainable front-end architecture.
@@ -286,7 +286,7 @@ const notes = computed(() => {
     }
 
     @media (min-width: 1000px) {
-      grid-column: 8 / -1;
+      grid-column: 10 / -1;
       align-self: center;
       grid-row: 1;
     }
