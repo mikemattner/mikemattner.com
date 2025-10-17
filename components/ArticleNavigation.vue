@@ -43,7 +43,7 @@ const [prev, next] = await queryContent(query.value)
 <style lang="scss" scoped>
 .article-navigation {
   border-top: 1px solid var(--border-color);
-  margin-block-start: 4rem;
+  margin-block-start: 2rem;
   font-family: var(--sans-font-family);
 
   @media (min-width: 500px) {
@@ -51,6 +51,7 @@ const [prev, next] = await queryContent(query.value)
     justify-content: space-between;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-block-start: 4rem;
   }
 }
 
@@ -67,10 +68,11 @@ const [prev, next] = await queryContent(query.value)
   flex-direction: column;
   align-items: flex-start;
   align-self: self-start;
-  padding: var(--sizing-xxxl) var(--sizing-md);
+  padding: var(--sizing-xxl) var(--sizing-md);
 
   @media (min-width: 500px) {
     height: 100%;
+    padding: var(--sizing-xxxl) var(--sizing-md);
   }
 }
 .next-article {
@@ -78,7 +80,7 @@ const [prev, next] = await queryContent(query.value)
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--sizing-xxxl) var(--sizing-md);
+  padding: var(--sizing-xxl) var(--sizing-md);
   border-top: 1px solid var(--border-color);
   @media (min-width: 500px) {
     border-top: none;
@@ -86,6 +88,7 @@ const [prev, next] = await queryContent(query.value)
     height: 100%;
     text-align: right;
     align-items: flex-end;
+    padding: var(--sizing-xxxl) var(--sizing-md);
   }
 }
 </style>
