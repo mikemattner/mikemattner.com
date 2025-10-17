@@ -43,6 +43,10 @@ alias gnb="git checkout -b"
 alias gmsg="git commit -m"
 ```
 
+::PullText{size=long}
+  I feel a little foolish for never having known about dotfiles, and how of course there would be a thriving community of people that built and shared these resources.
+::
+
 I sourced it in my `.zshrc` file and called it good.
 
 But then I wondered what would happen if I lost everything on this system? I started doing a little research and discovered that there were plenty of people working on ways to bootstrap their development environments for situations like this.

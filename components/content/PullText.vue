@@ -60,7 +60,7 @@ const classes = computed(() => {
     &--short {
       &::before {
         content: '';
-        border-top: 2px solid var(--border-color);
+        border-top: 2px solid var(--color-primary);
         display: block;
         margin-bottom: var(--sizing-lg);
       }
@@ -88,12 +88,12 @@ const classes = computed(() => {
       }
 
       &.pull-text--left {
-        border-right: 2px solid var(--border-color);
+        border-right: 2px solid var(--color-primary);
         padding-right: var(--sizing-lg);
       }
 
       &.pull-text--right {
-        border-left: 2px solid var(--border-color);
+        border-left: 2px solid var(--color-primary);
         padding-left: var(--sizing-lg);
       }
     }
