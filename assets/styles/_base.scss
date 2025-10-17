@@ -150,11 +150,11 @@ code:not(pre code) {
 
 ::selection {
   background: var(--color-primary);
-  color: var(--color-white);
+  color: hsl(var(--color-white-hsl));
 }
 ::-moz-selection {
   background: var(--color-primary);
-  color: var(--color-white);
+  color: hsl(var(--color-white-hsl));
 }
 img::selection {
   background: transparent;
