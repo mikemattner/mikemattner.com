@@ -7,7 +7,9 @@
           :alt="`Feature image for ${post.title}`"
           has-overlay
           class="article-list-item__image"
-        />
+        >
+          <template v-if="post.caption" v-slot:caption>{{ post.caption }}</template>
+        </PrimaryImage>
       </NuxtLink>
     </div>
     <div class="article-list-item__body">
@@ -103,6 +105,7 @@ const image = computed<string>(() => {
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
+    font-weight: 400;
 
     svg {
       width: 1.25rem;
@@ -146,6 +149,19 @@ const image = computed<string>(() => {
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: var(--transition-fast);
+
+    :deep(img) {
+      opacity: 0.375;
+      transition: var(--transition-med);
+    }
+  }
+
+  &:hover {
+    .article-list-item__image {
+      :deep(img) {
+        opacity: 1;
+      }
+    }
   }
 }
 </style>

@@ -95,6 +95,7 @@ const date = computed<string>(() => formatDate(props.note.date));
     display: flex;
     align-items: center;
     gap: var(--sizing-lg);
+    font-weight: 400;
 
     svg {
       width: 1.25rem;
