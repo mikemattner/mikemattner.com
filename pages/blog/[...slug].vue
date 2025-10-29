@@ -52,7 +52,9 @@
             :alt="`Feature image for ${data.title}`"
             has-overlay
             class="article-layout__image"
-          />
+          >
+            <template v-if="data.caption" v-slot:caption>{{ data.caption }}</template>
+          </PrimaryImage>
         </div>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
