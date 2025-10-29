@@ -14,11 +14,11 @@
       <article class="article-layout">
         <aside class="article-meta">
           <div class="article-meta-block">
-            <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
+            <h4 class="eyebrow"><Icon name="ri:calendar-schedule-line" /> Posted</h4>
             <time>{{ formatDate(data.date) }}</time>
           </div>
           <div class="article-meta-block">
-            <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
+            <h4 class="eyebrow"><Icon name="ri:chat-thread-line" /> Topic</h4>
             <div class="tag-list">
               <BaseButton
                 v-for="tag in data.tag"
