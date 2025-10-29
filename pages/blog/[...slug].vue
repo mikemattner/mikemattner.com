@@ -27,11 +27,11 @@
       <article class="article-layout">
         <aside class="article-meta">
           <div class="article-meta-block">
-            <h4 class="eyebrow"><Icon name="ri:calendar-fill" /> Posted</h4>
+            <h4 class="eyebrow"><Icon name="ri:calendar-schedule-line" /> Posted</h4>
             <time>{{ formatDate(data.date) }}</time>
           </div>
           <div class="article-meta-block">
-            <h4 class="eyebrow"><Icon name="ri:chat-thread-fill" /> Topic</h4>
+            <h4 class="eyebrow"><Icon name="ri:chat-thread-line" /> Topic</h4>
             <div class="tag-list">
               <BaseButton
                 v-for="tag in data.tag"
@@ -46,6 +46,14 @@
             </div>
           </div>
         </aside>
+        <div class="article-layout__feature-image">
+          <PrimaryImage
+            :src="data.image ? data.image : '/images/feature/default-one.jpg'"
+            :alt="`Feature image for ${data.title}`"
+            has-overlay
+            class="article-layout__image"
+          />
+        </div>
         <ContentRenderer :value="data">
           <ContentRendererMarkdown class="article-body flow" :value="data" />
           <template #empty>
@@ -160,21 +168,8 @@ useHead({
     overflow: hidden;
     border-radius: var(--border-radius);
     transition: var(--transition-ease);
-    margin: var(--sizing-xl) 0 var(--sizing-xxxl);
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 16 / 9;
 
-    @media (max-width: 899px) {
-      aspect-ratio: 2 / 1;
-    }
-
-    :deep(img) {
-      transition: transform 0.25s var(--cubic-bezier);
-      // opacity: 0.25;
-      overflow: hidden;
-    }
-  }
-
-  .article-body {
     @media (max-width: 899px) {
       grid-column: 1 / -1;
       grid-row: 2;
@@ -188,6 +183,38 @@ useHead({
     @media (min-width: 1001px) {
       grid-column: 6 / span 18;
       grid-row: 1;
+    }
+
+    :deep(img) {
+      transition: transform 0.25s var(--cubic-bezier);
+      // opacity: 0.25;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition-fast);
+  }
+
+  .article-body {
+    @media (max-width: 899px) {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+
+    @media (min-width: 900px) {
+      grid-column: 2 / span 4;
+      grid-row: 3;
+    }
+
+    @media (min-width: 1001px) {
+      grid-column: 6 / span 18;
+      grid-row: 2;
     }
   }
 
@@ -256,11 +283,11 @@ useHead({
   }
 
   .prev-next {
-    grid-row: 3;
+    grid-row: 4;
     grid-column: 1 / -1;
 
     @media (min-width: 1001px) {
-      grid-row: 2;
+      grid-row: 3;
     }
   }
 }

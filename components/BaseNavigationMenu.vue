@@ -110,7 +110,6 @@ watch(isMobile, () => {
         align-items: center;
         width: 100%;
         height: 100%;
-        text-decoration-color: transparent;
         padding: 0.5rem 0;
         color: var(--headline-font-color);
 
@@ -125,6 +124,7 @@ watch(isMobile, () => {
   .router-link-active,
   .active-path {
     text-decoration-color: var(--color-primary);
+    color: var(--color-primary);
   }
 
   &__secondary {
