@@ -20,10 +20,10 @@
       </BaseButton>
     </div>
     <div class="project-list-item__meta">
-      <time v-tooltip="`Updated ${formatDate(project.updated)}.`"
-        ><Icon name="ri:calendar-fill" /> {{ listYear(project.year) }}</time
-      >
-      <div class="language-item"><Icon name="ri:code-box-fill" /> {{ project.language }}</div>
+      <time v-tooltip="`Updated ${formatDate(project.updated)}.`">
+        <Icon name="typcn:calendar-outline" /> {{ listYear(project.year) }}
+      </time>
+      <div class="language-item"><Icon name="ri:code-box-line" /> {{ project.language }}</div>
       <div class="project-list-item__actions">
         <BaseButton
           :href="`${project.url}/watchers`"
