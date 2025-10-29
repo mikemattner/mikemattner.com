@@ -194,14 +194,14 @@ const notes = computed(() => {
 
     &__ampersand {
       font-size: var(--size-step-6);
-      z-index: 2;
+      z-index: 4;
       color: var(--headline-font-color);
       font-variation-settings: 'wdth' 100, 'wght' 300, 'ital' 10;
       line-height: 1;
       grid-row: 2 / span 2;
       grid-column: 1;
       align-self: center;
-      margin-left: 0.0125em;
+      margin-left: 0.05em;
 
       @media (max-width: 893px) {
         font-size: var(--size-step-6);
