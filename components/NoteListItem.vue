@@ -10,6 +10,7 @@
     </div>
     <div class="note-list-item__footer">
       <div class="note-list-item__tags">
+        <Icon name="typcn:tags" />
         <BaseButton
           v-for="tag in note.tag"
           :key="tag"
@@ -21,10 +22,12 @@
           {{ tag }}
         </BaseButton>
       </div>
-      &bull;
-      <time>
-        <NuxtLink :to="note._path">{{ date }}</NuxtLink>
-      </time>
+      <div class="note-list-item__date">
+        <Icon name="typcn:calendar-outline" />
+        <time>
+          <NuxtLink :to="note._path">{{ date }}</NuxtLink>
+        </time>
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +77,18 @@ const date = computed<string>(() => formatDate(props.note.date));
     color: var(--blog-card-date-color);
     margin-top: var(--sizing-xl);
     z-index: 2;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
   }
 
   time {

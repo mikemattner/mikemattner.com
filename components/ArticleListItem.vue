@@ -22,6 +22,7 @@
     </div>
     <footer class="article-list-item__footer">
       <div class="article-list-item__tags">
+        <Icon name="typcn:tags" />
         <BaseButton
           v-for="tag in post.tag"
           :key="tag"
@@ -33,8 +34,10 @@
           {{ tag }}
         </BaseButton>
       </div>
-      &bull;
-      <time>{{ date }}</time>
+      <div class="article-list-item__date">
+        <Icon name="typcn:calendar-outline" />
+        <time>{{ date }}</time>
+      </div>
     </footer>
   </div>
 </template>
@@ -82,6 +85,18 @@ const image = computed<string>(() => {
     color: var(--blog-card-date-color);
     padding: 0;
     z-index: 2;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: var(--sizing-sm);
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
   }
 
   time {
