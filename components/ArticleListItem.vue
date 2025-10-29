@@ -1,5 +1,15 @@
 <template>
   <div class="article-list-item">
+    <div class="article-list-item__feature-image">
+      <NuxtLink class="article-list-item__image-link" :to="post._path">
+        <PrimaryImage
+          :src="image"
+          :alt="`Feature image for ${post.title}`"
+          has-overlay
+          class="article-list-item__image"
+        />
+      </NuxtLink>
+    </div>
     <div class="article-list-item__body">
       <div class="article-list-item__title flow">
         <h3 class="small-heading">
@@ -38,6 +48,10 @@ const props = defineProps({
 });
 
 const date = computed<string>(() => formatDate(props.post.date));
+
+const image = computed<string>(() => {
+  return props.post.image ? props.post.image : '/images/feature/default-one.jpg';
+});
 </script>
 
 <style lang="scss" scoped>
@@ -47,7 +61,8 @@ const date = computed<string>(() => formatDate(props.post.date));
   background-color: var(--block-quote-bg);
   border-radius: var(--border-radius);
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--sizing-xl);
 
   p {
     max-width: 70ch;
@@ -55,7 +70,7 @@ const date = computed<string>(() => formatDate(props.post.date));
 
   &__body {
     font-size: var(--size-step--1);
-    padding: var(--sizing-md) 0 0 0;
+    padding: 0;
   }
 
   &__footer {
@@ -66,7 +81,6 @@ const date = computed<string>(() => formatDate(props.post.date));
     gap: var(--sizing-lg);
     color: var(--blog-card-date-color);
     padding: 0;
-    margin-top: var(--sizing-lg);
     z-index: 2;
   }
 
@@ -97,6 +111,26 @@ const date = computed<string>(() => formatDate(props.post.date));
       font-size: var(--size-step--2);
       font-family: var(--code-font-family);
     }
+  }
+
+  &__feature-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  &__image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition-fast);
   }
 }
 </style>
