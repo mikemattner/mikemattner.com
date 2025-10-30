@@ -67,9 +67,10 @@ defineProps({
       svg {
         transform: rotate(720deg) scale(1.2);
         border-color: var(--color-primary);
+        background-color: var(--color-primary);
 
         path {
-          fill: var(--color-primary);
+          fill: hsl(var(--color-white-hsl));
         }
       }
 
