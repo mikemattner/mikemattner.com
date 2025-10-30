@@ -13,7 +13,7 @@
 .pull-quote {
   font-size: var(--size-step-1);
   // grid-template: 'mark quote quote' 'left attribution endmark' 1fr / auto 1fr auto;
-  grid-template: 'mark quote' 'left attribution' 1fr / auto 1fr auto;
+  grid-template: 'mark quote' 'left attribution' 1fr / auto 1fr;
   column-gap: var(--sizing-lg);
   line-height: 1.4;
   display: grid;
