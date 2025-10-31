@@ -50,10 +50,11 @@ defineProps({
 
   &__type {
     font-size: var(--size-step-0);
+    font-family: var(--serif-font-family);
     line-height: 1;
     letter-spacing: 0.025em;
     color: var(--headline-font-color);
-    font-variation-settings: 'wdth' 100, 'wght' 300;
+    font-weight: 900;
     transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.25s var(--cubic-bezier),
       fill 0.25s var(--cubic-bezier);
 

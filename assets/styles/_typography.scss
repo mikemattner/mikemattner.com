@@ -13,6 +13,7 @@ h3 {
     font-size: var(--size-step--1);
     font-variation-settings: 'wdth' 100, 'wght' 400;
     margin: var(--sizing-md) 0;
+    font-family: var(--sans-font-family);
   }
 }
 
@@ -43,6 +44,8 @@ h1,
 .h1-heading {
   font-size: var(--size-step-4);
   color: var(--color-primary);
+  font-family: var(--serif-font-family);
+  font-weight: 900;
 }
 
 h2,

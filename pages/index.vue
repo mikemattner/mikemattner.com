@@ -181,7 +181,7 @@ const notes = computed(() => {
       font-size: var(--size-step-7);
       z-index: 1;
       font-variation-settings: 'wdth' 75, 'wght' 800;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       line-height: 0.875;
       grid-row: 2;
       grid-column: 1;
@@ -213,7 +213,7 @@ const notes = computed(() => {
       z-index: 3;
       letter-spacing: -0.025em;
       font-variation-settings: 'wdth' 75, 'wght' 800;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       line-height: 0.75;
       grid-column: 1;
       grid-row: 3;
