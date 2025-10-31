@@ -180,12 +180,13 @@ const notes = computed(() => {
     &__design {
       font-size: var(--size-step-7);
       z-index: 1;
-      font-variation-settings: 'wdth' 75, 'wght' 800;
-      // text-transform: uppercase;
+      font-variation-settings: 'wdth' 75, 'wght' 900;
+      text-transform: uppercase;
       line-height: 0.875;
       grid-row: 2;
       grid-column: 1;
       color: var(--color-blue);
+      font-family: var(--sans-font-family);
 
       @media (max-width: 893px) {
         font-size: var(--size-step-7);
@@ -196,7 +197,8 @@ const notes = computed(() => {
       font-size: var(--size-step-6);
       z-index: 4;
       color: var(--headline-font-color);
-      font-variation-settings: 'wdth' 100, 'wght' 300, 'ital' 10;
+      font-variation-settings: 'wdth' 100, 'wght' 300;
+      font-style: italic;
       line-height: 1;
       grid-row: 2 / span 2;
       grid-column: 1;
@@ -204,7 +206,7 @@ const notes = computed(() => {
       margin-left: 0.05em;
 
       @media (max-width: 893px) {
-        font-size: var(--size-step-6);
+        font-size: var(--size-step-5);
       }
     }
 
@@ -212,12 +214,13 @@ const notes = computed(() => {
       font-size: var(--size-step-7);
       z-index: 3;
       letter-spacing: -0.025em;
-      font-variation-settings: 'wdth' 75, 'wght' 800;
-      // text-transform: uppercase;
+      font-variation-settings: 'wdth' 75, 'wght' 900;
+      text-transform: uppercase;
       line-height: 0.75;
       grid-column: 1;
       grid-row: 3;
       color: var(--color-blue);
+      font-family: var(--sans-font-family);
 
       @media (max-width: 893px) {
         font-size: var(--size-step-7);

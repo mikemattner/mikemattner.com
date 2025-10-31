@@ -1,7 +1,7 @@
 <template>
   <section class="note-list__section">
     <div class="note-group">
-      <h3 class="note-header small-heading">Notes</h3>
+      <h2 class="note-header small-heading">Notes</h2>
       <ul class="note-list">
         <li v-for="note in notes" :key="note.title" class="article-list__item">
           <NoteListSummaryItem :note="note" />

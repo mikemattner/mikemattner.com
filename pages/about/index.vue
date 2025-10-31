@@ -131,7 +131,7 @@
             </li>
           </ul>
         </BasePanel>
-        <h3>A Timeline of My Life</h3>
+        <!-- <h3>A Timeline of My Life</h3>
         <ol class="timeline small-text">
           <li class="flow">
             <h3 class="small-heading">1985</h3>
@@ -200,7 +200,7 @@
             <h3 class="small-heading">2021</h3>
             <p>I start my current role focused on software development as a UI engineer.</p>
           </li>
-        </ol>
+        </ol> -->
       </div>
       <!-- <div class="timeline-content flow">
         <h2 class="h4-heading">A Timeline of My Life</h2>
